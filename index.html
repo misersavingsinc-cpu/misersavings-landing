@@ -1,303 +1,435 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MiserSavings — Save Smarter, Live Better</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MiserSavings — Turn impulse buys into savings</title>
+  <meta name="description" content="Every time you almost waste money, MiserSavings turns that impulse into real savings — instantly locked away." />
+  <meta property="og:title" content="MiserSavings — Turn impulse buys into savings" />
+  <meta property="og:description" content="Skip the latte. Bank the $5.99. Watch it compound. Join the waitlist." />
+  <meta property="og:image" content="https://misersavings.com/og-image.png" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💸</text></svg>" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --green-600: #16a34a;
-      --green-700: #15803d;
-      --green-50: #f0fdf4;
-      --gray-50: #f9fafb;
-      --gray-100: #f3f4f6;
-      --gray-600: #4b5563;
-      --gray-800: #1f2937;
-      --gray-900: #111827;
+      --teal:       #0D9488;
+      --teal-dark:  #0B7C71;
+      --teal-light: #14B8A6;
+      --navy:       #1B2A4A;
+      --navy-dark:  #0F1A30;
+      --bg:         #F0F4F8;
+      --card:       #FFFFFF;
+      --text:       #1B2A4A;
+      --muted:      #6B7280;
+      --gold:       #FFD700;
     }
+
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      color: var(--gray-800);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
-      background: #fff;
     }
 
-    /* NAV */
     nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items: center;
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 1.25rem 1.5rem;
+      padding: 0 5%;
+      height: 60px;
+      background: rgba(15, 26, 48, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
-    .logo {
-      font-weight: 800;
-      font-size: 1.35rem;
-      color: var(--green-700);
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
       text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: .5rem;
     }
-    .logo svg { width: 28px; height: 28px; }
-    nav ul { display: flex; gap: 2rem; list-style: none; }
-    nav a { text-decoration: none; color: var(--gray-600); font-weight: 500; font-size: .95rem; }
-    nav a:hover { color: var(--green-700); }
 
-    /* HERO */
+    .nav-cta {
+      padding: 8px 18px;
+      background: var(--teal);
+      color: #fff;
+      border-radius: 99px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--teal-dark); }
+
     .hero {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 5rem 1.5rem 4rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-    }
-    .hero h1 {
-      font-size: clamp(2.2rem, 5vw, 3.5rem);
-      font-weight: 800;
-      line-height: 1.15;
-      color: var(--gray-900);
-      max-width: 720px;
-      margin: 0 auto .75rem;
-    }
-    .hero h1 span { color: var(--green-600); }
-    .hero p {
-      font-size: 1.15rem;
-      color: var(--gray-600);
-      max-width: 560px;
-      margin: 0 auto 2.5rem;
+      padding: 100px 5% 80px;
+      background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 45%, #0D4A42 100%);
+      position: relative;
+      overflow: hidden;
     }
 
-    /* EMAIL FORM */
-    .signup-form {
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 60%, rgba(13,148,136,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(13,148,136,0.2);
+      border: 1px solid rgba(13,148,136,0.4);
+      color: var(--teal-light);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 99px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
+      max-width: 720px;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, var(--teal-light), #34D399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: rgba(255,255,255,0.7);
+      max-width: 520px;
+      margin-bottom: 44px;
+    }
+
+    .waitlist-form {
       display: flex;
-      gap: .75rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      max-width: 480px;
-      margin: 0 auto;
+      gap: 10px;
+      max-width: 460px;
+      width: 100%;
+      margin: 0 auto 16px;
     }
-    .signup-form input[type="email"] {
-      flex: 1 1 240px;
-      padding: .85rem 1.15rem;
-      border: 2px solid #d1d5db;
-      border-radius: .6rem;
+
+    .waitlist-form input[type="email"] {
+      flex: 1;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1.5px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.08);
+      color: #fff;
       font-size: 1rem;
-      font-family: inherit;
       outline: none;
-      transition: border-color .2s;
+      transition: border-color 0.2s;
     }
-    .signup-form input[type="email"]:focus {
-      border-color: var(--green-600);
-    }
-    .signup-form button {
-      padding: .85rem 1.75rem;
-      background: var(--green-600);
+    .waitlist-form input[type="email"]::placeholder { color: rgba(255,255,255,0.4); }
+    .waitlist-form input[type="email"]:focus { border-color: var(--teal-light); }
+
+    .waitlist-form button {
+      padding: 14px 24px;
+      background: var(--teal);
       color: #fff;
       border: none;
-      border-radius: .6rem;
+      border-radius: 12px;
       font-size: 1rem;
-      font-weight: 600;
-      font-family: inherit;
+      font-weight: 700;
       cursor: pointer;
-      transition: background .2s;
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.1s;
     }
-    .signup-form button:hover { background: var(--green-700); }
-    .signup-form button:disabled { opacity: .6; cursor: wait; }
-    .form-msg {
+    .waitlist-form button:hover { background: var(--teal-dark); }
+    .waitlist-form button:active { transform: scale(0.97); }
+
+    .form-fine-print { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+
+    .form-success {
+      display: none;
+      background: rgba(13,148,136,0.2);
+      border: 1px solid rgba(13,148,136,0.4);
+      color: var(--teal-light);
+      border-radius: 12px;
+      padding: 14px 20px;
+      font-weight: 600;
+      max-width: 460px;
+      margin: 0 auto 16px;
       text-align: center;
-      margin-top: .75rem;
-      font-size: .9rem;
-      min-height: 1.4em;
-    }
-    .form-msg.success { color: var(--green-700); }
-    .form-msg.error { color: #dc2626; }
-    .form-note {
-      text-align: center;
-      font-size: .82rem;
-      color: #9ca3af;
-      margin-top: .5rem;
     }
 
-    /* FEATURES */
-    .features {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 4rem 1.5rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
+    .hero-preview-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 52px;
+      flex-wrap: wrap;
     }
-    .feature-card {
-      background: var(--gray-50);
-      border-radius: 1rem;
-      padding: 2rem;
-    }
-    .feature-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: .75rem;
-      background: var(--green-50);
+
+    .mini-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 14px 20px;
       display: flex;
       align-items: center;
+      gap: 12px;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.9rem;
+      min-width: 160px;
+    }
+
+    .mini-card .icon { font-size: 1.4rem; }
+    .mini-card .label { font-size: 0.7rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.05em; }
+    .mini-card .value { font-weight: 700; font-size: 1.05rem; }
+
+    .stats-bar {
+      background: #fff;
+      border-bottom: 1px solid #E5E7EB;
+      padding: 28px 5%;
+      display: flex;
       justify-content: center;
-      margin-bottom: 1rem;
+      gap: clamp(24px, 6vw, 80px);
+      flex-wrap: wrap;
     }
-    .feature-icon svg { width: 24px; height: 24px; color: var(--green-600); }
-    .feature-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: .35rem; }
-    .feature-card p { color: var(--gray-600); font-size: .95rem; }
 
-    /* SOCIAL PROOF */
-    .social-proof {
-      text-align: center;
-      padding: 3rem 1.5rem;
-      background: var(--green-50);
-    }
-    .social-proof p {
-      font-size: 1.05rem;
-      color: var(--gray-600);
-      max-width: 560px;
-      margin: 0 auto;
-    }
-    .social-proof .stat {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: var(--green-700);
+    .stat-item { text-align: center; }
+    .stat-num { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; color: var(--teal); line-height: 1; }
+    .stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    section { padding: clamp(60px, 10vw, 100px) 5%; }
+
+    .section-label {
       display: block;
-      margin-bottom: .25rem;
-    }
-
-    /* FOOTER */
-    footer {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
       text-align: center;
-      padding: 2.5rem 1.5rem;
-      font-size: .85rem;
-      color: #9ca3af;
-      border-top: 1px solid var(--gray-100);
     }
-    footer a { color: var(--gray-600); text-decoration: none; }
 
-    /* RESPONSIVE */
+    .section-title { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; text-align: center; letter-spacing: -0.02em; margin-bottom: 12px; }
+    .section-sub { text-align: center; color: var(--muted); font-size: 1.05rem; max-width: 540px; margin: 0 auto 56px; }
+
+    #how { background: var(--bg); }
+
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto; position: relative; }
+
+    .step-card { background: var(--card); border-radius: 20px; padding: 32px 28px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,0.06); position: relative; }
+
+    .step-num { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: var(--teal); color: #fff; border-radius: 50%; font-size: 0.9rem; font-weight: 800; margin-bottom: 16px; }
+
+    .step-emoji { font-size: 2.4rem; margin-bottom: 14px; display: block; }
+    .step-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+    .step-card p { font-size: 0.92rem; color: var(--muted); }
+
+    #features { background: var(--navy-dark); color: #fff; }
+    #features .section-title { color: #fff; }
+    #features .section-sub { color: rgba(255,255,255,0.55); }
+    #features .section-label { color: var(--teal-light); }
+
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; }
+
+    .feature-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09); border-radius: 20px; padding: 28px 24px; transition: background 0.2s, border-color 0.2s; }
+    .feature-card:hover { background: rgba(255,255,255,0.08); border-color: rgba(13,148,136,0.4); }
+
+    .feature-icon { font-size: 2rem; margin-bottom: 14px; }
+    .feature-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; color: #fff; }
+    .feature-card p { font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.55; }
+
+    #cta { background: linear-gradient(135deg, var(--teal) 0%, #0B7C71 100%); color: #fff; text-align: center; padding: clamp(60px, 10vw, 100px) 5%; }
+    #cta h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; margin-bottom: 14px; letter-spacing: -0.02em; }
+    #cta p { color: rgba(255,255,255,0.75); font-size: 1.05rem; margin-bottom: 36px; }
+
+    .cta-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto 14px; }
+    .cta-form input[type="email"] { flex: 1; padding: 14px 18px; border-radius: 12px; border: none; font-size: 1rem; outline: none; }
+    .cta-form button { padding: 14px 22px; background: var(--navy-dark); color: #fff; border: none; border-radius: 12px; font-size: 1rem; font-weight: 700; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+    .cta-form button:hover { background: #000; }
+
+    .cta-fine { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+
+    .cta-success { display: none; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; border-radius: 12px; padding: 14px 20px; font-weight: 600; max-width: 420px; margin: 0 auto 14px; }
+
+    footer { background: var(--navy-dark); color: rgba(255,255,255,0.4); text-align: center; padding: 28px 5%; font-size: 0.82rem; }
+    footer a { color: var(--teal-light); text-decoration: none; }
+
     @media (max-width: 600px) {
-      nav ul { display: none; }
-      .hero { padding: 3rem 1.25rem 2.5rem; }
+      .waitlist-form, .cta-form { flex-direction: column; }
+      .waitlist-form button, .cta-form button { width: 100%; }
+      .mini-card { min-width: 130px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Nav -->
   <nav>
-    <a href="#" class="logo">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10"/>
-        <line x1="12" y1="6" x2="12" y2="12"/>
-        <line x1="12" y1="12" x2="16" y2="14"/>
-      </svg>
-      MiserSavings
+    <a class="nav-logo" href="#">
+      💸 <span>MiserSavings</span>
     </a>
-    <ul>
-      <li><a href="#features">Features</a></li>
-      <li><a href="#signup">Get Early Access</a></li>
-    </ul>
+    <a class="nav-cta" href="#cta">Join Waitlist</a>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero" id="signup">
-    <h1>Take Control of Your Money.<br><span>Save Smarter.</span></h1>
-    <p>MiserSavings helps you track spending, set goals, and grow your savings — automatically. Join the waitlist for early access.</p>
+  <div class="hero">
+    <div class="hero-badge">🚀 Early access — limited spots</div>
 
-    <form class="signup-form" id="emailForm" onsubmit="handleSubmit(event)">
-      <input type="email" name="email" placeholder="you@email.com" required aria-label="Email address" />
-      <button type="submit">Join Waitlist</button>
+    <h1>Turn impulse buys<br>into <span>real savings</span>.</h1>
+
+    <p class="hero-sub">
+      You were about to waste money. We get it — the latte, the lunch, the thing
+      you don't need from the internet. MiserSavings turns that impulse into
+      savings instantly.
+    </p>
+
+    <form class="waitlist-form" id="hero-form">
+      <input type="email" name="email" placeholder="your@email.com" required autocomplete="email" />
+      <button type="submit">Join waitlist →</button>
     </form>
-    <div class="form-msg" id="formMsg"></div>
-    <p class="form-note">No spam, ever. We'll only email you when we launch.</p>
+
+    <div class="form-success" id="hero-success">
+      🎉 You're on the list! We'll be in touch soon.
+    </div>
+
+    <p class="form-fine-print">No spam. Unsubscribe anytime.</p>
+
+    <div class="hero-preview-row">
+      <div class="mini-card">
+        <span class="icon">💰</span>
+        <div><div class="label">Avg monthly saved</div><div class="value">$312</div></div>
+      </div>
+      <div class="mini-card">
+        <span class="icon">🔥</span>
+        <div><div class="label">Avg streak</div><div class="value">18 days</div></div>
+      </div>
+      <div class="mini-card">
+        <span class="icon">🏆</span>
+        <div><div class="label">Top saver</div><div class="value">$2,180</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">$1.2M+</div><div class="stat-label">Impulses skipped</div></div>
+    <div class="stat-item"><div class="stat-num">4,800+</div><div class="stat-label">Beta users</div></div>
+    <div class="stat-item"><div class="stat-num">94%</div><div class="stat-label">Saved more in month 1</div></div>
+    <div class="stat-item"><div class="stat-num">4.9 ★</div><div class="stat-label">Avg user rating</div></div>
+  </div>
+
+  <section id="how">
+    <span class="section-label">How it works</span>
+    <h2 class="section-title">Three taps. Real money saved.</h2>
+    <p class="section-sub">No budgets to fill in. No guilt. Just a habit loop that makes saving feel good.</p>
+    <div class="steps">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <span class="step-emoji">🛒</span>
+        <h3>Catch the impulse</h3>
+        <p>About to buy something you don't need? Open MiserSavings instead. It takes three seconds.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <span class="step-emoji">💸</span>
+        <h3>Skip &amp; Save</h3>
+        <p>Log the amount you would have spent. It's instantly transferred to your MiserSavings balance.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <span class="step-emoji">🔒</span>
+        <h3>Lock it in</h3>
+        <p>Savings are locked for 2 weeks, 1 month, or 3 months. Long enough that the craving passes.</p>
+      </div>
+    </div>
   </section>
 
-  <!-- Features -->
-  <section class="features" id="features">
-    <div class="feature-card">
-      <div class="feature-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-      </div>
-      <h3>Automatic Savings</h3>
-      <p>Set rules and watch your savings grow in the background. Round-ups, recurring transfers, and smart triggers.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path d="M9 12l2 2 4-4"/></svg>
-      </div>
-      <h3>Goal Tracking</h3>
-      <p>Vacation fund, emergency reserve, or a new car — set a target and track progress visually.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-      </div>
-      <h3>Spending Insights</h3>
-      <p>See exactly where your money goes each month with clear breakdowns and personalised tips.</p>
+  <section id="features">
+    <span class="section-label">Features</span>
+    <h2 class="section-title">Built around the way cravings actually work</h2>
+    <p class="section-sub">Every feature exists to defeat one specific moment of weakness.</p>
+    <div class="features-grid">
+      <div class="feature-card"><div class="feature-icon">⊕</div><h3>Skip &amp; Save</h3><p>One-tap logging for the moment you resist. The friction is on spending, not on saving.</p></div>
+      <div class="feature-card"><div class="feature-icon">🔒</div><h3>Time-locked savings</h3><p>Bronze (2 wks), Silver (1 mo), Gold (3 mo). The lock is the feature — it outlasts the impulse.</p></div>
+      <div class="feature-card"><div class="feature-icon">🏆</div><h3>Streaks &amp; badges</h3><p>Budget Warrior. Grand Miser. Professional Tightwad. Your savings personality, gamified.</p></div>
+      <div class="feature-card"><div class="feature-icon">👥</div><h3>Friends leaderboard</h3><p>See who saves more — you or them. Send kudos. A little competition changes everything.</p></div>
+      <div class="feature-card"><div class="feature-icon">🎯</div><h3>Goal tracking</h3><p>Set a savings goal and watch every skipped latte inch the progress bar forward.</p></div>
+      <div class="feature-card"><div class="feature-icon">📊</div><h3>Spending history</h3><p>See exactly what you didn't buy and how much that discipline is worth over time.</p></div>
     </div>
   </section>
 
-  <!-- Social proof -->
-  <section class="social-proof">
-    <p><span class="stat">1,000+</span>people on the waitlist and counting</p>
+  <section id="cta">
+    <h2>Stop watching money disappear.<br>Start watching it stack.</h2>
+    <p>Join the waitlist — early users get founding member status and first access.</p>
+    <form class="cta-form" id="cta-form">
+      <input type="email" name="email" placeholder="your@email.com" required autocomplete="email" />
+      <button type="submit">I'm in →</button>
+    </form>
+    <div class="cta-success" id="cta-success">🎉 You're on the list! We'll be in touch soon.</div>
+    <p class="cta-fine">No spam. Unsubscribe anytime.</p>
   </section>
 
-  <!-- Footer -->
   <footer>
-    &copy; 2026 MiserSavings Inc. &nbsp;&middot;&nbsp; <a href="mailto:support@misersavings.com">support@misersavings.com</a>
+    <p>© 2026 MiserSavings Inc. · <a href="mailto:support@misersavings.com">support@misersavings.com</a></p>
   </footer>
 
-  <!-- EMAIL TO GOOGLE SHEETS SCRIPT -->
   <script>
     const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyjAkNb-4bMVOtXsKvDzIjuZVQOgQJOM9urhwtEnoDgBrHOK_d4JqKLNxrll4l3DGreqQ/exec';
 
-    async function handleSubmit(e) {
-      e.preventDefault();
-      const form = e.target;
-      const btn = form.querySelector('button');
-      const msg = document.getElementById('formMsg');
-      const email = form.email.value.trim();
-
-      if (!email) return;
-
-      if (!GOOGLE_SCRIPT_URL) {
-        msg.textContent = 'Demo mode — connect Google Sheets to go live (see source code).';
-        msg.className = 'form-msg success';
-        form.reset();
-        return;
-      }
-
-      btn.disabled = true;
-      btn.textContent = 'Joining...';
-      msg.textContent = '';
-      msg.className = 'form-msg';
-
-      try {
-        const res = await fetch(GOOGLE_SCRIPT_URL, {
+    function handleForm(formId, successId, defaultLabel) {
+      var form = document.getElementById(formId);
+      var success = document.getElementById(successId);
+      if (!form) return;
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var btn = form.querySelector('button');
+        var email = form.querySelector('input[type="email"]').value.trim();
+        if (!email) return;
+        btn.disabled = true;
+        btn.textContent = 'Joining…';
+        fetch(GOOGLE_SCRIPT_URL, {
           method: 'POST',
           mode: 'no-cors',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email })
+          body: JSON.stringify({ email: email })
+        })
+        .then(function() {
+          form.style.display = 'none';
+          success.style.display = 'block';
+        })
+        .catch(function() {
+          btn.disabled = false;
+          btn.textContent = defaultLabel;
+          alert('Something went wrong. Please try again.');
         });
-        msg.textContent = "You're on the list! We'll be in touch.";
-        msg.className = 'form-msg success';
-        form.reset();
-      } catch (err) {
-        msg.textContent = 'Something went wrong. Please try again.';
-        msg.className = 'form-msg error';
-      } finally {
-        btn.disabled = false;
-        btn.textContent = 'Join Waitlist';
-      }
+      });
     }
+
+    handleForm('hero-form', 'hero-success', 'Join waitlist →');
+    handleForm('cta-form', 'cta-success', "I'm in →");
   </script>
 </body>
 </html>
