@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>MiserSavings — Interactive Demo</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #F0F4F8; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    #root { min-height: 100vh; display: flex; justify-content: center; }
+    .loading { display: flex; align-items: center; justify-content: center; height: 100vh;
+               font-size: 1.2rem; color: #6B7280; flex-direction: column; gap: 12px; }
+    .loading span { font-size: 2rem; animation: spin 1s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <div id="root"><div class="loading"><span>💸</span>Loading MiserSavings...</div></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+
+  <script type="text/babel">
+const { useState, useEffect, useCallback, useRef } = React;
+
+// ============================================================
+// MISERSAVINGS — Shareable Demo v2
+// Goal-anchored onboarding · Quit Companion · Retention mechanics
+// ============================================================
+
+// --- TONE RULES (character constraints) ---
+// 1. Never preachy. Never lecture. Never use "you should."
+// 2. Celebrate like a friend, not a parent. "Hell yes" > "Great job!"
+// 3. When someone slips, zero guilt. "Streaks reset. Comebacks don't."
+// 4. Numbers do the talking. Show the dollar impact, skip the sermon.
+// 5. Match their energy. If they're hype, be hype. If they're quiet, just nod.
+// 6. Swear lightly if the vibe fits (damn, hell yes). Never corporate-speak.
+// 7. Short > long. If it fits in a push notification, it's the right length.
+// 8. Use their goal name EVERYWHERE. "Tokyo trip" not "your goal."
+
+const COLORS = {
+  primary: "#0D9488", primaryDark: "#0B7C72", navy: "#1B2A4A",
+  blue: "#2E75B6", gold: "#FFD700", background: "#F0F4F8",
+  success: "#10B981", warning: "#F59E0B", danger: "#EF4444",
+  white: "#FFFFFF", card: "#FFFFFF", textPrimary: "#1B2A4A",
+  textSecondary: "#6B7280", textMuted: "#9CA3AF",
+  quit: "#DC2626", quitLight: "#FEE2E2", quitDark: "#991B1B",
+};
+
+const CATEGORIES = [
+  { id: "coffee",       name: "Coffee",  icon: "\u2615", defaultAmount: 599,  color: "#8B4513" },
+  { id: "lunch",        name: "Lunch",   icon: "\uD83C\uDF7D\uFE0F", defaultAmount: 1299, color: "#FF6B35" },
+  { id: "snack",        name: "Snack",   icon: "\uD83C\uDF70", defaultAmount: 399,  color: "#E5A100" },
+  { id: "drink",        name: "Drinks",  icon: "\uD83C\uDF77", defaultAmount: 899,  color: "#8B008B" },
+  { id: "impulse",      name: "Impulse", icon: "\uD83D\uDED2", defaultAmount: 1999, color: "#FF4444" },
+  { id: "rideshare",    name: "Ride",    icon: "\uD83D\uDE97", defaultAmount: 1499, color: "#1DA1F2" },
+  { id: "subscription", name: "Sub",     icon: "\uD83D\uDCFA", defaultAmount: 999,  color: "#6C5CE7" },
+  { id: "custom",       name: "Other",   icon: "\u2728", defaultAmount: 0,    color: "#0D9488" },
+];
+
+const QUIT_SUBSTANCES = [
+  { id: "cigarettes", name: "Cigarettes", icon: "\uD83D\uDEAC", unitName: "cigarette", unitCost: 75, perDay: 15, color: "#DC2626" },
+  { id: "nicotine_pouches", name: "Nicotine Pouches", icon: "\uD83D\uDCA8", unitName: "pouch", unitCost: 50, perDay: 10, color: "#EA580C" },
+  { id: "vaping", name: "Vaping", icon: "\uD83C\uDF2B\uFE0F", unitName: "pod", unitCost: 500, perDay: 1, color: "#7C3AED" },
+  { id: "alcohol", name: "Alcohol", icon: "\uD83C\uDF7A", unitName: "drink", unitCost: 800, perDay: 3, color: "#B45309" },
+  { id: "cannabis", name: "Cannabis", icon: "\uD83C\uDF3F", unitName: "session", unitCost: 1200, perDay: 1, color: "#16A34A" },
+  { id: "energy_drinks", name: "Energy Drinks", icon: "\u26A1", unitName: "can", unitCost: 400, perDay: 2, color: "#0891B2" },
+  { id: "gambling", name: "Gambling", icon: "\uD83C\uDFB0", unitName: "session", unitCost: 5000, perDay: 1, color: "#9333EA" },
+];
+
+// Keywords that trigger quit companion detection
+const QUIT_KEYWORDS = [
+  "cigarette", "smoking", "smoke", "nicotine", "vape", "vaping", "juul",
+  "alcohol", "drinking", "beer", "wine", "liquor", "sober", "sobriety",
+  "cannabis", "weed", "marijuana", "pot",
+  "gambling", "betting", "slots", "casino",
+  "energy drink", "redbull", "monster",
+  "quit", "stop", "kick the habit", "clean", "sober",
+];
+
+const formatCents = (cents) => `$${(cents / 100).toFixed(2)}`;
+
+const LOCK_TIERS = [
+  { days: 14,  label: "2 Weeks",  short: "2 wks", badge: "\uD83E\uDD49", tier: "Bronze",  color: "#CD7F32", multiplier: "1\u00D7",   multiplierVal: 1.0, desc: "Beats any impulse window" },
+  { days: 30,  label: "1 Month",  short: "1 mo",  badge: "\uD83E\uDD48", tier: "Silver",  color: "#9CA3AF", multiplier: "1.5\u00D7", multiplierVal: 1.5, desc: "Habit-building threshold" },
+  { days: 90,  label: "3 Months", short: "3 mo",  badge: "\uD83E\uDD47", tier: "Gold",    color: "#FFD700", multiplier: "2\u00D7",   multiplierVal: 2.0, desc: "Serious commitment" },
+  { days: 180, label: "6 Months", short: "6 mo",  badge: "\uD83D\uDC8E", tier: "Diamond", color: "#60C6F1", multiplier: "3\u00D7",   multiplierVal: 3.0, desc: "Long-term wealth mindset" },
+];
+
+const EMOJI_SUGGESTIONS = [
+  "\uD83D\uDEAC","\uD83E\uDEE7","\uD83C\uDFB0","\uD83C\uDF7A","\uD83C\uDF7B","\uD83E\uDD64","\uD83C\uDF55","\uD83C\uDF54","\uD83E\uDDC1","\uD83D\uDED2",
+  "\uD83D\uDC5F","\uD83D\uDC8A","\uD83C\uDCCF","\uD83C\uDFAE","\uD83D\uDC88","\uD83C\uDFC7","\uD83D\uDCF1","\uD83E\uDDD4","\uD83C\uDF66","\uD83C\uDF9F\uFE0F",
+  "\uD83D\uDE80","\uD83D\uDCAA","\uD83C\uDF3F","\uD83C\uDFCB\uFE0F","\uD83E\uDDD8","\uD83D\uDC85","\uD83C\uDFB8","\u2708\uFE0F","\uD83D\uDEFB","\uD83D\uDCB8",
+];
+
+const CUSTOM_COLORS = [
+  "#E11D48","#7C3AED","#0891B2","#059669","#D97706",
+  "#DC2626","#9333EA","#0284C7","#16A34A","#CA8A04",
+];
+
+const MISER_TITLES = [
+  { minCents: 0,      title: "Aspiring Miser",       icon: "\uD83C\uDF31", color: "#9CA3AF", desc: "The journey of a thousand dollars starts here" },
+  { minCents: 1000,   title: "Penny Pincher",         icon: "\uD83E\uDE99", color: "#6B7280", desc: "First $10 saved \u2014 the habit begins" },
+  { minCents: 5000,   title: "Frugal Apprentice",     icon: "\uD83D\uDCDA", color: "#0D9488", desc: "$50 in \u2014 you're getting the hang of this" },
+  { minCents: 10000,  title: "Tightwad in Training",  icon: "\uD83C\uDF93", color: "#2E75B6", desc: "$100 saved \u2014 a full month of discipline" },
+  { minCents: 25000,  title: "Certified Cheapskate",  icon: "\uD83C\uDFC5", color: "#8B4513", desc: "$250 saved \u2014 officially tighter than a jar lid" },
+  { minCents: 50000,  title: "Budget Warrior",        icon: "\u2694\uFE0F", color: "#E5A100", desc: "$500 \u2014 you've won more battles than you've lost" },
+  { minCents: 100000, title: "Professional Tightwad", icon: "\uD83D\uDCBC", color: "#6C5CE7", desc: "$1,000 \u2014 this is not a hobby, it's a lifestyle" },
+  { minCents: 200000, title: "Grand Miser",           icon: "\uD83D\uDC51", color: "#FFD700", desc: "$2,000 \u2014 Scrooge McDuck sends his regards" },
+  { minCents: 350000, title: "Legendary Scrooge",     icon: "\uD83E\uDD86", color: "#FF6B35", desc: "$3,500 \u2014 you could practically swim in this" },
+  { minCents: 500000, title: "Supreme Miser Lord",    icon: "\uD83C\uDF1F", color: "#0D9488", desc: "$5,000 \u2014 you have transcended the concept of spending" },
+];
+
+// ============================================================
+// SOCIAL DEMO DATA
+// ============================================================
+const DEMO_FRIENDS = [
+  { id:"f1", name:"Sarah K.",  avatar:"\uD83D\uDC69\u200D\uD83D\uDCBC", streak:18, totalCents:89250,  color:"#E11D48", following:true  },
+  { id:"f2", name:"Marcus T.", avatar:"\uD83E\uDDD1\u200D\uD83D\uDCBB", streak:5,  totalCents:124000, color:"#7C3AED", following:true  },
+  { id:"f3", name:"Priya D.",  avatar:"\uD83D\uDC69\u200D\uD83C\uDFA8", streak:32, totalCents:218000, color:"#059669", following:true  },
+  { id:"f4", name:"Jake W.",   avatar:"\uD83E\uDDD4",   streak:0,  totalCents:41500,  color:"#D97706", following:false },
+];
+
+const DEMO_FEED = [
+  { id:"a1", friendId:"f1", category:"coffee",       catIcon:"\u2615", catName:"Coffee",       amount:599,  tier:{badge:"\uD83E\uDD49",tier:"Bronze", color:"#CD7F32"}, lockDays:14, ago:"2h ago",     kudos:3,  youKudosed:false },
+  { id:"a2", friendId:"f2", category:"impulse",      catIcon:"\uD83D\uDED2", catName:"Impulse",      amount:1499, tier:{badge:"\uD83E\uDD47",tier:"Gold",   color:"#FFD700"}, lockDays:90, ago:"5h ago",     kudos:7,  youKudosed:true  },
+  { id:"a3", friendId:"f3", category:"lunch",        catIcon:"\uD83C\uDF7D\uFE0F", catName:"Lunch",        amount:1299, tier:{badge:"\uD83E\uDD48",tier:"Silver", color:"#9CA3AF"}, lockDays:30, ago:"Yesterday",  kudos:12, youKudosed:true  },
+  { id:"a4", friendId:"f4", category:"drink",        catIcon:"\uD83C\uDF77", catName:"Drinks",       amount:899,  tier:{badge:"\uD83E\uDD49",tier:"Bronze", color:"#CD7F32"}, lockDays:14, ago:"Yesterday",  kudos:1,  youKudosed:false },
+  { id:"a5", friendId:"f1", category:"impulse",      catIcon:"\uD83D\uDED2", catName:"Impulse",      amount:1999, tier:{badge:"\uD83E\uDD48",tier:"Silver", color:"#9CA3AF"}, lockDays:30, ago:"2 days ago", kudos:5,  youKudosed:false },
+  { id:"a6", friendId:"f3", category:"subscription", catIcon:"\uD83D\uDCFA", catName:"Sub",          amount:999,  tier:{badge:"\uD83E\uDD47",tier:"Gold",   color:"#FFD700"}, lockDays:90, ago:"3 days ago", kudos:9,  youKudosed:true  },
+];
+
+function getMiserTitle(totalCents) {
+  let current = MISER_TITLES[0];
+  for (const t of MISER_TITLES) { if (totalCents >= t.minCents) current = t; }
+  const idx = MISER_TITLES.indexOf(current);
+  const next = MISER_TITLES[idx + 1] || null;
+  const progress = next ? Math.min(100, ((totalCents - current.minCents) / (next.minCents - current.minCents)) * 100) : 100;
+  return { ...current, next, progress, idx, total: MISER_TITLES.length };
+}
+
+// ============================================================
+// DEMO SEED DATA
+// ============================================================
+const DAY = 86400000;
+const NOW = Date.now();
+
+const DEMO_SAVINGS = [
+  { id:"d01", amount:599,  category:"coffee",       createdAt:NOW-89*DAY, lockDays:14,  unlockDate:NOW-75*DAY, status:"available", tierBadge:"\uD83E\uDD49", tierName:"Bronze",  tierColor:"#CD7F32", tierMultiplier:1.0 },
+  { id:"d02", amount:1299, category:"lunch",        createdAt:NOW-86*DAY, lockDays:14,  unlockDate:NOW-72*DAY, status:"available", tierBadge:"\uD83E\uDD49", tierName:"Bronze",  tierColor:"#CD7F32", tierMultiplier:1.0 },
+  { id:"d03", amount:4999, category:"impulse",      createdAt:NOW-82*DAY, lockDays:30,  unlockDate:NOW-52*DAY, status:"available", tierBadge:"\uD83E\uDD48", tierName:"Silver",  tierColor:"#9CA3AF", tierMultiplier:1.5 },
+  { id:"d04", amount:599,  category:"coffee",       createdAt:NOW-79*DAY, lockDays:14,  unlockDate:NOW-65*DAY, status:"available", tierBadge:"\uD83E\uDD49", tierName:"Bronze",  tierColor:"#CD7F32", tierMultiplier:1.0 },
+  { id:"d05", amount:1799, category:"drink",        createdAt:NOW-76*DAY, lockDays:14,  unlockDate:NOW-62*DAY, status:"available", tierBadge:"\uD83E\uDD49", tierName:"Bronze",  tierColor:"#CD7F32", tierMultiplier:1.0 },
+  { id:"d06", amount:2299, category:"rideshare",    createdAt:NOW-72*DAY, lockDays:30,  unlockDate:NOW-42*DAY, status:"available", tierBadge:"\uD83E\uDD48", tierName:"Silver",  tierColor:"#9CA3AF", tierMultiplier:1.5 },
+  { id:"d07", amount:599,  category:"coffee",       createdAt:NOW-68*DAY, lockDays:14,  unlockDate:NOW-54*DAY, status:"available", tierBadge:"\uD83E\uDD49", tierName:"Bronze",  tierColor:"#CD7F32", tierMultiplier:1.0 },
+  { id:"d08", amount:3999, category:"impulse",      createdAt:NOW-62*DAY, lockDays:30,  unlockDate:NOW-32*DAY, status:"available", tierBadge:"\uD83E\uDD48", tierName:"Silver",  tierColor:"#9CA3AF", tierMultiplier:1.5 },
+  { id:"d09", amount:1499, category:"subscription", createdAt:NOW-58*DAY, lockDays:14,  unlockDate:NOW-44*DAY, status:"available", tierBadge:"\uD83E\uDD49", tierName:"Bronze",  tierColor:"#CD7F32", tierMultiplier:1.0 },
+  { id:"d10", amount:599,  category:"coffee",       createdAt:NOW-55*DAY, lockDays:14,  unlockDate:NOW-41*DAY, status:"available", tierBadge:"\uD83E\uDD49", tierName:"Bronze",  tierColor:"#CD7F32", tierMultiplier:1.0 },
+  { id:"d11", amount:1299, category:"lunch",        createdAt:NOW-51*DAY, lockDays:14,  unlockDate:NOW-37*DAY, status:"available", tierBadge:"\uD83E\uDD49", tierName:"Bronze",  tierColor:"#CD7F32", tierMultiplier:1.0 },
+  { id:"d12", amount:5999, category:"impulse",      createdAt:NOW-47*DAY, lockDays:90,  unlockDate:NOW+43*DAY, status:"locked",   tierBadge:"\uD83E\uDD47", tierName:"Gold",    tierColor:"#FFD700", tierMultiplier:2.0 },
+  { id:"d13", amount:499,  category:"snack",        createdAt:NOW-44*DAY, lockDays:14,  unlockDate:NOW-30*DAY, status:"available", tierBadge:"\uD83E\uDD49", tierName:"Bronze",  tierColor:"#CD7F32", tierMultiplier:1.0 },
+  { id:"d14", amount:899,  category:"drink",        createdAt:NOW-40*DAY, lockDays:30,  unlockDate:NOW-10*DAY, status:"available", tierBadge:"\uD83E\uDD48", tierName:"Silver",  tierColor:"#9CA3AF", tierMultiplier:1.5 },
+  { id:"d15", amount:599,  category:"coffee",       createdAt:NOW-37*DAY, lockDays:14,  unlockDate:NOW-23*DAY, status:"available", tierBadge:"\uD83E\uDD49", tierName:"Bronze",  tierColor:"#CD7F32", tierMultiplier:1.0 },
+  { id:"d16", amount:6999, category:"impulse",      createdAt:NOW-32*DAY, lockDays:90,  unlockDate:NOW+58*DAY, status:"locked",   tierBadge:"\uD83E\uDD47", tierName:"Gold",    tierColor:"#FFD700", tierMultiplier:2.0 },
+  { id:"d17", amount:1299, category:"lunch",        createdAt:NOW-28*DAY, lockDays:30,  unlockDate:NOW+2*DAY,  status:"locked",   tierBadge:"\uD83E\uDD48", tierName:"Silver",  tierColor:"#9CA3AF", tierMultiplier:1.5 },
+  { id:"d18", amount:999,  category:"subscription", createdAt:NOW-24*DAY, lockDays:30,  unlockDate:NOW+6*DAY,  status:"locked",   tierBadge:"\uD83E\uDD48", tierName:"Silver",  tierColor:"#9CA3AF", tierMultiplier:1.5 },
+  { id:"d19", amount:2499, category:"drink",        createdAt:NOW-20*DAY, lockDays:90,  unlockDate:NOW+70*DAY, status:"locked",   tierBadge:"\uD83E\uDD47", tierName:"Gold",    tierColor:"#FFD700", tierMultiplier:2.0 },
+  { id:"d20", amount:599,  category:"coffee",       createdAt:NOW-12*DAY, lockDays:14,  unlockDate:NOW+2*DAY,  status:"locked",   tierBadge:"\uD83E\uDD49", tierName:"Bronze",  tierColor:"#CD7F32", tierMultiplier:1.0 },
+  { id:"d21", amount:1499, category:"rideshare",    createdAt:NOW-10*DAY, lockDays:14,  unlockDate:NOW+4*DAY,  status:"locked",   tierBadge:"\uD83E\uDD49", tierName:"Bronze",  tierColor:"#CD7F32", tierMultiplier:1.0 },
+  { id:"d22", amount:9999, category:"impulse",      createdAt:NOW-8*DAY,  lockDays:180, unlockDate:NOW+172*DAY,status:"locked",   tierBadge:"\uD83D\uDC8E", tierName:"Diamond", tierColor:"#60C6F1", tierMultiplier:3.0 },
+  { id:"d23", amount:599,  category:"coffee",       createdAt:NOW-5*DAY,  lockDays:14,  unlockDate:NOW+9*DAY,  status:"locked",   tierBadge:"\uD83E\uDD49", tierName:"Bronze",  tierColor:"#CD7F32", tierMultiplier:1.0 },
+  { id:"d24", amount:1299, category:"lunch",        createdAt:NOW-3*DAY,  lockDays:30,  unlockDate:NOW+27*DAY, status:"locked",   tierBadge:"\uD83E\uDD48", tierName:"Silver",  tierColor:"#9CA3AF", tierMultiplier:1.5 },
+  { id:"d25", amount:399,  category:"snack",        createdAt:NOW-2*DAY,  lockDays:14,  unlockDate:NOW+12*DAY, status:"locked",   tierBadge:"\uD83E\uDD49", tierName:"Bronze",  tierColor:"#CD7F32", tierMultiplier:1.0 },
+  { id:"d26", amount:599,  category:"coffee",       createdAt:NOW-1*DAY,  lockDays:14,  unlockDate:NOW+13*DAY, status:"locked",   tierBadge:"\uD83E\uDD49", tierName:"Bronze",  tierColor:"#CD7F32", tierMultiplier:1.0 },
+];
+
+const DEMO_STORE = { streak: 12, longestStreak: 18, lastSaveDate: NOW - DAY };
+const DEMO_GOAL  = 100000;
+
+// ============================================================
+// DETECT QUIT INTENT
+// ============================================================
+function detectQuitIntent(text) {
+  const lower = text.toLowerCase();
+  for (const sub of QUIT_SUBSTANCES) {
+    if (lower.includes(sub.id.replace("_"," ")) || lower.includes(sub.name.toLowerCase())) return sub;
+  }
+  for (const kw of QUIT_KEYWORDS) {
+    if (lower.includes(kw)) return QUIT_SUBSTANCES[0]; // default to cigarettes
+  }
+  return null;
+}
+
+// ============================================================
+// GOAL-ANCHORED ONBOARDING (the whole new flow)
+// ============================================================
+function OnboardingFlow({ onDone }) {
+  const [step, setStep] = useState(0);
+  const [goalName, setGoalName] = useState("");
+  const [goalAmount, setGoalAmount] = useState("");
+  const [detectedQuit, setDetectedQuit] = useState(null);
+  const [selectedSubstance, setSelectedSubstance] = useState(null);
+  const [unitCost, setUnitCost] = useState("");
+  const [perDay, setPerDay] = useState("");
+  const [isQuitPath, setIsQuitPath] = useState(false);
+  const [squadInviteSent, setSquadInviteSent] = useState(false);
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    if (inputRef.current) setTimeout(() => inputRef.current.focus(), 300);
+  }, [step]);
+
+  const goalNameTrimmed = goalName.trim();
+  const goalAmountCents = Math.round(parseFloat(goalAmount || "0") * 100);
+
+  // Check for quit intent when goal name changes
+  useEffect(() => {
+    if (goalNameTrimmed.length > 2) {
+      const quit = detectQuitIntent(goalNameTrimmed);
+      setDetectedQuit(quit);
+    } else {
+      setDetectedQuit(null);
+    }
+  }, [goalNameTrimmed]);
+
+  const finishOnboarding = () => {
+    const config = {
+      goalName: goalNameTrimmed || "My Goal",
+      goalAmount: goalAmountCents || 100000,
+      isQuitMode: isQuitPath,
+      substance: isQuitPath ? (selectedSubstance || detectedQuit) : null,
+      unitCost: isQuitPath ? Math.round(parseFloat(unitCost || "0") * 100) : 0,
+      perDay: isQuitPath ? parseInt(perDay || "0") : 0,
+    };
+    onDone(config);
+  };
+
+  const bg = `linear-gradient(160deg, ${COLORS.navy} 0%, #2E4080 50%, ${isQuitPath ? COLORS.quitDark : COLORS.primaryDark} 100%)`;
+
+  // --- STEP 0: Name your goal ---
+  if (step === 0) return (
+    <div style={{ position:"absolute", inset:0, zIndex:200, background:bg, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", padding:"32px 24px", color:COLORS.white, textAlign:"center" }}>
+      <button onClick={finishOnboarding} style={{ position:"absolute", top:20, right:20, background:"rgba(255,255,255,0.15)", border:"none", color:COLORS.white, padding:"6px 14px", borderRadius:99, fontSize:12, fontWeight:600, cursor:"pointer" }}>Skip</button>
+      <div style={{ fontSize:64, marginBottom:16 }}>{"\uD83C\uDFAF"}</div>
+      <h2 style={{ fontSize:22, fontWeight:800, lineHeight:1.3, marginBottom:8 }}>What are you saving for?</h2>
+      <p style={{ fontSize:14, opacity:0.8, lineHeight:1.5, maxWidth:300, marginBottom:24 }}>
+        Not a number. A thing. The thing that makes skipping that latte feel worth it.
+      </p>
+      <input ref={inputRef} type="text" placeholder='e.g. "Tokyo trip" or "Quit smoking"' value={goalName} onChange={e => setGoalName(e.target.value)} maxLength={40}
+        style={{ width:"100%", maxWidth:320, padding:"14px 18px", fontSize:17, fontWeight:700, borderRadius:14, border:"2px solid rgba(255,255,255,0.3)", background:"rgba(255,255,255,0.1)", color:COLORS.white, outline:"none", textAlign:"center", boxSizing:"border-box" }}
+      />
+      {goalNameTrimmed && (
+        <div style={{ marginTop:12, fontSize:13, opacity:0.7, fontStyle:"italic" }}>
+          {detectedQuit ? `\uD83D\uDCAA Looks like you're ready to quit. We've got you.` : `"${goalNameTrimmed}" \u2014 hell yes. Let's make it happen.`}
+        </div>
+      )}
+      <button onClick={() => { if (goalNameTrimmed) { if (detectedQuit) { setIsQuitPath(true); setSelectedSubstance(detectedQuit); setStep(10); } else setStep(1); } }}
+        disabled={!goalNameTrimmed}
+        style={{ marginTop:24, background:goalNameTrimmed ? COLORS.primary : "rgba(255,255,255,0.2)", color:COLORS.white, border:"none", padding:"14px 40px", borderRadius:14, fontSize:16, fontWeight:700, cursor:goalNameTrimmed?"pointer":"default", opacity:goalNameTrimmed?1:0.5, transition:"all 0.2s" }}>
+        {detectedQuit ? "Start quit companion \u2192" : "Next \u2192"}
+      </button>
+      <div style={{ display:"flex", gap:8, marginTop:24 }}>
+        {["Tokyo trip", "New laptop", "Quit smoking", "Emergency fund"].map(s => (
+          <button key={s} onClick={() => setGoalName(s)} style={{ background:"rgba(255,255,255,0.12)", border:"1px solid rgba(255,255,255,0.2)", color:COLORS.white, padding:"6px 12px", borderRadius:20, fontSize:11, cursor:"pointer", whiteSpace:"nowrap" }}>{s}</button>
+        ))}
+      </div>
+    </div>
+  );
+
+  // --- STEP 1: Goal amount (normal path) ---
+  if (step === 1) return (
+    <div style={{ position:"absolute", inset:0, zIndex:200, background:bg, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", padding:"32px 24px", color:COLORS.white, textAlign:"center" }}>
+      <button onClick={finishOnboarding} style={{ position:"absolute", top:20, right:20, background:"rgba(255,255,255,0.15)", border:"none", color:COLORS.white, padding:"6px 14px", borderRadius:99, fontSize:12, fontWeight:600, cursor:"pointer" }}>Skip</button>
+      <div style={{ fontSize:48, marginBottom:12 }}>{"\uD83D\uDCB0"}</div>
+      <h2 style={{ fontSize:20, fontWeight:800, lineHeight:1.3, marginBottom:6 }}>How much for "{goalNameTrimmed}"?</h2>
+      <p style={{ fontSize:13, opacity:0.7, maxWidth:280, marginBottom:24 }}>Rough is fine. You can change this later. The point is to have a target that means something.</p>
+      <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom:16 }}>
+        <span style={{ fontSize:32, fontWeight:800, opacity:0.6 }}>$</span>
+        <input ref={inputRef} type="number" inputMode="decimal" placeholder="2,000" value={goalAmount} onChange={e => setGoalAmount(e.target.value)}
+          style={{ width:160, padding:"12px 0", fontSize:36, fontWeight:800, borderRadius:0, border:"none", borderBottom:"3px solid rgba(255,255,255,0.4)", background:"transparent", color:COLORS.white, outline:"none", textAlign:"center" }} />
+      </div>
+      {goalAmountCents > 0 && (
+        <div style={{ fontSize:13, opacity:0.7, marginBottom:8 }}>
+          At $5/day skipping, that's ~{Math.ceil(goalAmountCents / 500)} days to "{goalNameTrimmed}"
+        </div>
+      )}
+      <button onClick={() => setStep(2)} style={{ marginTop:16, background:COLORS.primary, color:COLORS.white, border:"none", padding:"14px 40px", borderRadius:14, fontSize:16, fontWeight:700, cursor:"pointer" }}>
+        Next \u2192
+      </button>
+    </div>
+  );
+
+  // --- STEP 2: How it works (normal path) ---
+  if (step === 2) return (
+    <div style={{ position:"absolute", inset:0, zIndex:200, background:bg, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", padding:"32px 24px", color:COLORS.white, textAlign:"center" }}>
+      <div style={{ fontSize:48, marginBottom:12 }}>{"\uD83D\uDD12"}</div>
+      <h2 style={{ fontSize:20, fontWeight:800, lineHeight:1.3, marginBottom:8 }}>Skip it. Lock it. Grow "{goalNameTrimmed}."</h2>
+      <p style={{ fontSize:14, opacity:0.8, lineHeight:1.6, maxWidth:300, marginBottom:20 }}>
+        Every time you resist a purchase, log it. Lock that money. Longer locks = bigger rewards. Every dollar gets you closer to {goalNameTrimmed}.
+      </p>
+      <div style={{ display:"flex", gap:8, justifyContent:"center", flexWrap:"wrap", marginBottom:24 }}>
+        {[{b:"\uD83E\uDD49",t:"Bronze",d:"2 wks",c:"#CD7F32"},{b:"\uD83E\uDD48",t:"Silver",d:"1 mo",c:"#9CA3AF"},{b:"\uD83E\uDD47",t:"Gold",d:"3 mo",c:"#FFD700"},{b:"\uD83D\uDC8E",t:"Diamond",d:"6 mo",c:"#60C6F1"}].map((tier) => (
+          <div key={tier.t} style={{ textAlign:"center", background:"rgba(255,255,255,0.12)", borderRadius:12, padding:"10px 14px", minWidth:64 }}>
+            <div style={{ fontSize:22 }}>{tier.b}</div>
+            <div style={{ fontSize:11, fontWeight:700, color:tier.c, marginTop:4 }}>{tier.t}</div>
+            <div style={{ fontSize:10, opacity:0.7 }}>{tier.d}</div>
+          </div>
+        ))}
+      </div>
+      <button onClick={() => setStep(3)} style={{ background:COLORS.primary, color:COLORS.white, border:"none", padding:"14px 40px", borderRadius:14, fontSize:16, fontWeight:700, cursor:"pointer" }}>
+        Almost there \u2192
+      </button>
+    </div>
+  );
+
+  // --- STEP 3: Squad invite (normal path) ---
+  if (step === 3) return (
+    <div style={{ position:"absolute", inset:0, zIndex:200, background:bg, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", padding:"32px 24px", color:COLORS.white, textAlign:"center" }}>
+      <div style={{ fontSize:48, marginBottom:12 }}>{"\uD83D\uDC65"}</div>
+      <h2 style={{ fontSize:20, fontWeight:800, lineHeight:1.3, marginBottom:8 }}>Better with your squad.</h2>
+      <p style={{ fontSize:14, opacity:0.8, lineHeight:1.6, maxWidth:300, marginBottom:24 }}>
+        People who save with friends are 3x more likely to hit their goal. Invite your crew and compete on the leaderboard.
+      </p>
+      <div style={{ display:"flex", flexDirection:"column", gap:10, width:"100%", maxWidth:300, marginBottom:16 }}>
+        {["Sarah K.", "Marcus T.", "Priya D."].map((name, i) => (
+          <div key={i} style={{ display:"flex", alignItems:"center", gap:12, background:"rgba(255,255,255,0.1)", borderRadius:12, padding:"10px 14px" }}>
+            <div style={{ width:36, height:36, borderRadius:"50%", background:"rgba(255,255,255,0.2)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:16 }}>
+              {["\uD83D\uDC69\u200D\uD83D\uDCBC","\uD83E\uDDD1\u200D\uD83D\uDCBB","\uD83D\uDC69\u200D\uD83C\uDFA8"][i]}
+            </div>
+            <div style={{ flex:1, textAlign:"left" }}>
+              <div style={{ fontSize:13, fontWeight:700 }}>{name}</div>
+              <div style={{ fontSize:11, opacity:0.6 }}>Already saving</div>
+            </div>
+            <span style={{ fontSize:11, color:COLORS.gold, fontWeight:700 }}>{"\uD83D\uDD25"} {[18,5,32][i]}d streak</span>
+          </div>
+        ))}
+      </div>
+      <button onClick={() => { setSquadInviteSent(true); setTimeout(finishOnboarding, 800); }}
+        style={{ background:squadInviteSent?"rgba(255,255,255,0.2)":COLORS.gold, color:squadInviteSent?COLORS.white:COLORS.navy, border:"none", padding:"14px 40px", borderRadius:14, fontSize:16, fontWeight:700, cursor:"pointer", marginBottom:10, transition:"all 0.2s" }}>
+        {squadInviteSent ? "\u2705 Invites sent!" : "Invite friends \u2192"}
+      </button>
+      <button onClick={finishOnboarding} style={{ background:"transparent", border:"1px solid rgba(255,255,255,0.3)", color:COLORS.white, padding:"10px 30px", borderRadius:14, fontSize:14, fontWeight:600, cursor:"pointer" }}>
+        I'll do this later
+      </button>
+    </div>
+  );
+
+  // --- STEP 10: Quit Companion - substance confirmation ---
+  if (step === 10) {
+    const sub = selectedSubstance || detectedQuit || QUIT_SUBSTANCES[0];
+    return (
+      <div style={{ position:"absolute", inset:0, zIndex:200, background:bg, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", padding:"32px 24px", color:COLORS.white, textAlign:"center" }}>
+        <button onClick={finishOnboarding} style={{ position:"absolute", top:20, right:20, background:"rgba(255,255,255,0.15)", border:"none", color:COLORS.white, padding:"6px 14px", borderRadius:99, fontSize:12, fontWeight:600, cursor:"pointer" }}>Skip</button>
+        <div style={{ fontSize:48, marginBottom:12 }}>{"\uD83D\uDCAA"}</div>
+        <h2 style={{ fontSize:20, fontWeight:800, lineHeight:1.3, marginBottom:8 }}>Quit Companion activated.</h2>
+        <p style={{ fontSize:14, opacity:0.8, lineHeight:1.6, maxWidth:300, marginBottom:20 }}>
+          This isn't just saving money. Every {sub.unitName} you skip is a win for your wallet AND your body. We track both.
+        </p>
+        <div style={{ fontSize:13, fontWeight:700, color:COLORS.gold, marginBottom:20 }}>What are you quitting?</div>
+        <div style={{ display:"grid", gridTemplateColumns:"repeat(2,1fr)", gap:8, width:"100%", maxWidth:320, marginBottom:20 }}>
+          {QUIT_SUBSTANCES.map(s => (
+            <button key={s.id} onClick={() => { setSelectedSubstance(s); setUnitCost((s.unitCost/100).toFixed(2)); setPerDay(String(s.perDay)); }}
+              style={{ padding:"12px 8px", background:selectedSubstance?.id===s.id?"rgba(255,255,255,0.2)":"rgba(255,255,255,0.06)", border:selectedSubstance?.id===s.id?`2px solid ${s.color}`:"2px solid transparent", borderRadius:12, cursor:"pointer", textAlign:"center", transition:"all 0.2s", color:COLORS.white }}>
+              <div style={{ fontSize:24, marginBottom:4 }}>{s.icon}</div>
+              <div style={{ fontSize:12, fontWeight:600 }}>{s.name}</div>
+            </button>
+          ))}
+        </div>
+        <button onClick={() => setStep(11)} style={{ background:COLORS.quit, color:COLORS.white, border:"none", padding:"14px 40px", borderRadius:14, fontSize:16, fontWeight:700, cursor:"pointer" }}>
+          Next \u2192
+        </button>
+      </div>
+    );
+  }
+
+  // --- STEP 11: Quit Companion - cost per unit ---
+  if (step === 11) {
+    const sub = selectedSubstance || QUIT_SUBSTANCES[0];
+    const dailyCost = (parseFloat(unitCost || "0") * parseInt(perDay || "0"));
+    const monthlyCost = dailyCost * 30;
+    const yearlyCost = dailyCost * 365;
+    return (
+      <div style={{ position:"absolute", inset:0, zIndex:200, background:bg, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", padding:"32px 24px", color:COLORS.white, textAlign:"center" }}>
+        <div style={{ fontSize:48, marginBottom:12 }}>{sub.icon}</div>
+        <h2 style={{ fontSize:20, fontWeight:800, lineHeight:1.3, marginBottom:6 }}>Let's do the math.</h2>
+        <p style={{ fontSize:13, opacity:0.7, maxWidth:280, marginBottom:20 }}>Every {sub.unitName} has a price. Let's see what quitting is actually worth.</p>
+        <div style={{ width:"100%", maxWidth:300, marginBottom:12 }}>
+          <div style={{ fontSize:12, fontWeight:600, opacity:0.7, marginBottom:6, textAlign:"left" }}>Cost per {sub.unitName}</div>
+          <div style={{ display:"flex", alignItems:"center", gap:8, background:"rgba(255,255,255,0.1)", borderRadius:12, padding:"10px 14px" }}>
+            <span style={{ fontSize:18, fontWeight:800, opacity:0.5 }}>$</span>
+            <input type="number" inputMode="decimal" value={unitCost} onChange={e => setUnitCost(e.target.value)}
+              style={{ flex:1, border:"none", outline:"none", fontSize:20, fontWeight:700, background:"transparent", color:COLORS.white }} />
+          </div>
+        </div>
+        <div style={{ width:"100%", maxWidth:300, marginBottom:20 }}>
+          <div style={{ fontSize:12, fontWeight:600, opacity:0.7, marginBottom:6, textAlign:"left" }}>{sub.unitName}s per day</div>
+          <div style={{ display:"flex", alignItems:"center", gap:8, background:"rgba(255,255,255,0.1)", borderRadius:12, padding:"10px 14px" }}>
+            <input type="number" inputMode="numeric" value={perDay} onChange={e => setPerDay(e.target.value)}
+              style={{ flex:1, border:"none", outline:"none", fontSize:20, fontWeight:700, background:"transparent", color:COLORS.white }} />
+            <span style={{ fontSize:13, opacity:0.6 }}>/ day</span>
+          </div>
+        </div>
+        {dailyCost > 0 && (
+          <div style={{ background:"rgba(255,255,255,0.1)", borderRadius:14, padding:"16px 20px", width:"100%", maxWidth:300, marginBottom:20 }}>
+            <div style={{ fontSize:12, opacity:0.6, marginBottom:8 }}>You're burning through:</div>
+            <div style={{ display:"flex", justifyContent:"space-around" }}>
+              <div><div style={{ fontSize:18, fontWeight:800, color:COLORS.warning }}>${dailyCost.toFixed(2)}</div><div style={{ fontSize:10, opacity:0.6 }}>/day</div></div>
+              <div><div style={{ fontSize:18, fontWeight:800, color:COLORS.danger }}>${monthlyCost.toFixed(0)}</div><div style={{ fontSize:10, opacity:0.6 }}>/month</div></div>
+              <div><div style={{ fontSize:18, fontWeight:800, color:"#EF4444" }}>${yearlyCost.toFixed(0)}</div><div style={{ fontSize:10, opacity:0.6 }}>/year</div></div>
+            </div>
+          </div>
+        )}
+        <button onClick={() => setStep(12)} style={{ background:COLORS.quit, color:COLORS.white, border:"none", padding:"14px 40px", borderRadius:14, fontSize:16, fontWeight:700, cursor:"pointer" }}>
+          Lock it in \u2192
+        </button>
+      </div>
+    );
+  }
+
+  // --- STEP 12: Quit Companion - daily check-in preview ---
+  if (step === 12) {
+    const sub = selectedSubstance || QUIT_SUBSTANCES[0];
+    return (
+      <div style={{ position:"absolute", inset:0, zIndex:200, background:bg, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", padding:"32px 24px", color:COLORS.white, textAlign:"center" }}>
+        <div style={{ fontSize:48, marginBottom:12 }}>{"\uD83D\uDD25"}</div>
+        <h2 style={{ fontSize:20, fontWeight:800, lineHeight:1.3, marginBottom:8 }}>Daily check-in. Every damn day.</h2>
+        <p style={{ fontSize:14, opacity:0.8, lineHeight:1.6, maxWidth:300, marginBottom:20 }}>
+          Each morning we'll ask: did you stay clean yesterday? Every clean day locks money toward {goalNameTrimmed || "your goal"}. Slip? No guilt. Streaks reset. Comebacks don't.
+        </p>
+        {/* Mock daily check-in card */}
+        <div style={{ background:"rgba(255,255,255,0.1)", borderRadius:16, padding:"20px", width:"100%", maxWidth:300, marginBottom:20, border:"1px solid rgba(255,255,255,0.15)" }}>
+          <div style={{ fontSize:13, fontWeight:700, marginBottom:12, opacity:0.7 }}>Daily Check-in Preview</div>
+          <div style={{ fontSize:15, fontWeight:700, marginBottom:16 }}>Did you skip {sub.name.toLowerCase()} yesterday?</div>
+          <div style={{ display:"flex", gap:10 }}>
+            <div style={{ flex:1, background:"rgba(16,185,129,0.2)", border:"2px solid #10B981", borderRadius:12, padding:"12px", textAlign:"center" }}>
+              <div style={{ fontSize:24 }}>{"\u2705"}</div>
+              <div style={{ fontSize:13, fontWeight:700, color:"#10B981", marginTop:4 }}>Clean day</div>
+              <div style={{ fontSize:10, opacity:0.6 }}>+${(parseFloat(unitCost||"0") * parseInt(perDay||"0")).toFixed(2)} saved</div>
+            </div>
+            <div style={{ flex:1, background:"rgba(239,68,68,0.15)", border:"2px solid rgba(239,68,68,0.4)", borderRadius:12, padding:"12px", textAlign:"center" }}>
+              <div style={{ fontSize:24 }}>{"\uD83D\uDCAA"}</div>
+              <div style={{ fontSize:13, fontWeight:700, color:"#EF4444", marginTop:4 }}>Slipped</div>
+              <div style={{ fontSize:10, opacity:0.6 }}>Log it. Move on.</div>
+            </div>
+          </div>
+        </div>
+        <button onClick={() => setStep(13)} style={{ background:COLORS.quit, color:COLORS.white, border:"none", padding:"14px 40px", borderRadius:14, fontSize:16, fontWeight:700, cursor:"pointer" }}>
+          One more thing \u2192
+        </button>
+      </div>
+    );
+  }
+
+  // --- STEP 13: Squad invite (quit path) ---
+  if (step === 13) return (
+    <div style={{ position:"absolute", inset:0, zIndex:200, background:bg, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", padding:"32px 24px", color:COLORS.white, textAlign:"center" }}>
+      <div style={{ fontSize:48, marginBottom:12 }}>{"\uD83D\uDC65"}</div>
+      <h2 style={{ fontSize:20, fontWeight:800, lineHeight:1.3, marginBottom:8 }}>Accountability squad.</h2>
+      <p style={{ fontSize:14, opacity:0.8, lineHeight:1.6, maxWidth:300, marginBottom:24 }}>
+        Quitting alone is brutal. Your squad sees your streak, sends kudos when you're killing it, and has your back when it gets hard.
+      </p>
+      <button onClick={() => { setSquadInviteSent(true); setTimeout(finishOnboarding, 800); }}
+        style={{ background:squadInviteSent?"rgba(255,255,255,0.2)":COLORS.gold, color:squadInviteSent?COLORS.white:COLORS.navy, border:"none", padding:"14px 40px", borderRadius:14, fontSize:16, fontWeight:700, cursor:"pointer", marginBottom:10, transition:"all 0.2s" }}>
+        {squadInviteSent ? "\u2705 Invites sent!" : "Invite my people \u2192"}
+      </button>
+      <button onClick={finishOnboarding} style={{ background:"transparent", border:"1px solid rgba(255,255,255,0.3)", color:COLORS.white, padding:"10px 30px", borderRadius:14, fontSize:14, fontWeight:600, cursor:"pointer" }}>
+        Start saving now
+      </button>
+    </div>
+  );
+
+  return null;
+}
+
+// ============================================================
+// QUIT COMPANION VIEW
+// ============================================================
+function QuitCompanionView({ substance, unitCost, perDay, goalName, savings, quitData, onCheckIn }) {
+  const daysClean = quitData.daysClean;
+  const totalSkipped = quitData.totalUnitsSkipped;
+  const totalSaved = totalSkipped * unitCost;
+  const currentStreak = quitData.streak;
+  const dailySavings = unitCost * perDay;
+  const weeklySavings = dailySavings * 7;
+  const [showCheckIn, setShowCheckIn] = useState(false);
+
+  const handleCheckIn = (clean) => {
+    onCheckIn(clean);
+    setShowCheckIn(false);
+  };
+
+  return (
+    <div style={{ flex:1, overflowY:"auto", padding:16 }}>
+      {/* Hero card */}
+      <div style={{ background:`linear-gradient(135deg, ${COLORS.quit}, ${COLORS.quitDark})`, borderRadius:16, padding:"24px 20px", textAlign:"center", color:COLORS.white, marginBottom:12, position:"relative", overflow:"hidden" }}>
+        <div style={{ position:"absolute", top:10, right:14, fontSize:11, background:"rgba(255,255,255,0.15)", padding:"4px 10px", borderRadius:20, fontWeight:600 }}>
+          {"\uD83D\uDCAA"} Quit Mode
+        </div>
+        <div style={{ fontSize:12, opacity:0.8, marginBottom:2 }}>Days Clean</div>
+        <div style={{ fontSize:52, fontWeight:800, letterSpacing:-1 }}>{daysClean}</div>
+        <div style={{ display:"flex", justifyContent:"center", gap:20, marginTop:8 }}>
+          <span style={{ color:"#FFA500", fontWeight:600, fontSize:13 }}>{"\uD83D\uDD25"} {currentStreak} day streak</span>
+          <span style={{ opacity:0.8, fontSize:13 }}>{substance.icon} {totalSkipped} {substance.unitName}s skipped</span>
+        </div>
+        <div style={{ marginTop:10, fontSize:14, fontWeight:700, color:COLORS.gold }}>
+          {formatCents(totalSaved)} saved for {goalName}
+        </div>
+      </div>
+
+      {/* Daily check-in button */}
+      {!quitData.checkedInToday && (
+        <button onClick={() => setShowCheckIn(true)} style={{ width:"100%", padding:"16px", background:COLORS.white, border:`2px solid ${COLORS.quit}`, borderRadius:14, cursor:"pointer", marginBottom:12, display:"flex", alignItems:"center", justifyContent:"center", gap:10 }}>
+          <span style={{ fontSize:20 }}>{"\u2705"}</span>
+          <span style={{ fontSize:16, fontWeight:700, color:COLORS.quit }}>Daily Check-in</span>
+          <span style={{ fontSize:12, color:COLORS.textMuted, marginLeft:"auto" }}>+{formatCents(dailySavings)}</span>
+        </button>
+      )}
+      {quitData.checkedInToday && (
+        <div style={{ width:"100%", padding:"14px 16px", background:`${COLORS.success}10`, border:`2px solid ${COLORS.success}40`, borderRadius:14, marginBottom:12, display:"flex", alignItems:"center", gap:10 }}>
+          <span style={{ fontSize:20 }}>{"\u2705"}</span>
+          <div>
+            <div style={{ fontSize:14, fontWeight:700, color:COLORS.success }}>Checked in today</div>
+            <div style={{ fontSize:12, color:COLORS.textMuted }}>+{formatCents(dailySavings)} locked toward {goalName}</div>
+          </div>
+        </div>
+      )}
+
+      {/* Stats grid */}
+      <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:10, marginBottom:14 }}>
+        <div style={{ padding:14, background:COLORS.white, borderRadius:12, boxShadow:"0 1px 3px rgba(0,0,0,0.06)" }}>
+          <div style={{ fontSize:11, color:COLORS.textSecondary }}>{"\u2615"} Per day saved</div>
+          <div style={{ fontSize:18, fontWeight:700, color:COLORS.navy }}>{formatCents(dailySavings)}</div>
+        </div>
+        <div style={{ padding:14, background:COLORS.white, borderRadius:12, boxShadow:"0 1px 3px rgba(0,0,0,0.06)" }}>
+          <div style={{ fontSize:11, color:COLORS.textSecondary }}>{"\uD83D\uDCC5"} Per week saved</div>
+          <div style={{ fontSize:18, fontWeight:700, color:COLORS.navy }}>{formatCents(weeklySavings)}</div>
+        </div>
+        <div style={{ padding:14, background:COLORS.white, borderRadius:12, boxShadow:"0 1px 3px rgba(0,0,0,0.06)" }}>
+          <div style={{ fontSize:11, color:COLORS.textSecondary }}>{"\uD83D\uDCAA"} {substance.unitName}s skipped</div>
+          <div style={{ fontSize:18, fontWeight:700, color:COLORS.quit }}>{totalSkipped}</div>
+        </div>
+        <div style={{ padding:14, background:COLORS.white, borderRadius:12, boxShadow:"0 1px 3px rgba(0,0,0,0.06)" }}>
+          <div style={{ fontSize:11, color:COLORS.textSecondary }}>{"\uD83C\uDFC6"} Best streak</div>
+          <div style={{ fontSize:18, fontWeight:700, color:COLORS.gold }}>{quitData.bestStreak}d</div>
+        </div>
+      </div>
+
+      {/* Milestones */}
+      <div style={{ background:COLORS.white, borderRadius:14, padding:16, marginBottom:14, boxShadow:"0 1px 3px rgba(0,0,0,0.06)" }}>
+        <div style={{ fontSize:14, fontWeight:700, color:COLORS.navy, marginBottom:12 }}>{"\uD83C\uDFAF"} Quit Milestones</div>
+        {[
+          { days:1, label:"First 24 hours", emoji:"\uD83C\uDF1F", reward:"The hardest day. You did it." },
+          { days:3, label:"72 hours clean", emoji:"\uD83D\uDCAA", reward:"Nicotine is leaving your system." },
+          { days:7, label:"One week", emoji:"\uD83D\uDD25", reward:"Cravings peak here. You're tougher." },
+          { days:14, label:"Two weeks", emoji:"\uD83E\uDD49", reward:"First lock matures. Money unlocked." },
+          { days:30, label:"One month", emoji:"\uD83E\uDD48", reward:"Habit officially broken." },
+          { days:90, label:"Three months", emoji:"\uD83E\uDD47", reward:"New identity unlocked: non-smoker." },
+        ].map(m => {
+          const achieved = daysClean >= m.days;
+          return (
+            <div key={m.days} style={{ display:"flex", alignItems:"center", gap:10, padding:"8px 0", borderBottom:"1px solid #F3F4F6", opacity:achieved?1:0.4 }}>
+              <span style={{ fontSize:20 }}>{m.emoji}</span>
+              <div style={{ flex:1 }}>
+                <div style={{ fontSize:13, fontWeight:700, color:achieved?COLORS.navy:COLORS.textMuted }}>{m.label}</div>
+                <div style={{ fontSize:11, color:COLORS.textMuted }}>{m.reward}</div>
+              </div>
+              {achieved && <span style={{ fontSize:14 }}>{"\u2705"}</span>}
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Check-in modal */}
+      {showCheckIn && (
+        <div style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.5)", zIndex:80, display:"flex", alignItems:"center", justifyContent:"center", padding:20 }}>
+          <div style={{ background:COLORS.white, borderRadius:20, padding:24, maxWidth:340, width:"100%", textAlign:"center" }}>
+            <div style={{ fontSize:48, marginBottom:12 }}>{substance.icon}</div>
+            <div style={{ fontSize:18, fontWeight:800, color:COLORS.navy, marginBottom:6 }}>Daily Check-in</div>
+            <div style={{ fontSize:14, color:COLORS.textSecondary, marginBottom:20 }}>Did you stay clean from {substance.name.toLowerCase()} yesterday?</div>
+            <div style={{ display:"flex", gap:10 }}>
+              <button onClick={() => handleCheckIn(true)} style={{ flex:1, padding:"16px 12px", background:`${COLORS.success}10`, border:`2px solid ${COLORS.success}`, borderRadius:14, cursor:"pointer", textAlign:"center" }}>
+                <div style={{ fontSize:28 }}>{"\u2705"}</div>
+                <div style={{ fontSize:14, fontWeight:700, color:COLORS.success, marginTop:6 }}>Clean day</div>
+                <div style={{ fontSize:11, color:COLORS.textMuted, marginTop:2 }}>+{formatCents(dailySavings)}</div>
+              </button>
+              <button onClick={() => handleCheckIn(false)} style={{ flex:1, padding:"16px 12px", background:`${COLORS.danger}08`, border:`2px solid ${COLORS.danger}40`, borderRadius:14, cursor:"pointer", textAlign:"center" }}>
+                <div style={{ fontSize:28 }}>{"\uD83D\uDCAA"}</div>
+                <div style={{ fontSize:14, fontWeight:700, color:COLORS.danger, marginTop:6 }}>Slipped</div>
+                <div style={{ fontSize:11, color:COLORS.textMuted, marginTop:2 }}>No guilt. Log it.</div>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ============================================================
+// STREAK PROTECTION NUDGE
+// ============================================================
+function StreakNudge({ show, streak, goalName, onDismiss, onSave }) {
+  if (!show) return null;
+  return (
+    <div style={{ position:"fixed", top:0, left:0, right:0, zIndex:150, padding:"12px 16px", animation:"slideDown 0.3s ease" }}>
+      <div style={{ background:COLORS.navy, borderRadius:16, padding:"16px 18px", color:COLORS.white, boxShadow:"0 8px 32px rgba(0,0,0,0.3)", maxWidth:390, margin:"0 auto" }}>
+        <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:8 }}>
+          <span style={{ fontSize:20 }}>{"\uD83D\uDD25"}</span>
+          <div style={{ flex:1 }}>
+            <div style={{ fontSize:14, fontWeight:700 }}>Don't lose your {streak}-day streak!</div>
+            <div style={{ fontSize:12, opacity:0.7 }}>9:00 PM \u2014 Quick save before bed?</div>
+          </div>
+          <button onClick={onDismiss} style={{ background:"none", border:"none", color:COLORS.white, fontSize:18, cursor:"pointer", opacity:0.6 }}>{"\u2715"}</button>
+        </div>
+        <div style={{ fontSize:12, opacity:0.8, marginBottom:10 }}>
+          One skip keeps your streak alive and grows "{goalName}."
+        </div>
+        <div style={{ display:"flex", gap:8 }}>
+          <button onClick={onSave} style={{ flex:1, padding:"10px", background:COLORS.primary, color:COLORS.white, border:"none", borderRadius:10, fontWeight:700, fontSize:13, cursor:"pointer" }}>
+            Quick save {"\u2192"}
+          </button>
+          <button onClick={onDismiss} style={{ padding:"10px 14px", background:"rgba(255,255,255,0.15)", color:COLORS.white, border:"none", borderRadius:10, fontWeight:600, fontSize:13, cursor:"pointer" }}>
+            Later
+          </button>
+        </div>
+      </div>
+      <style>{'@keyframes slideDown{from{transform:translateY(-100%);opacity:0}to{transform:translateY(0);opacity:1}}'}</style>
+    </div>
+  );
+}
+
+// ============================================================
+// EARLY UNLOCK FRICTION
+// ============================================================
+function EarlyUnlockModal({ saving, onConfirm, onCancel, goalName }) {
+  if (!saving) return null;
+  const daysLeft = Math.max(0, Math.ceil((saving.unlockDate - Date.now()) / DAY));
+  const forfeitedReward = Math.round(saving.amount * (saving.tierMultiplier - 1));
+  return (
+    <div style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.6)", zIndex:100, display:"flex", alignItems:"center", justifyContent:"center", padding:20 }}>
+      <div style={{ background:COLORS.white, borderRadius:20, padding:24, maxWidth:340, width:"100%", textAlign:"center" }}>
+        <div style={{ fontSize:48, marginBottom:8 }}>{"\u26A0\uFE0F"}</div>
+        <div style={{ fontSize:18, fontWeight:800, color:COLORS.navy, marginBottom:6 }}>Unlock early?</div>
+        <div style={{ fontSize:14, color:COLORS.textSecondary, marginBottom:16 }}>
+          Only {daysLeft} days left. You're so close.
+        </div>
+        {forfeitedReward > 0 && (
+          <div style={{ background:COLORS.quitLight, borderRadius:12, padding:"12px 16px", marginBottom:16, border:`1px solid ${COLORS.danger}30` }}>
+            <div style={{ fontSize:13, fontWeight:700, color:COLORS.danger }}>You'd forfeit {formatCents(forfeitedReward)} in rewards</div>
+            <div style={{ fontSize:11, color:COLORS.textSecondary, marginTop:4 }}>
+              That's {formatCents(forfeitedReward)} less toward "{goalName}"
+            </div>
+          </div>
+        )}
+        <div style={{ display:"flex", gap:10 }}>
+          <button onClick={onCancel} style={{ flex:1, padding:"14px", background:COLORS.primary, color:COLORS.white, border:"none", borderRadius:14, fontWeight:700, fontSize:14, cursor:"pointer" }}>
+            Keep it locked {"\uD83D\uDD12"}
+          </button>
+          <button onClick={onConfirm} style={{ flex:1, padding:"14px", background:"#F3F4F6", color:COLORS.textSecondary, border:"none", borderRadius:14, fontWeight:600, fontSize:14, cursor:"pointer" }}>
+            Unlock anyway
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ============================================================
+// MILESTONE CELEBRATION
+// ============================================================
+function MilestoneCelebration({ milestone, onDismiss }) {
+  if (!milestone) return null;
+  return (
+    <div style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.6)", zIndex:120, display:"flex", alignItems:"center", justifyContent:"center", padding:20 }}>
+      <div style={{ background:COLORS.white, borderRadius:20, padding:"32px 24px", maxWidth:340, width:"100%", textAlign:"center", animation:"popIn 0.4s cubic-bezier(0.34,1.56,0.64,1)" }}>
+        <div style={{ fontSize:64, marginBottom:12 }}>{milestone.emoji}</div>
+        <div style={{ fontSize:20, fontWeight:800, color:COLORS.navy, marginBottom:6 }}>{milestone.title}</div>
+        <div style={{ fontSize:14, color:COLORS.textSecondary, lineHeight:1.5, marginBottom:20 }}>{milestone.message}</div>
+        {milestone.stat && (
+          <div style={{ background:`${COLORS.primary}10`, borderRadius:12, padding:"12px", marginBottom:20 }}>
+            <div style={{ fontSize:24, fontWeight:800, color:COLORS.primary }}>{milestone.stat}</div>
+            <div style={{ fontSize:12, color:COLORS.textMuted }}>{milestone.statLabel}</div>
+          </div>
+        )}
+        <button onClick={onDismiss} style={{ padding:"14px 40px", background:COLORS.primary, color:COLORS.white, border:"none", borderRadius:14, fontSize:16, fontWeight:700, cursor:"pointer" }}>
+          {milestone.cta || "Hell yes \uD83D\uDD25"}
+        </button>
+      </div>
+      <style>{'@keyframes popIn{from{transform:scale(0.8);opacity:0}to{transform:scale(1);opacity:1}}'}</style>
+    </div>
+  );
+}
+
+// ============================================================
+// DEMO BANNER
+// ============================================================
+function DemoBanner() {
+  return (
+    <div style={{ background:`linear-gradient(90deg,${COLORS.navy},#2E4080)`, color:COLORS.white, padding:"8px 16px", display:"flex", alignItems:"center", justifyContent:"space-between", gap:8, fontSize:11, fontWeight:600, flexShrink:0 }}>
+      <span>{"\uD83E\uDDEA"} Demo mode \u2014 data resets on refresh</span>
+      <a href="https://misersavings.com" style={{ color:COLORS.gold, textDecoration:"none", fontWeight:700, background:"rgba(255,215,0,0.15)", padding:"3px 10px", borderRadius:99, whiteSpace:"nowrap" }}>Join waitlist {"\u2192"}</a>
+    </div>
+  );
+}
+
+// ============================================================
+// ANIMATED COUNTER
+// ============================================================
+function AnimatedCounter({ value, prefix = "$", duration = 600 }) {
+  const [display, setDisplay] = useState(value);
+  const animRef = useRef(null);
+  useEffect(() => {
+    const start = display, end = value;
+    if (start === end) return;
+    const startTime = Date.now();
+    const animate = () => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setDisplay(Math.round(start + (end - start) * eased));
+      if (progress < 1) animRef.current = requestAnimationFrame(animate);
+    };
+    animRef.current = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animRef.current);
+  }, [value]);
+  return <span style={{ fontVariantNumeric:"tabular-nums" }}>{prefix}{(display/100).toFixed(2)}</span>;
+}
+
+// ============================================================
+// CONFETTI
+// ============================================================
+function Confetti({ show }) {
+  if (!show) return null;
+  const particles = Array.from({ length:40 }, (_,i) => ({
+    id:i, x:Math.random()*100, delay:Math.random()*0.5, duration:1+Math.random()*1.5,
+    color:["#0D9488","#FFD700","#FF6B35","#6C5CE7","#10B981","#FF4444"][i%6],
+    size:6+Math.random()*8, rotation:Math.random()*360,
+  }));
+  return (
+    <div style={{ position:"fixed", inset:0, pointerEvents:"none", zIndex:100 }}>
+      {particles.map(p => (
+        <div key={p.id} style={{ position:"absolute", left:`${p.x}%`, top:"-5%", width:p.size, height:p.size, backgroundColor:p.color, borderRadius:p.size>10?"2px":"50%", transform:`rotate(${p.rotation}deg)`, animation:`confettiFall ${p.duration}s ease-in ${p.delay}s forwards` }} />
+      ))}
+      <style>{'@keyframes confettiFall{0%{transform:translateY(0) rotate(0deg);opacity:1}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}'}</style>
+    </div>
+  );
+}
+
+function PulseRing({ show }) {
+  if (!show) return null;
+  return (
+    <div style={{ position:"absolute", inset:0, display:"flex", alignItems:"center", justifyContent:"center", pointerEvents:"none" }}>
+      {[0,0.15,0.3].map((delay,i) => (
+        <div key={i} style={{ position:"absolute", width:120, height:120, borderRadius:"50%", border:`3px solid ${COLORS.primary}`, animation:`pulseRing 1s ease-out ${delay}s forwards`, opacity:0 }} />
+      ))}
+      <style>{'@keyframes pulseRing{0%{transform:scale(0.5);opacity:0.8}100%{transform:scale(3);opacity:0}}'}</style>
+    </div>
+  );
+}
+
+// ============================================================
+// SOCIAL FRIENDS VIEW
+// ============================================================
+function FriendsView({ savings, store }) {
+  const myTotal = savings.reduce((s,x)=>s+x.amount,0);
+  const myStreak = store.streak;
+  const [feed, setFeed] = useState(DEMO_FEED);
+  const [friends, setFriends] = useState(DEMO_FRIENDS);
+  const [activeSection, setActiveSection] = useState("feed");
+  const leaderboard = [...friends.filter(f=>f.following), { id:"you", name:"You", avatar:"\uD83D\uDE24", streak:myStreak, totalCents:myTotal, color:COLORS.primary, isMe:true }].sort((a,b)=>b.totalCents-a.totalCents);
+  const handleKudos = (activityId) => { setFeed(prev => prev.map(a => a.id===activityId ? { ...a, kudos: a.youKudosed ? a.kudos-1 : a.kudos+1, youKudosed: !a.youKudosed } : a)); };
+  const handleFollow = (friendId) => { setFriends(prev => prev.map(f => f.id===friendId ? {...f, following:!f.following} : f)); };
+
+  return (
+    <div style={{ flex:1, overflowY:"auto" }}>
+      <div style={{ display:"flex", gap:8, padding:"12px 16px 8px", background:COLORS.background }}>
+        {[{id:"feed",label:"Activity"},{id:"leaderboard",label:"Leaderboard"}].map(s=>(
+          <button key={s.id} onClick={()=>setActiveSection(s.id)} style={{ flex:1, padding:"8px 0", borderRadius:10, border:"none", cursor:"pointer", background:activeSection===s.id?COLORS.primary:"#E5E7EB", color:activeSection===s.id?COLORS.white:COLORS.textSecondary, fontWeight:activeSection===s.id?700:500, fontSize:13, transition:"all 0.2s" }}>{s.label}</button>
+        ))}
+      </div>
+      {activeSection==="feed" && (
+        <div style={{ padding:"0 16px 16px", display:"flex", flexDirection:"column", gap:10 }}>
+          <div style={{ background:COLORS.white, borderRadius:12, padding:"12px 14px", display:"flex", alignItems:"center", gap:10 }}>
+            <span style={{ fontSize:22 }}>{"\uD83D\uDC65"}</span>
+            <div style={{ flex:1 }}>
+              <div style={{ fontSize:13, fontWeight:700, color:COLORS.navy }}>Invite friends</div>
+              <div style={{ fontSize:11, color:COLORS.textMuted }}>See who saves more</div>
+            </div>
+            <button style={{ background:COLORS.primary, color:COLORS.white, border:"none", borderRadius:8, padding:"6px 12px", fontSize:12, fontWeight:700, cursor:"pointer" }}>Invite</button>
+          </div>
+          {feed.map(activity => {
+            const friend = DEMO_FRIENDS.find(f=>f.id===activity.friendId);
+            if (!friend) return null;
+            return (
+              <div key={activity.id} style={{ background:COLORS.white, borderRadius:14, padding:"14px", boxShadow:"0 1px 4px rgba(0,0,0,0.06)" }}>
+                <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:10 }}>
+                  <div style={{ width:38, height:38, borderRadius:"50%", background:`${friend.color}20`, border:`2px solid ${friend.color}40`, display:"flex", alignItems:"center", justifyContent:"center", fontSize:20 }}>{friend.avatar}</div>
+                  <div style={{ flex:1 }}>
+                    <div style={{ fontSize:13, fontWeight:700, color:COLORS.navy }}>{friend.name}</div>
+                    <div style={{ fontSize:11, color:COLORS.textMuted }}>{"\uD83D\uDD25"} {friend.streak} day streak</div>
+                  </div>
+                  <div style={{ fontSize:11, color:COLORS.textMuted }}>{activity.ago}</div>
+                </div>
+                <div style={{ background:COLORS.background, borderRadius:10, padding:"10px 12px", marginBottom:10, display:"flex", alignItems:"center", gap:10 }}>
+                  <span style={{ fontSize:22 }}>{activity.catIcon}</span>
+                  <div style={{ flex:1 }}>
+                    <div style={{ fontSize:12, color:COLORS.textSecondary }}>Skipped {activity.catName}</div>
+                    <div style={{ fontSize:16, fontWeight:800, color:COLORS.navy }}>{formatCents(activity.amount)}</div>
+                  </div>
+                  <div style={{ textAlign:"right" }}>
+                    <div style={{ display:"inline-flex", alignItems:"center", gap:4, background:`${activity.tier.color}15`, border:`1px solid ${activity.tier.color}40`, borderRadius:8, padding:"3px 8px" }}>
+                      <span style={{ fontSize:14 }}>{activity.tier.badge}</span>
+                      <span style={{ fontSize:11, fontWeight:700, color:activity.tier.color }}>{activity.tier.tier}</span>
+                    </div>
+                  </div>
+                </div>
+                <div style={{ display:"flex", alignItems:"center", gap:8 }}>
+                  <button onClick={()=>handleKudos(activity.id)} style={{ display:"flex", alignItems:"center", gap:6, background:activity.youKudosed?`${COLORS.primary}15`:"#F3F4F6", border:activity.youKudosed?`1.5px solid ${COLORS.primary}40`:"1.5px solid transparent", borderRadius:20, padding:"5px 12px", cursor:"pointer", color:activity.youKudosed?COLORS.primary:COLORS.textSecondary, fontWeight:activity.youKudosed?700:500, fontSize:13 }}>
+                    <span style={{ fontSize:16 }}>{"\uD83D\uDC4A"}</span><span>{activity.kudos} Kudos</span>
+                  </button>
+                  {!friend.following && <button onClick={()=>handleFollow(friend.id)} style={{ marginLeft:"auto", background:COLORS.primary, color:COLORS.white, border:"none", borderRadius:20, padding:"5px 12px", fontSize:12, fontWeight:700, cursor:"pointer" }}>Follow</button>}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+      {activeSection==="leaderboard" && (
+        <div style={{ padding:"8px 16px 16px", display:"flex", flexDirection:"column", gap:8 }}>
+          <div style={{ fontSize:12, color:COLORS.textMuted, marginBottom:4, textAlign:"center" }}>This month {"\u00B7"} Total saved</div>
+          {leaderboard.map((person, rank) => {
+            const mTitle = getMiserTitle(person.totalCents);
+            return (
+              <div key={person.id} style={{ background:person.isMe?`${COLORS.primary}10`:COLORS.white, border:person.isMe?`2px solid ${COLORS.primary}40`:"2px solid transparent", borderRadius:14, padding:"12px 14px", display:"flex", alignItems:"center", gap:12, boxShadow:"0 1px 4px rgba(0,0,0,0.06)" }}>
+                <div style={{ width:28, textAlign:"center" }}>
+                  {rank===0 ? <span style={{ fontSize:20 }}>{"\uD83E\uDD47"}</span> : rank===1 ? <span style={{ fontSize:20 }}>{"\uD83E\uDD48"}</span> : rank===2 ? <span style={{ fontSize:20 }}>{"\uD83E\uDD49"}</span> : <span style={{ fontSize:14, fontWeight:700, color:COLORS.textMuted }}>#{rank+1}</span>}
+                </div>
+                <div style={{ width:36, height:36, borderRadius:"50%", background:`${person.color}20`, border:`2px solid ${person.color}50`, display:"flex", alignItems:"center", justifyContent:"center", fontSize:18 }}>{person.avatar}</div>
+                <div style={{ flex:1 }}>
+                  <div style={{ fontSize:13, fontWeight:700, color:person.isMe?COLORS.primary:COLORS.navy }}>{person.name}{person.isMe?" (You)":""}</div>
+                  <div style={{ fontSize:11, color:COLORS.textMuted }}>{mTitle.icon} {mTitle.title}</div>
+                </div>
+                <div style={{ textAlign:"right" }}>
+                  <div style={{ fontSize:15, fontWeight:800, color:COLORS.navy }}>{formatCents(person.totalCents)}</div>
+                  <div style={{ fontSize:11, color:"#F59E0B", fontWeight:600 }}>{"\uD83D\uDD25"} {person.streak}d streak</div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ============================================================
+// TAB BAR
+// ============================================================
+function TabBar({ activeTab, onTabChange, isQuitMode }) {
+  const tabs = isQuitMode
+    ? [{ id:"home", label:"Home", icon:"\uD83C\uDFE0" },{ id:"quit", label:"Quit", icon:"\uD83D\uDCAA" },{ id:"friends", label:"Friends", icon:"\uD83D\uDC65" },{ id:"history", label:"History", icon:"\uD83D\uDD50" },{ id:"profile", label:"Profile", icon:"\uD83D\uDC64" }]
+    : [{ id:"home", label:"Home", icon:"\uD83C\uDFE0" },{ id:"friends", label:"Friends", icon:"\uD83D\uDC65" },{ id:"history", label:"History", icon:"\uD83D\uDD50" },{ id:"profile", label:"Profile", icon:"\uD83D\uDC64" }];
+  return (
+    <div style={{ display:"flex", justifyContent:"space-around", alignItems:"center", padding:"8px 0 20px", background:COLORS.white, borderTop:"1px solid #E5E7EB", position:"sticky", bottom:0 }}>
+      {tabs.map(tab => (
+        <button key={tab.id} onClick={() => onTabChange(tab.id)} style={{ display:"flex", flexDirection:"column", alignItems:"center", gap:2, background:"none", border:"none", cursor:"pointer", padding:"4px 12px", color:activeTab===tab.id?(tab.id==="quit"?COLORS.quit:COLORS.primary):COLORS.textMuted, transition:"all 0.2s", transform:activeTab===tab.id?"scale(1.1)":"scale(1)" }}>
+          <span style={{ fontSize:isQuitMode?18:22 }}>{tab.icon}</span>
+          <span style={{ fontSize:10, fontWeight:activeTab===tab.id?700:500 }}>{tab.label}</span>
+        </button>
+      ))}
+    </div>
+  );
+}
+
+// ============================================================
+// STAT CARD / SAVING ROW / MISER TITLE CARD / CHARTS
+// ============================================================
+function StatCard({ title, value, icon, color }) {
+  return (
+    <div style={{ flex:1, padding:14, background:COLORS.white, borderRadius:12, boxShadow:"0 1px 3px rgba(0,0,0,0.06)" }}>
+      <div style={{ display:"flex", alignItems:"center", gap:6, marginBottom:6 }}><span style={{ color }}>{icon}</span><span style={{ fontSize:12, color:COLORS.textSecondary }}>{title}</span></div>
+      <div style={{ fontSize:18, fontWeight:700, color:COLORS.navy }}>{value}</div>
+    </div>
+  );
+}
+
+function SavingRow({ saving, categories, onEarlyUnlock }) {
+  const cat = categories.find(c => c.id===saving.category) || categories[7];
+  const daysLeft = Math.max(0, Math.ceil((saving.unlockDate-Date.now())/86400000));
+  return (
+    <div style={{ display:"flex", alignItems:"center", gap:12, padding:"10px 14px", background:COLORS.white, borderRadius:10, boxShadow:"0 1px 2px rgba(0,0,0,0.04)" }}>
+      <div style={{ width:40, height:40, borderRadius:"50%", background:`${cat.color}20`, display:"flex", alignItems:"center", justifyContent:"center", fontSize:18 }}>{cat.icon}</div>
+      <div style={{ flex:1 }}>
+        <div style={{ display:"flex", alignItems:"center", gap:6 }}>
+          <span style={{ fontSize:14, fontWeight:600, color:COLORS.navy }}>{cat.name}</span>
+          {saving.tierBadge && <span style={{ fontSize:10, fontWeight:700, color:saving.tierColor, background:`${saving.tierColor}20`, borderRadius:99, padding:"1px 6px" }}>{saving.tierBadge} {saving.tierName}</span>}
+        </div>
+        <div style={{ fontSize:11, color:COLORS.textSecondary }}>
+          {saving.status==="locked" ? (
+            <span>
+              <span style={{ color:COLORS.warning }}>{"\uD83D\uDD12"} {daysLeft}d left</span>
+              {onEarlyUnlock && <button onClick={() => onEarlyUnlock(saving)} style={{ background:"none", border:"none", color:COLORS.textMuted, fontSize:10, cursor:"pointer", marginLeft:6, textDecoration:"underline" }}>unlock?</button>}
+            </span>
+          ) : <span style={{ color:COLORS.success }}>{"\u2705"} Available</span>}
+          <span style={{ margin:"0 4px" }}>{"\u00B7"}</span>{new Date(saving.createdAt).toLocaleDateString()}
+        </div>
+      </div>
+      <div style={{ fontSize:15, fontWeight:700, color:COLORS.primary }}>{formatCents(saving.amount)}</div>
+    </div>
+  );
+}
+
+function MiserTitleCard({ totalCents }) {
+  const info = getMiserTitle(totalCents);
+  return (
+    <div style={{ background:COLORS.white, borderRadius:14, padding:16, marginBottom:14, boxShadow:"0 1px 3px rgba(0,0,0,0.06)", border:`2px solid ${info.color}30` }}>
+      <div style={{ display:"flex", alignItems:"center", gap:12, marginBottom:10 }}>
+        <div style={{ width:48, height:48, borderRadius:14, background:`${info.color}20`, display:"flex", alignItems:"center", justifyContent:"center", fontSize:26 }}>{info.icon}</div>
+        <div style={{ flex:1 }}>
+          <div style={{ fontSize:11, color:COLORS.textMuted, textTransform:"uppercase", letterSpacing:1 }}>Your Miser Rank</div>
+          <div style={{ fontSize:17, fontWeight:800, color:info.color }}>{info.title}</div>
+          <div style={{ fontSize:11, color:COLORS.textSecondary }}>{info.desc}</div>
+        </div>
+      </div>
+      {info.next && (
+        <div>
+          <div style={{ display:"flex", justifyContent:"space-between", marginBottom:4 }}>
+            <span style={{ fontSize:10, color:COLORS.textMuted }}>Progress to <b>{info.next.title}</b></span>
+            <span style={{ fontSize:10, color:COLORS.textMuted }}>{Math.round(info.progress)}%</span>
+          </div>
+          <div style={{ height:6, background:"#F3F4F6", borderRadius:99 }}>
+            <div style={{ height:"100%", borderRadius:99, width:`${info.progress}%`, background:`linear-gradient(90deg,${info.color},${info.next.color})`, transition:"width 0.8s ease" }} />
+          </div>
+          <div style={{ fontSize:10, color:COLORS.textMuted, marginTop:4 }}>{formatCents(info.next.minCents-totalCents)} more to level up</div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function MonthlySavingsChart({ savings }) {
+  const months = [];
+  for (let i=5; i>=0; i--) { const d = new Date(); d.setMonth(d.getMonth()-i); months.push({ label:d.toLocaleDateString("en-US",{month:"short"}), year:d.getFullYear(), month:d.getMonth(), total:0 }); }
+  savings.forEach(s => { const d = new Date(s.createdAt); const entry = months.find(m => m.month===d.getMonth() && m.year===d.getFullYear()); if (entry) entry.total += s.amount; });
+  const [tooltip, setTooltip] = useState(null);
+  const maxTotal = Math.max(...months.map(m => m.total), 1);
+  const chartH = 90; const barW = 32; const gap = 14;
+  const totalW = months.length * (barW + gap) - gap;
+  return (
+    <div style={{ background:COLORS.white, borderRadius:14, padding:"16px 12px 8px", marginBottom:14, boxShadow:"0 1px 3px rgba(0,0,0,0.06)" }}>
+      <div style={{ fontSize:14, fontWeight:700, color:COLORS.navy, marginBottom:12, paddingLeft:4 }}>{"\uD83D\uDCCA"} Savings per Month</div>
+      <svg width="100%" viewBox={`0 0 ${totalW + 4} ${chartH + 22}`} style={{ display:"block", overflow:"visible" }}>
+        {months.map((m, i) => {
+          const barH = m.total > 0 ? Math.max((m.total / maxTotal) * chartH, 6) : 2;
+          const x = i * (barW + gap); const y = chartH - barH; const isLast = i === months.length - 1;
+          return (
+            <g key={i} style={{ cursor:"default" }} onMouseEnter={() => setTooltip(i)} onMouseLeave={() => setTooltip(null)}>
+              <rect x={x} y={y} width={barW} height={barH} rx={5} fill={isLast ? COLORS.primary : `${COLORS.primary}55`} />
+              <text x={x + barW/2} y={chartH + 14} textAnchor="middle" fontSize={10} fill={COLORS.textSecondary}>{m.label}</text>
+              {tooltip === i && <g><rect x={Math.min(x-4,totalW-74)} y={Math.max(y-34,0)} width={72} height={26} rx={6} fill={COLORS.navy} opacity={0.92} /><text x={Math.min(x-4,totalW-74)+36} y={Math.max(y-34,0)+10} textAnchor="middle" fontSize={9} fill={COLORS.white} fontWeight="700">{m.label}</text><text x={Math.min(x-4,totalW-74)+36} y={Math.max(y-34,0)+21} textAnchor="middle" fontSize={10} fill="#6EE7B7" fontWeight="700">{formatCents(m.total)}</text></g>}
+            </g>
+          );
+        })}
+      </svg>
+    </div>
+  );
+}
+
+function SavingsGoalTracker({ totalCents, goal, goalName, onSetGoal }) {
+  const progress = goal>0 ? Math.min(100,(totalCents/goal)*100) : 0;
+  const remaining = Math.max(0,goal-totalCents);
+  const achieved = totalCents>=goal && goal>0;
+  if (!goal) return null;
+  return (
+    <div style={{ background:COLORS.white, borderRadius:14, padding:16, marginBottom:14, boxShadow:"0 1px 3px rgba(0,0,0,0.06)", border:achieved?`2px solid ${COLORS.success}`:"none" }}>
+      <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", marginBottom:8 }}>
+        <div style={{ fontSize:14, fontWeight:700, color:COLORS.navy }}>{"\uD83C\uDFAF"} {goalName}: {formatCents(goal)}</div>
+      </div>
+      {achieved ? (
+        <div style={{ textAlign:"center", padding:"8px 0" }}>
+          <div style={{ fontSize:28 }}>{"\uD83C\uDFC6"}</div>
+          <div style={{ fontSize:14, fontWeight:700, color:COLORS.success }}>Goal achieved! You magnificent miser.</div>
+        </div>
+      ) : (
+        <>
+          <div style={{ height:10, background:"#F3F4F6", borderRadius:99, marginBottom:6 }}>
+            <div style={{ height:"100%", borderRadius:99, width:`${progress}%`, background:`linear-gradient(90deg,${COLORS.primary},${COLORS.success})`, transition:"width 0.8s ease" }} />
+          </div>
+          <div style={{ display:"flex", justifyContent:"space-between" }}>
+            <span style={{ fontSize:11, color:COLORS.textSecondary }}>{Math.round(progress)}% toward {goalName}</span>
+            <span style={{ fontSize:11, color:COLORS.textMuted }}>{formatCents(remaining)} to go</span>
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
+function SavingsBreakdown({ savings, allCategories, compact=false }) {
+  if (savings.length===0) return null;
+  const totalCents = savings.reduce((s,x)=>s+x.amount,0);
+  const byCategory = {};
+  savings.forEach(s => { if (!byCategory[s.category]) byCategory[s.category]={total:0,count:0}; byCategory[s.category].total += s.amount; byCategory[s.category].count += 1; });
+  const sorted = Object.entries(byCategory).map(([id,data]) => { const cat = allCategories.find(c=>c.id===id)||{name:id,icon:"\u2728",color:COLORS.primary}; return { ...cat, ...data, pct:Math.round((data.total/totalCents)*100) }; }).sort((a,b)=>b.total-a.total);
+  const topItems = compact ? sorted.slice(0,4) : sorted;
+  return (
+    <div style={{ background:COLORS.white, borderRadius:14, padding:16, marginBottom:14, boxShadow:"0 1px 3px rgba(0,0,0,0.06)" }}>
+      <div style={{ fontSize:14, fontWeight:700, color:COLORS.navy, marginBottom:14 }}>{"\uD83D\uDDC2\uFE0F"} Savings by Category</div>
+      <div style={{ display:"flex", height:8, borderRadius:99, overflow:"hidden", marginBottom:14, gap:2 }}>
+        {sorted.map(cat=><div key={cat.id} style={{ width:`${cat.pct}%`, background:cat.color, transition:"width 0.8s ease" }} />)}
+      </div>
+      <div style={{ display:"flex", flexDirection:"column", gap:10 }}>
+        {topItems.map(cat => (
+          <div key={cat.id}>
+            <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:4 }}>
+              <div style={{ width:32, height:32, borderRadius:10, background:`${cat.color}20`, display:"flex", alignItems:"center", justifyContent:"center", fontSize:16, flexShrink:0 }}>{cat.icon}</div>
+              <div style={{ flex:1 }}>
+                <div style={{ display:"flex", justifyContent:"space-between", marginBottom:3 }}>
+                  <span style={{ fontSize:13, fontWeight:600, color:COLORS.navy }}>{cat.name}</span>
+                  <span style={{ fontSize:13, fontWeight:700, color:COLORS.navy }}>{formatCents(cat.total)}</span>
+                </div>
+                <div style={{ height:5, background:"#F3F4F6", borderRadius:99 }}><div style={{ height:"100%", borderRadius:99, width:`${cat.pct}%`, background:cat.color }} /></div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ============================================================
+// DASHBOARD VIEW (goal-anchored)
+// ============================================================
+function DashboardView({ savings, store, onOpenSave, goal, goalName, onSetGoal, customCategories=[] }) {
+  const totalCents = savings.reduce((s,x)=>s+x.amount,0);
+  const todayCents = savings.filter(s=>new Date(s.createdAt).toDateString()===new Date().toDateString()).reduce((s,x)=>s+x.amount,0);
+  const weekStart = new Date(); weekStart.setDate(weekStart.getDate()-weekStart.getDay()); weekStart.setHours(0,0,0,0);
+  const weekCents = savings.filter(s=>new Date(s.createdAt)>=weekStart).reduce((s,x)=>s+x.amount,0);
+  const titleInfo = getMiserTitle(totalCents);
+  return (
+    <div style={{ flex:1, overflowY:"auto", padding:16 }}>
+      <div style={{ background:`linear-gradient(135deg,${COLORS.primary},${COLORS.navy})`, borderRadius:16, padding:"24px 20px", textAlign:"center", color:COLORS.white, marginBottom:12 }}>
+        <div style={{ fontSize:12, opacity:0.8, marginBottom:2 }}>Total Saved for "{goalName}"</div>
+        <div style={{ fontSize:42, fontWeight:800, letterSpacing:-1 }}><AnimatedCounter value={totalCents} /></div>
+        <div style={{ display:"inline-flex", alignItems:"center", gap:6, background:"rgba(255,255,255,0.15)", borderRadius:20, padding:"4px 12px", marginTop:8, marginBottom:4 }}>
+          <span>{titleInfo.icon}</span><span style={{ fontSize:12, fontWeight:700 }}>{titleInfo.title}</span>
+        </div>
+        <div style={{ display:"flex", justifyContent:"center", gap:20, marginTop:6 }}>
+          <span style={{ color:"#FFA500", fontWeight:600, fontSize:13 }}>{"\uD83D\uDD25"} {store.streak} day{store.streak!==1?"s":""}</span>
+          <span style={{ opacity:0.8, fontSize:13 }}>{"\u2705"} {savings.length} save{savings.length!==1?"s":""}</span>
+        </div>
+      </div>
+      <button onClick={onOpenSave} style={{ width:"100%", padding:"14px 0", background:COLORS.primary, color:COLORS.white, border:"none", borderRadius:14, fontSize:17, fontWeight:700, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", gap:10, boxShadow:`0 4px 14px ${COLORS.primary}50`, marginBottom:12 }}>
+        <span style={{ fontSize:20 }}>{"\u2295"}</span> Skip & Save
+      </button>
+      <div style={{ display:"flex", gap:10, marginBottom:14 }}>
+        <StatCard title="Today" value={formatCents(todayCents)} icon={"\u2600\uFE0F"} color="#F59E0B" />
+        <StatCard title="This Week" value={formatCents(weekCents)} icon={"\uD83D\uDCC5"} color={COLORS.blue} />
+      </div>
+      <SavingsGoalTracker totalCents={totalCents} goal={goal} goalName={goalName} onSetGoal={onSetGoal} />
+      <MonthlySavingsChart savings={savings} />
+      <SavingsBreakdown savings={savings} allCategories={[...CATEGORIES,...customCategories]} compact={true} />
+      {savings.length>0 && (
+        <div>
+          <div style={{ fontSize:16, fontWeight:700, color:COLORS.navy, marginBottom:10 }}>Recent Saves</div>
+          <div style={{ display:"flex", flexDirection:"column", gap:8 }}>
+            {savings.slice(0,5).map(s=><SavingRow key={s.id} saving={s} categories={[...CATEGORIES,...customCategories]} />)}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ============================================================
+// ADD CUSTOM CATEGORY SHEET
+// ============================================================
+function AddCategorySheet({ onAdd, onClose, existingCount }) {
+  const [name, setName] = useState(""); const [emoji, setEmoji] = useState("\u2728"); const [amount, setAmount] = useState("");
+  const color = CUSTOM_COLORS[existingCount % CUSTOM_COLORS.length]; const canAdd = name.trim().length>=2;
+  const handleAdd = () => { if (!canAdd) return; onAdd({ id:`custom_${Date.now()}`, name:name.trim(), icon:emoji, defaultAmount:Math.round(parseFloat(amount||"0")*100), color }); onClose(); };
+  return (
+    <div style={{ position:"absolute", inset:0, background:"rgba(0,0,0,0.5)", zIndex:80, display:"flex", alignItems:"flex-end" }}>
+      <div style={{ width:"100%", background:COLORS.white, borderRadius:"20px 20px 0 0", padding:"20px 20px 36px", animation:"slideUp 0.3s cubic-bezier(0.34,1.56,0.64,1)" }}>
+        <div style={{ width:40, height:4, background:"#E5E7EB", borderRadius:99, margin:"0 auto 20px" }} />
+        <div style={{ fontSize:18, fontWeight:800, color:COLORS.navy, marginBottom:4 }}>Create your own category</div>
+        <div style={{ fontSize:13, color:COLORS.textSecondary, marginBottom:20 }}>Quit smoking? Stopped gambling? Make it personal.</div>
+        <div style={{ display:"flex", justifyContent:"center", marginBottom:20 }}>
+          <div style={{ textAlign:"center" }}>
+            <div style={{ width:64, height:64, borderRadius:"50%", background:color, display:"flex", alignItems:"center", justifyContent:"center", fontSize:30, margin:"0 auto 8px", boxShadow:`0 4px 14px ${color}50` }}>{emoji}</div>
+            <div style={{ fontSize:13, fontWeight:700, color:COLORS.navy }}>{name||"My Category"}</div>
+          </div>
+        </div>
+        <div style={{ marginBottom:14 }}>
+          <div style={{ fontSize:12, fontWeight:600, color:COLORS.textSecondary, marginBottom:8 }}>Pick an icon</div>
+          <div style={{ display:"flex", flexWrap:"wrap", gap:8 }}>
+            {EMOJI_SUGGESTIONS.map(e=>(<button key={e} onClick={()=>setEmoji(e)} style={{ width:40, height:40, fontSize:20, borderRadius:10, border:emoji===e?`2px solid ${color}`:"2px solid #E5E7EB", background:emoji===e?`${color}15`:"transparent", cursor:"pointer" }}>{e}</button>))}
+          </div>
+        </div>
+        <div style={{ marginBottom:14 }}>
+          <div style={{ fontSize:12, fontWeight:600, color:COLORS.textSecondary, marginBottom:6 }}>Category name</div>
+          <input type="text" placeholder="e.g. Cigarettes, Gambling..." value={name} onChange={e=>setName(e.target.value)} maxLength={24} autoFocus
+            style={{ width:"100%", padding:"12px 14px", fontSize:15, fontWeight:600, border:`2px solid ${name?color:"#E5E7EB"}`, borderRadius:12, outline:"none", boxSizing:"border-box" }} />
+        </div>
+        <div style={{ marginBottom:20 }}>
+          <div style={{ fontSize:12, fontWeight:600, color:COLORS.textSecondary, marginBottom:6 }}>Typical amount <span style={{ fontWeight:400 }}>(optional)</span></div>
+          <div style={{ display:"flex", alignItems:"center", gap:8, border:`2px solid ${amount?color:"#E5E7EB"}`, borderRadius:12, padding:"10px 14px" }}>
+            <span style={{ fontSize:16, fontWeight:700, color:COLORS.textMuted }}>$</span>
+            <input type="number" inputMode="decimal" placeholder="0.00" value={amount} onChange={e=>setAmount(e.target.value)}
+              style={{ flex:1, border:"none", outline:"none", fontSize:15, fontWeight:600, background:"transparent", color:COLORS.navy }} />
+          </div>
+        </div>
+        <div style={{ display:"flex", gap:10 }}>
+          <button onClick={onClose} style={{ flex:1, padding:"14px 0", background:"#F3F4F6", color:COLORS.navy, border:"none", borderRadius:14, fontWeight:700, fontSize:15, cursor:"pointer" }}>Cancel</button>
+          <button onClick={handleAdd} disabled={!canAdd} style={{ flex:2, padding:"14px 0", background:canAdd?color:"#D1D5DB", color:COLORS.white, border:"none", borderRadius:14, fontWeight:700, fontSize:15, cursor:canAdd?"pointer":"default" }}>Add Category</button>
+        </div>
+      </div>
+      <style>{'@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}'}</style>
+    </div>
+  );
+}
+
+// ============================================================
+// SAVE VIEW
+// ============================================================
+function SaveView({ onClose, onSave, customCategories, onAddCustomCategory, goalName }) {
+  const [selectedCat, setSelectedCat] = useState(null);
+  const [adjustedAmount, setAdjustedAmount] = useState("");
+  const [selectedTier, setSelectedTier] = useState(LOCK_TIERS[0]);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(false);
+  const [showPulse, setShowPulse] = useState(false);
+  const [savedAmount, setSavedAmount] = useState(0);
+  const [showAddCat, setShowAddCat] = useState(false);
+  const allCategories = [...CATEGORIES, ...customCategories];
+  const handleSelectCat = (cat) => { setSelectedCat(cat); if (cat.defaultAmount>0) setAdjustedAmount((cat.defaultAmount/100).toFixed(2)); else setAdjustedAmount(""); };
+  const amountCents = Math.round(parseFloat(adjustedAmount||"0")*100);
+  const canSave = selectedCat && amountCents>0;
+  const unlockDate = new Date(); unlockDate.setDate(unlockDate.getDate()+selectedTier.days);
+  const handleSave = () => {
+    if (!canSave) return;
+    setSavedAmount(amountCents); setShowPulse(true);
+    setTimeout(()=>{ setShowConfetti(true); setShowSuccess(true); },300);
+    setTimeout(()=>setShowConfetti(false),2500);
+    onSave({ amount:amountCents, category:selectedCat.id, lockDays:selectedTier.days, tier:selectedTier });
+  };
+  if (showSuccess) return (
+    <div style={{ position:"absolute", inset:0, background:COLORS.white, zIndex:50, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", padding:32, textAlign:"center" }}>
+      <Confetti show={showConfetti} />
+      <div style={{ fontSize:72, marginBottom:16 }}>{"\uD83D\uDCB0"}</div>
+      <div style={{ fontSize:24, fontWeight:800, color:COLORS.navy, marginBottom:8 }}>Saved {formatCents(savedAmount)}!</div>
+      <div style={{ fontSize:14, color:COLORS.primary, fontWeight:600, marginBottom:4 }}>Locked toward "{goalName}"</div>
+      <div style={{ fontSize:14, color:COLORS.textSecondary, marginBottom:6 }}>Locked for {selectedTier.label}</div>
+      <div style={{ fontSize:13, color:COLORS.textMuted, marginBottom:24 }}>Unlocks {unlockDate.toLocaleDateString()}</div>
+      <div style={{ display:"inline-flex", alignItems:"center", gap:8, background:`${selectedTier.color}15`, border:`2px solid ${selectedTier.color}40`, borderRadius:14, padding:"10px 20px", marginBottom:24 }}>
+        <span style={{ fontSize:24 }}>{selectedTier.badge}</span>
+        <div style={{ textAlign:"left" }}>
+          <div style={{ fontSize:13, fontWeight:700, color:selectedTier.color }}>{selectedTier.tier} Tier</div>
+          <div style={{ fontSize:11, color:COLORS.textMuted }}>{selectedTier.multiplier} reward multiplier</div>
+        </div>
+      </div>
+      <button onClick={onClose} style={{ padding:"14px 40px", background:COLORS.primary, color:COLORS.white, border:"none", borderRadius:14, fontSize:16, fontWeight:700, cursor:"pointer" }}>Done {"\u2713"}</button>
+    </div>
+  );
+  return (
+    <div style={{ position:"absolute", inset:0, background:COLORS.background, zIndex:50, display:"flex", flexDirection:"column", overflow:"hidden" }}>
+      <div style={{ display:"flex", alignItems:"center", padding:"16px 20px 12px", background:COLORS.white, borderBottom:"1px solid #E5E7EB" }}>
+        <button onClick={onClose} style={{ background:"#F3F4F6", border:"none", borderRadius:99, width:32, height:32, fontSize:18, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center" }}>{"\u2190"}</button>
+        <div style={{ flex:1, textAlign:"center", fontSize:17, fontWeight:700, color:COLORS.navy }}>Skip & Save</div>
+        <div style={{ width:32 }} />
+      </div>
+      <div style={{ flex:1, overflowY:"auto", padding:16, position:"relative" }}>
+        <PulseRing show={showPulse} />
+        <div style={{ fontSize:14, fontWeight:700, color:COLORS.navy, marginBottom:12 }}>What are you skipping?</div>
+        <div style={{ display:"grid", gridTemplateColumns:"repeat(4,1fr)", gap:8, marginBottom:20 }}>
+          {allCategories.filter(c=>c.id!=="custom").map(cat=>(
+            <button key={cat.id} onClick={()=>handleSelectCat(cat)} style={{ padding:"10px 4px", background:selectedCat?.id===cat.id?`${cat.color}15`:COLORS.white, border:selectedCat?.id===cat.id?`2px solid ${cat.color}`:"2px solid transparent", borderRadius:12, cursor:"pointer", textAlign:"center", transition:"all 0.2s" }}>
+              <div style={{ fontSize:24, marginBottom:4 }}>{cat.icon}</div>
+              <div style={{ fontSize:11, fontWeight:600, color:COLORS.navy }}>{cat.name}</div>
+            </button>
+          ))}
+          <button onClick={()=>setShowAddCat(true)} style={{ padding:"10px 4px", background:COLORS.white, border:"2px dashed #E5E7EB", borderRadius:12, cursor:"pointer", textAlign:"center" }}>
+            <div style={{ fontSize:24, marginBottom:4 }}>{"\u2795"}</div><div style={{ fontSize:11, fontWeight:600, color:COLORS.textMuted }}>Add</div>
+          </button>
+        </div>
+        {selectedCat && (
+          <>
+            <div style={{ fontSize:14, fontWeight:700, color:COLORS.navy, marginBottom:8 }}>Amount saved</div>
+            <div style={{ display:"flex", alignItems:"center", gap:12, background:COLORS.white, borderRadius:14, padding:"12px 16px", marginBottom:20, border:`2px solid ${amountCents>0?COLORS.primary:"#E5E7EB"}` }}>
+              <span style={{ fontSize:24, fontWeight:800, color:COLORS.textMuted }}>$</span>
+              <input type="number" inputMode="decimal" placeholder="0.00" value={adjustedAmount} onChange={e=>setAdjustedAmount(e.target.value)}
+                style={{ flex:1, border:"none", outline:"none", fontSize:28, fontWeight:800, color:COLORS.navy, background:"transparent" }} />
+            </div>
+            <div style={{ fontSize:14, fontWeight:700, color:COLORS.navy, marginBottom:12 }}>Lock period</div>
+            <div style={{ display:"flex", flexDirection:"column", gap:8, marginBottom:24 }}>
+              {LOCK_TIERS.map(tier=>(
+                <button key={tier.tier} onClick={()=>setSelectedTier(tier)} style={{ display:"flex", alignItems:"center", gap:12, padding:"12px 14px", background:selectedTier.tier===tier.tier?`${tier.color}10`:COLORS.white, border:selectedTier.tier===tier.tier?`2px solid ${tier.color}`:"2px solid #E5E7EB", borderRadius:14, cursor:"pointer", textAlign:"left" }}>
+                  <span style={{ fontSize:28 }}>{tier.badge}</span>
+                  <div style={{ flex:1 }}>
+                    <div style={{ fontSize:14, fontWeight:700, color:COLORS.navy }}>{tier.label} <span style={{ color:tier.color, fontSize:12 }}>{"\u00B7"} {tier.multiplier}</span></div>
+                    <div style={{ fontSize:11, color:COLORS.textMuted }}>{tier.desc}</div>
+                  </div>
+                  {selectedTier.tier===tier.tier && <span style={{ color:tier.color, fontSize:18 }}>{"\u2713"}</span>}
+                </button>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+      <div style={{ padding:"12px 16px 24px", background:COLORS.white, borderTop:"1px solid #E5E7EB" }}>
+        <button onClick={handleSave} disabled={!canSave} style={{ width:"100%", padding:"16px 0", background:canSave?COLORS.primary:"#D1D5DB", color:COLORS.white, border:"none", borderRadius:14, fontSize:18, fontWeight:700, cursor:canSave?"pointer":"default", boxShadow:canSave?`0 4px 14px ${COLORS.primary}50`:"none" }}>
+          {canSave ? `Save ${formatCents(amountCents)} toward ${goalName} \u2192` : "Select a category first"}
+        </button>
+      </div>
+      {showAddCat && <AddCategorySheet onAdd={onAddCustomCategory} onClose={()=>setShowAddCat(false)} existingCount={customCategories.length} />}
+    </div>
+  );
+}
+
+// ============================================================
+// HISTORY VIEW
+// ============================================================
+function HistoryView({ savings, allCategories, onEarlyUnlock }) {
+  const [filter, setFilter] = useState("all");
+  const lockedTotal = savings.filter(s=>s.status==="locked").reduce((s,x)=>s+x.amount,0);
+  const availTotal = savings.filter(s=>s.status==="available").reduce((s,x)=>s+x.amount,0);
+  const filtered = filter==="all"?savings:savings.filter(s=>s.status===filter);
+  return (
+    <div style={{ flex:1, overflowY:"auto" }}>
+      <div style={{ display:"flex", gap:10, padding:"16px 16px 8px" }}>
+        <div style={{ flex:1, padding:14, background:COLORS.white, borderRadius:12 }}>
+          <div style={{ fontSize:12, color:COLORS.warning }}>{"\uD83D\uDD12"} Locked</div>
+          <div style={{ fontSize:20, fontWeight:700, marginTop:4 }}>{formatCents(lockedTotal)}</div>
+        </div>
+        <div style={{ flex:1, padding:14, background:COLORS.white, borderRadius:12 }}>
+          <div style={{ fontSize:12, color:COLORS.success }}>{"\u2705"} Available</div>
+          <div style={{ fontSize:20, fontWeight:700, marginTop:4 }}>{formatCents(availTotal)}</div>
+        </div>
+      </div>
+      <div style={{ display:"flex", gap:8, padding:"8px 16px 12px" }}>
+        {["all","locked","available"].map(f=>(<button key={f} onClick={()=>setFilter(f)} style={{ padding:"6px 16px", borderRadius:20, border:"none", background:filter===f?COLORS.primary:COLORS.white, color:filter===f?COLORS.white:COLORS.navy, fontSize:13, fontWeight:600, cursor:"pointer", textTransform:"capitalize" }}>{f}</button>))}
+      </div>
+      <div style={{ padding:"0 16px 16px", display:"flex", flexDirection:"column", gap:8 }}>
+        {filtered.map(s=><SavingRow key={s.id} saving={s} categories={allCategories} onEarlyUnlock={s.status==="locked"?onEarlyUnlock:undefined} />)}
+        {filtered.length===0 && <div style={{ textAlign:"center", padding:40, color:COLORS.textSecondary }}><div style={{ fontSize:36, marginBottom:8 }}>{"\uD83D\uDCED"}</div><div>No savings yet</div></div>}
+      </div>
+    </div>
+  );
+}
+
+// ============================================================
+// PROFILE VIEW
+// ============================================================
+function ProfileView({ savings, store, customCategories=[] }) {
+  const total = savings.reduce((s,x)=>s+x.amount,0);
+  return (
+    <div style={{ flex:1, overflowY:"auto", padding:16 }}>
+      <MiserTitleCard totalCents={total} />
+      <SavingsBreakdown savings={savings} allCategories={[...CATEGORIES,...customCategories]} />
+      <div style={{ background:COLORS.white, borderRadius:14, padding:16, marginBottom:16, boxShadow:"0 1px 3px rgba(0,0,0,0.06)" }}>
+        <div style={{ fontSize:14, fontWeight:700, color:COLORS.navy, marginBottom:12 }}>All Miser Ranks</div>
+        {MISER_TITLES.map((t,i) => {
+          const unlocked = total>=t.minCents;
+          return (
+            <div key={i} style={{ display:"flex", alignItems:"center", gap:10, padding:"8px 0", borderBottom:i<MISER_TITLES.length-1?"1px solid #F3F4F6":"none", opacity:unlocked?1:0.4 }}>
+              <span style={{ fontSize:20, width:28, textAlign:"center" }}>{t.icon}</span>
+              <div style={{ flex:1 }}><div style={{ fontSize:13, fontWeight:700, color:unlocked?t.color:COLORS.textMuted }}>{t.title}</div><div style={{ fontSize:10, color:COLORS.textMuted }}>Unlock at {formatCents(t.minCents)}</div></div>
+              {unlocked && <span style={{ fontSize:14 }}>{"\u2705"}</span>}
+            </div>
+          );
+        })}
+      </div>
+      <div style={{ background:COLORS.white, borderRadius:14, overflow:"hidden", marginBottom:16 }}>
+        <div style={{ padding:20 }}>
+          <div style={{ fontSize:15, fontWeight:600, color:COLORS.textSecondary, marginBottom:16 }}>Your Stats</div>
+          {[
+            { label:"Total Saved", value:formatCents(total), icon:"\uD83D\uDCB0", color:COLORS.success },
+            { label:"Current Streak", value:`${store.streak} days`, icon:"\uD83D\uDD25", color:"#F59E0B" },
+            { label:"Longest Streak", value:`${store.longestStreak} days`, icon:"\uD83C\uDFC6", color:"#EAB308" },
+            { label:"Total Saves", value:`${savings.length}`, icon:"\u2705", color:COLORS.primary },
+          ].map((item,i)=>(
+            <div key={i} style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"12px 0", borderBottom:i<3?"1px solid #F3F4F6":"none" }}>
+              <div style={{ display:"flex", alignItems:"center", gap:10 }}><span>{item.icon}</span><span style={{ fontSize:14, color:COLORS.textSecondary }}>{item.label}</span></div>
+              <span style={{ fontSize:15, fontWeight:700, color:COLORS.navy }}>{item.value}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div style={{ textAlign:"center", fontSize:11, color:COLORS.textMuted, padding:"8px 0 20px" }}>MiserSavings Demo v2 {"\u00B7"} March 2026</div>
+    </div>
+  );
+}
+
+// ============================================================
+// MAIN APP
+// ============================================================
+function MiserSavingsApp() {
+  const [showOnboarding, setShowOnboarding] = useState(true);
+  const [activeTab, setActiveTab] = useState("home");
+  const [showSaveSheet, setShowSaveSheet] = useState(false);
+  const [savings, setSavings] = useState(DEMO_SAVINGS);
+  const [goal, setGoal] = useState(DEMO_GOAL);
+  const [goalName, setGoalName] = useState("My Goal");
+  const [customCategories, setCustomCategories] = useState([]);
+  const [store, setStore] = useState(DEMO_STORE);
+  const [isQuitMode, setIsQuitMode] = useState(false);
+  const [quitSubstance, setQuitSubstance] = useState(null);
+  const [quitUnitCost, setQuitUnitCost] = useState(0);
+  const [quitPerDay, setQuitPerDay] = useState(0);
+  const [quitData, setQuitData] = useState({ daysClean:12, totalUnitsSkipped:156, streak:12, bestStreak:12, checkedInToday:false });
+  const [showStreakNudge, setShowStreakNudge] = useState(false);
+  const [earlyUnlockSaving, setEarlyUnlockSaving] = useState(null);
+  const [milestone, setMilestone] = useState(null);
+  const [seenMilestones, setSeenMilestones] = useState(new Set());
+
+  const handleOnboardingDone = useCallback((config) => {
+    setGoalName(config.goalName);
+    if (config.goalAmount > 0) setGoal(config.goalAmount);
+    setIsQuitMode(config.isQuitMode);
+    if (config.isQuitMode && config.substance) {
+      setQuitSubstance(config.substance);
+      setQuitUnitCost(config.unitCost || config.substance.unitCost);
+      setQuitPerDay(config.perDay || config.substance.perDay);
+    }
+    setShowOnboarding(false);
+  }, []);
+
+  const handleAddCustomCategory = useCallback((cat) => { setCustomCategories(prev => [...prev, cat]); }, []);
+
+  const handleSave = useCallback(({ amount, category, lockDays, tier }) => {
+    const now = Date.now();
+    const unlockDate = now + lockDays * 24 * 60 * 60 * 1000;
+    setSavings(prev => [{ id:`save_${now}_${Math.random().toString(36).slice(2,8)}`, amount, category, createdAt:now, lockDays, unlockDate, status:"locked", tierBadge:tier.badge, tierName:tier.tier, tierColor:tier.color, tierMultiplier:tier.multiplierVal }, ...prev]);
+    setStore(prev => {
+      const today = new Date().toDateString();
+      const lastDay = prev.lastSaveDate ? new Date(prev.lastSaveDate).toDateString() : null;
+      const yesterday = new Date(Date.now()-86400000).toDateString();
+      let newStreak = prev.streak;
+      if (lastDay===today) { /* no change */ }
+      else if (lastDay===yesterday) { newStreak = prev.streak+1; }
+      else { newStreak = 1; }
+      return { streak:newStreak, longestStreak:Math.max(prev.longestStreak,newStreak), lastSaveDate:now };
+    });
+  }, []);
+
+  const handleQuitCheckIn = useCallback((clean) => {
+    setQuitData(prev => {
+      if (clean) {
+        const newStreak = prev.streak + 1;
+        const dailySaved = quitUnitCost * quitPerDay;
+        // Also add as a saving
+        handleSave({ amount: dailySaved, category: quitSubstance?.id || "custom", lockDays: 14, tier: LOCK_TIERS[0] });
+        return { daysClean: prev.daysClean + 1, totalUnitsSkipped: prev.totalUnitsSkipped + quitPerDay, streak: newStreak, bestStreak: Math.max(prev.bestStreak, newStreak), checkedInToday: true };
+      } else {
+        return { ...prev, streak: 0, checkedInToday: true };
+      }
+    });
+  }, [quitUnitCost, quitPerDay, quitSubstance]);
+
+  const handleEarlyUnlock = useCallback((saving) => { setEarlyUnlockSaving(saving); }, []);
+  const confirmEarlyUnlock = useCallback(() => {
+    if (earlyUnlockSaving) {
+      setSavings(prev => prev.map(s => s.id === earlyUnlockSaving.id ? { ...s, status: "available", unlockDate: Date.now() } : s));
+      setEarlyUnlockSaving(null);
+    }
+  }, [earlyUnlockSaving]);
+
+  // Milestone detection
+  useEffect(() => {
+    const totalCents = savings.reduce((s,x) => s+x.amount, 0);
+    const streak = store.streak;
+    const firstMatured = savings.some(s => s.status === "available" && s.lockDays >= 14);
+
+    const milestones = [
+      { id:"7day", check: streak >= 7, emoji:"\uD83D\uDD25", title:"7-day streak!", message:`A full week of not wasting money. "${goalName}" is getting closer every damn day.`, stat:`${streak} days`, statLabel:"Current streak", cta:"Keep going \uD83D\uDCAA" },
+      { id:"25pct", check: goal > 0 && totalCents >= goal * 0.25, emoji:"\uD83C\uDFAF", title:"25% of the way!", message:`Quarter of "${goalName}" is locked in. At this rate, you're unstoppable.`, stat:formatCents(totalCents), statLabel:`of ${formatCents(goal)}`, cta:"Let's get to 50% \uD83D\uDE80" },
+      { id:"firstmature", check: firstMatured, emoji:"\uD83D\uDD13", title:"First lock matured!", message:"Your first locked savings just became available. That patience paid off.", cta:"See my savings \u2192" },
+    ];
+
+    for (const m of milestones) {
+      if (m.check && !seenMilestones.has(m.id)) {
+        setMilestone(m);
+        setSeenMilestones(prev => new Set([...prev, m.id]));
+        break;
+      }
+    }
+  }, [savings, store, goal, goalName, seenMilestones]);
+
+  // Streak protection nudge (show after 10 seconds as demo)
+  useEffect(() => {
+    if (!showOnboarding) {
+      const timer = setTimeout(() => setShowStreakNudge(true), 15000);
+      return () => clearTimeout(timer);
+    }
+  }, [showOnboarding]);
+
+  // Auto-unlock matured savings
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSavings(prev => prev.map(s => s.status==="locked" && s.unlockDate<=Date.now() ? { ...s, status:"available" } : s));
+    }, 10000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div style={{ width:"100%", maxWidth:390, height:"100vh", maxHeight:844, margin:"0 auto", display:"flex", flexDirection:"column", background:COLORS.background, fontFamily:'-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,sans-serif', position:"relative", overflow:"hidden", boxShadow:"0 0 40px rgba(0,0,0,0.12)" }}>
+      <DemoBanner />
+      <div style={{ padding:"12px 20px 8px", display:"flex", justifyContent:"space-between", fontSize:13, fontWeight:600, color:COLORS.navy, background:COLORS.background }}>
+        <span>{new Date().toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"})}</span>
+        <div style={{ display:"flex", gap:6 }}><span>{"\uD83D\uDCF6"}</span><span>{"\uD83D\uDD0B"}</span></div>
+      </div>
+      <div style={{ padding:"4px 20px 12px", fontSize:28, fontWeight:800, color:COLORS.navy, background:COLORS.background }}>
+        {activeTab==="home"    && "MiserSavings"}
+        {activeTab==="quit"    && "Quit Companion"}
+        {activeTab==="friends" && "Friends"}
+        {activeTab==="history" && "History"}
+        {activeTab==="profile" && "Profile"}
+      </div>
+      {activeTab==="home" && <DashboardView savings={savings} store={store} onOpenSave={()=>setShowSaveSheet(true)} goal={goal} goalName={goalName} onSetGoal={setGoal} customCategories={customCategories} />}
+      {activeTab==="quit" && quitSubstance && <QuitCompanionView substance={quitSubstance} unitCost={quitUnitCost} perDay={quitPerDay} goalName={goalName} savings={savings} quitData={quitData} onCheckIn={handleQuitCheckIn} />}
+      {activeTab==="friends" && <FriendsView savings={savings} store={store} />}
+      {activeTab==="history" && <HistoryView savings={savings} allCategories={[...CATEGORIES,...customCategories]} onEarlyUnlock={handleEarlyUnlock} />}
+      {activeTab==="profile" && <ProfileView savings={savings} store={store} customCategories={customCategories} />}
+      <TabBar activeTab={activeTab} onTabChange={setActiveTab} isQuitMode={isQuitMode} />
+      {showSaveSheet && <SaveView customCategories={customCategories} onAddCustomCategory={handleAddCustomCategory} onClose={()=>setShowSaveSheet(false)} onSave={handleSave} goalName={goalName} />}
+      {showOnboarding && <OnboardingFlow onDone={handleOnboardingDone} />}
+      <StreakNudge show={showStreakNudge && !showOnboarding && !showSaveSheet} streak={store.streak} goalName={goalName} onDismiss={() => setShowStreakNudge(false)} onSave={() => { setShowStreakNudge(false); setShowSaveSheet(true); }} />
+      <EarlyUnlockModal saving={earlyUnlockSaving} onConfirm={confirmEarlyUnlock} onCancel={() => setEarlyUnlockSaving(null)} goalName={goalName} />
+      <MilestoneCelebration milestone={milestone} onDismiss={() => setMilestone(null)} />
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<MiserSavingsApp />);
+  </script>
+</body>
+</html>
