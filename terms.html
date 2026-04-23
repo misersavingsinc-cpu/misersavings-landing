@@ -264,7 +264,7 @@ footer {
         <li><a href="#identity">Identity verification (KYC)</a></li>
         <li><a href="#vault">Your vault, deposits & withdrawals</a></li>
         <li><a href="#fees">Fees</a></li>
-        <li><a href="#apy">Interest (APY)</a></li>
+        <li><a href="#apy">Interest</a></li>
         <li><a href="#reg-e">Electronic communications (Reg E)</a></li>
         <li><a href="#prohibited">Prohibited conduct</a></li>
         <li><a href="#intellectual">Intellectual property</a></li>
@@ -281,8 +281,8 @@ footer {
     </div>
 
     <h2 id="about">1. About mi$er (not a bank)</h2>
-    <p><strong>mi$er is a financial technology company, not a bank.</strong> We provide the app, the vault tracking, the goals, and the skip-logging experience. Banking services — including the FDIC-insured deposit account where your vault balance is held — are provided by Stripe's sponsor bank partners through <strong>Stripe Treasury</strong>, which is offered by Stripe Payments Company.</p>
-    <p>Your relationship with those banks is separate from your relationship with us. When you open a vault, you will also be asked to agree to the applicable bank's deposit account agreement and disclosures. Those terms, together with these Terms and our Privacy Policy, govern your use of the Services.</p>
+    <p><strong>mi$er is a financial technology company, not a bank.</strong> We provide the app, the vault tracking, the goals, and the skip-logging experience. Your vault balance is held on a virtual prepaid debit card (the "MiserCard") issued through our card program partner. mi$er does not hold your funds directly.</p>
+    <p>Your relationship with the card issuing bank is separate from your relationship with us. When you open a vault, you will be asked to agree to the applicable card program agreement and disclosures. Those terms, together with these Terms and our Privacy Policy, govern your use of the Services.</p>
 
     <h2 id="eligibility">2. Eligibility</h2>
     <p>To use mi$er, you must:</p>
@@ -293,7 +293,7 @@ footer {
       <li>Have the legal capacity to enter into a binding contract.</li>
       <li>Not be listed on any U.S. sanctions list, including the OFAC Specially Designated Nationals list.</li>
     </ul>
-    <p>We may decline to open, or may close, any account at our or our banking partner's discretion, consistent with applicable law.</p>
+    <p>We may decline to open, or may close, any account at our or our card program partner's discretion, consistent with applicable law.</p>
 
     <h2 id="accounts">3. Creating your account</h2>
     <p>You create your mi$er account through our authentication provider, <strong>Clerk</strong>, using an email address or phone number and a password. You are responsible for:</p>
@@ -305,16 +305,16 @@ footer {
     <p>One person, one account. You may not share your account or transfer it to anyone else.</p>
 
     <h2 id="identity">4. Identity verification (KYC)</h2>
-    <p>Before your vault can hold funds, federal law requires us and our banking partners to verify your identity. We will collect your legal name, date of birth, residential address, and Social Security Number, and we may ask you to upload a photo of a government-issued ID. You authorize us and our partners to verify this information against credit bureaus, public records, and fraud databases.</p>
+    <p>Before your vault can hold funds, federal law requires us and our card program partner to verify your identity. We will collect your legal name, date of birth, residential address, and Social Security Number, and we may ask you to upload a photo of a government-issued ID. You authorize us and our partners to verify this information against credit bureaus, public records, and fraud databases.</p>
     <p>If we cannot verify your identity, we will not be able to open your vault. If verification fails after deposits have been made, funds will be returned to your linked bank account.</p>
 
     <h2 id="vault">5. Your vault, deposits & withdrawals</h2>
     <h3>Deposits</h3>
-    <p>You fund your vault by logging "skips" in the app. Each logged skip triggers an ACH transfer from your linked external bank account into your vault. You authorize mi$er (and our banking partner) to initiate each such ACH debit for the amount you specified. Linked bank account access is provided by <strong>Stripe Financial Connections</strong>.</p>
-    <p>If a deposit fails (for example, insufficient funds or a bank-side block), we may retry, reverse the skip, and/or suspend skip-logging until the issue is resolved. We do not overdraw your external bank account on your behalf.</p>
+    <p>You fund your MiserCard vault by logging "skips" in the app. Each logged skip queues an amount for deposit. Once per week (every Sunday), mi$er batches all queued skip amounts and initiates a single ACH transfer from your linked external bank account to your MiserCard balance. You authorize mi$er to initiate this weekly ACH debit for the total queued amount. You will see the pending total and next batch date in the app before any debit occurs. Linked bank account access is provided by <strong>Stripe Financial Connections</strong>.</p>
+    <p>If a deposit fails (for example, insufficient funds or a bank-side block), we will notify you and the queued amounts will remain pending until resolved. We do not overdraw your external bank account on your behalf.</p>
 
     <h3>Withdrawals</h3>
-    <p>You may withdraw any amount up to your full vault balance at any time, subject to our banking partner's processing limits. Withdrawals are delivered to your linked external bank account via standard ACH, which typically settles in 1–3 business days.</p>
+    <p>You may withdraw any amount up to your full MiserCard balance at any time. Withdrawals are delivered to your linked external bank account via standard ACH, which typically settles in 1–3 business days.</p>
     <p><strong>There are no lock-up periods.</strong> Your money is always yours.</p>
 
     <h3>Unclaimed property</h3>
@@ -327,16 +327,16 @@ footer {
       <li><strong>Logging skips / deposits:</strong> free.</li>
       <li><strong>Withdrawals:</strong> <strong>$3.49 flat fee per withdrawal,</strong> regardless of the amount. This fee is disclosed on-screen before you confirm each withdrawal, in compliance with Regulation E.</li>
     </ul>
-    <p>We do not charge subscription fees or percentage-based fees. We do not earn affiliate commissions on your deposit behavior. Our only direct user fee is the $3.49 withdrawal fee; separately, we earn a spread on the interest (APY) generated by your vault balance at the partner bank. We disclose this transparently so there are no surprises.</p>
+    <p>We do not charge subscription fees or percentage-based fees. We do not earn affiliate commissions on your deposit behavior. Our only direct user fee is the $3.49 withdrawal fee. We earn no interest spread on your balance — interest, if any, earned on pooled card program funds is retained by our card program partner per the card program agreement.</p>
 
-    <h2 id="apy">7. Interest (APY)</h2>
-    <p>Funds held in your vault earn interest at an Annual Percentage Yield (APY) set by our banking partner. <strong>The APY is variable.</strong> It can change at any time, up or down, based on prevailing market conditions. We will disclose the current APY in the app.</p>
+    <h2 id="apy">7. Interest</h2>
+    <p>mi$er does not pay interest, yield, or APY on your MiserCard balance. Your vault is not an interest-bearing account. The MiserCard is a prepaid debit card — its purpose is behavioral, helping you separate saved money from your spending account. If you want your savings to earn interest, you should transfer your balance to an interest-bearing account at a bank or credit union of your choice.</p>
     <div class="callout">
-      <p><strong>APY is not a guarantee.</strong> Past and current APY does not guarantee future returns. mi$er does not give investment advice, and your vault balance is not invested in securities.</p>
+      <p><strong>No investment advice.</strong> mi$er does not provide investment advice. Your vault balance is not invested in securities. The MiserCard is a prepaid debit card, not an FDIC-insured bank deposit account.</p>
     </div>
 
     <h2 id="reg-e">8. Electronic communications & Regulation E</h2>
-    <p>By opening an account, you agree to receive all disclosures, agreements, notices, tax forms, and other communications from us and our banking partners <strong>electronically</strong> — through the mi$er app, email, or SMS. You represent that you have the hardware and software required to access and store electronic communications, including a compatible smartphone, an email account, and the ability to view PDFs.</p>
+    <p>By opening an account, you agree to receive all disclosures, agreements, notices, tax forms, and other communications from us and our service providers <strong>electronically</strong> — through the mi$er app, email, or SMS. You represent that you have the hardware and software required to access and store electronic communications, including a compatible smartphone, an email account, and the ability to view PDFs.</p>
     <p>You have the right, consistent with the federal Electronic Fund Transfer Act (Regulation E), to:</p>
     <ul>
       <li>Request paper copies of any disclosure (contact <a href="mailto:support@misersavings.com">support@misersavings.com</a>).</li>
@@ -362,14 +362,14 @@ footer {
     <p>Anything you submit through the Services (feedback, feature requests, suggestions) may be used by us without obligation or compensation to you.</p>
 
     <h2 id="third-party">11. Third-party services</h2>
-    <p>The Services rely on third-party providers, including Stripe (banking, ACH, bank linking), Clerk (authentication), Supabase (application data hosting), Vercel (website hosting), and Apple and Google (app distribution). Your use of those services is also subject to their respective terms and policies. We are not responsible for third-party failures outside our reasonable control — for example, a bank partner outage, an ACH network delay, or an app store disruption.</p>
+    <p>The Services rely on third-party providers, including Stripe (card issuance, ACH, bank linking), Supabase (application data hosting), and Apple and Google (app distribution). Your use of those services is also subject to their respective terms and policies. We are not responsible for third-party failures outside our reasonable control — for example, a card network outage, an ACH network delay, or an app store disruption.</p>
 
     <h2 id="termination">12. Suspension & termination</h2>
     <p>We may suspend or close your account at any time, with or without notice, if we believe that:</p>
     <ul>
       <li>You have breached these Terms, the Privacy Policy, or applicable law.</li>
       <li>Your account is being used for fraud, suspicious activity, or sanctions violations.</li>
-      <li>We are required to do so by our banking partner, a regulator, or a court.</li>
+      <li>We are required to do so by our card program partner, a regulator, or a court.</li>
     </ul>
     <p>You may close your account at any time from the Profile tab in the app, or by emailing <a href="mailto:support@misersavings.com">support@misersavings.com</a>. Any remaining vault balance will be transferred to your linked external bank account (subject to the $3.49 withdrawal fee) before your account is closed. Sections of these Terms that by their nature should survive termination will survive — including disclaimers, liability limits, arbitration, and intellectual property.</p>
 
@@ -425,7 +425,7 @@ footer {
       <a href="/terms">Terms of service</a>
       <a href="mailto:support@misersavings.com">Contact</a>
     </div>
-    <div class="footer-copy">© 2026 MiserSavings Inc. · mi$er is a financial technology company, not a bank. Banking services provided by Stripe Payments Company and its partner banks through Stripe Treasury.</div>
+    <div class="footer-copy">© 2026 MiserSavings Inc. · mi$er is a financial technology company, not a bank. MiserCard is a prepaid debit card issued through our card program partner. mi$er is not a bank.</div>
   </div>
 </footer>
 
