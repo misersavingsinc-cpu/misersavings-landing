@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — mi$er</title>
+<meta name="description" content="The agreement between you and MiserSavings Inc. for using the mi$er app.">
+<style>
+:root {
+  --dg:  #1C3D2B;
+  --sg:  #2E6B45;
+  --gld: #C8A820;
+  --brz: #8B6914;
+  --pch: #EDE8D0;
+  --crm: #F5F0E0;
+  --fn:  -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--fn);
+  background: var(--pch);
+  color: var(--dg);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(28,61,43,0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 0.5px solid rgba(200,168,32,0.15);
+  padding: 0 40px;
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-wm {
+  font-size: 22px; font-weight: 900; letter-spacing: -0.5px;
+  color: var(--pch); text-decoration: none;
+}
+.nav-wm .d { color: var(--gld); }
+.nav-links {
+  display: flex; align-items: center; gap: 32px; list-style: none;
+}
+.nav-links a {
+  font-size: 13px; font-weight: 600; letter-spacing: 0.04em;
+  color: rgba(237,232,208,0.6); text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--pch); }
+.nav-cta {
+  background: var(--gld); color: var(--dg);
+  font-size: 13px; font-weight: 700; letter-spacing: 0.04em;
+  padding: 9px 22px; border-radius: 8px;
+  text-decoration: none; white-space: nowrap;
+}
+
+.legal-hero {
+  background: var(--dg);
+  padding: 140px 40px 80px;
+  position: relative; overflow: hidden;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 29px, rgba(255,255,255,0.025) 30px),
+    repeating-linear-gradient(90deg, transparent, transparent 29px, rgba(255,255,255,0.025) 30px);
+}
+.legal-hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
+.legal-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--gld); margin-bottom: 14px;
+}
+.legal-h1 {
+  font-size: 54px; font-weight: 900; color: var(--pch);
+  letter-spacing: -1.5px; line-height: 1.05; margin-bottom: 20px;
+}
+.legal-h1 em { color: var(--gld); font-style: normal; }
+.legal-meta {
+  font-size: 14px; color: rgba(237,232,208,0.55);
+}
+.legal-meta strong { color: var(--pch); font-weight: 700; }
+
+.legal-body {
+  background: var(--pch);
+  padding: 80px 40px 100px;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(28,61,43,0.025) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(28,61,43,0.025) 40px);
+}
+.legal-inner {
+  max-width: 900px; margin: 0 auto;
+  background: var(--crm); border: 1.5px solid rgba(28,61,43,0.1);
+  border-radius: 20px; padding: 60px 72px;
+}
+.legal-intro {
+  font-size: 17px; line-height: 1.7; color: rgba(28,61,43,0.8);
+  margin-bottom: 32px;
+}
+.legal-intro strong { color: var(--dg); font-weight: 700; }
+
+.callout-top {
+  background: var(--dg); color: var(--pch);
+  border-radius: 14px; padding: 22px 28px; margin-bottom: 48px;
+  border: 1.5px solid var(--gld);
+}
+.callout-top p { color: rgba(237,232,208,0.85); font-size: 14px; line-height: 1.65; margin-bottom: 0; }
+.callout-top strong { color: var(--gld); font-weight: 700; letter-spacing: 0.05em; }
+
+.toc {
+  background: var(--pch); border: 1px solid rgba(28,61,43,0.1);
+  border-radius: 14px; padding: 24px 28px; margin-bottom: 56px;
+}
+.toc-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--brz); margin-bottom: 14px;
+}
+.toc ol { list-style: none; counter-reset: toc; }
+.toc li {
+  counter-increment: toc;
+  font-size: 14px; margin-bottom: 7px;
+}
+.toc li::before {
+  content: counter(toc, decimal-leading-zero) " ";
+  color: var(--brz); font-weight: 700; font-size: 11px;
+  letter-spacing: 0.1em; margin-right: 10px;
+}
+.toc a {
+  color: rgba(28,61,43,0.75); text-decoration: none;
+  border-bottom: 1px dotted rgba(28,61,43,0.2); transition: color 0.2s;
+}
+.toc a:hover { color: var(--sg); border-bottom-color: var(--sg); }
+
+h2 {
+  font-size: 24px; font-weight: 800; color: var(--dg);
+  letter-spacing: -0.3px; line-height: 1.2;
+  margin-top: 56px; margin-bottom: 16px;
+  padding-top: 24px; border-top: 0.5px solid rgba(28,61,43,0.12);
+  scroll-margin-top: 84px;
+}
+h2:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+h3 {
+  font-size: 17px; font-weight: 700; color: var(--dg);
+  margin-top: 28px; margin-bottom: 10px;
+}
+p {
+  font-size: 15px; line-height: 1.7; color: rgba(28,61,43,0.8);
+  margin-bottom: 14px;
+}
+p strong { color: var(--dg); font-weight: 700; }
+
+ul, ol.numbered {
+  margin: 14px 0 20px 0;
+  padding-left: 22px;
+}
+li {
+  font-size: 15px; line-height: 1.7; color: rgba(28,61,43,0.8);
+  margin-bottom: 8px;
+}
+li strong { color: var(--dg); font-weight: 700; }
+
+.callout {
+  background: var(--pch); border-left: 4px solid var(--gld);
+  padding: 18px 24px; margin: 24px 0;
+  border-radius: 0 10px 10px 0;
+}
+.callout p { margin-bottom: 0; }
+.callout p:not(:last-child) { margin-bottom: 10px; }
+
+.allcaps {
+  font-size: 13px; font-weight: 700; letter-spacing: 0.02em;
+  background: var(--pch); border: 1px solid rgba(28,61,43,0.15);
+  padding: 18px 22px; border-radius: 10px;
+  margin: 24px 0; line-height: 1.6;
+  color: var(--dg);
+  text-transform: uppercase;
+}
+
+a { color: var(--sg); }
+a:hover { color: var(--dg); }
+
+.contact-box {
+  background: var(--dg); color: var(--pch);
+  border-radius: 16px; padding: 32px 36px;
+  margin-top: 48px;
+}
+.contact-box h3 { color: var(--gld); margin-top: 0; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
+.contact-box p { color: rgba(237,232,208,0.75); margin-bottom: 8px; font-size: 14px; }
+.contact-box a { color: var(--gld); text-decoration: none; font-weight: 600; }
+.contact-box a:hover { color: var(--pch); }
+
+footer {
+  background: #111d16; padding: 40px 40px 32px;
+  border-top: 0.5px solid rgba(200,168,32,0.1);
+}
+.footer-inner {
+  max-width: 1160px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 32px; flex-wrap: wrap;
+}
+.footer-wm {
+  font-size: 20px; font-weight: 900; letter-spacing: -0.5px;
+  color: var(--pch);
+}
+.footer-wm .d { color: var(--gld); }
+.footer-links-row { display: flex; gap: 28px; flex-wrap: wrap; }
+.footer-links-row a {
+  font-size: 13px; color: rgba(237,232,208,0.5);
+  text-decoration: none;
+}
+.footer-links-row a:hover { color: var(--pch); }
+.footer-copy {
+  width: 100%; text-align: center; margin-top: 28px;
+  padding-top: 24px; border-top: 0.5px solid rgba(255,255,255,0.06);
+  font-size: 11px; color: rgba(237,232,208,0.25);
+}
+
+@media (max-width: 680px) {
+  .legal-h1 { font-size: 38px; }
+  .legal-inner { padding: 40px 28px; }
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .legal-hero { padding: 100px 20px 60px; }
+  .legal-body { padding: 60px 20px 80px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-wm" href="/">mı<span class="d">$</span>er</a>
+  <ul class="nav-links">
+    <li><a href="/#how">How it works</a></li>
+    <li><a href="/#goals">Goals</a></li>
+    <li><a href="/#groups">Groups</a></li>
+    <li><a href="/#pricing">Pricing</a></li>
+  </ul>
+  <a class="nav-cta" href="/#waitlist">Get early access</a>
+</nav>
+
+<section class="legal-hero">
+  <div class="legal-hero-inner">
+    <div class="legal-eyebrow">Legal</div>
+    <h1 class="legal-h1">Terms of <em>Service</em></h1>
+    <p class="legal-meta"><strong>Effective:</strong> April 19, 2026 · <strong>Last updated:</strong> April 19, 2026</p>
+  </div>
+</section>
+
+<section class="legal-body">
+  <div class="legal-inner">
+
+    <p class="legal-intro">
+      These Terms of Service ("Terms") are a legal agreement between you and <strong>MiserSavings Inc.</strong> ("mi$er," "we," "us," or "our") that governs your use of the mi$er mobile app, our website, and any related services (together, the "Services"). By creating an account or using the Services, you agree to these Terms and to our <a href="/privacy">Privacy Policy</a>. If you don't agree, don't use the Services.
+    </p>
+
+    <div class="callout-top">
+      <p><strong>PLEASE READ CAREFULLY.</strong> These Terms include a mandatory <a href="#arbitration" style="color:var(--gld)">arbitration provision</a> and <a href="#arbitration" style="color:var(--gld)">class-action waiver</a>. You give up the right to sue us in court or participate in class actions, except as described in Section 16. You may opt out of arbitration within 30 days of creating your account.</p>
+    </div>
+
+    <div class="toc">
+      <div class="toc-label">On this page</div>
+      <ol>
+        <li><a href="#about">About mi$er (not a bank)</a></li>
+        <li><a href="#eligibility">Eligibility</a></li>
+        <li><a href="#accounts">Creating your account</a></li>
+        <li><a href="#identity">Identity verification (KYC)</a></li>
+        <li><a href="#vault">Your vault, deposits & withdrawals</a></li>
+        <li><a href="#fees">Fees</a></li>
+        <li><a href="#apy">Interest (APY)</a></li>
+        <li><a href="#reg-e">Electronic communications (Reg E)</a></li>
+        <li><a href="#prohibited">Prohibited conduct</a></li>
+        <li><a href="#intellectual">Intellectual property</a></li>
+        <li><a href="#third-party">Third-party services</a></li>
+        <li><a href="#termination">Suspension & termination</a></li>
+        <li><a href="#disclaimers">Disclaimers</a></li>
+        <li><a href="#liability">Limitation of liability</a></li>
+        <li><a href="#indemnification">Indemnification</a></li>
+        <li><a href="#arbitration">Arbitration & class-action waiver</a></li>
+        <li><a href="#governing-law">Governing law</a></li>
+        <li><a href="#changes">Changes to these Terms</a></li>
+        <li><a href="#contact">Contact us</a></li>
+      </ol>
+    </div>
+
+    <h2 id="about">1. About mi$er (not a bank)</h2>
+    <p><strong>mi$er is a financial technology company, not a bank.</strong> We provide the app, the vault tracking, the goals, and the skip-logging experience. Banking services — including the FDIC-insured deposit account where your vault balance is held — are provided by Stripe's sponsor bank partners through <strong>Stripe Treasury</strong>, which is offered by Stripe Payments Company.</p>
+    <p>Your relationship with those banks is separate from your relationship with us. When you open a vault, you will also be asked to agree to the applicable bank's deposit account agreement and disclosures. Those terms, together with these Terms and our Privacy Policy, govern your use of the Services.</p>
+
+    <h2 id="eligibility">2. Eligibility</h2>
+    <p>To use mi$er, you must:</p>
+    <ul>
+      <li>Be at least 18 years old.</li>
+      <li>Be a permanent resident of the United States with a valid U.S. residential address (not a P.O. box).</li>
+      <li>Have a valid U.S. Social Security Number or Individual Taxpayer Identification Number.</li>
+      <li>Have the legal capacity to enter into a binding contract.</li>
+      <li>Not be listed on any U.S. sanctions list, including the OFAC Specially Designated Nationals list.</li>
+    </ul>
+    <p>We may decline to open, or may close, any account at our or our banking partner's discretion, consistent with applicable law.</p>
+
+    <h2 id="accounts">3. Creating your account</h2>
+    <p>You create your mi$er account through our authentication provider, <strong>Clerk</strong>, using an email address or phone number and a password. You are responsible for:</p>
+    <ul>
+      <li>Keeping your login credentials confidential.</li>
+      <li>All activity that happens under your account.</li>
+      <li>Notifying us promptly at <a href="mailto:support@misersavings.com">support@misersavings.com</a> if you suspect unauthorized access.</li>
+    </ul>
+    <p>One person, one account. You may not share your account or transfer it to anyone else.</p>
+
+    <h2 id="identity">4. Identity verification (KYC)</h2>
+    <p>Before your vault can hold funds, federal law requires us and our banking partners to verify your identity. We will collect your legal name, date of birth, residential address, and Social Security Number, and we may ask you to upload a photo of a government-issued ID. You authorize us and our partners to verify this information against credit bureaus, public records, and fraud databases.</p>
+    <p>If we cannot verify your identity, we will not be able to open your vault. If verification fails after deposits have been made, funds will be returned to your linked bank account.</p>
+
+    <h2 id="vault">5. Your vault, deposits & withdrawals</h2>
+    <h3>Deposits</h3>
+    <p>You fund your vault by logging "skips" in the app. Each logged skip triggers an ACH transfer from your linked external bank account into your vault. You authorize mi$er (and our banking partner) to initiate each such ACH debit for the amount you specified. Linked bank account access is provided by <strong>Stripe Financial Connections</strong>.</p>
+    <p>If a deposit fails (for example, insufficient funds or a bank-side block), we may retry, reverse the skip, and/or suspend skip-logging until the issue is resolved. We do not overdraw your external bank account on your behalf.</p>
+
+    <h3>Withdrawals</h3>
+    <p>You may withdraw any amount up to your full vault balance at any time, subject to our banking partner's processing limits. Withdrawals are delivered to your linked external bank account via standard ACH, which typically settles in 1–3 business days.</p>
+    <p><strong>There are no lock-up periods.</strong> Your money is always yours.</p>
+
+    <h3>Unclaimed property</h3>
+    <p>If your account becomes dormant under applicable state unclaimed property law, the funds in your vault may be turned over to the appropriate state. We will use reasonable efforts to contact you before that happens.</p>
+
+    <h2 id="fees">6. Fees</h2>
+    <p>The fees for using mi$er are straightforward:</p>
+    <ul>
+      <li><strong>Opening and holding a vault:</strong> free.</li>
+      <li><strong>Logging skips / deposits:</strong> free.</li>
+      <li><strong>Withdrawals:</strong> <strong>$3.49 flat fee per withdrawal,</strong> regardless of the amount. This fee is disclosed on-screen before you confirm each withdrawal, in compliance with Regulation E.</li>
+    </ul>
+    <p>We do not charge subscription fees or percentage-based fees. We do not earn affiliate commissions on your deposit behavior. Our only direct user fee is the $3.49 withdrawal fee; separately, we earn a spread on the interest (APY) generated by your vault balance at the partner bank. We disclose this transparently so there are no surprises.</p>
+
+    <h2 id="apy">7. Interest (APY)</h2>
+    <p>Funds held in your vault earn interest at an Annual Percentage Yield (APY) set by our banking partner. <strong>The APY is variable.</strong> It can change at any time, up or down, based on prevailing market conditions. We will disclose the current APY in the app.</p>
+    <div class="callout">
+      <p><strong>APY is not a guarantee.</strong> Past and current APY does not guarantee future returns. mi$er does not give investment advice, and your vault balance is not invested in securities.</p>
+    </div>
+
+    <h2 id="reg-e">8. Electronic communications & Regulation E</h2>
+    <p>By opening an account, you agree to receive all disclosures, agreements, notices, tax forms, and other communications from us and our banking partners <strong>electronically</strong> — through the mi$er app, email, or SMS. You represent that you have the hardware and software required to access and store electronic communications, including a compatible smartphone, an email account, and the ability to view PDFs.</p>
+    <p>You have the right, consistent with the federal Electronic Fund Transfer Act (Regulation E), to:</p>
+    <ul>
+      <li>Request paper copies of any disclosure (contact <a href="mailto:support@misersavings.com">support@misersavings.com</a>).</li>
+      <li>Dispute unauthorized electronic fund transfers. If you think an unauthorized transfer has posted, contact us immediately. The sooner you tell us, the more protection you have — generally you must notify us within 60 days of the statement showing the transfer.</li>
+      <li>Withdraw your consent to electronic communications (which will also close your account, since we cannot operate the Services without electronic delivery).</li>
+    </ul>
+    <p>A full Regulation E disclosure and error-resolution procedure is presented to you when you open your vault and is available on request.</p>
+
+    <h2 id="prohibited">9. Prohibited conduct</h2>
+    <p>You agree not to:</p>
+    <ul>
+      <li>Use mi$er for any unlawful purpose, including money laundering, terrorist financing, fraud, or tax evasion.</li>
+      <li>Provide false, inaccurate, or misleading information.</li>
+      <li>Link a bank account that you do not own or are not authorized to use.</li>
+      <li>Attempt to probe, scan, reverse engineer, or bypass the security of the Services.</li>
+      <li>Use automated tools, scrapers, or bots to access the Services.</li>
+      <li>Interfere with other users, including in group goals — no harassment, threats, or abuse.</li>
+      <li>Resell or commercialize any part of the Services.</li>
+    </ul>
+
+    <h2 id="intellectual">10. Intellectual property</h2>
+    <p>mi$er, the mi$er logo, the "Skip · Lock · Grow" tagline, and all associated designs, code, copy, and branding are owned by MiserSavings Inc. or its licensors. We grant you a limited, personal, non-exclusive, non-transferable, revocable license to use the Services in accordance with these Terms. We reserve all rights not expressly granted.</p>
+    <p>Anything you submit through the Services (feedback, feature requests, suggestions) may be used by us without obligation or compensation to you.</p>
+
+    <h2 id="third-party">11. Third-party services</h2>
+    <p>The Services rely on third-party providers, including Stripe (banking, ACH, bank linking), Clerk (authentication), Supabase (application data hosting), Vercel (website hosting), and Apple and Google (app distribution). Your use of those services is also subject to their respective terms and policies. We are not responsible for third-party failures outside our reasonable control — for example, a bank partner outage, an ACH network delay, or an app store disruption.</p>
+
+    <h2 id="termination">12. Suspension & termination</h2>
+    <p>We may suspend or close your account at any time, with or without notice, if we believe that:</p>
+    <ul>
+      <li>You have breached these Terms, the Privacy Policy, or applicable law.</li>
+      <li>Your account is being used for fraud, suspicious activity, or sanctions violations.</li>
+      <li>We are required to do so by our banking partner, a regulator, or a court.</li>
+    </ul>
+    <p>You may close your account at any time from the Profile tab in the app, or by emailing <a href="mailto:support@misersavings.com">support@misersavings.com</a>. Any remaining vault balance will be transferred to your linked external bank account (subject to the $3.49 withdrawal fee) before your account is closed. Sections of these Terms that by their nature should survive termination will survive — including disclaimers, liability limits, arbitration, and intellectual property.</p>
+
+    <h2 id="disclaimers">13. Disclaimers</h2>
+    <div class="allcaps">
+      The services are provided "as is" and "as available" without warranties of any kind, express or implied. To the maximum extent permitted by law, mi$er disclaims all warranties, including merchantability, fitness for a particular purpose, non-infringement, accuracy, and uninterrupted operation. We do not warrant that the services will be error-free, secure, or continuously available, or that your savings goals will be met.
+    </div>
+
+    <h2 id="liability">14. Limitation of liability</h2>
+    <div class="allcaps">
+      To the maximum extent permitted by law, mi$er, its affiliates, officers, employees, and service providers will not be liable for any indirect, incidental, special, consequential, exemplary, or punitive damages, or for any lost profits, lost savings, lost goodwill, or lost data, arising out of or in connection with the services — whether based in contract, tort, strict liability, or any other legal theory — even if we have been advised of the possibility of such damages.
+    </div>
+    <div class="allcaps">
+      In no event will mi$er's total liability to you for any claims arising out of or relating to the services exceed the greater of (a) the total fees you paid to mi$er in the 12 months preceding the claim, or (b) one hundred U.S. dollars ($100).
+    </div>
+    <p>Some jurisdictions do not allow the exclusion or limitation of certain damages, so some of the above may not apply to you. Nothing in these Terms limits rights that cannot be limited under applicable law — for example, consumer rights under Regulation E.</p>
+
+    <h2 id="indemnification">15. Indemnification</h2>
+    <p>You agree to defend, indemnify, and hold harmless MiserSavings Inc. and its affiliates, officers, directors, employees, and service providers from and against any claims, damages, liabilities, costs, and expenses (including reasonable attorneys' fees) arising out of or related to: (a) your use of the Services; (b) your violation of these Terms; (c) your violation of any law or third-party right; or (d) any content or information you submit.</p>
+
+    <h2 id="arbitration">16. Arbitration & class-action waiver</h2>
+    <p><strong>Please read this section carefully. It affects your legal rights.</strong></p>
+    <p>Any dispute, claim, or controversy arising out of or relating to these Terms or the Services, whether based in contract, tort, statute, fraud, or any other legal theory, will be resolved by <strong>binding individual arbitration</strong> administered by the American Arbitration Association (AAA) under its Consumer Arbitration Rules. The arbitration will take place in the U.S. state in which you reside, or by video conference. The arbitrator's decision is final and enforceable in any court of competent jurisdiction.</p>
+    <p><strong>You and mi$er each waive the right to a trial by jury and the right to participate in a class action, class arbitration, or representative action.</strong> Claims may only be brought in your individual capacity.</p>
+    <p><strong>Opt-out:</strong> you may opt out of this arbitration provision by emailing <a href="mailto:support@misersavings.com">support@misersavings.com</a> with the subject line "Arbitration Opt-Out" within 30 days of creating your mi$er account. The email must include your full name and the email address on your account. Opting out will not affect any other part of these Terms.</p>
+    <p><strong>Small-claims exception:</strong> either party may bring an individual action in small-claims court if it qualifies.</p>
+
+    <h2 id="governing-law">17. Governing law</h2>
+    <p>These Terms are governed by the laws of the State of Delaware, without regard to its conflict-of-law rules. Except for matters subject to arbitration under Section 16, the state and federal courts located in Delaware will have exclusive jurisdiction over any dispute. You and mi$er each consent to the personal jurisdiction of those courts.</p>
+
+    <h2 id="changes">18. Changes to these Terms</h2>
+    <p>We may update these Terms from time to time. When we do, we will update the "Last updated" date at the top and, for material changes, we will notify you by email or an in-app notice at least 14 days before they take effect. Your continued use of the Services after a change means you accept the updated Terms. If you do not agree, you must close your account before the changes take effect.</p>
+
+    <h2 id="contact">19. Contact us</h2>
+    <p>Questions, complaints, or concerns about these Terms:</p>
+
+    <div class="contact-box">
+      <h3>Contact MiserSavings</h3>
+      <p><strong style="color:var(--pch)">MiserSavings Inc.</strong></p>
+      <p>Email: <a href="mailto:support@misersavings.com">support@misersavings.com</a></p>
+      <p>Website: <a href="https://misersavings.com">misersavings.com</a></p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <a href="/" class="footer-wm">mı<span class="d">$</span>er</a>
+    <div class="footer-links-row">
+      <a href="/">Home</a>
+      <a href="/privacy">Privacy policy</a>
+      <a href="/terms">Terms of service</a>
+      <a href="mailto:support@misersavings.com">Contact</a>
+    </div>
+    <div class="footer-copy">© 2026 MiserSavings Inc. · mi$er is a financial technology company, not a bank. Banking services provided by Stripe Payments Company and its partner banks through Stripe Treasury.</div>
+  </div>
+</footer>
+
+</body>
+</html>

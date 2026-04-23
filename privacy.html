@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — mi$er</title>
+<meta name="description" content="How MiserSavings Inc. collects, uses, and protects your information.">
+<style>
+:root {
+  --dg:  #1C3D2B;
+  --sg:  #2E6B45;
+  --gld: #C8A820;
+  --brz: #8B6914;
+  --pch: #EDE8D0;
+  --crm: #F5F0E0;
+  --fn:  -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--fn);
+  background: var(--pch);
+  color: var(--dg);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(28,61,43,0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 0.5px solid rgba(200,168,32,0.15);
+  padding: 0 40px;
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-wm {
+  font-size: 22px; font-weight: 900; letter-spacing: -0.5px;
+  color: var(--pch); text-decoration: none;
+}
+.nav-wm .d { color: var(--gld); }
+.nav-links {
+  display: flex; align-items: center; gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 13px; font-weight: 600; letter-spacing: 0.04em;
+  color: rgba(237,232,208,0.6); text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--pch); }
+.nav-cta {
+  background: var(--gld); color: var(--dg);
+  font-size: 13px; font-weight: 700; letter-spacing: 0.04em;
+  padding: 9px 22px; border-radius: 8px;
+  text-decoration: none; white-space: nowrap;
+}
+
+/* Hero */
+.legal-hero {
+  background: var(--dg);
+  padding: 140px 40px 80px;
+  position: relative; overflow: hidden;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 29px, rgba(255,255,255,0.025) 30px),
+    repeating-linear-gradient(90deg, transparent, transparent 29px, rgba(255,255,255,0.025) 30px);
+}
+.legal-hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
+.legal-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--gld); margin-bottom: 14px;
+}
+.legal-h1 {
+  font-size: 54px; font-weight: 900; color: var(--pch);
+  letter-spacing: -1.5px; line-height: 1.05; margin-bottom: 20px;
+}
+.legal-h1 em { color: var(--gld); font-style: normal; }
+.legal-meta {
+  font-size: 14px; color: rgba(237,232,208,0.55);
+}
+.legal-meta strong { color: var(--pch); font-weight: 700; }
+
+/* Content */
+.legal-body {
+  background: var(--pch);
+  padding: 80px 40px 100px;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(28,61,43,0.025) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(28,61,43,0.025) 40px);
+}
+.legal-inner {
+  max-width: 900px; margin: 0 auto;
+  background: var(--crm); border: 1.5px solid rgba(28,61,43,0.1);
+  border-radius: 20px; padding: 60px 72px;
+}
+.legal-intro {
+  font-size: 17px; line-height: 1.7; color: rgba(28,61,43,0.8);
+  margin-bottom: 48px;
+}
+.legal-intro strong { color: var(--dg); font-weight: 700; }
+
+.toc {
+  background: var(--pch); border: 1px solid rgba(28,61,43,0.1);
+  border-radius: 14px; padding: 24px 28px; margin-bottom: 56px;
+}
+.toc-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--brz); margin-bottom: 14px;
+}
+.toc ol { list-style: none; counter-reset: toc; }
+.toc li {
+  counter-increment: toc;
+  font-size: 14px; margin-bottom: 7px;
+}
+.toc li::before {
+  content: counter(toc, decimal-leading-zero) " ";
+  color: var(--brz); font-weight: 700; font-size: 11px;
+  letter-spacing: 0.1em; margin-right: 10px;
+}
+.toc a {
+  color: rgba(28,61,43,0.75); text-decoration: none;
+  border-bottom: 1px dotted rgba(28,61,43,0.2); transition: color 0.2s;
+}
+.toc a:hover { color: var(--sg); border-bottom-color: var(--sg); }
+
+h2 {
+  font-size: 24px; font-weight: 800; color: var(--dg);
+  letter-spacing: -0.3px; line-height: 1.2;
+  margin-top: 56px; margin-bottom: 16px;
+  padding-top: 24px; border-top: 0.5px solid rgba(28,61,43,0.12);
+  scroll-margin-top: 84px;
+}
+h2:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+h3 {
+  font-size: 17px; font-weight: 700; color: var(--dg);
+  margin-top: 28px; margin-bottom: 10px;
+}
+p {
+  font-size: 15px; line-height: 1.7; color: rgba(28,61,43,0.8);
+  margin-bottom: 14px;
+}
+p strong { color: var(--dg); font-weight: 700; }
+
+ul, ol {
+  margin: 14px 0 20px 0;
+  padding-left: 22px;
+}
+li {
+  font-size: 15px; line-height: 1.7; color: rgba(28,61,43,0.8);
+  margin-bottom: 8px;
+}
+li strong { color: var(--dg); font-weight: 700; }
+
+.callout {
+  background: var(--pch); border-left: 4px solid var(--gld);
+  padding: 18px 24px; margin: 24px 0;
+  border-radius: 0 10px 10px 0;
+}
+.callout p { margin-bottom: 0; }
+.callout p:not(:last-child) { margin-bottom: 10px; }
+
+table {
+  width: 100%; border-collapse: collapse; margin: 20px 0;
+  font-size: 14px;
+}
+th, td {
+  text-align: left; padding: 12px 14px;
+  border-bottom: 0.5px solid rgba(28,61,43,0.12);
+  vertical-align: top;
+}
+th {
+  background: var(--pch);
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--brz);
+}
+td { color: rgba(28,61,43,0.8); }
+
+a { color: var(--sg); }
+a:hover { color: var(--dg); }
+
+.contact-box {
+  background: var(--dg); color: var(--pch);
+  border-radius: 16px; padding: 32px 36px;
+  margin-top: 48px;
+}
+.contact-box h3 { color: var(--gld); margin-top: 0; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
+.contact-box p { color: rgba(237,232,208,0.75); margin-bottom: 8px; font-size: 14px; }
+.contact-box a { color: var(--gld); text-decoration: none; font-weight: 600; }
+.contact-box a:hover { color: var(--pch); }
+
+/* Footer */
+footer {
+  background: #111d16; padding: 40px 40px 32px;
+  border-top: 0.5px solid rgba(200,168,32,0.1);
+}
+.footer-inner {
+  max-width: 1160px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 32px; flex-wrap: wrap;
+}
+.footer-wm {
+  font-size: 20px; font-weight: 900; letter-spacing: -0.5px;
+  color: var(--pch);
+}
+.footer-wm .d { color: var(--gld); }
+.footer-links-row { display: flex; gap: 28px; flex-wrap: wrap; }
+.footer-links-row a {
+  font-size: 13px; color: rgba(237,232,208,0.5);
+  text-decoration: none;
+}
+.footer-links-row a:hover { color: var(--pch); }
+.footer-copy {
+  width: 100%; text-align: center; margin-top: 28px;
+  padding-top: 24px; border-top: 0.5px solid rgba(255,255,255,0.06);
+  font-size: 11px; color: rgba(237,232,208,0.25);
+}
+
+@media (max-width: 680px) {
+  .legal-h1 { font-size: 38px; }
+  .legal-inner { padding: 40px 28px; }
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .legal-hero { padding: 100px 20px 60px; }
+  .legal-body { padding: 60px 20px 80px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-wm" href="/">mı<span class="d">$</span>er</a>
+  <ul class="nav-links">
+    <li><a href="/#how">How it works</a></li>
+    <li><a href="/#goals">Goals</a></li>
+    <li><a href="/#groups">Groups</a></li>
+    <li><a href="/#pricing">Pricing</a></li>
+  </ul>
+  <a class="nav-cta" href="/#waitlist">Get early access</a>
+</nav>
+
+<section class="legal-hero">
+  <div class="legal-hero-inner">
+    <div class="legal-eyebrow">Legal</div>
+    <h1 class="legal-h1">Privacy <em>Policy</em></h1>
+    <p class="legal-meta"><strong>Effective:</strong> April 19, 2026 · <strong>Last updated:</strong> April 19, 2026</p>
+  </div>
+</section>
+
+<section class="legal-body">
+  <div class="legal-inner">
+
+    <p class="legal-intro">
+      <strong>MiserSavings Inc.</strong> ("mi$er," "we," "us," or "our") builds a mobile savings app that helps you move small, skipped purchases into an FDIC-insured vault. This Privacy Policy explains what information we collect, how we use it, who we share it with, and the choices you have. By using mi$er, you agree to the practices described below.
+    </p>
+
+    <div class="toc">
+      <div class="toc-label">On this page</div>
+      <ol>
+        <li><a href="#information-we-collect">Information we collect</a></li>
+        <li><a href="#how-we-use">How we use information</a></li>
+        <li><a href="#service-providers">Service providers & disclosures</a></li>
+        <li><a href="#fdic">FDIC, banking & Stripe Treasury</a></li>
+        <li><a href="#bank-linking">Bank linking (Stripe Financial Connections)</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#retention">Data retention</a></li>
+        <li><a href="#your-rights">Your rights & choices</a></li>
+        <li><a href="#ccpa">California residents (CCPA/CPRA)</a></li>
+        <li><a href="#children">Children's privacy</a></li>
+        <li><a href="#international">International users</a></li>
+        <li><a href="#changes">Changes to this policy</a></li>
+        <li><a href="#contact">Contact us</a></li>
+      </ol>
+    </div>
+
+    <h2 id="information-we-collect">1. Information we collect</h2>
+    <p>We collect only the information we need to operate mi$er, keep your money safe, and comply with the law. We break it into four categories.</p>
+
+    <h3>Information you give us</h3>
+    <ul>
+      <li><strong>Account info:</strong> email address, name, date of birth, phone number, and password credentials (handled by our authentication provider, Clerk).</li>
+      <li><strong>Identity information (KYC):</strong> legal name, date of birth, residential address, Social Security Number (last 4 or full, as required), and a photo of a government-issued ID. This is required by federal law to open a financial account.</li>
+      <li><strong>Goals and skips:</strong> the goals you create, the skips you log, amounts, categories, and notes.</li>
+      <li><strong>Support messages:</strong> anything you write to us at support@misersavings.com or through the in-app support channel.</li>
+    </ul>
+
+    <h3>Information from your bank</h3>
+    <ul>
+      <li><strong>Bank account details via Stripe Financial Connections:</strong> when you link a bank account to fund your vault, Stripe Financial Connections provides us the account and routing numbers, account owner name, balance, and (with your consent) transaction history used for ACH verification and fraud prevention. We do not store your bank login credentials — those stay with Stripe.</li>
+      <li><strong>Transaction data:</strong> the deposits, transfers, interest accruals, and withdrawals that happen inside your mi$er vault.</li>
+    </ul>
+
+    <h3>Information collected automatically</h3>
+    <ul>
+      <li><strong>Device & app info:</strong> device model, operating system version, app version, language, time zone, and IP address.</li>
+      <li><strong>Usage data:</strong> screens you visit, buttons you tap, and features you use — used to improve the product and diagnose issues.</li>
+      <li><strong>Crash and diagnostic logs:</strong> automatic reports when the app crashes or encounters errors.</li>
+    </ul>
+
+    <h3>Information from third parties</h3>
+    <ul>
+      <li><strong>Identity verification:</strong> our banking partners and their vendors may check the identity information you provide against credit bureaus, public records, and fraud databases to verify who you are. This is required to comply with the USA PATRIOT Act's Customer Identification Program (CIP) and Bank Secrecy Act (BSA).</li>
+    </ul>
+
+    <h2 id="how-we-use">2. How we use information</h2>
+    <p>We use the information we collect to:</p>
+    <ul>
+      <li>Create and maintain your account and your vault.</li>
+      <li>Verify your identity and comply with anti-money-laundering (AML), Know-Your-Customer (KYC), OFAC sanctions, and other financial regulations.</li>
+      <li>Move money between your linked bank and your vault via ACH.</li>
+      <li>Calculate and credit interest (APY) on your vault balance.</li>
+      <li>Charge the $3.49 withdrawal fee at the point of withdrawal.</li>
+      <li>Send you required communications (transaction confirmations, fee disclosures, Regulation E notices, tax forms, and legal notices).</li>
+      <li>Send you product updates, tips, and milestone notifications (you can opt out of marketing messages at any time; you cannot opt out of legally-required communications).</li>
+      <li>Detect, investigate, and prevent fraud, unauthorized access, and abuse.</li>
+      <li>Improve, debug, and secure the mi$er app and our services.</li>
+      <li>Respond to lawful requests from courts, regulators, and law enforcement.</li>
+    </ul>
+
+    <h2 id="service-providers">3. Service providers & disclosures</h2>
+    <p>We do not sell your personal information. We share information only with the providers we rely on to run mi$er, and only the minimum needed for them to do their job. Each provider is contractually required to protect your information.</p>
+
+    <table>
+      <thead>
+        <tr><th>Provider</th><th>What they do</th><th>Information shared</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Stripe Payments Company</strong> (including Stripe Treasury, Stripe ACH)</td>
+          <td>Operates the FDIC-insured deposit account your vault sits in, processes ACH transfers, and handles KYC/AML as the financial services provider.</td>
+          <td>Identity info (name, DOB, SSN, address, ID), linked bank details, transaction data, IP address.</td>
+        </tr>
+        <tr>
+          <td><strong>Stripe Financial Connections</strong></td>
+          <td>Lets you securely connect your bank account to mi$er without sharing your bank login with us.</td>
+          <td>Bank name, account/routing numbers, balance, account ownership, and (with your consent) transaction history.</td>
+        </tr>
+        <tr>
+          <td><strong>Clerk</strong></td>
+          <td>Handles user authentication, session management, and password storage.</td>
+          <td>Email, phone number, password hash, session metadata, device info.</td>
+        </tr>
+        <tr>
+          <td><strong>Supabase</strong></td>
+          <td>Hosts the application database (goals, skips, non-financial user data) with row-level security.</td>
+          <td>User ID, goal/skip records, app preferences.</td>
+        </tr>
+        <tr>
+          <td><strong>Vercel</strong></td>
+          <td>Hosts our marketing website and API endpoints.</td>
+          <td>IP address, user agent, and request metadata (standard server logs).</td>
+        </tr>
+        <tr>
+          <td><strong>Apple / Google</strong></td>
+          <td>Distribute the mi$er app through the App Store and Google Play and deliver push notifications.</td>
+          <td>Device token, app crash reports, standard store analytics (as governed by Apple / Google policies).</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>We may also share information when we are legally required to — for example, in response to a subpoena, court order, or regulatory request — or when necessary to protect the rights, property, or safety of mi$er, our users, or the public. If mi$er is involved in a merger, acquisition, or sale of assets, your information may transfer to the successor entity, subject to this Privacy Policy.</p>
+
+    <h2 id="fdic">4. FDIC, banking & Stripe Treasury</h2>
+    <p><strong>mi$er is a financial technology company, not a bank.</strong> Banking services — including the FDIC-insured deposit account your vault is held in — are provided by Stripe's sponsor bank partners through Stripe Treasury (offered by Stripe Payments Company).</p>
+    <p>Funds held in your mi$er vault are eligible for pass-through FDIC insurance up to $250,000 per depositor at the partner bank, subject to aggregation with any other deposits you hold at that same bank. Pass-through insurance requires that your identity is verified and your account is properly recorded in the bank's books — which is why KYC is mandatory.</p>
+    <div class="callout">
+      <p><strong>FDIC insurance covers bank failure, not everything else.</strong> It does not protect you from losses caused by market conditions (like APY changing), fraud on your linked bank account, unauthorized transactions, or your own authorized transfers. Always keep your login, email, and phone secure.</p>
+    </div>
+
+    <h2 id="bank-linking">5. Bank linking (Stripe Financial Connections)</h2>
+    <p>When you link a bank account to mi$er, we use Stripe Financial Connections to do it. Here is what that means in plain language:</p>
+    <ul>
+      <li>You sign into your bank through Stripe's secure flow. <strong>mi$er never sees your bank username or password.</strong></li>
+      <li>Stripe returns a permission token and the account details needed to run ACH transfers (account and routing numbers, account owner name).</li>
+      <li>You can review and revoke the linked-bank permission at any time from within mi$er or directly at <a href="https://stripe.com/docs/financial-connections" target="_blank" rel="noopener">Stripe's permission center</a>.</li>
+    </ul>
+
+    <h2 id="security">6. Security</h2>
+    <p>We take security seriously because money is involved. Our safeguards include:</p>
+    <ul>
+      <li>All data in transit is encrypted using TLS 1.2 or higher.</li>
+      <li>All data at rest in our databases is encrypted using AES-256.</li>
+      <li>Passwords are never stored in plaintext; Clerk hashes them using bcrypt.</li>
+      <li>Sensitive identity information (SSN, ID images) is held by Stripe, our financial partner — not in our own database.</li>
+      <li>Row-level security on our Supabase database ensures users can only read and write their own data.</li>
+      <li>Administrative access to our systems requires multi-factor authentication and is logged.</li>
+      <li>We run automated monitoring for suspicious activity and unauthorized access attempts.</li>
+    </ul>
+    <p>No system is perfectly secure, and we cannot guarantee absolute security. If you believe your account has been compromised, contact us immediately at <a href="mailto:support@misersavings.com">support@misersavings.com</a>.</p>
+
+    <h2 id="retention">7. Data retention</h2>
+    <p>We retain your information for as long as your account is open, plus the longer of:</p>
+    <ul>
+      <li>Five (5) years after your account is closed, as required by the Bank Secrecy Act and our banking partners; or</li>
+      <li>Seven (7) years for tax-related records, as required by the IRS; or</li>
+      <li>Any longer period required by applicable law, regulation, or a legal hold.</li>
+    </ul>
+    <p>After retention periods expire, we delete or anonymize the data.</p>
+
+    <h2 id="your-rights">8. Your rights & choices</h2>
+    <p>You have the following rights with respect to your personal information, subject to applicable law and our regulatory obligations:</p>
+    <ul>
+      <li><strong>Access:</strong> request a copy of the personal information we hold about you.</li>
+      <li><strong>Correction:</strong> ask us to fix inaccurate information.</li>
+      <li><strong>Deletion:</strong> ask us to delete your personal information. We may retain information we are legally required to keep (see Section 7).</li>
+      <li><strong>Portability:</strong> request a machine-readable copy of information you provided us.</li>
+      <li><strong>Opt out of marketing:</strong> unsubscribe from marketing emails using the link in any email, or change notification preferences in the app. You cannot opt out of legally-required transactional communications.</li>
+      <li><strong>Close your account:</strong> at any time, from the Profile tab or by emailing support. Your vault balance will be withdrawn to your linked bank account (subject to the $3.49 fee) before the account is closed.</li>
+    </ul>
+    <p>To exercise any of these rights, email <a href="mailto:support@misersavings.com">support@misersavings.com</a>. We will respond within 30 days (or 45 days if we need an extension and notify you of the delay).</p>
+
+    <h2 id="ccpa">9. California residents (CCPA/CPRA)</h2>
+    <p>If you are a California resident, you have the rights described in Section 8, plus the following under the California Consumer Privacy Act (CCPA) as amended by the California Privacy Rights Act (CPRA):</p>
+    <ul>
+      <li>The right to know what categories of personal information we collect, the categories of sources, the business purposes for collection, and the categories of third parties we share it with (described throughout this policy).</li>
+      <li>The right to limit our use of "sensitive personal information" (such as your SSN). We only use sensitive personal information for purposes permitted under CCPA — principally, to comply with KYC/AML law.</li>
+      <li>The right to non-discrimination for exercising these rights.</li>
+    </ul>
+    <p><strong>We do not sell or "share" personal information for cross-context behavioral advertising</strong> as those terms are defined under CCPA/CPRA.</p>
+
+    <h2 id="children">10. Children's privacy</h2>
+    <p>mi$er is not intended for and is not directed at children under 18. You must be 18 years of age or older to open a mi$er account. We do not knowingly collect personal information from anyone under 18. If you believe a child has provided us information, email us at <a href="mailto:support@misersavings.com">support@misersavings.com</a> and we will delete it.</p>
+
+    <h2 id="international">11. International users</h2>
+    <p>mi$er is available only to residents of the United States. Our services, servers, and banking partners are located in the United States, and by using mi$er you consent to the transfer and processing of your information in the United States. The United States may not provide the same level of data protection as your country of residence.</p>
+
+    <h2 id="changes">12. Changes to this policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the top. If the changes are material, we will notify you by email or an in-app notice before they take effect. Your continued use of mi$er after a change means you accept the revised policy.</p>
+
+    <h2 id="contact">13. Contact us</h2>
+    <p>Questions, complaints, or requests about this Privacy Policy or your personal information:</p>
+
+    <div class="contact-box">
+      <h3>Contact MiserSavings</h3>
+      <p><strong style="color:var(--pch)">MiserSavings Inc.</strong></p>
+      <p>Email: <a href="mailto:support@misersavings.com">support@misersavings.com</a></p>
+      <p>Website: <a href="https://misersavings.com">misersavings.com</a></p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <a href="/" class="footer-wm">mı<span class="d">$</span>er</a>
+    <div class="footer-links-row">
+      <a href="/">Home</a>
+      <a href="/privacy">Privacy policy</a>
+      <a href="/terms">Terms of service</a>
+      <a href="mailto:support@misersavings.com">Contact</a>
+    </div>
+    <div class="footer-copy">© 2026 MiserSavings Inc. · mi$er is a financial technology company, not a bank. Banking services provided by Stripe Payments Company and its partner banks through Stripe Treasury.</div>
+  </div>
+</footer>
+
+</body>
+</html>
