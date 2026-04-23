@@ -4,40 +4,50 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Terms of Service — MiserSavings</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💸</text></svg>">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#EDE8D0;color:#1C3D2B;line-height:1.65;-webkit-font-smoothing:antialiased}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(28,61,43,0.97);backdrop-filter:blur(16px);border-bottom:0.5px solid rgba(255,255,255,0.08);padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-size:20px;font-weight:900;color:#EDE8D0;text-decoration:none;letter-spacing:-0.5px}
-.nav-home{font-size:13px;font-weight:600;color:rgba(237,232,208,0.6);text-decoration:none;border:1px solid rgba(237,232,208,0.2);padding:7px 18px;border-radius:8px;transition:all 0.2s}
-.nav-home:hover{color:#EDE8D0;border-color:rgba(237,232,208,0.5)}
-.hero{background:#1C3D2B;padding:130px 40px 70px;text-align:center}
-.hero-label{font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#C8A820;margin-bottom:16px}
-.hero h1{font-size:48px;font-weight:900;color:#EDE8D0;letter-spacing:-1.5px;line-height:1.05;margin-bottom:14px}
-.hero-meta{font-size:14px;color:rgba(237,232,208,0.45)}
-.body{padding:70px 40px 100px;max-width:780px;margin:0 auto}
-.notice{background:#1C3D2B;color:#EDE8D0;border-radius:14px;padding:20px 28px;margin-bottom:48px;border:1.5px solid #C8A820}
-.notice p{color:rgba(237,232,208,0.8);font-size:14px;line-height:1.65;margin:0}
-.notice strong{color:#C8A820}
-h2{font-size:22px;font-weight:800;color:#1C3D2B;margin:48px 0 12px;padding-top:20px;border-top:0.5px solid rgba(28,61,43,0.15)}
+:root{--teal:#0D9488;--teal-dark:#0B7C71;--teal-light:#14B8A6;--navy:#1B2A4A;--navy-dark:#0F1A30;--bg:#F0F4F8;--card:#FFFFFF;--text:#1B2A4A;--muted:#6B7280}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:60px;background:rgba(15,26,48,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.nav-logo{display:flex;align-items:center;gap:8px;font-size:1.1rem;font-weight:700;color:#fff;text-decoration:none}
+.nav-back{padding:7px 16px;border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.7);border-radius:99px;font-size:0.85rem;font-weight:600;text-decoration:none;transition:all 0.2s}
+.nav-back:hover{color:#fff;border-color:rgba(255,255,255,0.5)}
+
+.hero{padding:120px 5% 72px;background:linear-gradient(160deg,var(--navy-dark) 0%,var(--navy) 45%,#0D4A42 100%);text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 60%,rgba(13,148,136,0.18) 0%,transparent 70%);pointer-events:none}
+.hero-label{display:inline-block;font-size:0.78rem;font-weight:700;color:var(--teal-light);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:16px;position:relative}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;color:#fff;letter-spacing:-0.02em;line-height:1.1;margin-bottom:14px;position:relative}
+.hero-meta{font-size:0.85rem;color:rgba(255,255,255,0.4);position:relative}
+
+.content{max-width:760px;margin:0 auto;padding:64px 5% 100px}
+
+.notice{background:var(--card);border-radius:16px;padding:20px 28px;margin-bottom:48px;border-left:4px solid var(--teal);box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+.notice p{font-size:0.92rem;color:var(--muted);line-height:1.65;margin:0}
+.notice strong{color:var(--teal-dark)}
+
+h2{font-size:1.2rem;font-weight:700;color:var(--text);margin:44px 0 10px;padding-top:20px;border-top:1px solid #E5E7EB}
 h2:first-of-type{border-top:none;padding-top:0;margin-top:0}
-p{font-size:15px;line-height:1.7;color:rgba(28,61,43,0.8);margin-bottom:12px}
-p strong{color:#1C3D2B}
-ul{margin:12px 0 16px 20px}
-li{font-size:15px;line-height:1.7;color:rgba(28,61,43,0.8);margin-bottom:6px}
-a{color:#2E6B45}
-footer{background:#111d16;padding:32px 40px;text-align:center;border-top:0.5px solid rgba(200,168,32,0.1)}
-footer p{font-size:13px;color:rgba(237,232,208,0.35)}
-footer a{color:rgba(237,232,208,0.5);text-decoration:none;margin:0 10px}
-footer a:hover{color:#EDE8D0}
-@media(max-width:640px){.hero{padding:100px 20px 50px}.hero h1{font-size:32px}.body{padding:50px 20px 80px}nav{padding:0 20px}}
+p{font-size:0.95rem;line-height:1.7;color:#374151;margin-bottom:10px}
+p strong{color:var(--text)}
+ul{margin:10px 0 14px 20px}
+li{font-size:0.95rem;line-height:1.7;color:#374151;margin-bottom:5px}
+a{color:var(--teal)}
+a:hover{color:var(--teal-dark)}
+
+footer{background:var(--navy-dark);color:rgba(255,255,255,0.4);text-align:center;padding:28px 5%;font-size:0.82rem}
+footer a{color:var(--teal-light);text-decoration:none;margin:0 8px}
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="/" class="nav-logo">MiserSavings</a>
-  <a href="/" class="nav-home">← Back to home</a>
+  <a href="/" class="nav-logo">
+    <span>💸</span> MiserSavings
+  </a>
+  <a href="/" class="nav-back">← Home</a>
 </nav>
 
 <div class="hero">
@@ -46,14 +56,14 @@ footer a:hover{color:#EDE8D0}
   <p class="hero-meta">Effective: April 22, 2026 &nbsp;·&nbsp; Last updated: April 22, 2026</p>
 </div>
 
-<div class="body">
+<div class="content">
 
   <div class="notice">
-    <p><strong>Pre-launch notice.</strong> MiserSavings is currently in development. These terms govern access to our waitlist, website, and any early-access features. Full financial service terms will be provided before any money movement features are enabled.</p>
+    <p><strong>Pre-launch notice.</strong> MiserSavings is currently in development. These terms govern access to our waitlist and website. Full financial service terms will be provided before any money movement features are enabled.</p>
   </div>
 
   <h2>1. Who we are</h2>
-  <p>MiserSavings Inc. is a Delaware C-Corp (EIN 41-5047930) based at 427 Ridgewood Rd, West Lake Hills TX 78746. We are a financial technology company, not a bank. Any banking, card, or payment services will be provided by licensed third-party partners whose own terms will apply.</p>
+  <p>MiserSavings Inc. is a Delaware C-Corp (EIN 41-5047930). We are a financial technology company, not a bank. Any banking, card, or payment services will be provided by licensed third-party partners whose own terms will apply.</p>
 
   <h2>2. Acceptance</h2>
   <p>By visiting this website, joining the waitlist, or using any feature of the MiserSavings app, you agree to these Terms and our Privacy Policy. If you do not agree, do not use our services.</p>
@@ -97,12 +107,8 @@ footer a:hover{color:#EDE8D0}
 </div>
 
 <footer>
-  <p>
-    <a href="/">Home</a>
-    <a href="/terms.html">Terms of Service</a>
-    <a href="/privacy.html">Privacy Policy</a>
-  </p>
-  <p style="margin-top:12px">© 2026 MiserSavings Inc. · MiserSavings is a financial technology company, not a bank.</p>
+  <p>© 2026 MiserSavings Inc. &nbsp;·&nbsp; <a href="/">Home</a> <a href="/terms.html">Terms</a> <a href="/privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="mailto:support@misersavings.com">support@misersavings.com</a></p>
+  <p style="margin-top:8px;font-size:0.75rem;opacity:0.6">MiserSavings is a financial technology company, not a bank.</p>
 </footer>
 
 </body>
