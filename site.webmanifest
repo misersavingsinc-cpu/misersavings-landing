@@ -1,0 +1,16 @@
+{
+  "name": "MiserSavings",
+  "short_name": "mı$er",
+  "description": "Turn impulse buys into real savings.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#EDE8D0",
+  "theme_color": "#1C3D2B",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

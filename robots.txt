@@ -1,0 +1,13 @@
+# robots.txt for misersavings.com
+# https://misersavings.com
+
+User-agent: *
+Allow: /
+
+# Common bot exclusions for safety (these don't apply to our content but good hygiene)
+Disallow: /*?utm_*
+Disallow: /*?fbclid=
+Disallow: /*?gclid=
+
+# Sitemap
+Sitemap: https://misersavings.com/sitemap.xml

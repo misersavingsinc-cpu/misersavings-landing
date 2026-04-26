@@ -12,12 +12,83 @@
     gtag('js', new Date());
     gtag('config', 'G-76HDNX2NG5');
   </script>
-  <title>mı$er — Turn impulse buys into real savings</title>
-  <meta name="description" content="Every time you almost waste money, mı$er turns that impulse into real savings — instantly locked away." />
-  <meta property="og:title" content="mı$er — Turn impulse buys into real savings" />
-  <meta property="og:description" content="Skip the latte. Bank the $5.99. Watch it stack. Join the waitlist." />
+  <title>MiserSavings — Turn impulse buys into real savings</title>
+  <meta name="description" content="MiserSavings (mı$er) turns the latte you almost bought into real savings. Log a skip, watch it stack. Join the waitlist." />
+  <meta name="keywords" content="MiserSavings, miser, savings app, impulse buying, skip and save, micro savings, savings goal app, behavioral savings" />
+  <meta name="author" content="MiserSavings Inc." />
+  <link rel="canonical" href="https://misersavings.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MiserSavings" />
+  <meta property="og:title" content="MiserSavings — Turn impulse buys into real savings" />
+  <meta property="og:description" content="Log the small purchases you skip. Watch them stack into a real vault. Free to save. Built by MiserSavings Inc." />
   <meta property="og:image" content="https://misersavings.com/og-image.png" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="MiserSavings — Turn impulse buys into real savings" />
+  <meta property="og:url" content="https://misersavings.com/" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MiserSavings — Turn impulse buys into real savings" />
+  <meta name="twitter:description" content="Log the small purchases you skip. Watch them stack into a real vault. Free to save." />
+  <meta name="twitter:image" content="https://misersavings.com/og-image.png" />
+  <meta name="twitter:image:alt" content="MiserSavings — Turn impulse buys into real savings" />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#1C3D2B" />
+
+  <!-- JSON-LD Structured Data: Organization + WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://misersavings.com/#organization",
+        "name": "MiserSavings",
+        "alternateName": ["mı$er", "MiserSavings Inc."],
+        "legalName": "MiserSavings Inc.",
+        "url": "https://misersavings.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://misersavings.com/og-image.png",
+          "width": 1200,
+          "height": 630
+        },
+        "description": "MiserSavings is a behavioral savings app that lets users log the small purchases they skip — coffee, takeout, impulse buys — and watch the money stack into a goal-based vault.",
+        "foundingDate": "2026-03-12",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Austin",
+          "addressRegion": "TX",
+          "addressCountry": "US"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Customer Support",
+          "email": "support@misersavings.com",
+          "availableLanguage": "English"
+        },
+        "sameAs": []
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://misersavings.com/#website",
+        "url": "https://misersavings.com/",
+        "name": "MiserSavings",
+        "description": "Turn impulse buys into real savings.",
+        "publisher": { "@id": "https://misersavings.com/#organization" },
+        "inLanguage": "en-US"
+      }
+    ]
+  }
+  </script>
   <style>
     /* ═══════════════════════════════════════════════════════════════
        mı$er Marketing Site v4 — Brand Guidelines Applied
@@ -96,6 +167,17 @@
       transition: transform 0.15s ease, background 0.2s;
     }
     .nav-cta:hover { background: #DDB930; transform: translateY(-1px); }
+
+    /* Visually hidden but accessible to screen readers and search crawlers */
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
 
     /* ── HERO (light parchment — inverted) ─────────────── */
     .hero {
@@ -709,7 +791,7 @@
 
   <!-- NAV -->
   <nav>
-    <a class="nav-wm" href="#">mı<span class="d">$</span>er</a>
+    <a class="nav-wm" href="#" aria-label="MiserSavings — home">mı<span class="d">$</span>er</a>
     <a class="nav-cta" href="#cta">Join Waitlist</a>
   </nav>
 
@@ -717,6 +799,7 @@
   <div class="hero">
     <div class="hero-badge"><span class="dot"></span>Early access — limited spots</div>
 
+    <p class="sr-only">MiserSavings — a behavioral savings app from MiserSavings Inc.</p>
     <h1>Turn impulse buys<br>into <em>real savings</em>.</h1>
 
     <p class="hero-sub">
@@ -883,7 +966,7 @@
   <footer>
     <div class="foot-grid">
       <div class="foot-col foot-brand">
-        <div class="foot-wm">mı<span>$</span>er</div>
+        <div class="foot-wm" aria-label="MiserSavings">mı<span>$</span>er</div>
         <p class="foot-tag">A quieter way to save. Built for the moments you almost spent.</p>
       </div>
       <div class="foot-col">
