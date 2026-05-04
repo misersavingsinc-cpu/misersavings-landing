@@ -1,1044 +1,1476 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MiserSavings — Turn impulse buys into real savings</title>
+<meta name="description" content="MiserSavings (mı$er) turns the latte you almost bought into real savings. Log a skip, watch it stack into a vault tied to a goal. Free to save. Join the waitlist.">
+<meta name="keywords" content="MiserSavings, miser, savings app, impulse buying, skip and save, micro savings, savings goal app, behavioral savings">
+<meta name="author" content="MiserSavings Inc.">
+<link rel="canonical" href="https://misersavings.com/">
 
-  <!-- Google tag (gtag.js) — GA4 G-76HDNX2NG5 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-76HDNX2NG5"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-76HDNX2NG5');
-  </script>
-  <title>MiserSavings — Turn impulse buys into real savings</title>
-  <meta name="description" content="MiserSavings (mı$er) turns the latte you almost bought into real savings. Log a skip, watch it stack. Join the waitlist." />
-  <meta name="keywords" content="MiserSavings, miser, savings app, impulse buying, skip and save, micro savings, savings goal app, behavioral savings" />
-  <meta name="author" content="MiserSavings Inc." />
-  <link rel="canonical" href="https://misersavings.com/" />
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MiserSavings">
+<meta property="og:title" content="MiserSavings — Turn impulse buys into real savings">
+<meta property="og:description" content="Log the small purchases you skip. Watch them stack into a real vault. Free to save. Built by MiserSavings Inc.">
+<meta property="og:image" content="https://misersavings.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="MiserSavings — Turn impulse buys into real savings">
+<meta property="og:url" content="https://misersavings.com/">
+<meta property="og:locale" content="en_US">
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="MiserSavings" />
-  <meta property="og:title" content="MiserSavings — Turn impulse buys into real savings" />
-  <meta property="og:description" content="Log the small purchases you skip. Watch them stack into a real vault. Free to save. Built by MiserSavings Inc." />
-  <meta property="og:image" content="https://misersavings.com/og-image.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="MiserSavings — Turn impulse buys into real savings" />
-  <meta property="og:url" content="https://misersavings.com/" />
-  <meta property="og:locale" content="en_US" />
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MiserSavings — Turn impulse buys into real savings">
+<meta name="twitter:description" content="Log the small purchases you skip. Watch them stack into a real vault. Free to save.">
+<meta name="twitter:image" content="https://misersavings.com/og-image.png">
+<meta name="twitter:image:alt" content="MiserSavings — Turn impulse buys into real savings">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="MiserSavings — Turn impulse buys into real savings" />
-  <meta name="twitter:description" content="Log the small purchases you skip. Watch them stack into a real vault. Free to save." />
-  <meta name="twitter:image" content="https://misersavings.com/og-image.png" />
-  <meta name="twitter:image:alt" content="MiserSavings — Turn impulse buys into real savings" />
+<!-- Icons -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#1C3D2B">
 
-  <!-- Icons -->
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-  <meta name="theme-color" content="#1C3D2B" />
+<!-- Google tag (gtag.js) — GA4 G-76HDNX2NG5 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-76HDNX2NG5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-76HDNX2NG5');
+</script>
 
-  <!-- JSON-LD Structured Data: Organization + WebSite -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://misersavings.com/#organization",
-        "name": "MiserSavings",
-        "alternateName": ["mı$er", "MiserSavings Inc."],
-        "legalName": "MiserSavings Inc.",
-        "url": "https://misersavings.com/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://misersavings.com/og-image.png",
-          "width": 1200,
-          "height": 630
-        },
-        "description": "MiserSavings is a behavioral savings app that lets users log the small purchases they skip — coffee, takeout, impulse buys — and watch the money stack into a goal-based vault.",
-        "foundingDate": "2026-03-12",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Austin",
-          "addressRegion": "TX",
-          "addressCountry": "US"
-        },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "Customer Support",
-          "email": "support@misersavings.com",
-          "availableLanguage": "English"
-        },
-        "sameAs": []
+<!-- JSON-LD Structured Data: Organization + WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://misersavings.com/#organization",
+      "name": "MiserSavings",
+      "alternateName": ["mı$er", "MiserSavings Inc."],
+      "legalName": "MiserSavings Inc.",
+      "url": "https://misersavings.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://misersavings.com/og-image.png",
+        "width": 1200,
+        "height": 630
       },
-      {
-        "@type": "WebSite",
-        "@id": "https://misersavings.com/#website",
-        "url": "https://misersavings.com/",
-        "name": "MiserSavings",
-        "description": "Turn impulse buys into real savings.",
-        "publisher": { "@id": "https://misersavings.com/#organization" },
-        "inLanguage": "en-US"
-      }
-    ]
-  }
-  </script>
-  <style>
-    /* ═══════════════════════════════════════════════════════════════
-       mı$er Marketing Site v4 — Brand Guidelines Applied
-       Deep Green #1C3D2B · Seal Green #2E6B45 · Gold #C8A820
-       Bronze #8B6914 · Parchment #EDE8D0 · Cream #F5F0E0
-    ═══════════════════════════════════════════════════════════════ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      "description": "MiserSavings is a behavioral savings app that lets users log the small purchases they skip — coffee, takeout, impulse buys — and watch the money stack into a goal-based vault.",
+      "foundingDate": "2026-03-12",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Austin",
+        "addressRegion": "TX",
+        "addressCountry": "US"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Support",
+        "email": "support@misersavings.com",
+        "availableLanguage": "English"
+      },
+      "sameAs": []
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://misersavings.com/#website",
+      "url": "https://misersavings.com/",
+      "name": "MiserSavings",
+      "description": "Turn impulse buys into real savings.",
+      "publisher": { "@id": "https://misersavings.com/#organization" },
+      "inLanguage": "en-US"
+    }
+  ]
+}
+</script>
 
-    :root {
-      --dg:  #1C3D2B;
-      --sg:  #2E6B45;
-      --gld: #C8A820;
-      --brz: #8B6914;
-      --pch: #EDE8D0;
-      --crm: #F5F0E0;
-      --muted: rgba(28,61,43,0.6);
-      --fn: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
-    }
+<style>
+/* Visually hidden but accessible to screen readers and search crawlers */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+</style>
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   mı$er marketing site — brand tokens only
+═══════════════════════════════════════════════════════════════ */
+:root{
+  --dg:#1C3D2B; --sg:#2E6B45; --gld:#C8A820; --brz:#8B6914;
+  --pch:#EDE8D0; --crm:#F5F0E0;
+  --fn:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--fn);background:var(--pch);color:var(--dg);
+  line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
 
-    html { scroll-behavior: smooth; }
+/* ── Guilloche (subtle treasury grid) ───────────────────────── */
+.gui-dk{
+  background-image:
+    repeating-linear-gradient(0deg,transparent,transparent 29px,rgba(237,232,208,0.035) 30px),
+    repeating-linear-gradient(90deg,transparent,transparent 29px,rgba(237,232,208,0.03) 30px);
+}
+.gui-lt{
+  background-image:
+    repeating-linear-gradient(0deg,transparent,transparent 29px,rgba(28,61,43,0.035) 30px),
+    repeating-linear-gradient(90deg,transparent,transparent 29px,rgba(28,61,43,0.03) 30px);
+}
 
-    body {
-      font-family: var(--fn);
-      background: var(--pch);
-      color: var(--dg);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
+/* ── Typography utilities ───────────────────────────────────── */
+.eyebrow{
+  display:inline-block;font-size:11px;font-weight:700;
+  letter-spacing:0.22em;text-transform:uppercase;color:var(--brz);
+}
+.eyebrow.lt{color:var(--gld)}
+.rule{
+  display:inline-block;width:28px;height:1px;
+  background:var(--brz);vertical-align:middle;margin:0 10px 3px;
+}
+.rule.lt{background:rgba(200,168,32,0.5)}
+.h-display{
+  font-size:clamp(40px,6.2vw,72px);font-weight:900;
+  line-height:1.02;letter-spacing:-0.02em;
+}
+.h-section{
+  font-size:clamp(32px,4.6vw,52px);font-weight:900;
+  line-height:1.05;letter-spacing:-0.015em;
+}
+.h-section em{color:var(--sg);font-style:normal}
+.dk .h-section{color:var(--pch)}
+.dk .h-section em{color:var(--gld)}
+.sub{
+  font-size:clamp(15px,1.3vw,18px);line-height:1.55;
+  color:rgba(28,61,43,0.65);max-width:54ch;
+}
+.dk .sub{color:rgba(237,232,208,0.6)}
 
-    /* ── Subtle guilloche texture (treasury grid) ──────────────── */
-    .guilloche-dark {
-      background-image:
-        repeating-linear-gradient(0deg, transparent, transparent 29px, rgba(255,255,255,0.025) 30px),
-        repeating-linear-gradient(90deg, transparent, transparent 29px, rgba(255,255,255,0.025) 30px);
-    }
-    .guilloche-light {
-      background-image:
-        repeating-linear-gradient(0deg, transparent, transparent 29px, rgba(28,61,43,0.025) 30px),
-        repeating-linear-gradient(90deg, transparent, transparent 29px, rgba(28,61,43,0.025) 30px);
-    }
+.container{max-width:1200px;margin:0 auto;padding:0 32px}
 
-    /* ── NAV ─────────────────────────────────────────── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 5%;
-      height: 64px;
-      background: rgba(28, 61, 43, 0.95);
-      backdrop-filter: saturate(140%) blur(14px);
-      -webkit-backdrop-filter: saturate(140%) blur(14px);
-      border-bottom: 0.5px solid rgba(200,168,32,0.18);
-    }
+/* Scroll-reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-delay="1"]{transition-delay:.08s}
+.reveal[data-delay="2"]{transition-delay:.16s}
+.reveal[data-delay="3"]{transition-delay:.24s}
 
-    .nav-wm {
-      font-size: 22px;
-      font-weight: 900;
-      letter-spacing: -0.5px;
-      color: var(--pch);
-      text-decoration: none;
-    }
-    .nav-wm .d { color: var(--gld); }
+/* ══════════════════════════════════════════════════════════════
+   NAV
+══════════════════════════════════════════════════════════════ */
+nav.site{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(28,61,43,0.92);
+  backdrop-filter:saturate(140%) blur(14px);
+  -webkit-backdrop-filter:saturate(140%) blur(14px);
+  border-bottom:0.5px solid rgba(200,168,32,0.18);
+  height:64px;display:flex;align-items:center;
+}
+nav.site .inner{
+  max-width:1200px;margin:0 auto;padding:0 32px;width:100%;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+.wm{
+  font-size:22px;font-weight:900;letter-spacing:-0.02em;color:var(--pch);
+  display:inline-flex;align-items:baseline;
+}
+.wm .d{color:var(--gld)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{
+  font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  color:rgba(237,232,208,0.55);transition:color .2s;
+}
+.nav-links a:hover{color:var(--pch)}
+.nav-cta{
+  background:var(--gld);color:var(--dg);
+  font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;
+  padding:10px 18px;border-radius:8px;
+  transition:transform .15s,background .2s;
+}
+.nav-cta:hover{background:#d4b428;transform:translateY(-1px)}
+@media(max-width:760px){ .nav-links{display:none} }
 
-    .nav-cta {
-      padding: 9px 18px;
-      background: var(--gld);
-      color: var(--dg);
-      border-radius: 99px;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      text-decoration: none;
-      transition: transform 0.15s ease, background 0.2s;
-    }
-    .nav-cta:hover { background: #DDB930; transform: translateY(-1px); }
+/* ══════════════════════════════════════════════════════════════
+   HERO
+══════════════════════════════════════════════════════════════ */
+.hero{
+  background:var(--dg);color:var(--pch);
+  padding:140px 32px 110px;position:relative;overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse 900px 600px at 70% 40%,rgba(46,107,69,0.32) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero::after{
+  content:"";position:absolute;inset:auto auto -40% -10%;width:60%;aspect-ratio:1;
+  border-radius:50%;border:1px solid rgba(200,168,32,0.08);pointer-events:none;
+  box-shadow:0 0 0 60px rgba(200,168,32,0.04) inset;
+}
+.hero-inner{
+  position:relative;z-index:2;max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:1.15fr 0.85fr;gap:64px;align-items:center;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(200,168,32,0.1);border:1px solid rgba(200,168,32,0.28);
+  border-radius:999px;padding:6px 14px 6px 10px;margin-bottom:24px;
+}
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--gld);
+  box-shadow:0 0 0 4px rgba(200,168,32,0.15); animation:pulse 2.2s ease-in-out infinite}
+@keyframes pulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(200,168,32,0.35)}
+  50%{box-shadow:0 0 0 8px rgba(200,168,32,0)}
+}
+.hero-badge span{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gld)}
 
-    /* Visually hidden but accessible to screen readers and search crawlers */
-    .sr-only {
-      position: absolute;
-      width: 1px; height: 1px;
-      padding: 0; margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
+/* Dictionary-entry hook — boxed, animated reveal */
+.dict{
+  margin:6px 0 28px;padding:22px 26px 20px;
+  border:1px solid rgba(237,232,208,0.14);
+  border-left:2px solid var(--gld);
+  background:rgba(237,232,208,0.025);
+  border-radius:4px;max-width:560px;position:relative;overflow:hidden;
+}
+.dict::before{
+  content:"entry — vol. i";position:absolute;top:14px;right:18px;
+  font-family:'EB Garamond',Georgia,serif;
+  font-size:10px;letter-spacing:0.22em;text-transform:uppercase;
+  color:rgba(200,168,32,0.45);
+}
+.dict-head{
+  display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;
+  font-family:'EB Garamond',Georgia,serif;color:var(--pch);
+  margin-bottom:14px;
+}
+.dict-word{font-size:28px;font-weight:600;letter-spacing:-0.01em;line-height:1}
+.dict-word .syl{color:rgba(237,232,208,0.4);font-weight:400;font-size:0.6em;margin-left:6px;letter-spacing:0}
+.dict-pos{font-size:13px;color:rgba(200,168,32,0.7);font-style:italic;letter-spacing:0.01em}
+.dict-defs{display:flex;flex-direction:column;gap:10px;
+  font-family:'EB Garamond',Georgia,serif;
+  font-size:16px;line-height:1.55;color:rgba(237,232,208,0.7)}
+.dict-def{display:flex;gap:12px;align-items:baseline;
+  opacity:0;transition:opacity .9s ease}
+.dict-def.show{opacity:1}
+.dict-num{flex:0 0 14px;font-size:11px;font-weight:700;color:rgba(200,168,32,0.6);
+  font-family:'Inter',sans-serif;letter-spacing:0.1em;padding-top:3px}
+.dict-tag{font-style:italic;color:rgba(237,232,208,0.42);margin-right:4px}
+.dict-def.modern{color:var(--pch)}
+.dict-def.modern .dict-tag{color:var(--gld)}
+.dict-cursor{
+  display:inline-block;width:0.5ch;height:1em;background:var(--gld);
+  margin-left:2px;vertical-align:-2px;opacity:.85;
+  animation:dictBlink 1s steps(2) infinite;
+}
+@keyframes dictBlink{50%{opacity:0}}
+@media(max-width:760px){
+  .dict{padding:18px 18px 16px}
+  .dict-word{font-size:22px}
+  .dict-defs{font-size:14px}
+}
 
-    /* ── HERO (light parchment — inverted) ─────────────── */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 120px 5% 80px;
-      background:
-        radial-gradient(ellipse 900px 600px at 50% 35%, rgba(200,168,32,0.14) 0%, transparent 70%),
-        linear-gradient(165deg, var(--crm) 0%, var(--pch) 55%, #E2DCC3 100%);
-      position: relative;
-      overflow: hidden;
-      color: var(--dg);
-    }
+.hero h1{
+  color:var(--pch);font-size:clamp(44px,5.8vw,76px);
+  font-weight:900;line-height:0.98;letter-spacing:-0.025em;
+  margin-bottom:22px;max-width:14ch;
+}
+.hero h1 em{color:var(--gld);font-style:normal}
+.hero h1 .strike{
+  position:relative;color:rgba(237,232,208,0.55);
+}
+.hero h1 .strike::after{
+  content:"";position:absolute;left:-2%;right:-2%;top:55%;height:6%;
+  background:var(--gld);transform:rotate(-3deg);opacity:0.9;
+  border-radius:2px;
+}
+.hero p.lead{
+  font-size:clamp(16px,1.35vw,19px);line-height:1.55;
+  color:rgba(237,232,208,0.7);max-width:46ch;margin-bottom:36px;
+}
+.hero-ctas{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.btn-gold{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--gld);color:var(--dg);
+  font-size:14px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;
+  padding:15px 26px;border-radius:10px;border:none;cursor:pointer;
+  transition:transform .15s,box-shadow .2s,background .2s;
+}
+.btn-gold:hover{background:#d4b428;transform:translateY(-2px);
+  box-shadow:0 12px 28px -8px rgba(200,168,32,0.45)}
+.btn-outline-lt{
+  display:inline-flex;align-items:center;gap:10px;
+  border:1.5px solid rgba(237,232,208,0.25);color:rgba(237,232,208,0.85);
+  font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
+  padding:14px 22px;border-radius:10px;transition:all .2s;background:transparent;cursor:pointer;
+}
+.btn-outline-lt:hover{border-color:var(--pch);color:var(--pch)}
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: auto auto -40% -10%;
-      width: 60%;
-      aspect-ratio: 1;
-      border-radius: 50%;
-      border: 1px dashed rgba(139,105,20,0.18);
-      pointer-events: none;
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        repeating-linear-gradient(0deg, transparent, transparent 29px, rgba(28,61,43,0.035) 30px),
-        repeating-linear-gradient(90deg, transparent, transparent 29px, rgba(28,61,43,0.035) 30px);
-      pointer-events: none;
-    }
+.hero-foot{
+  margin-top:28px;display:flex;gap:24px;flex-wrap:wrap;
+  font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
+  color:rgba(237,232,208,0.35);
+}
+.hero-foot .dot{color:var(--gld);margin:0 4px}
 
-    .hero > * { position: relative; z-index: 1; }
+/* Hero right column */
+.hero-right{position:relative;display:flex;justify-content:center;align-items:center;min-height:620px}
+.hero-right::before{
+  content:"";position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);
+  width:480px;height:480px;border-radius:50%;
+  border:1px dashed rgba(200,168,32,0.22);
+  animation:spin 60s linear infinite;
+}
+.hero-right::after{
+  content:"";position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);
+  width:360px;height:360px;border-radius:50%;
+  border:1px solid rgba(200,168,32,0.1);
+}
+@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
 
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(200,168,32,0.16);
-      border: 1px solid rgba(139,105,20,0.32);
-      color: var(--brz);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      padding: 7px 16px;
-      border-radius: 99px;
-      margin-bottom: 32px;
-    }
-    .hero-badge .dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--gld);
-      box-shadow: 0 0 0 4px rgba(200,168,32,0.22);
-      animation: pulse 2.2s ease-in-out infinite;
-    }
-    @keyframes pulse {
-      0%,100% { box-shadow: 0 0 0 0 rgba(200,168,32,0.5); }
-      50% { box-shadow: 0 0 0 9px rgba(200,168,32,0); }
-    }
+.ticker{
+  position:absolute;top:12px;left:0;right:0;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:8px 14px;border:1px solid rgba(200,168,32,0.22);
+  background:rgba(28,61,43,0.6);backdrop-filter:blur(6px);
+  border-radius:8px;z-index:5;
+  font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
+  color:rgba(237,232,208,0.55);
+}
+.ticker .live{display:inline-flex;align-items:center;gap:6px;color:var(--gld)}
+.ticker .live::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--gld);
+  box-shadow:0 0 0 3px rgba(200,168,32,0.2);animation:pulse 2s infinite}
 
-    .hero h1 {
-      font-size: clamp(2.6rem, 6.4vw, 4.4rem);
-      font-weight: 900;
-      color: var(--dg);
-      line-height: 1.08;
-      max-width: 820px;
-      margin-bottom: 22px;
-      letter-spacing: -0.025em;
-    }
+@media(max-width:960px){
+  .hero{padding:112px 20px 80px}
+  .hero-inner{grid-template-columns:1fr;gap:48px}
+  .hero-right{min-height:560px}
+}
 
-    .hero h1 em {
-      font-style: normal;
-      color: var(--brz);
-      position: relative;
-      display: inline-block;
-    }
-    .hero h1 em::after {
-      content: '';
-      position: absolute;
-      left: -2%;
-      right: -2%;
-      bottom: 4%;
-      height: 8%;
-      background: rgba(200,168,32,0.45);
-      z-index: -1;
-      border-radius: 4px;
-    }
+/* ══════════════════════════════════════════════════════════════
+   PHONE FRAME (shared) — used as imagery
+══════════════════════════════════════════════════════════════ */
+.phone{
+  width:292px;height:620px;background:#0d0d0d;border-radius:48px;padding:11px;
+  box-shadow:
+    0 0 0 1.5px #222,0 0 0 3px #111,
+    0 30px 80px -10px rgba(0,0,0,0.55),inset 0 0 0 1px #3a3a3a;
+  position:relative;flex-shrink:0;
+}
+.phone.sm{width:252px;height:540px;border-radius:42px;padding:10px}
+.phone::before{
+  content:"";position:absolute;left:-3px;top:110px;width:3px;height:32px;
+  background:#1a1a1a;border-radius:2px 0 0 2px;
+  box-shadow:0 44px 0 #1a1a1a,0 80px 0 #1a1a1a;
+}
+.phone::after{
+  content:"";position:absolute;right:-3px;top:138px;width:3px;height:56px;
+  background:#1a1a1a;border-radius:0 2px 2px 0;
+}
+.phone-screen{
+  width:100%;height:100%;border-radius:38px;overflow:hidden;
+  position:relative;display:flex;flex-direction:column;
+}
+.phone.sm .phone-screen{border-radius:32px}
+.di{
+  position:absolute;top:12px;left:50%;transform:translateX(-50%);
+  width:100px;height:28px;background:#0d0d0d;border-radius:14px;z-index:30;
+}
+.phone.sm .di{width:90px;height:25px}
 
-    .hero-sub {
-      font-size: clamp(1rem, 2.2vw, 1.18rem);
-      color: rgba(28,61,43,0.7);
-      max-width: 560px;
-      margin-bottom: 44px;
-    }
+/* Screen backgrounds */
+.s-pch{background:var(--pch);color:var(--dg)}
+.s-dg{background:var(--dg);color:var(--pch)}
+.s-crm{background:var(--crm);color:var(--dg)}
 
-    /* waitlist form (light variant) */
-    .waitlist-form {
-      display: flex;
-      gap: 10px;
-      max-width: 480px;
-      width: 100%;
-      margin: 0 auto 16px;
-    }
+/* Status bar */
+.sb{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:16px 22px 0;flex-shrink:0;z-index:10;
+  font-size:10px;font-weight:700;
+}
+.sb.dk-ic{color:rgba(28,61,43,0.75)}
+.sb.lt-ic{color:rgba(237,232,208,0.85)}
 
-    .waitlist-form input[type="email"] {
-      flex: 1;
-      padding: 15px 20px;
-      border-radius: 12px;
-      border: 1.5px solid rgba(28,61,43,0.18);
-      background: rgba(255,255,255,0.7);
-      color: var(--dg);
-      font-size: 15px;
-      font-family: var(--fn);
-      outline: none;
-      transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
-    }
-    .waitlist-form input[type="email"]::placeholder { color: rgba(28,61,43,0.4); }
-    .waitlist-form input[type="email"]:focus {
-      border-color: var(--sg);
-      background: #FFFFFF;
-      box-shadow: 0 0 0 3px rgba(46,107,69,0.12);
-    }
+/* Tab bar (parchment) */
+.tbar{
+  display:flex;flex-shrink:0;padding:8px 0 12px;
+  background:var(--crm);border-top:0.5px solid rgba(28,61,43,0.1);
+}
+.tbar .t{flex:1;text-align:center;font-size:7.5px;font-weight:700;
+  letter-spacing:0.05em;text-transform:uppercase;color:rgba(28,61,43,0.3)}
+.tbar .t.a{color:var(--sg)}
+.tbar .t .ic{font-size:15px;display:block;margin-bottom:3px}
 
-    .waitlist-form button {
-      padding: 15px 26px;
-      background: var(--dg);
-      color: var(--pch);
-      border: none;
-      border-radius: 12px;
-      font-size: 15px;
-      font-weight: 800;
-      cursor: pointer;
-      white-space: nowrap;
-      font-family: var(--fn);
-      letter-spacing: 0.01em;
-      transition: background 0.2s, transform 0.1s;
-    }
-    .waitlist-form button:hover { background: var(--sg); }
-    .waitlist-form button:active { transform: scale(0.97); }
-    .waitlist-form button:disabled { opacity: 0.6; cursor: wait; }
+/* Dark tab bar (deep green) */
+.tbar.dk{background:rgba(20,40,28,0.6);border-top:0.5px solid rgba(255,255,255,0.06)}
+.tbar.dk .t{color:rgba(237,232,208,0.3)}
+.tbar.dk .t.a{color:var(--gld)}
 
-    .form-fine-print {
-      font-size: 12px;
-      color: rgba(28,61,43,0.55);
-      letter-spacing: 0.02em;
-    }
-    .form-fine-print a {
-      color: var(--sg);
-      text-decoration: underline;
-      text-decoration-color: rgba(46,107,69,0.35);
-      text-underline-offset: 2px;
-      transition: color 0.15s, text-decoration-color 0.15s;
-    }
-    .form-fine-print a:hover {
-      color: var(--brz);
-      text-decoration-color: var(--brz);
-    }
+/* Screen content wrap */
+.scw{flex:1;display:flex;flex-direction:column;overflow:hidden}
 
-    .form-success {
-      display: none;
-      background: rgba(46,107,69,0.10);
-      border: 1px solid rgba(46,107,69,0.32);
-      color: var(--dg);
-      border-radius: 12px;
-      padding: 14px 22px;
-      font-weight: 700;
-      max-width: 480px;
-      margin: 0 auto 16px;
-      text-align: center;
-    }
+/* Progress bars (reusable) */
+.pb{height:6px;border-radius:3px;background:rgba(28,61,43,0.1);overflow:hidden}
+.pb.lt{background:rgba(255,255,255,0.1)}
+.pb .f{height:100%;border-radius:3px;background:var(--sg);transition:width .8s cubic-bezier(.2,.7,.2,1)}
+.pb .f.g{background:var(--gld)}
+.pb .f.brz{background:var(--brz)}
 
-    /* ── HERO MINI-CARDS (light variant) ─────────────── */
-    .hero-preview-row {
-      display: flex;
-      gap: 14px;
-      justify-content: center;
-      margin-top: 56px;
-      flex-wrap: wrap;
-    }
+/* Card (generic) */
+.pc-card{margin:0 18px;border-radius:12px;overflow:hidden;flex-shrink:0;
+  background:var(--crm);border:1px solid rgba(28,61,43,0.09)}
+.pc-card .row{display:flex;align-items:center;gap:8px;padding:9px 12px}
+.pc-card .row + .row{border-top:0.5px solid rgba(28,61,43,0.08)}
 
-    .mini-card {
-      background: rgba(255,255,255,0.65);
-      border: 1px solid rgba(28,61,43,0.10);
-      border-radius: 16px;
-      padding: 16px 22px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      color: var(--dg);
-      font-size: 14px;
-      min-width: 175px;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      box-shadow: 0 1px 2px rgba(28,61,43,0.04), 0 6px 18px rgba(28,61,43,0.06);
-    }
+/* Streak chip */
+.streak{
+  display:inline-flex;align-items:center;gap:4px;
+  background:rgba(139,105,20,0.12);border:1px solid rgba(139,105,20,0.28);
+  border-radius:20px;padding:3px 10px;
+  font-size:9px;font-weight:700;color:var(--brz);letter-spacing:0.04em;
+}
 
-    .mini-card .icon { font-size: 1.5rem; }
-    .mini-card .label {
-      font-size: 10px;
-      color: var(--brz);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-weight: 800;
-    }
-    .mini-card .value {
-      font-weight: 800;
-      font-size: 18px;
-      color: var(--dg);
-      font-variant-numeric: tabular-nums;
-    }
+/* ══════════════════════════════════════════════════════════════
+   SECTION SHELL
+══════════════════════════════════════════════════════════════ */
+section.band{padding:110px 32px;position:relative}
+section.band.pch{background:var(--pch);color:var(--dg)}
+section.band.crm{background:var(--crm);color:var(--dg)}
+section.band.dg{background:var(--dg);color:var(--pch)}
 
-    /* ── STATS BAR ───────────────────────────────────── */
-    .stats-bar {
-      background: var(--crm);
-      border-bottom: 1px solid rgba(28,61,43,0.08);
-      padding: 36px 5%;
-      display: flex;
-      justify-content: center;
-      gap: clamp(28px, 6vw, 90px);
-      flex-wrap: wrap;
-    }
+.band-head{max-width:760px;margin:0 auto 64px;text-align:center}
+.band-head .rule-pair{
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  margin-bottom:14px;
+}
+.band-head .rule-pair .line{flex:0 0 40px;height:1px;background:var(--brz);opacity:.5}
+.dg .band-head .rule-pair .line{background:rgba(200,168,32,0.4)}
+.band-head h2{margin-bottom:16px}
+.band-head .sub{margin:0 auto;text-align:center}
 
-    .stat-item { text-align: center; }
-    .stat-num {
-      font-size: clamp(1.8rem, 4.2vw, 2.4rem);
-      font-weight: 900;
-      color: var(--dg);
-      line-height: 1;
-      letter-spacing: -0.02em;
-      font-variant-numeric: tabular-nums;
-    }
-    .stat-label {
-      font-size: 11px;
-      color: var(--brz);
-      margin-top: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-weight: 700;
-    }
+/* ══════════════════════════════════════════════════════════════
+   HOW IT WORKS
+══════════════════════════════════════════════════════════════ */
+.steps{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
+  max-width:1200px;margin:0 auto;
+}
+.step{
+  background:var(--crm);border:1px solid rgba(28,61,43,0.1);
+  border-radius:20px;padding:32px 28px 24px;
+  display:flex;flex-direction:column;gap:20px;
+  position:relative;transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .25s;
+}
+.step:hover{transform:translateY(-6px);border-color:rgba(139,105,20,0.35)}
+.step .snum{
+  display:flex;align-items:center;gap:10px;
+  font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--brz);
+}
+.step .snum .dot{width:5px;height:5px;border-radius:50%;background:var(--brz)}
+.step h3{
+  font-size:28px;font-weight:900;line-height:1.1;letter-spacing:-0.015em;color:var(--dg);
+}
+.step h3 em{color:var(--sg);font-style:normal}
+.step p{font-size:15px;line-height:1.55;color:rgba(28,61,43,0.65)}
+.step .phone-well{
+  display:flex;justify-content:center;align-items:flex-start;
+  background:var(--dg);border-radius:16px;padding:28px 0 0;margin-top:auto;overflow:hidden;
+  min-height:360px;position:relative;
+}
+.step .phone-well.pch-well{background:linear-gradient(180deg,var(--pch) 0%,#e2dcc3 100%);border:1px solid rgba(28,61,43,0.08)}
+.step .phone-well::before{
+  content:"";position:absolute;inset:0;opacity:.5;pointer-events:none;
+  background-image:
+    repeating-linear-gradient(0deg,transparent,transparent 19px,rgba(237,232,208,0.04) 20px),
+    repeating-linear-gradient(90deg,transparent,transparent 19px,rgba(237,232,208,0.04) 20px);
+}
+.step .phone-well.pch-well::before{
+  background-image:
+    repeating-linear-gradient(0deg,transparent,transparent 19px,rgba(28,61,43,0.035) 20px),
+    repeating-linear-gradient(90deg,transparent,transparent 19px,rgba(28,61,43,0.03) 20px);
+}
+.step .phone{transform:scale(0.82);transform-origin:top center;margin-bottom:-60px;position:relative;z-index:2}
 
-    /* ── SECTION WRAPPER ─────────────────────────────── */
-    section {
-      padding: clamp(72px, 11vw, 120px) 5%;
-    }
+@media(max-width:960px){
+  .steps{grid-template-columns:1fr;gap:24px}
+  section.band{padding:80px 20px}
+}
 
-    .section-label {
-      display: block;
-      font-size: 11px;
-      font-weight: 800;
-      color: var(--brz);
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      margin-bottom: 14px;
-      text-align: center;
-    }
+/* ══════════════════════════════════════════════════════════════
+   VAULT DEMO
+══════════════════════════════════════════════════════════════ */
+.vault-inner{
+  max-width:1200px;margin:0 auto;display:grid;
+  grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+}
+.vault-left .h-section{text-align:left}
+.vault-left .eyebrow{text-align:left}
+.vault-left .sub{text-align:left}
+.vault-counter{
+  margin-top:40px;padding:28px;
+  background:rgba(237,232,208,0.04);border:1px solid rgba(200,168,32,0.2);
+  border-radius:20px;position:relative;overflow:hidden;
+}
+.vault-counter::before{
+  content:"";position:absolute;top:-40px;right:-40px;width:160px;height:160px;
+  border-radius:50%;border:1px dashed rgba(200,168,32,0.18);
+}
+.vc-label{
+  font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--gld);opacity:.8;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px;
+}
+.vc-label .live-dot{width:6px;height:6px;border-radius:50%;background:var(--gld);
+  box-shadow:0 0 0 4px rgba(200,168,32,0.15);animation:pulse 2s infinite}
+.vc-num{
+  font-size:clamp(64px,9vw,104px);font-weight:900;color:var(--pch);
+  letter-spacing:-0.035em;line-height:.95;
+  font-variant-numeric:tabular-nums;
+}
+.vc-num .d{color:var(--gld)}
+.vc-num .cents{font-size:0.5em;color:rgba(237,232,208,0.5);font-weight:700;margin-left:4px;vertical-align:top}
+.vc-sub{font-size:13px;color:rgba(237,232,208,0.5);margin-top:6px;font-weight:600;letter-spacing:0.04em}
+.vc-pb{height:10px;border-radius:5px;background:rgba(255,255,255,0.08);overflow:hidden;margin-top:20px}
+.vc-pf{height:100%;border-radius:5px;background:linear-gradient(90deg,var(--sg),var(--gld));
+  transition:width 1.4s cubic-bezier(.2,.7,.2,1);width:0%;}
+.vc-foot{
+  display:flex;justify-content:space-between;margin-top:10px;
+  font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  color:rgba(237,232,208,0.4);
+}
+.vc-foot .goal{color:var(--gld)}
 
-    .section-title {
-      font-size: clamp(1.9rem, 4.2vw, 2.7rem);
-      font-weight: 900;
-      text-align: center;
-      letter-spacing: -0.025em;
-      margin-bottom: 14px;
-      line-height: 1.1;
-    }
-    .section-title em {
-      font-style: normal;
-      color: var(--sg);
-    }
+.vc-stream{
+  margin-top:16px;font-size:11px;color:rgba(237,232,208,0.35);
+  font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  min-height:18px;
+}
+.vc-stream .add{color:var(--sg)}
 
-    .section-sub {
-      text-align: center;
-      color: var(--muted);
-      font-size: 1.05rem;
-      max-width: 580px;
-      margin: 0 auto 64px;
-    }
+/* Light variant of the vault counter (for cream section bg) */
+.vault-counter-lt{
+  background:rgba(28,61,43,0.03);
+  border:1px solid rgba(28,61,43,0.1);
+}
+.vault-counter-lt::before{border-color:rgba(139,105,20,0.22)}
+.vault-counter-lt .vc-label{color:var(--brz);opacity:.9}
+.vault-counter-lt .vc-label .live-dot{background:var(--sg);box-shadow:0 0 0 4px rgba(46,107,69,0.18)}
+.vault-counter-lt .vc-num{color:var(--dg)}
+.vault-counter-lt .vc-num .d{color:var(--brz)}
+.vault-counter-lt .vc-num .cents{color:rgba(28,61,43,0.35)}
+.vault-counter-lt .vc-sub{color:rgba(28,61,43,0.6)}
+.vault-counter-lt .vc-pb{background:rgba(28,61,43,0.08)}
+.vault-counter-lt .vc-foot{color:rgba(28,61,43,0.45)}
+.vault-counter-lt .vc-foot .goal{color:var(--brz)}
+.vault-counter-lt .vc-stream{color:rgba(28,61,43,0.45)}
+.vault-counter-lt .vc-stream .add{color:var(--sg)}
 
-    /* ── HOW IT WORKS ────────────────────────────────── */
-    #how { background: var(--pch); position: relative; }
+.vault-right{display:flex;justify-content:center}
+@media(max-width:960px){ .vault-inner{grid-template-columns:1fr;gap:56px} }
 
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 22px;
-      max-width: 980px;
-      margin: 0 auto;
-      position: relative;
-    }
+/* ══════════════════════════════════════════════════════════════
+   GROUPS
+══════════════════════════════════════════════════════════════ */
+.groups-inner{
+  max-width:1200px;margin:0 auto;display:grid;
+  grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+}
+.groups-text .eyebrow{text-align:left}
+.groups-text .h-section{text-align:left}
+.groups-text .sub{text-align:left;margin-left:0}
+.groups-list{margin-top:32px;display:flex;flex-direction:column;gap:18px}
+.gf{display:flex;gap:16px;align-items:flex-start}
+.gf-bullet{
+  width:40px;height:40px;border-radius:10px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--crm);border:1px solid rgba(28,61,43,0.1);
+  font-weight:900;font-size:14px;color:var(--brz);letter-spacing:0;
+  font-variant-numeric:tabular-nums;
+}
+.gf-title{font-size:16px;font-weight:800;color:var(--dg);margin-bottom:4px}
+.gf-desc{font-size:14px;color:rgba(28,61,43,0.62);line-height:1.55}
+.groups-phone-wrap{display:flex;justify-content:center;position:relative}
+.groups-phone-wrap::before{
+  content:"";position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);
+  width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle,rgba(200,168,32,0.08) 0%,transparent 70%);
+}
 
-    .step-card {
-      background: var(--crm);
-      border: 1px solid rgba(28,61,43,0.07);
-      border-radius: 22px;
-      padding: 36px 30px;
-      text-align: center;
-      box-shadow: 0 1px 2px rgba(28,61,43,0.04), 0 8px 24px rgba(28,61,43,0.06);
-      position: relative;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .step-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 1px 2px rgba(28,61,43,0.05), 0 16px 36px rgba(28,61,43,0.10);
-    }
+/* ══════════════════════════════════════════════════════════════
+   PRICING
+══════════════════════════════════════════════════════════════ */
+.pricing-wrap{
+  max-width:920px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch;
+}
+.price-tile{
+  background:var(--crm);border:1.5px solid rgba(28,61,43,0.1);
+  border-radius:24px;padding:44px 36px;
+  display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden;
+  transition:transform .3s,border-color .25s;
+}
+.price-tile:hover{transform:translateY(-4px);border-color:rgba(139,105,20,0.35)}
+.price-tile.dark{background:var(--dg);color:var(--pch);border-color:rgba(200,168,32,0.3)}
+.price-tile::before{
+  content:"";position:absolute;top:-50px;right:-50px;width:180px;height:180px;
+  border-radius:50%;border:1px dashed rgba(28,61,43,0.1);
+}
+.price-tile.dark::before{border-color:rgba(200,168,32,0.2)}
+.pt-label{
+  font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--brz);
+  display:flex;align-items:center;gap:10px;
+}
+.price-tile.dark .pt-label{color:var(--gld)}
+.pt-price{
+  font-size:clamp(60px,7vw,92px);font-weight:900;line-height:.95;
+  letter-spacing:-0.025em;color:var(--dg);
+  font-variant-numeric:tabular-nums;
+  display:flex;align-items:baseline;gap:2px;
+}
+.price-tile.dark .pt-price{color:var(--pch)}
+.pt-price .sym{font-size:0.5em;font-weight:700;color:var(--brz)}
+.price-tile.dark .pt-price .sym{color:var(--gld)}
+.pt-sub{font-size:15px;font-weight:600;color:rgba(28,61,43,0.55);letter-spacing:0.01em}
+.price-tile.dark .pt-sub{color:rgba(237,232,208,0.55)}
+.pt-body{
+  font-size:14px;line-height:1.6;color:rgba(28,61,43,0.7);margin-top:8px;
+  padding-top:20px;border-top:0.5px solid rgba(28,61,43,0.1);
+}
+.price-tile.dark .pt-body{color:rgba(237,232,208,0.65);border-top-color:rgba(200,168,32,0.2)}
+.pt-body strong{color:var(--dg);font-weight:800}
+.price-tile.dark .pt-body strong{color:var(--gld)}
 
-    .step-num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 38px;
-      height: 38px;
-      background: var(--dg);
-      color: var(--gld);
-      border-radius: 50%;
-      font-size: 14px;
-      font-weight: 900;
-      margin-bottom: 18px;
-      letter-spacing: 0;
-    }
+.pricing-note{
+  max-width:760px;margin:40px auto 0;text-align:center;
+  font-size:14px;color:rgba(28,61,43,0.5);line-height:1.6;
+}
+.pricing-note em{font-style:normal;color:var(--brz);font-weight:700}
 
-    .step-emoji { font-size: 2.6rem; margin-bottom: 16px; display: block; }
+@media(max-width:760px){
+  .pricing-wrap{grid-template-columns:1fr}
+  .groups-inner,.vault-inner{grid-template-columns:1fr;gap:56px}
+}
 
-    .step-card h3 {
-      font-size: 1.15rem;
-      font-weight: 800;
-      margin-bottom: 10px;
-      color: var(--dg);
-    }
+/* ══════════════════════════════════════════════════════════════
+   WAITLIST
+══════════════════════════════════════════════════════════════ */
+.wl{
+  max-width:640px;margin:0 auto;text-align:center;position:relative;z-index:2;
+}
+.wl h2{color:var(--pch);margin-bottom:12px}
+.wl p.lead{color:rgba(237,232,208,0.65);margin:0 auto 36px;font-size:17px;max-width:44ch}
+.wl-form{
+  display:flex;gap:10px;padding:8px;
+  background:rgba(237,232,208,0.06);border:1px solid rgba(237,232,208,0.15);
+  border-radius:14px;transition:border-color .25s,background .25s;
+}
+.wl-form:focus-within{border-color:rgba(200,168,32,0.5);background:rgba(237,232,208,0.08)}
+.wl-form input{
+  flex:1;background:transparent;border:none;outline:none;
+  color:var(--pch);font-family:inherit;font-size:16px;
+  padding:14px 16px;min-width:0;
+}
+.wl-form input::placeholder{color:rgba(237,232,208,0.35)}
+.wl-form button{
+  background:var(--gld);color:var(--dg);border:none;cursor:pointer;
+  font-family:inherit;font-size:13px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;
+  padding:0 28px;border-radius:10px;transition:background .2s,transform .15s;
+}
+.wl-form button:hover{background:#d4b428;transform:translateY(-1px)}
+.wl-foot{
+  margin-top:18px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
+  color:rgba(237,232,208,0.35);
+}
+.wl-foot .dot{color:var(--gld);margin:0 6px}
 
-    .step-card p {
-      font-size: 0.94rem;
-      color: var(--muted);
-      line-height: 1.55;
-    }
+.wl-success{
+  display:none;background:rgba(46,107,69,0.15);border:1px solid rgba(46,107,69,0.4);
+  border-radius:14px;padding:32px 24px;text-align:center;
+  animation:pop .5s cubic-bezier(.2,.7,.2,1);
+}
+@keyframes pop{
+  from{opacity:0;transform:scale(.96) translateY(10px)}
+  to{opacity:1;transform:none}
+}
+.wl-success.on{display:block}
+.wl-form-wrap.off{display:none}
+.wl-check{
+  width:52px;height:52px;border-radius:50%;margin:0 auto 14px;
+  background:rgba(200,168,32,0.15);border:2px solid var(--gld);
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;color:var(--gld);font-weight:900;
+}
+.wl-success h3{
+  font-size:22px;font-weight:900;color:var(--pch);margin-bottom:6px;letter-spacing:-0.01em;
+}
+.wl-success p{font-size:14px;color:rgba(237,232,208,0.65);line-height:1.5}
+.wl-success .email{color:var(--gld);font-weight:700}
 
-    /* ── FEATURES ────────────────────────────────────── */
-    #features {
-      background: var(--dg);
-      color: var(--pch);
-      position: relative;
-      overflow: hidden;
-    }
-    #features::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        repeating-linear-gradient(0deg, transparent, transparent 29px, rgba(255,255,255,0.025) 30px),
-        repeating-linear-gradient(90deg, transparent, transparent 29px, rgba(255,255,255,0.025) 30px);
-      pointer-events: none;
-    }
-    #features > * { position: relative; z-index: 1; }
-    #features .section-title { color: var(--pch); }
-    #features .section-title em { color: var(--gld); }
-    #features .section-sub { color: rgba(237,232,208,0.55); }
-    #features .section-label { color: var(--gld); }
+.wl-section{
+  background:var(--dg);padding:120px 32px;position:relative;overflow:hidden;
+}
+.wl-section::before{
+  content:"";position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);
+  width:780px;height:780px;border-radius:50%;
+  background:radial-gradient(circle,rgba(200,168,32,0.08) 0%,transparent 70%);
+}
 
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 22px;
-      max-width: 1080px;
-      margin: 0 auto;
-    }
+/* ══════════════════════════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════════════════════════ */
+footer.site{
+  background:#131e16;padding:56px 32px 36px;color:rgba(237,232,208,0.5);
+  border-top:0.5px solid rgba(200,168,32,0.12);
+}
+footer.site .inner{
+  max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap;
+}
+footer.site .wm{margin-bottom:8px}
+.foot-tag{font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;
+  color:rgba(237,232,208,0.3);line-height:1.8}
+.foot-links{display:flex;gap:24px;font-size:12px;font-weight:700;
+  letter-spacing:0.12em;text-transform:uppercase;color:rgba(237,232,208,0.4)}
+.foot-links a:hover{color:var(--pch)}
+.foot-legal{width:100%;margin-top:28px;padding-top:20px;border-top:0.5px solid rgba(237,232,208,0.08);
+  font-size:11px;line-height:1.7;color:rgba(237,232,208,0.3);max-width:none}
+.foot-legal strong{color:rgba(237,232,208,0.5)}
+.foot-blurb{margin-top:14px;font-size:13px;line-height:1.55;color:rgba(237,232,208,0.55);max-width:280px}
 
-    .feature-card {
-      background: rgba(237,232,208,0.05);
-      border: 1px solid rgba(237,232,208,0.10);
-      border-radius: 22px;
-      padding: 32px 26px;
-      transition: background 0.2s, border-color 0.2s, transform 0.2s;
-    }
-    .feature-card:hover {
-      background: rgba(237,232,208,0.09);
-      border-color: rgba(200,168,32,0.4);
-      transform: translateY(-2px);
-    }
+/* Dictionary interlude — full-width chapter break */
+.interlude{
+  position:relative;
+  background:var(--dg);
+  color:var(--pch);
+  padding:120px 24px;
+  overflow:hidden;
+  border-top:1px solid rgba(200,168,32,0.15);
+  border-bottom:1px solid rgba(200,168,32,0.15);
+}
+.interlude::before,.interlude::after{
+  content:"";position:absolute;left:50%;transform:translateX(-50%);
+  width:min(880px,86%);height:1px;background:rgba(200,168,32,0.22);
+}
+.interlude::before{top:60px}
+.interlude::after{bottom:60px}
+.interlude-inner{
+  max-width:880px;margin:0 auto;text-align:center;position:relative;
+  font-family:'EB Garamond',Georgia,serif;
+}
+.interlude-stamp{
+  font-size:11px;letter-spacing:0.32em;text-transform:uppercase;
+  color:rgba(200,168,32,0.6);font-family:'Inter',sans-serif;font-weight:700;
+  margin-bottom:36px;
+}
+.interlude-stamp .gem{display:inline-block;width:5px;height:5px;border-radius:50%;
+  background:var(--gld);margin:0 14px;vertical-align:3px}
+.interlude-head{
+  display:flex;align-items:baseline;justify-content:center;gap:18px;
+  flex-wrap:wrap;margin-bottom:48px;
+}
+.interlude-word{font-size:clamp(56px,7vw,96px);font-weight:600;
+  letter-spacing:-0.02em;line-height:1}
+.interlude-word .dol{color:var(--gld);font-weight:600}
+.interlude-ipa{font-size:clamp(20px,1.8vw,26px);color:rgba(237,232,208,0.5);
+  font-style:italic}
+.interlude-pos{font-size:clamp(16px,1.4vw,20px);color:rgba(200,168,32,0.7);
+  font-style:italic}
+.interlude-defs{
+  display:flex;flex-direction:column;gap:24px;
+  font-size:clamp(18px,1.7vw,24px);line-height:1.55;
+  text-align:left;max-width:660px;margin:0 auto 56px;
+}
+.interlude-def{display:flex;gap:20px;align-items:baseline;color:rgba(237,232,208,0.55)}
+.interlude-def.modern{color:var(--pch)}
+.interlude-num{flex:0 0 28px;font-family:'Inter',sans-serif;
+  font-size:12px;font-weight:700;letter-spacing:0.18em;
+  color:rgba(200,168,32,0.55);padding-top:6px}
+.interlude-def.modern .interlude-num{color:var(--gld)}
+.interlude-tag{font-style:italic;color:rgba(237,232,208,0.4);margin-right:6px}
+.interlude-def.modern .interlude-tag{color:var(--gld)}
+.interlude-q{
+  font-style:italic;font-size:clamp(28px,3.6vw,46px);
+  letter-spacing:-0.01em;color:var(--pch);margin-top:8px;
+}
+.interlude-q .qmk{color:var(--gld);font-style:normal}
+@media(max-width:760px){
+  .interlude{padding:80px 20px}
+  .interlude::before{top:36px}.interlude::after{bottom:36px}
+  .interlude-stamp{margin-bottom:24px}
+  .interlude-head{margin-bottom:32px;gap:10px}
+  .interlude-defs{gap:18px;margin-bottom:36px}
+  .interlude-num{flex:0 0 22px}
+}
 
-    .feature-icon { font-size: 2.1rem; margin-bottom: 16px; }
-    .feature-card h3 {
-      font-size: 1.05rem;
-      font-weight: 800;
-      margin-bottom: 10px;
-      color: var(--pch);
-    }
-    .feature-card p {
-      font-size: 0.92rem;
-      color: rgba(237,232,208,0.62);
-      line-height: 1.6;
-    }
-
-    /* ── BOTTOM CTA ──────────────────────────────────── */
-    #cta {
-      background:
-        radial-gradient(ellipse 700px 400px at 50% 50%, rgba(200,168,32,0.16) 0%, transparent 70%),
-        linear-gradient(135deg, var(--sg) 0%, var(--dg) 100%);
-      color: var(--pch);
-      text-align: center;
-      padding: clamp(72px, 11vw, 120px) 5%;
-      position: relative;
-      overflow: hidden;
-    }
-    #cta::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        repeating-linear-gradient(0deg, transparent, transparent 29px, rgba(255,255,255,0.025) 30px),
-        repeating-linear-gradient(90deg, transparent, transparent 29px, rgba(255,255,255,0.025) 30px);
-      pointer-events: none;
-    }
-    #cta > * { position: relative; z-index: 1; }
-
-    #cta h2 {
-      font-size: clamp(1.9rem, 4.4vw, 2.8rem);
-      font-weight: 900;
-      margin-bottom: 16px;
-      letter-spacing: -0.025em;
-      line-height: 1.1;
-      color: var(--pch);
-    }
-    #cta h2 em {
-      font-style: normal;
-      color: var(--gld);
-    }
-
-    #cta p {
-      color: rgba(237,232,208,0.78);
-      font-size: 1.05rem;
-      margin-bottom: 38px;
-      max-width: 560px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .cta-form {
-      display: flex;
-      gap: 10px;
-      max-width: 440px;
-      margin: 0 auto 14px;
-    }
-
-    .cta-form input[type="email"] {
-      flex: 1;
-      padding: 15px 20px;
-      border-radius: 12px;
-      border: 1.5px solid rgba(237,232,208,0.18);
-      background: rgba(237,232,208,0.08);
-      color: var(--pch);
-      font-size: 15px;
-      font-family: var(--fn);
-      outline: none;
-      transition: border-color 0.2s;
-    }
-    .cta-form input[type="email"]::placeholder { color: rgba(237,232,208,0.4); }
-    .cta-form input[type="email"]:focus { border-color: var(--gld); }
-
-    .cta-form button {
-      padding: 15px 26px;
-      background: var(--gld);
-      color: var(--dg);
-      border: none;
-      border-radius: 12px;
-      font-size: 15px;
-      font-weight: 800;
-      cursor: pointer;
-      white-space: nowrap;
-      font-family: var(--fn);
-      transition: background 0.2s, transform 0.1s;
-    }
-    .cta-form button:hover { background: #DDB930; }
-    .cta-form button:active { transform: scale(0.97); }
-    .cta-form button:disabled { opacity: 0.6; cursor: wait; }
-
-    .cta-fine {
-      font-size: 12px;
-      color: rgba(237,232,208,0.5);
-      letter-spacing: 0.02em;
-    }
-    .cta-fine a {
-      color: rgba(237,232,208,0.75);
-      text-decoration: underline;
-      text-decoration-color: rgba(237,232,208,0.3);
-      text-underline-offset: 2px;
-      transition: color 0.15s, text-decoration-color 0.15s;
-    }
-    .cta-fine a:hover {
-      color: var(--gld);
-      text-decoration-color: var(--gld);
-    }
-
-    .cta-success {
-      display: none;
-      background: rgba(200,168,32,0.16);
-      border: 1px solid rgba(200,168,32,0.4);
-      color: var(--gld);
-      border-radius: 12px;
-      padding: 14px 20px;
-      font-weight: 700;
-      max-width: 440px;
-      margin: 0 auto 14px;
-    }
-
-    /* ── FOOTER ──────────────────────────────────────── */
-    footer {
-      background: #11271B;
-      color: rgba(237,232,208,0.55);
-      padding: 56px 5% 28px;
-      font-size: 13.5px;
-      border-top: 0.5px solid rgba(200,168,32,0.12);
-      position: relative;
-      overflow: hidden;
-    }
-    footer::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        repeating-linear-gradient(0deg, transparent, transparent 29px, rgba(255,255,255,0.018) 30px),
-        repeating-linear-gradient(90deg, transparent, transparent 29px, rgba(255,255,255,0.018) 30px);
-      pointer-events: none;
-    }
-    footer > * { position: relative; z-index: 1; }
-
-    .foot-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr 1fr;
-      gap: 40px;
-      max-width: 1100px;
-      margin: 0 auto 36px;
-      padding-bottom: 32px;
-      border-bottom: 0.5px solid rgba(237,232,208,0.10);
-    }
-
-    .foot-brand .foot-wm {
-      font-size: 24px;
-      font-weight: 900;
-      letter-spacing: -0.5px;
-      color: var(--pch);
-      margin-bottom: 10px;
-    }
-    .foot-brand .foot-wm span { color: var(--gld); }
-    .foot-brand .foot-tag {
-      font-size: 13px;
-      color: rgba(237,232,208,0.55);
-      max-width: 240px;
-      line-height: 1.5;
-    }
-
-    .foot-col .foot-h {
-      font-size: 11px;
-      font-weight: 800;
-      color: var(--gld);
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-    .foot-col p,
-    .foot-col a {
-      display: block;
-      color: rgba(237,232,208,0.6);
-      text-decoration: none;
-      font-size: 13.5px;
-      line-height: 1.85;
-      transition: color 0.15s;
-    }
-    .foot-col a:hover { color: var(--gld); }
-
-    .foot-bottom {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-size: 12px;
-      color: rgba(237,232,208,0.4);
-    }
-    .foot-bottom p { margin: 0; }
-    .foot-bottom .foot-meta {
-      letter-spacing: 0.05em;
-    }
-
-    @media (max-width: 768px) {
-      .foot-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 32px 24px;
-      }
-      .foot-brand { grid-column: 1 / -1; }
-      .foot-bottom { justify-content: center; text-align: center; }
-    }
-
-    /* ── RESPONSIVE ──────────────────────────────────── */
-    @media (max-width: 600px) {
-      .waitlist-form, .cta-form { flex-direction: column; }
-      .waitlist-form button, .cta-form button { width: 100%; }
-      .mini-card { min-width: 140px; padding: 14px 18px; }
-      .hero { padding: 110px 5% 64px; }
-      nav { padding: 0 5%; }
-    }
-  </style>
+/* Brand meta tiles inside waitlist */
+.wl-meta{
+  margin-top:36px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+  text-align:left;
+}
+.wl-meta-card{
+  padding:18px 18px 16px;border:1px solid rgba(200,168,32,0.22);
+  background:rgba(237,232,208,0.03);border-radius:14px;position:relative;
+}
+.wl-meta-card::before{
+  content:"";position:absolute;top:10px;right:12px;width:5px;height:5px;
+  border-radius:50%;background:var(--gld);opacity:.6;
+}
+.wm-num{font-size:18px;font-weight:900;color:var(--pch);letter-spacing:-0.01em;line-height:1.1}
+.wm-lbl{margin-top:6px;font-size:10px;font-weight:700;letter-spacing:0.14em;
+  text-transform:uppercase;color:rgba(200,168,32,0.7)}
+@media(max-width:760px){
+  .wl-meta{grid-template-columns:repeat(2,1fr)}
+}
+</style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a class="nav-wm" href="#" aria-label="MiserSavings — home">mı<span class="d">$</span>er</a>
-    <a class="nav-cta" href="#cta">Join Waitlist</a>
-  </nav>
+<!-- ═══════ NAV ═══════ -->
+<nav class="site">
+  <div class="inner">
+    <a href="#top" class="wm" aria-label="MiserSavings — home">mı<span class="d">$</span>er</a>
+    <ul class="nav-links">
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#groups">Groups</a></li>
+      <li><a href="#vault">Vault</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+    </ul>
+    <a href="#waitlist" class="nav-cta">Join waitlist</a>
+  </div>
+</nav>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-badge"><span class="dot"></span>Early access — limited spots</div>
+<!-- ═══════ HERO ═══════ -->
+<section class="hero gui-dk" id="top">
+  <div class="hero-inner">
 
-    <p class="sr-only">MiserSavings — a behavioral savings app from MiserSavings Inc.</p>
-    <h1>Turn impulse buys<br>into <em>real savings</em>.</h1>
-
-    <p class="hero-sub">
-      You were about to waste money. We get it — the latte, the lunch, the thing
-      you don't need from the internet. mı$er turns that impulse into
-      savings instantly.
-    </p>
-
-    <form class="waitlist-form" id="hero-form">
-      <input
-        type="email"
-        name="email"
-        placeholder="your@email.com"
-        required
-        autocomplete="email"
-      />
-      <button type="submit">Join waitlist →</button>
-    </form>
-
-    <div class="form-success" id="hero-success">
-      ✓ You're on the list. We'll be in touch soon.
+    <div class="hero-left reveal in">
+      <p class="sr-only">MiserSavings — a behavioral savings app from MiserSavings Inc.</p>
+      <h1>Turn impulse buys into <em>real savings</em>.</h1>
+      <p class="lead">You were about to waste money. We get it — the latte, the lunch, the thing you don't need from the internet. mı$er turns that impulse into savings instantly.</p>
+      <div class="hero-ctas">
+        <a href="#waitlist" class="btn-gold">Join the waitlist →</a>
+        <a href="#how" class="btn-outline-lt">See how it works</a>
+      </div>
+      <div class="hero-foot">
+        <span>Free to save<span class="dot"> · </span></span>
+        <span>$3.49 to withdraw<span class="dot"> · </span></span>
+        <span>No subscription</span>
+      </div>
     </div>
 
-    <p class="form-fine-print">No spam. Unsubscribe anytime. By joining, you agree to our <a href="privacy.html">Privacy Policy</a>.</p>
+    <!-- Hero phone: "Skip & Save" capture moment — sells the gesture -->
+    <div class="hero-right reveal in" data-delay="2">
+      <div class="phone">
+        <div class="phone-screen s-pch">
+          <div class="di"></div>
+          <div class="sb dk-ic"><span>9:41</span><span>▪▪▪ ☰ ▮</span></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 20px 6px;flex-shrink:0">
+            <span style="font-size:11px;font-weight:700;color:var(--sg)">← Cancel</span>
+            <span style="font-size:12px;font-weight:700;color:var(--dg);letter-spacing:0.04em">Skip &amp; Save</span>
+            <span style="width:42px"></span>
+          </div>
 
-    <!-- "the math of skipping" — real consumer arithmetic, not fake user stats -->
-    <div class="hero-preview-row">
-      <div class="mini-card">
-        <span class="icon">☕</span>
-        <div>
-          <div class="label">Coffee skip</div>
-          <div class="value">$5.99</div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 24px;text-align:center">
+            <div style="font-size:9px;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:rgba(28,61,43,0.4);margin-bottom:14px">Amount you didn't spend</div>
+            <div style="font-size:84px;font-weight:900;color:var(--dg);line-height:0.9;letter-spacing:-0.04em;font-variant-numeric:tabular-nums">
+              <span style="font-size:48px;color:var(--brz);vertical-align:14px;font-weight:800">$</span>5<span style="color:rgba(28,61,43,0.35);font-size:48px;vertical-align:14px">.00</span>
+            </div>
+            <div style="margin-top:14px;display:inline-flex;align-items:center;gap:6px;background:rgba(46,107,69,0.12);border:1px solid var(--sg);border-radius:999px;padding:6px 14px;font-size:10.5px;font-weight:700;color:var(--sg);letter-spacing:0.04em">☕ Latte</div>
+            <div style="margin-top:10px;font-size:10px;color:rgba(28,61,43,0.5);max-width:200px;line-height:1.5;font-style:italic">"Walked past the coffee shop. Filled my water bottle instead."</div>
+          </div>
+
+          <div style="padding:0 20px 20px;flex-shrink:0">
+            <div style="background:var(--sg);border-radius:14px;padding:16px;text-align:center;font-size:14px;font-weight:800;color:var(--pch);letter-spacing:0.08em;position:relative;overflow:hidden;box-shadow:0 8px 24px rgba(46,107,69,0.32)">
+              <span style="position:relative;z-index:1">SKIP IT →</span>
+            </div>
+            <div style="margin-top:10px;text-align:center;font-size:9.5px;color:rgba(28,61,43,0.45);letter-spacing:0.04em">Same-day ACH from Chase ··4821</div>
+          </div>
+          <div class="tbar"><div class="t"><span class="ic">🏦</span>VAULT</div><div class="t a"><span class="ic">＋</span>SKIP</div><div class="t"><span class="ic">🎯</span>GOALS</div><div class="t"><span class="ic">👤</span>YOU</div></div>
         </div>
       </div>
-      <div class="mini-card">
-        <span class="icon">🚗</span>
-        <div>
-          <div class="label">Ride skip</div>
-          <div class="value">$14</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════ HOW IT WORKS ═══════ -->
+<section class="band pch gui-lt" id="how">
+  <div class="band-head reveal">
+    <div class="rule-pair"><span class="line"></span><span class="eyebrow">How it works</span><span class="line"></span></div>
+    <h2 class="h-section">Three taps. One <em>vault</em>.<br>No budgeting.</h2>
+    <p class="sub">Log a skip. Point it at a goal. Watch the vault fill. That's the whole system — the money you almost spent becomes money you kept.</p>
+  </div>
+
+  <div class="steps">
+
+    <!-- STEP 1 — Log a skip -->
+    <div class="step reveal">
+      <div class="snum"><span>Step 01</span><span class="dot"></span><span>Log a skip</span></div>
+      <h3>Almost grabbed a $5 oat-milk latte on the walk to work? <em>Log the skip.</em></h3>
+      <p>Amount, category, goal. Three taps and the cash quietly moves from your linked bank to your vault — same-day ACH, no ceremony.</p>
+      <div class="phone-well pch-well">
+        <!-- Log a Skip screen -->
+        <div class="phone sm">
+          <div class="phone-screen s-pch">
+            <div class="di"></div>
+            <div class="sb dk-ic"><span>9:41</span><span>▪▪▪ ☰ ▮</span></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 18px 2px"><span style="font-size:11px;font-weight:700;color:var(--sg)">← Back</span><span style="font-size:12px;font-weight:700;color:var(--dg)">Log a Skip</span><span style="width:36px"></span></div>
+            <div style="height:12px"></div>
+            <div style="text-align:center">
+              <div style="font-size:8px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(28,61,43,0.4);margin-bottom:6px">AMOUNT SKIPPED</div>
+              <div style="font-size:44px;font-weight:900;color:var(--dg);line-height:1;font-variant-numeric:tabular-nums">$5.00</div>
+              <div style="font-size:9px;color:rgba(28,61,43,0.38);margin-top:5px">tap to edit</div>
+            </div>
+            <div style="height:14px"></div>
+            <div style="font-size:8px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding:8px 18px 4px;color:rgba(28,61,43,0.45)">CATEGORY</div>
+            <div style="display:flex;flex-wrap:wrap;gap:5px;padding:0 18px">
+              <div style="background:rgba(46,107,69,0.12);border:1px solid var(--sg);border-radius:20px;padding:5px 10px;font-size:9px;font-weight:700;color:var(--sg);letter-spacing:0.04em">☕ Coffee</div>
+              <div style="background:rgba(28,61,43,0.06);border:1px solid rgba(28,61,43,0.12);border-radius:20px;padding:5px 10px;font-size:9px;font-weight:700;color:rgba(28,61,43,0.65);letter-spacing:0.04em">🍕 Food</div>
+              <div style="background:rgba(28,61,43,0.06);border:1px solid rgba(28,61,43,0.12);border-radius:20px;padding:5px 10px;font-size:9px;font-weight:700;color:rgba(28,61,43,0.65);letter-spacing:0.04em">🍺 Drinks</div>
+              <div style="background:rgba(28,61,43,0.06);border:1px solid rgba(28,61,43,0.12);border-radius:20px;padding:5px 10px;font-size:9px;font-weight:700;color:rgba(28,61,43,0.65);letter-spacing:0.04em">🛍️ Shop</div>
+            </div>
+            <div style="height:12px"></div>
+            <div style="font-size:8px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding:8px 18px 4px;color:rgba(28,61,43,0.45)">GOAL</div>
+            <div class="pc-card">
+              <div class="row" style="background:rgba(139,105,20,0.08)">
+                <span style="font-size:14px">✈️</span>
+                <div style="flex:1"><div style="font-size:10px;font-weight:700;color:var(--dg)">Tokyo, October</div><div style="font-size:8.5px;color:rgba(28,61,43,0.5)">$342 / $3,000 · 11%</div></div>
+                <span style="font-size:12px;color:var(--brz);font-weight:700">✓</span>
+              </div>
+            </div>
+            <div style="flex:1;min-height:12px"></div>
+            <div style="margin:0 18px 10px;background:var(--sg);border-radius:13px;padding:12px;text-align:center;font-size:12px;font-weight:800;color:var(--pch);letter-spacing:0.06em;flex-shrink:0">Skip it →</div>
+          </div>
         </div>
       </div>
-      <div class="mini-card">
-        <span class="icon">🛒</span>
-        <div>
-          <div class="label">Cart skip</div>
-          <div class="value">$42</div>
+    </div>
+
+    <!-- STEP 2 — Pick a goal (Goal Detail empty) -->
+    <div class="step reveal" data-delay="1">
+      <div class="snum"><span>Step 02</span><span class="dot"></span><span>Pick a goal</span></div>
+      <h3>That money locks into whatever <em>matters</em>.</h3>
+      <p>Tokyo in October. Ollie's first guitar. Emergency fund. As many goals as you want, running in parallel — each skip tagged to one so you can see exactly what you're building.</p>
+      <div class="phone-well pch-well">
+        <!-- Goal Detail — early/empty state -->
+        <div class="phone sm">
+          <div class="phone-screen s-pch">
+            <div class="di"></div>
+            <div class="sb dk-ic"><span>9:41</span><span>▪▪▪ ☰ ▮</span></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 18px 2px"><span style="font-size:11px;font-weight:700;color:var(--sg)">← Goals</span><span style="font-size:12px;font-weight:700;color:var(--dg)">🎸 Ollie's first guitar</span><span style="width:36px"></span></div>
+            <div style="height:10px"></div>
+            <div style="text-align:center;padding:0 20px;flex-shrink:0">
+              <div style="font-size:8px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(28,61,43,0.4);margin-bottom:4px">STACKED SO FAR</div>
+              <div style="font-size:42px;font-weight:900;color:var(--dg);font-variant-numeric:tabular-nums">$15<span style="font-size:20px;color:rgba(28,61,43,0.35)">/$220</span></div>
+              <div style="height:8px"></div>
+              <div class="pb" style="height:8px;border-radius:4px"><div class="f brz" style="width:7%"></div></div>
+              <div style="font-size:8.5px;color:var(--brz);margin-top:5px;font-weight:700">7% · 3 skips stacked</div>
+            </div>
+            <div style="height:14px"></div>
+            <div style="font-size:8px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding:6px 18px 4px;color:rgba(28,61,43,0.45)">RECENT SKIPS</div>
+            <div class="pc-card">
+              <div class="row"><span style="font-size:13px">☕</span><div style="flex:1"><div style="font-size:10px;font-weight:700;color:var(--dg)">Morning latte</div><div style="font-size:8.5px;color:rgba(28,61,43,0.45)">2 days ago</div></div><div style="font-size:10px;font-weight:800;color:var(--sg);font-variant-numeric:tabular-nums">+$5</div></div>
+              <div class="row"><span style="font-size:13px">🍺</span><div style="flex:1"><div style="font-size:10px;font-weight:700;color:var(--dg)">Friday drinks</div><div style="font-size:8.5px;color:rgba(28,61,43,0.45)">5 days ago</div></div><div style="font-size:10px;font-weight:800;color:var(--sg);font-variant-numeric:tabular-nums">+$8</div></div>
+              <div class="row"><span style="font-size:13px">☕</span><div style="flex:1"><div style="font-size:10px;font-weight:700;color:var(--dg)">Skipped coffee</div><div style="font-size:8.5px;color:rgba(28,61,43,0.45)">a week ago</div></div><div style="font-size:10px;font-weight:800;color:var(--sg);font-variant-numeric:tabular-nums">+$2</div></div>
+            </div>
+            <div style="flex:1;min-height:12px"></div>
+            <div style="margin:0 18px 10px;background:var(--sg);border-radius:13px;padding:12px;text-align:center;font-size:12px;font-weight:800;color:var(--pch);letter-spacing:0.06em;flex-shrink:0">+ Add a skip</div>
+          </div>
         </div>
+      </div>
+    </div>
+
+    <!-- STEP 3 — Watch the vault fill (Goal Detail filled) -->
+    <div class="step reveal" data-delay="2">
+      <div class="snum"><span>Step 03</span><span class="dot"></span><span>Watch the vault fill</span></div>
+      <h3>The vault <em>fills</em>. The goal gets closer.</h3>
+      <p>Every skip stacks. The bar inches right. One day you look up — Ollie's guitar is paid for. The math that matters: money you almost spent became money you kept.</p>
+      <div class="phone-well pch-well">
+        <!-- Goal Detail — filled state -->
+        <div class="phone sm">
+          <div class="phone-screen s-pch">
+            <div class="di"></div>
+            <div class="sb dk-ic"><span>9:41</span><span>▪▪▪ ☰ ▮</span></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 18px 2px"><span style="font-size:11px;font-weight:700;color:var(--sg)">← Goals</span><span style="font-size:12px;font-weight:700;color:var(--dg)">🎸 Ollie's first guitar</span><span style="width:36px"></span></div>
+            <div style="height:10px"></div>
+            <div style="margin:0 18px;background:var(--dg);border-radius:16px;padding:16px 18px;flex-shrink:0;position:relative;overflow:hidden">
+              <div style="position:absolute;top:-24px;right:-24px;width:90px;height:90px;border-radius:50%;border:1px dashed rgba(200,168,32,0.28)"></div>
+              <div style="font-size:8px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(237,232,208,0.5);margin-bottom:4px">GOAL FUNDED</div>
+              <div style="font-size:30px;font-weight:900;color:var(--gld);font-variant-numeric:tabular-nums">$220.00</div>
+              <div style="font-size:9px;color:rgba(237,232,208,0.5);margin-top:4px">38 skips · avg $5.79 each</div>
+              <div style="height:10px"></div>
+              <div class="pb lt" style="height:8px;border-radius:4px"><div class="f g" style="width:100%"></div></div>
+              <div style="display:flex;justify-content:space-between;font-size:8.5px;color:rgba(237,232,208,0.5);margin-top:5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase"><span>100% FUNDED</span><span>✓ READY</span></div>
+            </div>
+            <div style="height:12px"></div>
+            <div style="font-size:8px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding:6px 18px 4px;color:rgba(28,61,43,0.45)">WHAT STACKED IT</div>
+            <div class="pc-card">
+              <div class="row"><span style="font-size:13px">☕</span><div style="flex:1"><div style="font-size:10px;font-weight:700;color:var(--dg)">Coffee skips</div><div style="font-size:8.5px;color:rgba(28,61,43,0.45)">22 logged</div></div><div style="font-size:10px;font-weight:800;color:var(--dg);font-variant-numeric:tabular-nums">$94.00</div></div>
+              <div class="row"><span style="font-size:13px">🍕</span><div style="flex:1"><div style="font-size:10px;font-weight:700;color:var(--dg)">Cooked at home</div><div style="font-size:8.5px;color:rgba(28,61,43,0.45)">9 logged</div></div><div style="font-size:10px;font-weight:800;color:var(--dg);font-variant-numeric:tabular-nums">$86.50</div></div>
+              <div class="row"><span style="font-size:13px">🛍️</span><div style="flex:1"><div style="font-size:10px;font-weight:700;color:var(--dg)">Passed on shopping</div><div style="font-size:8.5px;color:rgba(28,61,43,0.45)">7 logged</div></div><div style="font-size:10px;font-weight:800;color:var(--dg);font-variant-numeric:tabular-nums">$39.50</div></div>
+              <div class="row" style="background:rgba(46,107,69,0.06)"><span style="font-size:13px">🔥</span><div style="flex:1"><div style="font-size:10px;font-weight:700;color:var(--dg)">38-day streak</div><div style="font-size:8.5px;color:rgba(28,61,43,0.45)">personal record</div></div><div style="font-size:10px;font-weight:800;color:var(--sg)">🎉</div></div>
+            </div>
+            <div style="flex:1;min-height:12px"></div>
+            <div style="margin:0 18px 10px;background:var(--gld);border-radius:13px;padding:12px;text-align:center;font-size:12px;font-weight:800;color:var(--dg);letter-spacing:0.06em;flex-shrink:0">Buy the guitar →</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Embedded live demo — replaces standalone Vault section -->
+  <div class="how-demo reveal" data-delay="3">
+    <div class="how-demo-head">
+      <span class="rule"></span>
+      <span class="eyebrow">Live demo · 6 seconds</span>
+      <span class="rule"></span>
+    </div>
+    <h3 class="how-demo-h">A week of skipping, <em>compressed</em>.</h3>
+    <p class="how-demo-sub">Scroll into the demo. Watch every skip stack onto a real goal — the bar inches right, the destination gets closer.</p>
+
+    <div class="vault-counter vault-counter-lt" id="vaultCounter">
+      <div class="vc-label"><span class="live-dot"></span> Goal · Tokyo, October · Live demo</div>
+      <div class="vc-num" id="vcNum"><span class="d">$</span><span id="vcDol">0</span><span class="cents">.00</span></div>
+      <div class="vc-sub" id="vcSub">Waiting for first skip…</div>
+      <div class="vc-pb"><div class="vc-pf" id="vcPf"></div></div>
+      <div class="vc-foot">
+        <span id="vcPct">0% of goal</span>
+        <span class="goal">$500 weekend bucket · ✈️</span>
+      </div>
+      <div class="vc-stream" id="vcStream">› ready</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════ DICTIONARY INTERLUDE ═══════ -->
+<section class="interlude reveal" id="interlude">
+  <div class="interlude-inner">
+    <div class="interlude-stamp">Entry <span class="gem"></span> Volume I <span class="gem"></span> Reclaimed</div>
+    <div class="interlude-head">
+      <span class="interlude-word">mı<span class="dol">$</span>er</span>
+      <span class="interlude-ipa">/ˈmaɪ.zər/</span>
+      <span class="interlude-pos">noun.</span>
+    </div>
+    <div class="interlude-defs">
+      <div class="interlude-def">
+        <span class="interlude-num">1.</span>
+        <span><span class="interlude-tag">traditionally —</span>one who hoards money, lives small, refuses the round of drinks.</span>
+      </div>
+      <div class="interlude-def modern">
+        <span class="interlude-num">2.</span>
+        <span><span class="interlude-tag">modernly —</span>one who saw the $7 oat-milk latte for what it was, and put the money somewhere it would still exist by Friday.</span>
+      </div>
+    </div>
+    <div class="interlude-q"><span class="qmk">"</span>Are you one of us?<span class="qmk">"</span></div>
+  </div>
+</section>
+
+<!-- ═══════ GROUPS (moved up) ═══════ -->
+<section class="band dg gui-dk dk" id="groups">
+  <div class="groups-inner">
+
+    <div class="groups-text reveal">
+      <div class="eyebrow lt">Groups</div>
+      <div style="height:14px"></div>
+      <h2 class="h-section">Save together. Skip the <em>Friday takeout</em> with your partner.</h2>
+      <div style="height:22px"></div>
+      <p class="sub">Share a goal with whoever you'd blow the money with anyway. Everyone skips in their own vault. The shared bar fills twice as fast.</p>
+
+      <div class="groups-list">
+        <div class="gf">
+          <div class="gf-bullet">01</div>
+          <div><div class="gf-title" style="color:var(--pch)">Share the goal, keep your own vault.</div><div class="gf-desc" style="color:rgba(237,232,208,0.6)">$3,000 Tokyo trip, two of you = $1,500 each. Money never pools. Each person's savings stay theirs, even if plans change.</div></div>
+        </div>
+        <div class="gf">
+          <div class="gf-bullet">02</div>
+          <div><div class="gf-title" style="color:var(--pch)">See each other's skips as they happen.</div><div class="gf-desc" style="color:rgba(237,232,208,0.6)">Live progress per person. Jamie just skipped Friday takeout — +$38. Accountability without the awkward group chat.</div></div>
+        </div>
+        <div class="gf">
+          <div class="gf-bullet">03</div>
+          <div><div class="gf-title" style="color:var(--pch)">Join with a six-character code.</div><div class="gf-desc" style="color:rgba(237,232,208,0.6)">Share a code like TKYO26. They tap it, they're in. No platform walls, no account verification rabbit hole.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Groups phone — shared Tokyo vault w/ last-skip stream -->
+    <div class="groups-phone-wrap reveal" data-delay="2">
+      <div class="phone">
+        <div class="phone-screen s-pch">
+          <div class="di"></div>
+          <div class="sb dk-ic"><span>9:41</span><span>▪▪▪ ☰ ▮</span></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 18px 2px"><span style="font-size:11px;font-weight:700;color:var(--sg)">← Groups</span><span style="font-size:13px;font-weight:700;color:var(--dg)">✈️ Tokyo, October</span><span style="font-size:10px;font-weight:700;color:var(--brz);letter-spacing:0.1em">TKYO26</span></div>
+          <div style="height:10px"></div>
+          <!-- Shared total -->
+          <div style="text-align:center;padding:4px 20px 0;flex-shrink:0">
+            <div style="font-size:9px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(28,61,43,0.4);margin-bottom:4px">SHARED VAULT</div>
+            <div style="font-size:30px;font-weight:900;color:var(--dg);font-variant-numeric:tabular-nums">$1,820 <span style="font-size:15px;font-weight:600;color:rgba(28,61,43,0.35)">/ $3,000</span></div>
+            <div style="height:8px"></div>
+            <div class="pb" style="height:8px;border-radius:4px"><div class="f brz" style="width:61%"></div></div>
+            <div style="font-size:9px;color:var(--brz);margin-top:5px;font-weight:700;letter-spacing:0.06em">61% · $1,180 TO GO</div>
+          </div>
+          <div style="height:14px"></div>
+          <div style="font-size:8.5px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding:6px 20px 6px;color:rgba(28,61,43,0.45)">PER MEMBER · LAST SKIP</div>
+          <div class="pc-card">
+            <!-- You -->
+            <div class="row" style="background:rgba(139,105,20,0.06)">
+              <div style="width:30px;height:30px;border-radius:50%;background:rgba(139,105,20,0.15);border:1.5px solid var(--brz);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:var(--brz);flex-shrink:0">A</div>
+              <div style="flex:1">
+                <div style="display:flex;justify-content:space-between;margin-bottom:3px"><div style="font-size:10.5px;font-weight:700;color:var(--brz)">Anne <span style="font-size:8.5px;font-weight:500;color:rgba(28,61,43,0.4)">(you)</span></div><div style="font-size:10px;color:var(--brz);font-weight:800;font-variant-numeric:tabular-nums">$960</div></div>
+                <div class="pb"><div class="f brz" style="width:64%"></div></div>
+                <div style="font-size:8.5px;color:rgba(28,61,43,0.55);margin-top:3px">☕ latte · today · <span style="font-weight:700;color:var(--sg)">+$5</span></div>
+              </div>
+            </div>
+            <!-- Jamie -->
+            <div class="row">
+              <div style="width:30px;height:30px;border-radius:50%;background:var(--sg);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:var(--pch);flex-shrink:0">J</div>
+              <div style="flex:1">
+                <div style="display:flex;justify-content:space-between;margin-bottom:3px"><div style="font-size:10.5px;font-weight:700;color:var(--dg)">Jamie</div><div style="font-size:10px;color:var(--dg);font-weight:800;font-variant-numeric:tabular-nums">$860</div></div>
+                <div class="pb"><div class="f" style="width:57%"></div></div>
+                <div style="font-size:8.5px;color:rgba(28,61,43,0.55);margin-top:3px">🍜 Friday takeout · 2h ago · <span style="font-weight:700;color:var(--sg)">+$38</span></div>
+              </div>
+            </div>
+          </div>
+          <div style="flex:1;min-height:14px"></div>
+          <div style="margin:0 20px 14px;background:var(--sg);border-radius:14px;padding:12px;text-align:center;font-size:12px;font-weight:800;color:var(--pch);letter-spacing:0.06em;flex-shrink:0">+ Log a skip to this vault</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════ VAULT DEMO ═══════ -->
+<section class="band crm gui-lt" id="vault">
+  <div class="vault-inner">
+
+    <div class="vault-left reveal" style="color:var(--dg)">
+      <div class="eyebrow">The Vault</div>
+      <div style="height:14px"></div>
+      <h2 class="h-section" style="color:var(--dg)">Watch the vault <em style="color:var(--sg)">fill</em>.</h2>
+      <div style="height:22px"></div>
+      <p class="sub" style="color:rgba(28,61,43,0.65)">Scroll. A week of skipping compresses into six seconds. Each skip stacks onto a real goal — the bar inches right, the destination gets closer.</p>
+
+      <div class="vault-counter vault-counter-lt" id="vaultCounter">
+        <div class="vc-label"><span class="live-dot"></span> Goal · Tokyo, October · Live demo</div>
+        <div class="vc-num" id="vcNum"><span class="d">$</span><span id="vcDol">0</span><span class="cents">.00</span></div>
+        <div class="vc-sub" id="vcSub">Waiting for first skip…</div>
+        <div class="vc-pb"><div class="vc-pf" id="vcPf"></div></div>
+        <div class="vc-foot">
+          <span id="vcPct">0% of goal</span>
+          <span class="goal">$500 weekend bucket · ✈️</span>
+        </div>
+        <div class="vc-stream" id="vcStream">› ready</div>
+      </div>
+    </div>
+
+    <!-- Right column: Goal Detail phone, vault-filled state anchor -->
+    <div class="vault-right reveal" data-delay="2">
+      <div class="phone">
+        <div class="phone-screen s-pch">
+          <div class="di"></div>
+          <div class="sb dk-ic"><span>9:41</span><span>▪▪▪ ☰ ▮</span></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 18px 2px"><span style="font-size:11px;font-weight:700;color:var(--sg)">← Goals</span><span style="font-size:13px;font-weight:700;color:var(--dg)">✈️ Tokyo, October</span><span style="width:40px"></span></div>
+          <div style="height:14px"></div>
+          <!-- Vault card -->
+          <div style="margin:0 20px;background:var(--dg);border-radius:18px;padding:22px;flex-shrink:0;position:relative;overflow:hidden">
+            <div style="position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;border:1px dashed rgba(200,168,32,0.22)"></div>
+            <div style="position:absolute;top:-60px;right:-60px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(200,168,32,0.1)"></div>
+            <div style="font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(237,232,208,0.5);margin-bottom:6px">STACKED FOR TOKYO</div>
+            <div style="font-size:36px;font-weight:900;color:var(--pch);line-height:1;font-variant-numeric:tabular-nums" id="phoneBalance">$320.00</div>
+            <div style="font-size:10px;color:var(--gld);margin-top:6px;font-weight:600">64% of $500 weekend bucket · $180 to go</div>
+            <div style="height:14px"></div>
+            <div class="pb lt" style="height:7px;border-radius:3.5px"><div class="f g" id="phonePf" style="width:64%"></div></div>
+            <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:9px;color:rgba(237,232,208,0.5);font-weight:700;letter-spacing:0.08em;text-transform:uppercase"><span id="phonePct">64% full</span><span>of $500</span></div>
+          </div>
+          <div style="height:14px"></div>
+          <div style="font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding:8px 20px 6px;color:rgba(28,61,43,0.45)">RECENT SKIPS</div>
+          <div class="pc-card" id="phoneSkips">
+            <div class="row"><span style="font-size:14px">☕</span><div style="flex:1"><div style="font-size:10.5px;font-weight:700;color:var(--dg)">Morning latte</div><div style="font-size:8.5px;color:rgba(28,61,43,0.45)">today, 8:42 am</div></div><div style="font-size:10.5px;font-weight:800;color:var(--sg);font-variant-numeric:tabular-nums">+$5.00</div></div>
+            <div class="row"><span style="font-size:14px">🚕</span><div style="flex:1"><div style="font-size:10.5px;font-weight:700;color:var(--dg)">Walked instead</div><div style="font-size:8.5px;color:rgba(28,61,43,0.45)">yesterday</div></div><div style="font-size:10.5px;font-weight:800;color:var(--sg);font-variant-numeric:tabular-nums">+$12.50</div></div>
+            <div class="row"><span style="font-size:14px">🍺</span><div style="flex:1"><div style="font-size:10.5px;font-weight:700;color:var(--dg)">Round of drinks</div><div style="font-size:8.5px;color:rgba(28,61,43,0.45)">2 days ago</div></div><div style="font-size:10.5px;font-weight:800;color:var(--sg);font-variant-numeric:tabular-nums">+$18.00</div></div>
+          </div>
+          <div style="flex:1;min-height:14px"></div>
+          <div style="margin:0 20px 14px;background:var(--sg);border-radius:14px;padding:13px;text-align:center;font-size:12px;font-weight:800;color:var(--pch);letter-spacing:0.06em;flex-shrink:0">+ Log a Skip</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════ PRICING ═══════ -->
+<section class="band pch gui-lt" id="pricing">
+  <div class="band-head reveal">
+    <div class="rule-pair"><span class="line"></span><span class="eyebrow">Pricing</span><span class="line"></span></div>
+    <h2 class="h-section">Free to save.<br><em>$3.49</em> to withdraw.</h2>
+    <p class="sub">That's the whole thing. No tiers. No subscription. No "plus" plan you'll forget you signed up for.</p>
+  </div>
+
+  <div class="pricing-wrap">
+    <div class="price-tile reveal">
+      <div class="pt-label"><span>Saving</span><span class="rule" style="width:20px;margin:0"></span><span>Always</span></div>
+      <div class="pt-price">Free</div>
+      <div class="pt-sub">Unlimited skips. Unlimited goals. Groups included.</div>
+      <div class="pt-body">
+        Unlimited skips. Unlimited goals. Groups included. <strong>No interest games, no tiers, no subscription.</strong> Just a vault that fills as you skip.
+      </div>
+    </div>
+
+    <div class="price-tile dark reveal" data-delay="1">
+      <div class="pt-label"><span>Withdraw</span><span class="rule lt" style="width:20px;margin:0"></span><span>Flat fee</span></div>
+      <div class="pt-price"><span class="sym">$</span>3.49</div>
+      <div class="pt-sub">Per withdrawal. Any amount. Any time.</div>
+      <div class="pt-body">
+        A flat fee, <strong>not a percentage</strong>, and not a lock. It's a speed bump — enough to make you think twice before you undo weeks of skipping.
       </div>
     </div>
   </div>
 
-  <!-- LAUNCH INFO BAR (replaces fake metrics — pre-launch honesty) -->
-  <div class="stats-bar">
-    <div class="stat-item">
-      <div class="stat-num">2026</div>
-      <div class="stat-label">Launching this year</div>
+  <p class="pricing-note">Free to save. $3.49 to withdraw. No interest games, no tiers, no subscription. <em>Planned pricing — final fees disclosed before launch.</em></p>
+</section>
+
+
+<!-- ═══════ WAITLIST ═══════ -->
+<section class="wl-section dk gui-dk" id="waitlist">
+  <div class="wl reveal">
+    <div class="rule-pair" style="display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:14px">
+      <span style="flex:0 0 40px;height:1px;background:rgba(200,168,32,0.4)"></span>
+      <span class="eyebrow lt">Early access · iOS</span>
+      <span style="flex:0 0 40px;height:1px;background:rgba(200,168,32,0.4)"></span>
     </div>
-    <div class="stat-item">
-      <div class="stat-num">iOS · Android</div>
-      <div class="stat-label">App Store + Play Store</div>
+    <h2 class="h-section">Get in line.</h2>
+    <p class="lead">We're letting people in batch by batch. Drop your email — we'll send a TestFlight invite when your slot opens.</p>
+
+    <div class="wl-form-wrap" id="wlFormWrap">
+      <form class="wl-form" id="wlForm" autocomplete="off" novalidate>
+        <input type="email" id="wlEmail" placeholder="you@wherever.com" aria-label="Email address" required>
+        <button type="submit">Join →</button>
+      </form>
+      <div class="wl-foot">
+        <span>iOS first · Android close behind</span>
+        <span class="dot">·</span>
+        <span>No spam</span>
+        <span class="dot">·</span>
+        <span>By joining, you agree to our <a href="privacy.html" style="color:inherit;text-decoration:underline;text-underline-offset:2px">Privacy Policy</a></span>
+      </div>
     </div>
-    <div class="stat-item">
-      <div class="stat-num">Austin</div>
-      <div class="stat-label">Built in Texas</div>
+
+    <!-- Brand meta tiles -->
+    <div class="wl-meta reveal" data-delay="1">
+      <div class="wl-meta-card">
+        <div class="wm-num">2026</div>
+        <div class="wm-lbl">Launching this year</div>
+      </div>
+      <div class="wl-meta-card">
+        <div class="wm-num">iOS · Android</div>
+        <div class="wm-lbl">App Store + Play Store</div>
+      </div>
+      <div class="wl-meta-card">
+        <div class="wm-num">Austin</div>
+        <div class="wm-lbl">Built in Texas</div>
+      </div>
+      <div class="wl-meta-card">
+        <div class="wm-num">Early</div>
+        <div class="wm-lbl">Access for waitlist only</div>
+      </div>
     </div>
-    <div class="stat-item">
-      <div class="stat-num">Early</div>
-      <div class="stat-label">Access for waitlist only</div>
+
+    <div class="wl-success" id="wlSuccess" role="status" aria-live="polite">
+      <div class="wl-check">✓</div>
+      <h3>You're on the list.</h3>
+      <p>We'll email <span class="email" id="wlEmailEcho">you@wherever.com</span> when your TestFlight invite is ready.</p>
     </div>
   </div>
+</section>
 
-  <!-- HOW IT WORKS -->
-  <section id="how">
-    <span class="section-label">How it works</span>
-    <h2 class="section-title">Three taps. <em>Real money saved.</em></h2>
-    <p class="section-sub">No budgets to fill in. No guilt. Just a habit loop that makes saving feel good.</p>
 
-    <div class="steps">
-      <div class="step-card">
-        <div class="step-num">1</div>
-        <span class="step-emoji">🛍️</span>
-        <h3>Catch the impulse</h3>
-        <p>About to buy something you don't need? Open mı$er instead. It takes three seconds.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">2</div>
-        <span class="step-emoji">💸</span>
-        <h3>Skip &amp; Save</h3>
-        <p>Log the amount you would have spent. It's instantly transferred to your mı$er balance.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">3</div>
-        <span class="step-emoji">🔒</span>
-        <h3>Lock it in</h3>
-        <p>Savings are locked away. Long enough that the craving passes — and the money stays yours.</p>
-      </div>
+<!-- ═══════ FOOTER ═══════ -->
+<footer class="site">
+  <div class="inner">
+    <div>
+      <a class="wm" href="#top" aria-label="MiserSavings — home">mı<span class="d">$</span>er</a>
+      <div class="foot-tag">Skip · Lock · Stack</div>
+      <p class="foot-blurb">A quieter way to save. Built for the moments you almost spent.</p>
     </div>
-  </section>
-
-  <!-- FEATURES -->
-  <section id="features">
-    <span class="section-label">Features</span>
-    <h2 class="section-title">Built around the way <em>cravings actually work</em></h2>
-    <p class="section-sub">Every feature exists to defeat one specific moment of weakness.</p>
-
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">⊕</div>
-        <h3>Skip &amp; Save</h3>
-        <p>One-tap logging for the moment you resist. The friction is on spending, not on saving.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🔒</div>
-        <h3>Locked savings</h3>
-        <p>Your savings sit in a vault that outlasts the impulse. The lock is the feature.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🏆</div>
-        <h3>Streaks &amp; badges</h3>
-        <p>Budget Warrior. Grand Miser. Professional Tightwad. Your savings personality, gamified.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">👥</div>
-        <h3>Friends leaderboard</h3>
-        <p>See who saves more — you or them. Send kudos. A little competition changes everything.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🎯</div>
-        <h3>Goal tracking</h3>
-        <p>Set a savings goal and watch every skipped latte inch the progress bar forward.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📊</div>
-        <h3>Spending history</h3>
-        <p>See exactly what you didn't buy and how much that discipline is worth over time.</p>
-      </div>
+    <div class="foot-links">
+      <a href="#how">How it works</a>
+      <a href="#groups">Groups</a>
+      <a href="#vault">Vault</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#waitlist">Waitlist</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="mailto:support@misersavings.com">support@misersavings.com</a>
     </div>
-  </section>
-
-  <!-- BOTTOM CTA -->
-  <section id="cta">
-    <h2>Stop watching money disappear.<br><em>Start watching it stack.</em></h2>
-    <p>Join the waitlist — early users get founding member status and first access.</p>
-
-    <form class="cta-form" id="cta-form">
-      <input
-        type="email"
-        name="email"
-        placeholder="your@email.com"
-        required
-        autocomplete="email"
-      />
-      <button type="submit">I'm in →</button>
-    </form>
-
-    <div class="cta-success" id="cta-success">
-      ✓ You're on the list. We'll be in touch soon.
+    <div class="foot-legal">
+      <strong>MiserSavings Inc.</strong> · Austin, TX · Launching 2026<br>
+      © 2026 MiserSavings Inc. All rights reserved.
     </div>
+  </div>
+</footer>
 
-    <p class="cta-fine">No spam. Unsubscribe anytime. By joining, you agree to our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms</a>.</p>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="foot-grid">
-      <div class="foot-col foot-brand">
-        <div class="foot-wm" aria-label="MiserSavings">mı<span>$</span>er</div>
-        <p class="foot-tag">A quieter way to save. Built for the moments you almost spent.</p>
-      </div>
-      <div class="foot-col">
-        <div class="foot-h">Company</div>
-        <p>MiserSavings Inc.</p>
-        <p>Austin, TX</p>
-      </div>
-      <div class="foot-col">
-        <div class="foot-h">Legal</div>
-        <a href="terms.html">Terms of Service</a>
-        <a href="privacy.html">Privacy Policy</a>
-      </div>
-      <div class="foot-col">
-        <div class="foot-h">Contact</div>
-        <a href="mailto:support@misersavings.com">support@misersavings.com</a>
-        <a href="#cta">Join the waitlist</a>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <p>© 2026 MiserSavings Inc. All rights reserved.</p>
-    </div>
-  </footer>
+<script>
+/* ─── Scroll reveal ─────────────────────────────────────────── */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+  });
+},{threshold:0.15,rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-  <script>
-    // ── Waitlist signup → Google Apps Script → Sheet ────────────
-    // Sends form-encoded data (the only content-type that reliably
-    // gets through Google Apps Script's CORS load balancer).
-    const WAITLIST_URL = 'https://script.google.com/macros/s/AKfycbyjAkNb-4bMVOtXsKvDzIjuZVQOgQJOM9urhwtEnoDgBrHOK_d4JqKLNxrll4l3DGreqQ/exec';
+/* ─── Vault counter animation ───────────────────────────────── */
+(function(){
+  const counter = document.getElementById('vaultCounter');
+  const vcDol = document.getElementById('vcDol');
+  const vcSub = document.getElementById('vcSub');
+  const vcPf  = document.getElementById('vcPf');
+  const vcPct = document.getElementById('vcPct');
+  const vcStream = document.getElementById('vcStream');
+  if(!counter) return;
 
-    function handleForm(formId, successId, defaultLabel) {
-      var form = document.getElementById(formId);
-      var success = document.getElementById(successId);
-      if (!form) return;
+  // Sequence of "skips" to animate
+  const skips = [
+    {amt:5.00,  note:'› +$5.00 — ☕ morning latte skipped'},
+    {amt:12.50, note:'› +$12.50 — 🚕 walked instead of Uber'},
+    {amt:18.00, note:'› +$18.00 — 🍺 skipped round of drinks'},
+    {amt:22.00, note:'› +$22.00 — 🍕 cooked at home'},
+    {amt:35.00, note:'› +$35.00 — 🛍️ passed on the jacket'},
+    {amt:8.50,  note:'› +$8.50 — ☕ afternoon coffee'},
+    {amt:45.00, note:'› +$45.00 — 🍽️ packed lunch all week'},
+    {amt:174.00,note:'› +$174.00 — 🏖️ skipped weekend bar crawl'}
+  ];
+  const GOAL = 500;
+  let running = false;
 
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        var btn = form.querySelector('button');
-        var email = form.querySelector('input[type="email"]').value.trim();
-        if (!email) return;
+  function ease(t){ return 1-Math.pow(1-t,3); }
 
-        btn.disabled = true;
-        btn.textContent = 'Joining…';
+  function animateTo(target, duration){
+    return new Promise(resolve=>{
+      const start = parseFloat(vcDol.textContent.replace(/,/g,'')) || 0;
+      const t0 = performance.now();
+      function step(t){
+        const p = Math.min(1,(t-t0)/duration);
+        const v = start + (target-start)*ease(p);
+        vcDol.textContent = Math.floor(v).toLocaleString();
+        const pct = Math.min(100,(v/GOAL)*100);
+        vcPf.style.width = pct+'%';
+        vcPct.textContent = Math.round(pct)+'% of goal';
+        if(p<1) requestAnimationFrame(step);
+        else resolve();
+      }
+      requestAnimationFrame(step);
+    });
+  }
 
-        var body = new URLSearchParams();
-        body.append('email', email);
-        body.append('source', 'misersavings.com');
-        body.append('user_agent', navigator.userAgent);
+  async function runDemo(){
+    if(running) return;
+    running = true;
+    let total = 0;
+    vcSub.textContent = 'Logging a week of skips…';
+    for(let i=0;i<skips.length;i++){
+      const s = skips[i];
+      total += s.amt;
+      vcStream.innerHTML = `<span class="add">${s.note}</span>`;
+      await animateTo(total, 520);
+      await new Promise(r=>setTimeout(r,80));
+    }
+    vcSub.textContent = '$320 saved in 8 skips · locked in your vault';
+    vcStream.innerHTML = '› 64% of goal · $180 to go · <span class="add">one tap away</span>';
+  }
 
-        fetch(WAITLIST_URL, {
-          method: 'POST',
-          mode: 'no-cors',
-          body: body
-        })
-        .then(function() {
-          // no-cors prevents reading the response, but the request did go through
-          form.style.display = 'none';
-          success.style.display = 'block';
-        })
-        .catch(function(err) {
-          btn.disabled = false;
-          btn.textContent = defaultLabel;
-          console.error('Waitlist submit failed:', err);
-          alert('Something went wrong. Please try again or email support@misersavings.com.');
-        });
-      });
+  const vio = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ runDemo(); vio.unobserve(e.target); }
+    });
+  },{threshold:0.4});
+  vio.observe(counter);
+})();
+
+/* ─── Waitlist submit → Google Apps Script → Sheet ───────────
+   Same endpoint as the previous site iteration (patched May 4
+   to handle form-encoded bodies). Sends form-encoded since that
+   is the only content-type that reliably gets through Apps
+   Script's CORS load balancer. */
+(function(){
+  const WAITLIST_URL = 'https://script.google.com/macros/s/AKfycbyjAkNb-4bMVOtXsKvDzIjuZVQOgQJOM9urhwtEnoDgBrHOK_d4JqKLNxrll4l3DGreqQ/exec';
+
+  const form    = document.getElementById('wlForm');
+  const email   = document.getElementById('wlEmail');
+  const button  = form ? form.querySelector('button') : null;
+  const echo    = document.getElementById('wlEmailEcho');
+  const formWrap= document.getElementById('wlFormWrap');
+  const success = document.getElementById('wlSuccess');
+  if(!form) return;
+
+  form.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const v = email.value.trim();
+    if(!v || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){
+      email.focus();
+      form.style.animation = 'none';
+      form.offsetHeight; // reflow
+      form.style.animation = 'shake .4s cubic-bezier(.2,.7,.2,1)';
+      return;
     }
 
-    handleForm('hero-form', 'hero-success', 'Join waitlist →');
-    handleForm('cta-form', 'cta-success', "I'm in →");
-  </script>
+    if(button){
+      button.disabled = true;
+      button.dataset.original = button.textContent;
+      button.textContent = 'Joining…';
+    }
+
+    const body = new URLSearchParams();
+    body.append('email', v);
+    body.append('source', 'misersavings.com');
+    body.append('user_agent', navigator.userAgent);
+
+    fetch(WAITLIST_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: body
+    })
+    .then(()=>{
+      // no-cors prevents reading the response, but the request did go through
+      echo.textContent = v;
+      formWrap.classList.add('off');
+      success.classList.add('on');
+      if(typeof gtag === 'function'){
+        gtag('event', 'waitlist_signup', {event_category:'engagement', event_label:'homepage'});
+      }
+    })
+    .catch((err)=>{
+      console.error('Waitlist submit failed:', err);
+      if(button){
+        button.disabled = false;
+        button.textContent = button.dataset.original || 'Join →';
+      }
+      alert('Something went wrong. Please try again or email support@misersavings.com.');
+    });
+  });
+})();
+</script>
+
+<style>
+@keyframes shake{
+  10%,90%{transform:translateX(-2px)}
+  20%,80%{transform:translateX(3px)}
+  30%,50%,70%{transform:translateX(-5px)}
+  40%,60%{transform:translateX(5px)}
+}
+</style>
+
 </body>
 </html>
