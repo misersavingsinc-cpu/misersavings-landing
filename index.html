@@ -655,6 +655,18 @@ section.band.dg{background:var(--dg);color:var(--pch)}
 }
 .pricing-note em{font-style:normal;color:var(--brz);font-weight:700}
 
+/* Working-price pill — sits next to the $3.49 in the price tile, makes the
+   "this isn't final" disclosure unmistakable without breaking the layout. */
+.pt-working{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:10px;padding:5px 12px;border-radius:99px;
+  background:rgba(200,168,32,0.12);border:1px solid rgba(200,168,32,0.32);
+  color:var(--gld);font-size:10.5px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;
+  text-decoration:none;cursor:help;transition:background .15s,border-color .15s;
+}
+.pt-working:hover{background:rgba(200,168,32,0.2);border-color:rgba(200,168,32,0.55)}
+.pt-working::before{content:"●";font-size:6px;color:var(--gld);transform:translateY(-1px)}
+
 @media(max-width:760px){
   .pricing-wrap{grid-template-columns:1fr}
   .groups-inner,.vault-inner{grid-template-columns:1fr;gap:56px}
@@ -669,40 +681,70 @@ section.band.dg{background:var(--dg);color:var(--pch)}
 .wl h2{color:var(--pch);margin-bottom:12px}
 .wl p.lead{color:rgba(237,232,208,0.65);margin:0 auto 36px;font-size:17px;max-width:44ch}
 .wl-form{
-  display:flex;flex-direction:column;gap:8px;padding:8px;
-  background:rgba(237,232,208,0.06);border:1px solid rgba(237,232,208,0.15);
-  border-radius:14px;transition:border-color .25s,background .25s;
+  display:flex;flex-direction:column;gap:0;padding:6px;
+  background:rgba(237,232,208,0.05);
+  border:1px solid rgba(237,232,208,0.15);
+  border-radius:16px;
+  transition:border-color .25s,background .25s,box-shadow .25s;
+  box-shadow:0 1px 0 rgba(255,255,255,0.04) inset;
 }
-.wl-form:focus-within{border-color:rgba(200,168,32,0.5);background:rgba(237,232,208,0.08)}
+.wl-form:focus-within{
+  border-color:rgba(200,168,32,0.55);
+  background:rgba(237,232,208,0.08);
+  box-shadow:0 0 0 4px rgba(200,168,32,0.10),0 1px 0 rgba(255,255,255,0.05) inset;
+}
 .wl-form input[type="text"],.wl-form input[type="email"]{
   background:transparent;border:none;outline:none;
   color:var(--pch);font-family:inherit;font-size:16px;
-  padding:14px 16px;min-width:0;width:100%;
+  padding:16px 18px;min-width:0;width:100%;
+  letter-spacing:0.005em;
 }
-.wl-form input::placeholder{color:rgba(237,232,208,0.35)}
-.wl-emailrow{display:flex;gap:10px;align-items:stretch}
+.wl-form input[type="text"]:focus,.wl-form input[type="email"]:focus{
+  color:var(--pch);
+}
+.wl-form input::placeholder{color:rgba(237,232,208,0.32);font-weight:400}
+/* Subtle hairline divider between Name row and email row, only when there's
+   a name field above (we use the wl-emailrow as the cue). */
+.wl-emailrow{
+  display:flex;gap:8px;align-items:stretch;
+  border-top:1px solid rgba(237,232,208,0.08);
+  padding-top:2px;
+}
 .wl-emailrow input{flex:1;min-width:0}
 .wl-form button{
   background:var(--gld);color:var(--dg);border:none;cursor:pointer;
-  font-family:inherit;font-size:13px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;
-  padding:0 28px;border-radius:10px;transition:background .2s,transform .15s;
+  font-family:inherit;font-size:12.5px;font-weight:900;letter-spacing:0.12em;text-transform:uppercase;
+  padding:0 26px;margin:6px 6px 6px 0;border-radius:11px;
+  transition:background .15s,transform .12s,box-shadow .15s;
+  box-shadow:0 1px 0 rgba(0,0,0,0.18),0 0 0 0 rgba(200,168,32,0);
+  min-width:96px;
 }
-.wl-form button:hover{background:#d4b428;transform:translateY(-1px)}
+.wl-form button:hover{
+  background:#d6b526;transform:translateY(-1px);
+  box-shadow:0 4px 14px rgba(200,168,32,0.28),0 1px 0 rgba(0,0,0,0.18);
+}
+.wl-form button:active{transform:translateY(0)}
 .wl-platform{
-  display:flex;flex-wrap:wrap;align-items:center;gap:14px;
-  padding:8px 14px 6px;font-family:inherit;
+  display:flex;flex-wrap:wrap;align-items:center;gap:12px;
+  padding:10px 14px 8px;font-family:inherit;
+  border-top:1px solid rgba(237,232,208,0.08);margin-top:2px;
 }
 .wl-platform-label{
-  font-size:10.5px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;
-  color:rgba(200,168,32,0.65);
+  font-size:10.5px;font-weight:900;letter-spacing:0.22em;text-transform:uppercase;
+  color:rgba(200,168,32,0.6);margin-right:2px;
 }
 .wl-platform label{
-  display:inline-flex;align-items:center;gap:6px;cursor:pointer;
-  font-size:13px;font-weight:600;color:rgba(237,232,208,0.72);
-  transition:color .15s;
+  display:inline-flex;align-items:center;gap:7px;cursor:pointer;
+  padding:5px 11px;border-radius:99px;
+  font-size:13px;font-weight:600;color:rgba(237,232,208,0.7);
+  transition:color .15s,background .15s;
+  user-select:none;
 }
-.wl-platform label:hover{color:var(--pch)}
-.wl-platform input[type="radio"]{accent-color:var(--gld);margin:0;cursor:pointer}
+.wl-platform label:hover{color:var(--pch);background:rgba(237,232,208,0.05)}
+.wl-platform label:has(input:checked){
+  color:var(--gld);background:rgba(200,168,32,0.10);
+}
+.wl-platform input[type="radio"]{accent-color:var(--gld);margin:0;cursor:pointer;width:14px;height:14px}
 .wl-foot{
   margin-top:18px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
   color:rgba(237,232,208,0.35);
@@ -1264,6 +1306,7 @@ sup.pn-mark{font-size:0.55em;color:var(--gld);font-weight:800;vertical-align:sup
     <div class="price-tile dark reveal" data-delay="1">
       <div class="pt-label"><span>Withdraw</span><span class="rule lt" style="width:20px;margin:0"></span><span>Flat fee</span></div>
       <div class="pt-price"><span class="sym">$</span>3.49<sup class="pn-mark"><a href="#pricing-note" style="color:inherit;text-decoration:none">*</a></sup></div>
+      <a href="#pricing-note" class="pt-working" title="This is the price we plan to launch with — see the note below.">Working price · subject to change before launch</a>
       <div class="pt-sub">Per withdrawal. Any amount. Any time.</div>
       <div class="pt-body">
         A flat fee, <strong>not a percentage</strong>, and not a lock. It's a speed bump — enough to make you think twice before you undo weeks of skipping.
@@ -1271,7 +1314,7 @@ sup.pn-mark{font-size:0.55em;color:var(--gld);font-weight:800;vertical-align:sup
     </div>
   </div>
 
-  <p class="pricing-note" id="pricing-note"><em>*Planned pricing.</em> The $3.49 flat withdrawal fee is the working price we plan to launch with. Final fees — including any deposit or transfer fees — will be disclosed in full and require your explicit acceptance before any money movement is enabled. See <a href="terms.html#fees" style="color:inherit;text-decoration:underline">Terms §6</a>. No interest games, no tiers, no subscription.</p>
+  <p class="pricing-note" id="pricing-note"><em>*A note on the price.</em> $3.49 is what we're planning to launch with — call it our working price. We may adjust it before launch if our processing or banking costs change. Either way, the final fee schedule will be shown to you in full, and you'll have to explicitly accept it before any money can move. No surprises. (See <a href="terms.html#fees" style="color:inherit;text-decoration:underline">Terms §6</a>.) No interest games, no tiers, no subscription.</p>
 </section>
 
 
