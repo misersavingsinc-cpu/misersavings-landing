@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found — MiserSavings</title>
+<meta name="description" content="That page doesn't exist on misersavings.com. Head back home to join the waitlist.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://misersavings.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MiserSavings">
+<meta property="og:title" content="Page not found — MiserSavings">
+<meta property="og:description" content="That page doesn't exist on misersavings.com.">
+<meta property="og:image" content="https://misersavings.com/og-image.png">
+<meta property="og:url" content="https://misersavings.com/">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Page not found — MiserSavings">
+<meta name="twitter:image" content="https://misersavings.com/og-image.png">
+
+<!-- Google tag (gtag.js) — GA4 G-76HDNX2NG5 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-76HDNX2NG5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-76HDNX2NG5');
+  // Tag the 404 in GA so we can see which paths are missing.
+  gtag('event', 'page_not_found', { event_category: 'error', event_label: location.pathname + location.search });
+</script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#1C3D2B">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --dg:#1C3D2B;
+  --dg-dark:#11271B;
+  --sg:#2E6B45;
+  --gld:#C8A820;
+  --brz:#8B6914;
+  --pch:#EDE8D0;
+  --crm:#F5F0E0;
+  --muted:rgba(28,61,43,0.6);
+  --fn:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--fn);background:var(--pch);color:var(--dg);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+
+/* ── NAV ───────────────────────────────────────────── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:64px;background:rgba(28,61,43,0.95);backdrop-filter:saturate(140%) blur(14px);-webkit-backdrop-filter:saturate(140%) blur(14px);border-bottom:0.5px solid rgba(200,168,32,0.18)}
+.nav-wm{font-size:22px;font-weight:900;letter-spacing:-0.5px;color:var(--pch);text-decoration:none}
+.nav-wm .d{color:var(--gld)}
+.nav-back{padding:8px 18px;border:1px solid rgba(237,232,208,0.22);color:rgba(237,232,208,0.78);border-radius:99px;font-size:13px;font-weight:600;letter-spacing:0.02em;text-decoration:none;transition:all 0.2s}
+.nav-back:hover{color:var(--gld);border-color:var(--gld)}
+
+/* ── 404 HERO ──────────────────────────────────────── */
+.hero{flex:1;padding:130px 5% 76px;background:radial-gradient(ellipse 800px 500px at 50% 35%,rgba(46,107,69,0.45) 0%,transparent 70%),linear-gradient(160deg,var(--dg-dark) 0%,var(--dg) 50%,#0F2419 100%);text-align:center;position:relative;overflow:hidden;color:var(--pch);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.hero::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 29px,rgba(255,255,255,0.025) 30px),repeating-linear-gradient(90deg,transparent,transparent 29px,rgba(255,255,255,0.025) 30px);pointer-events:none}
+.hero > *{position:relative;z-index:1}
+.hero-label{display:inline-block;font-size:11px;font-weight:800;color:var(--gld);text-transform:uppercase;letter-spacing:0.22em;margin-bottom:18px}
+.code{font-size:clamp(4.5rem,18vw,9rem);font-weight:900;color:var(--gld);letter-spacing:-0.04em;line-height:0.95;margin-bottom:8px;font-variant-numeric:tabular-nums}
+.hero h1{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;color:var(--pch);letter-spacing:-0.02em;line-height:1.15;margin-bottom:18px;max-width:560px}
+.hero p{font-size:1rem;color:rgba(237,232,208,0.7);line-height:1.65;margin-bottom:32px;max-width:520px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.cta{display:inline-block;padding:14px 26px;border-radius:99px;font-size:14px;font-weight:700;letter-spacing:0.01em;text-decoration:none;transition:all 0.2s}
+.cta.primary{background:var(--gld);color:var(--dg-dark)}
+.cta.primary:hover{background:#DDB930;transform:translateY(-1px)}
+.cta.ghost{border:1px solid rgba(237,232,208,0.22);color:rgba(237,232,208,0.85)}
+.cta.ghost:hover{color:var(--gld);border-color:var(--gld)}
+
+/* ── FOOTER ────────────────────────────────────────── */
+footer{background:var(--dg-dark);color:rgba(237,232,208,0.5);text-align:center;padding:34px 5%;font-size:13px;border-top:0.5px solid rgba(200,168,32,0.12)}
+footer a{color:var(--gld);text-decoration:none;margin:0 10px;transition:color 0.15s}
+footer a:hover{color:#DDB930;text-decoration:underline}
+.foot-meta{margin-top:10px;font-size:11.5px;opacity:0.55;letter-spacing:0.02em}
+
+@media (max-width:600px){
+  .hero{padding:110px 5% 60px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-wm" aria-label="MiserSavings — home">mı<span class="d">$</span>er</a>
+  <a href="/" class="nav-back">← Home</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-label">404 · Page not found</div>
+  <div class="code">404</div>
+  <h1>That page doesn't exist&nbsp;— but the waitlist does.</h1>
+  <p>The link you followed is broken or the page has moved. Head back to the homepage to learn about mı$er and join the waitlist for early access.</p>
+  <div class="cta-row">
+    <a href="/" class="cta primary">← Back to home</a>
+    <a href="/#waitlist" class="cta ghost">Join the waitlist</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 MiserSavings Inc. &nbsp;·&nbsp; <a href="/">Home</a> <a href="/terms.html">Terms</a> <a href="/privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="mailto:support@misersavings.com">support@misersavings.com</a></p>
+  <p class="foot-meta">MiserSavings is a financial technology company, not a bank.</p>
+</footer>
+
+</body>
+</html>
