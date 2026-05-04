@@ -37,6 +37,13 @@
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#1C3D2B">
 
+<!-- SEO: explicit indexing + larger image previews in Google search results -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+
+<!-- Performance: warm up the connections to third-parties we always load -->
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+<link rel="dns-prefetch" href="https://challenges.cloudflare.com">
+
 <!-- Google tag (gtag.js) — GA4 G-76HDNX2NG5 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-76HDNX2NG5"></script>
 <script>
@@ -46,7 +53,9 @@
   gtag('config', 'G-76HDNX2NG5');
 </script>
 
-<!-- JSON-LD Structured Data: Organization + WebSite -->
+<!-- JSON-LD Structured Data: Organization + WebSite.
+     Once @misersavings handles exist on Twitter/LinkedIn/Crunchbase, add
+     them to the Organization "sameAs" array — Knowledge Panel signal. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -55,7 +64,7 @@
       "@type": "Organization",
       "@id": "https://misersavings.com/#organization",
       "name": "MiserSavings",
-      "alternateName": ["mı$er", "MiserSavings Inc."],
+      "alternateName": ["Miser", "mı$er", "MiserSavings Inc."],
       "legalName": "MiserSavings Inc.",
       "url": "https://misersavings.com/",
       "logo": {
@@ -66,10 +75,23 @@
       },
       "description": "MiserSavings is a behavioral savings app that lets users log the small purchases they skip — coffee, takeout, impulse buys — and watch the money stack into a goal-based vault.",
       "foundingDate": "2026-03-12",
+      "founder": [
+        {
+          "@type": "Person",
+          "name": "Gardar Stefansson",
+          "jobTitle": "Co-founder"
+        },
+        {
+          "@type": "Person",
+          "name": "Magdalena Sigurdardottir",
+          "jobTitle": "Co-founder"
+        }
+      ],
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Austin",
+        "addressLocality": "West Lake Hills",
         "addressRegion": "TX",
+        "postalCode": "78746",
         "addressCountry": "US"
       },
       "contactPoint": {
@@ -77,15 +99,14 @@
         "contactType": "Customer Support",
         "email": "support@misersavings.com",
         "availableLanguage": "English"
-      },
-      "sameAs": []
+      }
     },
     {
       "@type": "WebSite",
       "@id": "https://misersavings.com/#website",
       "url": "https://misersavings.com/",
       "name": "MiserSavings",
-      "description": "Turn impulse buys into real savings.",
+      "description": "Turn impulse buys into real savings. mı$er turns the small purchases you almost made into a goal-based vault.",
       "publisher": { "@id": "https://misersavings.com/#organization" },
       "inLanguage": "en-US"
     }

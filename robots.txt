@@ -1,14 +1,13 @@
 # robots.txt for misersavings.com
 # https://misersavings.com
+#
+# We rely on canonical tags (declared on every page) to deduplicate
+# tagged URLs (utm_*, fbclid, gclid, etc.) instead of disallowing them
+# in robots.txt. Letting crawlers reach the parameter URLs and resolve
+# to canonical is what Google recommends and avoids the
+# "Indexed, though blocked by robots.txt" warning in Search Console.
 
 User-agent: *
 Allow: /
 
-# Common bot exclusions for safety (these don't apply to our content but good hygiene)
-Disallow: /*?utm_*
-Disallow: /*?fbclid=
-Disallow: /*?gclid=
-
-# Sitemap
 Sitemap: https://misersavings.com/sitemap.xml
-

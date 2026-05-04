@@ -38,6 +38,9 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#1C3D2B">
 
+<!-- Performance: warm up the GA connection (404s still fire a GA event) -->
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
