@@ -11,3 +11,4 @@ Disallow: /*?gclid=
 
 # Sitemap
 Sitemap: https://misersavings.com/sitemap.xml
+
