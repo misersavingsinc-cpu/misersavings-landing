@@ -97,7 +97,20 @@ footer a:hover{color:#DDB930;text-decoration:underline}
   <a href="/" class="nav-back">← Home</a>
 </nav>
 
-<section class="hero">
+<!-- V1.27 (May 11 2026) — group-invite deep-link fallback.
+     The URL `/join/<CODE>` is a Universal Link claimed by the iOS app
+     (see /.well-known/apple-app-site-association). When the app is
+     installed AND AASA is validated, iOS intercepts the URL before
+     Safari ever loads this page. The two reasons a visitor lands HERE
+     are:
+       1. They don't have Miser installed yet (most common — pre-launch).
+       2. They're on Android / desktop / a browser that doesn't honour
+          Universal Links (Telegram in-app, etc.).
+     For (1) we still attempt the misersavings:// custom scheme — if
+     the app IS installed but AASA validation failed for any reason,
+     this rescues the flow. The custom-scheme call is silent when the
+     app isn't installed (no error dialog on iOS Safari). -->
+<section class="hero" id="hero-404">
   <div class="hero-label">404 · Page not found</div>
   <div class="code">404</div>
   <h1>That page doesn't exist&nbsp;— but the waitlist does.</h1>
@@ -107,6 +120,44 @@ footer a:hover{color:#DDB930;text-decoration:underline}
     <a href="/#waitlist" class="cta ghost">Join the waitlist</a>
   </div>
 </section>
+
+<section class="hero" id="hero-join" style="display:none">
+  <div class="hero-label">Group invite · Miser</div>
+  <div class="code" id="join-code" style="font-size:clamp(2.4rem,9vw,4.2rem);letter-spacing:0.18em">······</div>
+  <h1>You've been invited to save together on&nbsp;mı$er.</h1>
+  <p>Open Miser on your phone to join the group automatically. Don't have the app yet? Add yourself to the waitlist and we'll let you know when you're in.</p>
+  <div class="cta-row">
+    <a href="#" id="join-open" class="cta primary">Open in Miser</a>
+    <a href="/#waitlist" class="cta ghost">Join the waitlist</a>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var m = location.pathname.match(/^\/join\/([A-Za-z0-9]{4,12})\/?$/);
+    if (!m) return;
+    var code = m[1].toUpperCase();
+
+    // Swap which hero is visible. The 404 GA event already fired above,
+    // but for this path we report a more useful label so misrouted
+    // invites are easy to see in GA without polluting the 404 count.
+    document.getElementById('hero-404').style.display = 'none';
+    var join = document.getElementById('hero-join');
+    join.style.display = '';
+    document.getElementById('join-code').textContent = code;
+    document.getElementById('join-open').setAttribute('href', 'misersavings://join/' + code);
+    try {
+      gtag('event', 'group_invite_landing', { event_category: 'invite', event_label: code });
+    } catch (_) { /* GA optional */ }
+
+    // Silent auto-attempt — if Miser is installed, iOS / Android will
+    // pop the app open. If not, nothing happens visibly (no error
+    // dialog) and the user sees the fallback UI above.
+    setTimeout(function () {
+      window.location.href = 'misersavings://join/' + code;
+    }, 250);
+  })();
+</script>
 
 <footer>
   <p>© 2026 MiserSavings Inc. &nbsp;·&nbsp; <a href="/">Home</a> <a href="/terms.html">Terms</a> <a href="/privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="mailto:support@misersavings.com">support@misersavings.com</a></p>
