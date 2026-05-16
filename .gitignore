@@ -1,0 +1,3 @@
+# Don't commit exported website zips
+MiserSavings - website.zip
+*.zip
