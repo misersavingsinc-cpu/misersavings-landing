@@ -10,6 +10,8 @@
 <meta property="og:image" content="/og-image.png">
 <meta property="og:url" content="https://misersavings.com">
 <meta name="theme-color" content="#1C3D2B">
+<!-- Cloudflare Turnstile (waitlist bot check) -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <style>
 /* ═══════════════════════════════════════════════════════════════
    mı$er marketing site — brand tokens only
@@ -618,28 +620,63 @@ section.band.dg{background:var(--dg);color:var(--pch)}
 .wl h2{color:var(--pch);margin-bottom:12px}
 .wl p.lead{color:rgba(237,232,208,0.65);margin:0 auto 36px;font-size:17px;max-width:44ch}
 .wl-form{
-  display:flex;gap:10px;padding:8px;
+  display:flex;flex-direction:column;gap:8px;padding:8px;
   background:rgba(237,232,208,0.06);border:1px solid rgba(237,232,208,0.15);
   border-radius:14px;transition:border-color .25s,background .25s;
 }
 .wl-form:focus-within{border-color:rgba(200,168,32,0.5);background:rgba(237,232,208,0.08)}
-.wl-form input{
-  flex:1;background:transparent;border:none;outline:none;
+.wl-form input[type="text"],.wl-form input[type="email"]{
+  background:transparent;border:none;outline:none;
   color:var(--pch);font-family:inherit;font-size:16px;
-  padding:14px 16px;min-width:0;
+  padding:14px 16px;min-width:0;width:100%;
 }
 .wl-form input::placeholder{color:rgba(237,232,208,0.35)}
+.wl-emailrow{display:flex;gap:10px;align-items:stretch}
+.wl-emailrow input{flex:1;min-width:0}
 .wl-form button{
   background:var(--gld);color:var(--dg);border:none;cursor:pointer;
   font-family:inherit;font-size:13px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;
   padding:0 28px;border-radius:10px;transition:background .2s,transform .15s;
 }
 .wl-form button:hover{background:#d4b428;transform:translateY(-1px)}
+.wl-form button:disabled{opacity:0.55;cursor:not-allowed;transform:none}
+.wl-platform{
+  display:flex;flex-wrap:wrap;align-items:center;gap:14px;
+  padding:8px 14px 6px;font-family:inherit;
+}
+.wl-platform-label{
+  font-size:10.5px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;
+  color:rgba(200,168,32,0.65);
+}
+.wl-platform label{
+  display:inline-flex;align-items:center;gap:6px;cursor:pointer;
+  font-size:13px;font-weight:600;color:rgba(237,232,208,0.72);
+  transition:color .15s;
+}
+.wl-platform label:hover{color:var(--pch)}
+.wl-platform input[type="radio"]{accent-color:var(--gld);margin:0;cursor:pointer}
+.cf-turnstile{margin:14px auto 0;display:flex;justify-content:center;min-height:65px}
+.wl-error{
+  display:none;background:rgba(180,60,40,0.12);border:1px solid rgba(180,60,40,0.45);
+  border-radius:12px;padding:14px 18px;text-align:center;color:#F5C7BC;
+  font-size:13.5px;line-height:1.5;margin-top:14px;
+  animation:pop .35s cubic-bezier(.2,.7,.2,1);
+}
+.wl-error.on{display:block}
+.wl-error a{color:var(--gld);text-decoration:underline}
 .wl-foot{
   margin-top:18px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
-  color:rgba(237,232,208,0.35);
+  color:rgba(237,232,208,0.35);line-height:1.7;
 }
 .wl-foot .dot{color:var(--gld);margin:0 6px}
+.wl-foot a{color:rgba(237,232,208,0.55);text-decoration:underline;text-underline-offset:2px}
+.wl-foot a:hover{color:var(--pch)}
+@keyframes shake{
+  10%,90%{transform:translateX(-2px)}
+  20%,80%{transform:translateX(3px)}
+  30%,50%,70%{transform:translateX(-5px)}
+  40%,60%{transform:translateX(5px)}
+}
 
 .wl-success{
   display:none;background:rgba(46,107,69,0.15);border:1px solid rgba(46,107,69,0.4);
@@ -1909,16 +1946,37 @@ footer.site .wm{margin-bottom:8px}
     <p class="lead">We're letting people in batch by batch. Drop your email — we'll send a TestFlight invite when your slot opens.</p>
 
     <div class="wl-form-wrap" id="wlFormWrap">
-      <form class="wl-form" id="wlForm" autocomplete="off" novalidate>
-        <input type="email" id="wlEmail" placeholder="you@wherever.com" aria-label="Email address" required>
-        <button type="submit">Join →</button>
+      <form class="wl-form" id="wlForm" autocomplete="on" novalidate>
+        <input type="text" id="wlName" placeholder="Name (optional)" aria-label="Name (optional)" autocomplete="name" maxlength="80">
+        <div class="wl-emailrow">
+          <input type="email" id="wlEmail" placeholder="you@wherever.com" aria-label="Email address" autocomplete="email" required>
+          <button type="submit">Join →</button>
+        </div>
+        <div class="wl-platform" role="radiogroup" aria-label="Which platform are you on">
+          <span class="wl-platform-label">I'm on</span>
+          <label><input type="radio" name="wlPlatform" value="ios" checked> iOS</label>
+          <label><input type="radio" name="wlPlatform" value="android"> Android</label>
+          <label><input type="radio" name="wlPlatform" value="either"> Either</label>
+        </div>
       </form>
+      <!-- Cloudflare Turnstile — public sitekey. Secret lives in Apps Script Script Properties as TURNSTILE_SECRET. -->
+      <div class="cf-turnstile"
+           data-sitekey="0x4AAAAAADI-7AAFbI8rEn4D"
+           data-callback="onTurnstileSuccess"
+           data-error-callback="onTurnstileError"
+           data-expired-callback="onTurnstileExpired"
+           data-theme="dark"
+           data-action="waitlist"></div>
       <div class="wl-foot">
-        <span>iOS first · Android close behind</span>
+        <span>iOS first · Android next</span>
         <span class="dot">·</span>
-        <span>No spam</span>
+        <span>US residents, 18+</span>
+        <span class="dot">·</span>
+        <span>We'll email you product updates and your TestFlight invite — unsubscribe anytime</span>
+        <span class="dot">·</span>
+        <span>By joining, you agree to our <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a></span>
       </div>
-      <div style="text-align:center;margin-top:14px;font-size:11px;color:rgba(237,232,208,0.45);letter-spacing:0.02em">TestFlight invites go out in batches. We'll email when yours opens.</div>
+      <div class="wl-error" id="wlError" role="alert" aria-live="assertive"></div>
     </div>
 
     <!-- Brand meta tiles -->
@@ -2056,29 +2114,164 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   vio.observe(counter);
 })();
 
-/* ─── Waitlist submit ───────────────────────────────────────── */
+/* ─── Waitlist submit (Apps Script + Cloudflare Turnstile) ─────
+   POST → Google Apps Script Web App (deployed for "Anyone").
+   Content-Type: text/plain;charset=utf-8 to keep it a "simple" CORS
+   request (no preflight). Apps Script replies with permissive CORS so
+   we can read {ok, error}. Endpoint URL + Turnstile sitekey are public
+   by design — secret-side check happens server-side in the Apps Script. */
 (function(){
-  const form    = document.getElementById('wlForm');
-  const email   = document.getElementById('wlEmail');
-  const echo    = document.getElementById('wlEmailEcho');
-  const formWrap= document.getElementById('wlFormWrap');
-  const success = document.getElementById('wlSuccess');
+  const WAITLIST_URL = 'https://script.google.com/macros/s/AKfycbyjAkNb-4bMVOtXsKvDzIjuZVQOgQJOM9urhwtEnoDgBrHOK_d4JqKLNxrll4l3DGreqQ/exec';
+
+  const form     = document.getElementById('wlForm');
+  const nameEl   = document.getElementById('wlName');
+  const emailEl  = document.getElementById('wlEmail');
+  const button   = form ? form.querySelector('button') : null;
+  const echo     = document.getElementById('wlEmailEcho');
+  const formWrap = document.getElementById('wlFormWrap');
+  const success  = document.getElementById('wlSuccess');
+  const errorEl  = document.getElementById('wlError');
   if(!form) return;
 
-  form.addEventListener('submit', (e)=>{
+  // ── Page-load metadata (captured once) ─────────────────────
+  const PAGE_LOADED_AT = (typeof performance !== 'undefined' && performance.now) ? performance.now() : Date.now();
+  const URL_PARAMS = new URLSearchParams(location.search);
+  const REFERRER = (document.referrer || '').slice(0, 500);
+  const LANG = navigator.language || '';
+  const TIMEZONE = (function(){
+    try { return Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (_) { return ''; }
+  })();
+
+  // ── Best-effort IP lookup (kicked off on load) ─────────────
+  let ipPromise = null;
+  function fetchIpInfo(){
+    if (ipPromise) return ipPromise;
+    ipPromise = fetch('https://ipapi.co/json/', { method: 'GET' })
+      .then(r => r.ok ? r.json() : null)
+      .then(j => j ? { ip: (j.ip || '').toString().slice(0,64), ip_country: (j.country || '').toString().slice(0,4) } : { ip:'', ip_country:'' })
+      .catch(() => ({ ip:'', ip_country:'' }));
+    return ipPromise;
+  }
+  fetchIpInfo();
+
+  // ── Health check on page load ──────────────────────────────
+  fetch(WAITLIST_URL, { method: 'GET', mode: 'cors' })
+    .then(r => r.ok ? r.json().catch(()=>({ok:true})) : Promise.reject(new Error('HTTP '+r.status)))
+    .then(j => { if (j && j.ok === false) throw new Error(j.error || 'health failed'); })
+    .catch(err => { console.warn('[waitlist] health-check failed:', err); });
+
+  function showError(msg){
+    if(!errorEl) return;
+    errorEl.innerHTML = msg + ' <a href="mailto:support@misersavings.com">Email us</a> if it keeps happening.';
+    errorEl.classList.add('on');
+  }
+  function clearError(){
+    if(errorEl){ errorEl.classList.remove('on'); errorEl.innerHTML = ''; }
+  }
+
+  form.addEventListener('submit', async (e)=>{
     e.preventDefault();
-    const v = email.value.trim();
+    clearError();
+
+    const v = (emailEl.value || '').trim();
     if(!v || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){
-      email.focus();
+      emailEl.focus();
       form.style.animation = 'none';
       form.offsetHeight; // reflow
       form.style.animation = 'shake .4s cubic-bezier(.2,.7,.2,1)';
       return;
     }
-    echo.textContent = v;
-    formWrap.classList.add('off');
-    success.classList.add('on');
+
+    // Pull the Turnstile token if the widget is rendered.
+    let turnstileToken = '';
+    try {
+      if (window.turnstile && typeof window.turnstile.getResponse === 'function') {
+        turnstileToken = window.turnstile.getResponse() || '';
+      } else {
+        const tInput = document.querySelector('input[name="cf-turnstile-response"]');
+        if (tInput) turnstileToken = tInput.value || '';
+      }
+    } catch (_) {}
+
+    if(button){
+      button.disabled = true;
+      button.dataset.original = button.textContent;
+      button.textContent = 'Joining…';
+    }
+
+    // Race ipapi.co against a 1.5s timeout so the form never blocks on a slow third party.
+    const ipInfo = await Promise.race([
+      fetchIpInfo(),
+      new Promise(resolve => setTimeout(() => resolve({ ip:'', ip_country:'' }), 1500))
+    ]);
+
+    const checkedRadio = form.querySelector('input[name="wlPlatform"]:checked');
+    const platform = checkedRadio ? checkedRadio.value : 'ios';
+
+    const payload = {
+      email: v,
+      name: (nameEl && nameEl.value || '').trim().slice(0, 80),
+      platform: platform,
+      source: 'misersavings.com' + (location.pathname || '/'),
+      user_agent: navigator.userAgent,
+      lang: LANG,
+      timezone: TIMEZONE,
+      referrer: REFERRER,
+      utm_source:   URL_PARAMS.get('utm_source')   || '',
+      utm_medium:   URL_PARAMS.get('utm_medium')   || '',
+      utm_campaign: URL_PARAMS.get('utm_campaign') || '',
+      utm_content:  URL_PARAMS.get('utm_content')  || '',
+      utm_term:     URL_PARAMS.get('utm_term')     || '',
+      fbclid:       URL_PARAMS.get('fbclid')       || '',
+      gclid:        URL_PARAMS.get('gclid')        || '',
+      time_on_page_ms: Math.max(0, Math.round(((typeof performance !== 'undefined' && performance.now) ? performance.now() : Date.now()) - PAGE_LOADED_AT)),
+      ip: ipInfo.ip,
+      ip_country: ipInfo.ip_country,
+      'cf-turnstile-response': turnstileToken
+    };
+
+    try {
+      const resp = await fetch(WAITLIST_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload),
+        redirect: 'follow'
+      });
+      if (!resp.ok) throw new Error('Server returned ' + resp.status);
+      const json = await resp.json().catch(()=>({ ok:false, error:'bad_response' }));
+      if (!json.ok) throw new Error(json.error || 'rejected');
+
+      // Real success.
+      echo.textContent = v;
+      formWrap.classList.add('off');
+      success.classList.add('on');
+      if (typeof gtag === 'function') {
+        gtag('event', 'waitlist_signup', { event_category:'engagement', event_label:'homepage' });
+      }
+    } catch (err) {
+      console.error('[waitlist] submit failed:', err);
+      if (button) {
+        button.disabled = false;
+        button.textContent = button.dataset.original || 'Join →';
+      }
+      try { if (window.turnstile) window.turnstile.reset(); } catch(_){}
+      const msg = String(err && err.message || err);
+      if (/captcha/i.test(msg)) {
+        showError('We couldn\'t verify the bot-check. Please try the captcha again.');
+      } else if (/invalid_email/i.test(msg)) {
+        showError('That email looks off — double-check it and resubmit.');
+      } else if (/Server returned 5/.test(msg)) {
+        showError('Our waitlist service hiccupped. We\'re likely already on it.');
+      } else {
+        showError('Something went wrong sending your email.');
+      }
+    }
   });
+
+  // Turnstile callbacks
+  window.onTurnstileSuccess = function(){ /* no-op */ };
+  window.onTurnstileError = function(){ showError('Bot-check failed to load. Refresh and try again.'); };
+  window.onTurnstileExpired = function(){ try { window.turnstile && window.turnstile.reset(); } catch(_){} };
 })();
 </script>
 
