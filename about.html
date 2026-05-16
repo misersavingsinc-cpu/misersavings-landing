@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — mi$er</title>
+<meta name="description" content="Miser is a behavioral savings app built in Austin, Texas. Here's why we built it, what we believe, and how we make money.">
+<link rel="canonical" href="https://misersavings.com/about.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Miser">
+<meta property="og:title" content="About — mi$er">
+<meta property="og:description" content="Why we built Miser, what we believe, and how we make money.">
+<meta property="og:image" content="https://misersavings.com/og-image.png">
+<meta property="og:url" content="https://misersavings.com/about.html">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About — mi$er">
+<meta name="twitter:description" content="Why we built Miser, what we believe, and how we make money.">
+<meta name="twitter:image" content="https://misersavings.com/og-image.png">
+
+<meta name="robots" content="index,follow,max-image-preview:large">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#1C3D2B">
+
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+
+<!-- Google Analytics (GA4) — G-76HDNX2NG5 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-76HDNX2NG5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-76HDNX2NG5');
+</script>
+
+<!-- JSON-LD: AboutPage referencing the parent Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About Miser",
+  "url": "https://misersavings.com/about.html",
+  "description": "Miser is a behavioral savings app built in Austin, Texas. Why we built it, what we believe, and how we make money.",
+  "mainEntity": {
+    "@type": "Organization",
+    "@id": "https://misersavings.com/#organization",
+    "name": "Miser",
+    "alternateName": ["MiserSavings", "mı$er", "MiserSavings Inc."],
+    "legalName": "MiserSavings Inc.",
+    "url": "https://misersavings.com/",
+    "logo": "https://misersavings.com/og-image.png",
+    "foundingDate": "2026-03-12",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Austin",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Support",
+      "email": "support@misersavings.com",
+      "availableLanguage": "English"
+    }
+  }
+}
+</script>
+
+<style>
+:root {
+  --dg:  #1C3D2B;
+  --sg:  #2E6B45;
+  --gld: #C8A820;
+  --brz: #8B6914;
+  --pch: #EDE8D0;
+  --crm: #F5F0E0;
+  --fn:  -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--fn);
+  background: var(--pch);
+  color: var(--dg);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(28,61,43,0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 0.5px solid rgba(200,168,32,0.15);
+  padding: 0 40px;
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-wm {
+  font-size: 22px; font-weight: 900; letter-spacing: -0.5px;
+  color: var(--pch); text-decoration: none;
+}
+.nav-wm .d { color: var(--gld); }
+.nav-links {
+  display: flex; align-items: center; gap: 32px; list-style: none;
+}
+.nav-links a {
+  font-size: 13px; font-weight: 600; letter-spacing: 0.04em;
+  color: rgba(237,232,208,0.6); text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--pch); }
+.nav-cta {
+  background: var(--gld); color: var(--dg);
+  font-size: 13px; font-weight: 700; letter-spacing: 0.04em;
+  padding: 9px 22px; border-radius: 8px;
+  text-decoration: none; white-space: nowrap;
+}
+
+.legal-hero {
+  background: var(--dg);
+  padding: 140px 40px 80px;
+  position: relative; overflow: hidden;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 29px, rgba(255,255,255,0.025) 30px),
+    repeating-linear-gradient(90deg, transparent, transparent 29px, rgba(255,255,255,0.025) 30px);
+}
+.legal-hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
+.legal-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--gld); margin-bottom: 14px;
+}
+.legal-h1 {
+  font-size: 54px; font-weight: 900; color: var(--pch);
+  letter-spacing: -1.5px; line-height: 1.05; margin-bottom: 20px;
+}
+.legal-h1 em { color: var(--gld); font-style: normal; }
+.legal-meta { font-size: 14px; color: rgba(237,232,208,0.55); }
+
+.legal-body {
+  background: var(--pch);
+  padding: 80px 40px 100px;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(28,61,43,0.025) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(28,61,43,0.025) 40px);
+}
+.legal-inner {
+  max-width: 900px; margin: 0 auto;
+  background: var(--crm); border: 1.5px solid rgba(28,61,43,0.1);
+  border-radius: 20px; padding: 60px 72px;
+}
+.legal-intro {
+  font-size: 19px; line-height: 1.65; color: rgba(28,61,43,0.85);
+  margin-bottom: 40px; font-weight: 500;
+}
+.legal-intro strong { color: var(--dg); font-weight: 700; }
+
+h2 {
+  font-size: 24px; font-weight: 800; color: var(--dg);
+  letter-spacing: -0.3px; line-height: 1.2;
+  margin-top: 56px; margin-bottom: 16px;
+  padding-top: 24px; border-top: 0.5px solid rgba(28,61,43,0.12);
+  scroll-margin-top: 84px;
+}
+h2:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+h3 {
+  font-size: 17px; font-weight: 700; color: var(--dg);
+  margin-top: 28px; margin-bottom: 10px;
+}
+p {
+  font-size: 16px; line-height: 1.75; color: rgba(28,61,43,0.82);
+  margin-bottom: 14px;
+}
+p strong { color: var(--dg); font-weight: 700; }
+p em { color: var(--sg); font-style: normal; font-weight: 600; }
+a { color: var(--sg); }
+a:hover { color: var(--dg); }
+
+ul { margin: 14px 0 20px 0; padding-left: 22px; }
+li {
+  font-size: 16px; line-height: 1.75; color: rgba(28,61,43,0.82);
+  margin-bottom: 8px;
+}
+li strong { color: var(--dg); font-weight: 700; }
+
+.belief-card {
+  background: var(--pch); border: 1px solid rgba(28,61,43,0.1);
+  border-radius: 12px; padding: 22px 26px; margin-bottom: 16px;
+}
+.belief-card h3 { margin-top: 0; color: var(--brz); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 6px; }
+.belief-card p { font-size: 15px; margin-bottom: 0; color: rgba(28,61,43,0.82); }
+.belief-card strong { color: var(--dg); }
+
+.fact-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;
+  margin: 28px 0;
+}
+.fact-item {
+  background: var(--pch); border: 1px solid rgba(28,61,43,0.1);
+  border-radius: 12px; padding: 18px 22px;
+}
+.fact-label {
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--brz); margin-bottom: 6px;
+}
+.fact-value {
+  font-size: 16px; font-weight: 700; color: var(--dg);
+}
+
+.contact-box {
+  background: var(--dg); color: var(--pch);
+  border-radius: 16px; padding: 32px 36px;
+  margin-top: 48px;
+}
+.contact-box h3 { color: var(--gld); margin-top: 0; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
+.contact-box p { color: rgba(237,232,208,0.78); margin-bottom: 8px; font-size: 14px; }
+.contact-box a { color: var(--gld); text-decoration: none; font-weight: 600; }
+.contact-box a:hover { color: var(--pch); }
+
+footer {
+  background: #111d16; padding: 40px 40px 32px;
+  border-top: 0.5px solid rgba(200,168,32,0.1);
+}
+.footer-inner {
+  max-width: 1160px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 32px; flex-wrap: wrap;
+}
+.footer-wm {
+  font-size: 20px; font-weight: 900; letter-spacing: -0.5px;
+  color: var(--pch);
+}
+.footer-wm .d { color: var(--gld); }
+.footer-links-row { display: flex; gap: 28px; flex-wrap: wrap; }
+.footer-links-row a {
+  font-size: 13px; color: rgba(237,232,208,0.5);
+  text-decoration: none;
+}
+.footer-links-row a:hover { color: var(--pch); }
+.footer-copy {
+  width: 100%; text-align: center; margin-top: 28px;
+  padding-top: 24px; border-top: 0.5px solid rgba(255,255,255,0.06);
+  font-size: 11px; color: rgba(237,232,208,0.25);
+}
+
+@media (max-width: 680px) {
+  .legal-h1 { font-size: 38px; }
+  .legal-inner { padding: 40px 28px; }
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .legal-hero { padding: 100px 20px 60px; }
+  .legal-body { padding: 60px 20px 80px; }
+  .fact-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-wm" href="index.html">mı<span class="d">$</span>er</a>
+  <ul class="nav-links">
+    <li><a href="index.html#how">How it works</a></li>
+    <li><a href="index.html#quit">Quit</a></li>
+    <li><a href="index.html#groups">Groups</a></li>
+    <li><a href="index.html#ranks">Ranks</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+  </ul>
+  <a class="nav-cta" href="index.html#waitlist">Join waitlist</a>
+</nav>
+
+<section class="legal-hero">
+  <div class="legal-hero-inner">
+    <div class="legal-eyebrow">About</div>
+    <h1 class="legal-h1">A quieter way <em>to save</em>.</h1>
+    <p class="legal-meta">Built in Austin, Texas · MiserSavings Inc.</p>
+  </div>
+</section>
+
+<section class="legal-body">
+  <div class="legal-inner">
+
+    <p class="legal-intro">
+      Miser is for the small choices that compound. The latte you almost bought. The takeout you didn't need. The thing-from-the-internet your future self would have wished you skipped. We built an app that turns those near-misses into a real savings account, with three taps and no spreadsheet.
+    </p>
+
+    <h2>Why we built this</h2>
+    <p>Most savings apps try to make you feel better about a budget. The category is full of charts you'll ignore, dashboards you'll never open, and "round-up" features that quietly cost you the most expensive coffees in your week. We didn't want any of that.</p>
+    <p>We wanted to build the thing we actually use ourselves: a one-screen, one-decision tool. <strong>You almost bought something. You tap. The money goes into a vault tied to a goal you set.</strong> Every Sunday, the week's skips batch into a single ACH transfer and ship to your savings. That's it. No coaching plans, no monthly fee, no tier you have to pay for.</p>
+    <p>The bet is simple: if the friction of saving drops below the friction of spending, people save more. Especially people who already know they should be saving but haven't found the on-ramp.</p>
+
+    <h2>What we believe</h2>
+
+    <div class="belief-card">
+      <h3>01 · Money you don't see, you don't spend</h3>
+      <p>The single best behavioral lever in personal finance is moving money out of the checking account it would have been spent from. Miser ships skipped dollars into a separate vault, on a schedule, without making you think about it.</p>
+    </div>
+
+    <div class="belief-card">
+      <h3>02 · A goal beats a number</h3>
+      <p>"Save more" is a feeling. "Save $1,500 for Mexico City by October" is a project. Every dollar in a Miser vault is pointed at a goal you named yourself. The bar moves. The destination gets closer. That's the part you can feel.</p>
+    </div>
+
+    <div class="belief-card">
+      <h3>03 · Identity, not unlocks</h3>
+      <p>We scrapped the traditional tier system on purpose. No fee discounts, no raised limits, no paywall behind progression. Ranks in Miser are pure recognition — the app names you (Apprentice Miser, Steady Miser, Grand Miser) as you stack days and dollars. The number is the reward.</p>
+    </div>
+
+    <div class="belief-card">
+      <h3>04 · The fee schedule is on the page</h3>
+      <p>We make money on a small service fee per Sunday batch. We say so. The exact number is shown in the app before any money moves and you have to accept it. No tiered pricing, no upsell screens, no "premium" plan you'll forget you signed up for. Withdrawals are always free.</p>
+    </div>
+
+    <div class="belief-card">
+      <h3>05 · Money you almost spent is the best money to save</h3>
+      <p>It's already earmarked for nothing important. It's the lowest-pain dollar you have. The hard part is making it stack somewhere it'll still exist by Friday. Miser is that "somewhere."</p>
+    </div>
+
+    <h2>How we make money</h2>
+    <p>One way: <strong>a small service fee on the Sunday batch</strong>. The exact number is shown in the app at sign-up and you have to accept it before any money moves. We don't take a cut of interest, we don't take a cut of round-ups, we don't run ads against your transaction data, we don't sell your data, and we don't have a tiered pricing model. <strong>Withdrawals are free.</strong></p>
+    <p>The full pricing details and the legal disclosures live in our <a href="terms.html#fees">Terms of Service</a>.</p>
+
+    <h2>Where we're based</h2>
+    <p>Miser is built in <strong>Austin, Texas</strong>. The legal entity, MiserSavings Inc., is a Delaware C-Corp incorporated on <strong>March 12, 2026</strong>. We're a small founder-led team — bios coming when the product is in your hands, not before.</p>
+
+    <div class="fact-grid">
+      <div class="fact-item">
+        <div class="fact-label">Legal entity</div>
+        <div class="fact-value">MiserSavings Inc.</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-label">Incorporated</div>
+        <div class="fact-value">Delaware · 2026-03-12</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-label">Based in</div>
+        <div class="fact-value">Austin, TX</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-label">Launching</div>
+        <div class="fact-value">2026 · iOS first</div>
+      </div>
+    </div>
+
+    <h2>Where your money sits</h2>
+    <p><strong>Miser is a financial technology company, not a bank.</strong> We don't hold customer deposits and we never commingle your funds with our own balance sheet. ACH transfers between your linked checking account and your savings vault are initiated by our ACH partner; bank linking is provided by <a href="https://plaid.com" rel="noopener">Plaid</a>. FDIC insurance, where applicable, is provided by the bank holding the account — not by us. We'll publish the full partner-bank disclosure on this page when launch paperwork is signed.</p>
+
+    <h2>Press &amp; partnerships</h2>
+    <p>For press inquiries, partnership discussions, or anything else that warrants a long-form reply: <a href="mailto:support@misersavings.com">support@misersavings.com</a>.</p>
+
+    <div class="contact-box">
+      <h3>Want to be among the first to use it?</h3>
+      <p>The waitlist is open. iOS first, Android close behind. US-only at launch. <a href="index.html#waitlist">Join here</a>.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-wm">mı<span class="d">$</span>er</div>
+    <div class="footer-links-row">
+      <a href="index.html">Home</a>
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#quit">Quit</a>
+      <a href="index.html#groups">Groups</a>
+      <a href="index.html#ranks">Ranks</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+    <div class="footer-copy">
+      © 2026 MiserSavings Inc. · Austin, TX · mi$er is a financial technology company, not a bank.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
