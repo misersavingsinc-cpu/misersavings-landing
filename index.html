@@ -4,12 +4,97 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Miser — Turn impulse buys into real savings.</title>
-<meta name="description" content="Log the impulse buys you skip. Every Sunday, Miser batches the week and locks it in a vault tied to a real goal. Skip. Lock. Stack.">
+<meta name="description" content="Log the impulse buys you skip. Every Sunday, Miser batches the week and moves it into a vault tied to a real goal. Skip. Save. Stack.">
+<link rel="canonical" href="https://misersavings.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Miser">
 <meta property="og:title" content="Miser — Turn impulse buys into real savings.">
-<meta property="og:description" content="Skip · Lock · Stack. The savings app for the moments you almost spent.">
-<meta property="og:image" content="/og-image.png">
-<meta property="og:url" content="https://misersavings.com">
+<meta property="og:description" content="Skip · Save · Stack. The savings app for the moments you almost spent.">
+<meta property="og:image" content="https://misersavings.com/og-image.png">
+<meta property="og:image:alt" content="Miser — Turn impulse buys into real savings">
+<meta property="og:url" content="https://misersavings.com/">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Miser — Turn impulse buys into real savings.">
+<meta name="twitter:description" content="Skip · Save · Stack. The savings app for the moments you almost spent.">
+<meta name="twitter:image" content="https://misersavings.com/og-image.png">
+<meta name="twitter:image:alt" content="Miser — Turn impulse buys into real savings">
+
+<!-- SEO: explicit indexing + larger image previews in Google search results -->
+<meta name="robots" content="index,follow,max-image-preview:large">
+
+<!-- Favicons -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#1C3D2B">
+
+<!-- Performance: warm up connections to GA + Turnstile before scripts request them -->
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+<link rel="dns-prefetch" href="https://challenges.cloudflare.com">
+
+<!-- Google Analytics (GA4) — G-76HDNX2NG5 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-76HDNX2NG5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-76HDNX2NG5');
+</script>
+
+<!-- JSON-LD Structured Data: Organization + WebSite.
+     Add the Founder array (Person nodes) and sameAs (Twitter/LinkedIn/Crunchbase)
+     when you're ready to be publicly attributed. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://misersavings.com/#organization",
+      "name": "Miser",
+      "alternateName": ["MiserSavings", "mı$er", "MiserSavings Inc."],
+      "legalName": "MiserSavings Inc.",
+      "url": "https://misersavings.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://misersavings.com/og-image.png",
+        "width": 1200,
+        "height": 630
+      },
+      "description": "Miser is a behavioral savings app. Log the impulse buys you skip, point each one at a goal, and every Sunday the week's skips batch into a vault tied to that goal.",
+      "foundingDate": "2026-03-12",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Austin",
+        "addressRegion": "TX",
+        "addressCountry": "US"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Support",
+        "email": "support@misersavings.com",
+        "availableLanguage": "English"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://misersavings.com/#website",
+      "url": "https://misersavings.com/",
+      "name": "Miser",
+      "description": "Turn impulse buys into real savings. Miser turns the small purchases you almost made into a goal-based vault.",
+      "publisher": { "@id": "https://misersavings.com/#organization" },
+      "inLanguage": "en-US"
+    }
+  ]
+}
+</script>
+
 <!-- Cloudflare Turnstile (waitlist bot check) -->
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <style>
@@ -2013,7 +2098,7 @@ footer.site .wm{margin-bottom:8px}
   <div class="inner">
     <div>
       <a class="wm" href="#top">mı<span class="d">$</span>er</a>
-      <div class="foot-tag">Skip · Lock · Stack</div>
+      <div class="foot-tag">Skip · Save · Stack</div>
       <p class="foot-blurb">A quieter way to save. Built for the moments you almost spent.</p>
     </div>
     <div class="foot-links">
