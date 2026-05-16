@@ -3,181 +3,431 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terms of Service — MiserSavings</title>
-<meta name="description" content="The Terms of Service for MiserSavings (mı$er). Pre-launch waitlist and website terms. MiserSavings Inc., Delaware C-Corp.">
-<link rel="canonical" href="https://misersavings.com/terms.html">
-
-<!-- Open Graph -->
-<meta property="og:type" content="article">
-<meta property="og:site_name" content="MiserSavings">
-<meta property="og:title" content="Terms of Service — MiserSavings">
-<meta property="og:description" content="MiserSavings Terms of Service.">
-<meta property="og:image" content="https://misersavings.com/og-image.png">
-<meta property="og:url" content="https://misersavings.com/terms.html">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Terms of Service — MiserSavings">
-<meta name="twitter:image" content="https://misersavings.com/og-image.png">
-
-<!-- Google tag (gtag.js) — GA4 G-76HDNX2NG5 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-76HDNX2NG5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-76HDNX2NG5');
-</script>
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="shortcut icon" href="/favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#1C3D2B">
-
-<!-- SEO: explicit indexing + larger image previews in Google search results -->
-<meta name="robots" content="index,follow,max-image-preview:large">
-
-<!-- Performance: warm up the GA connection -->
-<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-
-<!-- JSON-LD: Organization reference -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://misersavings.com/#organization",
-  "name": "MiserSavings",
-  "legalName": "MiserSavings Inc.",
-  "url": "https://misersavings.com/",
-  "logo": "https://misersavings.com/og-image.png",
-  "sameAs": [
-    "https://www.instagram.com/misersavings/",
-    "https://www.tiktok.com/@misersavings",
-    "https://x.com/misersavings"
-  ]
-}
-</script>
+<title>Terms of Service — mi$er</title>
+<meta name="description" content="The agreement between you and MiserSavings Inc. for using the mi$er app.">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --dg:#1C3D2B;
-  --dg-dark:#11271B;
-  --sg:#2E6B45;
-  --gld:#C8A820;
-  --brz:#8B6914;
-  --pch:#EDE8D0;
-  --crm:#F5F0E0;
-  --muted:rgba(28,61,43,0.6);
-  --fn:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,sans-serif;
+:root {
+  --dg:  #1C3D2B;
+  --sg:  #2E6B45;
+  --gld: #C8A820;
+  --brz: #8B6914;
+  --pch: #EDE8D0;
+  --crm: #F5F0E0;
+  --fn:  -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
 }
-html{scroll-behavior:smooth}
-body{font-family:var(--fn);background:var(--pch);color:var(--dg);line-height:1.6;-webkit-font-smoothing:antialiased}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--fn);
+  background: var(--pch);
+  color: var(--dg);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
 
-/* ── NAV (matches v4 marketing site) ───────────────── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:64px;background:rgba(28,61,43,0.95);backdrop-filter:saturate(140%) blur(14px);-webkit-backdrop-filter:saturate(140%) blur(14px);border-bottom:0.5px solid rgba(200,168,32,0.18)}
-.nav-wm{font-size:22px;font-weight:900;letter-spacing:-0.5px;color:var(--pch);text-decoration:none}
-.nav-wm .d{color:var(--gld)}
-.nav-back{padding:8px 18px;border:1px solid rgba(237,232,208,0.22);color:rgba(237,232,208,0.78);border-radius:99px;font-size:13px;font-weight:600;letter-spacing:0.02em;text-decoration:none;transition:all 0.2s}
-.nav-back:hover{color:var(--gld);border-color:var(--gld)}
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(28,61,43,0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 0.5px solid rgba(200,168,32,0.15);
+  padding: 0 40px;
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-wm {
+  font-size: 22px; font-weight: 900; letter-spacing: -0.5px;
+  color: var(--pch); text-decoration: none;
+}
+.nav-wm .d { color: var(--gld); }
+.nav-links {
+  display: flex; align-items: center; gap: 32px; list-style: none;
+}
+.nav-links a {
+  font-size: 13px; font-weight: 600; letter-spacing: 0.04em;
+  color: rgba(237,232,208,0.6); text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--pch); }
+.nav-cta {
+  background: var(--gld); color: var(--dg);
+  font-size: 13px; font-weight: 700; letter-spacing: 0.04em;
+  padding: 9px 22px; border-radius: 8px;
+  text-decoration: none; white-space: nowrap;
+}
 
-/* ── HERO ──────────────────────────────────────────── */
-.hero{padding:130px 5% 76px;background:radial-gradient(ellipse 800px 500px at 50% 35%,rgba(46,107,69,0.45) 0%,transparent 70%),linear-gradient(160deg,var(--dg-dark) 0%,var(--dg) 50%,#0F2419 100%);text-align:center;position:relative;overflow:hidden;color:var(--pch)}
-.hero::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 29px,rgba(255,255,255,0.025) 30px),repeating-linear-gradient(90deg,transparent,transparent 29px,rgba(255,255,255,0.025) 30px);pointer-events:none}
-.hero > *{position:relative;z-index:1}
-.hero-label{display:inline-block;font-size:11px;font-weight:800;color:var(--gld);text-transform:uppercase;letter-spacing:0.22em;margin-bottom:18px}
-.hero h1{font-size:clamp(2.1rem,5vw,3.4rem);font-weight:900;color:var(--pch);letter-spacing:-0.025em;line-height:1.08;margin-bottom:14px}
-.hero-meta{font-size:13px;color:rgba(237,232,208,0.55);letter-spacing:0.02em}
+.legal-hero {
+  background: var(--dg);
+  padding: 140px 40px 80px;
+  position: relative; overflow: hidden;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 29px, rgba(255,255,255,0.025) 30px),
+    repeating-linear-gradient(90deg, transparent, transparent 29px, rgba(255,255,255,0.025) 30px);
+}
+.legal-hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
+.legal-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--gld); margin-bottom: 14px;
+}
+.legal-h1 {
+  font-size: 54px; font-weight: 900; color: var(--pch);
+  letter-spacing: -1.5px; line-height: 1.05; margin-bottom: 20px;
+}
+.legal-h1 em { color: var(--gld); font-style: normal; }
+.legal-meta {
+  font-size: 14px; color: rgba(237,232,208,0.55);
+}
+.legal-meta strong { color: var(--pch); font-weight: 700; }
 
-/* ── CONTENT ───────────────────────────────────────── */
-.content{max-width:760px;margin:0 auto;padding:64px 5% 100px}
+.legal-body {
+  background: var(--pch);
+  padding: 80px 40px 100px;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(28,61,43,0.025) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(28,61,43,0.025) 40px);
+}
+.legal-inner {
+  max-width: 900px; margin: 0 auto;
+  background: var(--crm); border: 1.5px solid rgba(28,61,43,0.1);
+  border-radius: 20px; padding: 60px 72px;
+}
+.legal-intro {
+  font-size: 17px; line-height: 1.7; color: rgba(28,61,43,0.8);
+  margin-bottom: 32px;
+}
+.legal-intro strong { color: var(--dg); font-weight: 700; }
 
-.notice{background:var(--crm);border-radius:16px;padding:22px 30px;margin-bottom:48px;border-left:4px solid var(--gld);box-shadow:0 1px 2px rgba(28,61,43,0.04),0 8px 24px rgba(28,61,43,0.06)}
-.notice p{font-size:0.94rem;color:var(--muted);line-height:1.65;margin:0}
-.notice strong{color:var(--dg)}
+.callout-top {
+  background: var(--dg); color: var(--pch);
+  border-radius: 14px; padding: 22px 28px; margin-bottom: 48px;
+  border: 1.5px solid var(--gld);
+}
+.callout-top p { color: rgba(237,232,208,0.85); font-size: 14px; line-height: 1.65; margin-bottom: 0; }
+.callout-top strong { color: var(--gld); font-weight: 700; letter-spacing: 0.05em; }
 
-h2{font-size:1.18rem;font-weight:800;color:var(--dg);margin:44px 0 12px;padding-top:22px;border-top:1px solid rgba(28,61,43,0.10)}
-h2:first-of-type{border-top:none;padding-top:0;margin-top:0}
-p{font-size:0.96rem;line-height:1.72;color:rgba(28,61,43,0.85);margin-bottom:11px}
-p strong{color:var(--dg)}
-ul{margin:10px 0 14px 22px}
-li{font-size:0.96rem;line-height:1.72;color:rgba(28,61,43,0.85);margin-bottom:5px}
-li strong{color:var(--dg)}
-a{color:var(--sg);text-decoration:underline;text-decoration-color:rgba(46,107,69,0.35);text-underline-offset:2px;transition:color 0.15s,text-decoration-color 0.15s}
-a:hover{color:var(--brz);text-decoration-color:var(--brz)}
+.toc {
+  background: var(--pch); border: 1px solid rgba(28,61,43,0.1);
+  border-radius: 14px; padding: 24px 28px; margin-bottom: 56px;
+}
+.toc-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--brz); margin-bottom: 14px;
+}
+.toc ol { list-style: none; counter-reset: toc; }
+.toc li {
+  counter-increment: toc;
+  font-size: 14px; margin-bottom: 7px;
+}
+.toc li::before {
+  content: counter(toc, decimal-leading-zero) " ";
+  color: var(--brz); font-weight: 700; font-size: 11px;
+  letter-spacing: 0.1em; margin-right: 10px;
+}
+.toc a {
+  color: rgba(28,61,43,0.75); text-decoration: none;
+  border-bottom: 1px dotted rgba(28,61,43,0.2); transition: color 0.2s;
+}
+.toc a:hover { color: var(--sg); border-bottom-color: var(--sg); }
 
-/* ── FOOTER ────────────────────────────────────────── */
-footer{background:var(--dg-dark);color:rgba(237,232,208,0.5);text-align:center;padding:34px 5%;font-size:13px;border-top:0.5px solid rgba(200,168,32,0.12)}
-footer a{color:var(--gld);text-decoration:none;margin:0 10px;transition:color 0.15s}
-footer a:hover{color:#DDB930;text-decoration:underline}
-.foot-meta{margin-top:10px;font-size:11.5px;opacity:0.55;letter-spacing:0.02em}
+h2 {
+  font-size: 24px; font-weight: 800; color: var(--dg);
+  letter-spacing: -0.3px; line-height: 1.2;
+  margin-top: 56px; margin-bottom: 16px;
+  padding-top: 24px; border-top: 0.5px solid rgba(28,61,43,0.12);
+  scroll-margin-top: 84px;
+}
+h2:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+h3 {
+  font-size: 17px; font-weight: 700; color: var(--dg);
+  margin-top: 28px; margin-bottom: 10px;
+}
+p {
+  font-size: 15px; line-height: 1.7; color: rgba(28,61,43,0.8);
+  margin-bottom: 14px;
+}
+p strong { color: var(--dg); font-weight: 700; }
 
-@media (max-width:600px){
-  .hero{padding:110px 5% 60px}
-  .content{padding:48px 5% 72px}
+ul, ol.numbered {
+  margin: 14px 0 20px 0;
+  padding-left: 22px;
+}
+li {
+  font-size: 15px; line-height: 1.7; color: rgba(28,61,43,0.8);
+  margin-bottom: 8px;
+}
+li strong { color: var(--dg); font-weight: 700; }
+
+.callout {
+  background: var(--pch); border-left: 4px solid var(--gld);
+  padding: 18px 24px; margin: 24px 0;
+  border-radius: 0 10px 10px 0;
+}
+.callout p { margin-bottom: 0; }
+.callout p:not(:last-child) { margin-bottom: 10px; }
+
+.allcaps {
+  font-size: 13px; font-weight: 700; letter-spacing: 0.02em;
+  background: var(--pch); border: 1px solid rgba(28,61,43,0.15);
+  padding: 18px 22px; border-radius: 10px;
+  margin: 24px 0; line-height: 1.6;
+  color: var(--dg);
+  text-transform: uppercase;
+}
+
+a { color: var(--sg); }
+a:hover { color: var(--dg); }
+
+.contact-box {
+  background: var(--dg); color: var(--pch);
+  border-radius: 16px; padding: 32px 36px;
+  margin-top: 48px;
+}
+.contact-box h3 { color: var(--gld); margin-top: 0; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
+.contact-box p { color: rgba(237,232,208,0.75); margin-bottom: 8px; font-size: 14px; }
+.contact-box a { color: var(--gld); text-decoration: none; font-weight: 600; }
+.contact-box a:hover { color: var(--pch); }
+
+footer {
+  background: #111d16; padding: 40px 40px 32px;
+  border-top: 0.5px solid rgba(200,168,32,0.1);
+}
+.footer-inner {
+  max-width: 1160px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 32px; flex-wrap: wrap;
+}
+.footer-wm {
+  font-size: 20px; font-weight: 900; letter-spacing: -0.5px;
+  color: var(--pch);
+}
+.footer-wm .d { color: var(--gld); }
+.footer-links-row { display: flex; gap: 28px; flex-wrap: wrap; }
+.footer-links-row a {
+  font-size: 13px; color: rgba(237,232,208,0.5);
+  text-decoration: none;
+}
+.footer-links-row a:hover { color: var(--pch); }
+.footer-copy {
+  width: 100%; text-align: center; margin-top: 28px;
+  padding-top: 24px; border-top: 0.5px solid rgba(255,255,255,0.06);
+  font-size: 11px; color: rgba(237,232,208,0.25);
+}
+
+@media (max-width: 680px) {
+  .legal-h1 { font-size: 38px; }
+  .legal-inner { padding: 40px 28px; }
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .legal-hero { padding: 100px 20px 60px; }
+  .legal-body { padding: 60px 20px 80px; }
 }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="/" class="nav-wm" aria-label="MiserSavings — home">mı<span class="d">$</span>er</a>
-  <a href="/" class="nav-back">← Home</a>
+  <a class="nav-wm" href="index.html">mı<span class="d">$</span>er</a>
+  <ul class="nav-links">
+    <li><a href="index.html#how">How it works</a></li>
+    <li><a href="index.html#quit">Quit</a></li>
+    <li><a href="index.html#groups">Groups</a></li>
+    <li><a href="index.html#ranks">Ranks</a></li>
+    <li><a href="index.html#pricing">Pricing</a></li>
+  </ul>
+  <a class="nav-cta" href="index.html#waitlist">Join waitlist</a>
 </nav>
 
-<div class="hero">
-  <div class="hero-label">Legal</div>
-  <h1>Terms of Service</h1>
-  <p class="hero-meta">Effective: April 22, 2026 &nbsp;·&nbsp; Last updated: May 4, 2026</p>
-</div>
-
-<div class="content">
-
-  <div class="notice">
-    <p><strong>Pre-launch notice.</strong> MiserSavings is currently in development. These terms govern access to our waitlist and website. Full financial service terms will be provided before any money movement features are enabled.</p>
+<section class="legal-hero">
+  <div class="legal-hero-inner">
+    <div class="legal-eyebrow">Legal</div>
+    <h1 class="legal-h1">Terms of <em>Service</em></h1>
+    <p class="legal-meta"><strong>Effective:</strong> May 16, 2026 &middot; <strong>Last updated:</strong> May 16, 2026</p>
   </div>
+</section>
 
-  <h2>1. Who we are</h2>
-  <p>MiserSavings Inc. is a Delaware C-Corp. We are a financial technology company, not a bank. Any banking, card, or payment services will be provided by licensed third-party partners whose own terms will apply.</p>
+<section class="legal-body">
+  <div class="legal-inner">
 
-  <h2>2. Acceptance</h2>
-  <p>By visiting this website, joining the waitlist, or using any feature of the MiserSavings app, you agree to these Terms and our Privacy Policy. If you do not agree, do not use our services.</p>
+    <p class="legal-intro">
+      These Terms of Service (&ldquo;Terms&rdquo;) are a legal agreement between you and <strong>MiserSavings Inc.</strong> (&ldquo;mi$er,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) that governs your use of the mi$er mobile app, our website, and any related services (together, the &ldquo;Services&rdquo;). By creating an account or using the Services, you agree to these Terms and to our <a href="privacy.html">Privacy Policy</a>. If you don&rsquo;t agree, don&rsquo;t use the Services.
+    </p>
 
-  <h2 id="eligibility">3. Eligibility</h2>
-  <p>You must be at least 18 years old and a US resident to use MiserSavings. By using our services you represent that you meet these requirements.</p>
+    <div class="callout-top">
+      <p><strong>PLEASE READ CAREFULLY.</strong> These Terms include a mandatory <a href="#arbitration" style="color:var(--gld)">arbitration provision</a> and <a href="#arbitration" style="color:var(--gld)">class-action waiver</a>. You give up the right to sue us in court or participate in class actions, except as described in Section 16. You may opt out of arbitration within 30 days of creating your account.</p>
+    </div>
 
-  <h2>4. Waitlist & early access</h2>
-  <p>Joining the waitlist does not guarantee access to the product. We may admit users in any order at our discretion. We may discontinue the waitlist or product at any time.</p>
+    <div class="toc">
+      <div class="toc-label">On this page</div>
+      <ol>
+        <li><a href="#about">About mi$er (not a bank)</a></li>
+        <li><a href="#eligibility">Eligibility</a></li>
+        <li><a href="#accounts">Creating your account</a></li>
+        <li><a href="#identity">Identity verification (KYC)</a></li>
+        <li><a href="#vault">Your accounts, deposits &amp; withdrawals</a></li>
+        <li><a href="#fees">Fees</a></li>
+        <li><a href="#ai-coach">AI Coach</a></li>
+        <li><a href="#reg-e">Electronic communications (Reg E)</a></li>
+        <li><a href="#prohibited">Prohibited conduct</a></li>
+        <li><a href="#intellectual">Intellectual property</a></li>
+        <li><a href="#third-party">Third-party services</a></li>
+        <li><a href="#termination">Suspension &amp; termination</a></li>
+        <li><a href="#disclaimers">Disclaimers</a></li>
+        <li><a href="#liability">Limitation of liability</a></li>
+        <li><a href="#indemnification">Indemnification</a></li>
+        <li><a href="#arbitration">Arbitration &amp; class-action waiver</a></li>
+        <li><a href="#governing-law">Governing law</a></li>
+        <li><a href="#changes">Changes to these Terms</a></li>
+        <li><a href="#contact">Contact us</a></li>
+      </ol>
+    </div>
 
-  <h2>5. No financial services yet</h2>
-  <p>No deposits, withdrawals, card issuance, or money movement of any kind is currently available. When these features launch, separate financial service agreements, fee disclosures, and regulatory notices will be presented before you can use them. Nothing on this website constitutes a financial product offer.</p>
+    <h2 id="about">1. About mi$er (not a bank)</h2>
+    <p><strong>mi$er is a financial technology application, not a bank.</strong> We provide the app, the goal-setting experience, the skip-logging tools, and the deposit initiation layer. We are not a bank, broker-dealer, or custodian.</p>
+    <p>mi$er helps you automate saving by initiating ACH transfers between your own accounts &mdash; from your linked checking account to your own savings account &mdash; both of which you hold and control at your own bank(s). <strong>MiserSavings never holds, pools, or commingles your funds on its balance sheet at any point.</strong> Your money is always in your own accounts, in your own name.</p>
 
-  <h2 id="fees">6. Fees</h2>
-  <p>No fees are charged today because no financial services are active. Any fees referenced on our marketing pages — including the planned $3.49 flat withdrawal fee — are <strong>working prices</strong> and not a binding offer. When account, deposit, withdrawal, or other money-movement features launch, the complete fee schedule will be disclosed in full and you will be required to accept it explicitly before you can use those features. Nothing on this website constitutes a binding fee disclosure.</p>
+    <h2 id="eligibility">2. Eligibility</h2>
+    <p>To use mi$er, you must:</p>
+    <ul>
+      <li>Be at least 18 years old.</li>
+      <li>Be a permanent resident of the United States with a valid U.S. residential address (not a P.O. box).</li>
+      <li>Have a valid U.S. Social Security Number or Individual Taxpayer Identification Number.</li>
+      <li>Have the legal capacity to enter into a binding contract.</li>
+      <li>Not be listed on any U.S. sanctions list, including the OFAC Specially Designated Nationals list.</li>
+    </ul>
 
-  <h2>7. Intellectual property</h2>
-  <p>All content, branding, and code on this website is owned by MiserSavings Inc. You may not reproduce or use it without permission.</p>
+    <h2 id="accounts">3. Creating your account</h2>
+    <p>You create your mi$er account through our authentication provider, <strong>Clerk</strong>, using an email address or phone number. You are responsible for:</p>
+    <ul>
+      <li>Keeping your login credentials confidential.</li>
+      <li>All activity that happens under your account.</li>
+      <li>Notifying us promptly at <a href="mailto:support@misersavings.com">support@misersavings.com</a> if you suspect unauthorized access.</li>
+    </ul>
+    <p>One person, one account. You may not share your account or transfer it to anyone else.</p>
 
-  <h2>8. Disclaimers</h2>
-  <p>The website and any early-access features are provided "as is" without warranties of any kind. We do not guarantee uninterrupted availability or that any described features will launch as described.</p>
+    <h2 id="identity">4. Identity verification (KYC)</h2>
+    <p>Before you can initiate transfers, federal law requires us to verify your identity. We will collect your legal name, date of birth, residential address, and Social Security Number, and we may ask you to upload a photo of a government-issued ID. You authorize us to verify this information against credit bureaus, public records, and fraud databases.</p>
+    <p>If we cannot verify your identity, you will not be able to use the transfer features of the app.</p>
 
-  <h2>9. Limitation of liability</h2>
-  <p>To the maximum extent permitted by law, MiserSavings Inc. is not liable for any indirect, incidental, or consequential damages arising from use of this website or waitlist.</p>
+    <h2 id="vault">5. Your accounts, deposits &amp; withdrawals</h2>
+    <h3>How it works</h3>
+    <p>mi$er connects to two of your own bank accounts via <strong>Stripe Financial Connections</strong>: your linked checking account (the source) and your linked savings account (the destination). Both accounts are yours &mdash; held at your bank, in your name. mi$er never receives or holds your funds. Money movement between your own accounts is initiated by our ACH processing partner (disclosed in-app at the time you authorize a transfer).</p>
 
-  <h2>10. Changes</h2>
-  <p>We may update these Terms at any time. Continued use of the website after changes constitutes acceptance. Material changes to financial service terms will require explicit re-acceptance.</p>
+    <h3>Deposits (skip batches &amp; Add Money)</h3>
+    <p>When you log a skip, mi$er records a commitment to save that amount. Every Sunday, your week&rsquo;s skips are batched into a single ACH transfer from your linked checking account directly to your linked savings account. You may also add money at any time via the &ldquo;+ Add Money&rdquo; feature, which triggers an immediate ACH transfer between your same two accounts.</p>
+    <p>By using the app you pre-authorize mi$er to initiate these ACH debits from your checking account on your behalf. We will not overdraw your account.</p>
+    <p>If a transfer fails (for example, insufficient funds), we will notify you in-app and may pause skip-logging until resolved.</p>
 
-  <h2>11. Governing law</h2>
-  <p>These Terms are governed by the laws of the State of Delaware. Any disputes will be resolved in Delaware courts.</p>
+    <h3>Withdrawals</h3>
+    <p>Because your savings are already in your own savings account at your bank, your money is always directly accessible through your bank. <strong>Withdrawals are free.</strong> There are no lock-up periods &mdash; your money is always yours.</p>
 
-  <h2>12. Contact</h2>
-  <p>Questions about these Terms: <a href="mailto:support@misersavings.com">support@misersavings.com</a></p>
+    <h3>Unclaimed property</h3>
+    <p>If your account becomes dormant under applicable state unclaimed property law, we will use reasonable efforts to contact you before any action is taken.</p>
 
-</div>
+    <h2 id="fees">6. Fees</h2>
+    <p>mi$er charges a small service fee on deposit transfers to cover ACH processing costs and the operation of the service. <strong>The fee schedule is not yet finalized.</strong> Before any money moves, the then-current fee schedule will be presented to you in the app and on your transaction history, and you will have to explicitly accept it. We will provide at least 30 days&rsquo; advance notice before introducing or changing any fee.</p>
+    <p>What we&rsquo;ve committed to publicly:</p>
+    <ul>
+      <li><strong>Withdrawals:</strong> free.</li>
+      <li><strong>Holding a mi$er account:</strong> free.</li>
+      <li><strong>No subscription fees.</strong></li>
+      <li>We do not earn a spread on your savings &mdash; your money earns whatever your own bank pays you directly.</li>
+    </ul>
+
+    <h2 id="ai-coach">7. AI Coach</h2>
+    <p>mi$er includes an AI coaching feature that provides motivational messages and habit insights. These messages are informational and motivational only. They do not constitute financial, investment, legal, or professional advice of any kind.</p>
+
+    <h2 id="reg-e">8. Electronic communications &amp; Regulation E</h2>
+    <p>By creating an account, you agree to receive all disclosures, agreements, notices, and other communications from us <strong>electronically</strong> &mdash; through the mi$er app, email, or SMS.</p>
+    <p>You have the right, consistent with the federal Electronic Fund Transfer Act (Regulation E), to:</p>
+    <ul>
+      <li>Request paper copies of any disclosure (contact <a href="mailto:support@misersavings.com">support@misersavings.com</a>).</li>
+      <li>Dispute unauthorized electronic fund transfers. If you believe an unauthorized transfer has been initiated, contact us immediately. You generally must notify us within 60 days of the statement showing the transfer.</li>
+      <li>Withdraw your consent to electronic communications (which will also close your mi$er account).</li>
+    </ul>
+    <p>A full Regulation E disclosure and error-resolution procedure is available in-app under Settings &rarr; Legal, and provided to you at account opening.</p>
+
+    <h2 id="prohibited">9. Prohibited conduct</h2>
+    <p>You agree not to:</p>
+    <ul>
+      <li>Use mi$er for any unlawful purpose, including money laundering, terrorist financing, fraud, or tax evasion.</li>
+      <li>Provide false, inaccurate, or misleading information.</li>
+      <li>Link a bank account that you do not own or are not authorized to use.</li>
+      <li>Attempt to probe, scan, reverse engineer, or bypass the security of the Services.</li>
+      <li>Use automated tools, scrapers, or bots to access the Services.</li>
+      <li>Interfere with other users, including in group goals &mdash; no harassment, threats, or abuse.</li>
+      <li>Resell or commercialize any part of the Services.</li>
+    </ul>
+
+    <h2 id="intellectual">10. Intellectual property</h2>
+    <p>mi$er, the mi$er logo, and all associated designs, code, copy, and branding are owned by MiserSavings Inc. or its licensors. We grant you a limited, personal, non-exclusive, non-transferable, revocable license to use the Services in accordance with these Terms. We reserve all rights not expressly granted.</p>
+    <p>Anything you submit through the Services (feedback, feature requests, suggestions) may be used by us without obligation or compensation to you.</p>
+
+    <h2 id="third-party">11. Third-party services</h2>
+    <p>The Services rely on third-party providers, including <strong>Stripe Financial Connections</strong> (bank account linking and identity verification), our <strong>ACH processing partner</strong> (transfer initiation between your own accounts; disclosed in-app before any transfer), <strong>Supabase</strong> (authentication and application data hosting), <strong>Resend</strong> (transactional email delivery), <strong>Anthropic</strong> (AI Coach inference &mdash; see &sect;7 and the <a href="privacy.html#s7">Privacy Policy &sect;7</a> for what is and isn&rsquo;t sent), <strong>Sentry</strong> (crash and error reporting), and Apple and Google (app distribution). Your use of those services is also subject to their respective terms and policies. We are not responsible for third-party failures outside our reasonable control.</p>
+
+    <h2 id="termination">12. Suspension &amp; termination</h2>
+    <p>We may suspend or close your account at any time, with or without notice, if we believe that:</p>
+    <ul>
+      <li>You have breached these Terms, the Privacy Policy, or applicable law.</li>
+      <li>Your account is being used for fraud, suspicious activity, or sanctions violations.</li>
+      <li>We are required to do so by a regulator or a court.</li>
+    </ul>
+    <p>You may close your account at any time from the Profile tab in the app, or by emailing <a href="mailto:support@misersavings.com">support@misersavings.com</a>. Because your savings are in your own bank account, closing your mi$er account does not affect the funds in your savings account. Sections of these Terms that by their nature should survive termination will survive &mdash; including disclaimers, liability limits, arbitration, and intellectual property.</p>
+
+    <h2 id="disclaimers">13. Disclaimers</h2>
+    <div class="allcaps">
+      The services are provided &ldquo;as is&rdquo; and &ldquo;as available&rdquo; without warranties of any kind, express or implied. To the maximum extent permitted by law, mi$er disclaims all warranties, including merchantability, fitness for a particular purpose, non-infringement, accuracy, and uninterrupted operation. We do not warrant that the services will be error-free, secure, or continuously available, or that your savings goals will be met.
+    </div>
+
+    <h2 id="liability">14. Limitation of liability</h2>
+    <div class="allcaps">
+      To the maximum extent permitted by law, mi$er, its affiliates, officers, employees, and service providers will not be liable for any indirect, incidental, special, consequential, exemplary, or punitive damages, or for any lost profits, lost savings, lost goodwill, or lost data, arising out of or in connection with the services &mdash; whether based in contract, tort, strict liability, or any other legal theory &mdash; even if we have been advised of the possibility of such damages.
+    </div>
+    <div class="allcaps">
+      In no event will mi$er&rsquo;s total liability to you for any claims arising out of or relating to the services exceed the greater of (a) the total fees you paid to mi$er in the 12 months preceding the claim, or (b) one hundred U.S. dollars ($100).
+    </div>
+    <p>Some jurisdictions do not allow the exclusion or limitation of certain damages, so some of the above may not apply to you. Nothing in these Terms limits rights that cannot be limited under applicable law &mdash; for example, consumer rights under Regulation E.</p>
+
+    <h2 id="indemnification">15. Indemnification</h2>
+    <p>You agree to defend, indemnify, and hold harmless MiserSavings Inc. and its affiliates, officers, directors, employees, and service providers from and against any claims, damages, liabilities, costs, and expenses (including reasonable attorneys&rsquo; fees) arising out of or related to: (a) your use of the Services; (b) your violation of these Terms; (c) your violation of any law or third-party right; or (d) any content or information you submit.</p>
+
+    <h2 id="arbitration">16. Arbitration &amp; class-action waiver</h2>
+    <p><strong>Please read this section carefully. It affects your legal rights.</strong></p>
+    <p>Any dispute, claim, or controversy arising out of or relating to these Terms or the Services, whether based in contract, tort, statute, fraud, or any other legal theory, will be resolved by <strong>binding individual arbitration</strong> administered by the American Arbitration Association (AAA) under its Consumer Arbitration Rules. The seat of arbitration shall be Travis County, Texas. The arbitrator&rsquo;s decision is final and enforceable in any court of competent jurisdiction.</p>
+    <p><strong>You and mi$er each waive the right to a trial by jury and the right to participate in a class action, class arbitration, or representative action.</strong> Claims may only be brought in your individual capacity.</p>
+    <p><strong>Opt-out:</strong> you may opt out of this arbitration provision by emailing <a href="mailto:support@misersavings.com">support@misersavings.com</a> with the subject line &ldquo;Arbitration Opt-Out&rdquo; within 30 days of creating your mi$er account. The email must include your full name and the email address on your account. Opting out will not affect any other part of these Terms.</p>
+    <p><strong>Small-claims exception:</strong> either party may bring an individual action in small-claims court if it qualifies.</p>
+
+    <h2 id="governing-law">17. Governing law</h2>
+    <p>These Terms are governed by the laws of the State of Texas, without regard to its conflict-of-law rules. Except for matters subject to arbitration under Section 16, the state and federal courts located in Travis County, Texas will have exclusive jurisdiction over any dispute. You and mi$er each consent to the personal jurisdiction of those courts.</p>
+
+    <h2 id="changes">18. Changes to these Terms</h2>
+    <p>We may update these Terms from time to time. When we do, we will update the &ldquo;Last updated&rdquo; date at the top and, for material changes, we will notify you by email or an in-app notice at least 14 days before they take effect. Your continued use of the Services after a change means you accept the updated Terms. If you do not agree, you must close your account before the changes take effect.</p>
+
+    <h2 id="contact">19. Contact us</h2>
+    <p>Questions, complaints, or concerns about these Terms:</p>
+
+    <div class="contact-box">
+      <h3>Contact MiserSavings</h3>
+      <p><strong style="color:var(--pch)">MiserSavings Inc.</strong></p>
+      <p>Email: <a href="mailto:support@misersavings.com">support@misersavings.com</a></p>
+      <p>Website: <a href="https://misersavings.com">misersavings.com</a></p>
+    </div>
+
+  </div>
+</section>
 
 <footer>
-  <p>© 2026 MiserSavings Inc. &nbsp;·&nbsp; <a href="/">Home</a> <a href="/terms.html">Terms</a> <a href="/privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="mailto:support@misersavings.com">support@misersavings.com</a></p>
-  <p class="foot-meta">MiserSavings is a financial technology company, not a bank.</p>
+  <div class="footer-inner">
+    <a href="index.html" class="footer-wm">m&imath;<span class="d">$</span>er</a>
+    <div class="footer-links-row">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy policy</a>
+      <a href="terms.html">Terms of service</a>
+      <a href="mailto:support@misersavings.com">Contact</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 MiserSavings Inc. &middot; mi$er is a financial technology company, not a bank. Your funds are held in your own bank accounts at all times.</div>
+  </div>
 </footer>
 
 </body>

@@ -3,209 +3,379 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy — MiserSavings</title>
-<meta name="description" content="MiserSavings (mı$er) Privacy Policy. Pre-launch — covers waitlist and website only. MiserSavings Inc.">
-<link rel="canonical" href="https://misersavings.com/privacy.html">
-
-<!-- Open Graph -->
-<meta property="og:type" content="article">
-<meta property="og:site_name" content="MiserSavings">
-<meta property="og:title" content="Privacy Policy — MiserSavings">
-<meta property="og:description" content="MiserSavings Privacy Policy.">
-<meta property="og:image" content="https://misersavings.com/og-image.png">
-<meta property="og:url" content="https://misersavings.com/privacy.html">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Privacy Policy — MiserSavings">
-<meta name="twitter:image" content="https://misersavings.com/og-image.png">
-
-<!-- Google tag (gtag.js) — GA4 G-76HDNX2NG5 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-76HDNX2NG5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-76HDNX2NG5');
-</script>
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="shortcut icon" href="/favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#1C3D2B">
-
-<!-- SEO: explicit indexing + larger image previews in Google search results -->
-<meta name="robots" content="index,follow,max-image-preview:large">
-
-<!-- Performance: warm up the GA connection -->
-<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-
-<!-- JSON-LD: Organization reference -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://misersavings.com/#organization",
-  "name": "MiserSavings",
-  "legalName": "MiserSavings Inc.",
-  "url": "https://misersavings.com/",
-  "logo": "https://misersavings.com/og-image.png",
-  "sameAs": [
-    "https://www.instagram.com/misersavings/",
-    "https://www.tiktok.com/@misersavings",
-    "https://x.com/misersavings"
-  ]
-}
-</script>
+<title>Privacy Policy — Miser</title>
+<meta name="description" content="How MiserSavings Inc. collects, uses, and protects your information.">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --dg:#1C3D2B;
-  --dg-dark:#11271B;
-  --sg:#2E6B45;
-  --gld:#C8A820;
-  --brz:#8B6914;
-  --pch:#EDE8D0;
-  --crm:#F5F0E0;
-  --muted:rgba(28,61,43,0.6);
-  --fn:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,sans-serif;
+:root {
+  --dg:  #1C3D2B;
+  --sg:  #2E6B45;
+  --gld: #C8A820;
+  --brz: #8B6914;
+  --pch: #EDE8D0;
+  --crm: #F5F0E0;
+  --fn:  -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
 }
-html{scroll-behavior:smooth}
-body{font-family:var(--fn);background:var(--pch);color:var(--dg);line-height:1.6;-webkit-font-smoothing:antialiased}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--fn);
+  background: var(--pch);
+  color: var(--dg);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
 
-/* ── NAV (matches v4 marketing site) ───────────────── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:64px;background:rgba(28,61,43,0.95);backdrop-filter:saturate(140%) blur(14px);-webkit-backdrop-filter:saturate(140%) blur(14px);border-bottom:0.5px solid rgba(200,168,32,0.18)}
-.nav-wm{font-size:22px;font-weight:900;letter-spacing:-0.5px;color:var(--pch);text-decoration:none}
-.nav-wm .d{color:var(--gld)}
-.nav-back{padding:8px 18px;border:1px solid rgba(237,232,208,0.22);color:rgba(237,232,208,0.78);border-radius:99px;font-size:13px;font-weight:600;letter-spacing:0.02em;text-decoration:none;transition:all 0.2s}
-.nav-back:hover{color:var(--gld);border-color:var(--gld)}
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(28,61,43,0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 0.5px solid rgba(200,168,32,0.15);
+  padding: 0 40px;
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-wm {
+  font-size: 22px; font-weight: 900; letter-spacing: -0.5px;
+  color: var(--pch); text-decoration: none;
+}
+.nav-wm .d { color: var(--gld); }
+.nav-links {
+  display: flex; align-items: center; gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 13px; font-weight: 600; letter-spacing: 0.04em;
+  color: rgba(237,232,208,0.6); text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--pch); }
+.nav-cta {
+  background: var(--gld); color: var(--dg);
+  font-size: 13px; font-weight: 700; letter-spacing: 0.04em;
+  padding: 9px 22px; border-radius: 8px;
+  text-decoration: none; white-space: nowrap;
+}
 
-/* ── HERO ──────────────────────────────────────────── */
-.hero{padding:130px 5% 76px;background:radial-gradient(ellipse 800px 500px at 50% 35%,rgba(46,107,69,0.45) 0%,transparent 70%),linear-gradient(160deg,var(--dg-dark) 0%,var(--dg) 50%,#0F2419 100%);text-align:center;position:relative;overflow:hidden;color:var(--pch)}
-.hero::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 29px,rgba(255,255,255,0.025) 30px),repeating-linear-gradient(90deg,transparent,transparent 29px,rgba(255,255,255,0.025) 30px);pointer-events:none}
-.hero > *{position:relative;z-index:1}
-.hero-label{display:inline-block;font-size:11px;font-weight:800;color:var(--gld);text-transform:uppercase;letter-spacing:0.22em;margin-bottom:18px}
-.hero h1{font-size:clamp(2.1rem,5vw,3.4rem);font-weight:900;color:var(--pch);letter-spacing:-0.025em;line-height:1.08;margin-bottom:14px}
-.hero-meta{font-size:13px;color:rgba(237,232,208,0.55);letter-spacing:0.02em}
+/* Hero */
+.legal-hero {
+  background: var(--dg);
+  padding: 140px 40px 80px;
+  position: relative; overflow: hidden;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 29px, rgba(255,255,255,0.025) 30px),
+    repeating-linear-gradient(90deg, transparent, transparent 29px, rgba(255,255,255,0.025) 30px);
+}
+.legal-hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
+.legal-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--gld); margin-bottom: 14px;
+}
+.legal-h1 {
+  font-size: 54px; font-weight: 900; color: var(--pch);
+  letter-spacing: -1.5px; line-height: 1.05; margin-bottom: 20px;
+}
+.legal-h1 em { color: var(--gld); font-style: normal; }
+.legal-meta {
+  font-size: 14px; color: rgba(237,232,208,0.55);
+}
+.legal-meta strong { color: var(--pch); font-weight: 700; }
 
-/* ── CONTENT ───────────────────────────────────────── */
-.content{max-width:760px;margin:0 auto;padding:64px 5% 100px}
+/* Content */
+.legal-body {
+  background: var(--pch);
+  padding: 80px 40px 100px;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(28,61,43,0.025) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(28,61,43,0.025) 40px);
+}
+.legal-inner {
+  max-width: 900px; margin: 0 auto;
+  background: var(--crm); border: 1.5px solid rgba(28,61,43,0.1);
+  border-radius: 20px; padding: 60px 72px;
+}
+.legal-intro {
+  font-size: 17px; line-height: 1.7; color: rgba(28,61,43,0.8);
+  margin-bottom: 48px;
+}
+.legal-intro strong { color: var(--dg); font-weight: 700; }
 
-.notice{background:var(--crm);border-radius:16px;padding:22px 30px;margin-bottom:48px;border-left:4px solid var(--gld);box-shadow:0 1px 2px rgba(28,61,43,0.04),0 8px 24px rgba(28,61,43,0.06)}
-.notice p{font-size:0.94rem;color:var(--muted);line-height:1.65;margin:0}
-.notice strong{color:var(--dg)}
+.toc {
+  background: var(--pch); border: 1px solid rgba(28,61,43,0.1);
+  border-radius: 14px; padding: 24px 28px; margin-bottom: 56px;
+}
+.toc-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--brz); margin-bottom: 14px;
+}
+.toc ol { list-style: none; counter-reset: toc; }
+.toc li {
+  counter-increment: toc;
+  font-size: 14px; margin-bottom: 7px;
+}
+.toc li::before {
+  content: counter(toc, decimal-leading-zero) " ";
+  color: var(--brz); font-weight: 700; font-size: 11px;
+  letter-spacing: 0.1em; margin-right: 10px;
+}
+.toc a {
+  color: rgba(28,61,43,0.75); text-decoration: none;
+  border-bottom: 1px dotted rgba(28,61,43,0.2); transition: color 0.2s;
+}
+.toc a:hover { color: var(--sg); border-bottom-color: var(--sg); }
 
-h2{font-size:1.18rem;font-weight:800;color:var(--dg);margin:44px 0 12px;padding-top:22px;border-top:1px solid rgba(28,61,43,0.10)}
-h2:first-of-type{border-top:none;padding-top:0;margin-top:0}
-p{font-size:0.96rem;line-height:1.72;color:rgba(28,61,43,0.85);margin-bottom:11px}
-p strong{color:var(--dg)}
-ul{margin:10px 0 14px 22px}
-li{font-size:0.96rem;line-height:1.72;color:rgba(28,61,43,0.85);margin-bottom:5px}
-li strong{color:var(--dg)}
-a{color:var(--sg);text-decoration:underline;text-decoration-color:rgba(46,107,69,0.35);text-underline-offset:2px;transition:color 0.15s,text-decoration-color 0.15s}
-a:hover{color:var(--brz);text-decoration-color:var(--brz)}
+h2 {
+  font-size: 24px; font-weight: 800; color: var(--dg);
+  letter-spacing: -0.3px; line-height: 1.2;
+  margin-top: 56px; margin-bottom: 16px;
+  padding-top: 24px; border-top: 0.5px solid rgba(28,61,43,0.12);
+  scroll-margin-top: 84px;
+}
+h2:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+h3 {
+  font-size: 17px; font-weight: 700; color: var(--dg);
+  margin-top: 28px; margin-bottom: 10px;
+}
+p {
+  font-size: 15px; line-height: 1.7; color: rgba(28,61,43,0.8);
+  margin-bottom: 14px;
+}
+p strong { color: var(--dg); font-weight: 700; }
 
-/* ── FOOTER ────────────────────────────────────────── */
-footer{background:var(--dg-dark);color:rgba(237,232,208,0.5);text-align:center;padding:34px 5%;font-size:13px;border-top:0.5px solid rgba(200,168,32,0.12)}
-footer a{color:var(--gld);text-decoration:none;margin:0 10px;transition:color 0.15s}
-footer a:hover{color:#DDB930;text-decoration:underline}
-.foot-meta{margin-top:10px;font-size:11.5px;opacity:0.55;letter-spacing:0.02em}
+ul, ol {
+  margin: 14px 0 20px 0;
+  padding-left: 22px;
+}
+li {
+  font-size: 15px; line-height: 1.7; color: rgba(28,61,43,0.8);
+  margin-bottom: 8px;
+}
+li strong { color: var(--dg); font-weight: 700; }
 
-@media (max-width:600px){
-  .hero{padding:110px 5% 60px}
-  .content{padding:48px 5% 72px}
+.callout {
+  background: var(--pch); border-left: 4px solid var(--gld);
+  padding: 18px 24px; margin: 24px 0;
+  border-radius: 0 10px 10px 0;
+}
+.callout p { margin-bottom: 0; }
+.callout p:not(:last-child) { margin-bottom: 10px; }
+
+table {
+  width: 100%; border-collapse: collapse; margin: 20px 0;
+  font-size: 14px;
+}
+th, td {
+  text-align: left; padding: 12px 14px;
+  border-bottom: 0.5px solid rgba(28,61,43,0.12);
+  vertical-align: top;
+}
+th {
+  background: var(--pch);
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--brz);
+}
+td { color: rgba(28,61,43,0.8); }
+
+a { color: var(--sg); }
+a:hover { color: var(--dg); }
+
+.contact-box {
+  background: var(--dg); color: var(--pch);
+  border-radius: 16px; padding: 32px 36px;
+  margin-top: 48px;
+}
+.contact-box h3 { color: var(--gld); margin-top: 0; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
+.contact-box p { color: rgba(237,232,208,0.75); margin-bottom: 8px; font-size: 14px; }
+.contact-box a { color: var(--gld); text-decoration: none; font-weight: 600; }
+.contact-box a:hover { color: var(--pch); }
+
+/* Footer */
+footer {
+  background: #111d16; padding: 40px 40px 32px;
+  border-top: 0.5px solid rgba(200,168,32,0.1);
+}
+.footer-inner {
+  max-width: 1160px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 32px; flex-wrap: wrap;
+}
+.footer-wm {
+  font-size: 20px; font-weight: 900; letter-spacing: -0.5px;
+  color: var(--pch);
+}
+.footer-wm .d { color: var(--gld); }
+.footer-links-row { display: flex; gap: 28px; flex-wrap: wrap; }
+.footer-links-row a {
+  font-size: 13px; color: rgba(237,232,208,0.5);
+  text-decoration: none;
+}
+.footer-links-row a:hover { color: var(--pch); }
+.footer-copy {
+  width: 100%; text-align: center; margin-top: 28px;
+  padding-top: 24px; border-top: 0.5px solid rgba(255,255,255,0.06);
+  font-size: 11px; color: rgba(237,232,208,0.25);
+}
+
+@media (max-width: 680px) {
+  .legal-h1 { font-size: 38px; }
+  .legal-inner { padding: 40px 28px; }
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .legal-hero { padding: 100px 20px 60px; }
+  .legal-body { padding: 60px 20px 80px; }
 }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="/" class="nav-wm" aria-label="MiserSavings — home">mı<span class="d">$</span>er</a>
-  <a href="/" class="nav-back">← Home</a>
+  <a class="nav-wm" href="index.html">mı<span class="d">$</span>er</a>
+  <ul class="nav-links">
+    <li><a href="index.html#how">How it works</a></li>
+    <li><a href="index.html#quit">Quit</a></li>
+    <li><a href="index.html#groups">Groups</a></li>
+    <li><a href="index.html#vault">Vault</a></li>
+  </ul>
+  <a class="nav-cta" href="index.html#waitlist">Join the waitlist</a>
 </nav>
 
-<div class="hero">
-  <div class="hero-label">Legal</div>
-  <h1>Privacy Policy</h1>
-  <p class="hero-meta">Effective: April 22, 2026 &nbsp;·&nbsp; Last updated: May 4, 2026</p>
-</div>
-
-<div class="content">
-
-  <div class="notice">
-    <p><strong>Pre-launch notice.</strong> MiserSavings is currently in development. This policy covers our waitlist and website only. A full privacy policy covering financial data will be provided before any money movement features are enabled.</p>
+<section class="legal-hero">
+  <div class="legal-hero-inner">
+    <div class="legal-eyebrow">Legal</div>
+    <h1 class="legal-h1">Privacy <em>Policy</em></h1>
+    <p class="legal-meta"><strong>Effective:</strong> May 16, 2026 · <strong>Last updated:</strong> May 16, 2026</p>
   </div>
+</section>
 
-  <h2>1. Who we are</h2>
-  <p>MiserSavings Inc. is a Delaware C-Corp. Questions: <a href="mailto:support@misersavings.com">support@misersavings.com</a></p>
+<section class="legal-body">
+  <div class="legal-inner">
 
-  <h2>2. What we collect</h2>
-  <p>Currently we only collect:</p>
-  <ul>
-    <li><strong>Email address</strong> — when you join the waitlist (required).</li>
-    <li><strong>Name</strong> — optional. Used only to address you in waitlist emails.</li>
-    <li><strong>Platform preference</strong> — iOS, Android, or either. Helps us prioritize platform releases and time your invite to the right TestFlight or Play Store cohort.</li>
-    <li><strong>Submission metadata</strong> — at the moment you join the waitlist, we capture your browser user-agent string, the page URL where you signed up, your IP address and country (via a third-party IP lookup, IP truncated to country only when stored long-term), the time you spent on the page before submitting, your browser language, your timezone, and a Cloudflare Turnstile validation result. We use this to debug deliverability, detect bot signups, and understand which channels send us real users; we do not use it for advertising or profiling.</li>
-    <li><strong>Traffic source attribution</strong> — if you arrive via a tracked link, we capture the URL parameters that identify the campaign (e.g. <code>utm_source</code>, <code>utm_medium</code>, <code>utm_campaign</code>, <code>fbclid</code>, <code>gclid</code>) and the referring page URL. Used solely to measure which channels are sending us interested users.</li>
-    <li><strong>Basic usage data</strong> — pages visited, browser type, IP address, via standard server logs.</li>
-    <li><strong>Aggregated analytics</strong> — anonymized traffic and engagement data collected through Google Analytics (page views, traffic source, device type, country). IP addresses are anonymized before being processed and stored.</li>
-  </ul>
-  <p>We do not collect financial information, Social Security Numbers, bank account details, or payment data at this time. When financial features launch, a separate detailed privacy notice will be presented before you can use them.</p>
+    <div class="callout" style="background:rgba(46,107,69,0.08);border-left:3px solid var(--sg);padding:18px 22px;border-radius:8px;margin-bottom:28px">
+      <p style="font-size:12px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--sg);margin-bottom:6px">The short version</p>
+      <p style="margin:0;color:var(--dg)">We collect only what the app needs to work. We don&rsquo;t sell your data, share it with advertisers, or use it to train third-party AI. You can delete your data at any time.</p>
+    </div>
 
-  <h2>3. How we use it</h2>
-  <ul>
-    <li>To send you waitlist updates and early-access invitations (unsubscribe anytime).</li>
-    <li>To operate and improve the website.</li>
-    <li>To comply with applicable law.</li>
-  </ul>
+    <p class="legal-intro">
+      <strong>MiserSavings Inc.</strong> (&ldquo;mi$er,&rdquo; &ldquo;Miser,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) builds a mobile savings app that helps you move small, skipped purchases from your linked checking account into your own savings account. Miser never holds your money &mdash; your funds stay in your own bank accounts at all times. This Privacy Policy explains what we collect, how we use it, who we share it with, and the choices you have. By using Miser, you agree to the practices described below. <em>Version 2.1.</em>
+    </p>
 
-  <h2>4. Who we share it with</h2>
-  <p>We do not sell your personal information. We rely on the following third-party processors to operate the website and waitlist:</p>
-  <ul>
-    <li><strong>Google Workspace (Apps Script + Sheets)</strong> — used to receive and store waitlist signups. Subject to <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</li>
-    <li><strong>Resend</strong> — used to send transactional and waitlist emails (welcome message, TestFlight invite, product updates). Subject to <a href="https://resend.com/legal/privacy-policy">Resend's privacy policy</a>.</li>
-    <li><strong>Cloudflare (DNS, CDN, Turnstile)</strong> — fronts our website, mitigates abuse, and provides the Turnstile bot-protection used on the waitlist form. Subject to <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's privacy policy</a>.</li>
-    <li><strong>ipapi.co</strong> — looks up the country your IP address is in at the moment you submit the waitlist form, so we can understand where signups are coming from in aggregate. Subject to <a href="https://ipapi.co/privacy/">ipapi.co's privacy policy</a>.</li>
-    <li><strong>GitHub Pages</strong> — hosts the static website. Subject to <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>.</li>
-    <li><strong>Google Analytics</strong> — processes anonymized usage data on our behalf to help us understand how the website is used. <a href="https://policies.google.com/privacy">Google's privacy policy</a> applies to that processing.</li>
-    <li><strong>Apple TestFlight</strong> — when you accept a TestFlight invite, Apple receives your Apple ID and limited device information per their own privacy policy. <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a> applies.</li>
-    <li><strong>Law enforcement</strong> — if required by valid legal process.</li>
-  </ul>
+    <div class="toc">
+      <div class="toc-label">On this page</div>
+      <ol>
+        <li><a href="#s1">What we collect</a></li>
+        <li><a href="#s1a">Categories of personal information we collect</a></li>
+        <li><a href="#s2">What we don&rsquo;t collect</a></li>
+        <li><a href="#s3">How we use your data</a></li>
+        <li><a href="#s4">What we don&rsquo;t do with it</a></li>
+        <li><a href="#s5">Marketing communications</a></li>
+        <li><a href="#s6">Where it&rsquo;s stored</a></li>
+        <li><a href="#s7">The AI coach</a></li>
+        <li><a href="#s8">Cookies &amp; tracking</a></li>
+        <li><a href="#s9">Your rights</a></li>
+        <li><a href="#s10">Children</a></li>
+        <li><a href="#s11">Data retention</a></li>
+        <li><a href="#s11a">Your California Privacy Rights</a></li>
+        <li><a href="#s11b">Your State Privacy Rights</a></li>
+        <li><a href="#s12">Security incidents</a></li>
+        <li><a href="#s13">Changes to this policy</a></li>
+        <li><a href="#s14">Contact us</a></li>
+        <li><a href="#s15">Disputes and governing law</a></li>
+      </ol>
+    </div>
 
-  <h2>5. Data retention</h2>
-  <p>We retain your email address until you unsubscribe or request deletion. You can request deletion at any time by emailing <a href="mailto:support@misersavings.com">support@misersavings.com</a>.</p>
+    <h2 id="s1">1. What we collect</h2>
+    <p>We collect only what the app needs to work: your email address (to sign you in), a display name you choose, your savings goals (name, target amount, timeline, and category), the skips you log (amount, category, and optional note), and basic device info (model, OS version, app version). Phone number is optional &mdash; we only collect it if you add it from Settings for account recovery or SMS alerts. We do not collect your location, contacts, photos, or health data.</p>
 
-  <h2>6. Your rights</h2>
-  <p>You may request access to, correction of, or deletion of any personal data we hold about you. Email <a href="mailto:support@misersavings.com">support@misersavings.com</a> from the address you joined the waitlist with so we can verify it's you.</p>
+    <h2 id="s1a">1A. Categories of personal information we collect</h2>
+    <p>For California and other state-privacy purposes, here is how what we collect maps to standard categories.</p>
+    <p><strong>Identifiers</strong> &mdash; email, name, optional phone &mdash; collected from you, used to operate your account, shared with Supabase (database) and Resend (email).</p>
+    <p><strong>Customer records / financial information</strong> &mdash; bank-linking tokens, ACH activity, SSN last 4 (for KYC) &mdash; collected from you and Stripe Financial Connections, used to verify identity and move money, shared with Stripe only. Miser does not hold or custody your funds &mdash; money moves between your own checking and savings accounts.</p>
+    <p><strong>Commercial information</strong> &mdash; your savings goal category (for example, &ldquo;travel,&rdquo; &ldquo;emergency fund,&rdquo; or &ldquo;wedding&rdquo;) &mdash; collected from you, used to personalize the app and the AI coach, and &mdash; only if you opt in to partner offers &mdash; disclosed to vetted partner brands so they can match relevant offers to you. The goal category is the only data point ever disclosed to a partner; your name, email, balance, skip log, bank data, and free-text goal name are not.</p>
+    <p><strong>Sensitive personal information</strong> &mdash; habit-quit category, if you provided one (Quit Companion mode) &mdash; collected from you with explicit consent, used only to personalize the coach, never shared with partners or used for any direct-marketing purpose.</p>
+    <p><strong>Internet / network activity</strong> &mdash; basic device info (model, OS, app version) &mdash; collected automatically, used for diagnostics.</p>
+    <p>We do not collect biometric data, geolocation, or contents of communications outside Miser. We do not sell your personal information for monetary consideration, and we do not share any of it for cross-context behavioral advertising. The goal-category disclosure described above is a first-party direct-marketing arrangement and is opt-in only; you can withdraw consent at any time in Settings &rarr; Communications &rarr; Partner offers, which immediately stops future disclosures (see &sect;5 for limits on recall).</p>
 
-  <h2>7. Your state-specific privacy rights</h2>
-  <p>If you live in California, Virginia, Colorado, Connecticut, Utah, Texas, Oregon, or another US state with a comprehensive privacy law, you may have additional rights — including the right to know what personal information we hold, to receive a copy of it, to correct it, to delete it, and (where applicable) to opt out of any "sale" or "sharing" of personal information or any "targeted advertising."</p>
-  <p>We do not sell your personal information and we do not use it for targeted advertising. To exercise any of these rights, email <a href="mailto:support@misersavings.com">support@misersavings.com</a> from the address on file. We'll respond within the timeframe required by your state's law (typically 30–45 days). You can also designate an authorized agent to make a request on your behalf; we may ask the agent for proof of authorization and may ask you to verify the request.</p>
-  <p>If we deny a request, you may appeal by replying to our response. If you remain unsatisfied, you may contact your state attorney general.</p>
+    <h2 id="s2">2. What we don&rsquo;t collect</h2>
+    <p>We do not read your SMS messages, your contacts, your photos, your location, or any content outside of Miser. When you choose to link a bank account to Miser Savings, Miser uses <strong>Stripe Financial Connections</strong> &mdash; a regulated bank-aggregation service &mdash; to access only the account number, balance, and transaction history of the account you explicitly approve. You can disconnect at any time from Settings.</p>
 
-  <h2>8. Cookies</h2>
-  <p>This website uses two categories of cookies:</p>
-  <ul>
-    <li><strong>Essential cookies</strong> — required for basic site functionality.</li>
-    <li><strong>Analytics cookies</strong> — set by Google Analytics to measure aggregated usage (page views, traffic sources, device type). These do not personally identify you. You can opt out of Google Analytics by installing the <a href="https://tools.google.com/dlpage/gaoptout">Google Analytics Opt-out Browser Add-on</a> or by enabling Do Not Track / Global Privacy Control in your browser.</li>
-  </ul>
-  <p>We do not use advertising or behavioral targeting cookies.</p>
+    <h2 id="s3">3. How we use your data</h2>
+    <p>Your data is used to run the app: keep your Miser Savings balance accurate, calculate your streak, generate AI coach messages from your own activity (see &sect;7 for what we send to Anthropic, our AI provider), and notify you about reminders and milestones you&rsquo;ve opted into. We may use your savings goals internally to personalize the app. If you opt in to partner offers (Settings &rarr; Communications &rarr; Partner offers), we may also (a) send you marketing emails tailored to your goal categories and (b) disclose your goal category &mdash; for example, &ldquo;travel&rdquo; or &ldquo;emergency fund&rdquo; &mdash; to vetted partner brands so they can match relevant offers to you. We never disclose your name, email, balance, skips, free-text notes, or bank data to partners. We do not use your data to build advertising profiles or for cross-context behavioral advertising.</p>
 
-  <h2>9. Children</h2>
-  <p>Our services are not directed to anyone under 18. We do not knowingly collect data from minors.</p>
+    <h2 id="s4">4. What we don&rsquo;t do with it</h2>
+    <p>We do not sell your personal information for monetary consideration. We do not share your personal information for cross-context behavioral advertising. We do not use your data to train third-party AI models. Your skips stay private to you &mdash; groups only see the aggregate amount members contribute to a shared goal, never individual categories or notes. The only data point ever disclosed to a third-party brand is your savings goal category, and only if you have opted in to partner offers under &sect;5. Partner brands are contractually limited to using that goal category to match an offer to you; they do not receive your name, email, balance, skips, free-text goal name, or bank data, and they may not re-sell or further share it.</p>
 
-  <h2>10. Changes</h2>
-  <p>We may update this policy at any time. We will post the updated date at the top of this page. Material changes to financial data handling will require explicit notice before any affected features are used.</p>
+    <h2 id="s5">5. Marketing communications</h2>
+    <p>Transactional emails (deposit confirmations, withdrawal alerts, security notices) are required and cannot be turned off while your account is active. Partner offers are opt-in only. When you opt in we may (a) send you marketing emails tailored to your goal categories and (b) disclose your goal category to vetted partner brands so they can match relevant offers. You can opt in at signup or in Settings &rarr; Communications &rarr; Partner offers, and you can opt out anytime in Settings or by clicking unsubscribe in any marketing email. Opting out stops all future marketing emails and stops all future goal-category disclosures to partners; any disclosure already made to a partner before you opted out cannot be recalled from that partner&rsquo;s systems, though they remain bound by the contractual use-limits above. Marketing SMS is a separate opt-in. We do not send marketing SMS without your explicit consent, even if you have a phone number on file for account recovery.</p>
 
-  <h2>11. Contact</h2>
-  <p><a href="mailto:support@misersavings.com">support@misersavings.com</a></p>
+    <h2 id="s6">6. Where it&rsquo;s stored</h2>
+    <p>Your account and skip data are stored in Supabase (Postgres) in US-region data centres. Authentication tokens are stored encrypted on your device via iOS Keychain / Android Keystore. We use TLS for all data in transit. We work with the following sub-processors: Supabase (database hosting, US), Stripe Financial Connections (bank linking and identity verification), Resend (transactional email delivery), Anthropic (AI coach inference &mdash; see &sect;7 for what is sent and what is not), and Sentry (crash and error reporting &mdash; see &sect;8). Money movement between your own accounts requires a separate ACH processing partner; we are currently in onboarding with one. We will update this section and notify you at least 14 days in advance (per &sect;13) before any new sub-processor that handles funds or personal data is added. Partner brands that receive a goal category under &sect;3 act as independent controllers for any interaction you choose to have with them after tapping an offer; they are not sub-processors of Miser.</p>
 
-</div>
+    <h2 id="s7">7. The AI coach</h2>
+    <p>The AI coach is powered by Anthropic. Each coach message is generated by sending the following to Anthropic, and nothing else:</p>
+    <p><strong>(a) Activity summary</strong> &mdash; your display name, current streak, total saved, number of skips logged, the list of your active savings goals (name, target amount, category, current progress) and group goals you participate in, plus a 30-day skip-pattern digest computed on our server from your skip log (for example, &ldquo;biggest leak this month: coffee&rdquo;). If you use Quit Companion mode, we also send the habit you are quitting, days clean, and the cost-per-unit you set during onboarding.</p>
+    <p><strong>(b) Chat context</strong> &mdash; when you ask the coach a question in chat mode, your question text is sent. To let the coach resolve references like &ldquo;that&rdquo; or &ldquo;what about it,&rdquo; we also send up to the last 6 messages of the current chat. This recent-turns buffer is held only for the active chat and is not persisted to Anthropic.</p>
+    <p><strong>(c) Coach memory</strong> &mdash; Miser stores a small set of plain-language facts the coach has learned about you from your messages (for example, &ldquo;is saving for a wedding in October&rdquo; or &ldquo;prefers concrete numbers&rdquo;). These facts are stored in our own Supabase database (table: <code>coach_memory</code>) and a short digest is included in the system prompt on each coach call so the coach stays consistent across sessions. Each stored fact includes a verbatim quote from the conversation it was inferred from, and you can view, edit, or clear any of it &mdash; including a one-tap clear-everything &mdash; in Profile &rarr; What the Coach knows.</p>
+    <p>We do not send Anthropic: your email address, the free-text note attached to any individual skip, your bank account number, ACH routing details, SSN or other KYC information, your IP address, or any data not described above. Anthropic processes the request to generate the message; per our data-processing arrangement, your conversation content is not used to train Anthropic&rsquo;s underlying models. To prevent abuse and keep costs bounded, coach usage is rate-limited per user (currently 30 chat messages and 200 passive nudges per day).</p>
+
+    <h2 id="s8">8. Cookies &amp; tracking</h2>
+    <p>The Miser app does not use cookies, advertising IDs, or third-party tracking SDKs. We do not run product analytics. We use Sentry for crash reporting to help us diagnose and fix bugs. Sentry captures error stack traces and device context; it does not receive your financial data or personally identifiable information beyond an anonymised session ID.</p>
+
+    <h2 id="s9">9. Your rights</h2>
+    <p>You can: view your data (it&rsquo;s all in the app), correct your display name (Settings &rarr; Edit), view / edit / clear what the AI coach knows about you (Profile &rarr; What the Coach knows), opt out of partner offers and partner goal-category disclosures (Settings &rarr; Communications &rarr; Partner offers), or delete your account and all associated data. To delete: open the app and tap Settings &rarr; Delete my account. We remove your personal data within 30 days. If you can&rsquo;t access the app, email <a href="mailto:support@misersavings.com">support@misersavings.com</a>.</p>
+
+    <h2 id="s10">10. Children</h2>
+    <p>Miser is not intended for children under 18 and we do not knowingly collect data from them. If you believe a minor has created an account, please email <a href="mailto:support@misersavings.com">support@misersavings.com</a> and we will remove it.</p>
+
+    <h2 id="s11">11. Data retention</h2>
+    <p>We keep your account data for as long as your account is active. When you delete your account, we remove your personal data within 30 days. We may retain aggregated, de-identified analytics indefinitely &mdash; this data cannot be used to identify you. Aggregated data is de-identified in line with the CPRA standard (Cal. Civil Code &sect;1798.140(h)) &mdash; we don&rsquo;t attempt to re-identify and have technical safeguards against doing so.</p>
+
+    <h2 id="s11a">11A. Your California Privacy Rights</h2>
+    <p>If you live in California, you have the right under the California Consumer Privacy Act / CPRA to: know what personal information we collect about you and how we use it; delete your personal information; correct inaccurate information; opt out of any sale or sharing of your personal information; limit the use of sensitive personal information (such as your habit-quit category, if you provided one); and not be discriminated against for exercising any of these rights. To exercise any of these rights, email <a href="mailto:support@misersavings.com">support@misersavings.com</a>. We&rsquo;ll respond within 45 days.</p>
+    <p>Miser does not sell your personal information for monetary consideration and does not share it for cross-context behavioral advertising. The one disclosure that may resemble &ldquo;sharing&rdquo; under CPRA is the goal-category disclosure to partner brands described in &sect;3 &mdash; this is opt-in only and is used solely for direct marketing back to you. You can opt out at any time via Settings &rarr; Communications &rarr; Partner offers. If you would prefer to submit the opt-out in writing instead, email <a href="mailto:support@misersavings.com">support@misersavings.com</a> with <strong>&ldquo;Do Not Share &mdash; Partner offers&rdquo;</strong> in the subject line and we will action the request within 15 business days as required by CPRA.</p>
+
+    <h2 id="s11b">11B. Your State Privacy Rights</h2>
+    <p>If you live in Texas, Colorado, Connecticut, Virginia, or another state with a comprehensive privacy law, you have the right to access, correct, delete, and obtain a copy of your personal data; to opt out of targeted advertising and the sale of your personal data (Miser does not engage in either); and to appeal a denied request. Email <a href="mailto:support@misersavings.com">support@misersavings.com</a> to exercise these rights or to appeal. We&rsquo;ll respond within applicable statutory deadlines (45 days in most states).</p>
+
+    <h2 id="s12">12. Security incidents</h2>
+    <p>If we discover a security incident that affects your data, we will notify you without undue delay. We follow industry-standard practices for access control, encryption, and vulnerability monitoring.</p>
+
+    <h2 id="s13">13. Changes to this policy</h2>
+    <p>If we make material changes to how we handle your data, we will notify you in-app at least 14 days before the change takes effect. Continued use after that date means you accept the updated policy.</p>
+
+    <h2 id="s14">14. Contact us</h2>
+    <p>Questions about privacy, data requests, or this policy? Email <a href="mailto:support@misersavings.com">support@misersavings.com</a>. We respond within 24 hours on business days (Mon&ndash;Fri, 9am&ndash;5pm PT).</p>
+
+    <h2 id="s15">15. Disputes and governing law</h2>
+    <p>This Privacy Policy is governed by the laws of the State of Texas, without regard to its conflict-of-laws rules. Any dispute about how we collect, use, share, or protect your personal information is subject to the dispute-resolution provisions of our <a href="terms.html#arbitration">Terms of Service</a> (&sect;16), which require individual binding arbitration before the American Arbitration Association seated in Travis County, Texas, and include class-action and jury-trial waivers. You have a 30-day right to opt out of arbitration as described in the Terms of Service. Nothing in this section limits any non-waivable statutory right you have under CPRA, GDPR, or another applicable privacy law to bring a complaint to a supervisory authority.</p>
+
+    <div class="callout" style="background:var(--dg);color:var(--pch);border-radius:14px;padding:24px 28px;margin-top:40px">
+      <p style="font-size:11px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--gld);margin-bottom:8px">Questions or requests</p>
+      <p style="color:rgba(237,232,208,0.78);margin:0;font-size:14px;line-height:1.65">
+        <strong style="color:var(--pch)">MiserSavings Inc.</strong><br>
+        Email: <a href="mailto:support@misersavings.com" style="color:var(--gld)">support@misersavings.com</a><br>
+        Website: <a href="https://misersavings.com" style="color:var(--gld)">misersavings.com</a>
+      </p>
+    </div>
+
+  </div>
+</section>
 
 <footer>
-  <p>© 2026 MiserSavings Inc. &nbsp;·&nbsp; <a href="/">Home</a> <a href="/terms.html">Terms</a> <a href="/privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="mailto:support@misersavings.com">support@misersavings.com</a></p>
-  <p class="foot-meta">MiserSavings is a financial technology company, not a bank.</p>
+  <div class="footer-inner">
+    <a href="index.html" class="footer-wm">mı<span class="d">$</span>er</a>
+    <div class="footer-links-row">
+      <a href="index.html">Home</a>
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#quit">Quit</a>
+      <a href="index.html#groups">Groups</a>
+      <a href="index.html#vault">Vault</a>
+      <a href="index.html#waitlist">Waitlist</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="mailto:support@misersavings.com">support@misersavings.com</a>
+    </div>
+    <div class="footer-copy"><strong>MiserSavings Inc.</strong> · Austin, TX · Launching 2026<br>© 2026 MiserSavings Inc. All rights reserved.</div>
+  </div>
 </footer>
 
 </body>
