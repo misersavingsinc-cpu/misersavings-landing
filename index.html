@@ -34,9 +34,8 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#1C3D2B">
 
-<!-- Performance: warm up connections to GA + Turnstile before scripts request them -->
+<!-- Performance: warm up connection to GA before scripts request it -->
 <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-<link rel="dns-prefetch" href="https://challenges.cloudflare.com">
 
 <!-- Google Analytics (GA4) — G-76HDNX2NG5 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-76HDNX2NG5"></script>
@@ -100,8 +99,6 @@
 }
 </script>
 
-<!-- Cloudflare Turnstile (waitlist bot check) -->
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <style>
 /* ═══════════════════════════════════════════════════════════════
    mı$er marketing site — brand tokens only
@@ -1271,7 +1268,7 @@ footer.site .wm{margin-bottom:8px}
       <li><a href="#vault">Vault</a></li>
       <li><a href="#ranks">Ranks</a></li>
     </ul>
-    <a href="#waitlist" class="nav-cta">Join waitlist</a>
+    <a href="__APP_STORE_URL__" class="nav-cta">Download</a>
   </div>
 </nav>
 
@@ -1283,11 +1280,11 @@ footer.site .wm{margin-bottom:8px}
       <h1>Turn impulse buys into <em>real savings</em>.</h1>
       <p class="lead">You were about to waste money. We get it — the latte, the lunch, the thing you don't need from the internet. Miser turns that impulse into savings. Log it. Lock it. Keep it.</p>
       <div class="hero-ctas">
-        <a href="#waitlist" class="btn-gold">Join the waitlist →</a>
+        <a href="__APP_STORE_URL__" class="btn-gold">Download on the App Store</a>
         <a href="#how" class="btn-outline-lt">See how it works</a>
       </div>
       <div style="margin-top:14px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(237,232,208,0.45)">
-        iOS first — Android coming soon
+        iPhone · US only
       </div>
       <div class="hero-foot" style="letter-spacing:0.22em;text-transform:uppercase;font-weight:800;font-size:11px;color:rgba(237,232,208,0.55)">
         <span>Skip</span>
@@ -2024,75 +2021,19 @@ footer.site .wm{margin-bottom:8px}
 </section>
 
 
-<!-- ═══════ WAITLIST ═══════ -->
+<!-- ═══════ GET THE APP ═══════ -->
 <section class="wl-section dk gui-dk" id="waitlist">
   <div class="wl reveal">
     <div class="rule-pair" style="display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:14px">
       <span style="flex:0 0 40px;height:1px;background:rgba(200,168,32,0.4)"></span>
-      <span class="eyebrow lt">Early access · iOS</span>
+      <span class="eyebrow lt">iPhone · US · Free</span>
       <span style="flex:0 0 40px;height:1px;background:rgba(200,168,32,0.4)"></span>
     </div>
-    <h2 class="h-section">Get in line.</h2>
-    <p class="lead">We're letting people in batch by batch. Drop your email — we'll send a TestFlight invite when your slot opens.</p>
+    <h2 class="h-section">Start saving the moment you skip.</h2>
+    <p class="lead">Miser is on the App Store. Download it, link an account, and turn the next thing you don't buy into money you keep.</p>
 
-    <div class="wl-form-wrap" id="wlFormWrap">
-      <form class="wl-form" id="wlForm" autocomplete="on" novalidate>
-        <input type="text" id="wlName" placeholder="Name (optional)" aria-label="Name (optional)" autocomplete="name" maxlength="80">
-        <div class="wl-emailrow">
-          <input type="email" id="wlEmail" placeholder="you@wherever.com" aria-label="Email address" autocomplete="email" required>
-          <button type="submit">Join →</button>
-        </div>
-        <div class="wl-platform" role="radiogroup" aria-label="Which platform are you on">
-          <span class="wl-platform-label">I'm on</span>
-          <label><input type="radio" name="wlPlatform" value="ios" checked> iOS</label>
-          <label><input type="radio" name="wlPlatform" value="android"> Android</label>
-          <label><input type="radio" name="wlPlatform" value="either"> Either</label>
-        </div>
-      </form>
-      <!-- Cloudflare Turnstile — public sitekey. Secret lives in Apps Script Script Properties as TURNSTILE_SECRET. -->
-      <div class="cf-turnstile"
-           data-sitekey="0x4AAAAAADI-7AAFbI8rEn4D"
-           data-callback="onTurnstileSuccess"
-           data-error-callback="onTurnstileError"
-           data-expired-callback="onTurnstileExpired"
-           data-theme="dark"
-           data-action="waitlist"></div>
-      <div class="wl-foot">
-        <span>iOS first · Android next</span>
-        <span class="dot">·</span>
-        <span>US residents, 18+</span>
-        <span class="dot">·</span>
-        <span>We'll email you product updates and your TestFlight invite — unsubscribe anytime</span>
-        <span class="dot">·</span>
-        <span>By joining, you agree to our <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a></span>
-      </div>
-      <div class="wl-error" id="wlError" role="alert" aria-live="assertive"></div>
-    </div>
-
-    <!-- Brand meta tiles -->
-    <div class="wl-meta reveal" data-delay="1">
-      <div class="wl-meta-card">
-        <div class="wm-num">2026</div>
-        <div class="wm-lbl">Launching this year</div>
-      </div>
-      <div class="wl-meta-card">
-        <div class="wm-num">iOS · Android</div>
-        <div class="wm-lbl">App Store + Play Store</div>
-      </div>
-      <div class="wl-meta-card">
-        <div class="wm-num">Austin</div>
-        <div class="wm-lbl">Built in Texas</div>
-      </div>
-      <div class="wl-meta-card">
-        <div class="wm-num">Early</div>
-        <div class="wm-lbl">Access for waitlist only</div>
-      </div>
-    </div>
-
-    <div class="wl-success" id="wlSuccess" role="status" aria-live="polite">
-      <div class="wl-check">✓</div>
-      <h3>You're on the list.</h3>
-      <p>We'll email <span class="email" id="wlEmailEcho">you@wherever.com</span> when your TestFlight invite is ready.</p>
+    <div class="hero-ctas" style="justify-content:center;margin-top:26px">
+      <a href="__APP_STORE_URL__" class="btn-gold">Download on the App Store</a>
     </div>
   </div>
 </section>
@@ -2112,7 +2053,7 @@ footer.site .wm{margin-bottom:8px}
       <a href="#groups">Groups</a>
       <a href="#vault">Vault</a>
       <a href="#ranks">Ranks</a>
-      <a href="#waitlist">Waitlist</a>
+      <a href="__APP_STORE_URL__">Download</a>
       <a href="faq.html">FAQ</a>
       <a href="about.html">About</a>
       <a href="terms.html">Terms</a>
@@ -2126,7 +2067,7 @@ footer.site .wm{margin-bottom:8px}
       <a href="https://x.com/misersavings" rel="me noopener" target="_blank" aria-label="Miser on X" style="font-size:13px;color:rgba(237,232,208,0.78);text-decoration:none;letter-spacing:0.02em">X <span style="opacity:0.5">@misersavings</span></a>
     </div>
     <div class="foot-legal">
-      <strong>MiserSavings Inc.</strong> · Austin, TX · Launching 2026<br>
+      <strong>MiserSavings Inc.</strong> · Austin, TX<br>
       © 2026 MiserSavings Inc. All rights reserved.
       <br><br>
       <span style="opacity:0.85">mi$er is a financial technology company, not a bank. mi$er does not hold customer deposits and never commingles funds with its own balance sheet. ACH transfers between your linked checking and savings accounts are initiated by our ACH partner; bank linking is provided by a regulated third-party data network. A small service fee applies to each Sunday savings batch; the final fee schedule is shown in full and requires your explicit acceptance before any money moves. Withdrawals are free. mi$er does not provide investment, tax, or legal advice. See <a href="terms.html" style="color:inherit;text-decoration:underline">Terms</a> and <a href="privacy.html" style="color:inherit;text-decoration:underline">Privacy Policy</a> for full details.</span>
@@ -2210,166 +2151,6 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
     });
   },{threshold:0.4});
   vio.observe(counter);
-})();
-
-/* ─── Waitlist submit (Apps Script + Cloudflare Turnstile) ─────
-   POST → Google Apps Script Web App (deployed for "Anyone").
-   Content-Type: text/plain;charset=utf-8 to keep it a "simple" CORS
-   request (no preflight). Apps Script replies with permissive CORS so
-   we can read {ok, error}. Endpoint URL + Turnstile sitekey are public
-   by design — secret-side check happens server-side in the Apps Script. */
-(function(){
-  const WAITLIST_URL = 'https://script.google.com/macros/s/AKfycbyjAkNb-4bMVOtXsKvDzIjuZVQOgQJOM9urhwtEnoDgBrHOK_d4JqKLNxrll4l3DGreqQ/exec';
-
-  const form     = document.getElementById('wlForm');
-  const nameEl   = document.getElementById('wlName');
-  const emailEl  = document.getElementById('wlEmail');
-  const button   = form ? form.querySelector('button') : null;
-  const echo     = document.getElementById('wlEmailEcho');
-  const formWrap = document.getElementById('wlFormWrap');
-  const success  = document.getElementById('wlSuccess');
-  const errorEl  = document.getElementById('wlError');
-  if(!form) return;
-
-  // ── Page-load metadata (captured once) ─────────────────────
-  const PAGE_LOADED_AT = (typeof performance !== 'undefined' && performance.now) ? performance.now() : Date.now();
-  const URL_PARAMS = new URLSearchParams(location.search);
-  const REFERRER = (document.referrer || '').slice(0, 500);
-  const LANG = navigator.language || '';
-  const TIMEZONE = (function(){
-    try { return Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (_) { return ''; }
-  })();
-
-  // ── Best-effort IP lookup (kicked off on load) ─────────────
-  let ipPromise = null;
-  function fetchIpInfo(){
-    if (ipPromise) return ipPromise;
-    ipPromise = fetch('https://ipapi.co/json/', { method: 'GET' })
-      .then(r => r.ok ? r.json() : null)
-      .then(j => j ? { ip: (j.ip || '').toString().slice(0,64), ip_country: (j.country || '').toString().slice(0,4) } : { ip:'', ip_country:'' })
-      .catch(() => ({ ip:'', ip_country:'' }));
-    return ipPromise;
-  }
-  fetchIpInfo();
-
-  // ── Health check on page load ──────────────────────────────
-  fetch(WAITLIST_URL, { method: 'GET', mode: 'cors' })
-    .then(r => r.ok ? r.json().catch(()=>({ok:true})) : Promise.reject(new Error('HTTP '+r.status)))
-    .then(j => { if (j && j.ok === false) throw new Error(j.error || 'health failed'); })
-    .catch(err => { console.warn('[waitlist] health-check failed:', err); });
-
-  function showError(msg){
-    if(!errorEl) return;
-    errorEl.innerHTML = msg + ' <a href="mailto:support@misersavings.com">Email us</a> if it keeps happening.';
-    errorEl.classList.add('on');
-  }
-  function clearError(){
-    if(errorEl){ errorEl.classList.remove('on'); errorEl.innerHTML = ''; }
-  }
-
-  form.addEventListener('submit', async (e)=>{
-    e.preventDefault();
-    clearError();
-
-    const v = (emailEl.value || '').trim();
-    if(!v || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){
-      emailEl.focus();
-      form.style.animation = 'none';
-      form.offsetHeight; // reflow
-      form.style.animation = 'shake .4s cubic-bezier(.2,.7,.2,1)';
-      return;
-    }
-
-    // Pull the Turnstile token if the widget is rendered.
-    let turnstileToken = '';
-    try {
-      if (window.turnstile && typeof window.turnstile.getResponse === 'function') {
-        turnstileToken = window.turnstile.getResponse() || '';
-      } else {
-        const tInput = document.querySelector('input[name="cf-turnstile-response"]');
-        if (tInput) turnstileToken = tInput.value || '';
-      }
-    } catch (_) {}
-
-    if(button){
-      button.disabled = true;
-      button.dataset.original = button.textContent;
-      button.textContent = 'Joining…';
-    }
-
-    // Race ipapi.co against a 1.5s timeout so the form never blocks on a slow third party.
-    const ipInfo = await Promise.race([
-      fetchIpInfo(),
-      new Promise(resolve => setTimeout(() => resolve({ ip:'', ip_country:'' }), 1500))
-    ]);
-
-    const checkedRadio = form.querySelector('input[name="wlPlatform"]:checked');
-    const platform = checkedRadio ? checkedRadio.value : 'ios';
-
-    const payload = {
-      email: v,
-      name: (nameEl && nameEl.value || '').trim().slice(0, 80),
-      platform: platform,
-      source: 'misersavings.com' + (location.pathname || '/'),
-      user_agent: navigator.userAgent,
-      lang: LANG,
-      timezone: TIMEZONE,
-      referrer: REFERRER,
-      utm_source:   URL_PARAMS.get('utm_source')   || '',
-      utm_medium:   URL_PARAMS.get('utm_medium')   || '',
-      utm_campaign: URL_PARAMS.get('utm_campaign') || '',
-      utm_content:  URL_PARAMS.get('utm_content')  || '',
-      utm_term:     URL_PARAMS.get('utm_term')     || '',
-      fbclid:       URL_PARAMS.get('fbclid')       || '',
-      gclid:        URL_PARAMS.get('gclid')        || '',
-      time_on_page_ms: Math.max(0, Math.round(((typeof performance !== 'undefined' && performance.now) ? performance.now() : Date.now()) - PAGE_LOADED_AT)),
-      ip: ipInfo.ip,
-      ip_country: ipInfo.ip_country,
-      'cf-turnstile-response': turnstileToken
-    };
-
-    try {
-      const resp = await fetch(WAITLIST_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify(payload),
-        redirect: 'follow'
-      });
-      if (!resp.ok) throw new Error('Server returned ' + resp.status);
-      const json = await resp.json().catch(()=>({ ok:false, error:'bad_response' }));
-      if (!json.ok) throw new Error(json.error || 'rejected');
-
-      // Real success.
-      echo.textContent = v;
-      formWrap.classList.add('off');
-      success.classList.add('on');
-      if (typeof gtag === 'function') {
-        gtag('event', 'waitlist_signup', { event_category:'engagement', event_label:'homepage' });
-      }
-    } catch (err) {
-      console.error('[waitlist] submit failed:', err);
-      if (button) {
-        button.disabled = false;
-        button.textContent = button.dataset.original || 'Join →';
-      }
-      try { if (window.turnstile) window.turnstile.reset(); } catch(_){}
-      const msg = String(err && err.message || err);
-      if (/captcha/i.test(msg)) {
-        showError('We couldn\'t verify the bot-check. Please try the captcha again.');
-      } else if (/invalid_email/i.test(msg)) {
-        showError('That email looks off — double-check it and resubmit.');
-      } else if (/Server returned 5/.test(msg)) {
-        showError('Our waitlist service hiccupped. We\'re likely already on it.');
-      } else {
-        showError('Something went wrong sending your email.');
-      }
-    }
-  });
-
-  // Turnstile callbacks
-  window.onTurnstileSuccess = function(){ /* no-op */ };
-  window.onTurnstileError = function(){ showError('Bot-check failed to load. Refresh and try again.'); };
-  window.onTurnstileExpired = function(){ try { window.turnstile && window.turnstile.reset(); } catch(_){} };
 })();
 </script>
 
