@@ -1,3 +1,8 @@
 # Don't commit exported website zips
 MiserSavings - website.zip
 *.zip
+
+# Node modules — installed via `npm install` for the blog build script
+node_modules/
+.DS_Store
+.DS_Store
