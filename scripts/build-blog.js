@@ -382,13 +382,19 @@ function main() {
     return;
   }
 
-  // Build the "next post" link: by frontmatter override, else next-in-time wrap-around.
+  // Build the "Read next" link.
+  // Priority: 1) frontmatter `next:` if it resolves, 2) next-in-time wrap-around.
+  // A dangling `next:` (post deleted/renamed) silently falls back so every
+  // post always has a "Read next" — never an empty bottom.
   const bySlug = Object.fromEntries(posts.map(p => [p.slug, p]));
   for (let i = 0; i < posts.length; i++) {
     const p = posts[i];
-    const nextPost = p.next
-      ? bySlug[p.next] || null
-      : posts[(i + 1) % posts.length];
+    const fallback = posts[(i + 1) % posts.length];
+    const resolved = p.next ? bySlug[p.next] : null;
+    if (p.next && !resolved) {
+      console.warn(`  ! ${p.slug}: next: "${p.next}" not found — falling back to next-in-time`);
+    }
+    const nextPost = resolved || fallback;
     const html = renderPost(p, nextPost && nextPost.slug !== p.slug ? nextPost : null);
     fs.writeFileSync(path.join(BLOG_DIR, `${p.slug}.html`), html);
     console.log(`  ✓ blog/${p.slug}.html`);

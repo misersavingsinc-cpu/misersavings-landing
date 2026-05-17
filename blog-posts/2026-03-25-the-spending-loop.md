@@ -4,7 +4,6 @@ title: Most of your spending isn't a choice. It's a *loop*.
 description: The hardest spending to cut isn't the splurge, it's the purchase you make on autopilot. Here's why those patterns run so deep, and what actually interrupts one.
 date: 2026-03-25
 category: Behavioral
-next: emergency-fund-reality
 ---
 
 At 11pm you open Amazon for one thing. Half an hour later there are four items in the cart.

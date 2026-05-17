@@ -4,7 +4,6 @@ title: Why we put a *quit button* in a savings app
 description: Most apps treat leaving as a failure and design the exit accordingly. We went the other way. Here's the thinking behind Miser's Quit Companion.
 date: 2026-04-21
 category: Built in public
-next: why-budgeting-apps-fail
 ---
 
 Early in building Miser, someone asked us: "What happens when a user wants to stop?"

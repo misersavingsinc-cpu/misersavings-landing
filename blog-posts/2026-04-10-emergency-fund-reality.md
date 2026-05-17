@@ -4,7 +4,6 @@ title: What an emergency fund *actually* has to cover
 description: The advice is always "save 3 to 6 months of expenses." Here's what that actually means, and why starting with $500 is better guidance for most people.
 date: 2026-04-10
 category: Numbers
-next: why-we-built-a-quit-button
 ---
 
 "Save three to six months of expenses."
