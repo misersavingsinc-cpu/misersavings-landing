@@ -354,6 +354,25 @@ function updateSitemap(posts) {
   fs.writeFileSync(SITEMAP, xml);
 }
 
+// ── Prune stale HTML ──────────────────────────────────────────────────────
+// Delete any blog/<slug>.html that no longer has a matching posts/<slug>.md.
+// Keeps blog/index.html (the listing) and blog/blog.css always. Run after we
+// generate the current set so the live site stays in sync when a post is
+// removed or renamed.
+function pruneStaleHtml(validSlugs) {
+  const removed = [];
+  for (const f of fs.readdirSync(BLOG_DIR)) {
+    if (!f.endsWith('.html')) continue;
+    if (f === 'index.html') continue;
+    const slug = f.slice(0, -5); // strip .html
+    if (!validSlugs.has(slug)) {
+      fs.unlinkSync(path.join(BLOG_DIR, f));
+      removed.push(f);
+    }
+  }
+  return removed;
+}
+
 // ── Main ──────────────────────────────────────────────────────────────────
 function main() {
   if (!fs.existsSync(BLOG_DIR)) fs.mkdirSync(BLOG_DIR, { recursive: true });
@@ -381,7 +400,12 @@ function main() {
   updateSitemap(posts);
   console.log(`  ✓ sitemap.xml      (blog URLs refreshed)`);
 
-  console.log(`\nDone. Built ${posts.length} post${posts.length === 1 ? '' : 's'} at ${TODAY}.`);
+  const removed = pruneStaleHtml(new Set(posts.map(p => p.slug)));
+  for (const f of removed) {
+    console.log(`  ✗ blog/${f}        (stale, removed)`);
+  }
+
+  console.log(`\nDone. Built ${posts.length} post${posts.length === 1 ? '' : 's'} at ${TODAY}${removed.length ? ` (pruned ${removed.length} stale file${removed.length === 1 ? '' : 's'})` : ''}.`);
 }
 
 try {
