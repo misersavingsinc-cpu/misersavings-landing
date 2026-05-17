@@ -1,13 +1,65 @@
 # robots.txt for misersavings.com
 # https://misersavings.com
 #
+# ─── AI CRAWLER POLICY ─────────────────────────────────────────────────────
+# Content-Signal declarations (Cloudflare / W3C draft):
+#   search   = yes  — traditional search indexing, permitted
+#   ai-input = yes  — using content for AI-generated answers (GEO/AEO), permitted
+#   ai-train = no   — training or fine-tuning AI models, NOT permitted
+#
+# ⚠ CLOUDFLARE ACTION REQUIRED: Cloudflare's "AI Scrapers" feature dynamically
+# prepends Disallow rules for GPTBot, ClaudeBot, Google-Extended, and others
+# BEFORE this file is served. That overrides the Allow rules below. To fully
+# unblock AI search engines you must also go to:
+#   Cloudflare Dashboard → (misersavings.com) → Security → Bots →
+#   "AI Scrapers and Crawlers" → set each search-engine bot to Allow
+#
+# ─── ALL CRAWLERS (default) ────────────────────────────────────────────────
+User-agent: *
+Content-Signal: search=yes,ai-input=yes,ai-train=no
+Allow: /
+
+# ─── AI SEARCH ENGINE CRAWLERS ─────────────────────────────────────────────
+# Explicitly permitted for answer-engine / generative search indexing.
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# ─── TRAINING-ONLY CRAWLERS ────────────────────────────────────────────────
+# Blocked — scraping for AI model training is not permitted.
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+# ─── SITEMAP ───────────────────────────────────────────────────────────────
 # We rely on canonical tags (declared on every page) to deduplicate
 # tagged URLs (utm_*, fbclid, gclid, etc.) instead of disallowing them
 # in robots.txt. Letting crawlers reach the parameter URLs and resolve
 # to canonical is what Google recommends and avoids the
 # "Indexed, though blocked by robots.txt" warning in Search Console.
-
-User-agent: *
-Allow: /
 
 Sitemap: https://misersavings.com/sitemap.xml
