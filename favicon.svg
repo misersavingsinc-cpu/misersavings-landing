@@ -1,25 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <!-- Deep Green tile (Miser brand color #1C3D2B) -->
-  <rect width="100" height="100" rx="22" fill="#1C3D2B"/>
-
-  <!-- Brand monogram rosette — matches Brand/mi$er-logo.svg.
-       Three concentric rings, fade at small sizes. -->
-  <circle cx="50" cy="50" r="42" fill="none"
-          stroke="#C8C0A0" stroke-opacity="0.22" stroke-width="1.4"/>
-  <circle cx="50" cy="50" r="33" fill="none"
-          stroke="#C8A820" stroke-opacity="0.34" stroke-width="1.2"
-          stroke-dasharray="3.2 2.6"/>
-  <circle cx="50" cy="50" r="24" fill="none"
-          stroke="#C8C0A0" stroke-opacity="0.14" stroke-width="1"/>
-
-  <!-- Brand monogram glyph: bold lowercase "m" in gold,
-       same character the brand sheet uses inside the rosette. -->
-  <text x="50" y="50"
-        text-anchor="middle"
-        dominant-baseline="central"
-        font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif"
-        font-weight="900"
-        font-size="42"
-        fill="#C8A820"
-        letter-spacing="0">m</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <rect width="100" height="100" rx="14" fill="#1C3D2B"/>
+  <text x="50" y="50" text-anchor="middle" dominant-baseline="central"
+        font-family="-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif"
+        font-weight="900" font-size="70" fill="#C8A820">$</text>
 </svg>
