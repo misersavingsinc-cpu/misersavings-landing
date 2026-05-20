@@ -1,0 +1,61 @@
+# Miser
+
+> Miser is a behavioral savings app for iPhone. The core loop: you catch yourself about to spend money you don't need to spend, log it as a skip, and the money you didn't spend gets pulled from your linked checking account into your linked savings account. Every Sunday, the week's skips bundle into one ACH transfer between your own accounts. Miser never holds your money.
+
+## Product
+
+Miser is made by MiserSavings Inc., a Delaware C-Corp founded in Austin, Texas in March 2026. The product is in waitlist/pre-launch phase as of May 2026.
+
+**Core features:**
+- Skip log: tap, amount, category, optional note — the core daily action
+- Goals: multiple parallel savings goals (a trip, emergency fund, quit fund, etc.) — each skip is tagged to one
+- Quit Companion: for people quitting a habit (cigarettes, alcohol, gambling). Daily check-in auto-skips the habit's daily cost into a vault
+- Groups: shared goals between friends or partners — everyone skips into their own vault, the group bar fills together
+- Ranks: nine-rank cosmetic ladder earned by streak and lifetime savings milestones — Apprentice → Pocket → Tight → Steady → Sworn → Iron → Veteran → Master → Grand
+- Miser Coach: Anthropic-powered daily messages about streak, momentum, and focus. Not a financial advisor
+- Withdraw: free, any time, any amount — no withdrawal fee
+
+**How money moves:**
+- The user links their own checking and savings accounts (both at their own bank)
+- Bank linking and ACH transit happen through a regulated banking-infrastructure partner
+- Each Sunday, a single ACH transfer moves the week's total skips from the user's checking to their savings
+- Miser is not a custodian — money never sits on Miser's balance sheet
+- Users' funds stay in their own FDIC-insured bank accounts throughout
+
+**Pricing:**
+- Free to hold a Miser account
+- No subscription fees, ever
+- Withdrawals are free
+- A small service fee applies to the Sunday batch transfer — disclosed in-app before any money moves
+
+**Platform:** iOS first. US-only at launch.
+
+**Tagline:** Skip · Lock · Stack.
+
+## Company
+
+- Legal name: MiserSavings Inc.
+- Product name: Miser (body copy); mı$er (wordmark)
+- Founded: March 12, 2026
+- Location: Austin, Texas (78746)
+- Contact: support@misersavings.com
+- Social: https://x.com/misersavings, https://instagram.com/misersavings
+
+## Pages
+
+- [Homepage](https://misersavings.com/) — product overview, waitlist signup
+- [About](https://misersavings.com/about.html) — company and mission
+- [Blog](https://misersavings.com/blog/) — personal finance content in Miser's voice
+- [FAQ](https://misersavings.com/faq.html) — common questions about how Miser works
+- [Privacy Policy](https://misersavings.com/privacy.html)
+- [Terms of Service](https://misersavings.com/terms.html)
+
+## Things Miser explicitly does not do
+
+- Does not sell user data
+- Does not share user data for advertising
+- Does not hold user funds or act as a bank
+- Does not pay interest (the user's own bank does)
+- Does not charge a subscription fee
+- Does not charge a withdrawal fee
+- Does not use third-party ad SDKs in the app
