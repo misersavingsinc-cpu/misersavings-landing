@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Miser — Turn impulse buys into real savings. Skip. Stack.</title>
-<meta name="description" content="Log the impulse buys you skip. Every Sunday, Miser batches the week and moves it into a vault tied to a real goal. Skip. Save. Stack.">
+<meta name="description" content="Log the impulse buys you skip. Every Sunday, Miser batches the week and moves it into a vault tied to a real goal. Free to join now. Skip. Save. Stack.">
 <link rel="canonical" href="https://misersavings.com/">
 
 <!-- Open Graph -->
@@ -139,8 +139,8 @@
 }
 </script>
 
-<!-- Cloudflare Turnstile (waitlist bot check) -->
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<!-- Cloudflare Turnstile — lazy-loaded when the waitlist section enters the viewport.
+     Avoids blocking page render (~475 KB from challenges.cloudflare.com). -->
 <style>
 /* ═══════════════════════════════════════════════════════════════
    mı$er marketing site — brand tokens only
@@ -2069,6 +2069,46 @@ footer.site .wm{margin-bottom:8px}
 </section>
 
 
+<!-- ═══════ FAQ ═══════ -->
+<section class="band crm" id="faq" style="padding:96px 32px">
+  <div style="max-width:760px;margin:0 auto">
+    <div class="band-head" style="margin-bottom:48px">
+      <div class="rule-pair"><span class="line"></span><span class="eyebrow">Common questions</span><span class="line"></span></div>
+      <h2 class="h-section" style="margin-top:14px">A few things<br>people always ask.</h2>
+    </div>
+
+    <dl style="display:flex;flex-direction:column;gap:0">
+
+      <div class="reveal faq-item" style="padding:28px 0;border-bottom:0.5px solid rgba(28,61,43,0.1)">
+        <dt style="font-size:18px;font-weight:900;color:var(--dg);letter-spacing:-0.01em;margin-bottom:10px">What does Miser cost?</dt>
+        <dd style="font-size:15px;line-height:1.6;color:rgba(28,61,43,0.68);margin:0">Free to download. A small service fee applies when money moves on Sunday — the full fee schedule will be shown before anything is confirmed. Withdrawals are always free.</dd>
+      </div>
+
+      <div class="reveal faq-item" data-delay="1" style="padding:28px 0;border-bottom:0.5px solid rgba(28,61,43,0.1)">
+        <dt style="font-size:18px;font-weight:900;color:var(--dg);letter-spacing:-0.01em;margin-bottom:10px">Where does my money actually go?</dt>
+        <dd style="font-size:15px;line-height:1.6;color:rgba(28,61,43,0.68);margin:0">Into <em style="font-style:normal;font-weight:700;color:var(--dg)">your own savings account</em> — not ours. Miser never holds your funds or commingles money. Every Sunday transfer moves directly between your linked checking and savings accounts via ACH.</dd>
+      </div>
+
+      <div class="reveal faq-item" data-delay="2" style="padding:28px 0;border-bottom:0.5px solid rgba(28,61,43,0.1)">
+        <dt style="font-size:18px;font-weight:900;color:var(--dg);letter-spacing:-0.01em;margin-bottom:10px">What happens if I miss a day?</dt>
+        <dd style="font-size:15px;line-height:1.6;color:rgba(28,61,43,0.68);margin:0">Your streak counter resets to zero. Your rank does not. Once you've earned a rank, the crest stays — even if you start a new streak from scratch. Progress is permanent; streaks are just motivation.</dd>
+      </div>
+
+      <div class="reveal faq-item" data-delay="3" style="padding:28px 0;border-bottom:0.5px solid rgba(28,61,43,0.1)">
+        <dt style="font-size:18px;font-weight:900;color:var(--dg);letter-spacing:-0.01em;margin-bottom:10px">How do I get my money back out?</dt>
+        <dd style="font-size:15px;line-height:1.6;color:rgba(28,61,43,0.68);margin:0">Withdrawals are free, always. You can move money back to your checking account from the app at any time. No penalties, no fees, no waiting period.</dd>
+      </div>
+
+      <div class="reveal faq-item" style="padding:28px 0">
+        <dt style="font-size:18px;font-weight:900;color:var(--dg);letter-spacing:-0.01em;margin-bottom:10px">When does the app launch?</dt>
+        <dd style="font-size:15px;line-height:1.6;color:rgba(28,61,43,0.68);margin:0">We're in TestFlight beta now, opening to iOS waitlist slots in 2026. Join below — we'll email your invite when your slot opens, batch by batch.</dd>
+      </div>
+
+    </dl>
+  </div>
+</section>
+
+
 <!-- ═══════ WAITLIST ═══════ -->
 <section class="wl-section dk gui-dk" id="waitlist">
   <div class="wl reveal">
@@ -2163,7 +2203,7 @@ footer.site .wm{margin-bottom:8px}
       <a href="about.html">About</a>
       <a href="terms.html">Terms</a>
       <a href="privacy.html">Privacy</a>
-      <a href="mailto:support@misersavings.com">support@misersavings.com</a>
+      <span id="footEmail"></span>
     </div>
     <div class="foot-social" style="margin-top:14px;display:flex;flex-wrap:wrap;gap:18px;align-items:center">
       <span style="font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(200,168,32,0.55)">Follow</span>
@@ -2306,7 +2346,8 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
   function showError(msg){
     if(!errorEl) return;
-    errorEl.innerHTML = msg + ' <a href="mailto:support@misersavings.com">Email us</a> if it keeps happening.';
+    var _ea = 'support' + '\x40' + 'misersavings.com';
+    errorEl.innerHTML = msg + ' <a href="mailto:' + _ea + '">Email us</a> if it keeps happening.';
     errorEl.classList.add('on');
   }
   function clearError(){
@@ -2416,6 +2457,47 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   window.onTurnstileSuccess = function(){ /* no-op */ };
   window.onTurnstileError = function(){ showError('Bot-check failed to load. Refresh and try again.'); };
   window.onTurnstileExpired = function(){ try { window.turnstile && window.turnstile.reset(); } catch(_){} };
+})();
+</script>
+
+<script>
+/* ─── Obfuscated footer email ───────────────────────────────── */
+(function(){
+  var el = document.getElementById('footEmail');
+  if(!el) return;
+  var e = 'support', d = 'misersavings.com';
+  var a = document.createElement('a');
+  a.href = 'mailto:' + e + '\x40' + d;
+  a.textContent = e + '\x40' + d;
+  el.appendChild(a);
+})();
+
+/* ─── Lazy-load Turnstile ─────────────────────────────────────
+   Injects the Cloudflare script only when the waitlist section
+   is ~400 px from entering the viewport (or on email-field focus).
+   Keeps it off the critical rendering path entirely. ────────── */
+(function(){
+  var loaded = false;
+  function loadTS(){
+    if(loaded) return;
+    loaded = true;
+    var s = document.createElement('script');
+    s.src  = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+    s.async = true;
+    s.defer = true;
+    document.head.appendChild(s);
+  }
+  var wl = document.getElementById('waitlist');
+  if(wl && 'IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      if(entries[0].isIntersecting){ loadTS(); obs.disconnect(); }
+    },{rootMargin:'400px'});
+    obs.observe(wl);
+  } else {
+    loadTS(); // fallback: no IO support
+  }
+  var email = document.getElementById('wlEmail');
+  if(email) email.addEventListener('focus', loadTS, {once:true});
 })();
 </script>
 
