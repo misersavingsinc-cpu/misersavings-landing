@@ -288,7 +288,7 @@ footer {
 
     <h2 id="about">1. About mi$er (not a bank)</h2>
     <p><strong>mi$er is a financial technology application, not a bank.</strong> We provide the app, the goal-setting experience, the skip-logging tools, and the deposit initiation layer. We are not a bank, broker-dealer, or custodian.</p>
-    <p>mi$er helps you automate saving by initiating ACH transfers between your own accounts &mdash; from your linked checking account to your own savings account &mdash; both of which you hold and control at your own bank(s). <strong>MiserSavings does not take custody of, hold, pool, or commingle your funds.</strong> Your funds are held and moved by our payment partner&rsquo;s federally-insured banking partner (an ODFI); your money stays in accounts you own, in your own name.</p>
+    <p>mi$er helps you automate saving by initiating ACH transfers between your own accounts &mdash; from your linked checking account to your own savings account &mdash; both of which you hold and control at your own bank(s). <strong>MiserSavings does not take custody of your funds and has no right to use them.</strong> While a transfer is processing, your funds may pass through settlement accounts controlled by our payment partner and its partner banks &mdash; not by mi$er. mi$er makes no representation that funds are FDIC insured while a transfer is in process. Once funds arrive in your linked savings account, they are held by your bank under your bank&rsquo;s terms, including any FDIC insurance your bank provides.</p>
 
     <h2 id="eligibility">2. Eligibility</h2>
     <p>To use mi$er, you must:</p>
@@ -315,11 +315,11 @@ footer {
 
     <h2 id="vault">5. Your accounts, deposits &amp; access to your money</h2>
     <h3>How it works</h3>
-    <p>mi$er connects to two of your own bank accounts via <strong>our bank-linking and identity-verification provider</strong>: your linked checking account (the source) and your linked savings account (the destination). Both accounts are yours &mdash; held at your bank, in your name. mi$er does not take custody of or hold your funds; they are held and moved by our payment partner&rsquo;s federally-insured banking partner (an ODFI). Money movement between your own accounts is initiated by our ACH processing partner (disclosed in-app at the time you authorize a transfer).</p>
+    <p>mi$er connects to two of your own bank accounts via <strong>our bank-linking and identity-verification provider</strong>: your linked checking account (the source) and your linked savings account (the destination). Both accounts are yours &mdash; held at your bank, in your name. mi$er does not take custody of or hold your funds. Money movement between your own accounts is initiated by our ACH processing partner (disclosed in-app at the time you authorize a transfer). While a transfer is processing &mdash; typically a few business days &mdash; your funds may pass through settlement accounts controlled by that partner and its partner banks before reaching your savings account.</p>
 
     <h3>Deposits (skip batches &amp; Add Money)</h3>
-    <p>When you log a skip, mi$er records a commitment to save that amount. On a recurring 7-day cycle &mdash; set by the date of your first save &mdash; your locked skips are batched into a single ACH transfer from your linked checking account directly to your linked savings account. You may also add money at any time via the &ldquo;+ Add Money&rdquo; feature, which triggers an immediate ACH transfer between your same two accounts.</p>
-    <p>By using the app you pre-authorize mi$er to initiate these ACH debits from your checking account on your behalf. We will not overdraw your account.</p>
+    <p>When you log a skip, mi$er records a commitment to save that amount. On a recurring 7-day cycle &mdash; set by the date of your first save &mdash; your locked skips are batched into a single ACH transfer from your linked checking account to your linked savings account. You may also add money at any time via the &ldquo;+ Add Money&rdquo; feature, which triggers an immediate ACH transfer between your same two accounts.</p>
+    <p>Recurring transfers begin only after you complete a separate ACH authorization in the app, which states the transfer schedule, the authorized amount range ($50&ndash;$500 per cycle, including the service fee), and how to cancel. You will receive a copy of your authorization. You are responsible for ensuring your checking account holds sufficient funds on your cycle date; mi$er will never debit more than your logged saves plus the disclosed service fee, and never more than $500 in a single cycle.</p>
     <p>If a transfer fails (for example, insufficient funds), we will notify you in-app and may pause skip-logging until resolved.</p>
 
     <h3>Accessing your money</h3>
@@ -329,7 +329,7 @@ footer {
     <p>If your account becomes dormant under applicable state unclaimed property law, we will use reasonable efforts to contact you before any action is taken.</p>
 
     <h2 id="fees">6. Fees</h2>
-    <p>mi$er does not charge a withdrawal fee. mi$er charges a service fee on each 7-day cycle transfer &mdash; $2.50 plus 1.5% of the transfer total, with no cap. A transfer requires a minimum total of $50; cycles below $50 are held and combined into your next cycle&rsquo;s transfer at no extra charge. A single transfer will not debit more than $500 from your checking account; any amount above this ceiling carries forward to your next cycle. This service fee covers the cost of the bank transfer and the operation of the service. We will provide at least 30 days&rsquo; advance notice before introducing or changing any fee. Subscriptions and overdraft charges do not exist on mi$er and never will. See the in-app Error Resolution Notice for your rights regarding unauthorized or erroneous electronic fund transfers.</p>
+    <p>mi$er does not charge a withdrawal fee. mi$er charges a service fee on each 7-day cycle transfer &mdash; $2.50 plus 1.5% of the amount you save, with no cap. The fee is included in the single debit from your checking account: for example, if you saved $100 in a cycle, your checking account is debited $104.00 ($100.00 to your savings account plus a $4.00 fee, i.e. 4.0%); a minimum $50 cycle is debited $53.25 ($3.25 fee, i.e. 6.5%). A transfer requires a minimum total of $50; cycles below $50 are held and combined into your next cycle&rsquo;s transfer at no extra charge. A single transfer will not debit more than $500 from your checking account, including the service fee; any amount above this ceiling carries forward to your next cycle. This service fee covers the cost of the bank transfer and the operation of the service. We will provide at least 30 days&rsquo; advance notice before introducing or changing any fee. Subscriptions and overdraft charges do not exist on mi$er and never will. See the in-app Error Resolution Notice for your rights regarding unauthorized or erroneous electronic fund transfers.</p>
     <p>What we&rsquo;ve committed to publicly:</p>
     <ul>
       <li><strong>Accessing your saved money:</strong> it&rsquo;s in your own bank account &mdash; mi$er charges no withdrawal fee.</li>
@@ -347,6 +347,8 @@ footer {
     <ul>
       <li>Request paper copies of any disclosure (contact <a href="mailto:support@misersavings.com">support@misersavings.com</a>).</li>
       <li>Dispute unauthorized electronic fund transfers. If you believe an unauthorized transfer has been initiated, contact us immediately. You generally must notify us within 60 days of the statement showing the transfer.</li>
+      <li><strong>Stop a scheduled transfer</strong> by notifying us at least 3 business days before its scheduled date &mdash; in the app or at <a href="mailto:support@misersavings.com">support@misersavings.com</a>. You may also cancel your recurring transfer authorization entirely at any time; cancelling is as easy as enrolling.</li>
+      <li><strong>Know the amount in advance.</strong> Because your transfer amount varies with your logged saves, you may choose to receive notice of each transfer&rsquo;s amount and date before it occurs, or to be notified only when a transfer would fall outside your authorized range of $50&ndash;$500. You make this election in your ACH authorization.</li>
       <li>Withdraw your consent to electronic communications (which will also close your mi$er account).</li>
     </ul>
     <p>A full Regulation E disclosure and error-resolution procedure is available in-app under Settings &rarr; Legal, and provided to you at account opening.</p>
@@ -440,7 +442,7 @@ footer {
       <a href="https://www.tiktok.com/@misersavings" rel="me noopener" target="_blank" aria-label="Miser on TikTok" style="font-size:13px;color:rgba(237,232,208,0.7);text-decoration:none">TikTok <span style="opacity:0.5">@misersavings</span></a>
       <a href="https://x.com/misersavings" rel="me noopener" target="_blank" aria-label="Miser on X" style="font-size:13px;color:rgba(237,232,208,0.7);text-decoration:none">X <span style="opacity:0.5">@misersavings</span></a>
     </div>
-    <div class="footer-copy">&copy; 2026 MiserSavings Inc. &middot; mi$er is a financial technology company, not a bank. Your funds are held in your own bank accounts at all times.</div>
+    <div class="footer-copy">&copy; 2026 MiserSavings Inc. &middot; mi$er is a financial technology company, not a bank. Transfers are processed by our payments partner and its partner banks; your savings are held at your own bank.</div>
   </div>
 </footer>
 
