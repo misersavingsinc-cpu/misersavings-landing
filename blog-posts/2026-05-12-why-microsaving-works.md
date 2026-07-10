@@ -37,7 +37,7 @@ The trick isn't to be more disciplined. The trick is to design the moment so the
 
 ## Microsaving asks a smaller question
 
-The classic saving question is: *"How much should I save?"* That's a planning question. It asks you to predict the future and commit to it on a Sunday night when nothing is happening.
+The classic saving question is: *"How much should I save?"* That's a planning question. It asks you to predict the future and commit to it in advance, when nothing is happening.
 
 Microsaving asks a different question: *"Did I almost spend this?"* That one only shows up at the moment of impulse, when the alternative is a real thing you can almost feel in your hand.
 
@@ -49,7 +49,7 @@ That smaller decision is the whole game. Willpower never has to show up. There's
 
 $5 a day, every day, for a year, is **$1,825**. That's more than the bottom half of households have in savings right now. Put it in an account paying 4% and after seven years it's about **$14,500**.
 
-You don't have to give up the coffee. You have to skip it three or four times a week instead of five. The skipping happens in the moment, not on Sunday night with a spreadsheet open.
+You don't have to give up the coffee. You have to skip it three or four times a week instead of five. The skipping happens in the moment, not the night before with a spreadsheet open.
 
 That single shift, from "how much should I save" to "did I almost spend this," is the whole reason round-up apps, skip apps, and every microsaving tool actually moves the needle for normal households when "save more" advice doesn't.
 

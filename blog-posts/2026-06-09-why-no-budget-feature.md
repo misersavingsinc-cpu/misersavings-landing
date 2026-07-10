@@ -27,7 +27,7 @@ More than that, a budget feature would have required us to become a tracking pro
 
 ## What we built instead
 
-The core of Miser is a skip. You see a purchase you were about to make, you pass on it, and you log it. The money you would have spent gets set aside automatically each Sunday and moves to your savings.
+The core of Miser is a skip. You see a purchase you were about to make, you pass on it, and you log it. The money you would have spent gets set aside and moves to your savings automatically every 7 days, on your personal cycle day.
 
 That's a very small product surface compared to a full budget. No categories. No monthly review screen. No red bars.
 
@@ -39,7 +39,7 @@ We also built Goals, which is the closest we come to the budget world. You name 
 
 If you're a spreadsheet person who does a monthly review and finds it genuinely useful, Miser is probably not your primary tool. We're not trying to replace that.
 
-What we're trying to do is different: we're trying to be useful to the much larger group of people for whom the Sunday-night budget ritual never stuck. People who have tried Mint, YNAB, Copilot, a spreadsheet, and a notes app, and still have less saved than they'd like. Not because they lack information about their spending, but because none of those tools were present at the moment it mattered.
+What we're trying to do is different: we're trying to be useful to the much larger group of people for whom the night-before budget ritual never stuck. People who have tried Mint, YNAB, Copilot, a spreadsheet, and a notes app, and still have less saved than they'd like. Not because they lack information about their spending, but because none of those tools were present at the moment it mattered.
 
 For that person, adding a budget feature to Miser would make us worse, not better. More surface area, more friction, more of the thing that didn't work the first time.
 

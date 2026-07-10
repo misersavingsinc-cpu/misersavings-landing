@@ -25,7 +25,7 @@ Not as a guilt trip. Just so the number is real.
 | "Just one thing" online | 2×/week ($20) | $2,080 | ~$16,500 |
 | One delivery dinner | 1×/week ($45) | $2,340 | ~$18,600 |
 
-You don't have to live like a monk. You have to skip, on average, one thing a week, in the moment, not by planning your month on a Sunday night.
+You don't have to live like a monk. You have to skip, on average, one thing a week, in the moment, not by planning your month in advance.
 
 > The math doesn't care which one you skip. It cares that you skip.
 

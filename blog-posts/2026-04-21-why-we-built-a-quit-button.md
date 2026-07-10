@@ -28,7 +28,7 @@ This works, in a narrow sense. Churn numbers go down. Retention looks better on 
 
 The problem is that it creates a different kind of relationship, one where the user knows, somewhere, that the app is working against their interests at the exact moment they've decided something isn't working. And once someone feels that, the trust erodes. Every feature starts to look like a hook rather than a tool.
 
-We're building a savings app. Trust is the whole product. If you're linking your bank account and letting the app move money on your behalf every Sunday, you have to believe it's working for you, not for our retention numbers.
+We're building a savings app. Trust is the whole product. If you're linking your bank account and letting the app move money on your behalf every week, you have to believe it's working for you, not for our retention numbers.
 
 > An app that makes leaving hard has a business model problem. If users only stay because the exit is painful, that's not retention. That's capture.
 

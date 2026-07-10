@@ -28,11 +28,11 @@ The problem is that "try harder" isn't a system. The loop doesn't care about you
 
 The spending loop is hard to see from a bank statement because it doesn't look like a pattern when you're inside one.
 
-You open your account on Sunday night. You spent $340 on food delivery this month. The number is surprising, it always is, and you make a mental note to cook more this week.
+You open your account late one evening. You spent $340 on food delivery this month. The number is surprising, it always is, and you make a mental note to cook more this week.
 
-By Wednesday it's 7pm, you got home late, the fridge has half a block of old cheese, and the loop fires. You're not overriding a financial decision; you're doing what you always do on Wednesday evenings. The Sunday resolution lives in a different context, made by a different version of you. It doesn't exist at 7pm on Wednesday.
+By Wednesday it's 7pm, you got home late, the fridge has half a block of old cheese, and the loop fires. You're not overriding a financial decision; you're doing what you always do on Wednesday evenings. That late-night resolution lives in a different context, made by a different version of you. It doesn't exist at 7pm on Wednesday.
 
-> The loop fires at 7pm. The monthly review happens at 10pm on a Sunday. That's not a system. That's a delay.
+> The loop fires at 7pm. The monthly review happens at 10pm, days later. That's not a system. That's a delay.
 
 ## What actually interrupts a loop
 
