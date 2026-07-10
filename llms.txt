@@ -1,6 +1,6 @@
 # Miser
 
-> Miser is a behavioral savings app for iPhone. The core loop: you catch yourself about to spend money you don't need to spend, log it as a skip, and the money you didn't spend gets pulled from your linked checking account into your linked savings account. Every Sunday, the week's skips bundle into one ACH transfer between your own accounts. Miser never holds your money.
+> Miser is a behavioral savings app for iPhone. The core loop: you catch yourself about to spend money you don't need to spend, log it as a skip, and the money you didn't spend gets pulled from your linked checking account into your linked savings account. Every 7 days, on your personal cycle day (set by your first save), your skips bundle into one ACH transfer between your own accounts. Miser never holds your money.
 
 ## Product
 
@@ -18,7 +18,7 @@ Miser is made by MiserSavings Inc., a Delaware C-Corp founded in Austin, Texas i
 **How money moves:**
 - The user links their own checking and savings accounts (both at their own bank)
 - Bank linking and ACH transit happen through a regulated banking-infrastructure partner
-- Each Sunday, a single ACH transfer moves the week's total skips from the user's checking to their savings
+- Every 7 days, on the user's personal cycle day (set by their first save), a single ACH transfer moves their total skips from checking to savings
 - Miser is not a custodian — money never sits on Miser's balance sheet
 - Users' funds stay in their own FDIC-insured bank accounts throughout
 
@@ -26,7 +26,7 @@ Miser is made by MiserSavings Inc., a Delaware C-Corp founded in Austin, Texas i
 - Free to hold a Miser account
 - No subscription fees, ever
 - Withdrawals are free
-- A small service fee applies to the Sunday batch transfer — disclosed in-app before any money moves
+- A service fee of $2.50 + 1.5% of each transfer (no cap) applies to each batch transfer — disclosed in-app before any money moves; withdrawals are free
 
 **Platform:** iOS first. US-only at launch.
 

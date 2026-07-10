@@ -27,7 +27,7 @@ More than that, a budget feature would have required us to become a tracking pro
 
 ## What we built instead
 
-The core of Miser is a skip. You see a purchase you were about to make, you pass on it, and you log it. The money you would have spent gets set aside automatically each Sunday and moves to your savings.
+The core of Miser is a skip. You see a purchase you were about to make, you pass on it, and you log it. The money you would have spent gets set aside and moves to your savings automatically every 7 days, on your personal cycle day.
 
 That's a very small product surface compared to a full budget. No categories. No monthly review screen. No red bars.
 
