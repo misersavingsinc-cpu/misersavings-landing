@@ -246,7 +246,7 @@ footer {
   <div class="legal-hero-inner">
     <div class="legal-eyebrow">Legal</div>
     <h1 class="legal-h1">Terms of <em>Service</em></h1>
-    <p class="legal-meta"><strong>Effective:</strong> July 10, 2026 &middot; <strong>Last updated:</strong> July 10, 2026</p>
+    <p class="legal-meta"><strong>Effective:</strong> July 10, 2026 &middot; <strong>Last updated:</strong> July 17, 2026</p>
   </div>
 </section>
 
@@ -267,7 +267,7 @@ footer {
         <li><a href="#about">About mi$er (not a bank)</a></li>
         <li><a href="#eligibility">Eligibility</a></li>
         <li><a href="#accounts">Creating your account</a></li>
-        <li><a href="#identity">Identity verification (KYC)</a></li>
+        <li><a href="#identity">Identity confirmation</a></li>
         <li><a href="#vault">Your accounts, deposits &amp; access to your money</a></li>
         <li><a href="#fees">Fees</a></li>
         <li><a href="#ai-coach">AI Coach</a></li>
@@ -309,13 +309,13 @@ footer {
     </ul>
     <p>One person, one account. You may not share your account or transfer it to anyone else.</p>
 
-    <h2 id="identity">4. Identity verification (KYC)</h2>
-    <p>Before you can initiate transfers, federal law requires us to verify your identity. We will collect your legal name, date of birth, residential address, and Social Security Number, and we may ask you to upload a photo of a government-issued ID. You authorize us to verify this information against credit bureaus, public records, and fraud databases.</p>
-    <p>If we cannot verify your identity, you will not be able to use the transfer features of the app.</p>
+    <h2 id="identity">4. Identity confirmation</h2>
+    <p>Before you can initiate transfers, we collect basic identifying information directly from you: your legal name, date of birth, residential address, and the last 4 digits of your Social Security Number. This information is collected by mi$er directly &mdash; not by Plaid or any bank-linking provider &mdash; and is used to confirm you&rsquo;re eligible to use the transfer features of the app.</p>
+    <p>If we cannot confirm your eligibility, you will not be able to use the transfer features of the app.</p>
 
     <h2 id="vault">5. Your accounts, deposits &amp; access to your money</h2>
     <h3>How it works</h3>
-    <p>mi$er connects to two of your own bank accounts via <strong>our bank-linking and identity-verification provider</strong>: your linked checking account (the source) and your linked savings account (the destination). Both accounts are yours &mdash; held at your bank, in your name. mi$er does not take custody of or hold your funds. Money movement between your own accounts is initiated by our ACH processing partner (disclosed in-app at the time you authorize a transfer). While a transfer is processing &mdash; typically a few business days &mdash; your funds may pass through settlement accounts controlled by that partner and its partner banks before reaching your savings account.</p>
+    <p>mi$er connects to two of your own bank accounts via <strong>our bank-linking provider</strong>: your linked checking account (the source) and your linked savings account (the destination). Both accounts are yours &mdash; held at your bank, in your name. mi$er does not take custody of or hold your funds. Money movement between your own accounts is initiated by our ACH processing partner (disclosed in-app at the time you authorize a transfer). While a transfer is processing &mdash; typically a few business days &mdash; your funds may pass through settlement accounts controlled by that partner and its partner banks before reaching your savings account.</p>
 
     <h3>Deposits (skip batches &amp; Add Money)</h3>
     <p>When you log a skip, mi$er records a commitment to save that amount. On a recurring 7-day cycle &mdash; set by the date of your first save &mdash; your locked skips are batched into a single ACH transfer from your linked checking account to your linked savings account. You may also add money at any time via the &ldquo;+ Add Money&rdquo; feature, which triggers an immediate ACH transfer between your same two accounts.</p>
@@ -370,7 +370,7 @@ footer {
     <p>Anything you submit through the Services (feedback, feature requests, suggestions) may be used by us without obligation or compensation to you.</p>
 
     <h2 id="third-party">11. Third-party services</h2>
-    <p>The Services rely on third-party providers, including <strong>our bank-linking and identity-verification provider</strong> (bank account linking and identity verification), our <strong>ACH processing partner</strong> (transfer initiation between your own accounts; disclosed in-app before any transfer), <strong>Supabase</strong> (authentication and application data hosting), <strong>Resend</strong> (transactional email delivery), <strong>Anthropic</strong> (AI Coach inference &mdash; see &sect;7 and the <a href="privacy.html#s7">Privacy Policy &sect;7</a> for what is and isn&rsquo;t sent), <strong>Sentry</strong> (crash and error reporting), and Apple and Google (app distribution). Your use of those services is also subject to their respective terms and policies. We are not responsible for third-party failures outside our reasonable control.</p>
+    <p>The Services rely on third-party providers, including <strong>our bank-linking provider</strong> (bank account and routing verification), our <strong>ACH processing partner</strong> (transfer initiation between your own accounts; disclosed in-app before any transfer), <strong>Supabase</strong> (authentication and application data hosting), <strong>Resend</strong> (transactional email delivery), <strong>Anthropic</strong> (AI Coach inference &mdash; see &sect;7 and the <a href="privacy.html#s7">Privacy Policy &sect;7</a> for what is and isn&rsquo;t sent), <strong>Sentry</strong> (crash and error reporting), and Apple and Google (app distribution). Identity confirmation under &sect;4 is performed by mi$er directly, not by the bank-linking provider. Your use of those services is also subject to their respective terms and policies. We are not responsible for third-party failures outside our reasonable control.</p>
 
     <h2 id="termination">12. Suspension &amp; termination</h2>
     <p>We may suspend or close your account at any time, with or without notice, if we believe that:</p>
