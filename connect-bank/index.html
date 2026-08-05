@@ -1,0 +1,57 @@
+<!doctype html>
+<!--
+  Miser — /connect-bank universal-link fallback.
+
+  /connect-bank is claimed in /.well-known/apple-app-site-association, so on a
+  device with Miser installed iOS opens the app and this page never renders.
+  It exists so the URL does not 404 for anyone without the app (or when the
+  universal link doesn't fire), and bounces to the app scheme first.
+
+  Added 2026-08-05 — the path was claimed in the AASA but no page existed.
+  Pure static HTML — no dependencies.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Connect your bank — Miser</title>
+  <style>
+    :root { color-scheme: light dark; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      display: flex; align-items: center; justify-content: center;
+      background: #14532d; color: #f5f5f0; text-align: center; padding: 24px;
+    }
+    .card { max-width: 380px; }
+    h1 { font-size: 22px; margin: 0 0 8px; }
+    p  { font-size: 15px; line-height: 1.5; opacity: 0.9; margin: 0 0 24px; }
+    a.button {
+      display: inline-block; background: #f5f5f0; color: #14532d;
+      text-decoration: none; font-weight: 700; font-size: 16px;
+      padding: 14px 22px; border-radius: 12px; margin: 0 6px 10px;
+    }
+    a.ghost {
+      display: inline-block; color: #f5f5f0; text-decoration: underline;
+      font-size: 14px; opacity: 0.85;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Open Miser to connect your bank</h1>
+    <p>Bank linking happens inside the Miser app.</p>
+    <a id="open" class="button" href="misersavings://connect-bank">Open Miser</a>
+    <div><a class="ghost" href="/">Back to misersavings.com</a></div>
+  </div>
+  <script>
+    (function () {
+      var scheme = 'misersavings://connect-bank' + (window.location.search || '');
+      var link = document.getElementById('open');
+      if (link) link.setAttribute('href', scheme);
+      try { window.location.replace(scheme); } catch (e) {}
+    })();
+  </script>
+</body>
+</html>
