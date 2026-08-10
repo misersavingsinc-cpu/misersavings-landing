@@ -342,6 +342,34 @@ nav.site .inner{
   color:rgba(237,232,208,0.7);max-width:46ch;margin-bottom:36px;
 }
 .hero-ctas{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+/* ─── Hero waitlist capture ─────────────────────────────────
+   Collects the email above the fold, then hands off to the
+   full #waitlist form (which owns Turnstile + the endpoint).
+   Deliberately NOT a second submitting form — one Turnstile
+   widget per page. */
+.hero-wl{display:flex;flex-direction:column;gap:10px;margin-bottom:18px;max-width:560px}
+.hero-wl-row{display:flex;gap:10px;flex-wrap:wrap;align-items:stretch}
+.hero-wl input[type="email"]{
+  flex:1 1 210px;min-width:0;
+  background:rgba(237,232,208,0.06);
+  border:1.5px solid rgba(237,232,208,0.22);
+  color:var(--pch,#ede8d0);
+  font-size:15px;padding:15px 16px;border-radius:10px;
+  transition:border-color .2s,background .2s;
+}
+.hero-wl input[type="email"]::placeholder{color:rgba(237,232,208,0.42)}
+.hero-wl input[type="email"]:focus{
+  outline:none;border-color:rgba(200,168,32,0.75);
+  background:rgba(237,232,208,0.09);
+}
+.hero-wl .btn-gold{flex:0 0 auto}
+.hero-wl-note{
+  font-size:12.5px;color:rgba(237,232,208,0.5);letter-spacing:0.01em;margin:0;
+}
+@media (max-width:560px){
+  .hero-wl{max-width:none}
+  .hero-wl .btn-gold{width:100%;justify-content:center}
+}
 .btn-gold{
   display:inline-flex;align-items:center;gap:10px;
   background:var(--gld);color:var(--dg);
@@ -1327,8 +1355,15 @@ footer.site .wm{margin-bottom:8px}
     <div class="hero-left reveal in">
       <h1>Turn impulse buys into <em>real savings</em>.</h1>
       <p class="lead">You were about to waste money. We get it — the latte, the lunch, the thing you don't need from the internet. Miser turns that impulse into savings. Log it. Lock it. Keep it.</p>
+      <form class="hero-wl" id="heroWl" autocomplete="on" novalidate>
+        <div class="hero-wl-row">
+          <input type="email" id="heroWlEmail" placeholder="you@wherever.com"
+                 aria-label="Email address" autocomplete="email" required data-clarity-mask="True">
+          <button type="submit" class="btn-gold">Join the waitlist →</button>
+        </div>
+        <p class="hero-wl-note">Early access · iOS TestFlight · no spam, no card.</p>
+      </form>
       <div class="hero-ctas">
-        <a href="#waitlist" class="btn-gold">Join the waitlist →</a>
         <a href="#how" class="btn-outline-lt">See how it works</a>
       </div>
       <div style="margin-top:14px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(237,232,208,0.45)">
@@ -2456,6 +2491,63 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   window.onTurnstileSuccess = function(){ /* no-op */ };
   window.onTurnstileError = function(){ showError('Bot-check failed to load. Refresh and try again.'); };
   window.onTurnstileExpired = function(){ try { window.turnstile && window.turnstile.reset(); } catch(_){} };
+})();
+</script>
+
+<script>
+/* ─── Hero waitlist hand-off ─────────────────────────────────
+   The hero form does NOT submit. It validates the address,
+   copies it into the real #waitlist form and scrolls the user
+   there, so Turnstile and the endpoint stay in exactly one
+   place. Keeps the ask above the fold without a second widget. */
+(function(){
+  var heroForm  = document.getElementById('heroWl');
+  var heroEmail = document.getElementById('heroWlEmail');
+  var wlEmail   = document.getElementById('wlEmail');
+  var wlSection = document.getElementById('waitlist');
+  if(!heroForm || !heroEmail || !wlEmail || !wlSection) return;
+
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function shake(el){
+    el.style.animation = 'none';
+    el.offsetHeight; // force reflow
+    el.style.animation = 'shake .4s cubic-bezier(.2,.7,.2,1)';
+  }
+
+  heroForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var v = (heroEmail.value || '').trim();
+
+    if(!v || !EMAIL_RE.test(v)){
+      heroEmail.focus();
+      shake(heroForm);
+      return;
+    }
+
+    // Hand the address to the canonical form.
+    wlEmail.value = v;
+    try {
+      wlEmail.dispatchEvent(new Event('input',  { bubbles:true }));
+      wlEmail.dispatchEvent(new Event('change', { bubbles:true }));
+    } catch(_){}
+
+    var reduce = false;
+    try {
+      reduce = window.matchMedia &&
+               window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    } catch(_){}
+    wlSection.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block:'center' });
+
+    // Land focus on the submit button so the next action is one click/Enter.
+    var wlForm = document.getElementById('wlForm');
+    var submitBtn = wlForm && wlForm.querySelector('button[type="submit"]');
+    if(submitBtn){
+      window.setTimeout(function(){
+        try { submitBtn.focus({ preventScroll:true }); } catch(_){ submitBtn.focus(); }
+      }, reduce ? 0 : 550);
+    }
+  });
 })();
 </script>
 
