@@ -1067,6 +1067,30 @@ footer.site .wm{margin-bottom:8px}
   .wl-meta{grid-template-columns:repeat(2,1fr)}
 }
 </style>
+
+<style>
+/* Mobile nav fix (2026-08-12): .nav-links was display:none under 760px with
+   no hamburger. Wraps the links onto a second row instead. */
+@media (max-width: 760px) {
+  nav.site { height: auto; }
+  nav.site .inner {
+    flex-wrap: wrap; row-gap: 8px; padding: 10px 20px 12px; gap: 12px;
+  }
+  nav.site .wm      { order: 1; }
+  nav.site .nav-cta { order: 2; }
+  nav.site .nav-links {
+    display: flex; order: 3; width: 100%;
+    gap: 18px; flex-wrap: wrap; padding: 0; margin: 0;
+  }
+  nav.site .nav-links a { font-size: 10.5px; letter-spacing: 0.02em; }
+  nav.site .nav-links { gap: 13px; }
+  .hero { padding-top: 130px; }
+}
+@media (max-width: 400px) {
+  nav.site .nav-links { gap: 11px; }
+  nav.site .nav-links a { font-size: 10px; }
+}
+</style>
 </head>
 <body>
 
