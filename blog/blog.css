@@ -419,3 +419,39 @@ footer {
   }
   .post-row-meta .sep { margin: 0 5px; }
 }
+
+
+/* ── FIX 5: nav type matches the homepage ──────────────────
+   The blog nav was 13px/600 sentence case while the homepage
+   used 12px/700 uppercase with 0.1em tracking. Different
+   enough to read as a different site when clicking through.  */
+
+.nav-links a {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(237,232,208,0.55);
+}
+
+.nav-links { gap: 28px; }
+
+.nav-cta {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 18px;
+}
+
+/* uppercase runs wider — retune the wrapped mobile rows */
+@media (max-width: 760px) {
+  .nav-links a { font-size: 10.5px; letter-spacing: 0.02em; }
+  .nav-links { gap: 13px; }
+  .nav-cta { font-size: 11px; padding: 8px 16px; }
+}
+
+@media (max-width: 400px) {
+  .nav-links { gap: 11px; }
+  .nav-links a { font-size: 10px; }
+}
