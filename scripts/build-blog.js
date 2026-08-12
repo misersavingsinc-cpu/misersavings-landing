@@ -144,7 +144,7 @@ function footerHtml() {
       <a href="../privacy.html">Privacy</a>
     </div>
     <div class="footer-copy">
-      © 2026 MiserSavings Inc. · Austin, TX · mi$er is a financial technology company, not a bank.
+      © 2026 MiserSavings Inc. · Austin, TX · mı$er is a financial technology company, not a bank.
     </div>
   </div>
 </footer>`;
@@ -223,6 +223,7 @@ function renderPost(post, nextPost) {
 <meta property="article:published_time" content="${post.date}T09:00:00-05:00">
 <meta property="article:author" content="${escapeAttr(post.author.split(',')[0].trim())}">
 <meta property="article:section" content="${escapeAttr(post.category)}">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1C3D2B">
 
 ${faviconsHtml()}
@@ -280,7 +281,7 @@ function renderListing(posts) {
   const rows = posts.map(p => {
     const titlePlain = p.title.replace(/[*_`]/g, '');
     return `    <a class="post-row" href="${p.slug}.html">
-      <div class="post-row-meta">${p.date}<span class="sep">·</span>${p.readTime} min read<span class="sep">·</span>${escapeHtml(p.category)}</div>
+      <div class="post-row-meta">${dateLong(p.date)}<span class="sep">·</span>${p.readTime} min read<span class="sep">·</span>${escapeHtml(p.category)}</div>
       <h2 class="post-row-title">${escapeHtml(titlePlain)}</h2>
       <p class="post-row-desc">${escapeHtml(p.description)}</p>
       <span class="post-arrow">Read →</span>
@@ -300,6 +301,8 @@ function renderListing(posts) {
 <meta property="og:description" content="Essays on saving, spending, and the friction in between.">
 <meta property="og:image" content="${OG_IMAGE}">
 <meta property="og:url" content="${SITE_URL}/blog/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1C3D2B">
 
 ${faviconsHtml()}
@@ -328,6 +331,14 @@ ${navHtml()}
 
 ${rows}
 
+  </div>
+
+  <div class="blog-cta">
+    <div class="blog-cta-text">
+      <strong>Miser isn't open yet.</strong>
+      We'll email you once, when it is. No newsletter, no drip sequence.
+    </div>
+    <a class="nav-cta" href="../index.html#waitlist">Join waitlist</a>
   </div>
 </section>
 
