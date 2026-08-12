@@ -297,3 +297,125 @@ footer {
   .post-next a { font-size: 19px; }
   footer { padding: 32px 20px 24px; }
 }
+/* ═══════════════════════════════════════════════════════════
+   Miser blog — fixes from the 2026-08-12 review
+   Append to the END of blog.css so these win on cascade,
+   or fold into the matching rules by hand.
+   ═══════════════════════════════════════════════════════════ */
+
+
+/* ── FIX 1: mobile nav no longer disappears ────────────────
+   Was: .nav-links { display: none } at <=760px, with no
+   hamburger and no <button> in the markup — so on a phone the
+   only reachable nav item was "Join waitlist".
+   This wraps the nav onto a second row instead of hiding it.
+   No JS, no markup change.                                   */
+
+@media (max-width: 760px) {
+
+  nav {
+    height: auto;
+    padding: 10px 20px 12px;
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+
+  /* wordmark left, CTA right, links on their own full-width row */
+  .nav-wm   { order: 1; }
+  .nav-cta  { order: 2; padding: 8px 18px; }
+
+  .nav-links {
+    display: flex;
+    order: 3;
+    width: 100%;
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+    letter-spacing: 0.03em;
+  }
+
+  /* nav is position:fixed and now ~two rows tall — push the
+     hero down so the h1 isn't tucked underneath it */
+  .blog-hero, .post-hero { padding-top: 124px; }
+}
+
+/* very narrow phones: let the links breathe on two lines */
+@media (max-width: 400px) {
+  .nav-links { gap: 14px; }
+  .nav-links a { font-size: 11.5px; }
+}
+
+
+/* ── FIX 2: dead space to the right of every description ───
+   Titles ran the full 786px of the card while descriptions
+   were capped at 60ch (534px), leaving ~250px of empty space
+   on every row and a ragged right edge.                      */
+
+.post-row-desc {
+  max-width: 72ch;
+}
+
+
+/* ── FIX 3: end-of-list waitlist prompt ────────────────────
+   Requires the small markup block in FIXES.md (step 5).
+   Styles are here so the CSS stays a single drop-in.         */
+
+.blog-cta {
+  max-width: 900px;
+  margin: 28px auto 0;
+  padding: 34px 40px;
+  background: var(--dg);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.blog-cta-text {
+  color: var(--pch);
+  font-size: 17px;
+  line-height: 1.5;
+  max-width: 46ch;
+}
+
+.blog-cta-text strong {
+  display: block;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -0.3px;
+  margin-bottom: 4px;
+}
+
+.blog-cta .nav-cta {
+  font-size: 14px;
+  padding: 12px 26px;
+}
+
+@media (max-width: 760px) {
+  .blog-cta { padding: 28px 24px; margin-top: 20px; }
+  .blog-cta-text { font-size: 15.5px; }
+  .blog-cta-text strong { font-size: 18px; }
+}
+
+
+/* ── FIX 4: keep the meta row on one line on phones ────────
+   Long-form dates ("August 4, 2026") are wider than the old
+   ISO strings, which pushed the date/read-time/category row
+   onto two lines at 390px. Tightens tracking on small screens
+   only; desktop is unchanged.                                */
+
+@media (max-width: 760px) {
+  .post-row-meta {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+  .post-row-meta .sep { margin: 0 5px; }
+}

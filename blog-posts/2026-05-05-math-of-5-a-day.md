@@ -1,6 +1,6 @@
 ---
 slug: math-of-5-a-day
-title: The real math of *$5 a day*.
+title: The real math of *$5 a day*
 description: $5 a day is $1,825 in a year. At 4% interest for seven years, it's about $14,500. Not a lecture about lattes, a piece about noticing once a day.
 date: 2026-05-05
 category: Numbers

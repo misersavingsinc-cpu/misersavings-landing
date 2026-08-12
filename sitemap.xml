@@ -32,9 +32,27 @@
   </url>
   <url>
     <loc>https://misersavings.com/blog/</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://misersavings.com/blog/math-on-carrying-balance.html</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://misersavings.com/blog/what-to-do-with-windfall.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://misersavings.com/blog/wrong-shape-of-advice.html</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://misersavings.com/blog/shared-savings-goal.html</loc>
@@ -45,6 +63,18 @@
   <url>
     <loc>https://misersavings.com/blog/why-round-ups-feel-like-nothing.html</loc>
     <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://misersavings.com/blog/what-we-dont-track.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://misersavings.com/blog/savings-account-fine-print.html</loc>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

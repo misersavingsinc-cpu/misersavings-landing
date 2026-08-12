@@ -3,7 +3,7 @@ slug: shared-savings-goal
 title: The case for a *shared* savings goal
 description: Saving alone is hard. Saving toward something with another person, a partner, a friend, a sibling, is different. Here's why, and how to make it work.
 date: 2026-07-14
-category: Numbers
+category: Behavioral
 next: wrong-shape-of-advice
 ---
 
