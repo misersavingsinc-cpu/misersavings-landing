@@ -226,6 +226,55 @@ footer {
   .legal-body { padding: 60px 20px 80px; }
 }
 </style>
+
+<style>
+/* Mobile nav fix (2026-08-12): the nav-links list was display:none under
+   680px with no hamburger, leaving only the waitlist button reachable.
+   Wraps the links onto a second row instead. */
+@media (max-width: 680px) {
+  nav { height: auto; padding: 10px 20px 12px; flex-wrap: wrap; row-gap: 8px; }
+  .nav-wm  { order: 1; }
+  .nav-cta { order: 2; padding: 8px 18px; }
+  .nav-links {
+    display: flex; order: 3; width: 100%;
+    gap: 18px; flex-wrap: wrap; padding: 0; margin: 0;
+  }
+  .nav-links a { font-size: 12px; letter-spacing: 0.03em; }
+  .legal-hero { padding-top: 124px; }
+}
+@media (max-width: 400px) {
+  .nav-links { gap: 14px; }
+  .nav-links a { font-size: 11.5px; }
+}
+
+/* Nav type unified to the homepage treatment (2026-08-12):
+   uppercase, 12px/700, 0.1em tracking. Was 13px/600 sentence case. */
+.nav-links a {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(237,232,208,0.55);
+}
+.nav-links { gap: 28px; }
+.nav-cta {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 18px;
+}
+/* uppercase is wider — retune the wrapped mobile rows to match the homepage */
+@media (max-width: 680px) {
+  .nav-links a { font-size: 10.5px; letter-spacing: 0.02em; }
+  .nav-links { gap: 13px; }
+  .nav-cta { font-size: 11px; padding: 8px 16px; }
+}
+@media (max-width: 400px) {
+  .nav-links { gap: 11px; }
+  .nav-links a { font-size: 10px; }
+}
+</style>
 </head>
 <body>
 
@@ -235,9 +284,9 @@ footer {
     <li><a href="/#how">How it works</a></li>
     <li><a href="/#quit">Quit</a></li>
     <li><a href="/#groups">Groups</a></li>
+    <li><a href="/#vault">Vault</a></li>
     <li><a href="/#ranks">Ranks</a></li>
     <li><a href="blog/">Blog</a></li>
-    <li><a href="faq.html">FAQ</a></li>
   </ul>
   <a class="nav-cta" href="/#waitlist">Join waitlist</a>
 </nav>
@@ -323,7 +372,7 @@ footer {
     <p>If a transfer fails (for example, insufficient funds), we will notify you in-app and may pause skip-logging until resolved.</p>
 
     <h3>Accessing your money</h3>
-    <p>Because your savings are already in your own savings account at your bank, your money is always directly accessible through your bank. mi$er does not charge a withdrawal fee. There are no lock-up periods &mdash; your money is always yours.</p>
+    <p>Because your savings are already in your own savings account at your bank, your money is always directly accessible through your bank. mi$er does not process in-app withdrawals and does not charge a withdrawal fee. There are no lock-up periods &mdash; your money is always yours.</p>
 
     <h3>Unclaimed property</h3>
     <p>If your account becomes dormant under applicable state unclaimed property law, we will use reasonable efforts to contact you before any action is taken.</p>
