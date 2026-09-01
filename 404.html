@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page not found — MiserSavings</title>
+<title>Page not found | MiserSavings</title>
 <meta name="description" content="That page doesn't exist on misersavings.com. Head back home to join the waitlist.">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://misersavings.com/">
@@ -11,17 +11,33 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MiserSavings">
-<meta property="og:title" content="Page not found — MiserSavings">
+<meta property="og:title" content="Page not found | MiserSavings">
 <meta property="og:description" content="That page doesn't exist on misersavings.com.">
 <meta property="og:image" content="https://misersavings.com/og-image.png">
 <meta property="og:url" content="https://misersavings.com/">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Page not found — MiserSavings">
+<meta name="twitter:title" content="Page not found | MiserSavings">
 <meta name="twitter:image" content="https://misersavings.com/og-image.png">
 
-<!-- Google tag (gtag.js) — GA4 G-76HDNX2NG5 -->
+<!-- Group-invite forwarder.
+     /join/<CODE> is a Universal Link claimed by the iOS app (see
+     /.well-known/apple-app-site-association). A visitor only reaches this
+     page when the app is NOT installed, or when the link was opened somewhere
+     Universal Links do not fire. GitHub Pages has no wildcard route for
+     /join/<CODE>, so it lands here; forward to the real invite page, which
+     reads the code from ?c=. Runs before GA so the 404 event never fires for
+     an invite. Once the Cloudflare rewrite for /join/* is in place this
+     becomes a no-op safety net. -->
+<script>
+  (function () {
+    var m = location.pathname.match(/^\/join\/([A-Za-z0-9]{1,16})\/?$/);
+    if (m) location.replace('/join/?c=' + m[1].toUpperCase());
+  })();
+</script>
+
+<!-- Google tag (gtag.js): GA4 G-76HDNX2NG5 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-76HDNX2NG5"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -32,7 +48,7 @@
   gtag('event', 'page_not_found', { event_category: 'error', event_label: location.pathname + location.search });
 </script>
 
-<!-- Microsoft Clarity — wwpbwo490v -->
+<!-- Microsoft Clarity: wwpbwo490v -->
 <script type="text/javascript">
   (function(c,l,a,r,i,t,y){
     c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -102,71 +118,9 @@ footer a:hover{color:#DDB930;text-decoration:underline}
 <body>
 
 <nav>
-  <a href="/" class="nav-wm" aria-label="MiserSavings — home">mı<span class="d">$</span>er</a>
+  <a href="/" class="nav-wm" aria-label="MiserSavings home">mı<span class="d">$</span>er</a>
   <a href="/" class="nav-back">← Home</a>
 </nav>
-
-<!-- V1.27 (May 11 2026) — group-invite deep-link fallback.
-     The URL `/join/<CODE>` is a Universal Link claimed by the iOS app
-     (see /.well-known/apple-app-site-association). When the app is
-     installed AND AASA is validated, iOS intercepts the URL before
-     Safari ever loads this page. The two reasons a visitor lands HERE
-     are:
-       1. They don't have Miser installed yet (most common — pre-launch).
-       2. They're on Android / desktop / a browser that doesn't honour
-          Universal Links (Telegram in-app, etc.).
-     For (1) we still attempt the misersavings:// custom scheme — if
-     the app IS installed but AASA validation failed for any reason,
-     this rescues the flow. The custom-scheme call is silent when the
-     app isn't installed (no error dialog on iOS Safari). -->
-<section class="hero" id="hero-404">
-  <div class="hero-label">404 · Page not found</div>
-  <div class="code">404</div>
-  <h1>That page doesn't exist&nbsp;— but the waitlist does.</h1>
-  <p>The link you followed is broken or the page has moved. Head back to the homepage to learn about mı$er and join the waitlist for early access.</p>
-  <div class="cta-row">
-    <a href="/" class="cta primary">← Back to home</a>
-    <a href="/#waitlist" class="cta ghost">Join the waitlist</a>
-  </div>
-</section>
-
-<section class="hero" id="hero-join" style="display:none">
-  <div class="hero-label">Group invite · Miser</div>
-  <div class="code" id="join-code" style="font-size:clamp(2.4rem,9vw,4.2rem);letter-spacing:0.18em">······</div>
-  <h1>You've been invited to save together on&nbsp;mı$er.</h1>
-  <p>Open Miser on your phone to join the group automatically. Don't have the app yet? Add yourself to the waitlist and we'll let you know when you're in.</p>
-  <div class="cta-row">
-    <a href="#" id="join-open" class="cta primary">Open in Miser</a>
-    <a href="/#waitlist" class="cta ghost">Join the waitlist</a>
-  </div>
-</section>
-
-<script>
-  (function () {
-    var m = location.pathname.match(/^\/join\/([A-Za-z0-9]{4,12})\/?$/);
-    if (!m) return;
-    var code = m[1].toUpperCase();
-
-    // Swap which hero is visible. The 404 GA event already fired above,
-    // but for this path we report a more useful label so misrouted
-    // invites are easy to see in GA without polluting the 404 count.
-    document.getElementById('hero-404').style.display = 'none';
-    var join = document.getElementById('hero-join');
-    join.style.display = '';
-    document.getElementById('join-code').textContent = code;
-    document.getElementById('join-open').setAttribute('href', 'misersavings://join/' + code);
-    try {
-      gtag('event', 'group_invite_landing', { event_category: 'invite', event_label: code });
-    } catch (_) { /* GA optional */ }
-
-    // Silent auto-attempt — if Miser is installed, iOS / Android will
-    // pop the app open. If not, nothing happens visibly (no error
-    // dialog) and the user sees the fallback UI above.
-    setTimeout(function () {
-      window.location.href = 'misersavings://join/' + code;
-    }, 250);
-  })();
-</script>
 
 <footer>
   <p>© 2026 MiserSavings Inc. &nbsp;·&nbsp; <a href="/">Home</a> <a href="/terms.html">Terms</a> <a href="/privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="mailto:support@misersavings.com">support@misersavings.com</a></p>
