@@ -11,7 +11,7 @@
   --dg:  #1C3D2B;
   --sg:  #2E6B45;
   --gld: #C8A820;
-  --brz: #8B6914;
+  --brz: #7A5B10;
   --pch: #EDE8D0;
   --crm: #F5F0E0;
   --fn:  -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
@@ -40,7 +40,7 @@ nav {
   display: flex; align-items: center; justify-content: space-between;
 }
 .nav-wm {
-  font-size: 22px; font-weight: 900; letter-spacing: -0.5px;
+  font-size:22px; font-weight: 900; letter-spacing: -0.5px;
   color: var(--pch); text-decoration: none;
 }
 .nav-wm .d { color: var(--gld); }
@@ -49,14 +49,14 @@ nav {
   list-style: none;
 }
 .nav-links a {
-  font-size: 13px; font-weight: 600; letter-spacing: 0.04em;
-  color: rgba(237,232,208,0.6); text-decoration: none;
+  font-size:13px; font-weight: 600; letter-spacing: 0.04em;
+  color: rgba(237,232,208,0.7); text-decoration: none;
   transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--pch); }
 .nav-cta {
   background: var(--gld); color: var(--dg);
-  font-size: 13px; font-weight: 700; letter-spacing: 0.04em;
+  font-size:13px; font-weight: 700; letter-spacing: 0.04em;
   padding: 9px 22px; border-radius: 8px;
   text-decoration: none; white-space: nowrap;
 }
@@ -72,16 +72,16 @@ nav {
 }
 .legal-hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
 .legal-eyebrow {
-  font-size: 11px; font-weight: 700; letter-spacing: 0.22em;
+  font-size:11px; font-weight: 700; letter-spacing: 0.22em;
   text-transform: uppercase; color: var(--gld); margin-bottom: 14px;
 }
 .legal-h1 {
-  font-size: 54px; font-weight: 900; color: var(--pch);
+  font-size:54px; font-weight: 900; color: var(--pch);
   letter-spacing: -1.5px; line-height: 1.05; margin-bottom: 20px;
 }
 .legal-h1 em { color: var(--gld); font-style: normal; }
 .legal-meta {
-  font-size: 14px; color: rgba(237,232,208,0.55);
+  font-size:14px; color: rgba(237,232,208,0.7);
 }
 .legal-meta strong { color: var(--pch); font-weight: 700; }
 
@@ -99,7 +99,7 @@ nav {
   border-radius: 20px; padding: 60px 72px;
 }
 .legal-intro {
-  font-size: 17px; line-height: 1.7; color: rgba(28,61,43,0.8);
+  font-size:17px; line-height: 1.7; color: rgba(28,61,43,0.8);
   margin-bottom: 48px;
 }
 .legal-intro strong { color: var(--dg); font-weight: 700; }
@@ -109,17 +109,17 @@ nav {
   border-radius: 14px; padding: 24px 28px; margin-bottom: 56px;
 }
 .toc-label {
-  font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
+  font-size:11px; font-weight: 700; letter-spacing: 0.18em;
   text-transform: uppercase; color: var(--brz); margin-bottom: 14px;
 }
 .toc ol { list-style: none; counter-reset: toc; }
 .toc li {
   counter-increment: toc;
-  font-size: 14px; margin-bottom: 7px;
+  font-size:14px; margin-bottom: 7px;
 }
 .toc li::before {
   content: counter(toc, decimal-leading-zero) " ";
-  color: var(--brz); font-weight: 700; font-size: 11px;
+  color: var(--brz); font-weight: 700; font-size:11px;
   letter-spacing: 0.1em; margin-right: 10px;
 }
 .toc a {
@@ -129,7 +129,7 @@ nav {
 .toc a:hover { color: var(--sg); border-bottom-color: var(--sg); }
 
 h2 {
-  font-size: 24px; font-weight: 800; color: var(--dg);
+  font-size:24px; font-weight: 800; color: var(--dg);
   letter-spacing: -0.3px; line-height: 1.2;
   margin-top: 56px; margin-bottom: 16px;
   padding-top: 24px; border-top: 0.5px solid rgba(28,61,43,0.12);
@@ -137,11 +137,11 @@ h2 {
 }
 h2:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
 h3 {
-  font-size: 17px; font-weight: 700; color: var(--dg);
+  font-size:17px; font-weight: 700; color: var(--dg);
   margin-top: 28px; margin-bottom: 10px;
 }
 p {
-  font-size: 15px; line-height: 1.7; color: rgba(28,61,43,0.8);
+  font-size:15px; line-height: 1.7; color: rgba(28,61,43,0.8);
   margin-bottom: 14px;
 }
 p strong { color: var(--dg); font-weight: 700; }
@@ -151,7 +151,7 @@ ul, ol {
   padding-left: 22px;
 }
 li {
-  font-size: 15px; line-height: 1.7; color: rgba(28,61,43,0.8);
+  font-size:15px; line-height: 1.7; color: rgba(28,61,43,0.8);
   margin-bottom: 8px;
 }
 li strong { color: var(--dg); font-weight: 700; }
@@ -166,7 +166,7 @@ li strong { color: var(--dg); font-weight: 700; }
 
 table {
   width: 100%; border-collapse: collapse; margin: 20px 0;
-  font-size: 14px;
+  font-size:14px;
 }
 th, td {
   text-align: left; padding: 12px 14px;
@@ -175,7 +175,7 @@ th, td {
 }
 th {
   background: var(--pch);
-  font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+  font-size:11px; font-weight: 700; letter-spacing: 0.1em;
   text-transform: uppercase; color: var(--brz);
 }
 td { color: rgba(28,61,43,0.8); }
@@ -188,8 +188,8 @@ a:hover { color: var(--dg); }
   border-radius: 16px; padding: 32px 36px;
   margin-top: 48px;
 }
-.contact-box h3 { color: var(--gld); margin-top: 0; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
-.contact-box p { color: rgba(237,232,208,0.75); margin-bottom: 8px; font-size: 14px; }
+.contact-box h3 { color: var(--gld); margin-top: 0; font-size:14px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
+.contact-box p { color: rgba(237,232,208,0.75); margin-bottom: 8px; font-size:14px; }
 .contact-box a { color: var(--gld); text-decoration: none; font-weight: 600; }
 .contact-box a:hover { color: var(--pch); }
 
@@ -204,24 +204,24 @@ footer {
   gap: 32px; flex-wrap: wrap;
 }
 .footer-wm {
-  font-size: 20px; font-weight: 900; letter-spacing: -0.5px;
+  font-size:20px; font-weight: 900; letter-spacing: -0.5px;
   color: var(--pch);
 }
 .footer-wm .d { color: var(--gld); }
 .footer-links-row { display: flex; gap: 28px; flex-wrap: wrap; }
 .footer-links-row a {
-  font-size: 13px; color: rgba(237,232,208,0.5);
+  font-size:13px; color: rgba(237,232,208,0.7);
   text-decoration: none;
 }
 .footer-links-row a:hover { color: var(--pch); }
 .footer-copy {
   width: 100%; text-align: center; margin-top: 28px;
   padding-top: 24px; border-top: 0.5px solid rgba(255,255,255,0.06);
-  font-size: 11px; color: rgba(237,232,208,0.25);
+  font-size:11px; color: rgba(237,232,208,0.7);
 }
 
 @media (max-width: 680px) {
-  .legal-h1 { font-size: 38px; }
+  .legal-h1 { font-size:38px; }
   .legal-inner { padding: 40px 28px; }
   nav { padding: 0 20px; }
   .nav-links { display: none; }
@@ -242,26 +242,26 @@ footer {
     display: flex; order: 3; width: 100%;
     gap: 18px; flex-wrap: wrap; padding: 0; margin: 0;
   }
-  .nav-links a { font-size: 12px; letter-spacing: 0.03em; }
+  .nav-links a { font-size:12px; letter-spacing: 0.03em; }
   .legal-hero { padding-top: 124px; }
 }
 @media (max-width: 400px) {
   .nav-links { gap: 14px; }
-  .nav-links a { font-size: 11.5px; }
+  .nav-links a { font-size:11.5px; }
 }
 
 /* Nav type unified to the homepage treatment (2026-08-12):
    uppercase, 12px/700, 0.1em tracking. Was 13px/600 sentence case. */
 .nav-links a {
-  font-size: 12px;
+  font-size:12px;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(237,232,208,0.55);
+  color: rgba(237,232,208,0.7);
 }
 .nav-links { gap: 28px; }
 .nav-cta {
-  font-size: 12px;
+  font-size:12px;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -269,18 +269,45 @@ footer {
 }
 /* uppercase is wider — retune the wrapped mobile rows to match the homepage */
 @media (max-width: 680px) {
-  .nav-links a { font-size: 10.5px; letter-spacing: 0.02em; }
+  .nav-links a { font-size:11px; letter-spacing: 0.02em; }
   .nav-links { gap: 13px; }
-  .nav-cta { font-size: 11px; padding: 8px 16px; }
+  .nav-cta { font-size:11px; padding: 8px 16px; }
 }
 @media (max-width: 400px) {
   .nav-links { gap: 11px; }
-  .nav-links a { font-size: 10px; }
+  .nav-links a { font-size:11px; }
+}
+</style>
+<style id="a11y-fixes">
+/* WCAG 2.1 AA pass — see misersavings-accessibility-review-2026-09-16.md */
+.skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip:focus{left:16px;top:12px;width:auto;height:auto;z-index:9999;padding:10px 16px;
+  background:#F5F0E0;color:#1C3D2B;border-radius:6px;font-weight:700;font-size:13px;
+  text-decoration:none;outline:3px solid #C8A820;outline-offset:2px}
+.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap;border:0}
+:focus-visible{outline:3px solid #C8A820;outline-offset:2px;border-radius:4px}
+.wl-emailrow:focus-within{border-color:#C8A820!important;outline:3px solid #C8A820;outline-offset:2px}
+.nav-links a,nav a,.foot-links a{padding-block:8px}
+.nav-links a{padding-block:14px}
+.cents{color:rgba(28,61,43,0.60)!important}
+
+/* links on dark callout surfaces: --sg (#2E6B45) is a light-ground colour */
+.callout-top a,.callout a,.dk a,.gui-dk a{color:#D4B428}
+.callout-top a:hover,.callout a:hover{color:#EDE8D0}
+/* gold on mid-green panels needs the brighter tint to clear 4.5:1 */
+.wl-platform-label{color:#D4B428!important}
+/* gold is a dark-surface colour; on cream/peach it reads as bronze */
+.crm .eyebrow,.pch .eyebrow,.legal-inner .eyebrow{color:#7A5B10}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
 </style>
 </head>
 <body>
 
+<a class="skip" href="#main">Skip to main content</a>
 <nav>
   <a class="nav-wm" href="/">mı<span class="d">$</span>er</a>
   <ul class="nav-links">
@@ -293,6 +320,7 @@ footer {
   </ul>
   <a class="nav-cta" href="/#waitlist">Join waitlist</a>
 </nav>
+<main id="main">
 
 <section class="legal-hero">
   <div class="legal-hero-inner">
@@ -363,7 +391,7 @@ footer {
     <p>Transactional emails (deposit confirmations, savings transfer alerts, security notices) are required and cannot be turned off while your account is active. Partner offers are opt-in only. When you opt in we may (a) send you marketing emails tailored to your goal categories and (b) disclose your goal category to vetted partner brands so they can match relevant offers. You can opt in at signup or in Settings &rarr; Communications &rarr; Partner offers, and you can opt out anytime in Settings or by clicking unsubscribe in any marketing email. Opting out stops all future marketing emails and stops all future goal-category disclosures to partners; any disclosure already made to a partner before you opted out cannot be recalled from that partner&rsquo;s systems, though they remain bound by the contractual use-limits above. Marketing SMS is a separate opt-in. We do not send marketing SMS without your explicit consent, even if you have a phone number on file for account recovery.</p>
 
     <h2 id="s6">6. Where it&rsquo;s stored</h2>
-    <p>Your account and skip data are stored in Supabase (Postgres) in US-region data centres. Authentication tokens are stored encrypted on your device via iOS Keychain / Android Keystore. We use TLS for all data in transit. We work with the following sub-processors: Supabase (database hosting, US), Resend (transactional email delivery), Anthropic (AI coach inference &mdash; see &sect;7 for what is sent and what is not), PostHog (first-party product analytics inside the Miser app &mdash; pseudonymous event data only, see &sect;8), Sentry (crash and error reporting &mdash; see &sect;8), and <strong>Plaid Inc.</strong> (bank account and routing verification &mdash; receives the credentials you enter in Plaid&rsquo;s own secure interface, which Miser never sees, and returns your account and routing details to Miser; see Plaid&rsquo;s <a href="https://plaid.com/legal/#end-user-privacy-policy" target="_blank" rel="noopener">End User Privacy Policy</a>). Plaid does not move money and does not perform identity verification (KYC) for Miser. ACH transfer execution is provided by our payment partner and its federally-insured banking partner (an ODFI). We will notify you at least 14 days in advance (per &sect;13) before any new sub-processor that handles funds or personal data is added. Partner brands that receive a goal category under &sect;3 act as independent controllers for any interaction you choose to have with them after tapping an offer; they are not sub-processors of Miser.</p>
+    <p>Your account and skip data are stored in Supabase (Postgres) in US-region data centres. Authentication tokens are stored encrypted on your device via iOS Keychain / Android Keystore. We use TLS for all data in transit. We work with the following sub-processors: Supabase (database hosting, US), Resend (transactional email delivery), Anthropic (AI coach inference &mdash; see &sect;7 for what is sent and what is not), PostHog (first-party product analytics inside the Miser app &mdash; pseudonymous event data only, see &sect;8), Sentry (crash and error reporting &mdash; see &sect;8), and <strong>Plaid Inc.</strong> (bank account and routing verification &mdash; receives the credentials you enter in Plaid&rsquo;s own secure interface, which Miser never sees, and returns your account and routing details to Miser; see Plaid&rsquo;s <a href="https://plaid.com/legal/#end-user-privacy-policy" target="_blank" rel="noopener">End User Privacy Policy<span class="vh"> (opens in a new window)</span></a>). Plaid does not move money and does not perform identity verification (KYC) for Miser. ACH transfer execution is provided by our payment partner and its federally-insured banking partner (an ODFI). We will notify you at least 14 days in advance (per &sect;13) before any new sub-processor that handles funds or personal data is added. Partner brands that receive a goal category under &sect;3 act as independent controllers for any interaction you choose to have with them after tapping an offer; they are not sub-processors of Miser.</p>
 
     <h2 id="s7">7. The AI coach</h2>
     <p>The AI coach is powered by Anthropic. Each coach message is generated by sending the following to Anthropic, and nothing else:</p>
@@ -374,7 +402,7 @@ footer {
 
     <h2 id="s8">8. Cookies &amp; tracking</h2>
     <p><strong>Miser app.</strong> The Miser app does not use cookies, advertising IDs, or third-party tracking SDKs designed for cross-site or cross-app tracking. We use PostHog for first-party product analytics &mdash; aggregate event counts such as &ldquo;skip logged,&rdquo; &ldquo;onboarding step viewed,&rdquo; and &ldquo;withdrawal confirmed&rdquo; &mdash; to understand how users interact with the app and improve it. PostHog does not receive your financial data, raw dollar amounts, skip notes, bank identifiers, or personally identifiable information beyond a pseudonymous user ID. We also use Sentry for crash reporting to help us diagnose and fix bugs. Sentry captures error stack traces and device context; it does not receive your financial data or personally identifiable information beyond an anonymised session ID.</p>
-    <p><strong>misersavings.com (marketing website).</strong> Our marketing website uses two analytics tools: <strong>Google Analytics 4 (GA4)</strong> for aggregate traffic measurement, and <strong>Microsoft Clarity</strong> for behavioral analytics including session recordings and heatmaps. Clarity records how visitors navigate and interact with the site so we can understand where people get stuck and improve the experience. All form fields — including your name and email address on our waitlist form — are masked and are never captured in recordings. Clarity may set cookies and process your IP address to infer country. You can opt out of session recording by enabling the &ldquo;Do Not Track&rdquo; signal in your browser, or by using a content-blocking browser extension. For details on how Microsoft handles Clarity data, see <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener">Microsoft&rsquo;s Privacy Statement</a>. For GA4, see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google&rsquo;s Privacy Policy</a>.</p>
+    <p><strong>misersavings.com (marketing website).</strong> Our marketing website uses two analytics tools: <strong>Google Analytics 4 (GA4)</strong> for aggregate traffic measurement, and <strong>Microsoft Clarity</strong> for behavioral analytics including session recordings and heatmaps. Clarity records how visitors navigate and interact with the site so we can understand where people get stuck and improve the experience. All form fields — including your name and email address on our waitlist form — are masked and are never captured in recordings. Clarity may set cookies and process your IP address to infer country. You can opt out of session recording by enabling the &ldquo;Do Not Track&rdquo; signal in your browser, or by using a content-blocking browser extension. For details on how Microsoft handles Clarity data, see <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener">Microsoft&rsquo;s Privacy Statement<span class="vh"> (opens in a new window)</span></a>. For GA4, see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google&rsquo;s Privacy Policy<span class="vh"> (opens in a new window)</span></a>.</p>
 
     <h2 id="s9">9. Your rights</h2>
     <p>You can: view your data (it&rsquo;s all in the app), correct your display name (Settings &rarr; Edit), view / edit / clear what the AI coach knows about you (Profile &rarr; What the Coach knows), opt out of partner offers and partner goal-category disclosures (Settings &rarr; Communications &rarr; Partner offers), or delete your account and all associated data. To delete: open the app and tap Settings &rarr; Delete my account. We remove your personal data within 30 days. If you can&rsquo;t access the app, email <a href="mailto:support@misersavings.com">support@misersavings.com</a>.</p>
@@ -416,6 +444,7 @@ footer {
   </div>
 </section>
 
+</main>
 <footer>
   <div class="footer-inner">
     <a href="/" class="footer-wm">mı<span class="d">$</span>er</a>
@@ -432,13 +461,14 @@ footer {
       <a href="terms.html">Terms</a>
       <a href="ach-authorization.html">ACH authorization</a>
       <a href="privacy.html">Privacy</a>
+      <a href="accessibility.html">Accessibility</a>
       <a href="mailto:support@misersavings.com">support@misersavings.com</a>
     </div>
     <div class="footer-social" style="width:100%;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:center;margin-top:18px;padding-top:18px;border-top:0.5px solid rgba(255,255,255,0.06)">
-      <span style="font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(200,168,32,0.55)">Follow</span>
-      <a href="https://www.instagram.com/misersavings/" rel="me noopener" target="_blank" aria-label="Miser on Instagram" style="font-size:13px;color:rgba(237,232,208,0.7);text-decoration:none">Instagram <span style="opacity:0.5">@misersavings</span></a>
-      <a href="https://www.tiktok.com/@misersavings" rel="me noopener" target="_blank" aria-label="Miser on TikTok" style="font-size:13px;color:rgba(237,232,208,0.7);text-decoration:none">TikTok <span style="opacity:0.5">@misersavings</span></a>
-      <a href="https://x.com/misersavings" rel="me noopener" target="_blank" aria-label="Miser on X" style="font-size:13px;color:rgba(237,232,208,0.7);text-decoration:none">X <span style="opacity:0.5">@misersavings</span></a>
+      <span style="font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(200,168,32,1)">Follow</span>
+      <a href="https://www.instagram.com/misersavings/" rel="me noopener" target="_blank" aria-label="Miser on Instagram" style="font-size:13px;color:rgba(237,232,208,0.7);text-decoration:none">Instagram <span style="opacity:0.5">@misersavings</span><span class="vh"> (opens in a new window)</span></a>
+      <a href="https://www.tiktok.com/@misersavings" rel="me noopener" target="_blank" aria-label="Miser on TikTok" style="font-size:13px;color:rgba(237,232,208,0.7);text-decoration:none">TikTok <span style="opacity:0.5">@misersavings</span><span class="vh"> (opens in a new window)</span></a>
+      <a href="https://x.com/misersavings" rel="me noopener" target="_blank" aria-label="Miser on X" style="font-size:13px;color:rgba(237,232,208,0.7);text-decoration:none">X <span style="opacity:0.5">@misersavings</span><span class="vh"> (opens in a new window)</span></a>
     </div>
     <div class="footer-copy"><strong>MiserSavings Inc.</strong> · Austin, TX · Launching 2026<br>© 2026 MiserSavings Inc. All rights reserved.</div>
   </div>

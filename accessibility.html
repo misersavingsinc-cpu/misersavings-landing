@@ -3,9 +3,86 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="canonical" href="https://misersavings.com/ach-authorization.html">
-<title>ACH Authorization — mi$er</title>
-<meta name="description" content="The ACH debit authorization you agree to in the mi$er app: amount, schedule, and how to cancel.">
+<title>Accessibility Statement | Miser</title>
+<meta name="description" content="How Miser approaches accessibility, the WCAG 2.1 AA standard we hold ourselves to, what we have fixed, what we know is still broken, and how to tell us when something does not work for you.">
+<link rel="canonical" href="https://misersavings.com/accessibility.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Miser">
+<meta property="og:title" content="Accessibility Statement | Miser">
+<meta property="og:description" content="Our accessibility commitments, known gaps, and how to reach us.">
+<meta property="og:image" content="https://misersavings.com/og-image.png">
+<meta property="og:url" content="https://misersavings.com/accessibility.html">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Accessibility Statement | Miser">
+<meta name="twitter:description" content="Our accessibility commitments, known gaps, and how to reach us.">
+<meta name="twitter:image" content="https://misersavings.com/og-image.png">
+
+<meta name="robots" content="index,follow,max-image-preview:large">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#1C3D2B">
+
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+
+<!-- Google Analytics (GA4) — G-76HDNX2NG5 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-76HDNX2NG5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-76HDNX2NG5');
+</script>
+
+<!-- Microsoft Clarity — wwpbwo490v -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "wwpbwo490v");
+</script>
+
+<!-- JSON-LD: AboutPage referencing the parent Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About Miser",
+  "url": "https://misersavings.com/about.html",
+  "description": "Miser is a behavioral savings app built in Austin, Texas. Why we built it, what we believe, and how we make money.",
+  "mainEntity": {
+    "@type": "Organization",
+    "@id": "https://misersavings.com/#organization",
+    "name": "Miser",
+    "alternateName": ["MiserSavings", "mı$er", "MiserSavings Inc."],
+    "legalName": "MiserSavings Inc.",
+    "url": "https://misersavings.com/",
+    "logo": "https://misersavings.com/og-image.png",
+    "foundingDate": "2026-03-12",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Austin",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Support",
+      "email": "support@misersavings.com",
+      "availableLanguage": "English"
+    }
+  }
+}
+</script>
+
 <style>
 :root {
   --dg:  #1C3D2B;
@@ -78,10 +155,7 @@ nav {
   letter-spacing: -1.5px; line-height: 1.05; margin-bottom: 20px;
 }
 .legal-h1 em { color: var(--gld); font-style: normal; }
-.legal-meta {
-  font-size:14px; color: rgba(237,232,208,0.7);
-}
-.legal-meta strong { color: var(--pch); font-weight: 700; }
+.legal-meta { font-size:14px; color: rgba(237,232,208,0.7); }
 
 .legal-body {
   background: var(--pch);
@@ -96,42 +170,10 @@ nav {
   border-radius: 20px; padding: 60px 72px;
 }
 .legal-intro {
-  font-size:17px; line-height: 1.7; color: rgba(28,61,43,0.8);
-  margin-bottom: 32px;
+  font-size:19px; line-height: 1.65; color: rgba(28,61,43,0.85);
+  margin-bottom: 40px; font-weight: 500;
 }
 .legal-intro strong { color: var(--dg); font-weight: 700; }
-
-.callout-top {
-  background: var(--dg); color: var(--pch);
-  border-radius: 14px; padding: 22px 28px; margin-bottom: 48px;
-  border: 1.5px solid var(--gld);
-}
-.callout-top p { color: rgba(237,232,208,0.85); font-size:14px; line-height: 1.65; margin-bottom: 0; }
-.callout-top strong { color: var(--gld); font-weight: 700; letter-spacing: 0.05em; }
-
-.toc {
-  background: var(--pch); border: 1px solid rgba(28,61,43,0.1);
-  border-radius: 14px; padding: 24px 28px; margin-bottom: 56px;
-}
-.toc-label {
-  font-size:11px; font-weight: 700; letter-spacing: 0.18em;
-  text-transform: uppercase; color: var(--brz); margin-bottom: 14px;
-}
-.toc ol { list-style: none; counter-reset: toc; }
-.toc li {
-  counter-increment: toc;
-  font-size:14px; margin-bottom: 7px;
-}
-.toc li::before {
-  content: counter(toc, decimal-leading-zero) " ";
-  color: var(--brz); font-weight: 700; font-size:11px;
-  letter-spacing: 0.1em; margin-right: 10px;
-}
-.toc a {
-  color: rgba(28,61,43,0.75); text-decoration: none;
-  border-bottom: 1px dotted rgba(28,61,43,0.2); transition: color 0.2s;
-}
-.toc a:hover { color: var(--sg); border-bottom-color: var(--sg); }
 
 h2 {
   font-size:24px; font-weight: 800; color: var(--dg);
@@ -146,40 +188,44 @@ h3 {
   margin-top: 28px; margin-bottom: 10px;
 }
 p {
-  font-size:15px; line-height: 1.7; color: rgba(28,61,43,0.8);
+  font-size:16px; line-height: 1.75; color: rgba(28,61,43,0.82);
   margin-bottom: 14px;
 }
 p strong { color: var(--dg); font-weight: 700; }
+p em { color: var(--sg); font-style: normal; font-weight: 600; }
+a { color: var(--sg); }
+a:hover { color: var(--dg); }
 
-ul, ol.numbered {
-  margin: 14px 0 20px 0;
-  padding-left: 22px;
-}
+ul { margin: 14px 0 20px 0; padding-left: 22px; }
 li {
-  font-size:15px; line-height: 1.7; color: rgba(28,61,43,0.8);
+  font-size:16px; line-height: 1.75; color: rgba(28,61,43,0.82);
   margin-bottom: 8px;
 }
 li strong { color: var(--dg); font-weight: 700; }
 
-.callout {
-  background: var(--pch); border-left: 4px solid var(--gld);
-  padding: 18px 24px; margin: 24px 0;
-  border-radius: 0 10px 10px 0;
+.belief-card {
+  background: var(--pch); border: 1px solid rgba(28,61,43,0.1);
+  border-radius: 12px; padding: 22px 26px; margin-bottom: 16px;
 }
-.callout p { margin-bottom: 0; }
-.callout p:not(:last-child) { margin-bottom: 10px; }
+.belief-card h3 { margin-top: 0; color: var(--brz); font-size:11px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 6px; }
+.belief-card p { font-size:15px; margin-bottom: 0; color: rgba(28,61,43,0.82); }
+.belief-card strong { color: var(--dg); }
 
-.allcaps {
-  font-size:13px; font-weight: 700; letter-spacing: 0.02em;
-  background: var(--pch); border: 1px solid rgba(28,61,43,0.15);
-  padding: 18px 22px; border-radius: 10px;
-  margin: 24px 0; line-height: 1.6;
-  color: var(--dg);
-  text-transform: uppercase;
+.fact-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;
+  margin: 28px 0;
 }
-
-a { color: var(--sg); }
-a:hover { color: var(--dg); }
+.fact-item {
+  background: var(--pch); border: 1px solid rgba(28,61,43,0.1);
+  border-radius: 12px; padding: 18px 22px;
+}
+.fact-label {
+  font-size:11px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--brz); margin-bottom: 6px;
+}
+.fact-value {
+  font-size:16px; font-weight: 700; color: var(--dg);
+}
 
 .contact-box {
   background: var(--dg); color: var(--pch);
@@ -187,7 +233,7 @@ a:hover { color: var(--dg); }
   margin-top: 48px;
 }
 .contact-box h3 { color: var(--gld); margin-top: 0; font-size:14px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
-.contact-box p { color: rgba(237,232,208,0.75); margin-bottom: 8px; font-size:14px; }
+.contact-box p { color: rgba(237,232,208,0.78); margin-bottom: 8px; font-size:14px; }
 .contact-box a { color: var(--gld); text-decoration: none; font-weight: 600; }
 .contact-box a:hover { color: var(--pch); }
 
@@ -224,6 +270,7 @@ footer {
   .nav-links { display: none; }
   .legal-hero { padding: 100px 20px 60px; }
   .legal-body { padding: 60px 20px 80px; }
+  .fact-grid { grid-template-columns: 1fr; }
 }
 </style>
 
@@ -321,92 +368,79 @@ footer {
 
 <section class="legal-hero">
   <div class="legal-hero-inner">
-    <div class="legal-eyebrow">Legal</div>
-    <h1 class="legal-h1">ACH <em>Authorization</em></h1>
-    <p class="legal-meta"><strong>Version:</strong> web-ach-2026-08-19 &middot; <strong>Last updated:</strong> August 19, 2026</p>
+    <div class="legal-eyebrow">Accessibility</div>
+    <h1 class="legal-h1">Accessibility <em>statement</em>.</h1>
+    <p class="legal-meta">Last reviewed September 16, 2026 &middot; MiserSavings Inc.</p>
   </div>
 </section>
 
 <section class="legal-body">
   <div class="legal-inner">
 
-    <p class="legal-intro">
-      This page shows the authorization you agree to in the mi$er app before we move any money. You complete it once, in the app, after you link your checking and savings accounts &mdash; it is separate from our <a href="terms.html">Terms of Service</a>. This page is published so you can read the terms before you start, and re-read them at any time. The copy you agree to is saved to your account with a confirmation number, and we will send you a copy.
-    </p>
+    <p class="legal-intro">Saving money should not depend on how well you see, hear, or use a mouse. We build Miser to be usable by everyone, and we would rather tell you plainly where we fall short than claim we have it all covered.</p>
 
-    <div class="callout-top">
-      <p><strong>NOTHING MOVES UNTIL YOU AUTHORIZE IT.</strong> mi$er cannot debit your account without this authorization. It covers one thing only: recurring debits from <em>your</em> linked checking account, to fund transfers into <em>your own</em> savings account. mi$er never debits your savings account.</p>
-    </div>
+    <h2>The standard we hold ourselves to</h2>
+    <p>Miser aims to conform to <strong>Web Content Accessibility Guidelines (WCAG) 2.1, Level AA</strong>. That is the standard the U.S. Department of Justice adopted for public-entity websites, and it is the benchmark courts apply under Title III of the Americans with Disabilities Act. We apply it to misersavings.com and, as it matures, to the Miser iOS app.</p>
 
-    <div class="toc">
-      <div class="toc-label">On this page</div>
-      <ol>
-        <li><a href="#statement">The authorization statement</a></li>
-        <li><a href="#amount">Amount</a></li>
-        <li><a href="#schedule">Schedule</a></li>
-        <li><a href="#revocation">How to cancel or stop a transfer</a></li>
-        <li><a href="#rights">Your Regulation E rights</a></li>
-        <li><a href="#record">Your copy and our record</a></li>
-      </ol>
-    </div>
+    <h2>Where we currently stand</h2>
+    <p>This site is <strong>partially conformant</strong> with WCAG 2.1 Level AA. Partially conformant means most of the site meets the standard and we know of specific places that do not. Those are listed below rather than left for you to discover.</p>
 
-    <h2 id="statement">1. The authorization statement</h2>
-    <p>This is the statement you agree to in the app. Your bank name and the last four digits of your checking account are filled in with the account you linked.</p>
-    <div class="callout-top">
-      <p>I authorize <strong>MiserSavings Inc.</strong> to electronically debit my linked checking account via the ACH network for my Miser savings transfers.</p>
-      <p>This authorization is for internet-initiated (WEB) recurring debits. Questions: <a href="mailto:support@misersavings.com">support@misersavings.com</a>.</p>
-    </div>
-
-    <h2 id="amount">2. Amount</h2>
-    <p>Variable amounts. Each debit equals the total you have locked since your last transfer, plus the service fee ($2.50 plus 1.5% of the amount saved). No single debit will exceed <strong>$500</strong>, including the fee; anything above that stays locked and goes with a later transfer. A transfer requires at least <strong>$50</strong> locked.</p>
-    <p>Because the amount varies with what you save, you may choose to be notified of each transfer&rsquo;s amount and date before it happens, or to be notified only when a transfer would fall outside the $50&ndash;$500 range. You make that choice when you authorize.</p>
-
-    <h2 id="schedule">3. Schedule</h2>
-    <p>Recurring, but <strong>not on a fixed day of the week</strong>. A transfer is initiated on the first day that is at least <strong>7 days</strong> after your last completed transfer, provided you have at least $50 locked at that point.</p>
-    <p>Transfers are not initiated on a federal bank holiday. The ACH network settles on banking days only, so a transfer initiated on a weekend moves on the next banking day. If you have less than $50 locked, no transfer is taken and nothing is charged &mdash; the amount stays locked and goes with your next transfer.</p>
-    <p>Transfers settle through the ACH network: the money leaves your checking account on the debit date and typically reaches your savings account about four banking days later.</p>
-
-    <h2 id="revocation">4. How to cancel or stop a transfer</h2>
-    <p>You may revoke this authorization at any time, in the app under <strong>Settings &rarr; Linked banks</strong>, or by emailing <a href="mailto:support@misersavings.com">support@misersavings.com</a>. To stop a specific scheduled transfer, tell us at least <strong>3 business days</strong> before it is scheduled.</p>
-    <p>Revocation stops future debits. It does not reverse a debit already in process. Cancelling is as easy as enrolling.</p>
-
-    <h2 id="rights">5. Your Regulation E rights</h2>
-    <p>These transfers are electronic fund transfers covered by the federal Electronic Fund Transfer Act (Regulation E). You have the right to:</p>
+    <h2>What we have fixed</h2>
     <ul>
-      <li>Stop a scheduled transfer by telling us at least 3 business days before its scheduled date.</li>
-      <li>Dispute an unauthorized or erroneous transfer. Contact us promptly &mdash; you generally must notify us within 60 days of the statement showing the transfer.</li>
-      <li>Request a paper copy of any disclosure.</li>
-      <li>Receive notice of the amount and date of a varying transfer, as described in section 2 above.</li>
+      <li>Text and background colour combinations across every page now meet the 4.5:1 contrast minimum (3:1 for large text).</li>
+      <li>Every page has a &ldquo;Skip to main content&rdquo; link as its first keyboard stop, and a <code>&lt;main&gt;</code> landmark for screen reader navigation.</li>
+      <li>Keyboard focus is visible on every interactive element, with a 3px indicator that does not rely on the browser default.</li>
+      <li>Decorative icons are hidden from screen readers so they no longer interrupt reading.</li>
+      <li>No text on the site is smaller than 11px.</li>
+      <li>Animation and motion respect your operating system&rsquo;s &ldquo;reduce motion&rdquo; setting.</li>
+      <li>Links that open a new window say so.</li>
+      <li>The waitlist form has programmatic labels, correct autofill hints, and announces its errors and confirmations to screen readers.</li>
     </ul>
-    <p>Our full Error Resolution Notice is available in the app under <strong>Settings &rarr; Legal</strong>, and is provided to you at account opening.</p>
 
-    <h2 id="record">6. Your copy and our record</h2>
-    <p>When you authorize, we save the exact wording you agreed to, the date and time, and a confirmation number to your account. You can view it in the app and save or share a copy at any time. We retain the record for as long as required by NACHA rules and applicable law.</p>
-    <p>mi$er is a financial technology company, not a bank. Both accounts in every transfer are yours, held at your own bank(s) in your name. Transfers are processed by our ACH payment partner and its partner banks, which is disclosed to you in the app at the time you authorize.</p>
+    <h2>Known limitations</h2>
+    <p>We are aware of the following and are working on them:</p>
+    <ul>
+      <li><strong>Screen reader testing is not complete.</strong> Our review so far has been automated and manual keyboard testing. A full pass with VoiceOver and NVDA is scheduled and not yet finished.</li>
+      <li><strong>Some tap targets are smaller than 24&nbsp;&times;&nbsp;24 pixels.</strong> This is a WCAG 2.2 criterion rather than 2.1, but it matters for anyone with limited fine motor control. We are working through them.</li>
+      <li><strong>The Miser iOS app has not yet had its own accessibility review.</strong> It is in TestFlight beta. We will publish its status here before general release.</li>
+      <li><strong>Our bot-protection check</strong> on the waitlist form is provided by Cloudflare. If it prevents you from joining, email us and we will add you manually.</li>
+      <li><strong>Text is sized in fixed pixels.</strong> Browser zoom works correctly, but raising the default font size in your browser settings will not resize the page. We intend to change this.</li>
+    </ul>
 
-    <div class="contact-box">
-      <h3>Contact MiserSavings</h3>
-      <p><strong style="color:var(--pch)">MiserSavings Inc.</strong></p>
-      <p>Email: <a href="mailto:support@misersavings.com">support@misersavings.com</a></p>
-      <p>Website: <a href="https://misersavings.com">misersavings.com</a></p>
+    <h2>Tell us when we get it wrong</h2>
+    <p>If any part of Miser is hard or impossible for you to use, we want to hear about it, and we would rather hear early than never. Email <a href="mailto:support@misersavings.com">support@misersavings.com</a> with what you were trying to do and what got in the way. Include the page address and the assistive technology you use, if that is relevant.</p>
+    <p><strong>We aim to reply within 5 business days</strong> and to tell you either how to work around the problem now or when we expect to have it fixed. If you need information from this site in another format, ask and we will send it.</p>
+
+    <h2>How we assessed this</h2>
+    <p>This statement is based on a self-evaluation completed on September 16, 2026, covering all 30 published pages. The review combined automated inspection of markup and computed styles with manual keyboard testing. No third-party accessibility audit has been commissioned yet.</p>
+
+    <h2>Compatibility</h2>
+    <p>This site is designed to work with current versions of Chrome, Safari, Firefox and Edge, together with the screen readers and zoom tools built into macOS, iOS, Windows and Android. It does not rely on JavaScript to deliver its content.</p>
+
+    <div class="legal-cta">
+      <h3>Something here not working for you?</h3>
+      <p>Email <a href="mailto:support@misersavings.com">support@misersavings.com</a>. A person reads every message.</p>
     </div>
 
   </div>
 </section>
+
 </main>
 <footer>
   <div class="footer-inner">
-    <a href="/" class="footer-wm">m&imath;<span class="d">$</span>er</a>
+    <div class="footer-wm">mı<span class="d">$</span>er</div>
     <div class="footer-links-row">
       <a href="/">Home</a>
+      <a href="/#how">How it works</a>
+      <a href="/#quit">Quit</a>
+      <a href="/#groups">Groups</a>
+      <a href="/#ranks">Ranks</a>
       <a href="blog/">Blog</a>
       <a href="faq.html">FAQ</a>
       <a href="about.html">About</a>
-      <a href="privacy.html">Privacy policy</a>
-      <a href="accessibility.html">Accessibility</a>
-      <a href="terms.html">Terms of service</a>
+      <a href="terms.html">Terms</a>
       <a href="ach-authorization.html">ACH authorization</a>
-      <a href="mailto:support@misersavings.com">Contact</a>
+      <a href="privacy.html">Privacy</a>
     </div>
     <div class="footer-social" style="width:100%;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:center;margin-top:18px;padding-top:18px;border-top:0.5px solid rgba(255,255,255,0.06)">
       <span style="font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(200,168,32,1)">Follow</span>
@@ -414,8 +448,11 @@ footer {
       <a href="https://www.tiktok.com/@misersavings" rel="me noopener" target="_blank" aria-label="Miser on TikTok" style="font-size:13px;color:rgba(237,232,208,0.7);text-decoration:none">TikTok <span style="opacity:0.5">@misersavings</span><span class="vh"> (opens in a new window)</span></a>
       <a href="https://x.com/misersavings" rel="me noopener" target="_blank" aria-label="Miser on X" style="font-size:13px;color:rgba(237,232,208,0.7);text-decoration:none">X <span style="opacity:0.5">@misersavings</span><span class="vh"> (opens in a new window)</span></a>
     </div>
-    <div class="footer-copy">&copy; 2026 MiserSavings Inc. &middot; mi$er is a financial technology company, not a bank. Transfers are processed by our payments partner and its partner banks; your savings are held at your own bank.</div>
+    <div class="footer-copy">
+      © 2026 MiserSavings Inc. · Austin, TX · mi$er is a financial technology company, not a bank.
+    </div>
   </div>
 </footer>
 
 </body>
+</html>

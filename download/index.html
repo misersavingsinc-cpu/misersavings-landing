@@ -3,159 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Miser — Turn impulse buys into real savings. Skip. Stack.</title>
-<meta name="description" content="Log the impulse buys you skip. About every 7 days Miser batches your skips and moves them into a vault tied to a real goal. Free to join now. Skip. Save. Stack.">
-<link rel="canonical" href="https://misersavings.com/">
-
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Miser">
-<meta property="og:title" content="Miser — Turn impulse buys into real savings.">
-<meta property="og:description" content="Skip · Save · Stack. The savings app for the moments you almost spent.">
-<meta property="og:image" content="https://misersavings.com/og-image.png">
-<meta property="og:image:alt" content="Miser — Turn impulse buys into real savings">
-<meta property="og:url" content="https://misersavings.com/">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Miser — Turn impulse buys into real savings.">
-<meta name="twitter:description" content="Skip · Save · Stack. The savings app for the moments you almost spent.">
-<meta name="twitter:image" content="https://misersavings.com/og-image.png">
-<meta name="twitter:image:alt" content="Miser — Turn impulse buys into real savings">
-
-<!-- SEO: explicit indexing + larger image previews in Google search results -->
-<meta name="robots" content="index,follow,max-image-preview:large">
-
-<!-- Favicons -->
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="shortcut icon" href="/favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#1C3D2B">
-
-<!-- Performance: warm up connections to GA + Turnstile before scripts request them -->
-<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-<link rel="dns-prefetch" href="https://challenges.cloudflare.com">
-
-<!-- Google Analytics (GA4) — G-76HDNX2NG5 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-76HDNX2NG5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-76HDNX2NG5');
-</script>
-
-<!-- Microsoft Clarity — wwpbwo490v -->
-<script type="text/javascript">
-  (function(c,l,a,r,i,t,y){
-    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", "wwpbwo490v");
-</script>
-
-<!-- JSON-LD Structured Data: Organization + WebSite.
-     Add the Founder array (Person nodes) and sameAs (Twitter/LinkedIn/Crunchbase)
-     when you're ready to be publicly attributed. -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://misersavings.com/#organization",
-      "name": "Miser",
-      "alternateName": ["MiserSavings", "mı$er", "MiserSavings Inc."],
-      "legalName": "MiserSavings Inc.",
-      "url": "https://misersavings.com/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://misersavings.com/og-image.png",
-        "width": 1200,
-        "height": 630
-      },
-      "description": "Miser is a behavioral savings app. Log the impulse buys you skip, point each one at a goal, and about every 7 days your skips batch into a vault tied to that goal.",
-      "foundingDate": "2026-03-12",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Austin",
-        "addressRegion": "TX",
-        "addressCountry": "US"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "Customer Support",
-        "email": "support@misersavings.com",
-        "availableLanguage": "English"
-      },
-      "sameAs": [
-        "https://www.instagram.com/misersavings/",
-        "https://www.tiktok.com/@misersavings",
-        "https://x.com/misersavings"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://misersavings.com/#website",
-      "url": "https://misersavings.com/",
-      "name": "Miser",
-      "description": "Turn impulse buys into real savings. Miser turns the small purchases you almost made into a goal-based vault.",
-      "publisher": { "@id": "https://misersavings.com/#organization" },
-      "inLanguage": "en-US"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://misersavings.com/#app",
-      "name": "Miser",
-      "alternateName": "MiserSavings",
-      "description": "Miser is a behavioral microsavings app. Users log impulse purchases they chose not to make; roughly every 7 days Miser batches those logged amounts and initiates a single ACH transfer into a goal-linked vault. Free to download.",
-      "applicationCategory": "FinanceApplication",
-      "applicationSubCategory": "Personal Finance",
-      "operatingSystem": "iOS",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD",
-        "description": "Free to download. A service fee of $2.50 + 1.5% of each transfer (no cap) applies to money movement."
-      },
-      "publisher": { "@id": "https://misersavings.com/#organization" },
-      "inLanguage": "en-US",
-      "availableOnDevice": "iPhone",
-      "featureList": [
-        "Log impulse-buy skips in three taps",
-        "Rolling 7-day ACH batch transfer to savings vault",
-        "Goal-linked savings missions",
-        "Quit Companion for habit-cost tracking",
-        "Group savings goals with shared progress",
-        "Nine-rank recognition system",
-        "AI savings coach with spending pattern analysis"
-      ],
-      "countryOfOrigin": "US",
-      "releaseNotes": "iOS first. Android in development. Available to US residents 18+."
-    }
-  ]
-}
-</script>
-
-<!-- Cloudflare Turnstile — lazy-loaded when the waitlist section enters the viewport.
-     Avoids blocking page render (~475 KB from challenges.cloudflare.com). -->
+<title>Miser — Turn impulse buys into real savings.</title>
+<meta name="description" content="Log the small purchases you skip. Every 7 days, on your personal cycle day, Miser batches your skips and locks them in a vault tied to a real goal.">
 <style>
 /* ═══════════════════════════════════════════════════════════════
    mı$er marketing site — brand tokens only
 ═══════════════════════════════════════════════════════════════ */
 :root{
-  --dg:#1C3D2B; --sg:#2E6B45; --gld:#C8A820; --brz:#7A5B10;
+  --dg:#1C3D2B; --sg:#2E6B45; --gld:#C8A820; --brz:#8B6914;
   --pch:#EDE8D0; --crm:#F5F0E0;
   --fn:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;overflow-x:hidden;width:100%}
+html{scroll-behavior:smooth}
 body{
   font-family:var(--fn);background:var(--pch);color:var(--dg);
   line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
-  width:100%;max-width:100vw;
 }
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
@@ -196,9 +59,9 @@ a{color:inherit;text-decoration:none}
 .dk .h-section em{color:var(--gld)}
 .sub{
   font-size:clamp(15px,1.3vw,18px);line-height:1.55;
-  color:rgba(28,61,43,0.75);max-width:54ch;
+  color:rgba(28,61,43,0.65);max-width:54ch;
 }
-.dk .sub{color:rgba(237,232,208,0.7)}
+.dk .sub{color:rgba(237,232,208,0.6)}
 
 .container{max-width:1200px;margin:0 auto;padding:0 32px}
 
@@ -232,7 +95,7 @@ nav.site .inner{
 .nav-links{display:flex;gap:28px;list-style:none}
 .nav-links a{
   font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
-  color:rgba(237,232,208,0.7);transition:color .2s;
+  color:rgba(237,232,208,0.55);transition:color .2s;
 }
 .nav-links a:hover{color:var(--pch)}
 .nav-cta{
@@ -289,8 +152,8 @@ nav.site .inner{
 .dict::before{
   content:"entry — vol. i";position:absolute;top:14px;right:18px;
   font-family:'EB Garamond',Georgia,serif;
-  font-size:11px;letter-spacing:0.22em;text-transform:uppercase;
-  color:rgba(200,168,32,1);
+  font-size:10px;letter-spacing:0.22em;text-transform:uppercase;
+  color:rgba(200,168,32,0.45);
 }
 .dict-head{
   display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;
@@ -298,17 +161,17 @@ nav.site .inner{
   margin-bottom:14px;
 }
 .dict-word{font-size:28px;font-weight:600;letter-spacing:-0.01em;line-height:1}
-.dict-word .syl{color:rgba(237,232,208,0.7);font-weight:400;font-size:0.6em;margin-left:6px;letter-spacing:0}
-.dict-pos{font-size:13px;color:rgba(200,168,32,1);font-style:italic;letter-spacing:0.01em}
+.dict-word .syl{color:rgba(237,232,208,0.4);font-weight:400;font-size:0.6em;margin-left:6px;letter-spacing:0}
+.dict-pos{font-size:13px;color:rgba(200,168,32,0.7);font-style:italic;letter-spacing:0.01em}
 .dict-defs{display:flex;flex-direction:column;gap:10px;
   font-family:'EB Garamond',Georgia,serif;
   font-size:16px;line-height:1.55;color:rgba(237,232,208,0.7)}
 .dict-def{display:flex;gap:12px;align-items:baseline;
   opacity:0;transition:opacity .9s ease}
 .dict-def.show{opacity:1}
-.dict-num{flex:0 0 14px;font-size:11px;font-weight:700;color:rgba(200,168,32,1);
+.dict-num{flex:0 0 14px;font-size:11px;font-weight:700;color:rgba(200,168,32,0.6);
   font-family:'Inter',sans-serif;letter-spacing:0.1em;padding-top:3px}
-.dict-tag{font-style:italic;color:rgba(237,232,208,0.7);margin-right:4px}
+.dict-tag{font-style:italic;color:rgba(237,232,208,0.42);margin-right:4px}
 .dict-def.modern{color:var(--pch)}
 .dict-def.modern .dict-tag{color:var(--gld)}
 .dict-cursor{
@@ -330,7 +193,7 @@ nav.site .inner{
 }
 .hero h1 em{color:var(--gld);font-style:normal}
 .hero h1 .strike{
-  position:relative;color:rgba(237,232,208,0.7);
+  position:relative;color:rgba(237,232,208,0.55);
 }
 .hero h1 .strike::after{
   content:"";position:absolute;left:-2%;right:-2%;top:55%;height:6%;
@@ -342,34 +205,6 @@ nav.site .inner{
   color:rgba(237,232,208,0.7);max-width:46ch;margin-bottom:36px;
 }
 .hero-ctas{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
-/* ─── Hero waitlist capture ─────────────────────────────────
-   Collects the email above the fold, then hands off to the
-   full #waitlist form (which owns Turnstile + the endpoint).
-   Deliberately NOT a second submitting form — one Turnstile
-   widget per page. */
-.hero-wl{display:flex;flex-direction:column;gap:10px;margin-bottom:18px;max-width:560px}
-.hero-wl-row{display:flex;gap:10px;flex-wrap:wrap;align-items:stretch}
-.hero-wl input[type="email"]{
-  flex:1 1 210px;min-width:0;
-  background:rgba(237,232,208,0.06);
-  border:1.5px solid rgba(237,232,208,0.22);
-  color:var(--pch,#ede8d0);
-  font-size:15px;padding:15px 16px;border-radius:10px;
-  transition:border-color .2s,background .2s;
-}
-.hero-wl input[type="email"]::placeholder{color:rgba(237,232,208,0.7)}
-.hero-wl input[type="email"]:focus{
-  outline:none;border-color:rgba(200,168,32,1);
-  background:rgba(237,232,208,0.09);
-}
-.hero-wl .btn-gold{flex:0 0 auto}
-.hero-wl-note{
-  font-size:12.5px;color:rgba(237,232,208,0.7);letter-spacing:0.01em;margin:0;
-}
-@media (max-width:560px){
-  .hero-wl{max-width:none}
-  .hero-wl .btn-gold{width:100%;justify-content:center}
-}
 .btn-gold{
   display:inline-flex;align-items:center;gap:10px;
   background:var(--gld);color:var(--dg);
@@ -390,7 +225,7 @@ nav.site .inner{
 .hero-foot{
   margin-top:28px;display:flex;gap:24px;flex-wrap:wrap;
   font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
-  color:rgba(237,232,208,0.7);
+  color:rgba(237,232,208,0.35);
 }
 .hero-foot .dot{color:var(--gld);margin:0 4px}
 
@@ -415,8 +250,8 @@ nav.site .inner{
   padding:8px 14px;border:1px solid rgba(200,168,32,0.22);
   background:rgba(28,61,43,0.6);backdrop-filter:blur(6px);
   border-radius:8px;z-index:5;
-  font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
-  color:rgba(237,232,208,0.7);
+  font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
+  color:rgba(237,232,208,0.55);
 }
 .ticker .live{display:inline-flex;align-items:center;gap:6px;color:var(--gld)}
 .ticker .live::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--gld);
@@ -468,7 +303,7 @@ nav.site .inner{
 .sb{
   display:flex;justify-content:space-between;align-items:center;
   padding:16px 22px 0;flex-shrink:0;z-index:10;
-  font-size:11px;font-weight:700;
+  font-size:10px;font-weight:700;
 }
 .sb.dk-ic{color:rgba(28,61,43,0.75)}
 .sb.lt-ic{color:rgba(237,232,208,0.85)}
@@ -478,14 +313,14 @@ nav.site .inner{
   display:flex;flex-shrink:0;padding:8px 0 12px;
   background:var(--crm);border-top:0.5px solid rgba(28,61,43,0.1);
 }
-.tbar .t{flex:1;text-align:center;font-size:11px;font-weight:700;
-  letter-spacing:0.05em;text-transform:uppercase;color:rgba(28,61,43,0.75)}
+.tbar .t{flex:1;text-align:center;font-size:7.5px;font-weight:700;
+  letter-spacing:0.05em;text-transform:uppercase;color:rgba(28,61,43,0.3)}
 .tbar .t.a{color:var(--sg)}
 .tbar .t .ic{font-size:15px;display:block;margin-bottom:3px}
 
 /* Dark tab bar (deep green) */
 .tbar.dk{background:rgba(20,40,28,0.6);border-top:0.5px solid rgba(255,255,255,0.06)}
-.tbar.dk .t{color:rgba(237,232,208,0.7)}
+.tbar.dk .t{color:rgba(237,232,208,0.3)}
 .tbar.dk .t.a{color:var(--gld)}
 
 /* Screen content wrap */
@@ -520,7 +355,7 @@ nav.site .inner{
 .ic-tile{
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   gap:5px;background:var(--crm);border-radius:11px;padding:9px 4px;
-  font-size:11px;font-weight:700;color:var(--dg);
+  font-size:8.5px;font-weight:700;color:var(--dg);
   border:1px solid rgba(28,61,43,0.06);
 }
 .ic-tile.on{background:var(--dg);color:var(--pch)}
@@ -545,7 +380,7 @@ nav.site .inner{
   display:inline-flex;align-items:center;gap:4px;
   background:rgba(139,105,20,0.12);border:1px solid rgba(139,105,20,0.28);
   border-radius:20px;padding:3px 10px;
-  font-size:11px;font-weight:700;color:var(--brz);letter-spacing:0.04em;
+  font-size:9px;font-weight:700;color:var(--brz);letter-spacing:0.04em;
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -589,7 +424,7 @@ section.band.dg{background:var(--dg);color:var(--pch)}
   font-size:28px;font-weight:900;line-height:1.1;letter-spacing:-0.015em;color:var(--dg);
 }
 .step h3 em{color:var(--sg);font-style:normal}
-.step p{font-size:15px;line-height:1.55;color:rgba(28,61,43,0.75)}
+.step p{font-size:15px;line-height:1.55;color:rgba(28,61,43,0.65)}
 .step .phone-well{
   display:flex;justify-content:center;align-items:flex-start;
   background:var(--dg);border-radius:16px;padding:28px 0 0;margin-top:auto;overflow:hidden;
@@ -634,7 +469,7 @@ section.band.dg{background:var(--dg);color:var(--pch)}
   border-radius:50%;border:1px dashed rgba(200,168,32,0.18);
 }
 .vc-label{
-  font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;
+  font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;
   color:var(--gld);opacity:.8;margin-bottom:10px;
   display:flex;align-items:center;gap:8px;
 }
@@ -646,20 +481,20 @@ section.band.dg{background:var(--dg);color:var(--pch)}
   font-variant-numeric:tabular-nums;
 }
 .vc-num .d{color:var(--gld)}
-.vc-num .cents{font-size:0.5em;color:rgba(237,232,208,0.7);font-weight:700;margin-left:4px;vertical-align:top}
-.vc-sub{font-size:13px;color:rgba(237,232,208,0.7);margin-top:6px;font-weight:600;letter-spacing:0.04em}
+.vc-num .cents{font-size:0.5em;color:rgba(237,232,208,0.5);font-weight:700;margin-left:4px;vertical-align:top}
+.vc-sub{font-size:13px;color:rgba(237,232,208,0.5);margin-top:6px;font-weight:600;letter-spacing:0.04em}
 .vc-pb{height:10px;border-radius:5px;background:rgba(255,255,255,0.08);overflow:hidden;margin-top:20px}
 .vc-pf{height:100%;border-radius:5px;background:linear-gradient(90deg,var(--sg),var(--gld));
   transition:width 1.4s cubic-bezier(.2,.7,.2,1);width:0%;}
 .vc-foot{
   display:flex;justify-content:space-between;margin-top:10px;
   font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
-  color:rgba(237,232,208,0.7);
+  color:rgba(237,232,208,0.4);
 }
 .vc-foot .goal{color:var(--gld)}
 
 .vc-stream{
-  margin-top:16px;font-size:11px;color:rgba(237,232,208,0.7);
+  margin-top:16px;font-size:11px;color:rgba(237,232,208,0.35);
   font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
   min-height:18px;
 }
@@ -675,12 +510,12 @@ section.band.dg{background:var(--dg);color:var(--pch)}
 .vault-counter-lt .vc-label .live-dot{background:var(--sg);box-shadow:0 0 0 4px rgba(46,107,69,0.18)}
 .vault-counter-lt .vc-num{color:var(--dg)}
 .vault-counter-lt .vc-num .d{color:var(--brz)}
-.vault-counter-lt .vc-num .cents{color:rgba(28,61,43,0.75)}
-.vault-counter-lt .vc-sub{color:rgba(28,61,43,0.75)}
+.vault-counter-lt .vc-num .cents{color:rgba(28,61,43,0.35)}
+.vault-counter-lt .vc-sub{color:rgba(28,61,43,0.6)}
 .vault-counter-lt .vc-pb{background:rgba(28,61,43,0.08)}
-.vault-counter-lt .vc-foot{color:rgba(28,61,43,0.75)}
+.vault-counter-lt .vc-foot{color:rgba(28,61,43,0.45)}
 .vault-counter-lt .vc-foot .goal{color:var(--brz)}
-.vault-counter-lt .vc-stream{color:rgba(28,61,43,0.75)}
+.vault-counter-lt .vc-stream{color:rgba(28,61,43,0.45)}
 .vault-counter-lt .vc-stream .add{color:var(--sg)}
 
 .vault-right{display:flex;justify-content:center}
@@ -706,7 +541,7 @@ section.band.dg{background:var(--dg);color:var(--pch)}
   font-variant-numeric:tabular-nums;
 }
 .gf-title{font-size:16px;font-weight:800;color:var(--dg);margin-bottom:4px}
-.gf-desc{font-size:14px;color:rgba(28,61,43,0.75);line-height:1.55}
+.gf-desc{font-size:14px;color:rgba(28,61,43,0.62);line-height:1.55}
 .groups-phone-wrap{display:flex;justify-content:center;position:relative}
 .groups-phone-wrap::before{
   content:"";position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);
@@ -728,12 +563,12 @@ section.band.dg{background:var(--dg);color:var(--pch)}
   transition:transform .3s,border-color .25s;
 }
 .price-tile:hover{transform:translateY(-4px);border-color:rgba(139,105,20,0.35)}
-.price-tile.dark{background:var(--dg);color:var(--pch);border-color:rgba(200,168,32,1)}
+.price-tile.dark{background:var(--dg);color:var(--pch);border-color:rgba(200,168,32,0.3)}
 .price-tile::before{
   content:"";position:absolute;top:-50px;right:-50px;width:180px;height:180px;
   border-radius:50%;border:1px dashed rgba(28,61,43,0.1);
 }
-.price-tile.dark::before{border-color:rgba(200,168,32,1)}
+.price-tile.dark::before{border-color:rgba(200,168,32,0.2)}
 .pt-label{
   font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--brz);
   display:flex;align-items:center;gap:10px;
@@ -748,19 +583,19 @@ section.band.dg{background:var(--dg);color:var(--pch)}
 .price-tile.dark .pt-price{color:var(--pch)}
 .pt-price .sym{font-size:0.5em;font-weight:700;color:var(--brz)}
 .price-tile.dark .pt-price .sym{color:var(--gld)}
-.pt-sub{font-size:15px;font-weight:600;color:rgba(28,61,43,0.75);letter-spacing:0.01em}
-.price-tile.dark .pt-sub{color:rgba(237,232,208,0.7)}
+.pt-sub{font-size:15px;font-weight:600;color:rgba(28,61,43,0.55);letter-spacing:0.01em}
+.price-tile.dark .pt-sub{color:rgba(237,232,208,0.55)}
 .pt-body{
-  font-size:14px;line-height:1.6;color:rgba(28,61,43,0.75);margin-top:8px;
+  font-size:14px;line-height:1.6;color:rgba(28,61,43,0.7);margin-top:8px;
   padding-top:20px;border-top:0.5px solid rgba(28,61,43,0.1);
 }
-.price-tile.dark .pt-body{color:rgba(237,232,208,0.7);border-top-color:rgba(200,168,32,1)}
+.price-tile.dark .pt-body{color:rgba(237,232,208,0.65);border-top-color:rgba(200,168,32,0.2)}
 .pt-body strong{color:var(--dg);font-weight:800}
 .price-tile.dark .pt-body strong{color:var(--gld)}
 
 .pricing-note{
   max-width:760px;margin:40px auto 0;text-align:center;
-  font-size:14px;color:rgba(28,61,43,0.75);line-height:1.6;
+  font-size:14px;color:rgba(28,61,43,0.5);line-height:1.6;
 }
 .pricing-note em{font-style:normal;color:var(--brz);font-weight:700}
 
@@ -776,65 +611,30 @@ section.band.dg{background:var(--dg);color:var(--pch)}
   max-width:640px;margin:0 auto;text-align:center;position:relative;z-index:2;
 }
 .wl h2{color:var(--pch);margin-bottom:12px}
-.wl p.lead{color:rgba(237,232,208,0.7);margin:0 auto 36px;font-size:17px;max-width:44ch}
+.wl p.lead{color:rgba(237,232,208,0.65);margin:0 auto 36px;font-size:17px;max-width:44ch}
 .wl-form{
-  display:flex;flex-direction:column;gap:8px;padding:8px;
+  display:flex;gap:10px;padding:8px;
   background:rgba(237,232,208,0.06);border:1px solid rgba(237,232,208,0.15);
   border-radius:14px;transition:border-color .25s,background .25s;
 }
-.wl-form:focus-within{border-color:rgba(200,168,32,1);background:rgba(237,232,208,0.08)}
-.wl-form input[type="text"],.wl-form input[type="email"]{
-  background:transparent;border:none;outline:none;
+.wl-form:focus-within{border-color:rgba(200,168,32,0.5);background:rgba(237,232,208,0.08)}
+.wl-form input{
+  flex:1;background:transparent;border:none;outline:none;
   color:var(--pch);font-family:inherit;font-size:16px;
-  padding:14px 16px;min-width:0;width:100%;
+  padding:14px 16px;min-width:0;
 }
-.wl-form input::placeholder{color:rgba(237,232,208,0.7)}
-.wl-emailrow{display:flex;gap:10px;align-items:stretch}
-.wl-emailrow input{flex:1;min-width:0}
+.wl-form input::placeholder{color:rgba(237,232,208,0.35)}
 .wl-form button{
   background:var(--gld);color:var(--dg);border:none;cursor:pointer;
   font-family:inherit;font-size:13px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;
   padding:0 28px;border-radius:10px;transition:background .2s,transform .15s;
 }
 .wl-form button:hover{background:#d4b428;transform:translateY(-1px)}
-.wl-form button:disabled{opacity:0.55;cursor:not-allowed;transform:none}
-.wl-platform{
-  display:flex;flex-wrap:wrap;align-items:center;gap:14px;
-  padding:8px 14px 6px;font-family:inherit;
-}
-.wl-platform-label{
-  font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;
-  color:rgba(200,168,32,1);
-}
-.wl-platform label{
-  display:inline-flex;align-items:center;gap:6px;cursor:pointer;
-  font-size:13px;font-weight:600;color:rgba(237,232,208,0.72);
-  transition:color .15s;
-}
-.wl-platform label:hover{color:var(--pch)}
-.wl-platform input[type="radio"]{accent-color:var(--gld);margin:0;cursor:pointer}
-.cf-turnstile{margin:14px auto 0;display:flex;justify-content:center;min-height:65px}
-.wl-error{
-  display:none;background:rgba(180,60,40,0.12);border:1px solid rgba(180,60,40,0.45);
-  border-radius:12px;padding:14px 18px;text-align:center;color:#F5C7BC;
-  font-size:13.5px;line-height:1.5;margin-top:14px;
-  animation:pop .35s cubic-bezier(.2,.7,.2,1);
-}
-.wl-error.on{display:block}
-.wl-error a{color:var(--gld);text-decoration:underline}
 .wl-foot{
   margin-top:18px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
-  color:rgba(237,232,208,0.7);line-height:1.7;
+  color:rgba(237,232,208,0.35);
 }
 .wl-foot .dot{color:var(--gld);margin:0 6px}
-.wl-foot a{color:rgba(237,232,208,0.7);text-decoration:underline;text-underline-offset:2px}
-.wl-foot a:hover{color:var(--pch)}
-@keyframes shake{
-  10%,90%{transform:translateX(-2px)}
-  20%,80%{transform:translateX(3px)}
-  30%,50%,70%{transform:translateX(-5px)}
-  40%,60%{transform:translateX(5px)}
-}
 
 .wl-success{
   display:none;background:rgba(46,107,69,0.15);border:1px solid rgba(46,107,69,0.4);
@@ -856,7 +656,7 @@ section.band.dg{background:var(--dg);color:var(--pch)}
 .wl-success h3{
   font-size:22px;font-weight:900;color:var(--pch);margin-bottom:6px;letter-spacing:-0.01em;
 }
-.wl-success p{font-size:14px;color:rgba(237,232,208,0.7);line-height:1.5}
+.wl-success p{font-size:14px;color:rgba(237,232,208,0.65);line-height:1.5}
 .wl-success .email{color:var(--gld);font-weight:700}
 
 .wl-section{
@@ -869,118 +669,25 @@ section.band.dg{background:var(--dg);color:var(--pch)}
 }
 
 /* ══════════════════════════════════════════════════════════════
-   RANKS
-══════════════════════════════════════════════════════════════ */
-.ranks-head{max-width:760px;margin:0 auto 56px;text-align:center}
-.ranks-head .h-section{margin:14px auto 16px}
-.ranks-head .sub{margin:0 auto;max-width:60ch}
-
-.ranks-grid{
-  max-width:1080px;margin:0 auto;
-  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
-}
-.rank-card{
-  background:var(--crm);border:1px solid rgba(28,61,43,0.08);
-  border-radius:22px;padding:26px 22px 22px;
-  display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;
-  transition:transform .25s ease, border-color .25s ease;
-}
-.rank-card:hover{transform:translateY(-3px);border-color:rgba(139,105,20,0.4)}
-.rank-card .crest{
-  width:88px;height:88px;border-radius:50%;
-  background:var(--dg);position:relative;
-  display:flex;align-items:center;justify-content:center;color:var(--pch);
-  flex-shrink:0;
-}
-.rank-card .crest.r-bronze{box-shadow:0 0 0 2px var(--brz)}
-.rank-card .crest.r-gold{box-shadow:0 0 0 2.5px var(--gld)}
-.rank-card .crest.r-double{
-  box-shadow:
-    0 0 0 3px var(--gld),
-    0 0 0 5px var(--crm),
-    0 0 0 6.5px rgba(200,168,32,0.55);
-}
-.rank-card .crest.r-grand{
-  background:var(--crm);color:var(--dg);
-  box-shadow:
-    0 0 0 2px var(--dg),
-    0 0 0 4px var(--gld),
-    0 0 0 6px rgba(28,61,43,0.85),
-    0 0 0 7.5px rgba(200,168,32,0.6);
-}
-.rank-card .crest svg{width:42px;height:42px;display:block}
-.rank-card .crest.r-grand svg{color:var(--dg)}
-.rank-card .r-num{
-  font-size:11px;font-weight:800;letter-spacing:0.22em;
-  color:var(--brz);text-transform:uppercase;font-variant-numeric:tabular-nums;
-}
-.rank-card .r-name{
-  font-size:18px;font-weight:900;letter-spacing:-0.01em;color:var(--dg);
-}
-.rank-card .r-meta{
-  font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
-  color:rgba(28,61,43,0.75);font-variant-numeric:tabular-nums;
-  padding-top:8px;margin-top:auto;border-top:0.5px solid rgba(28,61,43,0.08);width:100%;
-}
-.rank-card .r-meta .sep{color:rgba(28,61,43,0.75);margin:0 4px}
-
-.ranks-voice{
-  max-width:920px;margin:64px auto 0;
-  background:var(--crm);border:1px solid rgba(28,61,43,0.08);
-  border-radius:24px;padding:36px 40px;
-  border-left:3px solid var(--dg);
-}
-.ranks-voice .eyebrow{margin-bottom:14px}
-.ranks-voice .v-line{
-  display:grid;grid-template-columns:1fr 2fr;gap:18px;padding:14px 0;
-  border-bottom:0.5px solid rgba(28,61,43,0.08);
-  font-size:15px;line-height:1.5;
-}
-.ranks-voice .v-line:last-child{border-bottom:0}
-.ranks-voice .v-line strong{
-  font-weight:900;color:var(--dg);font-size:14px;letter-spacing:0;
-}
-.ranks-voice .v-line span{color:rgba(28,61,43,0.78);font-style:italic}
-
-.ranks-meta{
-  max-width:760px;margin:48px auto 0;text-align:center;
-  font-size:13px;color:rgba(28,61,43,0.75);line-height:1.7;
-}
-.ranks-meta em{font-style:normal;color:var(--brz);font-weight:700}
-
-@media(max-width:900px){
-  .ranks-grid{grid-template-columns:repeat(2,1fr)}
-  .ranks-voice .v-line{grid-template-columns:1fr;gap:4px}
-  .ranks-voice{padding:28px 24px}
-}
-@media(max-width:520px){
-  .ranks-grid{grid-template-columns:1fr;gap:14px}
-}
-
-/* ══════════════════════════════════════════════════════════════
    FOOTER
 ══════════════════════════════════════════════════════════════ */
 footer.site{
-  background:#131e16;padding:56px 32px 36px;color:rgba(237,232,208,0.7);
+  background:#131e16;padding:56px 32px 36px;color:rgba(237,232,208,0.5);
   border-top:0.5px solid rgba(200,168,32,0.12);
 }
 footer.site .inner{
   max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap;
 }
 footer.site .wm{margin-bottom:8px}
-.foot-tag{font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;
-  color:rgba(237,232,208,0.7);line-height:1.8}
-.foot-links{display:flex;flex-wrap:wrap;gap:24px;font-size:12px;font-weight:700;
-  letter-spacing:0.12em;text-transform:uppercase;color:rgba(237,232,208,0.7)}
-.foot-links a{white-space:nowrap}
+.foot-tag{font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;
+  color:rgba(237,232,208,0.3);line-height:1.8}
+.foot-links{display:flex;gap:24px;font-size:12px;font-weight:700;
+  letter-spacing:0.12em;text-transform:uppercase;color:rgba(237,232,208,0.4)}
 .foot-links a:hover{color:var(--pch)}
-@media(max-width:760px){
-  .foot-links{justify-content:center;gap:16px 20px;font-size:11px;letter-spacing:0.1em}
-}
 .foot-legal{width:100%;margin-top:28px;padding-top:20px;border-top:0.5px solid rgba(237,232,208,0.08);
-  font-size:11px;line-height:1.7;color:rgba(237,232,208,0.7);max-width:none}
-.foot-legal strong{color:rgba(237,232,208,0.7)}
-.foot-blurb{margin-top:14px;font-size:13px;line-height:1.55;color:rgba(237,232,208,0.7);max-width:280px}
+  font-size:11px;line-height:1.7;color:rgba(237,232,208,0.3);max-width:none}
+.foot-legal strong{color:rgba(237,232,208,0.5)}
+.foot-blurb{margin-top:14px;font-size:13px;line-height:1.55;color:rgba(237,232,208,0.55);max-width:280px}
 
 /* Dictionary interlude — full-width chapter break */
 .interlude{
@@ -1004,7 +711,7 @@ footer.site .wm{margin-bottom:8px}
 }
 .interlude-stamp{
   font-size:11px;letter-spacing:0.32em;text-transform:uppercase;
-  color:rgba(200,168,32,1);font-family:'Inter',sans-serif;font-weight:700;
+  color:rgba(200,168,32,0.6);font-family:'Inter',sans-serif;font-weight:700;
   margin-bottom:36px;
 }
 .interlude-stamp .gem{display:inline-block;width:5px;height:5px;border-radius:50%;
@@ -1016,22 +723,22 @@ footer.site .wm{margin-bottom:8px}
 .interlude-word{font-size:clamp(56px,7vw,96px);font-weight:600;
   letter-spacing:-0.02em;line-height:1}
 .interlude-word .dol{color:var(--gld);font-weight:600}
-.interlude-ipa{font-size:clamp(20px,1.8vw,26px);color:rgba(237,232,208,0.7);
+.interlude-ipa{font-size:clamp(20px,1.8vw,26px);color:rgba(237,232,208,0.5);
   font-style:italic}
-.interlude-pos{font-size:clamp(16px,1.4vw,20px);color:rgba(200,168,32,1);
+.interlude-pos{font-size:clamp(16px,1.4vw,20px);color:rgba(200,168,32,0.7);
   font-style:italic}
 .interlude-defs{
   display:flex;flex-direction:column;gap:24px;
   font-size:clamp(18px,1.7vw,24px);line-height:1.55;
   text-align:left;max-width:660px;margin:0 auto 56px;
 }
-.interlude-def{display:flex;gap:20px;align-items:baseline;color:rgba(237,232,208,0.7)}
+.interlude-def{display:flex;gap:20px;align-items:baseline;color:rgba(237,232,208,0.55)}
 .interlude-def.modern{color:var(--pch)}
 .interlude-num{flex:0 0 28px;font-family:'Inter',sans-serif;
   font-size:12px;font-weight:700;letter-spacing:0.18em;
-  color:rgba(200,168,32,1);padding-top:6px}
+  color:rgba(200,168,32,0.55);padding-top:6px}
 .interlude-def.modern .interlude-num{color:var(--gld)}
-.interlude-tag{font-style:italic;color:rgba(237,232,208,0.7);margin-right:6px}
+.interlude-tag{font-style:italic;color:rgba(237,232,208,0.4);margin-right:6px}
 .interlude-def.modern .interlude-tag{color:var(--gld)}
 .interlude-q{
   font-style:italic;font-size:clamp(28px,3.6vw,46px);
@@ -1061,60 +768,10 @@ footer.site .wm{margin-bottom:8px}
   border-radius:50%;background:var(--gld);opacity:.6;
 }
 .wm-num{font-size:18px;font-weight:900;color:var(--pch);letter-spacing:-0.01em;line-height:1.1}
-.wm-lbl{margin-top:6px;font-size:11px;font-weight:700;letter-spacing:0.14em;
-  text-transform:uppercase;color:rgba(200,168,32,1)}
+.wm-lbl{margin-top:6px;font-size:10px;font-weight:700;letter-spacing:0.14em;
+  text-transform:uppercase;color:rgba(200,168,32,0.7)}
 @media(max-width:760px){
   .wl-meta{grid-template-columns:repeat(2,1fr)}
-}
-</style>
-
-<style>
-/* Mobile nav fix (2026-08-12): .nav-links was display:none under 760px with
-   no hamburger. Wraps the links onto a second row instead. */
-@media (max-width: 760px) {
-  nav.site { height: auto; }
-  nav.site .inner {
-    flex-wrap: wrap; row-gap: 8px; padding: 10px 20px 12px; gap: 12px;
-  }
-  nav.site .wm      { order: 1; }
-  nav.site .nav-cta { order: 2; }
-  nav.site .nav-links {
-    display: flex; order: 3; width: 100%;
-    gap: 18px; flex-wrap: wrap; padding: 0; margin: 0;
-  }
-  nav.site .nav-links a { font-size:11px; letter-spacing: 0.02em; }
-  nav.site .nav-links { gap: 13px; }
-  .hero { padding-top: 130px; }
-}
-@media (max-width: 400px) {
-  nav.site .nav-links { gap: 11px; }
-  nav.site .nav-links a { font-size:11px; }
-}
-</style>
-<style id="a11y-fixes">
-/* WCAG 2.1 AA pass — see misersavings-accessibility-review-2026-09-16.md */
-.skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-.skip:focus{left:16px;top:12px;width:auto;height:auto;z-index:9999;padding:10px 16px;
-  background:#F5F0E0;color:#1C3D2B;border-radius:6px;font-weight:700;font-size:13px;
-  text-decoration:none;outline:3px solid #C8A820;outline-offset:2px}
-.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
-  clip:rect(0 0 0 0);white-space:nowrap;border:0}
-:focus-visible{outline:3px solid #C8A820;outline-offset:2px;border-radius:4px}
-.wl-emailrow:focus-within{border-color:#C8A820!important;outline:3px solid #C8A820;outline-offset:2px}
-.nav-links a,nav a,.foot-links a{padding-block:8px}
-.nav-links a{padding-block:14px}
-.cents{color:rgba(28,61,43,0.60)!important}
-
-/* links on dark callout surfaces: --sg (#2E6B45) is a light-ground colour */
-.callout-top a,.callout a,.dk a,.gui-dk a{color:#D4B428}
-.callout-top a:hover,.callout a:hover{color:#EDE8D0}
-/* gold on mid-green panels needs the brighter tint to clear 4.5:1 */
-.wl-platform-label{color:#D4B428!important}
-/* gold is a dark-surface colour; on cream/peach it reads as bronze */
-.crm .eyebrow,.pch .eyebrow,.legal-inner .eyebrow{color:#7A5B10}
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
-    transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
 </style>
 </head>
@@ -1331,59 +988,10 @@ footer.site .wm{margin-bottom:8px}
     <symbol id="i-chevron" viewBox="0 0 24 24">
       <path d="M9 5 L 16 12 L 9 19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
     </symbol>
-
-    <!-- ─── Rank crests (engraved-feel marks) ─────────────────── -->
-    <symbol id="r-coin" viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.6"/>
-      <text x="12" y="15.5" text-anchor="middle" font-size="10" font-weight="900" fill="currentColor" font-family="-apple-system,sans-serif">$</text>
-    </symbol>
-    <symbol id="r-wallet" viewBox="0 0 24 24">
-      <rect x="3.5" y="6.5" width="17" height="12" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
-      <path d="M3.5 10 H 20.5" stroke="currentColor" stroke-width="1.6"/>
-      <circle cx="17" cy="14" r="1.4" fill="currentColor"/>
-    </symbol>
-    <symbol id="r-lock" viewBox="0 0 24 24">
-      <rect x="5" y="11" width="14" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
-      <path d="M8 11 V 8 a4 4 0 0 1 8 0 V 11" fill="none" stroke="currentColor" stroke-width="1.6"/>
-      <circle cx="12" cy="15.5" r="1.5" fill="currentColor"/>
-    </symbol>
-    <symbol id="r-anchor" viewBox="0 0 24 24">
-      <circle cx="12" cy="6" r="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
-      <path d="M12 8 V 20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-      <path d="M8 11 H 16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-      <path d="M5 16 a7 7 0 0 0 14 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-    </symbol>
-    <symbol id="r-flame" viewBox="0 0 24 24">
-      <path d="M12 3 C 9 7 6 9 6 13 a6 6 0 0 0 12 0 C 18 10 14.5 8 12 3 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-      <path d="M12 9 C 10.5 11 9.5 12.5 9.5 14 a2.5 2.5 0 0 0 5 0 C 14.5 12.5 13.5 11 12 9 Z" fill="currentColor"/>
-    </symbol>
-    <symbol id="r-shieldR" viewBox="0 0 24 24">
-      <path d="M12 3 L 20 6 V 12 C 20 16 16.5 19.5 12 21 C 7.5 19.5 4 16 4 12 V 6 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-      <path d="M9 12 L 11 14 L 15 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-    </symbol>
-    <symbol id="r-medal" viewBox="0 0 24 24">
-      <path d="M8 3 L 12 9 L 16 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-      <circle cx="12" cy="15" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
-      <circle cx="12" cy="15" r="2.4" fill="currentColor"/>
-    </symbol>
-    <symbol id="r-crown" viewBox="0 0 24 24">
-      <path d="M3 8 L 7 14 L 12 6 L 17 14 L 21 8 V 18 H 3 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-      <circle cx="3" cy="8" r="1.1" fill="currentColor"/>
-      <circle cx="12" cy="6" r="1.1" fill="currentColor"/>
-      <circle cx="21" cy="8" r="1.1" fill="currentColor"/>
-    </symbol>
-    <symbol id="r-trophy" viewBox="0 0 24 24">
-      <path d="M7 4 H 17 V 9 a 5 5 0 0 1 -10 0 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-      <path d="M7 5 H 4 V 8 a 3 3 0 0 0 3 3" fill="none" stroke="currentColor" stroke-width="1.6"/>
-      <path d="M17 5 H 20 V 8 a 3 3 0 0 1 -3 3" fill="none" stroke="currentColor" stroke-width="1.6"/>
-      <path d="M12 14 V 18" stroke="currentColor" stroke-width="1.6"/>
-      <path d="M8 20 H 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-    </symbol>
   </defs>
 </svg>
 
 <!-- ═══════ NAV ═══════ -->
-<a class="skip" href="#main">Skip to main content</a>
 <nav class="site">
   <div class="inner">
     <a href="#top" class="wm">mı<span class="d">$</span>er</a>
@@ -1392,13 +1000,10 @@ footer.site .wm{margin-bottom:8px}
       <li><a href="#quit">Quit</a></li>
       <li><a href="#groups">Groups</a></li>
       <li><a href="#vault">Vault</a></li>
-      <li><a href="#ranks">Ranks</a></li>
-      <li><a href="blog/">Blog</a></li>
     </ul>
     <a href="#waitlist" class="nav-cta">Join waitlist</a>
   </div>
 </nav>
-<main id="main">
 
 <!-- ═══════ HERO ═══════ -->
 <section class="hero gui-dk" id="top">
@@ -1407,26 +1012,17 @@ footer.site .wm{margin-bottom:8px}
     <div class="hero-left reveal in">
       <h1>Turn impulse buys into <em>real savings</em>.</h1>
       <p class="lead">You were about to waste money. We get it — the latte, the lunch, the thing you don't need from the internet. Miser turns that impulse into savings. Log it. Lock it. Keep it.</p>
-      <form class="hero-wl" id="heroWl" autocomplete="on" novalidate>
-        <div class="hero-wl-row">
-          <input type="email" id="heroWlEmail" placeholder="you@wherever.com"
-                 aria-label="Email address" autocomplete="email" required data-clarity-mask="True">
-          <button type="submit" class="btn-gold">Join the waitlist →</button>
-        </div>
-        <p class="hero-wl-note">Early access · iOS TestFlight · no spam, no card.</p>
-      </form>
       <div class="hero-ctas">
+        <a href="#waitlist" class="btn-gold">Join the waitlist →</a>
         <a href="#how" class="btn-outline-lt">See how it works</a>
       </div>
-      <div style="margin-top:14px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(237,232,208,0.7)">
+      <div style="margin-top:14px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(237,232,208,0.45)">
         iOS first — Android coming soon
       </div>
-      <div class="hero-foot" style="letter-spacing:0.22em;text-transform:uppercase;font-weight:800;font-size:11px;color:rgba(237,232,208,0.7)">
-        <span>Skip</span>
-        <span class="dot"> · </span>
-        <span>Lock</span>
-        <span class="dot"> · </span>
-        <span>Stack</span>
+      <div class="hero-foot">
+        <span>No subscription<span class="dot"> · </span></span>
+        <span>Your money stays at your bank<span class="dot"> · </span></span>
+        <span>$2.50 + 1.5% per transfer</span>
       </div>
     </div>
 
@@ -1446,52 +1042,44 @@ footer.site .wm{margin-bottom:8px}
           <!-- Power Vault hero card -->
           <div style="margin:14px 16px 0;background:var(--dg);border-radius:22px;padding:18px;flex-shrink:0;position:relative;overflow:hidden">
             <div style="position:absolute;top:-30px;right:-30px;width:110px;height:110px;border-radius:50%;border:1px dashed rgba(200,168,32,0.18)"></div>
-            <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
-              <div>
-                <div style="font-size:11px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--gld)">POWER VAULT</div>
-                <div style="font-size:11px;color:rgba(237,232,208,0.7);margin-top:2px">Miser Savings Batch · ships every 7 days</div>
-              </div>
-              <div style="display:inline-flex;align-items:center;gap:5px;background:rgba(237,232,208,0.08);border:0.5px solid rgba(200,168,32,0.3);border-radius:999px;padding:4px 8px 4px 5px">
-                <span style="width:14px;height:14px;border-radius:50%;background:var(--dg);box-shadow:0 0 0 1.25px var(--gld);display:inline-flex;align-items:center;justify-content:center;color:var(--gld)"><svg aria-hidden="true" focusable="false" width="9" height="9"><use href="#r-anchor"></use></svg></span>
-                <span style="font-size:11px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--pch)">Steady · D34</span>
-              </div>
-            </div>
+            <div style="font-size:9px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--gld)">POWER VAULT</div>
+            <div style="font-size:9px;color:rgba(237,232,208,0.5);margin-top:2px">Miser Savings Batch · ships every 7 days</div>
             <div style="margin-top:14px;display:flex;align-items:baseline;line-height:0.95;font-variant-numeric:tabular-nums">
               <span style="font-size:30px;font-weight:900;color:var(--gld)">$</span>
               <span style="font-size:54px;font-weight:900;color:var(--pch);letter-spacing:-0.03em">551</span>
-              <span style="font-size:18px;color:rgba(237,232,208,0.7);font-weight:700">.50</span>
+              <span style="font-size:18px;color:rgba(237,232,208,0.4);font-weight:700">.50</span>
             </div>
             <div style="border-top:1px solid rgba(237,232,208,0.1);margin-top:14px;padding-top:11px;display:flex;gap:12px">
               <div style="flex:1">
-                <div style="font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:rgba(237,232,208,0.7)">This Month</div>
+                <div style="font-size:7.5px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:rgba(237,232,208,0.45)">This Month</div>
                 <div style="font-size:14px;font-weight:900;color:var(--pch);font-variant-numeric:tabular-nums;margin-top:2px">$952.00</div>
               </div>
               <div style="width:1px;background:rgba(237,232,208,0.1)"></div>
               <div style="flex:1">
-                <div style="font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:rgba(237,232,208,0.7)">Lifetime</div>
+                <div style="font-size:7.5px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:rgba(237,232,208,0.45)">Lifetime</div>
                 <div style="font-size:14px;font-weight:900;color:var(--gld);font-variant-numeric:tabular-nums;margin-top:2px">$1,044.77</div>
               </div>
             </div>
             <div style="display:flex;gap:8px;margin-top:14px">
-              <div style="flex:1;background:rgba(237,232,208,0.08);border:1px solid rgba(237,232,208,0.15);border-radius:999px;padding:7px;text-align:center;font-size:11px;font-weight:700;color:var(--pch)">+ Add money</div>
+              <div style="flex:1;background:rgba(237,232,208,0.08);border:1px solid rgba(237,232,208,0.15);border-radius:999px;padding:7px;text-align:center;font-size:10px;font-weight:700;color:var(--pch)">+ Add money</div>
             </div>
           </div>
 
           <!-- Going-to mission card -->
           <div style="margin:14px 16px 0;background:var(--crm);border-radius:20px;padding:14px 16px;flex-shrink:0">
-            <div style="font-size:11px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--brz);margin-bottom:10px">Going to</div>
+            <div style="font-size:8.5px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--brz);margin-bottom:10px">Going to</div>
             <div style="display:flex;align-items:center;gap:10px">
-              <div class="ic-disc"><svg aria-hidden="true" focusable="false" width="22" height="22"><use href="#i-umbrella"></use></svg></div>
+              <div class="ic-disc"><svg width="22" height="22"><use href="#i-umbrella"></use></svg></div>
               <div style="flex:1;min-width:0">
                 <div style="font-size:13px;font-weight:900;color:var(--dg);line-height:1.1">Trip to Mexico City</div>
-                <div style="font-size:11px;color:rgba(28,61,43,0.75);margin-top:2px;font-variant-numeric:tabular-nums">$330.50 of $1,500.00 · 22%</div>
+                <div style="font-size:9px;color:rgba(28,61,43,0.5);margin-top:2px;font-variant-numeric:tabular-nums">$330.50 of $1,500.00 · 22%</div>
               </div>
-              <svg aria-hidden="true" focusable="false" width="12" height="12" style="color:var(--gld);flex-shrink:0"><use href="#i-chevron"></use></svg>
+              <svg width="12" height="12" style="color:var(--gld);flex-shrink:0"><use href="#i-chevron"></use></svg>
             </div>
             <div class="mission-pb" style="margin-top:10px"><div class="f" style="width:22%"></div></div>
             <div style="display:flex;justify-content:space-between;align-items:center;margin-top:11px;padding-top:10px;border-top:1px solid rgba(28,61,43,0.06)">
-              <div style="font-size:11px;font-weight:800;color:var(--sg)">Strength Hub</div>
-              <div style="font-size:11px;font-weight:700;color:rgba(28,61,43,0.75)">Recalibrate</div>
+              <div style="font-size:10px;font-weight:800;color:var(--sg)">Strength Hub</div>
+              <div style="font-size:10px;font-weight:700;color:rgba(28,61,43,0.45)">Recalibrate</div>
             </div>
           </div>
 
@@ -1500,23 +1088,23 @@ footer.site .wm{margin-bottom:8px}
           <!-- Tab bar with center plus -->
           <div style="display:flex;align-items:flex-end;justify-content:space-around;padding:6px 0 10px;background:var(--pch);border-top:0.5px solid rgba(28,61,43,0.08);flex-shrink:0;position:relative">
             <div style="flex:1;text-align:center;color:var(--sg)">
-              <svg aria-hidden="true" focusable="false" width="18" height="18" style="margin-bottom:1px"><use href="#i-home"></use></svg>
-              <div style="font-size:11px;font-weight:700">Home</div>
+              <svg width="18" height="18" style="margin-bottom:1px"><use href="#i-home"></use></svg>
+              <div style="font-size:8px;font-weight:700">Home</div>
             </div>
-            <div style="flex:1;text-align:center;color:rgba(28,61,43,0.75)">
-              <svg aria-hidden="true" focusable="false" width="18" height="18" style="margin-bottom:1px"><use href="#i-target"></use></svg>
-              <div style="font-size:11px;font-weight:700">Goals</div>
+            <div style="flex:1;text-align:center;color:rgba(28,61,43,0.4)">
+              <svg width="18" height="18" style="margin-bottom:1px"><use href="#i-target"></use></svg>
+              <div style="font-size:8px;font-weight:700">Goals</div>
             </div>
             <div style="width:42px;height:42px;border-radius:50%;background:var(--sg);display:flex;align-items:center;justify-content:center;color:var(--gld);box-shadow:0 4px 12px rgba(28,61,43,0.35);margin-bottom:6px">
-              <svg aria-hidden="true" focusable="false" width="22" height="22"><use href="#i-plus"></use></svg>
+              <svg width="22" height="22"><use href="#i-plus"></use></svg>
             </div>
-            <div style="flex:1;text-align:center;color:rgba(28,61,43,0.75)">
-              <svg aria-hidden="true" focusable="false" width="18" height="18" style="margin-bottom:1px"><use href="#i-bars"></use></svg>
-              <div style="font-size:11px;font-weight:700">Coach</div>
+            <div style="flex:1;text-align:center;color:rgba(28,61,43,0.4)">
+              <svg width="18" height="18" style="margin-bottom:1px"><use href="#i-bars"></use></svg>
+              <div style="font-size:8px;font-weight:700">Coach</div>
             </div>
-            <div style="flex:1;text-align:center;color:rgba(28,61,43,0.75)">
-              <svg aria-hidden="true" focusable="false" width="18" height="18" style="margin-bottom:1px"><use href="#i-person"></use></svg>
-              <div style="font-size:11px;font-weight:700">Profile</div>
+            <div style="flex:1;text-align:center;color:rgba(28,61,43,0.4)">
+              <svg width="18" height="18" style="margin-bottom:1px"><use href="#i-person"></use></svg>
+              <div style="font-size:8px;font-weight:700">Profile</div>
             </div>
           </div>
         </div>
@@ -1531,7 +1119,7 @@ footer.site .wm{margin-bottom:8px}
 <section class="band pch gui-lt" id="how">
   <div class="band-head reveal">
     <div class="rule-pair"><span class="line"></span><span class="eyebrow">How it works</span><span class="line"></span></div>
-    <h2 class="h-section">Three taps. One <em>vault</em>. <br>No budgeting.</h2>
+    <h2 class="h-section">Three taps. One <em>vault</em>.<br>No budgeting.</h2>
     <p class="sub">Log a skip. Point it at a goal. Watch the vault fill. That's the whole system — the money you almost spent becomes money you kept.</p>
   </div>
 
@@ -1541,7 +1129,7 @@ footer.site .wm{margin-bottom:8px}
     <div class="step reveal">
       <div class="snum"><span>Step 01</span><span class="dot"></span><span>Log a skip</span></div>
       <h3>Almost grabbed a $5 oat-milk latte on the walk to work? <em>Log the skip.</em></h3>
-      <p>Three taps and it's stacked. About every 7 days Miser batches your skips and moves the total from your linked bank to your vault — automatically, no ceremony.</p>
+      <p>Three taps and it's stacked. Every 7 days — on your personal cycle day, set by your first save — Miser batches your skips and moves the total from your linked bank to your vault — automatically, no ceremony.</p>
       <div class="phone-well pch-well">
         <!-- Log a Skip sheet — current app -->
         <div class="phone sm">
@@ -1555,27 +1143,27 @@ footer.site .wm{margin-bottom:8px}
             </div>
 
             <div style="margin:12px 16px 0;background:var(--crm);border-radius:14px;padding:14px;text-align:center;flex-shrink:0">
-              <div style="font-size:11px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:rgba(28,61,43,0.75)">Amount you skipped</div>
+              <div style="font-size:8px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:rgba(28,61,43,0.45)">Amount you skipped</div>
               <div style="margin-top:6px;font-size:34px;font-weight:900;color:var(--dg);line-height:1;letter-spacing:-0.03em;font-variant-numeric:tabular-nums">
                 <span style="color:var(--brz);font-size:20px;vertical-align:7px">$</span>12
               </div>
             </div>
 
             <div style="display:flex;gap:5px;padding:10px 16px 6px;flex-shrink:0">
-              <div style="flex:1;text-align:center;padding:6px;border-radius:999px;background:var(--crm);font-size:11px;font-weight:800;color:var(--dg)">$8</div>
-              <div style="flex:1;text-align:center;padding:6px;border-radius:999px;background:var(--dg);font-size:11px;font-weight:800;color:var(--pch)">$12</div>
-              <div style="flex:1;text-align:center;padding:6px;border-radius:999px;background:var(--crm);font-size:11px;font-weight:800;color:var(--dg)">$15</div>
-              <div style="flex:1;text-align:center;padding:6px;border-radius:999px;background:var(--crm);font-size:11px;font-weight:800;color:var(--dg)">$22</div>
+              <div style="flex:1;text-align:center;padding:6px;border-radius:999px;background:var(--crm);font-size:10px;font-weight:800;color:var(--dg)">$8</div>
+              <div style="flex:1;text-align:center;padding:6px;border-radius:999px;background:var(--dg);font-size:10px;font-weight:800;color:var(--pch)">$12</div>
+              <div style="flex:1;text-align:center;padding:6px;border-radius:999px;background:var(--crm);font-size:10px;font-weight:800;color:var(--dg)">$15</div>
+              <div style="flex:1;text-align:center;padding:6px;border-radius:999px;background:var(--crm);font-size:10px;font-weight:800;color:var(--dg)">$22</div>
             </div>
 
-            <div style="font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;padding:8px 16px 4px;color:rgba(28,61,43,0.75)">Category</div>
+            <div style="font-size:8px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;padding:8px 16px 4px;color:rgba(28,61,43,0.5)">Category</div>
             <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:5px;padding:0 16px;flex-shrink:0">
-              <div class="ic-tile"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="#i-coffee"></use></svg>Coffee</div>
-              <div class="ic-tile on"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="#i-bowl"></use></svg>Lunch</div>
-              <div class="ic-tile"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="#i-snacks"></use></svg>Snacks</div>
-              <div class="ic-tile"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="#i-drinks"></use></svg>Drinks</div>
-              <div class="ic-tile"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="#i-box"></use></svg>Shopping</div>
-              <div class="ic-tile"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="#i-burger"></use></svg>Fast food</div>
+              <div class="ic-tile"><svg width="20" height="20"><use href="#i-coffee"></use></svg>Coffee</div>
+              <div class="ic-tile on"><svg width="20" height="20"><use href="#i-bowl"></use></svg>Lunch</div>
+              <div class="ic-tile"><svg width="20" height="20"><use href="#i-snacks"></use></svg>Snacks</div>
+              <div class="ic-tile"><svg width="20" height="20"><use href="#i-drinks"></use></svg>Drinks</div>
+              <div class="ic-tile"><svg width="20" height="20"><use href="#i-box"></use></svg>Shopping</div>
+              <div class="ic-tile"><svg width="20" height="20"><use href="#i-burger"></use></svg>Fast food</div>
             </div>
 
             <div style="flex:1;min-height:8px"></div>
@@ -1599,63 +1187,63 @@ footer.site .wm{margin-bottom:8px}
 
             <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px 8px">
               <div>
-                <div style="font-size:11px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--dg)">Active Missions</div>
-                <div style="font-size:11px;color:rgba(28,61,43,0.75);margin-top:2px">Sorted by progress</div>
+                <div style="font-size:9px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--dg)">Active Missions</div>
+                <div style="font-size:9px;color:rgba(28,61,43,0.5);margin-top:2px">Sorted by progress</div>
               </div>
-              <div style="font-size:11px;font-weight:800;color:var(--sg)">Manage →</div>
+              <div style="font-size:10px;font-weight:800;color:var(--sg)">Manage →</div>
             </div>
 
             <div style="padding:0 14px;flex-shrink:0">
               <!-- Trip to Mexico City -->
               <div class="mission-row">
-                <div class="ic-disc sm"><svg aria-hidden="true" focusable="false" width="16" height="16"><use href="#i-umbrella"></use></svg></div>
+                <div class="ic-disc sm"><svg width="16" height="16"><use href="#i-umbrella"></use></svg></div>
                 <div style="flex:1;min-width:0">
                   <div style="display:flex;align-items:center;gap:5px;margin-bottom:3px">
-                    <div style="font-size:11px;font-weight:800;color:var(--dg);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Trip to Mexico City</div>
-                    <span style="font-size:11px;color:var(--gld);font-weight:900">★</span>
-                    <span style="background:rgba(46,107,69,0.15);color:var(--sg);font-size:11px;font-weight:800;padding:2px 5px;border-radius:4px;letter-spacing:0.08em">GROUP</span>
+                    <div style="font-size:10.5px;font-weight:800;color:var(--dg);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Trip to Mexico City</div>
+                    <span style="font-size:7.5px;color:var(--gld);font-weight:900">★</span>
+                    <span style="background:rgba(46,107,69,0.15);color:var(--sg);font-size:6.5px;font-weight:800;padding:2px 5px;border-radius:4px;letter-spacing:0.08em">GROUP</span>
                   </div>
                   <div class="mission-pb"><div class="f" style="width:22%"></div></div>
-                  <div style="font-size:11px;color:rgba(28,61,43,0.75);margin-top:3px;font-variant-numeric:tabular-nums">$330.50 of $1,500</div>
+                  <div style="font-size:8.5px;color:rgba(28,61,43,0.5);margin-top:3px;font-variant-numeric:tabular-nums">$330.50 of $1,500</div>
                 </div>
                 <div style="font-size:13px;font-weight:900;color:var(--dg);font-variant-numeric:tabular-nums">22%</div>
               </div>
               <!-- Friend trip -->
               <div class="mission-row">
-                <div class="ic-disc sm"><svg aria-hidden="true" focusable="false" width="16" height="16"><use href="#i-people"></use></svg></div>
+                <div class="ic-disc sm"><svg width="16" height="16"><use href="#i-people"></use></svg></div>
                 <div style="flex:1;min-width:0">
                   <div style="display:flex;align-items:center;gap:5px;margin-bottom:3px">
-                    <div style="font-size:11px;font-weight:800;color:var(--dg)">Friend trip</div>
-                    <span style="background:rgba(46,107,69,0.15);color:var(--sg);font-size:11px;font-weight:800;padding:2px 5px;border-radius:4px;letter-spacing:0.08em">GROUP</span>
+                    <div style="font-size:10.5px;font-weight:800;color:var(--dg)">Friend trip</div>
+                    <span style="background:rgba(46,107,69,0.15);color:var(--sg);font-size:6.5px;font-weight:800;padding:2px 5px;border-radius:4px;letter-spacing:0.08em">GROUP</span>
                   </div>
                   <div class="mission-pb"><div class="f" style="width:6%"></div></div>
-                  <div style="font-size:11px;color:rgba(28,61,43,0.75);margin-top:3px;font-variant-numeric:tabular-nums">$89.50 of $1,500</div>
+                  <div style="font-size:8.5px;color:rgba(28,61,43,0.5);margin-top:3px;font-variant-numeric:tabular-nums">$89.50 of $1,500</div>
                 </div>
                 <div style="font-size:13px;font-weight:900;color:var(--dg);font-variant-numeric:tabular-nums">6%</div>
               </div>
               <!-- Alicante -->
               <div class="mission-row">
-                <div class="ic-disc sm"><svg aria-hidden="true" focusable="false" width="16" height="16"><use href="#i-umbrella"></use></svg></div>
+                <div class="ic-disc sm"><svg width="16" height="16"><use href="#i-umbrella"></use></svg></div>
                 <div style="flex:1;min-width:0">
                   <div style="display:flex;align-items:center;gap:5px;margin-bottom:3px">
-                    <div style="font-size:11px;font-weight:800;color:var(--dg)">Alicante</div>
-                    <span style="background:rgba(46,107,69,0.15);color:var(--sg);font-size:11px;font-weight:800;padding:2px 5px;border-radius:4px;letter-spacing:0.08em">GROUP</span>
+                    <div style="font-size:10.5px;font-weight:800;color:var(--dg)">Alicante</div>
+                    <span style="background:rgba(46,107,69,0.15);color:var(--sg);font-size:6.5px;font-weight:800;padding:2px 5px;border-radius:4px;letter-spacing:0.08em">GROUP</span>
                   </div>
                   <div class="mission-pb"><div class="f" style="width:3%"></div></div>
-                  <div style="font-size:11px;color:rgba(28,61,43,0.75);margin-top:3px;font-variant-numeric:tabular-nums">$66.00 of $2,000</div>
+                  <div style="font-size:8.5px;color:rgba(28,61,43,0.5);margin-top:3px;font-variant-numeric:tabular-nums">$66.00 of $2,000</div>
                 </div>
                 <div style="font-size:13px;font-weight:900;color:var(--dg);font-variant-numeric:tabular-nums">3%</div>
               </div>
               <!-- Quit Gambling -->
               <div class="mission-row">
-                <div class="ic-disc sm"><svg aria-hidden="true" focusable="false" width="16" height="16"><use href="#i-shield"></use></svg></div>
+                <div class="ic-disc sm"><svg width="16" height="16"><use href="#i-shield"></use></svg></div>
                 <div style="flex:1;min-width:0">
                   <div style="display:flex;align-items:center;gap:5px;margin-bottom:3px">
-                    <div style="font-size:11px;font-weight:800;color:var(--dg)">Quit Gambling</div>
-                    <span style="background:rgba(200,168,32,0.18);color:var(--brz);font-size:11px;font-weight:800;padding:2px 5px;border-radius:4px;letter-spacing:0.08em">DAY 8</span>
+                    <div style="font-size:10.5px;font-weight:800;color:var(--dg)">Quit Gambling</div>
+                    <span style="background:rgba(200,168,32,0.18);color:var(--brz);font-size:6.5px;font-weight:800;padding:2px 5px;border-radius:4px;letter-spacing:0.08em">DAY 8</span>
                   </div>
                   <div class="mission-pb"><div class="f" style="width:38%;background:var(--gld)"></div></div>
-                  <div style="font-size:11px;color:rgba(28,61,43,0.75);margin-top:3px;font-variant-numeric:tabular-nums">$140.00 saved this week</div>
+                  <div style="font-size:8.5px;color:rgba(28,61,43,0.5);margin-top:3px;font-variant-numeric:tabular-nums">$140.00 saved this week</div>
                 </div>
                 <div style="font-size:13px;font-weight:900;color:var(--brz);font-variant-numeric:tabular-nums">38%</div>
               </div>
@@ -1684,15 +1272,15 @@ footer.site .wm{margin-bottom:8px}
             <div style="margin:14px 14px 0;background:var(--crm);border-radius:16px;padding:12px 14px;flex-shrink:0">
               <div style="display:inline-flex;align-items:center;gap:5px;background:var(--pch);border-radius:999px;padding:4px 9px">
                 <span style="font-size:11px;font-weight:900;color:var(--dg)">mı<span style="color:var(--gld)">$</span>er</span>
-                <span style="font-size:11px;font-weight:800;color:var(--brz);letter-spacing:0.16em">COACH</span>
+                <span style="font-size:8px;font-weight:800;color:var(--brz);letter-spacing:0.16em">COACH</span>
               </div>
               <div style="margin-top:8px;font-size:13px;font-weight:900;color:var(--dg);line-height:1.2">Eleven days and a skip logged today.</div>
             </div>
 
             <!-- Momentum Shield chart -->
-            <div style="font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;padding:14px 16px 4px;color:rgba(28,61,43,0.75)">Momentum Shield · 30 days</div>
+            <div style="font-size:8px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;padding:14px 16px 4px;color:rgba(28,61,43,0.5)">Momentum Shield · 30 days</div>
             <div style="margin:0 14px;background:var(--crm);border-radius:14px;padding:12px;flex-shrink:0">
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 220 80" style="width:100%;height:64px;display:block">
+              <svg viewBox="0 0 220 80" style="width:100%;height:64px;display:block">
                 <defs>
                   <linearGradient id="momArea" x1="0" x2="0" y1="0" y2="1">
                     <stop offset="0" stop-color="#1C3D2B" stop-opacity="0.18"/>
@@ -1709,16 +1297,16 @@ footer.site .wm{margin-bottom:8px}
                   <circle cx="220" cy="8" r="2"/>
                 </g>
               </svg>
-              <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:11px;color:rgba(28,61,43,0.75);font-weight:700">
+              <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:8.5px;color:rgba(28,61,43,0.5);font-weight:700">
                 <span>30 DAYS</span>
                 <span style="color:var(--dg);font-weight:900;font-variant-numeric:tabular-nums">$1,037.00</span>
               </div>
             </div>
 
             <!-- Skip Mix -->
-            <div style="font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;padding:12px 16px 4px;color:rgba(28,61,43,0.75)">Skip Mix · 30 days</div>
+            <div style="font-size:8px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;padding:12px 16px 4px;color:rgba(28,61,43,0.5)">Skip Mix · 30 days</div>
             <div style="margin:0 14px 12px;background:var(--crm);border-radius:14px;padding:12px;display:flex;align-items:center;gap:12px;flex-shrink:0">
-              <svg aria-hidden="true" focusable="false" viewBox="0 0 36 36" width="64" height="64" style="flex-shrink:0">
+              <svg viewBox="0 0 36 36" width="64" height="64" style="flex-shrink:0">
                 <circle cx="18" cy="18" r="13" fill="none" stroke="rgba(28,61,43,0.08)" stroke-width="6"/>
                 <circle cx="18" cy="18" r="13" fill="none" stroke="#1C3D2B" stroke-width="6" stroke-dasharray="32 82" transform="rotate(-90 18 18)"/>
                 <circle cx="18" cy="18" r="13" fill="none" stroke="#2E6B45" stroke-width="6" stroke-dasharray="18 96" stroke-dashoffset="-32" transform="rotate(-90 18 18)"/>
@@ -1726,11 +1314,11 @@ footer.site .wm{margin-bottom:8px}
                 <text x="18" y="19" text-anchor="middle" font-size="8" font-weight="900" fill="#1C3D2B">49</text>
                 <text x="18" y="25" text-anchor="middle" font-size="3" font-weight="800" fill="rgba(28,61,43,0.6)" letter-spacing="0.5">SKIPS</text>
               </svg>
-              <div style="flex:1;font-size:11px;line-height:1.5;color:var(--dg)">
+              <div style="flex:1;font-size:9px;line-height:1.5;color:var(--dg)">
                 <div style="display:flex;align-items:center;gap:5px"><span style="width:7px;height:7px;background:#1C3D2B;border-radius:1.5px"></span><strong>Lunch</strong> · 11 · $202</div>
                 <div style="display:flex;align-items:center;gap:5px"><span style="width:7px;height:7px;background:#2E6B45;border-radius:1.5px"></span><strong>Coffee</strong> · 11 · $55</div>
                 <div style="display:flex;align-items:center;gap:5px"><span style="width:7px;height:7px;background:#C8A820;border-radius:1.5px"></span><strong>Online</strong> · 8 · $450</div>
-                <div style="display:flex;align-items:center;gap:5px;color:rgba(28,61,43,0.75)"><span style="width:7px;height:7px;background:rgba(28,61,43,0.25);border-radius:1.5px"></span>Other · 19</div>
+                <div style="display:flex;align-items:center;gap:5px;color:rgba(28,61,43,0.55)"><span style="width:7px;height:7px;background:rgba(28,61,43,0.25);border-radius:1.5px"></span>Other · 19</div>
               </div>
             </div>
 
@@ -1807,35 +1395,35 @@ footer.site .wm{margin-bottom:8px}
             <span style="width:14px"></span>
           </div>
 
-          <div style="font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;padding:8px 18px 8px;color:rgba(28,61,43,0.75)">What are you quitting?</div>
+          <div style="font-size:9px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;padding:8px 18px 8px;color:rgba(28,61,43,0.5)">What are you quitting?</div>
 
           <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:0 18px;flex-shrink:0">
-            <div class="ic-tile"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="#i-cig"></use></svg>Cigarettes</div>
-            <div class="ic-tile"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="#i-glass"></use></svg>Alcohol</div>
-            <div class="ic-tile"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="#i-vape"></use></svg>Vaping</div>
-            <div class="ic-tile"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="#i-leaf"></use></svg>Cannabis</div>
-            <div class="ic-tile on"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="#i-dice"></use></svg>Gambling</div>
-            <div class="ic-tile"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="#i-ticket"></use></svg>Sports</div>
-            <div class="ic-tile"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="#i-burger"></use></svg>Takeout</div>
-            <div class="ic-tile"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="#i-cart"></use></svg>Shopping</div>
-            <div class="ic-tile"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="#i-receipt"></use></svg>Other</div>
+            <div class="ic-tile"><svg width="20" height="20"><use href="#i-cig"></use></svg>Cigarettes</div>
+            <div class="ic-tile"><svg width="20" height="20"><use href="#i-glass"></use></svg>Alcohol</div>
+            <div class="ic-tile"><svg width="20" height="20"><use href="#i-vape"></use></svg>Vaping</div>
+            <div class="ic-tile"><svg width="20" height="20"><use href="#i-leaf"></use></svg>Cannabis</div>
+            <div class="ic-tile on"><svg width="20" height="20"><use href="#i-dice"></use></svg>Gambling</div>
+            <div class="ic-tile"><svg width="20" height="20"><use href="#i-ticket"></use></svg>Sports</div>
+            <div class="ic-tile"><svg width="20" height="20"><use href="#i-burger"></use></svg>Takeout</div>
+            <div class="ic-tile"><svg width="20" height="20"><use href="#i-cart"></use></svg>Shopping</div>
+            <div class="ic-tile"><svg width="20" height="20"><use href="#i-receipt"></use></svg>Other</div>
           </div>
 
-          <div style="font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;padding:14px 18px 4px;color:rgba(28,61,43,0.75)">How much it normally costs</div>
+          <div style="font-size:9px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;padding:14px 18px 4px;color:rgba(28,61,43,0.5)">How much it normally costs</div>
 
           <div style="display:flex;gap:5px;padding:6px 18px 8px;flex-shrink:0">
-            <div style="flex:1;text-align:center;padding:7px;border-radius:999px;background:var(--dg);font-size:11px;font-weight:800;color:var(--pch)">Per Day</div>
-            <div style="flex:1;text-align:center;padding:7px;border-radius:999px;background:var(--crm);font-size:11px;font-weight:800;color:var(--dg)">Per Week</div>
-            <div style="flex:1;text-align:center;padding:7px;border-radius:999px;background:var(--crm);font-size:11px;font-weight:800;color:var(--dg)">Per Month</div>
+            <div style="flex:1;text-align:center;padding:7px;border-radius:999px;background:var(--dg);font-size:9.5px;font-weight:800;color:var(--pch)">Per Day</div>
+            <div style="flex:1;text-align:center;padding:7px;border-radius:999px;background:var(--crm);font-size:9.5px;font-weight:800;color:var(--dg)">Per Week</div>
+            <div style="flex:1;text-align:center;padding:7px;border-radius:999px;background:var(--crm);font-size:9.5px;font-weight:800;color:var(--dg)">Per Month</div>
           </div>
 
           <div style="margin:0 18px;background:var(--crm);border:1.5px solid var(--dg);border-radius:13px;padding:10px 12px;font-size:14px;font-weight:900;color:var(--dg);font-variant-numeric:tabular-nums;flex-shrink:0">$ 20</div>
 
           <div style="margin:10px 18px 0;background:var(--dg);border-radius:14px;padding:12px 14px;flex-shrink:0;position:relative;overflow:hidden">
-            <div style="font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--gld)">If you skip every time</div>
-            <div style="margin-top:6px;font-size:13px;font-weight:900;color:var(--pch);font-variant-numeric:tabular-nums">$140.00 <span style="color:rgba(237,232,208,0.7);font-weight:700;font-size:11px">/ week</span></div>
-            <div style="font-size:11px;font-weight:900;color:var(--pch);font-variant-numeric:tabular-nums">$608.00 <span style="color:rgba(237,232,208,0.7);font-weight:700;font-size:11px">/ month</span></div>
-            <div style="font-size:14px;font-weight:900;color:var(--gld);font-variant-numeric:tabular-nums;margin-top:2px">$7,300 <span style="color:rgba(200,168,32,1);font-weight:700;font-size:11px">/ year</span></div>
+            <div style="font-size:7.5px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--gld)">If you skip every time</div>
+            <div style="margin-top:6px;font-size:13px;font-weight:900;color:var(--pch);font-variant-numeric:tabular-nums">$140.00 <span style="color:rgba(237,232,208,0.5);font-weight:700;font-size:10px">/ week</span></div>
+            <div style="font-size:11px;font-weight:900;color:var(--pch);font-variant-numeric:tabular-nums">$608.00 <span style="color:rgba(237,232,208,0.5);font-weight:700;font-size:10px">/ month</span></div>
+            <div style="font-size:14px;font-weight:900;color:var(--gld);font-variant-numeric:tabular-nums;margin-top:2px">$7,300 <span style="color:rgba(200,168,32,0.6);font-weight:700;font-size:10px">/ year</span></div>
           </div>
 
           <div style="flex:1;min-height:10px"></div>
@@ -1854,21 +1442,21 @@ footer.site .wm{margin-bottom:8px}
       <div class="groups-list">
         <div class="gf">
           <div class="gf-bullet" style="background:rgba(46,107,69,0.1);color:var(--sg);border:1px solid rgba(46,107,69,0.2)">
-            <svg aria-hidden="true" focusable="false" width="22" height="22"><use href="#i-shield"></use></svg>
+            <svg width="22" height="22"><use href="#i-shield"></use></svg>
           </div>
           <div><div class="gf-title">A streak you can see.</div><div class="gf-desc">Day 1, Day 8, Day 30. The dollars stack alongside the days — proof that the habit you broke is worth real money.</div></div>
         </div>
         <div class="gf">
           <div class="gf-bullet" style="background:rgba(46,107,69,0.1);color:var(--sg);border:1px solid rgba(46,107,69,0.2)">
-            <svg aria-hidden="true" focusable="false" width="22" height="22"><use href="#i-dice"></use></svg>
+            <svg width="22" height="22"><use href="#i-dice"></use></svg>
           </div>
           <div><div class="gf-title">The math gets loud.</div><div class="gf-desc">A $20-a-day gambling habit is $7,300 a year. Miser shows you the number before you start — and again every time you almost relapse.</div></div>
         </div>
         <div class="gf">
           <div class="gf-bullet" style="background:rgba(46,107,69,0.1);color:var(--sg);border:1px solid rgba(46,107,69,0.2)">
-            <svg aria-hidden="true" focusable="false" width="22" height="22"><use href="#i-cash"></use></svg>
+            <svg width="22" height="22"><use href="#i-cash"></use></svg>
           </div>
-          <div><div class="gf-title">The money still ships on the same schedule.</div><div class="gf-desc">Each day you stay clean, that amount queues up. Your check-ins batch with your other skips and move into your vault automatically with your next transfer.</div></div>
+          <div><div class="gf-title">The money still ships on your 7-day cycle.</div><div class="gf-desc">Each day you stay clean, that amount queues up. Your check-ins batch with your other skips and move into your vault automatically on your cycle day.</div></div>
         </div>
       </div>
     </div>
@@ -1891,15 +1479,15 @@ footer.site .wm{margin-bottom:8px}
       <div class="groups-list">
         <div class="gf">
           <div class="gf-bullet">01</div>
-          <div><div class="gf-title" style="color:var(--pch)">Share the goal, keep your own vault.</div><div class="gf-desc" style="color:rgba(237,232,208,0.7)">$1,500 Mexico City trip, two of you = $750 each. Money never pools. Each person's savings stay theirs, even if plans change.</div></div>
+          <div><div class="gf-title" style="color:var(--pch)">Share the goal, keep your own vault.</div><div class="gf-desc" style="color:rgba(237,232,208,0.6)">$1,500 Mexico City trip, two of you = $750 each. Money never pools. Each person's savings stay theirs, even if plans change.</div></div>
         </div>
         <div class="gf">
           <div class="gf-bullet">02</div>
-          <div><div class="gf-title" style="color:var(--pch)">See each other's skips as they happen.</div><div class="gf-desc" style="color:rgba(237,232,208,0.7)">Live progress per person. John just skipped Friday takeout — +$38. Accountability without the awkward group chat.</div></div>
+          <div><div class="gf-title" style="color:var(--pch)">See each other's skips as they happen.</div><div class="gf-desc" style="color:rgba(237,232,208,0.6)">Live progress per person. John just skipped Friday takeout — +$38. Accountability without the awkward group chat.</div></div>
         </div>
         <div class="gf">
           <div class="gf-bullet">03</div>
-          <div><div class="gf-title" style="color:var(--pch)">Join with an invite.</div><div class="gf-desc" style="color:rgba(237,232,208,0.7)">They tap it, they're in. No platform walls, no account verification rabbit hole.</div></div>
+          <div><div class="gf-title" style="color:var(--pch)">Join with an invite.</div><div class="gf-desc" style="color:rgba(237,232,208,0.6)">They tap it, they're in. No platform walls, no account verification rabbit hole.</div></div>
         </div>
       </div>
     </div>
@@ -1914,37 +1502,37 @@ footer.site .wm{margin-bottom:8px}
           <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px 0">
             <span style="font-size:14px;font-weight:700;color:var(--dg)">‹</span>
             <div style="display:flex;align-items:center;gap:6px">
-              <svg aria-hidden="true" focusable="false" width="16" height="16"><use href="#i-umbrella"></use></svg>
+              <svg width="16" height="16"><use href="#i-umbrella"></use></svg>
               <span style="font-size:14px;font-weight:900;color:var(--dg)">Trip to Mexico City</span>
             </div>
-            <span style="font-size:14px;color:rgba(28,61,43,0.75);font-weight:700">···</span>
+            <span style="font-size:14px;color:rgba(28,61,43,0.4);font-weight:700">···</span>
           </div>
 
           <!-- Group goal hero -->
           <div style="margin:14px 16px 0;background:var(--dg);border-radius:18px;padding:16px;position:relative;overflow:hidden;flex-shrink:0">
-            <div style="font-size:11px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:rgba(237,232,208,0.7)">Group Goal</div>
+            <div style="font-size:8.5px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:rgba(237,232,208,0.5)">Group Goal</div>
             <div style="display:flex;align-items:center;gap:10px;margin-top:10px">
               <div style="width:42px;height:42px;border-radius:50%;background:rgba(200,168,32,0.18);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-                <svg aria-hidden="true" focusable="false" width="22" height="22"><use href="#i-umbrella"></use></svg>
+                <svg width="22" height="22"><use href="#i-umbrella"></use></svg>
               </div>
               <div>
                 <div style="font-size:16px;font-weight:900;color:var(--pch);line-height:1.05">Trip to Mexico City</div>
-                <div style="font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(237,232,208,0.7);margin-top:3px">Tap to edit</div>
+                <div style="font-size:8.5px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(237,232,208,0.4);margin-top:3px">Tap to edit</div>
               </div>
             </div>
             <div style="margin-top:14px;display:flex;align-items:baseline;font-variant-numeric:tabular-nums;line-height:1">
               <span style="font-size:18px;font-weight:900;color:var(--gld)">$</span>
-              <span style="font-size:30px;font-weight:900;color:var(--pch);letter-spacing:-0.02em">330<span style="font-size:18px;color:rgba(237,232,208,0.7)">.50</span></span>
-              <span style="font-size:13px;color:rgba(237,232,208,0.7);margin-left:6px">/ $1,500.00</span>
+              <span style="font-size:30px;font-weight:900;color:var(--pch);letter-spacing:-0.02em">330<span style="font-size:18px;color:rgba(237,232,208,0.55)">.50</span></span>
+              <span style="font-size:13px;color:rgba(237,232,208,0.45);margin-left:6px">/ $1,500.00</span>
             </div>
             <div style="margin-top:10px"><div class="pb lt" style="height:7px;border-radius:3.5px"><div class="f g" style="width:22%"></div></div></div>
-            <div style="font-size:11px;color:var(--gld);margin-top:6px;font-weight:800;letter-spacing:0.06em">22% THERE</div>
+            <div style="font-size:9px;color:var(--gld);margin-top:6px;font-weight:800;letter-spacing:0.06em">22% THERE</div>
           </div>
 
           <!-- Members -->
           <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 20px 6px">
-            <div style="font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:rgba(28,61,43,0.75)">Members · 2</div>
-            <div style="font-size:11px;font-weight:800;color:var(--brz)">Invite</div>
+            <div style="font-size:8.5px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:rgba(28,61,43,0.5)">Members · 2</div>
+            <div style="font-size:10px;font-weight:800;color:var(--brz)">Invite</div>
           </div>
 
           <div style="padding:0 16px;flex-shrink:0">
@@ -1953,8 +1541,8 @@ footer.site .wm{margin-bottom:8px}
               <div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#8B6914,#C8A820);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:var(--dg);flex-shrink:0;border:1.5px solid var(--pch);box-shadow:0 1px 2px rgba(0,0,0,0.1)">J</div>
               <div style="flex:1;min-width:0">
                 <div style="display:flex;justify-content:space-between;align-items:baseline">
-                  <div style="font-size:11px;font-weight:800;color:var(--dg)">John <span style="color:rgba(28,61,43,0.75);font-weight:600">(you)</span></div>
-                  <div style="font-size:11px;font-weight:900;color:var(--brz);font-variant-numeric:tabular-nums">$295.00</div>
+                  <div style="font-size:10.5px;font-weight:800;color:var(--dg)">John <span style="color:rgba(28,61,43,0.5);font-weight:600">(you)</span></div>
+                  <div style="font-size:10.5px;font-weight:900;color:var(--brz);font-variant-numeric:tabular-nums">$295.00</div>
                 </div>
                 <div class="mission-pb" style="margin-top:5px"><div class="f" style="width:39%;background:var(--gld)"></div></div>
               </div>
@@ -1965,8 +1553,8 @@ footer.site .wm{margin-bottom:8px}
               <div style="width:28px;height:28px;border-radius:50%;background:var(--sg);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:var(--pch);flex-shrink:0">W</div>
               <div style="flex:1;min-width:0">
                 <div style="display:flex;justify-content:space-between;align-items:baseline">
-                  <div style="font-size:11px;font-weight:800;color:var(--dg)">Wendy</div>
-                  <div style="font-size:11px;font-weight:900;color:var(--sg);font-variant-numeric:tabular-nums">$35.50</div>
+                  <div style="font-size:10.5px;font-weight:800;color:var(--dg)">Wendy</div>
+                  <div style="font-size:10.5px;font-weight:900;color:var(--sg);font-variant-numeric:tabular-nums">$35.50</div>
                 </div>
                 <div class="mission-pb" style="margin-top:5px"><div class="f" style="width:5%"></div></div>
               </div>
@@ -1992,18 +1580,18 @@ footer.site .wm{margin-bottom:8px}
       <div style="height:14px"></div>
       <h2 class="h-section" style="color:var(--dg)">Watch the vault <em style="color:var(--sg)">fill</em>.</h2>
       <div style="height:22px"></div>
-      <p class="sub" style="color:rgba(28,61,43,0.75)">Scroll. A week of skipping compresses into six seconds. Each skip stacks onto a real goal — the bar inches right, the destination gets closer.</p>
+      <p class="sub" style="color:rgba(28,61,43,0.65)">Scroll. A week of skipping compresses into six seconds. Each skip stacks onto a real goal — the bar inches right, the destination gets closer.</p>
 
-      <div class="vault-counter vault-counter-lt" id="vaultCounter-2">
+      <div class="vault-counter vault-counter-lt" id="vaultCounter">
         <div class="vc-label"><span class="live-dot"></span> Goal · Tokyo, October · Live demo</div>
-        <div class="vc-num" id="vcNum-2"><span class="d">$</span><span id="vcDol-2">0</span><span class="cents">.00</span></div>
-        <div class="vc-sub" id="vcSub-2">Waiting for first skip…</div>
-        <div class="vc-pb"><div class="vc-pf" id="vcPf-2"></div></div>
+        <div class="vc-num" id="vcNum"><span class="d">$</span><span id="vcDol">0</span><span class="cents">.00</span></div>
+        <div class="vc-sub" id="vcSub">Waiting for first skip…</div>
+        <div class="vc-pb"><div class="vc-pf" id="vcPf"></div></div>
         <div class="vc-foot">
-          <span id="vcPct-2">0% of goal</span>
+          <span id="vcPct">0% of goal</span>
           <span class="goal">$500 weekend bucket</span>
         </div>
-        <div class="vc-stream" id="vcStream-2">› ready</div>
+        <div class="vc-stream" id="vcStream">› ready</div>
       </div>
     </div>
 
@@ -2022,35 +1610,35 @@ footer.site .wm{margin-bottom:8px}
           <!-- Power Vault card (live) -->
           <div style="margin:12px 16px 0;background:var(--dg);border-radius:20px;padding:16px 18px;flex-shrink:0;position:relative;overflow:hidden">
             <div style="position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;border:1px dashed rgba(200,168,32,0.22)"></div>
-            <div style="font-size:11px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--gld)">POWER VAULT</div>
-            <div style="font-size:11px;color:rgba(237,232,208,0.7);margin-top:2px">Live demo · Tokyo bucket</div>
+            <div style="font-size:8.5px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--gld)">POWER VAULT</div>
+            <div style="font-size:9px;color:rgba(237,232,208,0.5);margin-top:2px">Live demo · Tokyo bucket</div>
             <div style="margin-top:12px;display:flex;align-items:baseline;font-variant-numeric:tabular-nums;line-height:1">
               <span style="font-size:22px;font-weight:900;color:var(--gld)">$</span>
               <span style="font-size:36px;font-weight:900;color:var(--pch);letter-spacing:-0.02em" id="phoneBalance">320</span>
-              <span style="font-size:14px;color:rgba(237,232,208,0.7);font-weight:700">.00</span>
+              <span style="font-size:14px;color:rgba(237,232,208,0.4);font-weight:700">.00</span>
             </div>
             <div style="margin-top:10px"><div class="pb lt" style="height:7px;border-radius:3.5px"><div class="f g" id="phonePf" style="width:64%"></div></div></div>
-            <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:11px;color:rgba(237,232,208,0.7);font-weight:800;letter-spacing:0.08em;text-transform:uppercase">
+            <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:8.5px;color:rgba(237,232,208,0.5);font-weight:800;letter-spacing:0.08em;text-transform:uppercase">
               <span id="phonePct">64% of goal</span><span>of $500</span>
             </div>
           </div>
 
           <!-- Recent skips -->
-          <div style="font-size:11px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;padding:14px 20px 4px;color:rgba(28,61,43,0.75)">Recent skips</div>
+          <div style="font-size:8.5px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;padding:14px 20px 4px;color:rgba(28,61,43,0.5)">Recent skips</div>
           <div class="pc-card" id="phoneSkips">
             <div class="row">
-              <div class="ic-disc sm"><svg aria-hidden="true" focusable="false" width="16" height="16"><use href="#i-coffee"></use></svg></div>
-              <div style="flex:1"><div style="font-size:11px;font-weight:800;color:var(--dg)">Morning latte</div><div style="font-size:11px;color:rgba(28,61,43,0.75)">today, 8:42 am</div></div>
+              <div class="ic-disc sm"><svg width="16" height="16"><use href="#i-coffee"></use></svg></div>
+              <div style="flex:1"><div style="font-size:10.5px;font-weight:800;color:var(--dg)">Morning latte</div><div style="font-size:8.5px;color:rgba(28,61,43,0.45)">today, 8:42 am</div></div>
               <div style="font-size:11px;font-weight:900;color:var(--sg);font-variant-numeric:tabular-nums">+$5.00</div>
             </div>
             <div class="row">
-              <div class="ic-disc sm"><svg aria-hidden="true" focusable="false" width="16" height="16"><use href="#i-car"></use></svg></div>
-              <div style="flex:1"><div style="font-size:11px;font-weight:800;color:var(--dg)">Walked instead</div><div style="font-size:11px;color:rgba(28,61,43,0.75)">yesterday</div></div>
+              <div class="ic-disc sm"><svg width="16" height="16"><use href="#i-car"></use></svg></div>
+              <div style="flex:1"><div style="font-size:10.5px;font-weight:800;color:var(--dg)">Walked instead</div><div style="font-size:8.5px;color:rgba(28,61,43,0.45)">yesterday</div></div>
               <div style="font-size:11px;font-weight:900;color:var(--sg);font-variant-numeric:tabular-nums">+$12.50</div>
             </div>
             <div class="row">
-              <div class="ic-disc sm"><svg aria-hidden="true" focusable="false" width="16" height="16"><use href="#i-drinks"></use></svg></div>
-              <div style="flex:1"><div style="font-size:11px;font-weight:800;color:var(--dg)">Round of drinks</div><div style="font-size:11px;color:rgba(28,61,43,0.75)">2 days ago</div></div>
+              <div class="ic-disc sm"><svg width="16" height="16"><use href="#i-drinks"></use></svg></div>
+              <div style="flex:1"><div style="font-size:10.5px;font-weight:800;color:var(--dg)">Round of drinks</div><div style="font-size:8.5px;color:rgba(28,61,43,0.45)">2 days ago</div></div>
               <div style="font-size:11px;font-weight:900;color:var(--sg);font-variant-numeric:tabular-nums">+$18.00</div>
             </div>
           </div>
@@ -2061,136 +1649,6 @@ footer.site .wm{margin-bottom:8px}
       </div>
     </div>
 
-  </div>
-</section>
-
-
-<!-- ═══════ RANKS ═══════ -->
-<section class="band pch gui-lt" id="ranks">
-  <div class="container">
-    <div class="ranks-head reveal">
-      <div><span class="rule"></span><span class="eyebrow">Earned, not bought</span><span class="rule"></span></div>
-      <h2 class="h-section">Nine ranks. <em>One slow climb.</em></h2>
-      <p class="sub">Pure recognition. No fee discounts. No raised limits. No paywall. The tier system was scrapped for a reason — this is the part we kept: identity. Skip enough days, lock enough dollars, and the ledger names you.</p>
-    </div>
-
-    <div class="ranks-grid reveal" data-delay="1">
-
-      <div class="rank-card">
-        <div class="crest r-bronze"><svg aria-hidden="true" focusable="false"><use href="#r-coin"></use></svg></div>
-        <div class="r-num">Rank 01</div>
-        <div class="r-name">Apprentice Miser</div>
-        <div class="r-meta">3 days<span class="sep">·</span>$15 locked</div>
-      </div>
-
-      <div class="rank-card">
-        <div class="crest r-bronze"><svg aria-hidden="true" focusable="false"><use href="#r-wallet"></use></svg></div>
-        <div class="r-num">Rank 02</div>
-        <div class="r-name">Pocket Miser</div>
-        <div class="r-meta">7 days<span class="sep">·</span>$35 locked</div>
-      </div>
-
-      <div class="rank-card">
-        <div class="crest r-bronze"><svg aria-hidden="true" focusable="false"><use href="#r-lock"></use></svg></div>
-        <div class="r-num">Rank 03</div>
-        <div class="r-name">Tight Miser</div>
-        <div class="r-meta">14 days<span class="sep">·</span>$70 locked</div>
-      </div>
-
-      <div class="rank-card">
-        <div class="crest r-gold"><svg aria-hidden="true" focusable="false"><use href="#r-anchor"></use></svg></div>
-        <div class="r-num">Rank 04</div>
-        <div class="r-name">Steady Miser</div>
-        <div class="r-meta">30 days<span class="sep">·</span>$150 locked</div>
-      </div>
-
-      <div class="rank-card">
-        <div class="crest r-gold"><svg aria-hidden="true" focusable="false"><use href="#r-flame"></use></svg></div>
-        <div class="r-num">Rank 05</div>
-        <div class="r-name">Sworn Miser</div>
-        <div class="r-meta">90 days<span class="sep">·</span>$400 locked</div>
-      </div>
-
-      <div class="rank-card">
-        <div class="crest r-gold"><svg aria-hidden="true" focusable="false"><use href="#r-shieldR"></use></svg></div>
-        <div class="r-num">Rank 06</div>
-        <div class="r-name">Iron Miser</div>
-        <div class="r-meta">180 days<span class="sep">·</span>$800 locked</div>
-      </div>
-
-      <div class="rank-card">
-        <div class="crest r-double"><svg aria-hidden="true" focusable="false"><use href="#r-medal"></use></svg></div>
-        <div class="r-num">Rank 07</div>
-        <div class="r-name">Veteran Miser</div>
-        <div class="r-meta">270 days<span class="sep">·</span>$1,300 locked</div>
-      </div>
-
-      <div class="rank-card">
-        <div class="crest r-double"><svg aria-hidden="true" focusable="false"><use href="#r-crown"></use></svg></div>
-        <div class="r-num">Rank 08</div>
-        <div class="r-name">Master Miser</div>
-        <div class="r-meta">365 days<span class="sep">·</span>$1,800 locked</div>
-      </div>
-
-      <div class="rank-card">
-        <div class="crest r-grand"><svg aria-hidden="true" focusable="false"><use href="#r-trophy"></use></svg></div>
-        <div class="r-num">Rank 09 · Peak</div>
-        <div class="r-name">Grand Miser</div>
-        <div class="r-meta">450 days<span class="sep">·</span>$2,500 locked</div>
-      </div>
-
-    </div>
-
-    <div class="ranks-voice reveal" data-delay="2">
-      <div><span class="eyebrow">How the Coach speaks to you</span></div>
-      <div class="v-line"><strong>Apprentice Miser</strong><span>"Three days in. You skipped, you locked. That's the whole game."</span></div>
-      <div class="v-line"><strong>Steady Miser</strong><span>"One month. $156 not spent. You earned this."</span></div>
-      <div class="v-line"><strong>Sworn Miser</strong><span>"Ninety days. Most people who try to save quit by week three. You didn't."</span></div>
-      <div class="v-line"><strong>Master Miser</strong><span>"One year clean. The number speaks for itself."</span></div>
-      <div class="v-line"><strong>Grand Miser</strong><span>"Fifteen months. Welcome to the ledger that doesn't end."</span></div>
-    </div>
-
-    <p class="ranks-meta reveal" data-delay="3">A missed day breaks the streak counter. <em>It never takes the rank away.</em> Once you've earned it, the crest stays — even if you start the next streak from zero. Past Grand Miser, the title is fixed and only the day counter grows.</p>
-  </div>
-</section>
-
-
-<!-- ═══════ FAQ ═══════ -->
-<section class="band crm" id="faq" style="padding:96px 32px">
-  <div style="max-width:760px;margin:0 auto">
-    <div class="band-head" style="margin-bottom:48px">
-      <div class="rule-pair"><span class="line"></span><span class="eyebrow">Common questions</span><span class="line"></span></div>
-      <h2 class="h-section" style="margin-top:14px">A few things <br>people always ask.</h2>
-    </div>
-
-    <dl style="display:flex;flex-direction:column;gap:0">
-
-      <div class="reveal faq-item" style="padding:28px 0;border-bottom:0.5px solid rgba(28,61,43,0.1)">
-        <dt style="font-size:18px;font-weight:900;color:var(--dg);letter-spacing:-0.01em;margin-bottom:10px">What does Miser cost?</dt>
-        <dd style="font-size:15px;line-height:1.6;color:rgba(28,61,43,0.75);margin:0">Free to download. A service fee of $2.50 + 1.5% of each transfer (no cap) applies when money moves — the full fee schedule is shown before anything is confirmed.</dd>
-      </div>
-
-      <div class="reveal faq-item" data-delay="1" style="padding:28px 0;border-bottom:0.5px solid rgba(28,61,43,0.1)">
-        <dt style="font-size:18px;font-weight:900;color:var(--dg);letter-spacing:-0.01em;margin-bottom:10px">Where does my money actually go?</dt>
-        <dd style="font-size:15px;line-height:1.6;color:rgba(28,61,43,0.75);margin:0">Into <em style="font-style:normal;font-weight:700;color:var(--dg)">your own savings account</em> — not ours. Miser can't access, spend, or keep your money. About every 7 days your saved total moves from your linked checking to your savings via ACH, run by our banking partner.</dd>
-      </div>
-
-      <div class="reveal faq-item" data-delay="2" style="padding:28px 0;border-bottom:0.5px solid rgba(28,61,43,0.1)">
-        <dt style="font-size:18px;font-weight:900;color:var(--dg);letter-spacing:-0.01em;margin-bottom:10px">What happens if I miss a day?</dt>
-        <dd style="font-size:15px;line-height:1.6;color:rgba(28,61,43,0.75);margin:0">Your streak counter resets to zero. Your rank does not. Once you've earned a rank, the crest stays — even if you start a new streak from scratch. Progress is permanent; streaks are just motivation.</dd>
-      </div>
-
-      <div class="reveal faq-item" data-delay="3" style="padding:28px 0;border-bottom:0.5px solid rgba(28,61,43,0.1)">
-        <dt style="font-size:18px;font-weight:900;color:var(--dg);letter-spacing:-0.01em;margin-bottom:10px">How do I get my money back out?</dt>
-        <dd style="font-size:15px;line-height:1.6;color:rgba(28,61,43,0.75);margin:0">Your savings live in your own savings account at your own bank — so you get money out the way you always have: through your bank, any time. Miser never pulls money out of your savings, and there are no penalties, fees, or waiting periods.</dd>
-      </div>
-
-      <div class="reveal faq-item" style="padding:28px 0">
-        <dt style="font-size:18px;font-weight:900;color:var(--dg);letter-spacing:-0.01em;margin-bottom:10px">When does the app launch?</dt>
-        <dd style="font-size:15px;line-height:1.6;color:rgba(28,61,43,0.75);margin:0">We're in TestFlight beta now, opening to iOS waitlist slots in 2026. Join below — we'll email your invite when your slot opens, batch by batch.</dd>
-      </div>
-
-    </dl>
   </div>
 </section>
 
@@ -2207,38 +1665,16 @@ footer.site .wm{margin-bottom:8px}
     <p class="lead">We're letting people in batch by batch. Drop your email — we'll send a TestFlight invite when your slot opens.</p>
 
     <div class="wl-form-wrap" id="wlFormWrap">
-      <form class="wl-form" id="wlForm" autocomplete="on" novalidate>
-        <input type="text" id="wlName" placeholder="Name (optional)" aria-label="Name (optional)" autocomplete="name" maxlength="80" data-clarity-mask="True">
-        <div class="wl-emailrow">
-          <input type="email" id="wlEmail" placeholder="you@wherever.com" aria-label="Email address" autocomplete="email" required data-clarity-mask="True">
-          <button type="submit">Join →</button>
-        </div>
-        <div class="wl-platform" role="radiogroup" aria-label="Which platform are you on">
-          <span class="wl-platform-label">I'm on</span>
-          <label><input type="radio" name="wlPlatform" value="ios" checked> iOS</label>
-          <label><input type="radio" name="wlPlatform" value="android"> Android</label>
-          <label><input type="radio" name="wlPlatform" value="either"> Either</label>
-        </div>
+      <form class="wl-form" id="wlForm" autocomplete="off" novalidate>
+        <input type="email" id="wlEmail" placeholder="you@wherever.com" aria-label="Email address" required>
+        <button type="submit">Join →</button>
       </form>
-      <!-- Cloudflare Turnstile — public sitekey. Secret lives in Apps Script Script Properties as TURNSTILE_SECRET. -->
-      <div class="cf-turnstile"
-           data-sitekey="0x4AAAAAADI-7AAFbI8rEn4D"
-           data-callback="onTurnstileSuccess"
-           data-error-callback="onTurnstileError"
-           data-expired-callback="onTurnstileExpired"
-           data-theme="dark"
-           data-action="waitlist"></div>
       <div class="wl-foot">
-        <span>iOS first · Android next</span>
+        <span>iOS first · Android close behind</span>
         <span class="dot">·</span>
-        <span>US residents, 18+</span>
-        <span class="dot">·</span>
-        <span>We'll email you product updates and your TestFlight invite — unsubscribe anytime</span>
-        <span class="dot">·</span>
-        <span>By joining, you agree to our <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a>
-      <a href="accessibility.html">Accessibility</a></span>
+        <span>No spam</span>
       </div>
-      <div class="wl-error" id="wlError" role="alert" aria-live="assertive"></div>
+      <div style="text-align:center;margin-top:14px;font-size:11px;color:rgba(237,232,208,0.45);letter-spacing:0.02em">TestFlight invites go out in batches. We'll email when yours opens.</div>
     </div>
 
     <!-- Brand meta tiles -->
@@ -2271,12 +1707,11 @@ footer.site .wm{margin-bottom:8px}
 
 
 <!-- ═══════ FOOTER ═══════ -->
-</main>
 <footer class="site">
   <div class="inner">
     <div>
       <a class="wm" href="#top">mı<span class="d">$</span>er</a>
-      <div class="foot-tag">Skip · Save · Stack</div>
+      <div class="foot-tag">Skip · Lock · Stack</div>
       <p class="foot-blurb">A quieter way to save. Built for the moments you almost spent.</p>
     </div>
     <div class="foot-links">
@@ -2284,27 +1719,14 @@ footer.site .wm{margin-bottom:8px}
       <a href="#quit">Quit</a>
       <a href="#groups">Groups</a>
       <a href="#vault">Vault</a>
-      <a href="#ranks">Ranks</a>
-      <a href="blog/">Blog</a>
       <a href="#waitlist">Waitlist</a>
-      <a href="faq.html">FAQ</a>
-      <a href="about.html">About</a>
       <a href="terms.html">Terms</a>
-      <a href="ach-authorization.html">ACH authorization</a>
       <a href="privacy.html">Privacy</a>
-      <span id="footEmail"></span>
-    </div>
-    <div class="foot-social" style="margin-top:14px;display:flex;flex-wrap:wrap;gap:18px;align-items:center">
-      <span style="font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(200,168,32,1)">Follow</span>
-      <a href="https://www.instagram.com/misersavings/" rel="me noopener" target="_blank" aria-label="Miser on Instagram" style="font-size:13px;color:rgba(237,232,208,0.78);text-decoration:none;letter-spacing:0.02em">Instagram <span style="opacity:0.5">@misersavings</span><span class="vh"> (opens in a new window)</span></a>
-      <a href="https://www.tiktok.com/@misersavings" rel="me noopener" target="_blank" aria-label="Miser on TikTok" style="font-size:13px;color:rgba(237,232,208,0.78);text-decoration:none;letter-spacing:0.02em">TikTok <span style="opacity:0.5">@misersavings</span><span class="vh"> (opens in a new window)</span></a>
-      <a href="https://x.com/misersavings" rel="me noopener" target="_blank" aria-label="Miser on X" style="font-size:13px;color:rgba(237,232,208,0.78);text-decoration:none;letter-spacing:0.02em">X <span style="opacity:0.5">@misersavings</span><span class="vh"> (opens in a new window)</span></a>
+      <a href="mailto:support@misersavings.com">support@misersavings.com</a>
     </div>
     <div class="foot-legal">
       <strong>MiserSavings Inc.</strong> · Austin, TX · Launching 2026<br>
       © 2026 MiserSavings Inc. All rights reserved.
-      <br><br>
-      <span style="opacity:0.85">mi$er is a financial technology company, not a bank. mi$er can't access, spend, or keep your money. ACH transfers between your linked checking and savings accounts are initiated by our ACH partner; bank linking is provided by a regulated third-party data network. A service fee of $2.50 + 1.5% of each transfer (no cap) applies to each savings transfer; the final fee schedule is shown in full and requires your explicit acceptance before any money moves. mi$er does not provide investment, tax, or legal advice. See <a href="terms.html" style="color:inherit;text-decoration:underline">Terms</a> and <a href="privacy.html" style="color:inherit;text-decoration:underline">Privacy Policy</a> for full details.</span>
     </div>
   </div>
 </footer>
@@ -2387,263 +1809,29 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   vio.observe(counter);
 })();
 
-/* ─── Waitlist submit (Apps Script + Cloudflare Turnstile) ─────
-   POST → Google Apps Script Web App (deployed for "Anyone").
-   Content-Type: text/plain;charset=utf-8 to keep it a "simple" CORS
-   request (no preflight). Apps Script replies with permissive CORS so
-   we can read {ok, error}. Endpoint URL + Turnstile sitekey are public
-   by design — secret-side check happens server-side in the Apps Script. */
+/* ─── Waitlist submit ───────────────────────────────────────── */
 (function(){
-  const WAITLIST_URL = 'https://script.google.com/macros/s/AKfycbyjAkNb-4bMVOtXsKvDzIjuZVQOgQJOM9urhwtEnoDgBrHOK_d4JqKLNxrll4l3DGreqQ/exec';
-
-  const form     = document.getElementById('wlForm');
-  const nameEl   = document.getElementById('wlName');
-  const emailEl  = document.getElementById('wlEmail');
-  const button   = form ? form.querySelector('button') : null;
-  const echo     = document.getElementById('wlEmailEcho');
-  const formWrap = document.getElementById('wlFormWrap');
-  const success  = document.getElementById('wlSuccess');
-  const errorEl  = document.getElementById('wlError');
+  const form    = document.getElementById('wlForm');
+  const email   = document.getElementById('wlEmail');
+  const echo    = document.getElementById('wlEmailEcho');
+  const formWrap= document.getElementById('wlFormWrap');
+  const success = document.getElementById('wlSuccess');
   if(!form) return;
 
-  // ── Page-load metadata (captured once) ─────────────────────
-  const PAGE_LOADED_AT = (typeof performance !== 'undefined' && performance.now) ? performance.now() : Date.now();
-  const URL_PARAMS = new URLSearchParams(location.search);
-  const REFERRER = (document.referrer || '').slice(0, 500);
-  const LANG = navigator.language || '';
-  const TIMEZONE = (function(){
-    try { return Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (_) { return ''; }
-  })();
-
-  // ── Best-effort IP lookup (kicked off on load) ─────────────
-  let ipPromise = null;
-  function fetchIpInfo(){
-    if (ipPromise) return ipPromise;
-    ipPromise = fetch('https://ipapi.co/json/', { method: 'GET' })
-      .then(r => r.ok ? r.json() : null)
-      .then(j => j ? { ip: (j.ip || '').toString().slice(0,64), ip_country: (j.country || '').toString().slice(0,4) } : { ip:'', ip_country:'' })
-      .catch(() => ({ ip:'', ip_country:'' }));
-    return ipPromise;
-  }
-  fetchIpInfo();
-
-  // ── Health check on page load ──────────────────────────────
-  fetch(WAITLIST_URL, { method: 'GET', mode: 'cors' })
-    .then(r => r.ok ? r.json().catch(()=>({ok:true})) : Promise.reject(new Error('HTTP '+r.status)))
-    .then(j => { if (j && j.ok === false) throw new Error(j.error || 'health failed'); })
-    .catch(err => { console.warn('[waitlist] health-check failed:', err); });
-
-  function showError(msg){
-    if(!errorEl) return;
-    var _ea = 'support' + '\x40' + 'misersavings.com';
-    errorEl.innerHTML = msg + ' <a href="mailto:' + _ea + '">Email us</a> if it keeps happening.';
-    errorEl.classList.add('on');
-  }
-  function clearError(){
-    if(errorEl){ errorEl.classList.remove('on'); errorEl.innerHTML = ''; }
-  }
-
-  form.addEventListener('submit', async (e)=>{
+  form.addEventListener('submit', (e)=>{
     e.preventDefault();
-    clearError();
-
-    const v = (emailEl.value || '').trim();
+    const v = email.value.trim();
     if(!v || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){
-      emailEl.focus();
+      email.focus();
       form.style.animation = 'none';
       form.offsetHeight; // reflow
       form.style.animation = 'shake .4s cubic-bezier(.2,.7,.2,1)';
       return;
     }
-
-    // Pull the Turnstile token if the widget is rendered.
-    let turnstileToken = '';
-    try {
-      if (window.turnstile && typeof window.turnstile.getResponse === 'function') {
-        turnstileToken = window.turnstile.getResponse() || '';
-      } else {
-        const tInput = document.querySelector('input[name="cf-turnstile-response"]');
-        if (tInput) turnstileToken = tInput.value || '';
-      }
-    } catch (_) {}
-
-    if(button){
-      button.disabled = true;
-      button.dataset.original = button.textContent;
-      button.textContent = 'Joining…';
-    }
-
-    // Race ipapi.co against a 1.5s timeout so the form never blocks on a slow third party.
-    const ipInfo = await Promise.race([
-      fetchIpInfo(),
-      new Promise(resolve => setTimeout(() => resolve({ ip:'', ip_country:'' }), 1500))
-    ]);
-
-    const checkedRadio = form.querySelector('input[name="wlPlatform"]:checked');
-    const platform = checkedRadio ? checkedRadio.value : 'ios';
-
-    const payload = {
-      email: v,
-      name: (nameEl && nameEl.value || '').trim().slice(0, 80),
-      platform: platform,
-      source: 'misersavings.com' + (location.pathname || '/'),
-      user_agent: navigator.userAgent,
-      lang: LANG,
-      timezone: TIMEZONE,
-      referrer: REFERRER,
-      utm_source:   URL_PARAMS.get('utm_source')   || '',
-      utm_medium:   URL_PARAMS.get('utm_medium')   || '',
-      utm_campaign: URL_PARAMS.get('utm_campaign') || '',
-      utm_content:  URL_PARAMS.get('utm_content')  || '',
-      utm_term:     URL_PARAMS.get('utm_term')     || '',
-      fbclid:       URL_PARAMS.get('fbclid')       || '',
-      gclid:        URL_PARAMS.get('gclid')        || '',
-      time_on_page_ms: Math.max(0, Math.round(((typeof performance !== 'undefined' && performance.now) ? performance.now() : Date.now()) - PAGE_LOADED_AT)),
-      ip: ipInfo.ip,
-      ip_country: ipInfo.ip_country,
-      'cf-turnstile-response': turnstileToken
-    };
-
-    try {
-      const resp = await fetch(WAITLIST_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify(payload),
-        redirect: 'follow'
-      });
-      if (!resp.ok) throw new Error('Server returned ' + resp.status);
-      const json = await resp.json().catch(()=>({ ok:false, error:'bad_response' }));
-      if (!json.ok) throw new Error(json.error || 'rejected');
-
-      // Real success.
-      echo.textContent = v;
-      formWrap.classList.add('off');
-      success.classList.add('on');
-      if (typeof gtag === 'function') {
-        gtag('event', 'waitlist_signup', { event_category:'engagement', event_label:'homepage' });
-      }
-    } catch (err) {
-      console.error('[waitlist] submit failed:', err);
-      if (button) {
-        button.disabled = false;
-        button.textContent = button.dataset.original || 'Join →';
-      }
-      try { if (window.turnstile) window.turnstile.reset(); } catch(_){}
-      const msg = String(err && err.message || err);
-      if (/captcha/i.test(msg)) {
-        showError('We couldn\'t verify the bot-check. Please try the captcha again.');
-      } else if (/invalid_email/i.test(msg)) {
-        showError('That email looks off — double-check it and resubmit.');
-      } else if (/Server returned 5/.test(msg)) {
-        showError('Our waitlist service hiccupped. We\'re likely already on it.');
-      } else {
-        showError('Something went wrong sending your email.');
-      }
-    }
+    echo.textContent = v;
+    formWrap.classList.add('off');
+    success.classList.add('on');
   });
-
-  // Turnstile callbacks
-  window.onTurnstileSuccess = function(){ /* no-op */ };
-  window.onTurnstileError = function(){ showError('Bot-check failed to load. Refresh and try again.'); };
-  window.onTurnstileExpired = function(){ try { window.turnstile && window.turnstile.reset(); } catch(_){} };
-})();
-</script>
-
-<script>
-/* ─── Hero waitlist hand-off ─────────────────────────────────
-   The hero form does NOT submit. It validates the address,
-   copies it into the real #waitlist form and scrolls the user
-   there, so Turnstile and the endpoint stay in exactly one
-   place. Keeps the ask above the fold without a second widget. */
-(function(){
-  var heroForm  = document.getElementById('heroWl');
-  var heroEmail = document.getElementById('heroWlEmail');
-  var wlEmail   = document.getElementById('wlEmail');
-  var wlSection = document.getElementById('waitlist');
-  if(!heroForm || !heroEmail || !wlEmail || !wlSection) return;
-
-  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  function shake(el){
-    el.style.animation = 'none';
-    el.offsetHeight; // force reflow
-    el.style.animation = 'shake .4s cubic-bezier(.2,.7,.2,1)';
-  }
-
-  heroForm.addEventListener('submit', function(e){
-    e.preventDefault();
-    var v = (heroEmail.value || '').trim();
-
-    if(!v || !EMAIL_RE.test(v)){
-      heroEmail.focus();
-      shake(heroForm);
-      return;
-    }
-
-    // Hand the address to the canonical form.
-    wlEmail.value = v;
-    try {
-      wlEmail.dispatchEvent(new Event('input',  { bubbles:true }));
-      wlEmail.dispatchEvent(new Event('change', { bubbles:true }));
-    } catch(_){}
-
-    var reduce = false;
-    try {
-      reduce = window.matchMedia &&
-               window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    } catch(_){}
-    wlSection.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block:'center' });
-
-    // Land focus on the submit button so the next action is one click/Enter.
-    var wlForm = document.getElementById('wlForm');
-    var submitBtn = wlForm && wlForm.querySelector('button[type="submit"]');
-    if(submitBtn){
-      window.setTimeout(function(){
-        try { submitBtn.focus({ preventScroll:true }); } catch(_){ submitBtn.focus(); }
-      }, reduce ? 0 : 550);
-    }
-  });
-})();
-</script>
-
-<script>
-/* ─── Obfuscated footer email ───────────────────────────────── */
-(function(){
-  var el = document.getElementById('footEmail');
-  if(!el) return;
-  var e = 'support', d = 'misersavings.com';
-  var a = document.createElement('a');
-  a.href = 'mailto:' + e + '\x40' + d;
-  a.textContent = e + '\x40' + d;
-  el.appendChild(a);
-})();
-
-/* ─── Lazy-load Turnstile ─────────────────────────────────────
-   Injects the Cloudflare script only when the waitlist section
-   is ~400 px from entering the viewport (or on email-field focus).
-   Keeps it off the critical rendering path entirely. ────────── */
-(function(){
-  var loaded = false;
-  function loadTS(){
-    if(loaded) return;
-    loaded = true;
-    var s = document.createElement('script');
-    s.src  = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
-    s.async = true;
-    s.defer = true;
-    document.head.appendChild(s);
-  }
-  var wl = document.getElementById('waitlist');
-  if(wl && 'IntersectionObserver' in window){
-    var obs = new IntersectionObserver(function(entries){
-      if(entries[0].isIntersecting){ loadTS(); obs.disconnect(); }
-    },{rootMargin:'400px'});
-    obs.observe(wl);
-  } else {
-    loadTS(); // fallback: no IO support
-  }
-  var email = document.getElementById('wlEmail');
-  if(email) email.addEventListener('focus', loadTS, {once:true});
 })();
 </script>
 
