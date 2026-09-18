@@ -64,8 +64,15 @@
 }
 
 /* 1.4.11 Non-text Contrast — the hero email field's boundary measured 1.8:1
-   against its own ground; 0.45 alpha clears 3:1. */
-#heroWlEmail{border-color:rgba(237,232,208,0.45)!important}
+   against its own ground; 0.47 alpha clears 3:1 (3.01:1). */
+#heroWlEmail{border-color:rgba(237,232,208,0.47)}
+/* 2.4.7 Focus Visible + 1.4.11 — `.hero-wl input:focus{outline:none}` beat the
+   bare :focus-visible rule on specificity, so the text fields had no ring at
+   all. Re-assert it at equal-or-higher specificity and keep the gold border. */
+input:focus-visible,textarea:focus-visible,select:focus-visible,
+.hero-wl input[type="email"]:focus-visible{
+  outline:3px solid #C8A820!important;outline-offset:2px;
+  border-color:#C8A820!important}
 /* 1.4.10 Reflow — body{overflow-x:hidden} was swallowing wide tables at phone
    width, making the last column unreachable. Give the table its own scroller
    and make it keyboard-reachable. */
