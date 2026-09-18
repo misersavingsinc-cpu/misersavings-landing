@@ -303,6 +303,16 @@ footer {
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
     transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
+
+/* 1.4.11 Non-text Contrast — the hero email field's boundary measured 1.8:1
+   against its own ground; 0.45 alpha clears 3:1. */
+#heroWlEmail{border-color:rgba(237,232,208,0.45)!important}
+/* 1.4.10 Reflow — body{overflow-x:hidden} was swallowing wide tables at phone
+   width, making the last column unreachable. Give the table its own scroller
+   and make it keyboard-reachable. */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+.table-scroll:focus-visible{outline:3px solid #C8A820;outline-offset:2px}
+.table-scroll table{margin:0}
 </style>
 </head>
 <body>

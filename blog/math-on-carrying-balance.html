@@ -70,6 +70,16 @@
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
     transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
+
+/* 1.4.11 Non-text Contrast — the hero email field's boundary measured 1.8:1
+   against its own ground; 0.45 alpha clears 3:1. */
+#heroWlEmail{border-color:rgba(237,232,208,0.45)!important}
+/* 1.4.10 Reflow — body{overflow-x:hidden} was swallowing wide tables at phone
+   width, making the last column unreachable. Give the table its own scroller
+   and make it keyboard-reachable. */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+.table-scroll:focus-visible{outline:3px solid #C8A820;outline-offset:2px}
+.table-scroll table{margin:0}
 </style>
 </head>
 <body>
@@ -107,7 +117,7 @@
 <p>But balances move, because the minimum payment moves them, slowly.</p>
 <p>A common minimum payment formula is 1% of the balance plus the interest charges, or a flat minimum of around $25 to $35, whichever is higher. On a $1,000 balance at 22% APR, your minimum payment in the first month is roughly $35 to $40.</p>
 <p>If you make only minimum payments on that $1,000 balance and add nothing new, it takes roughly five to six years to pay it off, and you&#39;ll pay somewhere between $600 and $800 in interest by the time you&#39;re done. On a $1,000 purchase. The actual cost of whatever you bought was $1,600 to $1,800.</p>
-<table>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Table, scrollable horizontally"><table>
 <thead>
 <tr>
 <th align="left">Balance</th>
@@ -138,7 +148,7 @@
 <td align="right">~8 yrs</td>
 <td align="right">~$4,200</td>
 </tr>
-</tbody></table>
+</tbody></table></div>
 <p>These numbers assume you make the minimum and don&#39;t add to the balance. Most people add to the balance.</p>
 <h2>The interest rate comparison that matters</h2>
 <p>A high-yield savings account currently pays somewhere in the range of 3% to 5% APY, depending on where rates are. A credit card charges 22%. Those two numbers don&#39;t belong in the same financial plan at the same time.</p>

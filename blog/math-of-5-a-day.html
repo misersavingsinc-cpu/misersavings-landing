@@ -70,6 +70,16 @@
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
     transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
+
+/* 1.4.11 Non-text Contrast — the hero email field's boundary measured 1.8:1
+   against its own ground; 0.45 alpha clears 3:1. */
+#heroWlEmail{border-color:rgba(237,232,208,0.45)!important}
+/* 1.4.10 Reflow — body{overflow-x:hidden} was swallowing wide tables at phone
+   width, making the last column unreachable. Give the table its own scroller
+   and make it keyboard-reachable. */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+.table-scroll:focus-visible{outline:3px solid #C8A820;outline-offset:2px}
+.table-scroll table{margin:0}
 </style>
 </head>
 <body>
@@ -106,7 +116,7 @@
 <p>That&#39;s the whole math. The rest of this is just looking at what $5 actually <em>is</em> in a normal week.</p>
 <h2>What does $5 look like, really?</h2>
 <p>Not as a guilt trip. Just so the number is real.</p>
-<table>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Table, scrollable horizontally"><table>
 <thead>
 <tr>
 <th>Skip</th>
@@ -139,7 +149,7 @@
 <td align="right">$2,340</td>
 <td align="right">~$18,600</td>
 </tr>
-</tbody></table>
+</tbody></table></div>
 <p>You don&#39;t have to live like a monk. You have to skip, on average, one thing a week, in the moment, not by planning your month in advance.</p>
 <blockquote class="pull-quote"><p>The math doesn&#39;t care which one you skip. It cares that you skip.</p></blockquote>
 <h2>Why the compound-interest pitch never works</h2>

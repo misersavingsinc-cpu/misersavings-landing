@@ -70,6 +70,16 @@
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
     transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
+
+/* 1.4.11 Non-text Contrast — the hero email field's boundary measured 1.8:1
+   against its own ground; 0.45 alpha clears 3:1. */
+#heroWlEmail{border-color:rgba(237,232,208,0.45)!important}
+/* 1.4.10 Reflow — body{overflow-x:hidden} was swallowing wide tables at phone
+   width, making the last column unreachable. Give the table its own scroller
+   and make it keyboard-reachable. */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+.table-scroll:focus-visible{outline:3px solid #C8A820;outline-offset:2px}
+.table-scroll table{margin:0}
 </style>
 </head>
 <body>
@@ -106,7 +116,7 @@
 <h2>The real shape of financial emergencies</h2>
 <p>Most emergencies aren&#39;t the catastrophic scenario, job loss, major illness, house fire. Those happen, and they&#39;re worth planning for eventually. But they&#39;re not what empties most people&#39;s accounts week to week.</p>
 <p>The everyday emergencies are smaller and more predictable than &quot;emergency&quot; implies:</p>
-<table>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Table, scrollable horizontally"><table>
 <thead>
 <tr>
 <th align="left">Emergency</th>
@@ -133,7 +143,7 @@
 <td align="left">Travel for a family situation</td>
 <td align="right">$400 to $1,200</td>
 </tr>
-</tbody></table>
+</tbody></table></div>
 <p>These aren&#39;t rare. A car problem, a dental bill, a thing that breaks in the apartment, for most households, something on that list shows up a couple of times a year. And when it shows up without a buffer, it goes on a credit card, which means it costs more and drags on for months afterward.</p>
 <p>The first job of an emergency fund isn&#39;t to cover a six-month layoff. It&#39;s to keep any of those from going on plastic.</p>
 <h2>The three rungs that actually work</h2>
