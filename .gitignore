@@ -9,3 +9,8 @@ node_modules/
 MISER_FACTS.md
 BLOG_EDITOR.md
 blog-drafts/
+
+# Local scratch — never deploy
+_to_delete/
+# Stale duplicate of an older homepage; not on main, not linked, not in sitemap
+download/
