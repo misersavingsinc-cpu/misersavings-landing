@@ -37,7 +37,7 @@ Third: treat the goal account as off-limits for anything else. A shared savings 
 
 ## When a shared goal isn't the right tool
 
-Not every financial goal should be shared. Individual savings, emergency funds, retirement accounts, personal spending money — these usually work better when each person maintains their own.
+Not every financial goal should be shared. Individual savings, emergency funds, retirement accounts, personal spending money: these usually work better when each person maintains their own.
 
 The shared goal is specifically for the things both people are working toward together. Mixing it with personal savings creates complexity and, eventually, arguments about who put in what and who spent from it.
 

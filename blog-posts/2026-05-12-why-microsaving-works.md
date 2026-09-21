@@ -1,7 +1,7 @@
 ---
 slug: why-microsaving-works
 title: Why microsaving works (and *"just save more"* doesn't)
-description: Most households have a few hundred dollars in savings. The advice they keep getting is "save more." It's not a willpower problem — it's the wrong question, asked at the wrong moment.
+description: Most households have a few hundred dollars in savings. The advice they keep getting is "save more." It's not a willpower problem. It's the wrong question, asked at the wrong moment.
 date: 2026-05-12
 category: Behavioral
 next: why-budgeting-apps-fail

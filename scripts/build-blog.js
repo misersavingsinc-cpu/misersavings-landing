@@ -142,6 +142,7 @@ function footerHtml() {
       <a href="../about.html">About</a>
       <a href="../terms.html">Terms</a>
       <a href="../privacy.html">Privacy</a>
+      <a href="../accessibility.html">Accessibility</a>
     </div>
     <div class="footer-copy">
       © 2026 MiserSavings Inc. · Austin, TX · mı$er is a financial technology company, not a bank.
@@ -179,7 +180,9 @@ function faviconsHtml() {
 function renderPost(post, nextPost) {
   const titlePlain = post.title.replace(/[*_`]/g, '');
   const titleHtml = renderInline(post.title);
-  const bodyHtml = marked.parse(post.body);
+  const bodyHtml = marked.parse(post.body)
+    .replace(/<table>/g, '<div class="table-scroll" tabindex="0" role="region" aria-label="Table, scrollable horizontally"><table>')
+    .replace(/<\/table>/g, '</table></div>');
   const url = `${SITE_URL}/blog/${post.slug}.html`;
 
   const jsonLd = JSON.stringify({
@@ -211,7 +214,7 @@ function renderPost(post, nextPost) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${escapeHtml(titlePlain)} — Miser</title>
+<title>${escapeHtml(titlePlain)} · Miser</title>
 <meta name="description" content="${escapeAttr(post.description)}">
 <link rel="canonical" href="${url}">
 
@@ -237,7 +240,9 @@ ${jsonLd}
 </head>
 <body>
 
+<a class="skip" href="#main">Skip to main content</a>
 ${navHtml()}
+<main id="main">
 
 <section class="post-hero">
   <div class="post-hero-inner">
@@ -254,6 +259,8 @@ ${bodyHtml.trim()}
   </div>
 ${nextBlock}
 </section>
+
+</main>
 
 ${footerHtml()}
 
@@ -293,8 +300,8 @@ function renderListing(posts) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog — Miser</title>
-<meta name="description" content="Essays on saving, spending, and the friction in between. Plain talk about why most personal-finance advice fails — and what actually changes behavior.">
+<title>Blog · Miser</title>
+<meta name="description" content="Essays on saving, spending, and the friction in between. Plain talk about why most personal-finance advice fails, and what actually changes behavior.">
 <link rel="canonical" href="${SITE_URL}/blog/">
 
 <meta property="og:title" content="The Miser Blog">
@@ -316,13 +323,15 @@ ${jsonLd}
 </head>
 <body>
 
+<a class="skip" href="#main">Skip to main content</a>
 ${navHtml()}
+<main id="main">
 
 <section class="blog-hero">
   <div class="blog-hero-inner">
     <div class="blog-eyebrow">Blog</div>
     <h1 class="blog-h1">Notes on saving, spending, and the <em>friction</em> in between.</h1>
-    <p class="blog-lede">Most personal-finance advice fails because it asks for the wrong kind of decision at the wrong moment. We write about what actually changes behavior — and what doesn't.</p>
+    <p class="blog-lede">Most personal-finance advice fails because it asks for the wrong kind of decision at the wrong moment. We write about what actually changes behavior, and what doesn't.</p>
   </div>
 </section>
 
@@ -341,6 +350,8 @@ ${rows}
     <a class="nav-cta" href="../index.html#waitlist">Join waitlist</a>
   </div>
 </section>
+
+</main>
 
 ${footerHtml()}
 
