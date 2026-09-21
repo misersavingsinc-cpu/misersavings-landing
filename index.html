@@ -1138,8 +1138,6 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
 .flow-to .flow-b{color:rgba(237,232,208,0.75)}
 .flow-arrow{text-align:center;font-size:26px;line-height:1;font-weight:900;color:#7A5B10}
 .flow-cap{text-align:center;font-size:11px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:#7A5B10;margin-top:-4px}
-.flow-opts{display:flex;flex-direction:column;gap:6px;margin-top:10px}
-.flow-opt{display:block;border:1px solid rgba(237,232,208,0.45);border-radius:999px;padding:7px 12px;font-size:13px;font-weight:700;color:var(--pch)}
 .flow-note{margin-top:6px;text-align:center;font-size:12px;font-weight:700;line-height:1.6;color:rgba(28,61,43,0.75)}
 /* 1.4.10 Reflow — body{overflow-x:hidden} was swallowing wide tables at phone
    width, making the last column unreachable. Give the table its own scroller
@@ -1477,7 +1475,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
   <div class="band-head reveal">
     <div class="rule-pair"><span class="line"></span><span class="eyebrow">How it works</span><span class="line"></span></div>
     <h2 class="h-section">Say no to the latte. <br><em>Say yes to Tokyo.</em></h2>
-    <p class="sub">No budgets, no spreadsheets, no lectures. Skip something, log it, and watch it land in the savings account you choose: the one at your own bank, or a high-yield account somewhere else. It's yours the whole way.</p>
+    <p class="sub">No budgets, no spreadsheets, no lectures. Skip something, log it, and watch it move from your checking to a savings account you own. It's yours the whole way.</p>
   </div>
 
   <div class="steps">
@@ -1510,19 +1508,15 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     <div class="step reveal" data-delay="2">
       <div class="snum"><span>Step 03</span><span class="dot"></span><span>Send it home</span></div>
       <h3>Straight into <em>your</em> savings.</h3>
-      <p>About once a week, once you've stacked $50, Miser moves it from your checking to the savings account you picked. Keep it at your own bank, or link a high-yield account at another one. Both accounts stay yours. $2.50 + 1.5% per transfer.</p>
+      <p>About once a week, once you've stacked $50, Miser moves it from your checking to a savings account you own. Both accounts stay yours. $2.50 + 1.5% per transfer.</p>
       <div class="phone-well pch-well flow-well">
-        <div class="flow" role="img" aria-label="Money moves from your checking account to a savings account you choose: the one at your own bank, or a high-yield account at another bank. Miser never holds it.">
+        <div class="flow" role="img" aria-label="Money moves from your checking account to a savings account you own. Miser never holds it.">
           <div class="flow-acct"><span class="flow-k">Your checking</span><span class="flow-b">Where it would have gone</span></div>
           <div class="flow-arrow" aria-hidden="true">&darr;</div>
           <div class="flow-cap" aria-hidden="true">about once a week</div>
           <div class="flow-acct flow-to">
             <span class="flow-k">Your savings</span>
-            <span class="flow-b">You pick where</span>
-            <div class="flow-opts">
-              <span class="flow-opt">Your own bank</span>
-              <span class="flow-opt">A high-yield account</span>
-            </div>
+            <span class="flow-b">An account you own</span>
           </div>
           <div class="flow-note">Miser never holds it</div>
         </div>
