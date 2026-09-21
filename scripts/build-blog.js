@@ -123,7 +123,7 @@ function navHtml() {
     <li><a href="../index.html#ranks">Ranks</a></li>
     <li><a href="index.html" class="active">Blog</a></li>
   </ul>
-  <a class="nav-cta" href="../index.html#waitlist">Join waitlist</a>
+  <a class="nav-cta" href="../index.html#waitlist">Join our community</a>
 </nav>`;
 }
 function footerHtml() {
@@ -346,7 +346,7 @@ ${rows}
       <strong>Miser isn't open yet.</strong>
       Join the list for savings tips, product updates, and a TestFlight invite when your slot opens.
     </div>
-    <a class="nav-cta" href="../index.html#waitlist">Join waitlist</a>
+    <a class="nav-cta" href="../index.html#waitlist">Join our community</a>
   </div>
 </section>
 
