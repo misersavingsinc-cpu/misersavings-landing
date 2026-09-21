@@ -115,7 +115,7 @@ function escapeAttr(s) {
 // ── Shared partials ───────────────────────────────────────────────────────
 function navHtml() {
   return `<nav>
-  <a class="nav-wm" href="../index.html">mı<span class="d">$</span>er</a>
+  <a class="nav-wm" href="../index.html" aria-label="Miser home">mı<span class="d">$</span>er</a>
   <ul class="nav-links">
     <li><a href="../index.html#how">How it works</a></li>
     <li><a href="../index.html#quit">Quit</a></li>
@@ -129,7 +129,7 @@ function navHtml() {
 function footerHtml() {
   return `<footer>
   <div class="footer-inner">
-    <div class="footer-wm">mı<span class="d">$</span>er</div>
+    <div class="footer-wm" role="img" aria-label="Miser">mı<span class="d">$</span>er</div>
     <div class="footer-links-row">
       <a href="../index.html">Home</a>
       <a href="../index.html#how">How it works</a>

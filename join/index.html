@@ -342,6 +342,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
       'Ask the person who invited you to send the link again. It should end in a six character code.';
     document.getElementById('code-card').style.display = 'none';
     openBtn.style.display = 'none';
+    document.getElementById('access').style.display = 'none';
     try { gtag('event', 'group_invite_landing', { event_category: 'invite', event_label: 'no_code' }); } catch (e) {}
     return;
   }

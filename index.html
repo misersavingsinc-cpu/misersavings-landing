@@ -708,6 +708,7 @@ section.band.dg{background:var(--dg);color:var(--pch)}
 .gf-title{font-size:16px;font-weight:800;color:var(--dg);margin-bottom:4px}
 .gf-desc{font-size:14px;color:rgba(28,61,43,0.75);line-height:1.55}
 .groups-phone-wrap{display:flex;justify-content:center;position:relative}
+#quit .groups-phone-wrap{order:-1}
 .groups-phone-wrap::before{
   content:"";position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);
   width:420px;height:420px;border-radius:50%;
@@ -813,7 +814,7 @@ section.band.dg{background:var(--dg);color:var(--pch)}
 }
 .wl-platform label:hover{color:var(--pch)}
 .wl-platform input[type="radio"]{accent-color:var(--gld);margin:0;cursor:pointer}
-.cf-turnstile{margin:14px auto 0;display:flex;justify-content:center;min-height:65px}
+.cf-turnstile{margin:14px auto 0;display:flex;justify-content:center}
 .wl-error{
   display:none;background:rgba(180,60,40,0.12);border:1px solid rgba(180,60,40,0.45);
   border-radius:12px;padding:14px 18px;text-align:center;color:#F5C7BC;
@@ -1438,7 +1439,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
 <a class="skip" href="#main">Skip to main content</a>
 <nav class="site">
   <div class="inner">
-    <a href="#top" class="wm">mı<span class="d">$</span>er</a>
+    <a href="#top" class="wm" aria-label="Miser home">mı<span class="d">$</span>er</a>
     <ul class="nav-links">
       <li><a href="#how">How it works</a></li>
       <li><a href="#quit">Quit</a></li>
@@ -1461,7 +1462,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
       <form class="hero-wl" id="heroWl" autocomplete="on" novalidate>
         <div class="hero-wl-row">
           <input type="email" id="heroWlEmail" placeholder="you@wherever.com"
-                 aria-label="Email address" autocomplete="email" required data-clarity-mask="True">
+                 aria-label="Email address" autocomplete="email" aria-required="true" data-clarity-mask="True">
           <button type="submit" class="btn-gold">Join the list →</button>
         </div>
         <p class="hero-wl-note">Early access · iOS TestFlight · no spam, no card.</p>
@@ -1474,9 +1475,9 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
       </div>
       <div class="hero-foot" style="letter-spacing:0.22em;text-transform:uppercase;font-weight:800;font-size:11px;color:rgba(237,232,208,0.7)">
         <span>Skip it</span>
-        <span class="dot"> · </span>
+        <span class="dot" aria-hidden="true"> · </span>
         <span>It adds up</span>
-        <span class="dot"> · </span>
+        <span class="dot" aria-hidden="true"> · </span>
         <span>It moves</span>
       </div>
     </div>
@@ -1504,7 +1505,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
 
     <!-- STEP 1 — Skip it -->
     <div class="step reveal">
-      <div class="snum"><span>Step 01</span><span class="dot"></span><span>Skip it</span></div>
+      <div class="snum"><span>Step 01</span><span class="dot" aria-hidden="true"></span><span>Skip it</span></div>
       <h3>Walked past the latte? <em>That counts.</em></h3>
       <p>Log it in three taps. Quitting something for good? Quit Companion checks you in daily, and every clean day counts too.</p>
       <div class="phone-well pch-well">
@@ -1516,7 +1517,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
 
     <!-- STEP 2 — Stack it -->
     <div class="step reveal" data-delay="1">
-      <div class="snum"><span>Step 02</span><span class="dot"></span><span>Stack it</span></div>
+      <div class="snum"><span>Step 02</span><span class="dot" aria-hidden="true"></span><span>Stack it</span></div>
       <h3>Watch the pile <em>grow</em>.</h3>
       <p>Point every skip at a goal. Keep the streak alive, climb nine ranks from Cheap Curious to Grand Scrooge, and let the Coach keep score.</p>
       <div class="phone-well pch-well">
@@ -1528,7 +1529,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
 
     <!-- STEP 3 — Send it home -->
     <div class="step reveal" data-delay="2">
-      <div class="snum"><span>Step 03</span><span class="dot"></span><span>Send it home</span></div>
+      <div class="snum"><span>Step 03</span><span class="dot" aria-hidden="true"></span><span>Send it home</span></div>
       <h3>Straight into <em>your</em> savings.</h3>
       <p>Once you've stacked $50, about once a week, it moves from your checking to a savings account you own.</p>
       <div class="phone-well pch-well flow-well">
@@ -1556,7 +1557,8 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     <h3 class="how-demo-h">A week of skipping, <em>compressed</em>.</h3>
     <p class="how-demo-sub">Scroll into the demo. Watch every skip stack onto a real goal: the bar inches right, the destination gets closer.</p>
 
-    <div class="vault-counter vault-counter-lt" id="vaultCounter">
+    <p class="vh">In the demo, eight skips over one week add up to $320, 64% of a $500 goal.</p>
+    <div class="vault-counter vault-counter-lt" id="vaultCounter" aria-hidden="true">
       <div class="vc-label"><span class="live-dot"></span> Goal · Tokyo, October · Live demo</div>
       <div class="vc-num" id="vcNum"><span class="d">$</span><span id="vcDol">0</span><span class="cents">.00</span></div>
       <div class="vc-sub" id="vcSub">Waiting for first skip…</div>
@@ -1574,13 +1576,6 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
 <!-- ═══════ QUIT COMPANION ═══════ -->
 <section class="band pch gui-lt" id="quit">
   <div class="groups-inner">
-
-    <!-- Phone: Quit Companion setup screen -->
-    <div class="groups-phone-wrap reveal" data-delay="2">
-      <div class="phone">
-        <div class="phone-screen"><img src="/assets/app/quit.webp" alt="Miser Add a habit screen: Alcohol chosen from the category grid at $25 per week, projected as $3.57 a day, $109 a month and $1,304 a year." width="640" height="1391" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
-      </div>
-    </div>
 
     <div class="groups-text reveal">
       <div class="eyebrow">Quit Companion</div>
@@ -1611,7 +1606,15 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
       </div>
     </div>
 
-  </div>
+  
+    <!-- Phone: Quit Companion setup screen -->
+    <div class="groups-phone-wrap reveal" data-delay="2">
+      <div class="phone">
+        <div class="phone-screen"><img src="/assets/app/quit.webp" alt="Miser Add a habit screen: Alcohol chosen from the category grid at $25 per week, projected as $3.57 a day, $109 a month and $1,304 a year." width="640" height="1391" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
+      </div>
+    </div>
+
+    </div>
 </section>
 
 
@@ -1624,69 +1627,78 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
       <p class="sub">Skip enough days, lock enough dollars, and Miser gives you a name for it. Start as Cheap Curious, graduate to Cart Ghoster, and last fifteen months to become a Grand Scrooge. Pure bragging rights: no fee discounts, no paywall.</p>
     </div>
 
-    <div class="ranks-grid reveal" data-delay="1">
+    <div class="ranks-grid reveal" data-delay="1" role="list">
 
-      <div class="rank-card">
-        <div class="crest r-bronze"><svg aria-hidden="true" focusable="false"><use href="#r-coin"></use></svg></div>
-        <div class="r-num">Rank 01</div>
-        <div class="r-name">Cheap Curious</div>
-        <div class="r-meta">3 days<span class="sep">·</span>$15 locked</div>
+      <div class="rank-card" role="listitem">
+        <div class="crest r-bronze" aria-hidden="true"><svg aria-hidden="true" focusable="false"><use href="#r-coin"></use></svg></div>
+        <div class="r-num" aria-hidden="true">Rank 01</div>
+        <div class="r-name" aria-hidden="true">Cheap Curious</div>
+        <div class="r-meta" aria-hidden="true">3 days<span class="sep">·</span>$15 locked</div>
+        <span class="vh">Rank 1: Cheap Curious. 3 days, $15 locked.</span>
       </div>
 
-      <div class="rank-card">
-        <div class="crest r-bronze"><svg aria-hidden="true" focusable="false"><use href="#r-wallet"></use></svg></div>
-        <div class="r-num">Rank 02</div>
-        <div class="r-name">Cart Ghoster</div>
-        <div class="r-meta">7 days<span class="sep">·</span>$35 locked</div>
+      <div class="rank-card" role="listitem">
+        <div class="crest r-bronze" aria-hidden="true"><svg aria-hidden="true" focusable="false"><use href="#r-wallet"></use></svg></div>
+        <div class="r-num" aria-hidden="true">Rank 02</div>
+        <div class="r-name" aria-hidden="true">Cart Ghoster</div>
+        <div class="r-meta" aria-hidden="true">7 days<span class="sep">·</span>$35 locked</div>
+        <span class="vh">Rank 2: Cart Ghoster. 7 days, $35 locked.</span>
       </div>
 
-      <div class="rank-card">
-        <div class="crest r-bronze"><svg aria-hidden="true" focusable="false"><use href="#r-lock"></use></svg></div>
-        <div class="r-num">Rank 03</div>
-        <div class="r-name">Dirt Cheap</div>
-        <div class="r-meta">14 days<span class="sep">·</span>$70 locked</div>
+      <div class="rank-card" role="listitem">
+        <div class="crest r-bronze" aria-hidden="true"><svg aria-hidden="true" focusable="false"><use href="#r-lock"></use></svg></div>
+        <div class="r-num" aria-hidden="true">Rank 03</div>
+        <div class="r-name" aria-hidden="true">Dirt Cheap</div>
+        <div class="r-meta" aria-hidden="true">14 days<span class="sep">·</span>$70 locked</div>
+        <span class="vh">Rank 3: Dirt Cheap. 14 days, $70 locked.</span>
       </div>
 
-      <div class="rank-card">
-        <div class="crest r-gold"><svg aria-hidden="true" focusable="false"><use href="#r-anchor"></use></svg></div>
-        <div class="r-num">Rank 04</div>
-        <div class="r-name">Wallet Clencher</div>
-        <div class="r-meta">30 days<span class="sep">·</span>$150 locked</div>
+      <div class="rank-card" role="listitem">
+        <div class="crest r-gold" aria-hidden="true"><svg aria-hidden="true" focusable="false"><use href="#r-anchor"></use></svg></div>
+        <div class="r-num" aria-hidden="true">Rank 04</div>
+        <div class="r-name" aria-hidden="true">Wallet Clencher</div>
+        <div class="r-meta" aria-hidden="true">30 days<span class="sep">·</span>$150 locked</div>
+        <span class="vh">Rank 4: Wallet Clencher. 30 days, $150 locked.</span>
       </div>
 
-      <div class="rank-card">
-        <div class="crest r-gold"><svg aria-hidden="true" focusable="false"><use href="#r-flame"></use></svg></div>
-        <div class="r-num">Rank 05</div>
-        <div class="r-name">Bona Fide Cheapskate</div>
-        <div class="r-meta">90 days<span class="sep">·</span>$400 locked</div>
+      <div class="rank-card" role="listitem">
+        <div class="crest r-gold" aria-hidden="true"><svg aria-hidden="true" focusable="false"><use href="#r-flame"></use></svg></div>
+        <div class="r-num" aria-hidden="true">Rank 05</div>
+        <div class="r-name" aria-hidden="true">Bona Fide Cheapskate</div>
+        <div class="r-meta" aria-hidden="true">90 days<span class="sep">·</span>$400 locked</div>
+        <span class="vh">Rank 5: Bona Fide Cheapskate. 90 days, $400 locked.</span>
       </div>
 
-      <div class="rank-card">
-        <div class="crest r-gold"><svg aria-hidden="true" focusable="false"><use href="#r-shieldR"></use></svg></div>
-        <div class="r-num">Rank 06</div>
-        <div class="r-name">Markdown Menace</div>
-        <div class="r-meta">180 days<span class="sep">·</span>$800 locked</div>
+      <div class="rank-card" role="listitem">
+        <div class="crest r-gold" aria-hidden="true"><svg aria-hidden="true" focusable="false"><use href="#r-shieldR"></use></svg></div>
+        <div class="r-num" aria-hidden="true">Rank 06</div>
+        <div class="r-name" aria-hidden="true">Markdown Menace</div>
+        <div class="r-meta" aria-hidden="true">180 days<span class="sep">·</span>$800 locked</div>
+        <span class="vh">Rank 6: Markdown Menace. 180 days, $800 locked.</span>
       </div>
 
-      <div class="rank-card">
-        <div class="crest r-double"><svg aria-hidden="true" focusable="false"><use href="#r-medal"></use></svg></div>
-        <div class="r-num">Rank 07</div>
-        <div class="r-name">Certified Tightwad</div>
-        <div class="r-meta">270 days<span class="sep">·</span>$1,300 locked</div>
+      <div class="rank-card" role="listitem">
+        <div class="crest r-double" aria-hidden="true"><svg aria-hidden="true" focusable="false"><use href="#r-medal"></use></svg></div>
+        <div class="r-num" aria-hidden="true">Rank 07</div>
+        <div class="r-name" aria-hidden="true">Certified Tightwad</div>
+        <div class="r-meta" aria-hidden="true">270 days<span class="sep">·</span>$1,300 locked</div>
+        <span class="vh">Rank 7: Certified Tightwad. 270 days, $1,300 locked.</span>
       </div>
 
-      <div class="rank-card">
-        <div class="crest r-double"><svg aria-hidden="true" focusable="false"><use href="#r-crown"></use></svg></div>
-        <div class="r-num">Rank 08</div>
-        <div class="r-name">Cash Hoarder</div>
-        <div class="r-meta">365 days<span class="sep">·</span>$1,800 locked</div>
+      <div class="rank-card" role="listitem">
+        <div class="crest r-double" aria-hidden="true"><svg aria-hidden="true" focusable="false"><use href="#r-crown"></use></svg></div>
+        <div class="r-num" aria-hidden="true">Rank 08</div>
+        <div class="r-name" aria-hidden="true">Cash Hoarder</div>
+        <div class="r-meta" aria-hidden="true">365 days<span class="sep">·</span>$1,800 locked</div>
+        <span class="vh">Rank 8: Cash Hoarder. 365 days, $1,800 locked.</span>
       </div>
 
-      <div class="rank-card">
-        <div class="crest r-grand"><svg aria-hidden="true" focusable="false"><use href="#r-trophy"></use></svg></div>
-        <div class="r-num">Rank 09 · Peak</div>
-        <div class="r-name">Grand Scrooge</div>
-        <div class="r-meta">450 days<span class="sep">·</span>$2,500 locked</div>
+      <div class="rank-card" role="listitem">
+        <div class="crest r-grand" aria-hidden="true"><svg aria-hidden="true" focusable="false"><use href="#r-trophy"></use></svg></div>
+        <div class="r-num" aria-hidden="true">Rank 09 · Peak</div>
+        <div class="r-name" aria-hidden="true">Grand Scrooge</div>
+        <div class="r-meta" aria-hidden="true">450 days<span class="sep">·</span>$2,500 locked</div>
+        <span class="vh">Rank 9, Peak: Grand Scrooge. 450 days, $2,500 locked.</span>
       </div>
 
     </div>
@@ -1748,8 +1760,8 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
   <div class="interlude-inner">
     <div class="interlude-stamp">Entry <span class="gem"></span> Volume I <span class="gem"></span> Reclaimed</div>
     <div class="interlude-head">
-      <span class="interlude-word">mı<span class="dol">$</span>er</span>
-      <span class="interlude-ipa">/ˈmaɪ.zər/</span>
+      <span class="interlude-word" role="img" aria-label="Miser">mı<span class="dol">$</span>er</span>
+      <span class="interlude-ipa" aria-hidden="true">/ˈmaɪ.zər/</span>
       <span class="interlude-pos">noun.</span>
     </div>
     <div class="interlude-defs">
@@ -1817,14 +1829,14 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
       <form class="wl-form" id="wlForm" autocomplete="on" novalidate>
         <input type="text" id="wlName" placeholder="Name (optional)" aria-label="Name (optional)" autocomplete="name" maxlength="80" data-clarity-mask="True">
         <div class="wl-emailrow">
-          <input type="email" id="wlEmail" placeholder="you@wherever.com" aria-label="Email address" autocomplete="email" required data-clarity-mask="True">
+          <input type="email" id="wlEmail" placeholder="you@wherever.com" aria-label="Email address" autocomplete="email" aria-required="true" data-clarity-mask="True">
           <button type="submit">Join →</button>
         </div>
         <div class="wl-platform" role="radiogroup" aria-label="Which platform are you on">
-          <span class="wl-platform-label">I'm on</span>
-          <label><input type="radio" name="wlPlatform" value="ios" checked> iOS</label>
-          <label><input type="radio" name="wlPlatform" value="android"> Android</label>
-          <label><input type="radio" name="wlPlatform" value="either"> Either</label>
+          <span class="wl-platform-label" aria-hidden="true">I'm on</span>
+          <label><input type="radio" name="wlPlatform" value="ios" checked aria-label="iOS"><span aria-hidden="true"> iOS</span></label>
+          <label><input type="radio" name="wlPlatform" value="android" aria-label="Android"><span aria-hidden="true"> Android</span></label>
+          <label><input type="radio" name="wlPlatform" value="either" aria-label="Either"><span aria-hidden="true"> Either</span></label>
         </div>
       </form>
       <!-- Cloudflare Turnstile — public sitekey. Secret lives in Apps Script Script Properties as TURNSTILE_SECRET. -->
@@ -1834,14 +1846,15 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
            data-error-callback="onTurnstileError"
            data-expired-callback="onTurnstileExpired"
            data-theme="dark"
-           data-action="waitlist"></div>
+           data-action="waitlist"
+           data-appearance="interaction-only"></div>
       <div class="wl-foot">
         <span>iOS first · Android next</span>
-        <span class="dot">·</span>
+        <span class="dot" aria-hidden="true">·</span>
         <span>US residents, 18+</span>
-        <span class="dot">·</span>
+        <span class="dot" aria-hidden="true">·</span>
         <span>We'll email you savings tips, product updates and your TestFlight invite · unsubscribe anytime</span>
-        <span class="dot">·</span>
+        <span class="dot" aria-hidden="true">·</span>
         <span>By joining, you agree to our <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a>
       <a href="accessibility.html">Accessibility</a></span>
       </div>
@@ -1882,7 +1895,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
 <footer class="site">
   <div class="inner">
     <div>
-      <a class="wm" href="#top">mı<span class="d">$</span>er</a>
+      <a class="wm" href="#top" aria-label="Miser home">mı<span class="d">$</span>er</a>
       <div class="foot-tag">Skip · Save · Stack</div>
       <p class="foot-blurb">A quieter way to save. Built for the moments you almost spent.</p>
     </div>
