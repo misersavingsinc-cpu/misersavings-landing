@@ -1,57 +1,51 @@
 ---
 slug: why-we-built-a-quit-button
 title: Why we put a *quit button* in a savings app
-description: Most apps treat leaving as a failure and design the exit accordingly. We went the other way. Here's the thinking behind Miser's Quit Companion.
+description: Quit Companion is for the habit you're done with, whether that's the vape, the bets or the nightly takeout. Here's how it works, and the three rules we built it around.
 date: 2026-04-21
 category: Built in public
 ---
 
-Early in building Miser, someone asked us: "What happens when a user wants to stop?"
+Most savings apps start with the money. We kept meeting people who started somewhere else: *I need to stop doing this thing.*
 
-It sounds like a strange question for a startup to sit with. The usual answer is: you design for retention. You make the exit buried and confusing. You send re-engagement emails. You make leaving feel expensive enough that most people won't bother.
+Cigarettes. Sports betting. The takeout order that has quietly become a nightly reflex. For a lot of people the habit comes first and the savings are a side effect. So we built a place in Miser for the habit itself. We call it Quit Companion.
 
-We went the other direction. We built what we call Quit Companion.
+## How it works
 
-## What it does
+You pick what you're quitting: cigarettes, alcohol, vaping, cannabis, gambling, sports betting, takeout, shopping, or something else. You tell Miser roughly what it costs you, per day, per week or per month, and it shows you what that adds up to over a year.
 
-When you decide to stop using Miser, the app doesn't just close your account and wish you well. It walks you through a short exit: it shows you what you saved while you were here, asks you one question about why you're leaving, and closes out your account cleanly.
+Then, once a day, you check in. Stayed clean? That day's amount is added to your locked total, and it moves from your checking to your savings with your next transfer, alongside everything else you've skipped. The habit you're quitting quietly turns into the thing you're saving.
 
-If there's money in your savings, it goes back to your checking account, free, no waiting period. The reflection card at the end isn't a guilt trip. It's just: here's what happened while you were here. You decide what it means.
+You can track more than one habit at once, and pause one whenever life gets in the way.
 
-That's it. You're out.
+## Three rules we didn't bend
 
-## Why we built it that way
+Quitting is hard, and most apps handle a relapse badly. They reset you to zero and make sure you feel it. We wrote three rules into the design before we wrote any code.
 
-The standard playbook is friction. Make the cancel flow hard to find. Ask the user to confirm three times. Offer a discount on the way out. Show them a projection of what they'd be giving up. The goal is to make leaving feel costly enough that most people give up and stay.
+**A slip never erases your progress.** Your current streak restarts, but your lifetime savings and your longest streak stay exactly where they were. Thirty clean days don't stop counting because day thirty-one went sideways.
 
-This works, in a narrow sense. Churn numbers go down. Retention looks better on a slide.
+**You're the only one who calls a slip.** Miser never guesses. There's no inferred relapse and no algorithm deciding you failed. If you had a slip, you tap *I had a slip*. Otherwise, it didn't happen.
 
-The problem is that it creates a different kind of relationship, one where the user knows, somewhere, that the app is working against their interests at the exact moment they've decided something isn't working. And once someone feels that, the trust erodes. Every feature starts to look like a hook rather than a tool.
+**No failure language.** The app never tells you that you broke, failed or lost anything. Judging the day isn't the app's job. Helping with the next one is.
 
-We're building a savings app. Trust is the whole product. If you're linking your bank account and letting the app move money on your behalf every week, you have to believe it's working for you, not for our retention numbers.
+> The craving passes. The savings don't.
 
-> An app that makes leaving hard has a business model problem. If users only stay because the exit is painful, that's not retention. That's capture.
+That line comes from the app. It's one of the short notes on your Quit Companion card in the first week of a streak.
 
-## The bet underneath the decision
+## When a craving hits
 
-Here's the actual reasoning: we think making Quit Companion as clean as possible will result in more people staying, not fewer.
+Knowing the yearly number helps on a calm afternoon. It does very little at 11pm when the craving is loud. So the card has a button for that moment: *Help, I'm having a craving*. Tap it and Quit Companion gives you something to do instead, right now, next to a reminder of the goal you're saving for.
 
-When leaving is easy, you're not staying to protect yourself. You're not worried about losing access to something you need, or your money sitting in limbo, or canceling taking three phone calls. You're free to go whenever the app stops serving you.
+Drink a tall glass of ice water, slowly. Step outside for sixty seconds. Text someone who keeps you accountable. Do the dishes. Yes, really.
 
-That freedom changes the relationship. You're not locked in, you're choosing to be here. And people who are choosing to be somewhere behave differently from people who are stuck somewhere. They give you honest feedback instead of quietly resenting the product. They come back when they're ready. They tell friends accurately instead of through gritted teeth.
+Small, physical, a little silly. That's on purpose. A craving usually lasts a few minutes, and the only job is to get through those few minutes.
 
-None of that shows up on a short-term retention chart. But it's the difference between a product people trust and one people tolerate.
+## Why this belongs in a savings app
 
-## What building it taught us
-
-One thing we didn't expect: building the quit flow forced us to get clear on what we actually wanted users to *take with them* when they left.
-
-The reflection card asks one question. Writing the right question, not manipulative, not fishing for "please reconsider," genuinely curious, turned out to be harder than the feature engineering. We rewrote it six times. The first versions were all subtly angled toward getting the user to stay. The right version just asks: *what was saving like for you while you were here?*
-
-That's the question that gives us real signal. And it's the question we'd want someone to ask us if we were the ones leaving.
+Because the money was always attached to the habit. A $20-a-day habit is $7,300 a year, and almost nobody quits for $7,300. People quit for their lungs, their sleep, their family, their bank balance at the end of the month. Miser just makes sure that when you do, the money has somewhere to go that isn't back into the habit.
 
 <div class="callout">
-<strong>Quit Companion is live in the app.</strong> You'll find it in Settings → Account. We're still refining the reflection question, if you've used it, or if you think we're asking the wrong thing, we'd genuinely like to hear from you at support@misersavings.com.
+<strong>Quit Companion is in the app now.</strong> Set it up from the Goals tab or in Settings. If it helped, or if something about it felt wrong, tell us at support@misersavings.com. A person reads every message.
 </div>
 
-Making it easy to leave is how we earn the stay.
+The thing you quit becomes the thing you keep.
