@@ -1443,7 +1443,6 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
       <li><a href="#how">How it works</a></li>
       <li><a href="#quit">Quit</a></li>
       <li><a href="#groups">Groups</a></li>
-      <li><a href="#vault">Demo</a></li>
       <li><a href="#ranks">Ranks</a></li>
       <li><a href="blog/">Blog</a></li>
     </ul>
@@ -1548,7 +1547,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
   </div>
 
   <!-- Embedded live demo — replaces standalone Vault section -->
-  <div class="how-demo reveal" data-delay="3">
+  <div class="how-demo reveal" data-delay="3" id="vault">
     <div class="how-demo-head">
       <span class="rule"></span>
       <span class="eyebrow">Live demo · 6 seconds</span>
@@ -1601,13 +1600,13 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
           <div class="gf-bullet" style="background:rgba(46,107,69,0.1);color:var(--sg);border:1px solid rgba(46,107,69,0.2)">
             <svg aria-hidden="true" focusable="false" width="22" height="22"><use href="#i-dice"></use></svg>
           </div>
-          <div><div class="gf-title">The math gets loud.</div><div class="gf-desc">A $20-a-day gambling habit is $7,300 a year. Miser shows you the number before you start, and again every time you almost relapse.</div></div>
+          <div><div class="gf-title">The math gets loud.</div><div class="gf-desc">A $20-a-day gambling habit is $7,300 a year. Miser shows you the number before you start, and gives you something to do instead when a craving hits.</div></div>
         </div>
         <div class="gf">
           <div class="gf-bullet" style="background:rgba(46,107,69,0.1);color:var(--sg);border:1px solid rgba(46,107,69,0.2)">
             <svg aria-hidden="true" focusable="false" width="22" height="22"><use href="#i-cash"></use></svg>
           </div>
-          <div><div class="gf-title">The money still ships on the same schedule.</div><div class="gf-desc">Each day you stay clean, that amount queues up. Your check-ins batch with your other skips and move from your checking to your savings with your next transfer.</div></div>
+          <div><div class="gf-title">It moves with everything else.</div><div class="gf-desc">Each day you stay clean, that amount joins your other skips and moves from your checking to your savings with your next transfer.</div></div>
         </div>
       </div>
     </div>
@@ -1622,7 +1621,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     <div class="ranks-head reveal">
       <div><span class="rule"></span><span class="eyebrow">Earned, not bought</span><span class="rule"></span></div>
       <h2 class="h-section">Nine ranks. <em>One slow climb.</em></h2>
-      <p class="sub">Pure recognition. No fee discounts. No raised limits. No paywall. The tier system was scrapped for a reason. This is the part we kept: identity. Skip enough days, lock enough dollars, and the ledger names you.</p>
+      <p class="sub">Skip enough days, lock enough dollars, and Miser gives you a name for it. Start as Cheap Curious, graduate to Cart Ghoster, and last fifteen months to become a Grand Scrooge. Pure bragging rights: no fee discounts, no paywall.</p>
     </div>
 
     <div class="ranks-grid reveal" data-delay="1">
@@ -1695,7 +1694,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     <div class="ranks-voice reveal" data-delay="2">
       <div><span class="eyebrow">How the Coach speaks to you</span></div>
       <div class="v-line"><strong>Cheap Curious</strong><span>"Three days in. You skipped, you locked. That's the whole game."</span></div>
-      <div class="v-line"><strong>Wallet Clencher</strong><span>"One month. $156 not spent. You earned this."</span></div>
+      <div class="v-line"><strong>Wallet Clencher</strong><span>"One month. You earned this."</span></div>
       <div class="v-line"><strong>Bona Fide Cheapskate</strong><span>"Ninety days. Most people who try to save quit by week three. You didn't."</span></div>
       <div class="v-line"><strong>Cash Hoarder</strong><span>"One year clean. The number speaks for itself."</span></div>
       <div class="v-line"><strong>Grand Scrooge</strong><span>"Fifteen months. Welcome to the ledger that doesn't end."</span></div>
@@ -1724,11 +1723,11 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
         </div>
         <div class="gf">
           <div class="gf-bullet">02</div>
-          <div><div class="gf-title" style="color:var(--pch)">See each other's skips as they happen.</div><div class="gf-desc" style="color:rgba(237,232,208,0.7)">Live progress per person. John just skipped Friday takeout, +$38. Accountability without the awkward group chat.</div></div>
+          <div><div class="gf-title" style="color:var(--pch)">See each other's progress as it happens.</div><div class="gf-desc" style="color:rgba(237,232,208,0.7)">Live progress per person. John just added $38 to Mexico City. Accountability without the awkward group chat.</div></div>
         </div>
         <div class="gf">
           <div class="gf-bullet">03</div>
-          <div><div class="gf-title" style="color:var(--pch)">Join with an invite.</div><div class="gf-desc" style="color:rgba(237,232,208,0.7)">They tap it, they're in. No platform walls, no account verification rabbit hole.</div></div>
+          <div><div class="gf-title" style="color:var(--pch)">Join with an invite code.</div><div class="gf-desc" style="color:rgba(237,232,208,0.7)">Send them the code. Once they have Miser, it puts them straight into the goal.</div></div>
         </div>
       </div>
     </div>
@@ -1737,88 +1736,6 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     <div class="groups-phone-wrap reveal" data-delay="2">
       <div class="phone">
         <div class="phone-screen"><img src="/assets/app/group.webp" alt="Miser shared goal screen: a Mexico City group goal at $859 of $1,500, with Wendy at $645 and John at $214 of their $750 shares." width="640" height="1390" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ═══════ VAULT DEMO ═══════ -->
-<section class="band crm gui-lt" id="vault">
-  <div class="vault-inner">
-
-    <div class="vault-left reveal" style="color:var(--dg)">
-      <div class="eyebrow">Live demo</div>
-      <div style="height:14px"></div>
-      <h2 class="h-section" style="color:var(--dg)">Watch it <em style="color:var(--sg)">add up</em>.</h2>
-      <div style="height:22px"></div>
-      <p class="sub" style="color:rgba(28,61,43,0.75)">Scroll. A week of skipping compresses into six seconds. Each skip stacks onto a real goal: the bar inches right, the destination gets closer.</p>
-
-      <div class="vault-counter vault-counter-lt" id="vaultCounter-2">
-        <div class="vc-label"><span class="live-dot"></span> Goal · Tokyo, October · Live demo</div>
-        <div class="vc-num" id="vcNum-2"><span class="d">$</span><span id="vcDol-2">0</span><span class="cents">.00</span></div>
-        <div class="vc-sub" id="vcSub-2">Waiting for first skip…</div>
-        <div class="vc-pb"><div class="vc-pf" id="vcPf-2"></div></div>
-        <div class="vc-foot">
-          <span id="vcPct-2">0% of goal</span>
-          <span class="goal">$500 weekend bucket</span>
-        </div>
-        <div class="vc-stream" id="vcStream-2">› ready</div>
-      </div>
-    </div>
-
-    <!-- Right column: current app vault view with skip stream -->
-    <div class="vault-right reveal" data-delay="2">
-      <div class="phone">
-        <div class="phone-screen s-pch">
-          <div class="di"></div>
-          <div class="sb dk-ic"><span>9:41</span><span>▪▪▪ ☰ ▮</span></div>
-
-          <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px 0;flex-shrink:0">
-            <div style="font-size:18px;font-weight:900;letter-spacing:-0.02em;color:var(--dg)">m<span style="color:var(--gld)">$</span>er</div>
-            <div style="width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#8B6914,#C8A820);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:var(--dg)">J</div>
-          </div>
-
-          <!-- Power Vault card (live) -->
-          <div style="margin:12px 16px 0;background:var(--dg);border-radius:20px;padding:16px 18px;flex-shrink:0;position:relative;overflow:hidden">
-            <div style="position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;border:1px dashed rgba(200,168,32,0.22)"></div>
-            <div style="font-size:11px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--gld)">LOCKED</div>
-            <div style="font-size:11px;color:rgba(237,232,208,0.7);margin-top:2px">Live demo · Tokyo bucket</div>
-            <div style="margin-top:12px;display:flex;align-items:baseline;font-variant-numeric:tabular-nums;line-height:1">
-              <span style="font-size:22px;font-weight:900;color:var(--gld)">$</span>
-              <span style="font-size:36px;font-weight:900;color:var(--pch);letter-spacing:-0.02em" id="phoneBalance">320</span>
-              <span style="font-size:14px;color:rgba(237,232,208,0.7);font-weight:700">.00</span>
-            </div>
-            <div style="margin-top:10px"><div class="pb lt" style="height:7px;border-radius:3.5px"><div class="f g" id="phonePf" style="width:64%"></div></div></div>
-            <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:11px;color:rgba(237,232,208,0.7);font-weight:800;letter-spacing:0.08em;text-transform:uppercase">
-              <span id="phonePct">64% of goal</span><span>of $500</span>
-            </div>
-          </div>
-
-          <!-- Recent skips -->
-          <div style="font-size:11px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;padding:14px 20px 4px;color:rgba(28,61,43,0.75)">Recent skips</div>
-          <div class="pc-card" id="phoneSkips">
-            <div class="row">
-              <div class="ic-disc sm"><svg aria-hidden="true" focusable="false" width="16" height="16"><use href="#i-coffee"></use></svg></div>
-              <div style="flex:1"><div style="font-size:11px;font-weight:800;color:var(--dg)">Morning latte</div><div style="font-size:11px;color:rgba(28,61,43,0.75)">today, 8:42 am</div></div>
-              <div style="font-size:11px;font-weight:900;color:var(--sg);font-variant-numeric:tabular-nums">+$5.00</div>
-            </div>
-            <div class="row">
-              <div class="ic-disc sm"><svg aria-hidden="true" focusable="false" width="16" height="16"><use href="#i-car"></use></svg></div>
-              <div style="flex:1"><div style="font-size:11px;font-weight:800;color:var(--dg)">Walked instead</div><div style="font-size:11px;color:rgba(28,61,43,0.75)">yesterday</div></div>
-              <div style="font-size:11px;font-weight:900;color:var(--sg);font-variant-numeric:tabular-nums">+$12.50</div>
-            </div>
-            <div class="row">
-              <div class="ic-disc sm"><svg aria-hidden="true" focusable="false" width="16" height="16"><use href="#i-drinks"></use></svg></div>
-              <div style="flex:1"><div style="font-size:11px;font-weight:800;color:var(--dg)">Round of drinks</div><div style="font-size:11px;color:rgba(28,61,43,0.75)">2 days ago</div></div>
-              <div style="font-size:11px;font-weight:900;color:var(--sg);font-variant-numeric:tabular-nums">+$18.00</div>
-            </div>
-          </div>
-
-          <div style="flex:1;min-height:12px"></div>
-          <div style="margin:0 16px 14px;background:var(--sg);border-radius:14px;padding:12px;text-align:center;font-size:12px;font-weight:800;color:var(--pch);flex-shrink:0">+ Log a Skip</div>
-        </div>
       </div>
     </div>
 
@@ -1862,12 +1779,12 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
 
       <div class="reveal faq-item" style="padding:28px 0;border-bottom:0.5px solid rgba(28,61,43,0.1)">
         <dt style="font-size:18px;font-weight:900;color:var(--dg);letter-spacing:-0.01em;margin-bottom:10px">What does Miser cost?</dt>
-        <dd style="font-size:15px;line-height:1.6;color:rgba(28,61,43,0.75);margin:0">Free to download. A service fee of $2.50 + 1.5% of each transfer (no cap) applies when money moves: the full fee schedule is shown before anything is confirmed.</dd>
+        <dd style="font-size:15px;line-height:1.6;color:rgba(28,61,43,0.75);margin:0">Free to download. When money moves, a service fee of $2.50 + 1.5% of each transfer applies, with no cap. The fee formula is in the transfer authorization you sign before any money moves.</dd>
       </div>
 
       <div class="reveal faq-item" data-delay="1" style="padding:28px 0;border-bottom:0.5px solid rgba(28,61,43,0.1)">
         <dt style="font-size:18px;font-weight:900;color:var(--dg);letter-spacing:-0.01em;margin-bottom:10px">Where does my money actually go?</dt>
-        <dd style="font-size:15px;line-height:1.6;color:rgba(28,61,43,0.75);margin:0">Into <em style="font-style:normal;font-weight:700;color:var(--dg)">your own savings account</em>, not ours. Miser can't access, spend, or keep your money. About every 7 days your saved total moves from your linked checking to your savings via ACH, run by our banking partner.</dd>
+        <dd style="font-size:15px;line-height:1.6;color:rgba(28,61,43,0.75);margin:0">Into <em style="font-style:normal;font-weight:700;color:var(--dg)">your own savings account</em>, not ours. Miser can't access, spend, or keep your money. Once you've stacked $50, about once a week, your locked total moves from your linked checking to your savings by ACH, run by our banking partner.</dd>
       </div>
 
       <div class="reveal faq-item" data-delay="2" style="padding:28px 0;border-bottom:0.5px solid rgba(28,61,43,0.1)">
@@ -1978,7 +1895,6 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
       <a href="#how">How it works</a>
       <a href="#quit">Quit</a>
       <a href="#groups">Groups</a>
-      <a href="#vault">Demo</a>
       <a href="#ranks">Ranks</a>
       <a href="blog/">Blog</a>
       <a href="#waitlist">Waitlist</a>

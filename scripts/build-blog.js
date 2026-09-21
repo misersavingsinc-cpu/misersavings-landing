@@ -120,7 +120,6 @@ function navHtml() {
     <li><a href="../index.html#how">How it works</a></li>
     <li><a href="../index.html#quit">Quit</a></li>
     <li><a href="../index.html#groups">Groups</a></li>
-    <li><a href="../index.html#vault">Vault</a></li>
     <li><a href="../index.html#ranks">Ranks</a></li>
     <li><a href="index.html" class="active">Blog</a></li>
   </ul>
@@ -345,7 +344,7 @@ ${rows}
   <div class="blog-cta">
     <div class="blog-cta-text">
       <strong>Miser isn't open yet.</strong>
-      We'll email you once, when it is. No newsletter, no drip sequence.
+      Join the list for savings tips, product updates, and a TestFlight invite when your slot opens.
     </div>
     <a class="nav-cta" href="../index.html#waitlist">Join waitlist</a>
   </div>
