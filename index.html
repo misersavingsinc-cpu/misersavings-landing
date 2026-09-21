@@ -1127,6 +1127,29 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
 .hero-wl input[type="email"]:focus-visible{
   outline:3px solid #C8A820!important;outline-offset:2px;
   border-color:#C8A820!important}
+/* How it works, step 3: a week's receipt */
+.rcpt{width:100%;max-width:236px;margin:0 auto;background:#FBF8EE;border-radius:6px;padding:20px 18px 16px;
+  box-shadow:0 18px 40px -18px rgba(28,61,43,0.35);transform:rotate(-1.5deg);
+  -webkit-mask:radial-gradient(circle 6px at 50% 100%,transparent 98%,#000) 0 100%/16px 100% repeat-x;
+          mask:radial-gradient(circle 6px at 50% 100%,transparent 98%,#000) 0 100%/16px 100% repeat-x}
+.rcpt-h{font-size:11px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:#7A5B10;
+  padding-bottom:10px;margin-bottom:8px;border-bottom:1px dashed rgba(28,61,43,0.3)}
+.rcpt-row,.rcpt-tot{display:flex;justify-content:space-between;font-size:14px;line-height:1.9;color:var(--dg)}
+.rcpt-row span:last-child,.rcpt-tot span:last-child{font-variant-numeric:tabular-nums;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.rcpt-tot{margin-top:8px;padding-top:8px;border-top:1px dashed rgba(28,61,43,0.3);font-weight:900;font-size:17px}
+.rcpt-move{margin-top:14px;display:flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--dg);color:var(--pch);border-radius:10px;padding:10px 8px;font-size:13px;font-weight:800}
+.rcpt-arrow{color:#D4B428;font-size:16px}
+.rcpt-note{margin-top:10px;text-align:center;font-size:12px;font-weight:700;color:rgba(28,61,43,0.75)}
+@media (prefers-reduced-motion:reduce){.rcpt{transform:none}}
+/* How it works: the live demo block had no styles and sat hard left */
+.how-demo{max-width:1200px;margin:64px auto 0;text-align:center}
+.how-demo-head{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:12px}
+.how-demo-head .rule{flex:0 0 40px;height:1px;background:rgba(139,105,20,0.4)}
+.how-demo-h{font-size:26px;font-weight:900;letter-spacing:-0.02em;color:var(--dg);margin:0 0 8px}
+.how-demo-h em{color:var(--sg);font-style:normal}
+.how-demo-sub{font-size:15px;line-height:1.55;color:rgba(28,61,43,0.75);max-width:560px;margin:0 auto 28px}
+.how-demo .vault-counter{text-align:left;max-width:760px;margin:0 auto}
 /* How it works, step 3: checking -> savings diagram */
 .step .phone-well.flow-well{min-height:510px;align-items:center;padding:0}
 .flow{width:100%;max-width:236px;margin:0 auto;display:flex;flex-direction:column;align-items:stretch;gap:10px}
@@ -1475,7 +1498,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
   <div class="band-head reveal">
     <div class="rule-pair"><span class="line"></span><span class="eyebrow">How it works</span><span class="line"></span></div>
     <h2 class="h-section">Say no to the latte. <br><em>Say yes to Tokyo.</em></h2>
-    <p class="sub">No budgets, no spreadsheets, no lectures. Skip something, log it, and watch it move from your checking to a savings account you own. It's yours the whole way.</p>
+    <p class="sub">No budgets, no spreadsheets, no lectures. Skip it, log it, and it moves from your checking to a savings account you own.</p>
   </div>
 
   <div class="steps">
@@ -1483,8 +1506,8 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     <!-- STEP 1 — Skip it -->
     <div class="step reveal">
       <div class="snum"><span>Step 01</span><span class="dot"></span><span>Skip it</span></div>
-      <h3>Walked past the latte? <em>That's a point on the board.</em></h3>
-      <p>Three taps and it counts. Quitting something for good? Quit Companion checks you in every day, and every clean day counts too.</p>
+      <h3>Walked past the latte? <em>That counts.</em></h3>
+      <p>Log it in three taps. Quitting something for good? Quit Companion checks you in daily, and every clean day counts too.</p>
       <div class="phone-well pch-well">
         <div class="phone sm">
           <div class="phone-screen"><img src="/assets/app/logskip.webp" alt="Logging a skip in Miser: $12.49 with Fast food chosen from the category grid." width="640" height="1390" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
@@ -1496,7 +1519,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     <div class="step reveal" data-delay="1">
       <div class="snum"><span>Step 02</span><span class="dot"></span><span>Stack it</span></div>
       <h3>Watch the pile <em>grow</em>.</h3>
-      <p>Every skip lands on your locked total, pointed at something you actually want. Keep a streak going and climb nine ranks, from Cheap Curious to Grand Scrooge. The Coach shows your momentum and where the money is coming from.</p>
+      <p>Point every skip at a goal. Keep the streak alive, climb nine ranks from Cheap Curious to Grand Scrooge, and let the Coach keep score.</p>
       <div class="phone-well pch-well">
         <div class="phone sm">
           <div class="phone-screen"><img src="/assets/app/coach.webp" alt="Miser Coach tab: $415.49 built across 40 skips, a note from the coach, and a 30-day momentum chart." width="640" height="1390" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
@@ -1508,17 +1531,16 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     <div class="step reveal" data-delay="2">
       <div class="snum"><span>Step 03</span><span class="dot"></span><span>Send it home</span></div>
       <h3>Straight into <em>your</em> savings.</h3>
-      <p>About once a week, once you've stacked $50, Miser moves it from your checking to a savings account you own. Both accounts stay yours. $2.50 + 1.5% per transfer.</p>
+      <p>Once you've stacked $50, about once a week, it moves from your checking to a savings account you own. $2.50 + 1.5% per transfer.</p>
       <div class="phone-well pch-well flow-well">
-        <div class="flow" role="img" aria-label="Money moves from your checking account to a savings account you own. Miser never holds it.">
-          <div class="flow-acct"><span class="flow-k">Your checking</span><span class="flow-b">Where it would have gone</span></div>
-          <div class="flow-arrow" aria-hidden="true">&darr;</div>
-          <div class="flow-cap" aria-hidden="true">about once a week</div>
-          <div class="flow-acct flow-to">
-            <span class="flow-k">Your savings</span>
-            <span class="flow-b">An account you own</span>
-          </div>
-          <div class="flow-note">Miser never holds it</div>
+        <div class="rcpt" role="img" aria-label="An example week: a $5 latte, a $12.50 lunch and a $38 late-night cart, all skipped, add up to $55.50, which moves from your checking to your savings. Miser never holds it.">
+          <div class="rcpt-h">This week&rsquo;s skips</div>
+          <div class="rcpt-row"><span>Latte</span><span>$5.00</span></div>
+          <div class="rcpt-row"><span>Lunch out</span><span>$12.50</span></div>
+          <div class="rcpt-row"><span>1am cart</span><span>$38.00</span></div>
+          <div class="rcpt-tot"><span>Locked</span><span>$55.50</span></div>
+          <div class="rcpt-move"><span>Checking</span><span class="rcpt-arrow" aria-hidden="true">&rarr;</span><span>Your savings</span></div>
+          <div class="rcpt-note">Miser never holds it</div>
         </div>
       </div>
     </div>
