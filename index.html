@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Miser · Turn impulse buys into real savings. Skip. Stack.</title>
-<meta name="description" content="Log the impulse buys you skip. About every 7 days Miser batches your skips and moves them into a vault tied to a real goal. Free to join now. Skip. Save. Stack.">
+<meta name="description" content="Log the impulse buys you skip. About every 7 days Miser batches your skips and moves them from your checking to your savings, toward a real goal. Free to join now. Skip. Save. Stack.">
 <link rel="canonical" href="https://misersavings.com/">
 
 <!-- Open Graph -->
@@ -76,7 +76,7 @@
         "width": 1200,
         "height": 630
       },
-      "description": "Miser is a behavioral savings app. Log the impulse buys you skip, point each one at a goal, and about every 7 days your skips batch into a vault tied to that goal.",
+      "description": "Miser is a behavioral savings app. Log the impulse buys you skip, point each one at a goal, and about every 7 days your skips move from your checking to your own savings account.",
       "foundingDate": "2026-03-12",
       "address": {
         "@type": "PostalAddress",
@@ -101,7 +101,7 @@
       "@id": "https://misersavings.com/#website",
       "url": "https://misersavings.com/",
       "name": "Miser",
-      "description": "Turn impulse buys into real savings. Miser turns the small purchases you almost made into a goal-based vault.",
+      "description": "Turn impulse buys into real savings. Miser turns the small purchases you almost made into real savings.",
       "publisher": { "@id": "https://misersavings.com/#organization" },
       "inLanguage": "en-US"
     },
@@ -110,7 +110,7 @@
       "@id": "https://misersavings.com/#app",
       "name": "Miser",
       "alternateName": "MiserSavings",
-      "description": "Miser is a behavioral microsavings app. Users log impulse purchases they chose not to make; roughly every 7 days Miser batches those logged amounts and initiates a single ACH transfer into a goal-linked vault. Users may also add money to a goal on demand, which starts its own transfer. Free to download.",
+      "description": "Miser is a behavioral microsavings app. Users log impulse purchases they chose not to make; roughly every 7 days Miser batches those logged amounts and initiates a single ACH transfer from the user's checking to their own savings account. Users may also add money to a goal on demand, which starts its own transfer. Free to download.",
       "applicationCategory": "FinanceApplication",
       "applicationSubCategory": "Personal Finance",
       "operatingSystem": "iOS",
@@ -125,7 +125,7 @@
       "availableOnDevice": "iPhone",
       "featureList": [
         "Log impulse-buy skips in three taps",
-        "Rolling 7-day ACH batch transfer to savings vault",
+        "Rolling 7-day ACH transfer from checking to your own savings account",
         "Goal-linked savings missions",
         "Quit Companion for habit-cost tracking",
         "Group savings goals with shared progress",
@@ -1127,6 +1127,17 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
 .hero-wl input[type="email"]:focus-visible{
   outline:3px solid #C8A820!important;outline-offset:2px;
   border-color:#C8A820!important}
+/* How it works, step 3: checking -> savings diagram */
+.step .phone-well.flow-well{min-height:510px;align-items:center;padding:0}
+.flow{width:100%;max-width:236px;margin:0 auto;display:flex;flex-direction:column;align-items:stretch;gap:10px}
+.flow-acct{background:var(--crm);border:1px solid rgba(28,61,43,0.14);border-radius:14px;padding:16px 16px 14px;display:flex;flex-direction:column;gap:4px}
+.flow-acct.flow-to{background:var(--dg);border-color:var(--dg)}
+.flow-k{font-size:18px;font-weight:900;letter-spacing:-0.01em;color:var(--dg)}
+.flow-b{font-size:11px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:rgba(28,61,43,0.75)}
+.flow-to .flow-k{color:var(--pch)}
+.flow-to .flow-b{color:rgba(237,232,208,0.75)}
+.flow-arrow{text-align:center;font-size:26px;line-height:1;font-weight:900;color:#7A5B10}
+.flow-note{margin-top:6px;text-align:center;font-size:12px;font-weight:700;line-height:1.6;color:rgba(28,61,43,0.75)}
 /* 1.4.10 Reflow — body{overflow-x:hidden} was swallowing wide tables at phone
    width, making the last column unreachable. Give the table its own scroller
    and make it keyboard-reachable. */
@@ -1408,7 +1419,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
       <li><a href="#how">How it works</a></li>
       <li><a href="#quit">Quit</a></li>
       <li><a href="#groups">Groups</a></li>
-      <li><a href="#vault">Vault</a></li>
+      <li><a href="#vault">Demo</a></li>
       <li><a href="#ranks">Ranks</a></li>
       <li><a href="blog/">Blog</a></li>
     </ul>
@@ -1422,8 +1433,8 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
   <div class="hero-inner">
 
     <div class="hero-left reveal in">
-      <h1>Turn impulse buys into <em>real savings</em>.</h1>
-      <p class="lead">You were about to waste money. We get it: the latte, the lunch, the thing you don't need from the internet. Miser turns that impulse into savings. Log it. Lock it. Keep it.</p>
+      <h1>Break the habit. <em>Keep the money.</em></h1>
+      <p class="lead">Skip the latte, the takeout, the 1am cart. Log it in three taps and that amount moves from your checking to your own savings account. Your bank, your accounts. Miser never holds your money.</p>
       <form class="hero-wl" id="heroWl" autocomplete="on" novalidate>
         <div class="hero-wl-row">
           <input type="email" id="heroWlEmail" placeholder="you@wherever.com"
@@ -1439,18 +1450,18 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
         iOS first · Android coming soon
       </div>
       <div class="hero-foot" style="letter-spacing:0.22em;text-transform:uppercase;font-weight:800;font-size:11px;color:rgba(237,232,208,0.7)">
-        <span>Skip</span>
+        <span>Skip it</span>
         <span class="dot"> · </span>
-        <span>Lock</span>
+        <span>It adds up</span>
         <span class="dot"> · </span>
-        <span>Stack</span>
+        <span>It moves</span>
       </div>
     </div>
 
-    <!-- Hero phone: Home screen, Power Vault hero card -->
+    <!-- Hero phone: Home screen, money moving from checking to savings -->
     <div class="hero-right reveal in" data-delay="2">
       <div class="phone">
-        <div class="phone-screen"><img src="/assets/app/home.webp" alt="Miser home screen: a vault of $53 moving from checking to savings, and $403 saved to date." width="640" height="1390" loading="eager" fetchpriority="high" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
+        <div class="phone-screen"><img src="/assets/app/home.webp" alt="Miser home screen: $53 moving from checking to savings, and $403 saved to date." width="640" height="1390" loading="eager" fetchpriority="high" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
       </div>
     </div>
 
@@ -1462,47 +1473,47 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
 <section class="band pch gui-lt" id="how">
   <div class="band-head reveal">
     <div class="rule-pair"><span class="line"></span><span class="eyebrow">How it works</span><span class="line"></span></div>
-    <h2 class="h-section">Three taps. One <em>vault</em>. <br>No budgeting.</h2>
-    <p class="sub">Log a skip. Point it at a goal. Watch the vault fill. That's the whole system: the money you almost spent becomes money you kept.</p>
+    <h2 class="h-section">Skip it. It adds up. <br><em>It moves.</em></h2>
+    <p class="sub">No budgets, no spreadsheets. The money you almost spent moves from your checking to your own savings account, and it stays yours the whole way.</p>
   </div>
 
   <div class="steps">
 
-    <!-- STEP 1 — Log a skip -->
+    <!-- STEP 1 — Skip it -->
     <div class="step reveal">
-      <div class="snum"><span>Step 01</span><span class="dot"></span><span>Log a skip</span></div>
-      <h3>Almost grabbed a $5 oat-milk latte on the walk to work? <em>Log the skip.</em></h3>
-      <p>Three taps and it's stacked. About every 7 days Miser batches your skips and moves the total from your linked bank to your vault: automatically, no ceremony. In a hurry? Add money to a goal yourself any day: $50 to $490, same fee, one per day.</p>
+      <div class="snum"><span>Step 01</span><span class="dot"></span><span>Skip it</span></div>
+      <h3>Almost grabbed a $5 latte on the walk to work? <em>Log the skip.</em></h3>
+      <p>Three taps, any time you don't buy the thing. Quitting something for good? Quit Companion checks you in each day and logs it for you.</p>
       <div class="phone-well pch-well">
-        <!-- Log a Skip sheet — current app -->
         <div class="phone sm">
           <div class="phone-screen"><img src="/assets/app/logskip.webp" alt="Logging a skip in Miser: $12.49 with Fast food chosen from the category grid." width="640" height="1390" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
         </div>
       </div>
     </div>
 
-    <!-- STEP 2 — Pick a goal -->
+    <!-- STEP 2 — It adds up -->
     <div class="step reveal" data-delay="1">
-      <div class="snum"><span>Step 02</span><span class="dot"></span><span>Pick a goal</span></div>
-      <h3>That money locks into whatever <em>matters</em>.</h3>
-      <p>A weekend trip. A friend trip. Quitting gambling. As many goals as you want, running in parallel: each skip tagged to one so you can see exactly what you're building.</p>
+      <div class="snum"><span>Step 02</span><span class="dot"></span><span>It adds up</span></div>
+      <h3>Every skip adds to your <em>locked</em> total.</h3>
+      <p>Point each skip at a goal: a trip, a cushion, the habit you quit. The Coach charts your 30-day momentum, and the Skip Mix shows where the money is coming from.</p>
       <div class="phone-well pch-well">
-        <!-- Goals list -->
         <div class="phone sm">
-          <div class="phone-screen"><img src="/assets/app/goals.webp" alt="Miser Goals screen: personal and shared goals, each with progress and an Add money button." width="640" height="1390" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
+          <div class="phone-screen"><img src="/assets/app/coach.webp" alt="Miser Coach tab: $415.49 built across 40 skips, a note from the coach, and a 30-day momentum chart." width="640" height="1390" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
         </div>
       </div>
     </div>
 
-    <!-- STEP 3 — Watch it stack (Coach Momentum Shield) -->
+    <!-- STEP 3 — It moves -->
     <div class="step reveal" data-delay="2">
-      <div class="snum"><span>Step 03</span><span class="dot"></span><span>Watch it stack</span></div>
-      <h3>The vault <em>fills</em>. The Coach sees the pattern.</h3>
-      <p>Every skip stacks. The Momentum Shield charts your 30-day trend; the Skip Mix shows you where the money's coming from. Money you almost spent became money you kept.</p>
-      <div class="phone-well pch-well">
-        <!-- Coach screen — Momentum Shield + Skip Mix -->
-        <div class="phone sm">
-          <div class="phone-screen"><img src="/assets/app/coach.webp" alt="Miser Coach tab: $415.49 built across 40 skips, a note from the coach, and a 30-day momentum chart." width="640" height="1390" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
+      <div class="snum"><span>Step 03</span><span class="dot"></span><span>It moves</span></div>
+      <h3>From your checking to <em>your savings</em>.</h3>
+      <p>About once a week, once your total reaches $50, Miser moves it from your checking to your savings. Both accounts are yours, at your bank. $2.50 + 1.5% per transfer. In a hurry? Add $50 to $490 to a goal yourself, once a day.</p>
+      <div class="phone-well pch-well flow-well">
+        <div class="flow" role="img" aria-label="Money moves from your checking account to your savings account. Both are at your own bank.">
+          <div class="flow-acct"><span class="flow-k">Your checking</span><span class="flow-b">At your bank</span></div>
+          <div class="flow-arrow" aria-hidden="true">&darr;</div>
+          <div class="flow-acct flow-to"><span class="flow-k">Your savings</span><span class="flow-b">At your bank</span></div>
+          <div class="flow-note">About once a week<br>Miser never holds it</div>
         </div>
       </div>
     </div>
@@ -1534,29 +1545,6 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
 </section>
 
 
-<!-- ═══════ DICTIONARY INTERLUDE ═══════ -->
-<section class="interlude reveal" id="interlude">
-  <div class="interlude-inner">
-    <div class="interlude-stamp">Entry <span class="gem"></span> Volume I <span class="gem"></span> Reclaimed</div>
-    <div class="interlude-head">
-      <span class="interlude-word">mı<span class="dol">$</span>er</span>
-      <span class="interlude-ipa">/ˈmaɪ.zər/</span>
-      <span class="interlude-pos">noun.</span>
-    </div>
-    <div class="interlude-defs">
-      <div class="interlude-def">
-        <span class="interlude-num">1.</span>
-        <span><span class="interlude-tag">traditionally: </span>one who hoards money, lives small, refuses the round of drinks.</span>
-      </div>
-      <div class="interlude-def modern">
-        <span class="interlude-num">2.</span>
-        <span><span class="interlude-tag">modernly: </span>one who saw the $7 oat-milk latte for what it was, and put the money somewhere it would still exist by Friday.</span>
-      </div>
-    </div>
-    <div class="interlude-q"><span class="qmk">"</span>Are you one of us?<span class="qmk">"</span></div>
-  </div>
-</section>
-
 <!-- ═══════ QUIT COMPANION ═══════ -->
 <section class="band pch gui-lt" id="quit">
   <div class="groups-inner">
@@ -1573,7 +1561,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
       <div style="height:14px"></div>
       <h2 class="h-section">The thing you quit becomes the thing you <em>keep</em>.</h2>
       <div style="height:22px"></div>
-      <p class="sub">Pick what you're cutting out: gambling, the daily vape, Friday takeout, weekend sports bets. Tell Miser what it would have cost. Every day you check in, that amount auto-skips into your vault.</p>
+      <p class="sub">Pick what you're cutting out: gambling, the daily vape, Friday takeout, weekend sports bets. Tell Miser what it would have cost. Every day you check in, that amount is added to your locked total.</p>
 
       <div class="groups-list">
         <div class="gf">
@@ -1592,127 +1580,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
           <div class="gf-bullet" style="background:rgba(46,107,69,0.1);color:var(--sg);border:1px solid rgba(46,107,69,0.2)">
             <svg aria-hidden="true" focusable="false" width="22" height="22"><use href="#i-cash"></use></svg>
           </div>
-          <div><div class="gf-title">The money still ships on the same schedule.</div><div class="gf-desc">Each day you stay clean, that amount queues up. Your check-ins batch with your other skips and move into your vault automatically with your next transfer.</div></div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ═══════ GROUPS (moved up) ═══════ -->
-<section class="band dg gui-dk dk" id="groups">
-  <div class="groups-inner">
-
-    <div class="groups-text reveal">
-      <div class="eyebrow lt">Groups</div>
-      <div style="height:14px"></div>
-      <h2 class="h-section">Save together. Skip the <em>Friday takeout</em> with your partner.</h2>
-      <div style="height:22px"></div>
-      <p class="sub">Share a goal with whoever you'd blow the money with anyway. Everyone skips in their own vault. The shared bar fills twice as fast.</p>
-
-      <div class="groups-list">
-        <div class="gf">
-          <div class="gf-bullet">01</div>
-          <div><div class="gf-title" style="color:var(--pch)">Share the goal, keep your own vault.</div><div class="gf-desc" style="color:rgba(237,232,208,0.7)">$1,500 Mexico City trip, two of you = $750 each. Money never pools. Each person's savings stay theirs, even if plans change.</div></div>
-        </div>
-        <div class="gf">
-          <div class="gf-bullet">02</div>
-          <div><div class="gf-title" style="color:var(--pch)">See each other's skips as they happen.</div><div class="gf-desc" style="color:rgba(237,232,208,0.7)">Live progress per person. John just skipped Friday takeout, +$38. Accountability without the awkward group chat.</div></div>
-        </div>
-        <div class="gf">
-          <div class="gf-bullet">03</div>
-          <div><div class="gf-title" style="color:var(--pch)">Join with an invite.</div><div class="gf-desc" style="color:rgba(237,232,208,0.7)">They tap it, they're in. No platform walls, no account verification rabbit hole.</div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Groups phone — Trip to Mexico City group detail -->
-    <div class="groups-phone-wrap reveal" data-delay="2">
-      <div class="phone">
-        <div class="phone-screen"><img src="/assets/app/group.webp" alt="Miser shared goal screen: a Mexico City group goal at $859 of $1,500, with Wendy at $645 and John at $214 of their $750 shares." width="640" height="1390" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ═══════ VAULT DEMO ═══════ -->
-<section class="band crm gui-lt" id="vault">
-  <div class="vault-inner">
-
-    <div class="vault-left reveal" style="color:var(--dg)">
-      <div class="eyebrow">The Vault</div>
-      <div style="height:14px"></div>
-      <h2 class="h-section" style="color:var(--dg)">Watch the vault <em style="color:var(--sg)">fill</em>.</h2>
-      <div style="height:22px"></div>
-      <p class="sub" style="color:rgba(28,61,43,0.75)">Scroll. A week of skipping compresses into six seconds. Each skip stacks onto a real goal: the bar inches right, the destination gets closer.</p>
-
-      <div class="vault-counter vault-counter-lt" id="vaultCounter-2">
-        <div class="vc-label"><span class="live-dot"></span> Goal · Tokyo, October · Live demo</div>
-        <div class="vc-num" id="vcNum-2"><span class="d">$</span><span id="vcDol-2">0</span><span class="cents">.00</span></div>
-        <div class="vc-sub" id="vcSub-2">Waiting for first skip…</div>
-        <div class="vc-pb"><div class="vc-pf" id="vcPf-2"></div></div>
-        <div class="vc-foot">
-          <span id="vcPct-2">0% of goal</span>
-          <span class="goal">$500 weekend bucket</span>
-        </div>
-        <div class="vc-stream" id="vcStream-2">› ready</div>
-      </div>
-    </div>
-
-    <!-- Right column: current app vault view with skip stream -->
-    <div class="vault-right reveal" data-delay="2">
-      <div class="phone">
-        <div class="phone-screen s-pch">
-          <div class="di"></div>
-          <div class="sb dk-ic"><span>9:41</span><span>▪▪▪ ☰ ▮</span></div>
-
-          <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px 0;flex-shrink:0">
-            <div style="font-size:18px;font-weight:900;letter-spacing:-0.02em;color:var(--dg)">m<span style="color:var(--gld)">$</span>er</div>
-            <div style="width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#8B6914,#C8A820);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:var(--dg)">J</div>
-          </div>
-
-          <!-- Power Vault card (live) -->
-          <div style="margin:12px 16px 0;background:var(--dg);border-radius:20px;padding:16px 18px;flex-shrink:0;position:relative;overflow:hidden">
-            <div style="position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;border:1px dashed rgba(200,168,32,0.22)"></div>
-            <div style="font-size:11px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--gld)">POWER VAULT</div>
-            <div style="font-size:11px;color:rgba(237,232,208,0.7);margin-top:2px">Live demo · Tokyo bucket</div>
-            <div style="margin-top:12px;display:flex;align-items:baseline;font-variant-numeric:tabular-nums;line-height:1">
-              <span style="font-size:22px;font-weight:900;color:var(--gld)">$</span>
-              <span style="font-size:36px;font-weight:900;color:var(--pch);letter-spacing:-0.02em" id="phoneBalance">320</span>
-              <span style="font-size:14px;color:rgba(237,232,208,0.7);font-weight:700">.00</span>
-            </div>
-            <div style="margin-top:10px"><div class="pb lt" style="height:7px;border-radius:3.5px"><div class="f g" id="phonePf" style="width:64%"></div></div></div>
-            <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:11px;color:rgba(237,232,208,0.7);font-weight:800;letter-spacing:0.08em;text-transform:uppercase">
-              <span id="phonePct">64% of goal</span><span>of $500</span>
-            </div>
-          </div>
-
-          <!-- Recent skips -->
-          <div style="font-size:11px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;padding:14px 20px 4px;color:rgba(28,61,43,0.75)">Recent skips</div>
-          <div class="pc-card" id="phoneSkips">
-            <div class="row">
-              <div class="ic-disc sm"><svg aria-hidden="true" focusable="false" width="16" height="16"><use href="#i-coffee"></use></svg></div>
-              <div style="flex:1"><div style="font-size:11px;font-weight:800;color:var(--dg)">Morning latte</div><div style="font-size:11px;color:rgba(28,61,43,0.75)">today, 8:42 am</div></div>
-              <div style="font-size:11px;font-weight:900;color:var(--sg);font-variant-numeric:tabular-nums">+$5.00</div>
-            </div>
-            <div class="row">
-              <div class="ic-disc sm"><svg aria-hidden="true" focusable="false" width="16" height="16"><use href="#i-car"></use></svg></div>
-              <div style="flex:1"><div style="font-size:11px;font-weight:800;color:var(--dg)">Walked instead</div><div style="font-size:11px;color:rgba(28,61,43,0.75)">yesterday</div></div>
-              <div style="font-size:11px;font-weight:900;color:var(--sg);font-variant-numeric:tabular-nums">+$12.50</div>
-            </div>
-            <div class="row">
-              <div class="ic-disc sm"><svg aria-hidden="true" focusable="false" width="16" height="16"><use href="#i-drinks"></use></svg></div>
-              <div style="flex:1"><div style="font-size:11px;font-weight:800;color:var(--dg)">Round of drinks</div><div style="font-size:11px;color:rgba(28,61,43,0.75)">2 days ago</div></div>
-              <div style="font-size:11px;font-weight:900;color:var(--sg);font-variant-numeric:tabular-nums">+$18.00</div>
-            </div>
-          </div>
-
-          <div style="flex:1;min-height:12px"></div>
-          <div style="margin:0 16px 14px;background:var(--sg);border-radius:14px;padding:12px;text-align:center;font-size:12px;font-weight:800;color:var(--pch);flex-shrink:0">+ Log a Skip</div>
+          <div><div class="gf-title">The money still ships on the same schedule.</div><div class="gf-desc">Each day you stay clean, that amount queues up. Your check-ins batch with your other skips and move from your checking to your savings with your next transfer.</div></div>
         </div>
       </div>
     </div>
@@ -1807,6 +1675,150 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     </div>
 
     <p class="ranks-meta reveal" data-delay="3">A missed day breaks the streak counter. <em>It never takes the rank away.</em> Once you've earned it, the crest stays, even if you start the next streak from zero. Past Grand Scrooge, the title is fixed and only the day counter grows.</p>
+  </div>
+</section>
+
+
+<!-- ═══════ GROUPS ═══════ -->
+<section class="band dg gui-dk dk" id="groups">
+  <div class="groups-inner">
+
+    <div class="groups-text reveal">
+      <div class="eyebrow lt">Groups</div>
+      <div style="height:14px"></div>
+      <h2 class="h-section">Save together. Skip the <em>Friday takeout</em> with your partner.</h2>
+      <div style="height:22px"></div>
+      <p class="sub">Share a goal with whoever you'd blow the money with anyway. Everyone saves into their own account. The shared bar fills twice as fast.</p>
+
+      <div class="groups-list">
+        <div class="gf">
+          <div class="gf-bullet">01</div>
+          <div><div class="gf-title" style="color:var(--pch)">Share the goal, keep your own savings.</div><div class="gf-desc" style="color:rgba(237,232,208,0.7)">$1,500 Mexico City trip, two of you = $750 each. Money never pools. Each person's savings stay theirs, even if plans change.</div></div>
+        </div>
+        <div class="gf">
+          <div class="gf-bullet">02</div>
+          <div><div class="gf-title" style="color:var(--pch)">See each other's skips as they happen.</div><div class="gf-desc" style="color:rgba(237,232,208,0.7)">Live progress per person. John just skipped Friday takeout, +$38. Accountability without the awkward group chat.</div></div>
+        </div>
+        <div class="gf">
+          <div class="gf-bullet">03</div>
+          <div><div class="gf-title" style="color:var(--pch)">Join with an invite.</div><div class="gf-desc" style="color:rgba(237,232,208,0.7)">They tap it, they're in. No platform walls, no account verification rabbit hole.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Groups phone — Trip to Mexico City group detail -->
+    <div class="groups-phone-wrap reveal" data-delay="2">
+      <div class="phone">
+        <div class="phone-screen"><img src="/assets/app/group.webp" alt="Miser shared goal screen: a Mexico City group goal at $859 of $1,500, with Wendy at $645 and John at $214 of their $750 shares." width="640" height="1390" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════ VAULT DEMO ═══════ -->
+<section class="band crm gui-lt" id="vault">
+  <div class="vault-inner">
+
+    <div class="vault-left reveal" style="color:var(--dg)">
+      <div class="eyebrow">Live demo</div>
+      <div style="height:14px"></div>
+      <h2 class="h-section" style="color:var(--dg)">Watch it <em style="color:var(--sg)">add up</em>.</h2>
+      <div style="height:22px"></div>
+      <p class="sub" style="color:rgba(28,61,43,0.75)">Scroll. A week of skipping compresses into six seconds. Each skip stacks onto a real goal: the bar inches right, the destination gets closer.</p>
+
+      <div class="vault-counter vault-counter-lt" id="vaultCounter-2">
+        <div class="vc-label"><span class="live-dot"></span> Goal · Tokyo, October · Live demo</div>
+        <div class="vc-num" id="vcNum-2"><span class="d">$</span><span id="vcDol-2">0</span><span class="cents">.00</span></div>
+        <div class="vc-sub" id="vcSub-2">Waiting for first skip…</div>
+        <div class="vc-pb"><div class="vc-pf" id="vcPf-2"></div></div>
+        <div class="vc-foot">
+          <span id="vcPct-2">0% of goal</span>
+          <span class="goal">$500 weekend bucket</span>
+        </div>
+        <div class="vc-stream" id="vcStream-2">› ready</div>
+      </div>
+    </div>
+
+    <!-- Right column: current app vault view with skip stream -->
+    <div class="vault-right reveal" data-delay="2">
+      <div class="phone">
+        <div class="phone-screen s-pch">
+          <div class="di"></div>
+          <div class="sb dk-ic"><span>9:41</span><span>▪▪▪ ☰ ▮</span></div>
+
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px 0;flex-shrink:0">
+            <div style="font-size:18px;font-weight:900;letter-spacing:-0.02em;color:var(--dg)">m<span style="color:var(--gld)">$</span>er</div>
+            <div style="width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#8B6914,#C8A820);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:var(--dg)">J</div>
+          </div>
+
+          <!-- Power Vault card (live) -->
+          <div style="margin:12px 16px 0;background:var(--dg);border-radius:20px;padding:16px 18px;flex-shrink:0;position:relative;overflow:hidden">
+            <div style="position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;border:1px dashed rgba(200,168,32,0.22)"></div>
+            <div style="font-size:11px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--gld)">LOCKED</div>
+            <div style="font-size:11px;color:rgba(237,232,208,0.7);margin-top:2px">Live demo · Tokyo bucket</div>
+            <div style="margin-top:12px;display:flex;align-items:baseline;font-variant-numeric:tabular-nums;line-height:1">
+              <span style="font-size:22px;font-weight:900;color:var(--gld)">$</span>
+              <span style="font-size:36px;font-weight:900;color:var(--pch);letter-spacing:-0.02em" id="phoneBalance">320</span>
+              <span style="font-size:14px;color:rgba(237,232,208,0.7);font-weight:700">.00</span>
+            </div>
+            <div style="margin-top:10px"><div class="pb lt" style="height:7px;border-radius:3.5px"><div class="f g" id="phonePf" style="width:64%"></div></div></div>
+            <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:11px;color:rgba(237,232,208,0.7);font-weight:800;letter-spacing:0.08em;text-transform:uppercase">
+              <span id="phonePct">64% of goal</span><span>of $500</span>
+            </div>
+          </div>
+
+          <!-- Recent skips -->
+          <div style="font-size:11px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;padding:14px 20px 4px;color:rgba(28,61,43,0.75)">Recent skips</div>
+          <div class="pc-card" id="phoneSkips">
+            <div class="row">
+              <div class="ic-disc sm"><svg aria-hidden="true" focusable="false" width="16" height="16"><use href="#i-coffee"></use></svg></div>
+              <div style="flex:1"><div style="font-size:11px;font-weight:800;color:var(--dg)">Morning latte</div><div style="font-size:11px;color:rgba(28,61,43,0.75)">today, 8:42 am</div></div>
+              <div style="font-size:11px;font-weight:900;color:var(--sg);font-variant-numeric:tabular-nums">+$5.00</div>
+            </div>
+            <div class="row">
+              <div class="ic-disc sm"><svg aria-hidden="true" focusable="false" width="16" height="16"><use href="#i-car"></use></svg></div>
+              <div style="flex:1"><div style="font-size:11px;font-weight:800;color:var(--dg)">Walked instead</div><div style="font-size:11px;color:rgba(28,61,43,0.75)">yesterday</div></div>
+              <div style="font-size:11px;font-weight:900;color:var(--sg);font-variant-numeric:tabular-nums">+$12.50</div>
+            </div>
+            <div class="row">
+              <div class="ic-disc sm"><svg aria-hidden="true" focusable="false" width="16" height="16"><use href="#i-drinks"></use></svg></div>
+              <div style="flex:1"><div style="font-size:11px;font-weight:800;color:var(--dg)">Round of drinks</div><div style="font-size:11px;color:rgba(28,61,43,0.75)">2 days ago</div></div>
+              <div style="font-size:11px;font-weight:900;color:var(--sg);font-variant-numeric:tabular-nums">+$18.00</div>
+            </div>
+          </div>
+
+          <div style="flex:1;min-height:12px"></div>
+          <div style="margin:0 16px 14px;background:var(--sg);border-radius:14px;padding:12px;text-align:center;font-size:12px;font-weight:800;color:var(--pch);flex-shrink:0">+ Log a Skip</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════ DICTIONARY INTERLUDE ═══════ -->
+<section class="interlude reveal" id="interlude">
+  <div class="interlude-inner">
+    <div class="interlude-stamp">Entry <span class="gem"></span> Volume I <span class="gem"></span> Reclaimed</div>
+    <div class="interlude-head">
+      <span class="interlude-word">mı<span class="dol">$</span>er</span>
+      <span class="interlude-ipa">/ˈmaɪ.zər/</span>
+      <span class="interlude-pos">noun.</span>
+    </div>
+    <div class="interlude-defs">
+      <div class="interlude-def">
+        <span class="interlude-num">1.</span>
+        <span><span class="interlude-tag">traditionally: </span>one who hoards money, lives small, refuses the round of drinks.</span>
+      </div>
+      <div class="interlude-def modern">
+        <span class="interlude-num">2.</span>
+        <span><span class="interlude-tag">modernly: </span>one who saw the $7 oat-milk latte for what it was, and put the money somewhere it would still exist by Friday.</span>
+      </div>
+    </div>
+    <div class="interlude-q"><span class="qmk">"</span>Are you one of us?<span class="qmk">"</span></div>
   </div>
 </section>
 
@@ -1939,7 +1951,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
       <a href="#how">How it works</a>
       <a href="#quit">Quit</a>
       <a href="#groups">Groups</a>
-      <a href="#vault">Vault</a>
+      <a href="#vault">Demo</a>
       <a href="#ranks">Ranks</a>
       <a href="blog/">Blog</a>
       <a href="#waitlist">Waitlist</a>
@@ -1988,14 +2000,14 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
   // Sequence of "skips" to animate
   const skips = [
-    {amt:5.00,  note:'› +$5.00 — Morning latte skipped'},
-    {amt:12.50, note:'› +$12.50 — Walked instead of Uber'},
-    {amt:18.00, note:'› +$18.00 — Skipped round of drinks'},
-    {amt:22.00, note:'› +$22.00 — Cooked at home'},
-    {amt:35.00, note:'› +$35.00 — Passed on the jacket'},
-    {amt:8.50,  note:'› +$8.50 — Afternoon coffee'},
-    {amt:45.00, note:'› +$45.00 — Packed lunch all week'},
-    {amt:174.00,note:'› +$174.00 — Skipped weekend bar crawl'}
+    {amt:5.00,  note:'› +$5.00 · Morning latte skipped'},
+    {amt:12.50, note:'› +$12.50 · Walked instead of Uber'},
+    {amt:18.00, note:'› +$18.00 · Skipped round of drinks'},
+    {amt:22.00, note:'› +$22.00 · Cooked at home'},
+    {amt:35.00, note:'› +$35.00 · Passed on the jacket'},
+    {amt:8.50,  note:'› +$8.50 · Afternoon coffee'},
+    {amt:45.00, note:'› +$45.00 · Packed lunch all week'},
+    {amt:174.00,note:'› +$174.00 · Skipped weekend bar crawl'}
   ];
   const GOAL = 500;
   let running = false;
@@ -2032,7 +2044,7 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
       await animateTo(total, 520);
       await new Promise(r=>setTimeout(r,80));
     }
-    vcSub.textContent = '$320 saved in 8 skips · locked in your vault';
+    vcSub.textContent = '$320 saved in 8 skips · locked toward your goal';
     vcStream.innerHTML = '› 64% of goal · $180 to go · <span class="add">one tap away</span>';
   }
 
@@ -2190,7 +2202,7 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
       if (/captcha/i.test(msg)) {
         showError('We couldn\'t verify the bot-check. Please try the captcha again.');
       } else if (/invalid_email/i.test(msg)) {
-        showError('That email looks off — double-check it and resubmit.');
+        showError('That email looks off. Double-check it and resubmit.');
       } else if (/Server returned 5/.test(msg)) {
         showError('Our waitlist service hiccupped. We\'re likely already on it.');
       } else {
