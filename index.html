@@ -1137,6 +1137,9 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
 .flow-to .flow-k{color:var(--pch)}
 .flow-to .flow-b{color:rgba(237,232,208,0.75)}
 .flow-arrow{text-align:center;font-size:26px;line-height:1;font-weight:900;color:#7A5B10}
+.flow-cap{text-align:center;font-size:11px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:#7A5B10;margin-top:-4px}
+.flow-opts{display:flex;flex-direction:column;gap:6px;margin-top:10px}
+.flow-opt{display:block;border:1px solid rgba(237,232,208,0.45);border-radius:999px;padding:7px 12px;font-size:13px;font-weight:700;color:var(--pch)}
 .flow-note{margin-top:6px;text-align:center;font-size:12px;font-weight:700;line-height:1.6;color:rgba(28,61,43,0.75)}
 /* 1.4.10 Reflow — body{overflow-x:hidden} was swallowing wide tables at phone
    width, making the last column unreachable. Give the table its own scroller
@@ -1473,8 +1476,8 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
 <section class="band pch gui-lt" id="how">
   <div class="band-head reveal">
     <div class="rule-pair"><span class="line"></span><span class="eyebrow">How it works</span><span class="line"></span></div>
-    <h2 class="h-section">Skip it. It adds up. <br><em>It moves.</em></h2>
-    <p class="sub">No budgets, no spreadsheets. The money you almost spent moves from your checking to your own savings account, and it stays yours the whole way.</p>
+    <h2 class="h-section">Say no to the latte. <br><em>Say yes to Tokyo.</em></h2>
+    <p class="sub">No budgets, no spreadsheets, no lectures. Skip something, log it, and watch it land in the savings account you choose: the one at your own bank, or a high-yield account somewhere else. It's yours the whole way.</p>
   </div>
 
   <div class="steps">
@@ -1482,8 +1485,8 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     <!-- STEP 1 — Skip it -->
     <div class="step reveal">
       <div class="snum"><span>Step 01</span><span class="dot"></span><span>Skip it</span></div>
-      <h3>Almost grabbed a $5 latte on the walk to work? <em>Log the skip.</em></h3>
-      <p>Three taps, any time you don't buy the thing. Quitting something for good? Quit Companion checks you in each day and logs it for you.</p>
+      <h3>Walked past the latte? <em>That's a point on the board.</em></h3>
+      <p>Three taps and it counts. Quitting something for good? Quit Companion checks you in every day, and every clean day counts too.</p>
       <div class="phone-well pch-well">
         <div class="phone sm">
           <div class="phone-screen"><img src="/assets/app/logskip.webp" alt="Logging a skip in Miser: $12.49 with Fast food chosen from the category grid." width="640" height="1390" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
@@ -1491,11 +1494,11 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
       </div>
     </div>
 
-    <!-- STEP 2 — It adds up -->
+    <!-- STEP 2 — Stack it -->
     <div class="step reveal" data-delay="1">
-      <div class="snum"><span>Step 02</span><span class="dot"></span><span>It adds up</span></div>
-      <h3>Every skip adds to your <em>locked</em> total.</h3>
-      <p>Point each skip at a goal: a trip, a cushion, the habit you quit. The Coach charts your 30-day momentum, and the Skip Mix shows where the money is coming from.</p>
+      <div class="snum"><span>Step 02</span><span class="dot"></span><span>Stack it</span></div>
+      <h3>Watch the pile <em>grow</em>.</h3>
+      <p>Every skip lands on your locked total, pointed at something you actually want. Keep a streak going and climb nine ranks, from Cheap Curious to Grand Scrooge. The Coach shows your momentum and where the money is coming from.</p>
       <div class="phone-well pch-well">
         <div class="phone sm">
           <div class="phone-screen"><img src="/assets/app/coach.webp" alt="Miser Coach tab: $415.49 built across 40 skips, a note from the coach, and a 30-day momentum chart." width="640" height="1390" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
@@ -1503,17 +1506,25 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
       </div>
     </div>
 
-    <!-- STEP 3 — It moves -->
+    <!-- STEP 3 — Send it home -->
     <div class="step reveal" data-delay="2">
-      <div class="snum"><span>Step 03</span><span class="dot"></span><span>It moves</span></div>
-      <h3>From your checking to <em>your savings</em>.</h3>
-      <p>About once a week, once your total reaches $50, Miser moves it from your checking to your savings. Both accounts are yours, at your bank. $2.50 + 1.5% per transfer. In a hurry? Add $50 to $490 to a goal yourself, once a day.</p>
+      <div class="snum"><span>Step 03</span><span class="dot"></span><span>Send it home</span></div>
+      <h3>Straight into <em>your</em> savings.</h3>
+      <p>About once a week, once you've stacked $50, Miser moves it from your checking to the savings account you picked. Keep it at your own bank, or link a high-yield account at another one. Both accounts stay yours. $2.50 + 1.5% per transfer.</p>
       <div class="phone-well pch-well flow-well">
-        <div class="flow" role="img" aria-label="Money moves from your checking account to your savings account. Both are at your own bank.">
-          <div class="flow-acct"><span class="flow-k">Your checking</span><span class="flow-b">At your bank</span></div>
+        <div class="flow" role="img" aria-label="Money moves from your checking account to a savings account you choose: the one at your own bank, or a high-yield account at another bank. Miser never holds it.">
+          <div class="flow-acct"><span class="flow-k">Your checking</span><span class="flow-b">Where it would have gone</span></div>
           <div class="flow-arrow" aria-hidden="true">&darr;</div>
-          <div class="flow-acct flow-to"><span class="flow-k">Your savings</span><span class="flow-b">At your bank</span></div>
-          <div class="flow-note">About once a week<br>Miser never holds it</div>
+          <div class="flow-cap" aria-hidden="true">about once a week</div>
+          <div class="flow-acct flow-to">
+            <span class="flow-k">Your savings</span>
+            <span class="flow-b">You pick where</span>
+            <div class="flow-opts">
+              <span class="flow-opt">Your own bank</span>
+              <span class="flow-opt">A high-yield account</span>
+            </div>
+          </div>
+          <div class="flow-note">Miser never holds it</div>
         </div>
       </div>
     </div>
