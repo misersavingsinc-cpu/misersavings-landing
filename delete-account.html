@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Support | Miser</title>
-<meta name="description" content="Help centre for Miser: how your total gets into savings, how streaks and goals work, what the fee is, and how to reach a person.">
-<link rel="canonical" href="https://misersavings.com/support">
+<title>Delete your account | Miser</title>
+<meta name="description" content="How to delete your Miser account and the data attached to it, from inside the app or by email. What is deleted, what is kept, and how long it takes.">
+<link rel="canonical" href="https://misersavings.com/delete-account">
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Miser">
-<meta property="og:title" content="Support | Miser">
-<meta property="og:description" content="The same answers that ship inside the app, plus how to reach a person.">
+<meta property="og:title" content="Delete your account | Miser">
+<meta property="og:description" content="Two ways to delete your Miser account, what goes, what stays, and why.">
 <meta property="og:image" content="https://misersavings.com/og-image.png">
-<meta property="og:url" content="https://misersavings.com/support">
+<meta property="og:url" content="https://misersavings.com/delete-account">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Support | Miser">
-<meta name="twitter:description" content="The same answers that ship inside the app, plus how to reach a person.">
+<meta name="twitter:title" content="Delete your account | Miser">
+<meta name="twitter:description" content="Two ways to delete your Miser account, what goes, what stays, and why.">
 <meta name="twitter:image" content="https://misersavings.com/og-image.png">
 <meta name="robots" content="index,follow,max-image-preview:large">
 
@@ -216,8 +216,53 @@ footer {
   font-size:11px; color: rgba(237,232,208,0.7);
 }
 
+/* Delete-account page only. */
+.step {
+  display: flex; gap: 18px; align-items: flex-start;
+  padding: 22px 0;
+  border-bottom: 0.5px solid rgba(28,61,43,0.12);
+}
+.step:last-of-type { border-bottom: none; }
+.step-n {
+  flex: 0 0 34px; height: 34px;
+  border-radius: 50%; background: var(--dg); color: var(--pch);
+  font-size:15px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+.step-body { flex: 1; min-width: 0; }
+.step-h {
+  font-size:17px; font-weight: 800; color: var(--dg);
+  letter-spacing: -0.1px; margin-bottom: 6px;
+}
+.step-p { font-size:15px; line-height: 1.7; color: rgba(28,61,43,0.8); }
+.step-p a { color: var(--sg); }
+.step-p + .step-p { margin-top: 10px; }
+
+.datalist { list-style: none; margin: 4px 0 0; }
+.datalist li {
+  font-size:15px; line-height: 1.6; color: rgba(28,61,43,0.8);
+  padding: 7px 0 7px 22px; position: relative;
+}
+.datalist li::before {
+  content: ''; position: absolute; left: 4px; top: 15px;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--brz);
+}
+.datalist li strong { color: var(--dg); font-weight: 700; }
+
+.warn {
+  background: rgba(122,91,16,0.10);
+  border-left: 3px solid var(--brz);
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size:14.5px; line-height: 1.6;
+  color: rgba(28,61,43,0.85);
+  margin: 28px 0;
+}
+.warn strong { color: var(--dg); font-weight: 700; }
+
 @media (max-width: 680px) {
   .legal-h1 { font-size:38px; }
+  .step { gap: 12px; }
   .legal-inner { padding: 40px 24px; }
   nav { padding: 0 20px; }
   .nav-links { display: none; }
@@ -291,9 +336,9 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
 
 <section class="legal-hero">
   <div class="legal-hero-inner">
-    <div class="legal-eyebrow">Support</div>
-    <h1 class="legal-h1">Help <em>centre</em></h1>
-    <p class="legal-meta">The same answers that ship inside the app, so the two never disagree.</p>
+    <div class="legal-eyebrow">Account deletion</div>
+    <h1 class="legal-h1">Delete your <em>account</em></h1>
+    <p class="legal-meta">Two ways to do it, what goes, what stays, and how long it takes.</p>
   </div>
 </section>
 
@@ -301,85 +346,147 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
   <div class="legal-inner">
 
     <p class="legal-intro">
-      Everything below is the answer you get on the Contact &amp; Support screen in Miser, word for word.
-      If your question is not here, <strong>email or call us</strong>. A person reads every message.
+      This page is for deleting your <strong>Miser</strong> account, run by MiserSavings Inc., and the
+      data attached to it. You do not need the app installed and you do not need to be signed in to
+      make the request. Nothing here costs anything, and we do not ask you to explain why.
     </p>
 
-    <div class="section-label">Get in touch</div>
+    <div class="section-label">Option 1 &middot; In the app</div>
+
+    <div class="step">
+      <div class="step-n">1</div>
+      <div class="step-body">
+        <div class="step-h">Open the Profile tab</div>
+        <p class="step-p">Then open Settings and scroll to the bottom.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">2</div>
+      <div class="step-body">
+        <div class="step-h">Tap "Delete my account"</div>
+        <p class="step-p">
+          You get one confirmation screen saying exactly what will be removed. Confirm it and your
+          account closes there and then. You are signed out and cannot sign back in.
+        </p>
+      </div>
+    </div>
+
+    <div class="section-label" style="margin-top:44px">Option 2 &middot; By email</div>
+
+    <p class="step-p" style="margin-bottom:18px">
+      Use this if you have already deleted the app, cannot sign in, or would rather not do it
+      yourself.
+    </p>
 
     <div class="contact-box">
       <div class="contact-row">
-        <span class="contact-label">Email support</span>
-        <span class="contact-value"><a href="mailto:support@misersavings.com?subject=Miser%20Support">support@misersavings.com</a></span>
+        <span class="contact-label">Send to</span>
+        <span class="contact-value"><a href="mailto:support@misersavings.com?subject=Delete%20my%20account">support@misersavings.com</a></span>
       </div>
       <div class="contact-row">
-        <span class="contact-label">Call support</span>
-        <span class="contact-value"><a href="tel:+19315512555">(931) 551-2555</a></span>
+        <span class="contact-label">Subject</span>
+        <span class="contact-value">Delete my account</span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">Send it from</span>
+        <span class="contact-value">The email address on the account</span>
       </div>
     </div>
 
     <p class="hours-note">
-      <strong>We respond within 24 hours on business days.</strong><br>
-      Mon-Fri, 9am-5pm PT.
+      <strong>We reply within 24 hours on business days</strong> (Mon-Fri, 9am-5pm PT) to confirm
+      the request before anything is deleted. We confirm because an account deletion cannot be
+      undone, and because we will not act on a request we cannot tie to the account holder. If you
+      no longer have access to that email address, say so in the message and we will find another
+      way to verify you.
     </p>
 
-    <div class="section-label">Frequently asked</div>
+    <div class="section-label" style="margin-top:44px">What gets deleted</div>
 
-    <h2 class="faq-q" id="is-my-total-real-money">Is my Miser total real money?</h2>
-    <p class="faq-a">
-      Yes. Every skip is money you chose not to spend, and once your pending total reaches $50,
-      and it has been at least 7 days since your last transfer, it moves from your checking into
-      your savings. Miser can't spend, keep, or lend it, it only moves between accounts you own.
+    <p class="step-p">Everything that is about you:</p>
+    <ul class="datalist">
+      <li><strong>Your profile and sign-in</strong>: name, email address, phone number if you gave one, profile photo.</li>
+      <li><strong>Your savings record</strong>: every skip you logged, every contribution, your goals, your pinned goals and your cached totals.</li>
+      <li><strong>Your streaks and ranks.</strong></li>
+      <li><strong>Quit Companion</strong>: your habits, including the category, which we treat as sensitive.</li>
+      <li><strong>What the AI coach knows about you</strong>, and your coach usage history.</li>
+      <li><strong>Groups</strong>: your membership, and the invitations you sent or received.</li>
+      <li><strong>Your bank connections</strong>: the Plaid connection is removed, so Miser and Plaid lose access to the account, and the customer record held by our payment partner is deleted.</li>
+      <li><strong>Notifications and email</strong>: your device push tokens, your notification settings, and the log of what was sent to you.</li>
+      <li><strong>Your photos</strong>: profile and goal images you uploaded.</li>
+    </ul>
+
+    <div class="section-label" style="margin-top:44px">What is kept, and why</div>
+
+    <p class="step-p">
+      A small set of records survives, because US financial rules require it. In every one of them
+      <strong>the link to you is severed</strong>: the record no longer identifies you, and we do
+      not keep a key that would let us put it back.
+    </p>
+    <ul class="datalist">
+      <li><strong>ACH authorizations.</strong> When you authorize Miser to debit your checking account, that authorization is a record we are required to keep for a set period under the NACHA rules that govern ACH. It is what proves a debit was permitted.</li>
+      <li><strong>Records of money that actually moved</strong>: transfers, the ledger, reconciliations, and the transfer notices sent to you under Regulation E.</li>
+      <li><strong>Your acceptance of the Terms</strong>, kept in pseudonymous form: which version you accepted and when, with your identity replaced by a one-way hash.</li>
+      <li><strong>Privacy requests you made</strong>, including this one, as the compliance record that we handled it.</li>
+      <li><strong>Activity in shared group feeds</strong>, anonymized rather than removed, so the other members' history still adds up.</li>
+      <li><strong>Aggregated, de-identified analytics.</strong> This cannot be used to identify you, we do not try to re-identify it, and we have technical safeguards against doing so.</li>
+    </ul>
+
+    <div class="section-label" style="margin-top:44px">How long it takes</div>
+
+    <p class="step-p">
+      Your account closes immediately. You lose access at once, and nothing further is collected
+      about you from that moment.
+    </p>
+    <p class="step-p" style="margin-top:12px">
+      The permanent removal runs <strong>30 days later</strong>. There is one exception, and it is
+      not discretionary: a bank can return an ACH debit up to <strong>90 days</strong> after it was
+      taken. If you moved money in that window, the removal waits until the window closes, because
+      a returned debit has to be traceable to the transfer it reverses. If that applies to you, it
+      is the only thing that makes the process take longer than 30 days.
     </p>
 
-    <h2 class="faq-q" id="how-do-streaks-work">How do streaks work?</h2>
-    <p class="faq-a">
-      Log at least one skip per calendar day to keep your streak alive. Miss a day and it resets
-      to zero, so try to log something, even $1, every day.
+    <div class="warn">
+      <strong>Deleting the app does not delete your account, and it does not cancel your ACH
+      authorization.</strong> Removing Miser from your phone leaves the account, and the
+      authorization, exactly where they were. Use one of the two options above.
+    </div>
+
+    <div class="section-label" style="margin-top:44px">Your money is not affected</div>
+
+    <p class="step-p">
+      Miser never holds your money. It moves between two accounts you already own at your own bank,
+      and Miser cannot spend, keep or lend it. Money that has already been transferred is sitting in
+      your own savings account and stays there. Deleting your Miser account does not close, drain or
+      touch either bank account.
+    </p>
+    <p class="step-p" style="margin-top:12px">
+      If a transfer is in flight when you ask to delete, it finishes. We do not delete an account
+      out from under money that is still moving, because that would leave a debit nobody could
+      trace.
     </p>
 
-    <h2 class="faq-q" id="change-or-delete-goal">Can I change or delete my goal?</h2>
-    <p class="faq-a">
-      Yes. Go to the Goals tab, tap "Add a new goal" to create a new one. Your Miser Savings
-      balance carries over regardless of which goal is active.
-    </p>
+    <div class="section-label" style="margin-top:44px">If you are in a group</div>
 
-    <h2 class="faq-q" id="how-does-my-total-get-into-savings">How does my total get into savings?</h2>
-    <p class="faq-a">
-      Once you have $50 or more pending, and it's been at least 7 days since your last transfer,
-      Miser bundles your skips into one ACH transfer from your checking to your savings. It lands
-      in a few banking days. The fee is $2.50 plus 1.5% per transfer.
-    </p>
-
-    <h2 class="faq-q" id="how-does-the-ai-coach-work">How does the AI coach work?</h2>
-    <p class="faq-a">
-      Miser AI generates personalised check-ins based on your streak, total saved, and goal
-      progress. It's motivational only, not financial advice.
-    </p>
-
-    <h2 class="faq-q" id="delete-my-account">How do I delete my account?</h2>
-    <p class="faq-a">
-      Open the Profile tab, scroll to the bottom, and tap "Delete my account." If you can't access
-      the app, email support@misersavings.com with the subject "Delete my account."
-    </p>
-    <p class="faq-a">
-      <a href="/delete-account">Full instructions, what is deleted, what is kept and why</a>.
+    <p class="step-p">
+      If you are the only member of a group, the group is deleted with your account. If there are
+      other members, the group survives and is handed to the longest-standing member, so nobody else
+      loses a shared goal because you left.
     </p>
 
     <div class="fineprint">
       <p>
-        Miser moves money between two accounts you already own at your own bank. It is not a
-        place to keep money, so there is nothing to withdraw from Miser. There is a $500 ceiling
-        per transaction, including the fee.
+        You can also ask for a copy of your data, correct it, or clear what the AI coach knows,
+        without deleting anything. Those rights, and the state-law rights that go with them, are in
+        the <a href="/privacy.html">Privacy policy</a>. Residents of California, Texas, Colorado,
+        Connecticut, Virginia and other states with comprehensive privacy laws have additional
+        rights described there, and we respond to those requests within the statutory deadline.
       </p>
       <p style="margin-top:12px">
-        You can also add money to a goal on demand, from $50 up to $490, at the same fee, once
-        per day.
-      </p>
-      <p style="margin-top:12px">
-        See the <a href="/terms.html">Terms</a>, the <a href="/ach-authorization.html">ACH
-        authorization</a>, and the <a href="/privacy.html">Privacy policy</a>
-      <a href="accessibility.html">Accessibility</a>.
+        Questions about any of this: <a href="mailto:support@misersavings.com?subject=Miser%20Support">support@misersavings.com</a>
+        or (931) 551-2555. See also the <a href="/support">Help centre</a>, the
+        <a href="/terms.html">Terms</a> and the <a href="/ach-authorization.html">ACH
+        authorization</a>.
       </p>
     </div>
 
