@@ -37,6 +37,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://misersavings.com/delete-account</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://misersavings.com/blog/</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>weekly</changefreq>
