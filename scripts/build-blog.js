@@ -120,7 +120,6 @@ function navHtml() {
     <li><a href="../index.html#how">How it works</a></li>
     <li><a href="../index.html#quit">Quit</a></li>
     <li><a href="../index.html#groups">Groups</a></li>
-    <li><a href="../index.html#ranks">Ranks</a></li>
     <li><a href="index.html" class="active">Blog</a></li>
   </ul>
   <a class="nav-cta" href="../index.html#waitlist">Join our community</a>
@@ -135,7 +134,6 @@ function footerHtml() {
       <a href="../index.html#how">How it works</a>
       <a href="../index.html#quit">Quit</a>
       <a href="../index.html#groups">Groups</a>
-      <a href="../index.html#ranks">Ranks</a>
       <a href="index.html">Blog</a>
       <a href="../faq.html">FAQ</a>
       <a href="../about.html">About</a>
