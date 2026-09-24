@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.misersavings.app",
+      "sha256_cert_fingerprints": [
+        "63:A4:0F:A4:95:7D:1B:9E:B8:72:E0:B6:0A:91:CD:E0:C9:E6:C2:C3:BC:ED:3A:F5:7D:52:52:F3:2B:C2:92:9A"
+      ]
+    }
+  }
+]
