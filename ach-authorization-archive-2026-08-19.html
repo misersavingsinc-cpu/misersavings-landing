@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="canonical" href="https://misersavings.com/ach-authorization.html">
 <title>ACH Authorization · mi$er</title>
@@ -225,7 +226,6 @@ footer {
   .legal-hero { padding: 100px 20px 60px; }
   .legal-body { padding: 60px 20px 80px; }
 }
-.legal-inner .legal-archive{margin-top:48px;padding-top:20px;border-top:1px solid rgba(28,61,43,0.15);font-size:14px}
 </style>
 
 <style>
@@ -335,24 +335,25 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
 </nav>
 <main id="main">
 
-<!-- GENERATED:ach-authorization BEGIN (npm run legal:ach-page in misersavings-app; do not edit by hand) -->
 <section class="legal-hero">
   <div class="legal-hero-inner">
     <div class="legal-eyebrow">Legal</div>
     <h1 class="legal-h1">ACH <em>Authorization</em></h1>
-    <p class="legal-meta"><strong>Version:</strong> web-ach-2026-09-21 &middot; <strong>Last updated:</strong> September 21, 2026</p>
+    <p class="legal-meta"><strong>Version:</strong> web-ach-2026-08-19 &middot; <strong>Last updated:</strong> August 19, 2026</p>
   </div>
 </section>
 
 <section class="legal-body">
   <div class="legal-inner">
 
+    <div role="note" style="background:#7A5B10;color:#FBF8EE;padding:14px 18px;border-radius:10px;font-size:15px;line-height:1.5;margin-bottom:28px"><strong>Archived.</strong> This version (web-ach-2026-08-19) is no longer the one users sign. The current authorization is at <a href="ach-authorization.html" style="color:#FBF8EE;text-decoration:underline;font-weight:700">misersavings.com/ach-authorization</a>.</div>
+
     <p class="legal-intro">
-      This page shows the authorization you agree to in the mi$er app before we move any money. You sign it once, in the app, after you link your checking and savings accounts. It is separate from our <a href="terms.html">Terms of Service</a>. Sections 1 to 5 are the text you sign, in the same words, with its labels as headings: version web-ach-2026-09-21. In the app, your bank name and the last four digits of your checking account appear in place of &ldquo;my linked checking account&rdquo;.
+      This page shows the authorization you agree to in the mi$er app before we move any money. You complete it once, in the app, after you link your checking and savings accounts. It is separate from our <a href="terms.html">Terms of Service</a>. This page is published so you can read the terms before you start, and re-read them at any time. The copy you agree to is saved to your account with a confirmation number, and we will send you a copy.
     </p>
 
     <div class="callout-top">
-      <p><strong>NOTHING MOVES UNTIL YOU AUTHORIZE IT.</strong> mi$er cannot debit your account without this authorization. It covers debits from <em>your</em> linked checking account only, of two kinds: scheduled transfers, and transfers you start yourself. The money goes to <em>your own</em> savings account. mi$er never debits your savings account.</p>
+      <p><strong>NOTHING MOVES UNTIL YOU AUTHORIZE IT.</strong> mi$er cannot debit your account without this authorization. It covers one thing only: recurring debits from <em>your</em> linked checking account, to fund transfers into <em>your own</em> savings account. mi$er never debits your savings account.</p>
     </div>
 
     <div class="toc">
@@ -361,62 +362,45 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
         <li><a href="#statement">The authorization statement</a></li>
         <li><a href="#amount">Amount</a></li>
         <li><a href="#schedule">Schedule</a></li>
-        <li><a href="#notices">Advance notice of each amount</a></li>
-        <li><a href="#revocation">How to cancel</a></li>
-        <li><a href="#rights">If something goes wrong</a></li>
+        <li><a href="#revocation">How to cancel or stop a transfer</a></li>
+        <li><a href="#rights">Your Regulation E rights</a></li>
         <li><a href="#record">Your copy and our record</a></li>
       </ol>
     </div>
 
     <h2 id="statement">1. The authorization statement</h2>
+    <p>This is the statement you agree to in the app. Your bank name and the last four digits of your checking account are filled in with the account you linked.</p>
     <div class="callout-top">
       <p>I authorize <strong>MiserSavings Inc.</strong> to electronically debit my linked checking account via the ACH network for my Miser savings transfers.</p>
-      <p>This authorization is for internet-initiated (WEB) debits: both the scheduled transfers described above and the transfers you start yourself. Questions: <a href="mailto:support@misersavings.com">support@misersavings.com</a>.</p>
+      <p>This authorization is for internet-initiated (WEB) recurring debits. Questions: <a href="mailto:support@misersavings.com">support@misersavings.com</a>.</p>
     </div>
 
     <h2 id="amount">2. Amount</h2>
-    <p>Variable amounts, from two kinds of transfer. Scheduled transfers: each debit equals the total you have locked since your last transfer, plus the service fee ($2.50 + 1.5% of the amount saved). If you turn on automatic locking for a habit you are quitting, that habit's daily amount is locked for you on each day you do not report a slip, and counts toward that total. Transfers you start yourself: each debit equals the amount you choose, from $50 to $490, plus the same service fee. No single debit of either kind will exceed $500, including the fee; anything above that stays locked and goes with a later transfer.</p>
+    <p>Variable amounts. Each debit equals the total you have locked since your last transfer, plus the service fee ($2.50 plus 1.5% of the amount saved). No single debit will exceed <strong>$500</strong>, including the fee; anything above that stays locked and goes with a later transfer. A transfer requires at least <strong>$50</strong> locked.</p>
+    <p>Because the amount varies with what you save, you may choose to be notified of each transfer&rsquo;s amount and date before it happens, or to be notified only when a transfer would fall outside the $50&ndash;$500 range. You make that choice when you authorize.</p>
 
     <h2 id="schedule">3. Schedule</h2>
-    <p>Recurring, but not on a fixed day of the week. A transfer is initiated on the first day that is at least 7 days after your last transfer was initiated (including a transfer that was later returned by your bank), provided you have at least $50 locked at that point. Transfers are not initiated on a federal bank holiday. If you have less than $50 locked, no transfer is taken and nothing is charged; the amount stays locked and goes with your next transfer. You may also start a transfer yourself in the app at any time. Those are not scheduled: one is taken only when you ask for it, no more than one per day, and starting one does not change when your next scheduled transfer happens. Transfers settle through the ACH network, which operates on banking days only: a transfer initiated on a weekend moves on the next banking day, and the money typically reaches your savings account about four banking days after it leaves your checking account.</p>
+    <p>Recurring, but <strong>not on a fixed day of the week</strong>. A transfer is initiated on the first day that is at least <strong>7 days</strong> after your last completed transfer, provided you have at least $50 locked at that point.</p>
+    <p>Transfers are not initiated on a federal bank holiday. The ACH network settles on banking days only, so a transfer initiated on a weekend moves on the next banking day. If you have less than $50 locked, no transfer is taken and nothing is charged: the amount stays locked and goes with your next transfer.</p>
+    <p>Transfers settle through the ACH network: the money leaves your checking account on the debit date and typically reaches your savings account about four banking days later.</p>
 
-    <h2 id="notices">4. Advance notice of each amount</h2>
-    <p>Because scheduled debits vary in amount, federal rules entitle you to notice of the amount and date of each one at least 10 days in advance, or, if you prefer, notice only when a debit falls outside a range you choose. By signing, you choose the range: notify me in advance only if a scheduled debit would be less than $50 or more than $500 including the fee. Every scheduled debit under this authorization is inside that range, so you will not receive advance notices. Each transfer appears in the app as soon as it is started, you will receive an email receipt when it starts, and you will receive an email if it is returned. You can change this choice at any time by emailing <a href="mailto:support@misersavings.com">support@misersavings.com</a>.</p>
+    <h2 id="revocation">4. How to cancel or stop a transfer</h2>
+    <p>You may revoke this authorization at any time, in the app under <strong>Settings &rarr; Linked banks</strong>, or by emailing <a href="mailto:support@misersavings.com">support@misersavings.com</a>. To stop a specific scheduled transfer, tell us at least <strong>3 business days</strong> before it is scheduled.</p>
+    <p>Revocation stops future debits. It does not reverse a debit already in process. Cancelling is as easy as enrolling.</p>
 
-    <h2 id="revocation">5. How to cancel</h2>
-    <p>You may revoke this authorization at any time in the app by unlinking your checking account (Settings → Linked banks → Checking → Unlink) or by contacting us. Revocation takes effect immediately for any transfer that has not yet been initiated; it does not reverse a transfer already in process. Deleting the Miser app does not cancel this authorization: your bank still has it on file, so unlink your checking account or contact us to stop transfers.</p>
+    <h2 id="rights">5. Your Regulation E rights</h2>
+    <p>These transfers are electronic fund transfers covered by the federal Electronic Fund Transfer Act (Regulation E). You have the right to:</p>
+    <ul>
+      <li>Stop a scheduled transfer by telling us at least 3 business days before its scheduled date.</li>
+      <li>Dispute an unauthorized or erroneous transfer. Contact us promptly. You generally must notify us within 60 days of the statement showing the transfer.</li>
+      <li>Request a paper copy of any disclosure.</li>
+      <li>Receive notice of the amount and date of a varying transfer, as described in section 2 above.</li>
+    </ul>
+    <p>Our full Error Resolution Notice is available in the app under <strong>Settings &rarr; Legal</strong>, and is provided to you at account opening.</p>
 
-    <h2 id="rights">6. If something goes wrong</h2>
-    <p>This is the error resolution notice shown in the app under <strong>Settings &rarr; Legal</strong>.</p>
-    <h3>If something goes wrong with a transfer</h3>
-    <p>If you believe an error has occurred in a Miser transfer, including a debit you did not authorize, a wrong amount, a transfer that never reached your savings account, or a transfer you asked for that was not made, tell us. We will investigate and correct any error we find.</p>
-    <p>Miser is not your bank and does not hold your accounts. Under federal law (the Electronic Fund Transfer Act and Regulation E), the bank that holds your checking account is responsible for investigating an error in an electronic transfer from that account. So if money is missing, contact your bank as well as Miser. Your bank can return an ACH debit that was unauthorized or incorrect, and we will give you and your bank the transfer records needed to do that.</p>
-    <h3>When to report</h3>
-    <p>Tell us within 60 days of the transfer appearing in the app or on your bank statement. Reporting promptly matters: your bank's ability to return an ACH debit is strongest within 60 days of the statement that shows it, and waiting longer can limit what either of us can do.</p>
-    <h3>What to tell us</h3>
-    <p>When you contact us, please provide:</p>
-    <p>1. Your name and the email address associated with your Miser account.<br>2. A description of the suspected error: what happened, when it happened, and why you believe it is an error.<br>3. The dollar amount of the suspected error.</p>
-    <h3>How to reach us</h3>
-    <p>Email: <a href="mailto:support@misersavings.com">support@misersavings.com</a></p>
-    <p>Mailing address:<br>MiserSavings Inc.<br>5000 Plaza on the Lake<br>Suite 100 - #4030<br>Austin, TX 78746</p>
-    <p>You may report by email or mail. Email is the fastest channel. If you report by email, we will send a written acknowledgement.</p>
-    <h3>What Miser will do</h3>
-    <p>We will acknowledge your report within 1 business day and look into it using our own transfer records and those of our payment partner.</p>
-    <p>Within 10 business days of receiving your report we will tell you in writing what we found. If you ask, we will give you copies of the records we relied on.</p>
-    <p>If the error is ours (for example, we debited the wrong amount, debited you after you revoked your authorization, sent a credit to the wrong account, or a debit left your checking account and the matching credit never went out), we correct it ourselves: we send the money to the right account, from our own funds if necessary, within 10 business days of your report. We do not wait for your bank to act first.</p>
-    <p>If the error is at your bank (for example, your bank rejected a credit to your savings account), we will tell you what happened and give you what you need to raise it with them.</p>
-    <h3>Transfers you did not authorize</h3>
-    <p>Miser does not issue a card, PIN, or other access device. Every Miser debit is made under the authorization you sign when you link your checking account, and only for the amounts and on the terms it describes.</p>
-    <p>If you see a Miser debit you did not authorize, you have two protections. Your bank can return it: under federal law, your bank cannot hold you liable for an unauthorized electronic transfer that you report within 60 days of the statement showing it, so tell your bank. And Miser will not keep it: a debit taken without a valid authorization is returned in full by us, whether or not your bank acts.</p>
-    <p>If extenuating circumstances (such as extended travel or illness) prevented you from reporting in time, tell us and we will take that into account.</p>
-    <p>You can withdraw your authorization at any time by unlinking your checking account in Settings, or by emailing us. That stops any transfer that has not yet been sent. Deleting the Miser app does not withdraw your authorization.</p>
-    <h3>Definition of "business day"</h3>
-    <p>For purposes of this notice, "business day" means Monday through Friday, excluding federal public holidays.</p>
-
-    <h2 id="record">7. Your copy and our record</h2>
-    <p>When you authorize, we save the exact wording you agreed to, its version, the date and time, and a confirmation number to your account. The confirmation screen in the app lets you save or share a PDF copy. We retain the record for as long as NACHA rules and applicable law require, including after you delete your account.</p>
-    <p>mi$er is a financial technology company, not a bank, and gives you no balance to spend. Both accounts in every transfer are yours, held at your own bank in your name. Transfers are processed by our ACH payment partner and the regulated financial institution it works with, which hold and move the funds while a transfer is in process.</p>
-    <p class="legal-archive">Earlier versions of this page (archived): <a href="ach-authorization-archive-2026-08-19.html">web-ach-2026-08-19</a></p>
+    <h2 id="record">6. Your copy and our record</h2>
+    <p>When you authorize, we save the exact wording you agreed to, the date and time, and a confirmation number to your account. You can view it in the app and save or share a copy at any time. We retain the record for as long as required by NACHA rules and applicable law.</p>
+    <p>mi$er is a financial technology company, not a bank. Both accounts in every transfer are yours, held at your own bank(s) in your name. Transfers are processed by our ACH payment partner and its partner banks, which is disclosed to you in the app at the time you authorize.</p>
 
     <div class="contact-box">
       <h3>Contact MiserSavings</h3>
@@ -427,7 +411,6 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
 
   </div>
 </section>
-<!-- GENERATED:ach-authorization END -->
 </main>
 <footer>
   <div class="footer-inner">
