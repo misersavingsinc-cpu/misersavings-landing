@@ -103,7 +103,7 @@
       "name": "Is Miser US-only?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, for now. To use Miser you must be at least 18 years old and a permanent US resident. Money movement at launch is US-domestic via ACH, which means we can only support US bank accounts and US-resident customers. International availability is a long-term consideration, not a near-term plan."
+        "text": "Yes, for now. To use Miser you must be at least 18 years old and live in the US with a US residential address. Money movement at launch is US-domestic via ACH, which means we can only support US bank accounts and US-resident customers. International availability is a long-term consideration, not a near-term plan."
       }
     },
     {
@@ -119,7 +119,7 @@
       "name": "When does my money move?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Instead of nickel-and-diming your checking account every time you log a skip, Miser collects your skips and moves the total in one ACH transfer. You can also add money to a goal on demand, which starts its own transfer. Transfers run about a week apart — the next one goes on the first banking day once at least 7 days have passed since your last transfer. If your total is under $50, nothing moves and nothing is charged; it rolls into the next transfer. Amounts over $500 carry forward too. One transfer instead of many means lower processing cost — which is why the service fee can stay small — and a cleaner record on your bank statement. You can pause or cancel an upcoming transfer before it ships if your week went sideways."
+        "text": "Instead of nickel-and-diming your checking account every time you log a skip, Miser collects your skips and moves the total in one ACH transfer. A transfer starts on the first day that at least $50 is locked and at least 7 days have passed since your last one. There is no fixed day of the week: weekends count, federal bank holidays do not. If your total is under $50, nothing moves and nothing is charged; it rolls into the next transfer. No single transfer is more than $500 including the fee, and anything above that carries forward. The money usually reaches your savings about four banking days after it leaves your checking. One transfer instead of many means lower processing cost, which is why the service fee can stay small, and a cleaner record on your bank statement. You can also add money to a goal on demand, which starts its own transfer. To stop transfers, unlink your checking account in the app."
       }
     },
     {
@@ -143,7 +143,7 @@
       "name": "Does Miser sell my data?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. We don't sell your personal information and we don't use it for targeted advertising. We share limited data with the third-party processors that operate the service — our bank-linking provider, our ACH partner, our email service, our hosting, and Google Analytics for anonymized traffic — and that's it. The full list, and your data-deletion rights, are in our Privacy Policy."
+        "text": "No. We don't sell your personal information and we don't use it for targeted advertising. We share limited data with the service providers that run Miser: Supabase (hosting), Resend (email), Anthropic (the AI coach), PostHog and Sentry (app analytics and crash reports), Plaid (bank linking), and our payment partner and the financial institution it works with (transfers). On this website we use Google Analytics and Microsoft Clarity. If you opt in to partner offers, your goal category is shared with the partner, and nothing else. What each one receives, and your deletion rights, are in our Privacy Policy."
       }
     },
     {
@@ -151,7 +151,7 @@
       "name": "How do I cancel or delete my account?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You can delete your account directly from inside the Miser app — Profile → Account → Delete account. Or email support@misersavings.com from the address you joined with and we'll handle it. Deletion stops future savings transfers and removes your email and any captured submission metadata from our systems. We retain anonymized aggregate analytics and any records required by law (e.g., transaction records for the period required by US banking regulations)."
+        "text": "Delete your account in the app: open the Profile tab, scroll to the bottom and tap Delete my account. Or email support@misersavings.com from the address on the account. A few records the law requires us to keep, such as your ACH authorization and the record of money that moved, survive with the link to you removed. Full details: misersavings.com/delete-account."
       }
     },
     {
@@ -450,7 +450,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
   <div class="legal-inner">
 
     <p class="legal-intro">
-      A plain-English walkthrough of how Miser works, who it's for, what it costs, and where your money sits. Last updated <strong>May 16, 2026</strong>.
+      A plain-English walkthrough of how Miser works, who it's for, what it costs, and where your money sits. Last updated <strong>September 28, 2026</strong>.
     </p>
 
     <h2 class="faq-q">What is Miser?</h2>
@@ -469,13 +469,13 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     <p class="faq-a">We're launching in 2026, iOS first. The <a href="/#waitlist">waitlist</a> is open at misersavings.com, drop your email and we'll send a TestFlight invite when your slot opens. We're admitting people in batches so we can keep the early experience good.</p>
 
     <h2 class="faq-q">Is Miser US-only?</h2>
-    <p class="faq-a">Yes, for now. To use Miser you must be at least <strong>18 years old and a permanent US resident</strong>. Money movement at launch is US-domestic via ACH, which means we can only support US bank accounts and US-resident customers. International availability is a long-term consideration, not a near-term plan.</p>
+    <p class="faq-a">Yes, for now. To use Miser you must be at least <strong>18 years old and live in the US with a US residential address</strong>. Money movement at launch is US-domestic via ACH, which means we can only support US bank accounts and US-resident customers. International availability is a long-term consideration, not a near-term plan.</p>
 
     <h2 class="faq-q">Will Miser come to Android?</h2>
     <p class="faq-a">Yes. iOS first because we're a small team and shipping one great mobile experience is better than shipping two compromised ones. Android is on the roadmap close behind. When you join the waitlist you can tell us which platform you're on so we can size the Android cohort and invite you when it lands.</p>
 
     <h2 class="faq-q">When does my money move?</h2>
-    <p class="faq-a">Instead of nickel-and-diming your checking account every time you log a skip, Miser collects your skips and moves the total in <strong>one ACH transfer, about a week apart</strong>: the next one goes on the first banking day once at least 7 days have passed since your last transfer. If your total is under $50, nothing moves and nothing is charged; it rolls into the next transfer. Amounts over $500 carry forward too. One transfer instead of many means lower processing cost, which is why the service fee can stay small, and a cleaner record on your bank statement. You can pause or cancel an upcoming transfer before it ships if your week went sideways.</p>
+    <p class="faq-a">Instead of nickel-and-diming your checking account every time you log a skip, Miser collects your skips and moves the total in one ACH transfer. A transfer starts on the <strong>first day that at least $50 is locked and at least 7 days have passed</strong> since your last one. There is no fixed day of the week: weekends count, federal bank holidays do not. If your total is under $50, nothing moves and nothing is charged; it rolls into the next transfer. No single transfer is more than $500 including the fee, and anything above that carries forward. The money usually reaches your savings about four banking days after it leaves your checking. One transfer instead of many means lower processing cost, which is why the service fee can stay small, and a cleaner record on your bank statement. You can also add money to a goal on demand, which starts its own transfer. To stop transfers, unlink your checking account in the app.</p>
 
     <h2 class="faq-q">Can I add money without waiting for a transfer?</h2>
     <p class="faq-a">Yes. Tap <strong>Add money</strong> on any goal, type an amount between <strong>$50 and $490</strong>, and one transfer starts that day. Same fee as a scheduled transfer: $2.50 plus 1.5%. One per day.</p>
@@ -488,11 +488,11 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     <p class="faq-a">Ranks are <strong>pure recognition</strong>, no fee discounts, no raised limits, no paywall. As you skip enough days and save enough dollars, the app names you: Cheap Curious at 3 days, all the way up to Grand Scrooge at 450 days. A missed day breaks the streak but never takes the rank away. We scrapped a traditional tier system on purpose. Ranks are identity, not unlocks.</p>
 
     <h2 class="faq-q">Does Miser sell my data?</h2>
-    <p class="faq-a"><strong>No.</strong> We don't sell your personal information and we don't use it for targeted advertising. We share limited data with the third-party processors that operate the service, our bank-linking provider, our ACH partner, our email service, our hosting, and Google Analytics for anonymized traffic, and that's it. The full list, and your data-deletion rights, are in our <a href="privacy.html">Privacy Policy</a>
+    <p class="faq-a"><strong>No.</strong> We don't sell your personal information and we don't use it for targeted advertising. We share limited data with the service providers that run Miser: Supabase (hosting), Resend (email), Anthropic (the AI coach), PostHog and Sentry (app analytics and crash reports), Plaid (bank linking), and our payment partner and the financial institution it works with (transfers). On this website we use Google Analytics and Microsoft Clarity. If you opt in to partner offers, your goal category is shared with the partner, and nothing else. What each one receives, and your deletion rights, are in our <a href="privacy.html">Privacy Policy</a>.
       <a href="accessibility.html">Accessibility</a>.</p>
 
     <h2 class="faq-q">How do I cancel or delete my account?</h2>
-    <p class="faq-a">You can delete your account directly from inside the Miser app, <strong>Profile → Account → Delete account</strong>. Or email <a href="mailto:support@misersavings.com">support@misersavings.com</a> from the address you joined with and we'll handle it. Deletion stops future savings transfers and removes your email and any captured submission metadata from our systems. We retain anonymized aggregate analytics and any records required by law (e.g., transaction records for the period required by US banking regulations).</p>
+    <p class="faq-a">Delete your account in the app: open the <strong>Profile tab, scroll to the bottom and tap Delete my account</strong>. Or email <a href="mailto:support@misersavings.com">support@misersavings.com</a> from the address on the account. A few records the law requires us to keep, such as your ACH authorization and the record of money that moved, survive with the link to you removed. <a href="/delete-account">What is deleted, what is kept and why</a>.</p>
 
     <h2 class="faq-q">Who builds Miser?</h2>
     <p class="faq-a">Miser is built by a small team in Austin, Texas. MiserSavings Inc. is a Delaware C-Corp founded in <strong>March 2026</strong>. You can read more about the team and the mission on the <a href="about.html">About</a> page.</p>
