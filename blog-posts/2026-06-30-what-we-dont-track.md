@@ -15,13 +15,13 @@ We thought carefully about where to draw the line. Here's what Miser actually se
 
 ## What we see
 
-When you connect your bank account to Miser, we use it to do one thing: move money. Every seven days, on your own cycle day, the total of your skips transfers from your checking account to your savings account through our payment partner. That's the transaction.
+When you connect your bank account to Miser, we use it to do one thing: move money. Once you have at least $50 locked and seven days have passed since your last transfer, the total of your skips moves from your checking account to your savings account through our payment partner. You can also start a transfer yourself with Add money. That's the transaction.
 
 To do that, we need the ability to initiate an ACH transfer. We don't need your full transaction history. We don't need to see every coffee and Amazon order and gas station stop.
 
 We see your skips, because you log them in the app. We see your goals, because you set them. We see the running total of what you've locked, because we're the ones starting the transfer. That's the list.
 
-There's a hard limit on what we can do with the money, too. Miser can't access it, spend it, keep it, or lend it. It moves between two accounts that are already yours, and while it's in transit it's held by our payment partner's federally-insured banking partner.
+There's a hard limit on what Miser is, too. Miser is not a bank and gives you no balance to spend. The money moves between two accounts that are already yours, and while a transfer is in process it's held and moved by a regulated financial institution working with our payment partner.
 
 ## What we don't see
 

@@ -1,10 +1,10 @@
 # Miser
 
-> Miser is a behavioral savings app for iPhone. The core loop: you catch yourself about to spend money you don't need to spend, log it as a skip, and the money you didn't spend gets pulled from your linked checking account into your linked savings account. Every 7 days, on your personal cycle day (set by your first save), your skips bundle into one ACH transfer between your own accounts. Miser never holds your money.
+> Miser is a behavioral savings app for iPhone. The core loop: you catch yourself about to spend money you don't need to spend, log it as a skip, and the money you didn't spend gets pulled from your linked checking account into your linked savings account. Once at least $50 is locked and at least 7 days have passed since your last scheduled transfer, your skips bundle into one ACH transfer between your own accounts. Miser is not a bank and gives you no balance to spend.
 
 ## Product
 
-Miser is made by MiserSavings Inc., a Delaware C-Corp founded in Austin, Texas in March 2026. The product is in waitlist/pre-launch phase as of May 2026.
+Miser is made by MiserSavings Inc., a Delaware C-Corp founded in Austin, Texas in March 2026. Money movement went live in August 2026.
 
 **Core features:**
 - Skip log: tap, amount, category, optional note — the core daily action
@@ -13,20 +13,22 @@ Miser is made by MiserSavings Inc., a Delaware C-Corp founded in Austin, Texas i
 - Groups: shared goals between friends or partners — everyone skips into their own vault, the group bar fills together
 - Ranks: nine-rank cosmetic ladder earned by streak and lifetime savings milestones — Apprentice → Pocket → Tight → Steady → Sworn → Iron → Veteran → Master → Grand
 - Miser Coach: Anthropic-powered daily messages about streak, momentum, and focus. Not a financial advisor
-- Withdraw: free, any time, any amount — no withdrawal fee
+- Add money: start a transfer yourself from any goal, $50 to $490, once per day
 
 **How money moves:**
 - The user links their own checking and savings accounts (both at their own bank)
 - Bank linking and ACH transit happen through a regulated banking-infrastructure partner
-- Every 7 days, on the user's personal cycle day (set by their first save), a single ACH transfer moves their total skips from checking to savings
-- Miser is not a custodian — money never sits on Miser's balance sheet
-- Users' funds stay in their own FDIC-insured bank accounts throughout
+- There is no fixed cycle day. A scheduled transfer is initiated once at least $50 is locked and at least 7 days have passed since the last scheduled transfer was initiated. It moves the user's locked skips from checking to savings in a single ACH transfer
+- Scheduled transfers can start on weekends; federal bank holidays are skipped. Money usually reaches the savings account about four banking days after a transfer starts
+- Add money is a second, user-started transfer of $50 to $490 for that amount only, once per day. It does not change when the next scheduled transfer runs
+- Until a transfer moves it, the money stays in the user's checking account. While a transfer is in process, the funds are held and moved by a regulated financial institution working with our payment partner, not by Miser. Funds in transit may not be FDIC-insured until they arrive in the savings account
+- Miser is not a bank and gives users no balance to spend
+- There are no in-app withdrawals: once a transfer lands, the money is already in the user's own savings account at their own bank
 
 **Pricing:**
 - Free to hold a Miser account
 - No subscription fees, ever
-- Withdrawals are free
-- A service fee of $2.50 + 1.5% of each transfer (no cap) applies to each batch transfer — disclosed in-app before any money moves; withdrawals are free
+- A service fee of $2.50 + 1.5% of each transfer (no cap) applies to every transfer, scheduled or Add money. It is disclosed in-app before any money moves
 
 **Platform:** iOS first. US-only at launch.
 
@@ -43,7 +45,7 @@ Miser is made by MiserSavings Inc., a Delaware C-Corp founded in Austin, Texas i
 
 ## Pages
 
-- [Homepage](https://misersavings.com/) — product overview, waitlist signup
+- [Homepage](https://misersavings.com/) — product overview
 - [About](https://misersavings.com/about.html) — company and mission
 - [Blog](https://misersavings.com/blog/) — personal finance content in Miser's voice
 - [FAQ](https://misersavings.com/faq.html) — common questions about how Miser works
@@ -54,8 +56,8 @@ Miser is made by MiserSavings Inc., a Delaware C-Corp founded in Austin, Texas i
 
 - Does not sell user data
 - Does not share user data for advertising
-- Does not hold user funds or act as a bank
+- Is not a bank and gives users no balance to spend
 - Does not pay interest (the user's own bank does)
 - Does not charge a subscription fee
-- Does not charge a withdrawal fee
+- Does not offer in-app withdrawals
 - Does not use third-party ad SDKs in the app
