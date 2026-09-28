@@ -9,9 +9,9 @@ Miser is made by MiserSavings Inc., a Delaware C-Corp founded in Austin, Texas i
 **Core features:**
 - Skip log: tap, amount, category, optional note — the core daily action
 - Goals: multiple parallel savings goals (a trip, emergency fund, quit fund, etc.) — each skip is tagged to one
-- Quit Companion: for people quitting a habit (cigarettes, alcohol, gambling). Daily check-in auto-skips the habit's daily cost into a vault
-- Groups: shared goals between friends or partners — everyone skips into their own vault, the group bar fills together
-- Ranks: nine-rank cosmetic ladder earned by streak and lifetime savings milestones — Apprentice → Pocket → Tight → Steady → Sworn → Iron → Veteran → Master → Grand
+- Quit Companion: for people quitting a habit (cigarettes, alcohol, gambling). Each clean day adds the habit's daily cost to the user's locked total (checked in, or automatically if they turn that on)
+- Groups: shared goals between friends or partners — everyone saves into their own account, the shared bar fills together
+- Ranks: nine-rank cosmetic ladder earned by streak and lifetime savings milestones — Cheap Curious → Cart Ghoster → Dirt Cheap → Wallet Clencher → Bona Fide Cheapskate → Markdown Menace → Certified Tightwad → Cash Hoarder → Grand Scrooge. A missed day breaks the streak but never takes a rank away
 - Miser Coach: Anthropic-powered daily messages about streak, momentum, and focus. Not a financial advisor
 - Add money: start a transfer yourself from any goal, $50 to $490, once per day
 
@@ -32,7 +32,7 @@ Miser is made by MiserSavings Inc., a Delaware C-Corp founded in Austin, Texas i
 
 **Platform:** iOS first. US-only at launch.
 
-**Tagline:** Skip · Lock · Stack.
+**Tagline:** Skip · Save · Stack.
 
 ## Company
 
@@ -51,6 +51,10 @@ Miser is made by MiserSavings Inc., a Delaware C-Corp founded in Austin, Texas i
 - [FAQ](https://misersavings.com/faq.html) — common questions about how Miser works
 - [Privacy Policy](https://misersavings.com/privacy.html)
 - [Terms of Service](https://misersavings.com/terms.html)
+- [ACH authorization](https://misersavings.com/ach-authorization.html) — the transfer authorization users sign, word for word
+- [Support](https://misersavings.com/support) — help answers, identical to the app
+- [Delete your account](https://misersavings.com/delete-account)
+- [Accessibility](https://misersavings.com/accessibility.html)
 
 ## Things Miser explicitly does not do
 
