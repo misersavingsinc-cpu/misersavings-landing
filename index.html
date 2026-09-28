@@ -436,6 +436,7 @@ nav.site .inner{
   .hero-right{order:3;min-height:0;margin:36px 0 40px}
   .hero-left > .hero-wl{order:4;margin-top:0}
   .hero-left > .hero-ctas{order:5}
+  .hero-left > .hero-wl-note{order:5;margin-top:12px}
   .hero-left > div:not(.hero-ctas){order:6}
 }
 
@@ -1123,6 +1124,12 @@ footer.site .wm{margin-bottom:8px}
 .callout-top a,.callout a,.dk a,.gui-dk a{color:#D4B428}
 /* A gold button is a link too once the hero form is gone; keep its dark label. */
 .dk a.btn-gold,.gui-dk a.btn-gold{color:var(--dg)}
+/* Apple's official badge, unmodified. Min 40px tall on screen; clear space of a
+   quarter of its height on every side (Apple marketing guidelines). */
+.appstore-badge{display:inline-block;flex:0 0 auto;line-height:0;padding:12px;margin:-12px;border-radius:10px}
+.appstore-badge img{height:48px;width:144px;max-width:none;display:block}
+.appstore-badge:focus-visible{outline:3px solid var(--gld);outline-offset:2px}
+
 .callout-top a:hover,.callout a:hover{color:#EDE8D0}
 /* gold on mid-green panels needs the brighter tint to clear 4.5:1 */
 .wl-platform-label{color:#D4B428!important}
@@ -1474,7 +1481,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
       <h1>Break the habit. <em>Keep the money.</em></h1>
       <p class="lead">Skip the latte, the takeout, the 1am cart. Log it in three taps and that amount moves from your checking to your own savings account. Your bank, your accounts. Miser is not a bank and gives you no balance to spend.</p>
       <div class="hero-ctas">
-        <a href="https://apps.apple.com/us/app/id6763827599" class="btn-gold">Get Miser on the App Store →</a>
+        <a href="https://apps.apple.com/us/app/id6763827599" class="appstore-badge" aria-label="Download Miser on the App Store"><img src="/assets/badges/app-store-badge-black.svg" alt="Download on the App Store" width="144" height="48"></a>
         <a href="#how" class="btn-outline-lt">See how it works</a>
       </div>
       <p class="hero-wl-note">Free to download · iPhone · US residents 18+</p>
