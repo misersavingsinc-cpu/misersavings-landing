@@ -16,6 +16,10 @@
 User-agent: *
 Content-Signal: search=yes,ai-input=yes,ai-train=no
 Allow: /
+# Source files GitHub Pages publishes alongside the site; not pages.
+Disallow: /blog-posts/
+Disallow: /scripts/
+Disallow: /docs/
 
 # ─── AI SEARCH AND ANSWER CRAWLERS ─────────────────────────────────────────
 # Permitted: these fetch pages to show them in search results or to answer a
