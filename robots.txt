@@ -7,44 +7,62 @@
 #   ai-input = yes  — using content for AI-generated answers (GEO/AEO), permitted
 #   ai-train = no   — training or fine-tuning AI models, NOT permitted
 #
-# ⚠ CLOUDFLARE ACTION REQUIRED: Cloudflare's "AI Scrapers" feature dynamically
-# prepends Disallow rules for GPTBot, ClaudeBot, Google-Extended, and others
-# BEFORE this file is served. That overrides the Allow rules below. To fully
-# unblock AI search engines you must also go to:
-#   Cloudflare Dashboard → (misersavings.com) → Security → Bots →
-#   "AI Scrapers and Crawlers" → set each search-engine bot to Allow
+# Note: Cloudflare's "AI Scrapers and Crawlers" setting can prepend its own
+# Disallow rules before this file is served. If it is on, check that it is not
+# also blocking the search and answer crawlers permitted below:
+#   Cloudflare Dashboard → (misersavings.com) → Security → Bots
 #
 # ─── ALL CRAWLERS (default) ────────────────────────────────────────────────
 User-agent: *
 Content-Signal: search=yes,ai-input=yes,ai-train=no
 Allow: /
 
-# ─── AI SEARCH ENGINE CRAWLERS ─────────────────────────────────────────────
-# Explicitly permitted for answer-engine / generative search indexing.
-
-User-agent: GPTBot
-Allow: /
+# ─── AI SEARCH AND ANSWER CRAWLERS ─────────────────────────────────────────
+# Permitted: these fetch pages to show them in search results or to answer a
+# user's question with a link back (ai-input=yes). None of them trains models.
 
 User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
 Allow: /
 
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: ClaudeBot
+User-agent: Perplexity-User
 Allow: /
+
+# ─── AI TRAINING CRAWLERS AND CONTROL TOKENS ───────────────────────────────
+# Blocked, per ai-train=no above. These exist to collect training data, or are
+# the vendor's documented switch for opting out of training. Blocking them
+# does NOT affect Google Search, Google AI Overviews, Applebot/Siri search,
+# ChatGPT search, Claude or Perplexity, which use the crawlers permitted above
+# (or Googlebot/Applebot under User-agent: *).
+# Until 2026-09-28 GPTBot, ClaudeBot, Google-Extended, Applebot-Extended and
+# meta-externalagent sat in an "AI search engines" Allow list, which
+# contradicted the ai-train=no signal this file declares.
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
 
 User-agent: Google-Extended
-Allow: /
+Disallow: /
 
 User-agent: Applebot-Extended
-Allow: /
+Disallow: /
 
 User-agent: meta-externalagent
-Allow: /
-
-# ─── TRAINING-ONLY CRAWLERS ────────────────────────────────────────────────
-# Blocked — scraping for AI model training is not permitted.
+Disallow: /
 
 User-agent: Amazonbot
 Disallow: /

@@ -4,6 +4,11 @@ title: What we learned in our *first months*
 description: A few months into Miser being live, here's what surprised us, what we got right, and what we're still figuring out.
 date: 2026-08-11
 category: Built in public
+# Unpublished 2026-09-28 (Gardar): states user findings as fact (goal-first usage, Quit
+# Companion "almost zero usage", outcomes by transfer engagement) that could not have been
+# measured with a handful of accounts, and describes a Sunday transfer and an exit flow that
+# do not exist. Rewrite before republishing.
+draft: true
 next: saving-for-someday
 ---
 
