@@ -1553,7 +1553,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     <div class="step reveal" data-delay="3">
       <div class="snum"><span>Step 04</span><span class="dot" aria-hidden="true"></span><span>Send it home</span></div>
       <h3>Straight into <em>your</em> savings.</h3>
-      <p>Once you've stacked $50, about once a week, it moves from your checking to a savings account you own.</p>
+      <p>Once you've locked $50 and 7 days have passed since your last transfer, it moves from your checking to a savings account you own.</p>
       <div class="phone-well pch-well flow-well">
         <div class="rcpt" role="img" aria-label="An example week: a $5 latte, a $12.50 lunch and a $38 late-night cart, all skipped, add up to $55.50, which moves from your checking to your savings. Locked just means counted; the money is still yours.">
           <div class="rcpt-h">This week&rsquo;s skips</div>
@@ -1579,7 +1579,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     <h3 class="how-demo-h">A week of skipping, <em>compressed</em>.</h3>
     <p class="how-demo-sub">Scroll into the demo. Watch every skip stack onto a real goal: the bar inches right, the destination gets closer.</p>
 
-    <p class="vh">In the demo, eight skips over one week add up to $320, 64% of a $500 goal.</p>
+    <p class="vh">In the demo, eight skips over one week add up to $160, 64% of a $250 goal.</p>
     <div class="vault-counter vault-counter-lt" id="vaultCounter" aria-hidden="true">
       <div class="vc-label"><span class="live-dot"></span> Goal · Weekend away · Live demo</div>
       <div class="vc-num" id="vcNum"><span class="d">$</span><span id="vcDol">0</span><span class="cents">.00</span></div>
@@ -1587,7 +1587,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
       <div class="vc-pb"><div class="vc-pf" id="vcPf"></div></div>
       <div class="vc-foot">
         <span id="vcPct">0% of goal</span>
-        <span class="goal">$500 weekend bucket</span>
+        <span class="goal">$250 weekend bucket</span>
       </div>
       <div class="vc-stream" id="vcStream">› ready</div>
     </div>
@@ -1719,7 +1719,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
 
       <div class="reveal faq-item" data-delay="1" style="padding:28px 0;border-bottom:0.5px solid rgba(28,61,43,0.1)">
         <dt style="font-size:18px;font-weight:900;color:var(--dg);letter-spacing:-0.01em;margin-bottom:10px">Where does my money actually go?</dt>
-        <dd style="font-size:15px;line-height:1.6;color:rgba(28,61,43,0.75);margin:0">Into <em style="font-style:normal;font-weight:700;color:var(--dg)">your own savings account</em>, not ours. Miser can't access, spend, or keep your money. Once you've stacked $50, about once a week, your locked total moves from your linked checking to your savings by ACH, run by our banking partner.</dd>
+        <dd style="font-size:15px;line-height:1.6;color:rgba(28,61,43,0.75);margin:0">Into <em style="font-style:normal;font-weight:700;color:var(--dg)">your own savings account</em>, not ours. Miser is not a bank and gives you no balance to spend. Once at least $50 is locked and 7 days have passed since your last transfer, the total moves from your linked checking to your savings by ACH. There is no fixed day of the week. While a transfer is in process, the funds are held and moved by a regulated financial institution working with our payment partner.</dd>
       </div>
 
       <div class="reveal faq-item" data-delay="2" style="padding:28px 0;border-bottom:0.5px solid rgba(28,61,43,0.1)">
@@ -1847,7 +1847,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
       <strong>MiserSavings Inc.</strong> · Austin, TX · Launching 2026<br>
       © 2026 MiserSavings Inc. All rights reserved.
       <br><br>
-      <span style="opacity:0.85">mi$er is a financial technology company, not a bank. mi$er can't access, spend, or keep your money. ACH transfers between your linked checking and savings accounts are initiated by our ACH partner; bank linking is provided by a regulated third-party data network. A service fee of $2.50 + 1.5% of each transfer (no cap) applies to each savings transfer; the final fee schedule is shown in full and requires your explicit acceptance before any money moves. mi$er does not provide investment, tax, or legal advice. See <a href="terms.html" style="color:inherit;text-decoration:underline">Terms</a> and <a href="privacy.html" style="color:inherit;text-decoration:underline">Privacy Policy</a> for full details.</span>
+      <span style="opacity:0.85">mi$er is a financial technology company, not a bank, and gives you no balance to spend. ACH transfers between your linked checking and savings accounts are initiated by our ACH partner, and while a transfer is in process the funds are held and moved by a regulated financial institution working with that partner; bank linking is provided by a regulated third-party data network. A service fee of $2.50 + 1.5% of each transfer (no cap) applies to each savings transfer; the final fee schedule is shown in full and requires your explicit acceptance before any money moves. mi$er does not provide investment, tax, or legal advice. See <a href="terms.html" style="color:inherit;text-decoration:underline">Terms</a> and <a href="privacy.html" style="color:inherit;text-decoration:underline">Privacy Policy</a> for full details.</span>
     </div>
   </div>
 </footer>
@@ -1877,13 +1877,13 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
     {amt:5.00,  note:'› +$5.00 · Morning latte skipped'},
     {amt:12.50, note:'› +$12.50 · Walked instead of Uber'},
     {amt:18.00, note:'› +$18.00 · Skipped round of drinks'},
-    {amt:22.00, note:'› +$22.00 · Cooked at home'},
-    {amt:35.00, note:'› +$35.00 · Passed on the jacket'},
+    {amt:16.00, note:'› +$16.00 · Cooked at home'},
+    {amt:38.00, note:'› +$38.00 · Passed on the jacket'},
     {amt:8.50,  note:'› +$8.50 · Afternoon coffee'},
-    {amt:45.00, note:'› +$45.00 · Packed lunch all week'},
-    {amt:174.00,note:'› +$174.00 · Skipped weekend bar crawl'}
+    {amt:28.00, note:'› +$28.00 · Packed lunch all week'},
+    {amt:34.00, note:'› +$34.00 · Skipped weekend bar crawl'}
   ];
-  const GOAL = 500;
+  const GOAL = 250;
   let running = false;
 
   function ease(t){ return 1-Math.pow(1-t,3); }
@@ -1918,8 +1918,8 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
       await animateTo(total, 520);
       await new Promise(r=>setTimeout(r,80));
     }
-    vcSub.textContent = '$320 saved in 8 skips · locked toward your goal';
-    vcStream.innerHTML = '› 64% of goal · $180 to go · <span class="add">one tap away</span>';
+    vcSub.textContent = '$160 saved in 8 skips · locked toward your goal';
+    vcStream.innerHTML = '› 64% of goal · $90 to go · <span class="add">one tap away</span>';
   }
 
   const vio = new IntersectionObserver((entries)=>{
