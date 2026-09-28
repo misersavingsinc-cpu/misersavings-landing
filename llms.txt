@@ -30,7 +30,7 @@ Miser is made by MiserSavings Inc., a Delaware C-Corp founded in Austin, Texas i
 - No subscription fees, ever
 - A service fee of $2.50 + 1.5% of each transfer (no cap) applies to every transfer, scheduled or Add money. It is disclosed in-app before any money moves
 
-**Platform:** iPhone, on the App Store (https://apps.apple.com/us/app/id6763827599). Android in development. US-only.
+**Platform:** iOS first. US-only at launch.
 
 **Tagline:** Skip · Save · Stack.
 
