@@ -133,9 +133,7 @@
         "AI savings coach that spots patterns in the skips you log"
       ],
       "countryOfOrigin": "US",
-      "releaseNotes": "Available on the App Store for iPhone. Android in development. Available to US residents 18+.",
-      "downloadUrl": "https://apps.apple.com/us/app/id6763827599",
-      "installUrl": "https://apps.apple.com/us/app/id6763827599"
+      "releaseNotes": "iOS first. Android in development. Available to US residents 18+."
     }
   ]
 }
@@ -436,7 +434,6 @@ nav.site .inner{
   .hero-right{order:3;min-height:0;margin:36px 0 40px}
   .hero-left > .hero-wl{order:4;margin-top:0}
   .hero-left > .hero-ctas{order:5}
-  .hero-left > .hero-wl-note{order:5;margin-top:12px}
   .hero-left > div:not(.hero-ctas){order:6}
 }
 
@@ -1122,14 +1119,6 @@ footer.site .wm{margin-bottom:8px}
 
 /* links on dark callout surfaces: --sg (#2E6B45) is a light-ground colour */
 .callout-top a,.callout a,.dk a,.gui-dk a{color:#D4B428}
-/* A gold button is a link too once the hero form is gone; keep its dark label. */
-.dk a.btn-gold,.gui-dk a.btn-gold{color:var(--dg)}
-/* Apple's official badge, unmodified. Min 40px tall on screen; clear space of a
-   quarter of its height on every side (Apple marketing guidelines). */
-.appstore-badge{display:inline-block;flex:0 0 auto;line-height:0;padding:12px;margin:-12px;border-radius:10px}
-.appstore-badge img{height:48px;width:144px;max-width:none;display:block}
-.appstore-badge:focus-visible{outline:3px solid var(--gld);outline-offset:2px}
-
 .callout-top a:hover,.callout a:hover{color:#EDE8D0}
 /* gold on mid-green panels needs the brighter tint to clear 4.5:1 */
 .wl-platform-label{color:#D4B428!important}
@@ -1468,7 +1457,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
       <li><a href="#groups">Groups</a></li>
       <li><a href="blog/">Blog</a></li>
     </ul>
-    <a class="nav-cta" href="https://apps.apple.com/us/app/id6763827599">Get the app</a>
+    <a href="#waitlist" class="nav-cta">Join our community</a>
   </div>
 </nav>
 <main id="main">
@@ -1480,13 +1469,19 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     <div class="hero-left reveal in">
       <h1>Break the habit. <em>Keep the money.</em></h1>
       <p class="lead">Skip the latte, the takeout, the 1am cart. Log it in three taps and that amount moves from your checking to your own savings account. Your bank, your accounts. Miser is not a bank and gives you no balance to spend.</p>
+      <form class="hero-wl" id="heroWl" autocomplete="on" novalidate>
+        <div class="hero-wl-row">
+          <input type="email" id="heroWlEmail" placeholder="you@wherever.com"
+                 aria-label="Email address" autocomplete="email" aria-required="true" data-clarity-mask="True">
+          <button type="submit" class="btn-gold">Join the list →</button>
+        </div>
+        <p class="hero-wl-note">Early access · iOS TestFlight · no spam, no card.</p>
+      </form>
       <div class="hero-ctas">
-        <a href="https://apps.apple.com/us/app/id6763827599" class="appstore-badge" aria-label="Download Miser on the App Store"><img src="/assets/badges/app-store-badge-black.svg" alt="Download on the App Store" width="144" height="48"></a>
         <a href="#how" class="btn-outline-lt">See how it works</a>
       </div>
-      <p class="hero-wl-note">Free to download · iPhone · US residents 18+</p>
       <div style="margin-top:14px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(237,232,208,0.7)">
-        On iPhone now · Android coming soon
+        iOS first · Android coming soon
       </div>
       <div class="hero-foot" style="letter-spacing:0.22em;text-transform:uppercase;font-weight:800;font-size:11px;color:rgba(237,232,208,0.7)">
         <span>Skip it</span>
@@ -1747,11 +1742,11 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
   <div class="wl reveal">
     <div class="rule-pair" style="display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:14px">
       <span style="flex:0 0 40px;height:1px;background:rgba(200,168,32,0.4)"></span>
-      <span class="eyebrow lt">Android &amp; updates</span>
+      <span class="eyebrow lt">Early access · iOS</span>
       <span style="flex:0 0 40px;height:1px;background:rgba(200,168,32,0.4)"></span>
     </div>
     <h2 class="h-section">Be part of <span aria-hidden="true">Mi<span class="d">$</span>er.</span><span class="vh">Miser.</span></h2>
-    <p class="lead">Miser is free on the <a href="https://apps.apple.com/us/app/id6763827599" style="color:var(--gld)">App Store</a> for iPhone. On Android? Leave your email and we'll tell you the day it lands, plus savings tips and product updates.</p>
+    <p class="lead">Savings tips, product updates, and a TestFlight invite when your slot opens.</p>
 
     <div class="wl-form-wrap" id="wlFormWrap">
       <form class="wl-form" id="wlForm" autocomplete="on" novalidate>
@@ -1762,8 +1757,8 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
         </div>
         <div class="wl-platform" role="radiogroup" aria-label="Which platform are you on">
           <span class="wl-platform-label" aria-hidden="true">I'm on</span>
-          <label><input type="radio" name="wlPlatform" value="ios" aria-label="iOS"><span aria-hidden="true"> iOS</span></label>
-          <label><input type="radio" name="wlPlatform" value="android" checked aria-label="Android"><span aria-hidden="true"> Android</span></label>
+          <label><input type="radio" name="wlPlatform" value="ios" checked aria-label="iOS"><span aria-hidden="true"> iOS</span></label>
+          <label><input type="radio" name="wlPlatform" value="android" aria-label="Android"><span aria-hidden="true"> Android</span></label>
           <label><input type="radio" name="wlPlatform" value="either" aria-label="Either"><span aria-hidden="true"> Either</span></label>
         </div>
       </form>
@@ -1777,11 +1772,11 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
            data-action="waitlist"
            data-appearance="interaction-only"></div>
       <div class="wl-foot">
-        <span>iPhone: on the App Store now · Android next</span>
+        <span>iOS first · Android next</span>
         <span class="dot" aria-hidden="true">·</span>
         <span>US residents, 18+</span>
         <span class="dot" aria-hidden="true">·</span>
-        <span>We'll email you savings tips, product updates and the Android launch · unsubscribe anytime</span>
+        <span>We'll email you savings tips, product updates and your TestFlight invite · unsubscribe anytime</span>
         <span class="dot" aria-hidden="true">·</span>
         <span>By joining, you agree to our <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a>
       <a href="accessibility.html">Accessibility</a></span>
@@ -1792,11 +1787,11 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     <!-- Brand meta tiles -->
     <div class="wl-meta reveal" data-delay="1">
       <div class="wl-meta-card">
-        <div class="wm-num">Live</div>
-        <div class="wm-lbl">On the App Store</div>
+        <div class="wm-num">2026</div>
+        <div class="wm-lbl">Launching this year</div>
       </div>
       <div class="wl-meta-card">
-        <div class="wm-num">iPhone now</div>
+        <div class="wm-num">iOS first</div>
         <div class="wm-lbl">Android next</div>
       </div>
       <div class="wl-meta-card">
@@ -1804,15 +1799,15 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
         <div class="wm-lbl">Built in Texas</div>
       </div>
       <div class="wl-meta-card">
-        <div class="wm-num">Free</div>
-        <div class="wm-lbl">To download</div>
+        <div class="wm-num">Early</div>
+        <div class="wm-lbl">Access for members first</div>
       </div>
     </div>
 
     <div class="wl-success" id="wlSuccess" role="status" aria-live="polite">
       <div class="wl-check">✓</div>
       <h3>You're on the list.</h3>
-      <p>We'll email <span class="email" id="wlEmailEcho">you@wherever.com</span> when Miser comes to Android, with the odd savings tip along the way.</p>
+      <p>We'll email <span class="email" id="wlEmailEcho">you@wherever.com</span> when your TestFlight invite is ready.</p>
     </div>
   </div>
 </section>
@@ -1849,7 +1844,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
       <a href="https://x.com/misersavings" rel="me noopener" target="_blank" aria-label="Miser on X" style="font-size:13px;color:rgba(237,232,208,0.78);text-decoration:none;letter-spacing:0.02em">X <span style="opacity:0.5">@misersavings</span><span class="vh"> (opens in a new window)</span></a>
     </div>
     <div class="foot-legal">
-      <strong>MiserSavings Inc.</strong> · Austin, TX · On the App Store<br>
+      <strong>MiserSavings Inc.</strong> · Austin, TX · Launching 2026<br>
       © 2026 MiserSavings Inc. All rights reserved.
       <br><br>
       <span style="opacity:0.85">mi$er is a financial technology company, not a bank, and gives you no balance to spend. ACH transfers between your linked checking and savings accounts are initiated by our ACH partner, and while a transfer is in process the funds are held and moved by a regulated financial institution working with that partner; bank linking is provided by a regulated third-party data network. A service fee of $2.50 + 1.5% of each transfer (no cap) applies to each savings transfer; the final fee schedule is shown in full and requires your explicit acceptance before any money moves. mi$er does not provide investment, tax, or legal advice. See <a href="terms.html" style="color:inherit;text-decoration:underline">Terms</a> and <a href="privacy.html" style="color:inherit;text-decoration:underline">Privacy Policy</a> for full details.</span>
