@@ -57,7 +57,7 @@ Round-ups solved half the problem: don't make the user plan in advance. They mis
 If you look at the systems that consistently produce more savings across normal households, they all share three traits:
 
 1. **They act in the moment.** Not before (planning), not after (reporting). At the moment you'd have spent. That's when the alternative is real and small enough to actually pass on.
-2. **They give the money a story.** The saved dollar came from somewhere, a category, a habit, a coffee on a Tuesday, and went somewhere, a vault, a goal, a destination. The dollar has a beginning and an end. You can hold it in your head.
+2. **They give the money a story.** The saved dollar came from somewhere, a category, a habit, a coffee on a Tuesday, and went somewhere, a goal, a destination. The dollar has a beginning and an end. You can hold it in your head.
 3. **They don't moralize.** No guilt-trip after the fact. No red bars. If you spent, you spent. If you skipped, you skipped. The app is more like a clerk who quietly logs it, not a parent who's disappointed.
 
 That's the shape of what Miser is, and it's also the shape round-ups got halfway to and budgeting apps got entirely backwards.
