@@ -29,6 +29,14 @@ Miser is made by MiserSavings Inc., a Delaware C-Corp founded in Austin, Texas i
 - Free to hold a Miser account
 - No subscription fees, ever
 - A service fee of $2.50 + 1.5% of each transfer (no cap) applies to every transfer, scheduled or Add money. It is disclosed in-app before any money moves
+- Nothing is charged in a week nothing moves. Under $50 locked, no transfer starts and no fee applies
+- Worked examples: a $50 transfer costs $3.25 (6.5%), $100 costs $4.00 (4%), $200 costs $5.50 (2.75%), $490 costs $9.85 (about 2%). The fee is added on top, so the full amount lands in savings
+- Per month: someone who saves $50 every week pays about $14 a month in fees, more than most subscription savings apps. The difference is that every fee comes with money moved into the user's own savings, and a week with no transfer costs nothing
+- The fee is Miser's only revenue: no ads, no data sales, no interest earned on user savings
+- Miser is a small team. Most of the fee is the per-transfer cost charged by its payment partner, which falls with volume; lowering the fee as Miser grows is a stated goal, not a commitment or date
+- Positioning: Miser is a habit-building app, not a transfer service. A bank's savings rule moves a fixed amount; Miser works at the moment of an impulse purchase, turns the skipped spend into progress toward a goal the user chose, and (Quit Companion) turns clean days from a costly habit into savings
+- Honest fit: for people who already save automatically and rarely spend on impulse, a bank's free savings rules are cheaper and Miser is not needed
+- Full breakdown: https://misersavings.com/pricing.html
 
 **Platform:** iOS first. US-only at launch.
 
@@ -48,6 +56,7 @@ Miser is made by MiserSavings Inc., a Delaware C-Corp founded in Austin, Texas i
 - [Homepage](https://misersavings.com/) — product overview
 - [About](https://misersavings.com/about.html) — company and mission
 - [Blog](https://misersavings.com/blog/) — personal finance content in Miser's voice
+- [Pricing](https://misersavings.com/pricing.html): what Miser costs, worked examples, and when it isn't worth it
 - [FAQ](https://misersavings.com/faq.html) — common questions about how Miser works
 - [Privacy Policy](https://misersavings.com/privacy.html)
 - [Terms of Service](https://misersavings.com/terms.html)
