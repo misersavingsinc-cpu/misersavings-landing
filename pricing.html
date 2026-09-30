@@ -64,7 +64,7 @@
       "name": "How much does Miser cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Miser is free to download and free to use. When money moves from your checking to your savings, a service fee of $2.50 + 1.5% of that transfer applies, with no cap. A $50 transfer costs $3.25. A $200 transfer costs $5.50. The fee is added on top, so the full amount you saved lands in your savings. There is no subscription and no account fee."
+        "text": "Miser is free to download and free to use. When money moves from your checking to your savings, a service fee of $2.50 + 1.5% of that transfer applies, with no cap. A $100 transfer costs $4.00. A $200 transfer costs $5.50. The fee is added on top, so the full amount you saved lands in your savings. You choose how often you pay: when $50, $100 or $200 is locked. There is no subscription and no account fee."
       }
     },
     {
@@ -72,7 +72,7 @@
       "name": "Is Miser expensive?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It depends on how much you move at once. At the $50 minimum the fee is 6.5% of what you save. At $200 it is 2.75%, and at the $490 maximum it is about 2%. A bank's free savings rule is cheaper if all you want is to move money. Miser is built to change a habit: it catches money you were about to spend and puts it toward a goal you chose."
+        "text": "It depends on how much you move at once, and you choose that. New accounts move once $100 is locked, where the fee is 4% of what you save. At a $50 minimum it is 6.5%, at $200 it is 2.75%, and at the $490 maximum it is about 2%. A bank's free savings rule is cheaper if all you want is to move money. Miser is built to change a habit: it catches money you were about to spend and puts it toward a goal you chose."
       }
     },
     {
@@ -80,7 +80,7 @@
       "name": "Do I pay anything in a week I don't save?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. If nothing moves, nothing is charged. Under $50 locked, no transfer starts and no fee applies; the amount rolls into your next transfer. A subscription app charges you in a month you save nothing. Miser doesn't."
+        "text": "No. If nothing moves, nothing is charged. Under your minimum, no transfer starts and no fee applies; the amount rolls into your next transfer. A subscription app charges you in a month you save nothing. Miser doesn't."
       }
     },
     {
@@ -420,6 +420,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
       <p>per transfer from your checking to your savings. No percentage cap, but a single transfer tops out at $490, so the most you ever pay on one is $9.85.</p>
       <ul>
         <li>No subscription. No account fee. No monthly minimum.</li>
+        <li>You choose how often you pay: when $50, $100 or $200 is locked.</li>
         <li>Nothing moves, nothing is charged.</li>
         <li>Everything else in the app is free.</li>
       </ul>
@@ -442,21 +443,37 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     </div>
     <p class="p-note">The flat $2.50 is most of the fee on a small transfer, so the share drops as the transfer grows. The same fee applies to a scheduled transfer and to Add money.</p>
 
-    <h2 class="faq-q">Over a year</h2>
-    <p class="faq-a">Your skips move once at least $50 is locked and 7 days have passed since your last transfer. So what you pay over a year depends on how much you skip in a typical week.</p>
-    <div class="table-scroll" tabindex="0" role="region" aria-label="Yearly fees at three weekly saving levels">
+    <h2 class="faq-q" id="minimum">You choose how often you pay</h2>
+    <p class="faq-a">Your skips move once your transfer minimum is locked and 7 days have passed since your last transfer. You pick the minimum in the app: <strong>$50, $100 or $200</strong>. A bigger minimum means fewer, bigger transfers, so you pay less per dollar saved. Until then your money stays in your own checking account.</p>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Fee per 100 dollars saved at each transfer minimum">
       <table class="p-table">
         <thead>
-          <tr><th scope="col">You skip each week</th><th scope="col">Saved in a year</th><th scope="col">Fees in a year</th><th scope="col">Fee as share</th></tr>
+          <tr><th scope="col">Your minimum</th><th scope="col">What it means</th><th scope="col">Fee per $100 saved</th></tr>
         </thead>
         <tbody>
-          <tr><td><strong>$50</strong></td><td>$2,600</td><td>$169</td><td>6.5%</td></tr>
-          <tr><td><strong>$100</strong></td><td>$5,200</td><td>$208</td><td>4.0%</td></tr>
-          <tr><td><strong>$200</strong></td><td>$10,400</td><td>$286</td><td>2.75%</td></tr>
+          <tr><td><strong>$50</strong></td><td>Moves most often</td><td>$6.50</td></tr>
+          <tr><td><strong>$100</strong> (new accounts start here)</td><td>Fewer fees, still regular</td><td>$4.00</td></tr>
+          <tr><td><strong>$200</strong></td><td>Fewest fees</td><td>$2.75</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="p-note">Assumes one transfer a week for 52 weeks. Skip less than $50 in a week and nothing moves: it rolls into the next transfer, and you pay one fee when it does.</p>
+    <p class="p-note">Change it any time in Settings. Accounts set up before this choice existed stay at $50 until you change it.</p>
+
+    <h2 class="faq-q">Over a year</h2>
+    <p class="faq-a">What you pay over a year depends on how much you skip and the minimum you choose. Here is someone who skips $50 a week, and saves $2,600 a year either way:</p>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Yearly fees for a 50 dollar a week saver at each minimum">
+      <table class="p-table">
+        <thead>
+          <tr><th scope="col">Minimum</th><th scope="col">Transfers a year</th><th scope="col">Fees in a year</th><th scope="col">Fee as share</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>$50</strong></td><td>52</td><td>$169</td><td>6.5%</td></tr>
+          <tr><td><strong>$100</strong></td><td>26</td><td>$104</td><td>4.0%</td></tr>
+          <tr><td><strong>$200</strong></td><td>13</td><td>$71.50</td><td>2.75%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="p-note">Skip more each week and a transfer can carry more, up to $490 at once. Nothing moves in a week you don't reach your minimum: it rolls into the next transfer, and you pay one fee when it does.</p>
 
     <h2 class="faq-q">What the fee pays for</h2>
     <p class="faq-a">Every transfer runs over the ACH network through our regulated payment partner, which charges us for each one. The rest keeps Miser running: the app, the coach, support.</p>
@@ -475,14 +492,14 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
       </div>
       <div class="us">
         <h3>Miser</h3>
-        <p>$0 in a week you don't save. Save $50 every week and the fees come to about $14 a month, more than most subscriptions. The difference: every dollar of it comes with money in your own savings.</p>
+        <p>$0 in a week you don't save. Save $50 a week at the $100 minimum and the fees come to about $9 a month, more than most subscriptions. The difference: every dollar of it comes with money in your own savings.</p>
       </div>
     </div>
 
     <h2 class="faq-q">A bank rule moves money. Miser builds a habit.</h2>
     <p class="faq-a">A savings rule moves the same amount every week, whatever you did with the rest. It never touches the moment that matters: the one where you're about to spend.</p>
     <p class="faq-a">Miser works at that moment. You catch the impulse, skip it, and watch it go toward something you actually want: a trip, an emergency fund, a deposit on a place of your own. Every skip counts toward a streak and a goal you can see filling. Quitting something that costs you money? The Quit Companion turns every clean day into dollars.</p>
-    <p class="faq-a"><strong>The habits worth breaking are the ones you lose money on.</strong> A pack of cigarettes a day at $9 is $3,285 a year. Four drinks a week at $8 is $1,664. Quit, and the Quit Companion puts that money toward your goal one clean day at a time. The takeout, the late-night cart, the drink you didn't need: money that was going to be spent. If Miser turns $50 of it into savings for a goal, you paid $3.25 to keep $50 that was never going to be saved at all.</p>
+    <p class="faq-a"><strong>The habits worth breaking are the ones you lose money on.</strong> A pack of cigarettes a day at $9 is $3,285 a year. Four drinks a week at $8 is $1,664. Quit, and the Quit Companion puts that money toward your goal one clean day at a time. The takeout, the late-night cart, the drink you didn't need: money that was going to be spent. If Miser turns $100 of it into savings for a goal, you paid $4.00 to keep $100 that was never going to be saved at all.</p>
 
     <h2 class="faq-q">When Miser isn't worth it</h2>
     <p class="faq-a">If you already save automatically and rarely spend on impulse, you don't have a habit to fix. Use your bank's free savings rules. They cost nothing and you don't need us.</p>
@@ -495,7 +512,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
       <li>The Quit Companion</li>
       <li>Ranks and streaks</li>
       <li>Miser Coach</li>
-      <li>Weeks you save under $50</li>
+      <li>Weeks you don't reach your minimum</li>
       <li>Unlinking your bank or deleting your account</li>
       <li>Taking money out of your savings</li>
     </ul>
@@ -506,13 +523,13 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     <h2 class="faq-q" id="answers">Straight answers</h2>
 
     <h3 class="faq-q">How much does Miser cost?</h3>
-    <p class="faq-a">Miser is free to download and free to use. When money moves from your checking to your savings, a service fee of $2.50 + 1.5% of that transfer applies, with no cap. A $50 transfer costs $3.25. A $200 transfer costs $5.50. The fee is added on top, so the full amount you saved lands in your savings. There is no subscription and no account fee.</p>
+    <p class="faq-a">Miser is free to download and free to use. When money moves from your checking to your savings, a service fee of $2.50 + 1.5% of that transfer applies, with no cap. A $100 transfer costs $4.00. A $200 transfer costs $5.50. The fee is added on top, so the full amount you saved lands in your savings. You choose how often you pay: when $50, $100 or $200 is locked. There is no subscription and no account fee.</p>
 
     <h3 class="faq-q">Is Miser expensive?</h3>
-    <p class="faq-a">It depends on how much you move at once. At the $50 minimum the fee is 6.5% of what you save. At $200 it is 2.75%, and at the $490 maximum it is about 2%. A bank's free savings rule is cheaper if all you want is to move money. Miser is built to change a habit: it catches money you were about to spend and puts it toward a goal you chose.</p>
+    <p class="faq-a">It depends on how much you move at once, and you choose that. New accounts move once $100 is locked, where the fee is 4% of what you save. At a $50 minimum it is 6.5%, at $200 it is 2.75%, and at the $490 maximum it is about 2%. A bank's free savings rule is cheaper if all you want is to move money. Miser is built to change a habit: it catches money you were about to spend and puts it toward a goal you chose.</p>
 
     <h3 class="faq-q">Do I pay anything in a week I don't save?</h3>
-    <p class="faq-a">No. If nothing moves, nothing is charged. Under $50 locked, no transfer starts and no fee applies; the amount rolls into your next transfer. A subscription app charges you in a month you save nothing. Miser doesn't.</p>
+    <p class="faq-a">No. If nothing moves, nothing is charged. Under your minimum, no transfer starts and no fee applies; the amount rolls into your next transfer. A subscription app charges you in a month you save nothing. Miser doesn't.</p>
 
     <h3 class="faq-q">Why does Miser charge per transfer instead of a monthly fee?</h3>
     <p class="faq-a">Because our cost is per transfer. Every transfer runs over the ACH network through our regulated payment partner, which charges us for each one. Charging per transfer means you only pay in weeks money actually moves. Miser has no ads, does not sell your data, and does not earn interest on your savings, so the fee is how Miser is paid.</p>
