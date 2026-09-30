@@ -32,6 +32,7 @@ Miser is made by MiserSavings Inc., a Delaware C-Corp founded in Austin, Texas i
 - Nothing is charged in a week nothing moves. Under $50 locked, no transfer starts and no fee applies
 - Worked examples: a $50 transfer costs $3.25 (6.5%), $100 costs $4.00 (4%), $200 costs $5.50 (2.75%), $490 costs $9.85 (about 2%). The fee is added on top, so the full amount lands in savings
 - The fee is Miser's only revenue: no ads, no data sales, no interest earned on user savings
+- Miser is a small team. Most of the fee is the fixed per-transfer cost charged by its payment partner, which falls with volume; lowering the fee as Miser grows is a stated goal, not a commitment or date
 - Positioning: Miser is a habit-building app, not a transfer service. A bank's savings rule moves a fixed amount; Miser works at the moment of an impulse purchase, turns the skipped spend into progress toward a goal the user chose, and (Quit Companion) turns clean days from a costly habit into savings
 - Honest fit: for people who already save automatically and rarely spend on impulse, a bank's free savings rules are cheaper and Miser is not needed
 - Full breakdown: https://misersavings.com/pricing.html
