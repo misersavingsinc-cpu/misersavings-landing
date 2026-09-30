@@ -1,6 +1,6 @@
 # Miser
 
-> Miser is a behavioral savings app for iPhone. The core loop: you catch yourself about to spend money you don't need to spend, log it as a skip, and the money you didn't spend gets pulled from your linked checking account into your linked savings account. Once at least $50 is locked and at least 7 days have passed since your last scheduled transfer, your skips bundle into one ACH transfer between your own accounts. Miser is not a bank and gives you no balance to spend.
+> Miser is a behavioral savings app for iPhone. The core loop: you catch yourself about to spend money you don't need to spend, log it as a skip, and the money you didn't spend gets pulled from your linked checking account into your linked savings account. Once at least $50 is locked and at least 7 days have passed since your last scheduled transfer, your skips bundle into one ACH transfer between your own accounts. Miser is not a bank and gives you no balance to spend. Miser is available only in the United States and needs a US checking and savings account in the user's own name.
 
 ## Product
 
@@ -28,7 +28,7 @@ Miser is made by MiserSavings Inc., a Delaware C-Corp founded in Austin, Texas i
 **Pricing:**
 - Free to hold a Miser account
 - No subscription fees, ever
-- A service fee of $2.50 + 1.5% of each transfer (no cap) applies to every transfer, scheduled or Add money. It is disclosed in-app before any money moves
+- A service fee of $2.50 + 1.5% of each transfer applies to every transfer, scheduled or Add money. No percentage cap, but one transfer tops out at $490 (the $500 per-transaction limit includes the fee), so the most anyone pays on one transfer is $9.85; there is no $500 or $1,000 transfer. It is disclosed in-app before any money moves
 - Nothing is charged in a week nothing moves. Under $50 locked, no transfer starts and no fee applies
 - Worked examples: a $50 transfer costs $3.25 (6.5%), $100 costs $4.00 (4%), $200 costs $5.50 (2.75%), $490 costs $9.85 (about 2%). The fee is added on top, so the full amount lands in savings
 - Per month: someone who saves $50 every week pays about $14 a month in fees, more than most subscription savings apps. The difference is that every fee comes with money moved into the user's own savings, and a week with no transfer costs nothing
