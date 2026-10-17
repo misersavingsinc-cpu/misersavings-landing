@@ -15,7 +15,7 @@ We thought carefully about where to draw the line. Here's what Miser actually se
 
 ## What we see
 
-When you connect your bank account to Miser, we use it to do one thing: move money. Once you have at least $50 locked and seven days have passed since your last transfer, the total of your skips moves from your checking account to your savings account through our payment partner. You can also start a transfer yourself with Add money. That's the transaction.
+When you connect your bank account to Miser, we use it to do one thing: move money. Once you have your transfer minimum locked ($50, $100 or $200, your choice) and seven days have passed since your last transfer, the total of your skips moves from your checking account to your savings account through our payment partner. You can also start a transfer yourself with Add money. That's the transaction.
 
 To do that, we need the ability to initiate an ACH transfer. We don't need your full transaction history. We don't need to see every coffee and Amazon order and gas station stop.
 
