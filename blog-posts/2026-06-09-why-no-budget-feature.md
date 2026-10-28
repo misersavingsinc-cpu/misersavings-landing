@@ -27,7 +27,7 @@ More than that, a budget feature would have required us to become a tracking pro
 
 ## What we built instead
 
-The core of Miser is a skip. You see a purchase you were about to make, you pass on it, and you log it. The money you would have spent gets set aside and moves to your savings automatically once at least $50 is locked and 7 days have passed since your last transfer.
+The core of Miser is a skip. You see a purchase you were about to make, you pass on it, and you log it. The money you would have spent gets set aside and moves to your savings automatically once your transfer minimum ($50, $100 or $200, your choice) is locked and 7 days have passed since your last transfer.
 
 That's a very small product surface compared to a full budget. No categories. No monthly review screen. No red bars.
 
