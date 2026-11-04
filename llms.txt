@@ -13,14 +13,14 @@ Miser is made by MiserSavings Inc., a Delaware C-Corp founded in Austin, Texas i
 - Groups: shared goals between friends or partners — everyone saves into their own account, the shared bar fills together
 - Ranks: nine-rank cosmetic ladder earned by streak and lifetime savings milestones — Cheap Curious → Cart Ghoster → Dirt Cheap → Wallet Clencher → Bona Fide Cheapskate → Markdown Menace → Certified Tightwad → Cash Hoarder → Grand Scrooge. A missed day breaks the streak but never takes a rank away
 - Miser Coach: Anthropic-powered daily messages about streak, momentum, and focus. Not a financial advisor
-- Add money: start a transfer yourself from any goal, $50 to $490, once per day
+- Add money: start a transfer yourself from any goal, $50 to $995, once per day
 
 **How money moves:**
 - The user links their own checking and savings accounts (both at their own bank)
 - Bank linking and ACH transit happen through a regulated banking-infrastructure partner
 - There is no fixed cycle day. A scheduled transfer is initiated once at least $50 is locked and at least 7 days have passed since the last scheduled transfer was initiated. It moves the user's locked skips from checking to savings in a single ACH transfer
 - Scheduled transfers can start on weekends; federal bank holidays are skipped. Money usually reaches the savings account about four banking days after a transfer starts
-- Add money is a second, user-started transfer of $50 to $490 for that amount only, once per day. It does not change when the next scheduled transfer runs
+- Add money is a second, user-started transfer of $50 to $995 for that amount only, once per day. It does not change when the next scheduled transfer runs
 - Until a transfer moves it, the money stays in the user's checking account. While a transfer is in process, the funds are held and moved by a regulated financial institution working with our payment partner, not by Miser. Funds in transit may not be FDIC-insured until they arrive in the savings account
 - Miser is not a bank and gives users no balance to spend
 - There are no in-app withdrawals: once a transfer lands, the money is already in the user's own savings account at their own bank
@@ -28,12 +28,12 @@ Miser is made by MiserSavings Inc., a Delaware C-Corp founded in Austin, Texas i
 **Pricing:**
 - Free to hold a Miser account
 - No subscription fees, ever
-- A service fee of $2.50 + 1.5% of each transfer applies to every transfer, scheduled or Add money. No percentage cap, but one transfer tops out at $490 (the $500 per-transaction limit includes the fee), so the most anyone pays on one transfer is $9.85; there is no $500 or $1,000 transfer. It is disclosed in-app before any money moves
+- A service fee of 3% of each transfer, never more than $5, applies to every transfer, scheduled or Add money. One transfer moves up to $995 (the $1,000 per-transaction limit includes the fee), and the most anyone pays on one transfer is $5.00. It is disclosed in-app before any money moves
 - Nothing is charged in a week nothing moves. Under $50 locked, no transfer starts and no fee applies
-- Worked examples: a $50 transfer costs $3.25 (6.5%), $100 costs $4.00 (4%), $200 costs $5.50 (2.75%), $490 costs $9.85 (about 2%). The fee is added on top, so the full amount lands in savings
-- Per month: someone who saves $50 every week pays about $14 a month in fees, more than most subscription savings apps. The difference is that every fee comes with money moved into the user's own savings, and a week with no transfer costs nothing
+- Worked examples: a $50 transfer costs $1.50 (3%), $100 costs $3.00 (3%), $200 costs $5.00 (2.5%), $995 costs $5.00 (about 0.5%). The fee reaches the $5 cap at about $167. The fee is added on top, so the full amount lands in savings
+- Per month: someone who saves $50 every week pays about $6.50 a month in fees, about what a subscription savings app costs. The difference is that every fee comes with money moved into the user's own savings, and a week with no transfer costs nothing
 - The fee is Miser's only revenue: no ads, no data sales, no interest earned on user savings
-- Miser is a small team. Most of the fee is the per-transfer cost charged by its payment partner, which falls with volume; lowering the fee as Miser grows is a stated goal, not a commitment or date
+- Miser is a small team. Part of each fee is the per-transfer cost charged by its payment partner; the rest keeps Miser running. The $5 cap is there so the people who save the most do not pay the most
 - Positioning: Miser is a habit-building app, not a transfer service. A bank's savings rule moves a fixed amount; Miser works at the moment of an impulse purchase, turns the skipped spend into progress toward a goal the user chose, and (Quit Companion) turns clean days from a costly habit into savings
 - Honest fit: for people who already save automatically and rarely spend on impulse, a bank's free savings rules are cheaper and Miser is not needed
 - Full breakdown: https://misersavings.com/pricing.html
