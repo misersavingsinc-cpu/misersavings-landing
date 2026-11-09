@@ -13,20 +13,20 @@ The cost of that comfort is real, and it's one of the few financial drains that 
 
 ## What the gap looks like
 
-A high-yield savings account currently pays somewhere between 4% and 5% APY depending on where rates sit. A standard checking account pays close to nothing, somewhere between 0% and 0.5% at most banks.
+Most online savings accounts pay meaningfully more than a standard checking account, which at most banks pays close to nothing. Rates change, and they differ from bank to bank, so check what your own bank pays on both.
 
 The difference between those two numbers is the cost of convenience.
 
-If you keep $3,000 in checking beyond what you actually need for monthly cash flow, and you moved that $3,000 to a high-yield savings account instead, you'd earn roughly $120 to $150 a year on it. Not retirement money. But not nothing either, and it requires no behavior change beyond the initial move.
+You can size it without knowing today's rates. Every percentage point of difference between your checking account and your savings account is $10 a year on every $1,000 that sits idle. Not retirement money. But not nothing either, and it requires no behavior change beyond the initial move.
 
-| Amount sitting idle | Checking (0.1%) | HYSA (4.5%) | Annual difference |
-| :--- | ---: | ---: | ---: |
-| $1,000 | $1 | $45 | $44 |
-| $3,000 | $3 | $135 | $132 |
-| $5,000 | $5 | $225 | $220 |
-| $10,000 | $10 | $450 | $440 |
+| Amount sitting idle | Per year, for each 1 point of rate difference |
+| :--- | ---: |
+| $1,000 | $10 |
+| $3,000 | $30 |
+| $5,000 | $50 |
+| $10,000 | $100 |
 
-These numbers move with interest rates, but the gap between checking and savings tends to stay wide regardless of where rates are. Banks pay checking account holders less because they can.
+Multiply by the actual gap at your bank. If it's 3 points, the $3,000 row is $90 a year. The gap between checking and savings tends to stay wide whatever rates do. Banks pay checking account holders less because they can.
 
 ## Why the money stays in checking
 
@@ -44,12 +44,10 @@ The third is that the loss is invisible. If you spent $130 you'd notice it. But 
 
 You don't need to optimize this aggressively. The goal isn't to keep the absolute minimum in checking at all times, because that creates its own stress and its own costs in overdraft fees or late payments.
 
-A reasonable approach: figure out what you actually spend in a month, add a small cushion of maybe one to two months of expenses, and keep that in checking. Anything above that is money that belongs somewhere it earns something.
-
-For most households, the amount that makes sense to move is somewhere between $1,000 and $5,000. That's the range where the interest gap is meaningful but the account doesn't feel dangerously thin.
+One way to think about it: figure out what you actually spend in a month, and decide how much cushion above that lets you feel comfortable. Anything above that is money that could sit somewhere it earns something. Where that line falls depends on your income, your bills, and how much a thin checking balance would stress you out.
 
 <div class="callout">
-<strong>On the transfer lag:</strong> most high-yield savings accounts take one to three business days to transfer back to checking. If that feels too slow, some accounts offer faster transfers, or you can keep a slightly larger checking cushion to cover the gap. The interest you earn still outweighs the occasional inconvenience, as long as you plan around it.
+<strong>On the transfer lag:</strong> savings accounts often take one to three business days to transfer back to checking. If that feels too slow, some accounts offer faster transfers, or you can keep a slightly larger checking cushion to cover the gap. It's a tradeoff worth planning around.
 </div>
 
 The checking account is where money lives while it waits to be spent. That's its job. Money that isn't waiting to be spent is doing the wrong job by being there.

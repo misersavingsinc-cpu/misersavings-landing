@@ -75,6 +75,9 @@ function loadPosts() {
       const dateStr = data.date instanceof Date
         ? data.date.toISOString().slice(0, 10)
         : String(data.date).slice(0, 10);
+      // Future-dated posts are not published until their date arrives.
+      if (dateStr > TODAY) return null;
+
       return {
         slug:        data.slug,
         title:       data.title,
@@ -142,6 +145,11 @@ function footerHtml() {
       <a href="../terms.html">Terms</a>
       <a href="../privacy.html">Privacy</a>
       <a href="../accessibility.html">Accessibility</a>
+    </div>
+    <div class="footer-links-row" aria-label="Follow Miser">
+      <a href="https://www.instagram.com/misersavings/" rel="me noopener" target="_blank">Instagram @misersavings</a>
+      <a href="https://www.tiktok.com/@misersavings" rel="me noopener" target="_blank">TikTok @misersavings</a>
+      <a href="https://x.com/misersavings" rel="me noopener" target="_blank">X @misersavings</a>
     </div>
     <div class="footer-copy">
       © 2026 MiserSavings Inc. · Austin, TX · mı$er is a financial technology company, not a bank.

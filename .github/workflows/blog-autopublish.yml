@@ -1,0 +1,57 @@
+name: Blog auto-publish
+
+# Builds the blog every morning. The build script skips posts dated in the
+# future, so each post goes live on the morning of its date.
+# 15:00 UTC = 9:00 AM Central Standard Time (10:00 AM during daylight time).
+on:
+  schedule:
+    - cron: "0 15 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: blog-autopublish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build blog
+        run: npm run blog
+
+      - name: Commit and push if anything changed
+        id: commit
+        run: |
+          git add blog-posts/ blog/ sitemap.xml
+          if git diff --cached --quiet; then
+            echo "Nothing new to publish."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Blog: auto-publish $(date -u +%F)"
+          git pull --rebase origin main
+          git push origin main
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Trigger Pages build
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || true
