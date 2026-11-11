@@ -1,7 +1,7 @@
 ---
 slug: emergency-fund-from-zero
 title: Starting an *emergency fund* from zero
-description: "Three to six months of expenses" is the advice. It's not a useful first step. Here's what to actually do when you're starting from nothing and the goal feels impossibly far away.
+description: '"Three to six months of expenses" is the advice. It''s not a useful first step. Here''s what to actually do when you''re starting from nothing and the goal feels impossibly far away.'
 date: 2026-11-03
 category: Numbers
 next: free-trial-cost

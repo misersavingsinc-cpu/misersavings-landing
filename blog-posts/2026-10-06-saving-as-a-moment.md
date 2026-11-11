@@ -31,7 +31,7 @@ A moment requires nothing except the moment itself. There's no system to maintai
 
 When you skip a $5 purchase and log it, two things happen that don't happen with a budget.
 
-The first is that the saving is real immediately. It's not potential savings that might survive to the end of the month. The money is there, in the account, now.
+The first is that the saving is real immediately. It's not potential savings that might survive to the end of the month. It's a specific amount you've already decided not to spend, and it's recorded. Depending on how you move the money, it may take a few days to reach your savings account, but the decision is made.
 
 The second is that you see the decision. Not the abstract number in a spreadsheet, but the actual thing you almost bought, the actual amount, the actual moment. Over time, the log of those decisions tells you something specific about your spending patterns that a monthly budget summary never quite captures.
 
