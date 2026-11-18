@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Miser · Turn impulse buys into real savings. Skip. Stack.</title>
-<meta name="description" content="Log the impulse buys you skip. Once $50 is locked and 7 days have passed, Miser moves it from your checking to your savings, toward a real goal. Free to join now. Skip. Save. Stack.">
+<meta name="description" content="Log the impulse buys you skip. Once your locked total reaches your transfer minimum and 7 days have passed, Miser moves it from your checking to your own savings, toward a real goal. Skip. Save. Stack.">
 <link rel="canonical" href="https://misersavings.com/">
 
 <!-- Open Graph -->
@@ -76,7 +76,7 @@
         "width": 1200,
         "height": 630
       },
-      "description": "Miser is a behavioral savings app. Log the impulse buys you skip, point each one at a goal, and once $50 is locked and 7 days have passed since the last transfer, your skips move from your checking to your own savings account.",
+      "description": "Miser is a behavioral savings app. Log the impulse buys you skip, point each one at a goal, and once the locked total reaches the user's transfer minimum ($50, $100 or $200) and 7 days have passed since the last transfer, your skips move from your checking to your own savings account.",
       "foundingDate": "2026-03-12",
       "address": {
         "@type": "PostalAddress",
@@ -110,7 +110,7 @@
       "@id": "https://misersavings.com/#app",
       "name": "Miser",
       "alternateName": "MiserSavings",
-      "description": "Miser is a behavioral microsavings app. Users log impulse purchases they chose not to make; once at least $50 is locked and 7 days have passed since the last transfer, Miser batches those logged amounts and initiates a single ACH transfer from the user's checking to their own savings account. Users may also add money to a goal on demand, which starts its own transfer. Free to download.",
+      "description": "Miser is a behavioral microsavings app. Users log impulse purchases they chose not to make; once the locked total reaches the user's transfer minimum ($50, $100 or $200) and 7 days have passed since the last transfer, Miser batches those logged amounts and initiates a single ACH transfer from the user's checking to their own savings account. Users may also add money to a goal on demand, which starts its own transfer. Free to download.",
       "applicationCategory": "FinanceApplication",
       "applicationSubCategory": "Personal Finance",
       "operatingSystem": "iOS",
@@ -125,7 +125,8 @@
       "availableOnDevice": "iPhone",
       "featureList": [
         "Log impulse-buy skips in three taps",
-        "ACH transfer from checking to your own savings account once $50 is locked and 7 days have passed, plus Add money on demand",
+        "ACH transfer from checking to your own savings account once your transfer minimum is locked and 7 days have passed, plus Add money on demand",
+        "Routines that save the same skip every day, by a tap or automatically",
         "Goal-linked savings missions",
         "Quit Companion for habit-cost tracking",
         "Group savings goals with shared progress",
@@ -1476,7 +1477,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
                  aria-label="Email address" autocomplete="email" aria-required="true" data-clarity-mask="True">
           <button type="submit" class="btn-gold">Join the list →</button>
         </div>
-        <p class="hero-wl-note">Early access · iOS TestFlight · no spam, no card.</p>
+        <p class="hero-wl-note">Coming to the App Store · we&rsquo;ll email you when it&rsquo;s live · no spam, no card.</p>
       </form>
       <div class="hero-ctas">
         <a href="#how" class="btn-outline-lt">See how it works</a>
@@ -1496,7 +1497,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     <!-- Hero phone: Home screen, money moving from checking to savings -->
     <div class="hero-right reveal in" data-delay="2">
       <div class="phone">
-        <div class="phone-screen"><img src="/assets/app/home-coach.webp" alt="Miser home screen: a 2-day streak, 44 skips and $457.59 built, a Coach tip that Monday is the best skip day, and recent skips like Sports Betting and Coffee." width="640" height="1391" loading="eager" fetchpriority="high" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
+        <div class="phone-screen"><img src="/assets/app/v3-home.webp" alt="Miser Home screen: $188.73 locked from 17 skips, led by coffee, with the next transfer date, $2,769.31 saved in all and a 23-day streak." width="640" height="1392" loading="eager" fetchpriority="high" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
       </div>
     </div>
 
@@ -1518,10 +1519,10 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     <div class="step reveal">
       <div class="snum"><span>Step 01</span><span class="dot" aria-hidden="true"></span><span>Skip it</span></div>
       <h3>Skipped the drive-thru? <em>That counts.</em></h3>
-      <p>Log it in three taps. Quitting something for good? Quit Companion checks you in daily, and every clean day counts too.</p>
+      <p>Log it in three taps. Skip the same coffee every weekday? Make it a routine and Miser asks once a day, or saves it for you automatically. Quitting something for good? Every clean day counts too.</p>
       <div class="phone-well pch-well">
         <div class="phone sm">
-          <div class="phone-screen"><img src="/assets/app/logskip.webp" alt="Logging a skip in Miser: $12.49 with Fast food chosen from the category grid." width="640" height="1390" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
+          <div class="phone-screen"><img src="/assets/app/v3-skip.webp" alt="Logging a skip in Miser: $6.50 with Coffee chosen from the category grid, going to a Japan trip goal." width="640" height="1392" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
         </div>
       </div>
     </div>
@@ -1533,7 +1534,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
       <p>A new camera. Hawaii with friends. The habit you're quitting for good. Pick a goal, share it if you like, and watch the bar move.</p>
       <div class="phone-well pch-well">
         <div class="phone sm">
-          <div class="phone-screen"><img src="/assets/app/goals-v2.webp" alt="Miser Goals screen: New Camera at $15 of $350, a shared Hawaii goal at $246 of $7,500, and Quitting Sports Betting under Quit Companion." width="640" height="1391" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
+          <div class="phone-screen"><img src="/assets/app/v3-goals.webp" alt="Miser Goals screen: New camera at 74%, Japan trip at 51% and Rainy day fund at 17%, each with an Add money button." width="640" height="1392" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
         </div>
       </div>
     </div>
@@ -1542,10 +1543,10 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     <div class="step reveal" data-delay="2">
       <div class="snum"><span>Step 03</span><span class="dot" aria-hidden="true"></span><span>Stack it</span></div>
       <h3>Watch the pile <em>grow</em>.</h3>
-      <p>Keep the streak alive and climb nine ranks from Cheap Curious to Grand Scrooge. The Coach spots your patterns, like the day you skip most, and helps you do it again.</p>
+      <p>Keep the streak alive and climb nine ranks from Cheap Curious to Grand Scrooge, then share the ones you earn. The Coach spots your patterns, like the day you skip most, and helps you do it again.</p>
       <div class="phone-well pch-well">
         <div class="phone sm">
-          <div class="phone-screen"><img src="/assets/app/home-coach.webp" alt="Miser home screen: a 2-day streak, 44 skips and $457.59 built, a Coach tip that Monday is the best skip day, and recent skips like Sports Betting and Coffee." width="640" height="1391" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
+          <div class="phone-screen"><img src="/assets/app/v3-rank.webp" alt="Miser rank screen: Bona Fide Cheapskate, rank 5 of 9, earned on day 23, with a Share my rank button and the ladder of ranks below." width="640" height="1392" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
         </div>
       </div>
     </div>
@@ -1554,7 +1555,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     <div class="step reveal" data-delay="3">
       <div class="snum"><span>Step 04</span><span class="dot" aria-hidden="true"></span><span>Send it home</span></div>
       <h3>Straight into <em>your</em> savings.</h3>
-      <p>Once you've locked $50 and 7 days have passed since your last transfer, it moves from your checking to a savings account you own.</p>
+      <p>Pick a transfer minimum: $50, $100 or $200. Once your locked total reaches it and 7 days have passed since your last transfer, it moves from your checking to a savings account you own. Want to move money toward a goal right now? Tap Add money.</p>
       <div class="phone-well pch-well flow-well">
         <div class="rcpt" role="img" aria-label="An example week: a $5 latte, a $12.50 lunch and a $38 late-night cart, all skipped, add up to $55.50, which moves from your checking to your savings. Locked just means counted; the money is still yours.">
           <div class="rcpt-h">This week&rsquo;s skips</div>
@@ -1657,7 +1658,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     <!-- Phone: Quit Companion setup screen -->
     <div class="groups-phone-wrap reveal" data-delay="2">
       <div class="phone">
-        <div class="phone-screen"><img src="/assets/app/quit.webp" alt="Miser Add a habit screen: Alcohol chosen from the category grid at $25 per week, projected as $3.57 a day, $109 a month and $1,304 a year." width="640" height="1391" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
+        <div class="phone-screen"><img src="/assets/app/v3-quit.webp" alt="Miser Quit Companion screen for cigarettes: 41 days free, $351.38 not spent this run, with I slipped and Help, I&rsquo;m having a craving buttons." width="640" height="1392" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
       </div>
     </div>
 
@@ -1695,7 +1696,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     <!-- Groups phone — Trip to Mexico City group detail -->
     <div class="groups-phone-wrap reveal" data-delay="2">
       <div class="phone">
-        <div class="phone-screen"><img src="/assets/app/group.webp" alt="Miser shared goal screen: a Mexico City group goal at $859 of $1,500, with Wendy at $645 and John at $214 of their $750 shares." width="640" height="1390" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
+        <div class="phone-screen"><img src="/assets/app/v3-group.webp" alt="Miser shared goal screen: Lisbon 2027 with three members, Alex, Sam and Priya, each with their own progress, and a list of what each person saved." width="640" height="1392" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
       </div>
     </div>
 
@@ -1720,7 +1721,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
 
       <div class="reveal faq-item" data-delay="1" style="padding:28px 0;border-bottom:0.5px solid rgba(28,61,43,0.1)">
         <dt style="font-size:18px;font-weight:900;color:var(--dg);letter-spacing:-0.01em;margin-bottom:10px">Where does my money actually go?</dt>
-        <dd style="font-size:15px;line-height:1.6;color:rgba(28,61,43,0.75);margin:0">Into <em style="font-style:normal;font-weight:700;color:var(--dg)">your own savings account</em>, not ours. Miser is not a bank and gives you no balance to spend. Once at least $50 is locked and 7 days have passed since your last transfer, the total moves from your linked checking to your savings by ACH. There is no fixed day of the week. While a transfer is in process, the funds are held and moved by a regulated financial institution working with our payment partner.</dd>
+        <dd style="font-size:15px;line-height:1.6;color:rgba(28,61,43,0.75);margin:0">Into <em style="font-style:normal;font-weight:700;color:var(--dg)">your own savings account</em>, not ours. Miser is not a bank and gives you no balance to spend. Once your locked total reaches your transfer minimum ($50, $100 or $200, you choose) and 7 days have passed since your last transfer, the total moves from your linked checking to your savings by ACH. There is no fixed day of the week. Transfers run through our payment partner, Modern Treasury, and its partner bank, Cross River Bank, through an account opened in your name; while a transfer is in process, the money is held by that bank, not by Miser. Before your first transfer, the bank verifies your identity, as US banking rules require.</dd>
       </div>
 
       <div class="reveal faq-item" data-delay="2" style="padding:28px 0;border-bottom:0.5px solid rgba(28,61,43,0.1)">
@@ -1743,11 +1744,11 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
   <div class="wl reveal">
     <div class="rule-pair" style="display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:14px">
       <span style="flex:0 0 40px;height:1px;background:rgba(200,168,32,0.4)"></span>
-      <span class="eyebrow lt">Early access · iOS</span>
+      <span class="eyebrow lt">Coming to the App Store</span>
       <span style="flex:0 0 40px;height:1px;background:rgba(200,168,32,0.4)"></span>
     </div>
     <h2 class="h-section">Be part of <span aria-hidden="true">Mi<span class="d">$</span>er.</span><span class="vh">Miser.</span></h2>
-    <p class="lead">Savings tips, product updates, and a TestFlight invite when your slot opens.</p>
+    <p class="lead">Savings tips, product updates, and an email the day Miser is on the App Store.</p>
 
     <div class="wl-form-wrap" id="wlFormWrap">
       <form class="wl-form" id="wlForm" autocomplete="on" novalidate>
@@ -1777,7 +1778,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
         <span class="dot" aria-hidden="true">·</span>
         <span>US residents, 18+</span>
         <span class="dot" aria-hidden="true">·</span>
-        <span>We'll email you savings tips, product updates and your TestFlight invite · unsubscribe anytime</span>
+        <span>We'll email you savings tips, product updates and a note when Miser is on the App Store · unsubscribe anytime</span>
         <span class="dot" aria-hidden="true">·</span>
         <span>By joining, you agree to our <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a>
       <a href="accessibility.html">Accessibility</a></span>
@@ -1788,8 +1789,8 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     <!-- Brand meta tiles -->
     <div class="wl-meta reveal" data-delay="1">
       <div class="wl-meta-card">
-        <div class="wm-num">2026</div>
-        <div class="wm-lbl">Launching this year</div>
+        <div class="wm-num">3%, max $5</div>
+        <div class="wm-lbl">Per transfer, nothing else</div>
       </div>
       <div class="wl-meta-card">
         <div class="wm-num">iOS first</div>
@@ -1800,15 +1801,15 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
         <div class="wm-lbl">Built in Texas</div>
       </div>
       <div class="wl-meta-card">
-        <div class="wm-num">Early</div>
-        <div class="wm-lbl">Access for members first</div>
+        <div class="wm-num">US only</div>
+        <div class="wm-lbl">18+, US bank accounts</div>
       </div>
     </div>
 
     <div class="wl-success" id="wlSuccess" role="status" aria-live="polite">
       <div class="wl-check">✓</div>
       <h3>You're on the list.</h3>
-      <p>We'll email <span class="email" id="wlEmailEcho">you@wherever.com</span> when your TestFlight invite is ready.</p>
+      <p>We'll email <span class="email" id="wlEmailEcho">you@wherever.com</span> when Miser is on the App Store.</p>
     </div>
   </div>
 </section>
@@ -1849,7 +1850,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
       <strong>MiserSavings Inc.</strong> · Austin, TX · Launching 2026<br>
       © 2026 MiserSavings Inc. All rights reserved.
       <br><br>
-      <span style="opacity:0.85">mi$er is a financial technology company, not a bank, and gives you no balance to spend. ACH transfers between your linked checking and savings accounts are initiated by our ACH partner, and while a transfer is in process the funds are held and moved by a regulated financial institution working with that partner; bank linking is provided by a regulated third-party data network. A service fee of 3% of each transfer, added on top, applies to each savings transfer (never more than $5 on one transfer); the final fee schedule is shown in full and requires your explicit acceptance before any money moves. mi$er does not provide investment, tax, or legal advice. See <a href="terms.html" style="color:inherit;text-decoration:underline">Terms</a> and <a href="privacy.html" style="color:inherit;text-decoration:underline">Privacy Policy</a> for full details.</span>
+      <span style="opacity:0.85">mi$er is a financial technology company, not a bank, and gives you no balance to spend. ACH transfers between your linked checking and savings accounts are run by our payment partner, Modern Treasury, and its partner bank, Cross River Bank, through an account opened in your name; while a transfer is in process the funds are held by that bank, not by Miser. Bank linking is provided by a regulated third-party data network. A service fee of 3% of each transfer, added on top, applies to each savings transfer (never more than $5 on one transfer); the final fee schedule is shown in full and requires your explicit acceptance before any money moves. mi$er does not provide investment, tax, or legal advice. See <a href="terms.html" style="color:inherit;text-decoration:underline">Terms</a> and <a href="privacy.html" style="color:inherit;text-decoration:underline">Privacy Policy</a> for full details.</span>
     </div>
   </div>
 </footer>

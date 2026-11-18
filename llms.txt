@@ -1,6 +1,6 @@
 # Miser
 
-> Miser is a behavioral savings app for iPhone. The core loop: you catch yourself about to spend money you don't need to spend, log it as a skip, and the money you didn't spend gets pulled from your linked checking account into your linked savings account. Once at least $50 is locked and at least 7 days have passed since your last scheduled transfer, your skips bundle into one ACH transfer between your own accounts. Miser is not a bank and gives you no balance to spend. Miser is available only in the United States and needs a US checking and savings account in the user's own name.
+> Miser is a behavioral savings app for iPhone, launching on the App Store in November 2026. The core loop: you catch yourself about to spend money you don't need to spend, log it as a skip, and the money you didn't spend gets pulled from your linked checking account into your linked savings account. Once the locked total reaches the user's transfer minimum ($50, $100 or $200, the user's choice) and at least 7 days have passed since the last scheduled transfer, your skips bundle into one ACH transfer between your own accounts. Miser is not a bank and gives you no balance to spend. Miser is available only in the United States and needs a US checking and savings account in the user's own name.
 
 ## Product
 
@@ -14,14 +14,17 @@ Miser is made by MiserSavings Inc., a Delaware C-Corp founded in Austin, Texas i
 - Ranks: nine-rank cosmetic ladder earned by streak and lifetime savings milestones — Cheap Curious → Cart Ghoster → Dirt Cheap → Wallet Clencher → Bona Fide Cheapskate → Markdown Menace → Certified Tightwad → Cash Hoarder → Grand Scrooge. A missed day breaks the streak but never takes a rank away
 - Miser Coach: Anthropic-powered daily messages about streak, momentum, and focus. Not a financial advisor
 - Add money: start a transfer yourself from any goal, $50 to $1,000, once per day
+- Routines: a repeated skip written as one sentence ("Every weekday, I skip coffee and put $6.00 toward Hawaii"). Miser asks once a day, or with Save automatically on, logs it in the morning with an Undo
+- Share cards: milestone and rank cards the user can share
 
 **How money moves:**
 - The user links their own checking and savings accounts (both at their own bank)
-- Bank linking and ACH transit happen through a regulated banking-infrastructure partner
-- There is no fixed cycle day. A scheduled transfer is initiated once at least $50 is locked and at least 7 days have passed since the last scheduled transfer was initiated. It moves the user's locked skips from checking to savings in a single ACH transfer
+- Bank linking uses Plaid. Transfers run through Miser's payment partner, Modern Treasury, and its partner bank, Cross River Bank, through an account opened in the user's name
+- Before the first transfer, the partner bank verifies the user's identity (legal name, date of birth, address, phone, Social Security number), as US banking rules require. Miser does not store the Social Security number
+- There is no fixed cycle day. A scheduled transfer is initiated once the locked total reaches the user's transfer minimum ($50, $100 or $200) and at least 7 days have passed since the last scheduled transfer was initiated. It moves the user's locked skips from checking to savings in a single ACH transfer
 - Scheduled transfers can start on weekends; federal bank holidays are skipped. Money usually reaches the savings account about four banking days after a transfer starts
 - Add money is a second, user-started transfer of $50 to $1,000 for that amount only, once per day. It does not change when the next scheduled transfer runs
-- Until a transfer moves it, the money stays in the user's checking account. While a transfer is in process, the funds are held and moved by a regulated financial institution working with our payment partner, not by Miser. Funds in transit may not be FDIC-insured until they arrive in the savings account
+- Until a transfer moves it, the money stays in the user's checking account. While a transfer is in process, the funds are held by the partner bank that runs the transfer, not by Miser. Funds in transit may not be FDIC-insured until they arrive in the savings account
 - Miser is not a bank and gives users no balance to spend
 - There are no in-app withdrawals: once a transfer lands, the money is already in the user's own savings account at their own bank
 
@@ -29,7 +32,7 @@ Miser is made by MiserSavings Inc., a Delaware C-Corp founded in Austin, Texas i
 - Free to hold a Miser account
 - No subscription fees, ever
 - A service fee of 3% of each transfer, never more than $5, applies to every transfer, scheduled or Add money. A scheduled transfer moves up to $500 and an Add money transfer up to $1,000, each plus the fee, and at most $2,000 moves per member in any 7 days. The most anyone pays on one transfer is $5.00. It is disclosed in-app before any money moves
-- Nothing is charged in a week nothing moves. Under $50 locked, no transfer starts and no fee applies
+- Nothing is charged in a week nothing moves. Until the locked total reaches the user's minimum, no transfer starts and no fee applies
 - Worked examples: a $50 transfer costs $1.50 (3%), $100 costs $3.00 (3%), $200 costs $5.00 (2.5%), $1,000 costs $5.00 (0.5%). The fee reaches the $5 cap at about $167. The fee is added on top, so the full amount lands in savings
 - Per month: someone who saves $50 every week pays about $6.50 a month in fees, about what a subscription savings app costs. The difference is that every fee comes with money moved into the user's own savings, and a week with no transfer costs nothing
 - The fee is Miser's only revenue: no ads, no data sales, no interest earned on user savings
@@ -38,7 +41,7 @@ Miser is made by MiserSavings Inc., a Delaware C-Corp founded in Austin, Texas i
 - Honest fit: for people who already save automatically and rarely spend on impulse, a bank's free savings rules are cheaper and Miser is not needed
 - Full breakdown: https://misersavings.com/pricing.html
 
-**Platform:** iOS first. US-only at launch.
+**Platform:** iPhone (App Store) first, Android after. US only.
 
 **Tagline:** Skip · Save · Stack.
 
