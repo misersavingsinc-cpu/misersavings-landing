@@ -80,7 +80,7 @@
       "name": "Do I pay anything in a week I don't save?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. If nothing moves, nothing is charged. Under $50 locked, no transfer starts and no fee applies; the amount rolls into your next transfer. A subscription app charges you in a month you save nothing. Miser doesn't."
+        "text": "No. If nothing moves, nothing is charged. Until your locked total reaches your minimum, no transfer starts and no fee applies; the amount rolls into your next transfer. A subscription app charges you in a month you save nothing. Miser doesn't."
       }
     },
     {
@@ -88,7 +88,7 @@
       "name": "Why does Miser charge per transfer instead of a monthly fee?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Because our cost is per transfer. Every transfer runs over the ACH network through our regulated payment partner, which charges us for each one. Charging per transfer means you only pay in weeks money actually moves. Miser has no ads, does not sell your data, and does not earn interest on your savings, so the fee is how Miser is paid."
+        "text": "Because our cost is per transfer. Every transfer runs over the ACH network through our payment partner, Modern Treasury, which charges us for each one. Charging per transfer means you only pay in weeks money actually moves. Miser has no ads, does not sell your data, and does not earn interest on your savings, so the fee is how Miser is paid."
       }
     },
     {
@@ -433,7 +433,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
           <tr><th scope="col">Lands in savings</th><th scope="col">Fee</th><th scope="col">Debited from checking</th><th scope="col">Fee as share</th></tr>
         </thead>
         <tbody>
-          <tr><td><strong>$50</strong> (minimum)</td><td>$1.50</td><td>$51.50</td><td>3.0%</td></tr>
+          <tr><td><strong>$50</strong> (smallest minimum)</td><td>$1.50</td><td>$51.50</td><td>3.0%</td></tr>
           <tr><td><strong>$100</strong></td><td>$3.00</td><td>$103.00</td><td>3.0%</td></tr>
           <tr><td><strong>$200</strong></td><td>$5.00</td><td>$205.00</td><td>2.5%</td></tr>
           <tr><td><strong>$500</strong> (scheduled maximum)</td><td>$5.00</td><td>$505.00</td><td>1.0%</td></tr>
@@ -444,7 +444,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     <p class="p-note">The fee is 3% until it reaches $5, at about $167. Above that it stays at $5, so the share drops as the transfer grows. The same fee applies to a scheduled transfer and to Add money.</p>
 
     <h2 class="faq-q">Over a year</h2>
-    <p class="faq-a">Your skips move once at least $50 is locked and 7 days have passed since your last transfer. So what you pay over a year depends on how much you skip in a typical week.</p>
+    <p class="faq-a">Your skips move once your locked total reaches your transfer minimum ($50, $100 or $200, you choose) and 7 days have passed since your last transfer. So what you pay over a year depends on how much you skip in a typical week.</p>
     <div class="table-scroll" tabindex="0" role="region" aria-label="Yearly fees at three weekly saving levels">
       <table class="p-table">
         <thead>
@@ -460,7 +460,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     <p class="p-note">Assumes one transfer a week for 52 weeks. Skip less than $50 in a week and nothing moves: it rolls into the next transfer, and you pay one fee when it does.</p>
 
     <h2 class="faq-q">What the fee pays for</h2>
-    <p class="faq-a">Every transfer runs over the ACH network through our regulated payment partner, which charges us for each one. The rest keeps Miser running: the app, the coach, support.</p>
+    <p class="faq-a">Every transfer runs over the ACH network through our payment partner, Modern Treasury, which charges us for each one. The rest keeps Miser running: the app, the coach, support.</p>
     <p class="faq-a">The fee is the only way Miser is paid. <strong>We don't run ads, we don't sell your data, and we don't earn interest on your savings.</strong> Your savings sit in your own account at your own bank, and any interest they earn is your bank's to pay you.</p>
     <p class="faq-a"><strong>We cap the fee at $5 so the people who save the most don't pay the most.</strong> Part of every fee pays for running the transfer; the rest keeps Miser running. If the fee changes, you'll hear it from us before it applies, and the ACH authorization you accept will show the new amount.</p>
 
@@ -496,7 +496,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
       <li>The Quit Companion</li>
       <li>Ranks and streaks</li>
       <li>Miser Coach</li>
-      <li>Weeks you save under $50</li>
+      <li>Weeks you don&rsquo;t reach your minimum</li>
       <li>Unlinking your bank or deleting your account</li>
       <li>Taking money out of your savings</li>
     </ul>
@@ -513,10 +513,10 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     <p class="faq-a">It depends on how much you move at once. Up to about $167 the fee is 3% of what you save. Above that it stays at $5, so at $200 it is 2.5%, and at the $1,000 Add money maximum it is 0.5%. A bank's free savings rule is cheaper if all you want is to move money. Miser is built to change a habit: it catches money you were about to spend and puts it toward a goal you chose.</p>
 
     <h3 class="faq-q">Do I pay anything in a week I don't save?</h3>
-    <p class="faq-a">No. If nothing moves, nothing is charged. Under $50 locked, no transfer starts and no fee applies; the amount rolls into your next transfer. A subscription app charges you in a month you save nothing. Miser doesn't.</p>
+    <p class="faq-a">No. If nothing moves, nothing is charged. Until your locked total reaches your minimum, no transfer starts and no fee applies; the amount rolls into your next transfer. A subscription app charges you in a month you save nothing. Miser doesn't.</p>
 
     <h3 class="faq-q">Why does Miser charge per transfer instead of a monthly fee?</h3>
-    <p class="faq-a">Because our cost is per transfer. Every transfer runs over the ACH network through our regulated payment partner, which charges us for each one. Charging per transfer means you only pay in weeks money actually moves. Miser has no ads, does not sell your data, and does not earn interest on your savings, so the fee is how Miser is paid.</p>
+    <p class="faq-a">Because our cost is per transfer. Every transfer runs over the ACH network through our payment partner, Modern Treasury, which charges us for each one. Charging per transfer means you only pay in weeks money actually moves. Miser has no ads, does not sell your data, and does not earn interest on your savings, so the fee is how Miser is paid.</p>
 
     <h3 class="faq-q">Does it cost anything to get my money out?</h3>
     <p class="faq-a">No. Your savings are in your own savings account at your own bank. You move money out through your bank, the way you always have. Miser charges nothing for that and is not involved.</p>
