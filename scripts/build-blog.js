@@ -123,7 +123,7 @@ function navHtml() {
     <li><a href="../pricing.html">Pricing</a></li>
     <li><a href="index.html" class="active">Blog</a></li>
   </ul>
-  <a class="nav-cta" href="../index.html#waitlist">Join our community</a>
+  <a class="nav-cta" href="https://apps.apple.com/us/app/id6763827599">Get the app</a>
 </nav>`;
 }
 function footerHtml() {
@@ -348,10 +348,10 @@ ${rows}
 
   <div class="blog-cta">
     <div class="blog-cta-text">
-      <strong>Miser is coming to the App Store.</strong>
-      Join the list for savings tips, product updates, and an email the day it's live.
+      <strong>Miser is on the App Store.</strong>
+      Free on iPhone. Log the impulse buys you skip and move the money to your own savings.
     </div>
-    <a class="nav-cta" href="../index.html#waitlist">Join our community</a>
+    <a class="nav-cta" href="https://apps.apple.com/us/app/id6763827599">Get the app</a>
   </div>
 </section>
 

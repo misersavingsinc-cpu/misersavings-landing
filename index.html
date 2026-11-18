@@ -134,7 +134,9 @@
         "AI savings coach that spots patterns in the skips you log"
       ],
       "countryOfOrigin": "US",
-      "releaseNotes": "iOS first. Android in development. Available to US residents 18+."
+      "releaseNotes": "Available on the App Store for iPhone. Android in development. Available to US residents 18+.",
+      "downloadUrl": "https://apps.apple.com/us/app/id6763827599",
+      "installUrl": "https://apps.apple.com/us/app/id6763827599"
     }
   ]
 }
@@ -343,6 +345,7 @@ nav.site .inner{
   color:rgba(237,232,208,0.7);max-width:46ch;margin-bottom:36px;
 }
 .hero-ctas{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.hero-ctas a.btn-gold,.hero-ctas a.btn-gold:hover{color:var(--dg);text-decoration:none}
 /* ─── Hero waitlist capture ─────────────────────────────────
    Collects the email above the fold, then hands off to the
    full #waitlist form (which owns Turnstile + the endpoint).
@@ -435,6 +438,7 @@ nav.site .inner{
   .hero-right{order:3;min-height:0;margin:36px 0 40px}
   .hero-left > .hero-wl{order:4;margin-top:0}
   .hero-left > .hero-ctas{order:5}
+  .hero-left > .hero-wl-note{order:5}
   .hero-left > div:not(.hero-ctas){order:6}
 }
 
@@ -1459,7 +1463,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
       <li><a href="pricing.html">Pricing</a></li>
       <li><a href="blog/">Blog</a></li>
     </ul>
-    <a href="#waitlist" class="nav-cta">Join our community</a>
+    <a href="https://apps.apple.com/us/app/id6763827599" class="nav-cta">Get the app</a>
   </div>
 </nav>
 <main id="main">
@@ -1471,19 +1475,13 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     <div class="hero-left reveal in">
       <h1>Break the habit. <em>Keep the money.</em></h1>
       <p class="lead">Skip the latte, the takeout, the 1am cart. Log it in three taps and that amount moves from your checking to your own savings account. Your bank, your accounts. Miser is not a bank and gives you no balance to spend. Available only in the United States.</p>
-      <form class="hero-wl" id="heroWl" autocomplete="on" novalidate>
-        <div class="hero-wl-row">
-          <input type="email" id="heroWlEmail" placeholder="you@wherever.com"
-                 aria-label="Email address" autocomplete="email" aria-required="true" data-clarity-mask="True">
-          <button type="submit" class="btn-gold">Join the list →</button>
-        </div>
-        <p class="hero-wl-note">Coming to the App Store · we&rsquo;ll email you when it&rsquo;s live · no spam, no card.</p>
-      </form>
       <div class="hero-ctas">
+        <a href="https://apps.apple.com/us/app/id6763827599" class="btn-gold">Download on the App Store →</a>
         <a href="#how" class="btn-outline-lt">See how it works</a>
       </div>
+      <p class="hero-wl-note" style="margin-top:12px">Free on iPhone · US only · 18+</p>
       <div style="margin-top:14px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(237,232,208,0.7)">
-        iOS first · Android coming soon
+        On iPhone now · Android coming soon
       </div>
       <div class="hero-foot" style="letter-spacing:0.22em;text-transform:uppercase;font-weight:800;font-size:11px;color:rgba(237,232,208,0.7)">
         <span>Skip it</span>
@@ -1744,11 +1742,11 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
   <div class="wl reveal">
     <div class="rule-pair" style="display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:14px">
       <span style="flex:0 0 40px;height:1px;background:rgba(200,168,32,0.4)"></span>
-      <span class="eyebrow lt">Coming to the App Store</span>
+      <span class="eyebrow lt">On Android?</span>
       <span style="flex:0 0 40px;height:1px;background:rgba(200,168,32,0.4)"></span>
     </div>
     <h2 class="h-section">Be part of <span aria-hidden="true">Mi<span class="d">$</span>er.</span><span class="vh">Miser.</span></h2>
-    <p class="lead">Savings tips, product updates, and an email the day Miser is on the App Store.</p>
+    <p class="lead">Miser is on the <a href="https://apps.apple.com/us/app/id6763827599" style="color:inherit;text-decoration:underline">App Store</a> for iPhone. On Android? Leave your email and we&rsquo;ll tell you the day it&rsquo;s in Google Play.</p>
 
     <div class="wl-form-wrap" id="wlFormWrap">
       <form class="wl-form" id="wlForm" autocomplete="on" novalidate>
@@ -1759,8 +1757,8 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
         </div>
         <div class="wl-platform" role="radiogroup" aria-label="Which platform are you on">
           <span class="wl-platform-label" aria-hidden="true">I'm on</span>
-          <label><input type="radio" name="wlPlatform" value="ios" checked aria-label="iOS"><span aria-hidden="true"> iOS</span></label>
-          <label><input type="radio" name="wlPlatform" value="android" aria-label="Android"><span aria-hidden="true"> Android</span></label>
+          <label><input type="radio" name="wlPlatform" value="ios" aria-label="iOS"><span aria-hidden="true"> iOS</span></label>
+          <label><input type="radio" name="wlPlatform" value="android" checked aria-label="Android"><span aria-hidden="true"> Android</span></label>
           <label><input type="radio" name="wlPlatform" value="either" aria-label="Either"><span aria-hidden="true"> Either</span></label>
         </div>
       </form>
@@ -1774,11 +1772,11 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
            data-action="waitlist"
            data-appearance="interaction-only"></div>
       <div class="wl-foot">
-        <span>iOS first · Android next</span>
+        <span>On iPhone now · Android next</span>
         <span class="dot" aria-hidden="true">·</span>
         <span>US residents, 18+</span>
         <span class="dot" aria-hidden="true">·</span>
-        <span>We'll email you savings tips, product updates and a note when Miser is on the App Store · unsubscribe anytime</span>
+        <span>We'll email you savings tips, product updates and a note when Miser is in Google Play · unsubscribe anytime</span>
         <span class="dot" aria-hidden="true">·</span>
         <span>By joining, you agree to our <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a>
       <a href="accessibility.html">Accessibility</a></span>
@@ -1809,7 +1807,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
     <div class="wl-success" id="wlSuccess" role="status" aria-live="polite">
       <div class="wl-check">✓</div>
       <h3>You're on the list.</h3>
-      <p>We'll email <span class="email" id="wlEmailEcho">you@wherever.com</span> when Miser is on the App Store.</p>
+      <p>We'll email <span class="email" id="wlEmailEcho">you@wherever.com</span> when Miser is in Google Play.</p>
     </div>
   </div>
 </section>
@@ -1830,7 +1828,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
       <a href="#groups">Groups</a>
       <a href="pricing.html">Pricing</a>
       <a href="blog/">Blog</a>
-      <a href="#waitlist">Join our community</a>
+      <a href="https://apps.apple.com/us/app/id6763827599">Get the app</a>
       <a href="faq.html">FAQ</a>
       <a href="about.html">About</a>
       <a href="terms.html">Terms</a>
@@ -1847,7 +1845,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible,
       <a href="https://x.com/misersavings" rel="me noopener" target="_blank" aria-label="Miser on X" style="font-size:13px;color:rgba(237,232,208,0.78);text-decoration:none;letter-spacing:0.02em">X <span style="opacity:0.5">@misersavings</span><span class="vh"> (opens in a new window)</span></a>
     </div>
     <div class="foot-legal">
-      <strong>MiserSavings Inc.</strong> · Austin, TX · Launching 2026<br>
+      <strong>MiserSavings Inc.</strong> · Austin, TX · On the App Store<br>
       © 2026 MiserSavings Inc. All rights reserved.
       <br><br>
       <span style="opacity:0.85">mi$er is a financial technology company, not a bank, and gives you no balance to spend. ACH transfers between your linked checking and savings accounts are run by our payment partner, Modern Treasury, and its partner bank, Cross River Bank, through an account opened in your name; while a transfer is in process the funds are held by that bank, not by Miser. Bank linking is provided by a regulated third-party data network. A service fee of 3% of each transfer, added on top, applies to each savings transfer (never more than $5 on one transfer); the final fee schedule is shown in full and requires your explicit acceptance before any money moves. mi$er does not provide investment, tax, or legal advice. See <a href="terms.html" style="color:inherit;text-decoration:underline">Terms</a> and <a href="privacy.html" style="color:inherit;text-decoration:underline">Privacy Policy</a> for full details.</span>
