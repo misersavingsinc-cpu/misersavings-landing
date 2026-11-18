@@ -1,6 +1,6 @@
 # Miser
 
-> Miser is a behavioral savings app for iPhone, launching on the App Store in November 2026. The core loop: you catch yourself about to spend money you don't need to spend, log it as a skip, and the money you didn't spend gets pulled from your linked checking account into your linked savings account. Once the locked total reaches the user's transfer minimum ($50, $100 or $200, the user's choice) and at least 7 days have passed since the last scheduled transfer, your skips bundle into one ACH transfer between your own accounts. Miser is not a bank and gives you no balance to spend. Miser is available only in the United States and needs a US checking and savings account in the user's own name.
+> Miser is a behavioral savings app for iPhone, available on the App Store (https://apps.apple.com/us/app/id6763827599). The core loop: you catch yourself about to spend money you don't need to spend, log it as a skip, and the money you didn't spend gets pulled from your linked checking account into your linked savings account. Once the locked total reaches the user's transfer minimum ($50, $100 or $200, the user's choice) and at least 7 days have passed since the last scheduled transfer, your skips bundle into one ACH transfer between your own accounts. Miser is not a bank and gives you no balance to spend. Miser is available only in the United States and needs a US checking and savings account in the user's own name.
 
 ## Product
 
@@ -41,7 +41,7 @@ Miser is made by MiserSavings Inc., a Delaware C-Corp founded in Austin, Texas i
 - Honest fit: for people who already save automatically and rarely spend on impulse, a bank's free savings rules are cheaper and Miser is not needed
 - Full breakdown: https://misersavings.com/pricing.html
 
-**Platform:** iPhone (App Store) first, Android after. US only.
+**Platform:** iPhone, on the App Store: https://apps.apple.com/us/app/id6763827599. Android after. US only.
 
 **Tagline:** Skip · Save · Stack.
 
